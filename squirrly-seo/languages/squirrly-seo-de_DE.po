@@ -1,0 +1,5825 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Squirrly SEO Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-05 09:34+0300\n"
+"PO-Revision-Date: 2023-10-05 09:34+0300\n"
+"Last-Translator: Squirrly <contact@squirrly.co>\n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: ;__;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 3.4\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: view/assets/js/assistant/utils\n"
+
+#: controllers/Api.php:134
+msgid "No URLs found. Please add URLs to index."
+msgstr ""
+
+#: controllers/Api.php:141
+msgid "Invalid URLs provided. Please add valid URLs."
+msgstr ""
+
+# @ squirrly-seo
+#: controllers/Api.php:146
+#, fuzzy
+#| msgid ""
+#| "Could not send your informations to squirrly. Please register "
+#| "%smanually%s."
+msgid "Failed to submit the URLs. Please try again."
+msgstr ""
+"Konnte Ihre Informationen nicht zu Squirrly senden. Bitte registrieren "
+"%smanually%s."
+
+#: controllers/Post.php:768
+msgid "Add <code>rel=\"nofollow\"</code>"
+msgstr ""
+
+#: controllers/Post.php:769
+msgid "Add <code>rel=\"sponsored\"</code>"
+msgstr ""
+
+#: models/Compatibility.php:560
+msgid "MPN"
+msgstr ""
+
+#: models/Compatibility.php:561
+msgid "Add Manufacturer Part Number (MPN)"
+msgstr ""
+
+#: models/Compatibility.php:564
+msgid "GTIN"
+msgstr ""
+
+#: models/Compatibility.php:565
+msgid "Add Global Trade Item Number (GTIN)"
+msgstr ""
+
+#: models/Compatibility.php:568
+msgid "EAN (GTIN-13)"
+msgstr ""
+
+#: models/Compatibility.php:569
+msgid ""
+"Add Global Trade Item Number (GTIN) for the major GTIN used outside of North "
+"America"
+msgstr ""
+
+#: models/Compatibility.php:572
+msgid "UPC (GTIN-12)"
+msgstr ""
+
+#: models/Compatibility.php:573
+msgid "Add Global Trade Item Number (GTIN) for North America"
+msgstr ""
+
+#: models/Compatibility.php:576
+msgid "ISBN"
+msgstr ""
+
+#: models/Compatibility.php:577
+msgid "Add Global Trade Item Number (GTIN) for books"
+msgstr ""
+
+#: models/Compatibility.php:582
+msgid "Brand Name"
+msgstr ""
+
+#: models/Compatibility.php:583
+msgid "Add Product Brand Name"
+msgstr ""
+
+#: models/Indexnow.php:135
+msgid "Unknown error."
+msgstr ""
+
+# @ squirrly-seo
+#: models/Indexnow.php:137
+#, fuzzy
+#| msgid "Keywords:"
+msgid "Invalid request."
+msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#: models/Indexnow.php:138
+#, fuzzy
+#| msgid "Keywords:"
+msgid "Invalid API key."
+msgstr "Schlüsselwörter:"
+
+#: models/Indexnow.php:139
+msgid "Invalid URL."
+msgstr ""
+
+#: models/Indexnow.php:140
+msgid "Too many requests."
+msgstr ""
+
+#: models/Indexnow.php:141
+msgid "Internal server error."
+msgstr ""
+
+#: models/services/OpenGraph.php:202
+msgid "On backorder"
+msgstr ""
+
+#: models/services/OpenGraph.php:204
+msgid "In stock"
+msgstr ""
+
+#: models/services/OpenGraph.php:206
+msgid "Out of stock"
+msgstr ""
+
+# @ squirrly-seo
+#: view/Automation/Automation.php:413
+#, fuzzy, php-format
+#| msgid "Could not send the email..."
+msgid "Do you want to delete the automation for %s?"
+msgstr "Konnte E-Mail nicht senden ..."
+
+#: view/Blocks/Jorney.php:45
+msgid "Day"
+msgstr ""
+
+#: view/FocusPages/Settings.php:127
+msgid "Headlines"
+msgstr ""
+
+#: view/FocusPages/Settings.php:128
+msgid "Strong text"
+msgstr ""
+
+#: view/FocusPages/Settings.php:129
+msgid "Tables"
+msgstr ""
+
+# @ squirrly-seo
+#: view/FocusPages/Settings.php:130
+#, fuzzy
+#| msgid "Images"
+msgid "Image captions"
+msgstr "Bilder"
+
+#: view/FocusPages/Settings.php:131
+msgid "Ordered lists"
+msgstr ""
+
+#: view/FocusPages/Settings.php:132
+msgid "Unordered lists"
+msgstr ""
+
+#: view/FocusPages/Settings.php:133
+msgid "Blockquotes"
+msgstr ""
+
+#: view/FocusPages/Settings.php:134
+msgid "Italic text"
+msgstr ""
+
+#: view/FocusPages/Settings.php:135
+msgid "Inline quotes"
+msgstr ""
+
+# @ squirrly-seo
+#: view/FocusPages/Settings.php:136
+#, fuzzy
+#| msgid "An error occured."
+msgid "Sourcecode"
+msgstr "Ein Fehler ist aufgetreten."
+
+#: view/assets/js/checkseo.js:118 view/assets/js/checkseo.min.js:1
+msgid "Ask the AI Consultant to check for Goal progress"
+msgstr ""
+
+#: view/assets/js/gutenberg.js:542 view/assets/js/gutenberg.min.js:1
+msgid "Add Link"
+msgstr ""
+
+#: view/assets/js/gutenberg.js:620 view/assets/js/gutenberg.min.js:1
+msgid "Link removed."
+msgstr ""
+
+#: view/assets/js/gutenberg.js:657 view/assets/js/gutenberg.min.js:1
+msgid "Unlink"
+msgstr ""
+
+#: view/assets/js/gutenberg.js:952 view/assets/js/gutenberg.min.js:1
+msgid ""
+"Warning: the link has been inserted but may have errors. Please test it."
+msgstr ""
+
+#: view/assets/js/gutenberg.js:954 view/assets/js/gutenberg.min.js:1
+msgid "Link edited."
+msgstr ""
+
+#: view/assets/js/gutenberg.js:956 view/assets/js/gutenberg.min.js:1
+msgid "Link inserted."
+msgstr ""
+
+#: view/assets/js/gutenberg.js:1035 view/assets/js/gutenberg.min.js:1
+msgid "Open in New Tab"
+msgstr ""
+
+#: view/assets/js/gutenberg.js:1039 view/assets/js/gutenberg.min.js:1
+msgid "No Follow"
+msgstr ""
+
+#: view/assets/js/gutenberg.js:1043 view/assets/js/gutenberg.min.js:1
+msgid "Sponsored"
+msgstr ""
+
+#: view/assets/js/gutenberg.js:1328 view/assets/js/gutenberg.min.js:1
+#, javascript-format
+msgid "%s (opens in a new tab)"
+msgstr ""
+
+# @ squirrly-seo
+#: view/assets/js/gutenberg.js:1379 view/assets/js/gutenberg.min.js:1
+#, fuzzy
+#| msgid "Insert it!"
+msgid "Link"
+msgstr "Einfügen!"
+
+#: view/assets/js/snippet.js:179 view/assets/js/snippet.min.js:1
+msgid "Copied"
+msgstr ""
+
+# @ squirrly-seo
+#~ msgid "The code for Google Webmaster Tool is incorrect."
+#~ msgstr "Der Code für Google Webmaster Tool ist falsch."
+
+# @ squirrly-seo
+#~ msgid "The code for Google Analytics is incorrect."
+#~ msgstr "Der Code für Google Analytics ist falsch."
+
+# @ squirrly-seo
+#~ msgid "The code for Facebook is incorrect."
+#~ msgstr "Der Code für Facebook ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Bing is incorrect."
+#~ msgid "The code for Pinterest is incorrect."
+#~ msgstr "Der Code für Bing ist falsch."
+
+# @ squirrly-seo
+#~ msgid "The code for Bing is incorrect."
+#~ msgstr "Der Code für Bing ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Bing is incorrect."
+#~ msgid "The code for Baidu is incorrect."
+#~ msgstr "Der Code für Bing ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Bing is incorrect."
+#~ msgid "The code for Yandex is incorrect."
+#~ msgstr "Der Code für Bing ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Bing is incorrect."
+#~ msgid "The code for Alexa is incorrect."
+#~ msgstr "Der Code für Bing ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Facebook is incorrect."
+#~ msgid "The code for Facebook Pixel must only contain numbers."
+#~ msgstr "Der Code für Facebook ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Facebook is incorrect."
+#~ msgid "The code for Facebook App must only contain numbers."
+#~ msgstr "Der Code für Facebook ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Getting started"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Competition:"
+#~ msgid "Documentation"
+#~ msgstr "Wettbewerb:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Send Question"
+#~ msgid "These are the results for"
+#~ msgstr "Senden Sie Ihre Frage"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Upload error: Could not upload the favicon."
+#~ msgid "that you can find on our website."
+#~ msgstr "Upload Fehler: Konnte das Favicon nicht hochladen."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "No results found!"
+#~ msgid "Page not found"
+#~ msgstr "Keine Ergebnisse gefunden!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Upload error: Could not upload the favicon."
+#~ msgid "This page could not be found on our website."
+#~ msgstr "Upload Fehler: Konnte das Favicon nicht hochladen."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Adds the post's keyword to the post description"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Adds the site's name to the post description"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Adds the tagline/description of your site"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Adds the category description to the post description"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Adds the tag description"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Adds the term name"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Adds the term description"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Adds the current month"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid ""
+#~| "Could not send your informations to squirrly. Please register "
+#~| "%smanually%s."
+#~ msgid "Connection expired. Please try again"
+#~ msgstr ""
+#~ "Konnte Ihre Informationen nicht zu Squirrly senden. Bitte registrieren "
+#~ "%smanually%s."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "No results found!"
+#~ msgid "Author not found"
+#~ msgstr "Keine Ergebnisse gefunden!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid ""
+#~| "Could not send your informations to squirrly. Please register "
+#~| "%smanually%s."
+#~ msgid "Connection expired. Please try again."
+#~ msgstr ""
+#~ "Konnte Ihre Informationen nicht zu Squirrly senden. Bitte registrieren "
+#~ "%smanually%s."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "No keyword found."
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Saved"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Error: Could not save the data."
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Could not load the Audit Page."
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Upload error: Could not upload the favicon."
+#~ msgid "Error! Could not add the audit page."
+#~ msgstr "Upload Fehler: Konnte das Favicon nicht hochladen."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Upload error: Could not upload the favicon."
+#~ msgid "Error! Could not find the audit page in your website."
+#~ msgstr "Upload Fehler: Konnte das Favicon nicht hochladen."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Upload error: Could not upload the favicon."
+#~ msgid "The page could not be sent for reaudit."
+#~ msgstr "Upload Fehler: Konnte das Favicon nicht hochladen."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Could not add the post type."
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Saved!"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Upload error: Could not upload the favicon."
+#~ msgid "Error! Could not add the focus page."
+#~ msgstr "Upload Fehler: Konnte das Favicon nicht hochladen."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Upload error: Could not upload the favicon."
+#~ msgid "Error! This focus page is not public."
+#~ msgstr "Upload Fehler: Konnte das Favicon nicht hochladen."
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Upload error: Could not upload the favicon."
+#~ msgid "Error! Could not find the focus page %d in your website."
+#~ msgstr "Upload Fehler: Konnte das Favicon nicht hochladen."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "SEO Snippet"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Squirrly SEO"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Squirrly Live Assistant"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "SEO Expert Mode"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "automatically"
+#~ msgid "SEO Automation"
+#~ msgstr "automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Add a Page"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Twitter"
+#~ msgid "Your Site’s Topic"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Read it!"
+#~ msgid "Ready!"
+#~ msgstr "Lesen!"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimized"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "SQ Snippet"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Could not process"
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Could not load the Rankings."
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Could not load data."
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Could not delete the keyword!"
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Deleted!"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Do a research"
+#~ msgid "No keyword found. %s Show all %s keywords from Briefcase."
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "No results found!"
+#~ msgid "low ranking chance"
+#~ msgstr "Keine Ergebnisse gefunden!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Keyword Saved!"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Invalid Label or Color!"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "No keywords in Briefcase to backup"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid ""
+#~| "Could not send your informations to squirrly. Please register "
+#~| "%smanually%s."
+#~ msgid "Could not add the keyword to SERP Check. Please try again."
+#~ msgstr ""
+#~ "Konnte Ihre Informationen nicht zu Squirrly senden. Bitte registrieren "
+#~ "%smanually%s."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Keyword Research limit exceeded"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Google Analytics is incorrect."
+#~ msgid "Google Analytics account is disconnected."
+#~ msgstr "Der Code für Google Analytics ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Delete error: Could not delete the old favicon."
+#~ msgid "Error! Could not disconnect the account."
+#~ msgstr "Lösch Fehler: Konnte das alte Favicon nicht löschen."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Google Analytics is incorrect."
+#~ msgid "Google Search Console account is disconnected."
+#~ msgstr "Der Code für Google Analytics ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "An error occured while logging in!"
+#~ msgid "Error! An error occured while import. Please try again."
+#~ msgstr "Bei der Anmeldung ist ein Fehler aufgetreten!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Could not save the changes"
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Squirrly SEO Snippet"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Thank you for your feedback"
+#~ msgid "Thank you for your feedback."
+#~ msgstr "Vielen Dank für Ihre Feedback"
+
+# @ squirrly-seo
+#~ msgid "No message."
+#~ msgstr "Keine Nachricht."
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid ""
+#~| "We found your email, so it means you already have a Squirrly.co account. "
+#~| "Please login with your Squirrly Email. If you forgot your password click "
+#~| "%shere%s"
+#~ msgid ""
+#~ "We found your email, so it means you already have a Squirrly.co account. "
+#~ "%sClick %sI already have an account%s and login. If you forgot your "
+#~ "password, click %shere%s"
+#~ msgstr ""
+#~ "Ihre E-Mail Adresse ist bereits bei Squirrly.co registriert. Bitte loggen "
+#~ "Sie sich mit Ihrer Squirrly-ID ein. Falls Sie Ihr Passwort vergessen "
+#~ "haben, klicken Sie %shier%s"
+
+# @ squirrly-seo
+#~ msgid "Wrong email or password!"
+#~ msgstr "Benutzername oder Passwort falsch!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "You can use this account only for the URL you registered first!"
+#~ msgid "You can only use this account for the URL you registered first!"
+#~ msgstr ""
+#~ "Dieses Konto können Sie nur für die URL benutzen, die Sie zuerst "
+#~ "registriert haben!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "An error occured."
+#~ msgid "An error occured."
+#~ msgstr "Ein Fehler ist aufgetreten."
+
+# @ squirrly-seo
+#~ msgid "Both fields are required."
+#~ msgstr "Beide Felder sind Pflichtfelder."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Your E-mail:"
+#~ msgid "Task Details"
+#~ msgstr "Ihre E-Mail Adresse:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "active task"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Enter a keyword"
+#~ msgid "Change Main Keyword"
+#~ msgstr "Ein Schlüsselwort eingeben"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Main Keyword"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Save Main Keyword"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Do Keyword Research"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Add Keywords in Briefcase"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Create Labels for Keywords"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Add Keywords to Labels"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Send Keywords to Rank Checker"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Optimize Using Live Assistant"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Activate Patterns"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Activate METAs"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Activate JSON-LD"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Activate Open Graph"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Twitter"
+#~ msgid "Activate Twitter Card"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Activate Sitemap XML"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Activate Google Analytics"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Change the Website Icon"
+#~ msgid "Connect the Webmasters"
+#~ msgstr "Ändern Sie das Website-Symbol"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Connect Google Analytics"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Connect Google Search Console"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Your E-mail:"
+#~ msgid "Set the Audit Email"
+#~ msgstr "Ihre E-Mail Adresse:"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Average Content Optimization"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "No"
+#~ msgid "No"
+#~ msgstr "Nein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages without DcPublisher meta"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "adds the correct <strong>title</strong> in the home page"
+#~ msgid "Add the meta DcPublisher tag in the page's header"
+#~ msgstr "fügt den richtigen <strong>Titel</strong> in die Startseite ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Page Traffic"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages with low traffic"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Tool for Search Engines"
+#~ msgid "Visible for search engines?"
+#~ msgstr "Tool für Suchmaschinen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages with noindex"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "adds the correct <strong>title</strong> in the home page"
+#~ msgid "Add the correct meta robots tag in the pages"
+#~ msgstr "fügt den richtigen <strong>Titel</strong> in die Startseite ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Tool for Search Engines"
+#~ msgid "Followed by search engines?"
+#~ msgstr "Tool für Suchmaschinen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages with nofollow"
+#~ msgstr "Beschreibung:"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimize your site's speed"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Duplicate Titles"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "No duplicate titles."
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "We found duplicates."
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages on your site have unique title tags."
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The Pages with Duplicate Titles are"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Duplicate Descriptions"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "No duplicate descriptions."
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages on your site have unique meta descriptions."
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The Pages on which we found duplicates are"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Empty Titles"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "All pages have titles."
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "There are some pages without title."
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "all the pages on your site have the title tag defined :-)"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages with empty Title tags are"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Empty Descriptions"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "All articles have description."
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "There are some pages without description."
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "all the pages on your site have meta description"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages with empty description are"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Do you have a title tag?"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages without title tag are"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Do you have a meta description?"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages without description meta are"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Meta Keyword"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "No keywords."
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Your keywords are"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "adds <strong>canonical</strong> link in home page"
+#~ msgid "Canonical Link"
+#~ msgstr "fügt den richtigen <strong>canonical</strong> in die Startseite ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages without canonical meta"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "adds <strong>canonical</strong> link in home page"
+#~ msgid "Add canonical meta link in the page header"
+#~ msgstr "fügt den richtigen <strong>canonical</strong> in die Startseite ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Meta Json-LD?"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages without Json-LD meta"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Page Encoding"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages without encoding meta"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "adds <strong>canonical</strong> link in home page"
+#~ msgid "Add the meta encoding tag in the page's header"
+#~ msgstr "fügt den richtigen <strong>canonical</strong> in die Startseite ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Does your site have a feed or sitemap?"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Does your site have a robots.txt file?"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Meta Viewport"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages without viewport meta"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "adds the correct <strong>title</strong> in the home page"
+#~ msgid "Add the meta viewport tag in the page's header"
+#~ msgstr "fügt den richtigen <strong>Titel</strong> in die Startseite ein"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Site optimized for speed?"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages without gzip"
+#~ msgstr "Beschreibung:"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Use gzip to increase your site's speed"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Duplicate Open Graph Tags?"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "No duplicates"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "No results found!"
+#~ msgid "We found some ..."
+#~ msgstr "Keine Ergebnisse gefunden!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages with duplicate Open Graph metas"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Twitter"
+#~ msgid "Duplicate Twitter Card Tags?"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Twitter"
+#~ msgid "The pages with duplicate Twitter Card metas"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Twitter"
+#~ msgid "Duplicate Title Tags?"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages with duplicate Title metas"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Duplicate Description Tags?"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages with duplicate Description metas"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Insert in your article"
+#~ msgid "Share Buttons in your articles?"
+#~ msgstr "In Artikel einfügen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages without share buttons"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Insert in your article"
+#~ msgid "Add Social Share buttons in your articles"
+#~ msgstr "In Artikel einfügen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages without social buttons"
+#~ msgstr "Beschreibung:"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Open Graph protocol?"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages without Open Graph metas"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "adds <strong>canonical</strong> link in home page"
+#~ msgid "Add the meta Open Graph tag in your page's header."
+#~ msgstr "fügt den richtigen <strong>canonical</strong> in die Startseite ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Twitter"
+#~ msgid "Twitter Card?"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "The pages without Twitter Card metas"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "average authority"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Change the Website Icon"
+#~ msgid "Site Icon"
+#~ msgstr "Ändern Sie das Website-Symbol"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "No results found!"
+#~ msgid "No traffic data found"
+#~ msgstr "Keine Ergebnisse gefunden!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Facebook reactions"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Facebook shares"
+#~ msgstr "Beschreibung:"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Open Graph"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Twitter"
+#~ msgid "Twitter Card"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "You're blocking google from indexing your site!"
+#~ msgid "Discourage search engines from indexing this site"
+#~ msgstr "Sie blockieren Google zum Indizieren Ihrer Website!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "adds the correct <strong>title</strong> in the home page"
+#~ msgid "Get the meta title tag in the front-end"
+#~ msgstr "fügt den richtigen <strong>Titel</strong> in die Startseite ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "On-Page SEO"
+#~ msgstr "Bilder"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Activate Squirrly SEO Title Now"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Activate the Sitemap from Squirrly"
+#~ msgstr "Beschreibung:"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Error detected for your Focus Page"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Focus Pages"
+#~ msgstr "Einstellungen speichern"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Fix all Visibility issues for your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Remove Duplicate Open Graph meta tags"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Twitter"
+#~ msgid "Remove Duplicate Twitter cards tags"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Keyword Research"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Briefcase"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Live Assistant"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Choose less competitive keywords"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Rankings"
+#~ msgstr "Einstellungen speichern"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Add SEO Context Keywords to your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Multiple Keyword Optimization"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Fix SEO Images for your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Add Labels to Keywords in Briefcase"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Add more Ranking Power to your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Define Title and Description for your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimize Twitter Cards for your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid ""
+#~ "Optimize Twitter Cards for your Focus Pages to boost engagement and "
+#~ "traffic."
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimize Open Graph for your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimize Rich Snippets for your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Prepare Full Google Search Console Connection"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Need Help Connecting Google Search Console? %sClick Here%s"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Connect Google Analytics Data to Squirrly"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Need Help Connecting Google Analytics? %sClick Here%s"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Raise Audit Score to Over 30%"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Audits"
+#~ msgstr "Squirrly Einstellungen"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Reach 3 Inner Links for all your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Add more ranking power to your Focus Pages."
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "No Duplicate Titles"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "No Duplicate Descriptions"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "No Empty Titles"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "No Empty Descriptions"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "Improve SEO Speed"
+#~ msgstr "Bilder"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Reduce Bounce Rate for your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Audit Score is Over 50%"
+#~ msgstr "Squirrly Einstellungen"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Reach 5 Inner Links for all your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Audit Score is Over 70%"
+#~ msgstr "Squirrly Einstellungen"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Get 10 Backlinks to your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "You got better Traffic to your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "You got better Ranking to your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "You got better Time On Page to your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "You got better Authority to your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "You got better Social Signals to your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "You got better Loading Speed to your Focus Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Could not verify the frontend."
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid ""
+#~ "Upgrade your account to be able to see all the Focus Pages you added."
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Keyword"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "SEO Software"
+#~ msgid "SEO Content"
+#~ msgstr "SEO Software"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Words / Page"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Snippet"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "SEO Image"
+#~ msgstr "Bilder"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Insert it!"
+#~ msgid "Inner Links"
+#~ msgstr "Einfügen!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "File type error: Only JPEG, JPG, GIF or PNG files are allowed."
+#~ msgid "File type error: Only ICO, JPEG, JPG, GIF or PNG files are allowed."
+#~ msgstr "Dateityp Fehler: Nur JPEG, JPG, GIF oder PNG-Dateien sind erlaubt."
+
+# @ squirrly-seo
+#~ msgid "Delete error: Could not delete the old favicon."
+#~ msgstr "Lösch Fehler: Konnte das alte Favicon nicht löschen."
+
+# @ squirrly-seo
+#~ msgid "Upload error: Could not upload the favicon."
+#~ msgstr "Upload Fehler: Konnte das Favicon nicht hochladen."
+
+# @ squirrly-seo
+#~ msgid "Permission error: Could not change the favicon permissions."
+#~ msgstr "Permission Fehler: Konnte Favicon-Berechtigungen nicht ändern."
+
+# @ squirrly-seo
+#~ msgid ""
+#~ "ICO Error: Could not create the ICO from file. Try with another file type."
+#~ msgstr ""
+#~ "ICO Fehler: konnte ICO aus der Datei nicht erstellen. Versuchen Sie es "
+#~ "mit einem anderen Dateityp."
+
+# @ squirrly-seo
+#~ msgid "The favicon has been updated."
+#~ msgstr "Das Favicon wurde aktualisiert."
+
+# @ squirrly-seo
+#~ msgid "Keyword:"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#~ msgid "date"
+#~ msgstr "Datum"
+
+# @ squirrly-seo
+#~ msgid "Read it!"
+#~ msgstr "Lesen!"
+
+# @ squirrly-seo
+#~ msgid "Insert it!"
+#~ msgstr "Einfügen!"
+
+# @ squirrly-seo
+#~ msgid "Reference"
+#~ msgstr "Referenz"
+
+# @ squirrly-seo
+#~ msgid "Insert as box"
+#~ msgstr "Als Box einfügen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Insert it!"
+#~ msgid "Insert Link"
+#~ msgstr "Einfügen!"
+
+# @ squirrly-seo
+#~ msgid "Not relevant?"
+#~ msgstr "Nicht relevant?"
+
+# @ squirrly-seo
+#~ msgid "Insert in your article"
+#~ msgstr "In Artikel einfügen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "An error occured while logging in!"
+#~ msgid ":( An error occurred while processing your request. Please try again"
+#~ msgstr "Bei der Anmeldung ist ein Fehler aufgetreten!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Searching ... "
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#~ msgid "No results found!"
+#~ msgstr "Keine Ergebnisse gefunden!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "No known copyright restrictions"
+#~ msgstr "Beschreibung:"
+
+#~ msgid ""
+#~ "You haven`t used Squirrly SEO to optimize your article. Do you want to "
+#~ "optimize for a keyword before publishing?"
+#~ msgstr ""
+#~ "You haven`t used Squirrly SEO to optimize your article. Do you want to "
+#~ "optimize for a keyword before publishing?"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "There are no keywords saved in briefcase yet"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "write %s more words"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Insert in your article"
+#~ msgid "Add the keyword in the %s of your article"
+#~ msgstr "In Artikel einfügen"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Use more words in one keyword"
+#~ msgid "Write more words after the %s keyword"
+#~ msgstr "Verwenden Sie mehrere Wörter in einem Schlüsselwort"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "+ Add keyword"
+#~ msgid "add %s more word(s)"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "+ Add keyword"
+#~ msgid "or remove %s word(s)"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "write %s more words to start calculating"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Add to Briefcase"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Add Keyword to Briefcase"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "Select"
+#~ msgstr "Bilder"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "automatically"
+#~ msgid "Auto Draft"
+#~ msgstr "automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Enter a keyword above!"
+#~ msgid "Enter keyword above and press ENTER"
+#~ msgstr "Geben Sie oben ein Schlüsselwort ein!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Add Keywords from Briefcase"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Go to Profile"
+#~ msgid "All Features"
+#~ msgstr "Zum Profil"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Bulk SEO"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "automatically"
+#~ msgid "Automation"
+#~ msgstr "automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "automatically"
+#~ msgid "SEO Configuration"
+#~ msgstr "automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Support"
+#~ msgid "Import & Data"
+#~ msgstr "Support"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "automatically"
+#~ msgid "SEO Audit"
+#~ msgstr "automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Google Rankings"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Onboarding"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly.co Login"
+#~ msgid "Account Info"
+#~ msgstr "Squirrly.co Login"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "How To & Support"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Audit"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Go to Profile"
+#~ msgid "Main Features"
+#~ msgstr "Zum Profil"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Find Keywords"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Labels"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "History"
+#~ msgstr "Squirrly Einstellungen"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimize Posts"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Settings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Add New Page"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Add Keywords"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Sync Keywords"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Connecting ..."
+#~ msgid "Configuration"
+#~ msgstr "Verbinden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Advanced"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Change the Website Icon"
+#~ msgid "Website Icon"
+#~ msgstr "Ändern Sie das Website-Symbol"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Advanced Settings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "SEO Metas"
+#~ msgstr "Bilder"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "More SEO Settings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Social Media"
+#~ msgstr "Einstellungen speichern"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Open Graph Settings"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Twitter Card Settings"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Social Media Accounts"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Rich Snippets"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "automatically"
+#~ msgid "GEO Location"
+#~ msgstr "automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "More Json-LD Settings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Connecting ..."
+#~ msgid "Connect Tools"
+#~ msgstr "Verbinden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Place Trackers"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Bing META code (for %sWebmaster Tool%s )`:"
+#~ msgid "Webmaster Extras"
+#~ msgstr "Bing META Code (für %sWebmaster Tool%s )`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Import Settings & SEO"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Backup Settings & SEO"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Restore Settings & SEO"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Blogs"
+#~ msgid "Blogging"
+#~ msgstr "Blogs"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Blogs"
+#~ msgid "Blogging overwiew"
+#~ msgstr "Blogs"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "On-Page optimization"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Keyword with 2 or more words"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Keyword is present in the URL"
+#~ msgstr "Schlüsselwort:"
+
+#, fuzzy, php-format
+#~| msgid "Optimize for Keyword"
+#~ msgid "Over Optimization %s"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Title:"
+#~ msgid "Title"
+#~ msgstr "Titel:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Keywords are used in Title"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Tips: Length 70-255 chars"
+#~ msgid "Title length is between 10-75 chars"
+#~ msgstr "Tipp: Länge 70-255 Charaktere"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "SEO Software"
+#~ msgid "Content"
+#~ msgstr "SEO Software"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Could not send the email..."
+#~ msgid "Bold one of the keywords %s"
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Keywords used in headline"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Optimize it with Squirrly Live Assistant"
+#~ msgstr "Einstellungen speichern"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimize it with SLA"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Snippet optimized"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Edit Snippet"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Squirrly SEO Editor"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Squirrly SEO Admin"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Error! Could not save the data."
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Couldn't find the page"
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Keywords"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Squirrly Live Assistant Optimization"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "No Meta Keyword Found"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Title not empty"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Current Title"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Tips: Length 10-70 chars"
+#~ msgid "Title up to %s chars"
+#~ msgstr "Tipp: Länge 10-70 Charaktere"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Current Title Length"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Keyword in title"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Snippet Keyword"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "no keywords"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Description not empty"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Current Description"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Description:"
+#~ msgid "Description up to %s chars"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Current Description Length"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Competition:"
+#~ msgid "Keyword in description"
+#~ msgstr "Wettbewerb:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Meta Keywords (2-4 Words)"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Enter a keyword"
+#~ msgid "no meta keywords"
+#~ msgstr "Ein Schlüsselwort eingeben"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Current Link"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "<< Leave it automatically"
+#~ msgid "Some Squirrly Metas are deactivated."
+#~ msgstr "<< Lass es automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "<< Leave it automatically"
+#~ msgid "Some Squirrly Metas are generated automatically."
+#~ msgstr "<< Lass es automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "<< Leave it automatically"
+#~ msgid "All Squirrly Metas are customized and set correctly."
+#~ msgstr "<< Lass es automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Squirrly Snippet is deactivated from this post."
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+#, fuzzy, php-format
+#~| msgid "Optimize for Keyword"
+#~ msgid "Meta Title is deactivated from %s SEO Configuration > Metas %s."
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy, php-format
+#~| msgid "Optimize for Keyword"
+#~ msgid "SEO Metas is deactivated from %s SEO Configuration > Metas %s."
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "<< Leave it automatically"
+#~ msgid "Title is generated automatically."
+#~ msgstr "<< Lass es automatisch"
+
+#, fuzzy, php-format
+#~| msgid "Optimize for Keyword"
+#~ msgid "Meta Keywords is deactivated from %s SEO Configuration > Metas %s."
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy, php-format
+#~| msgid "Optimize for Keyword"
+#~ msgid ""
+#~ "Meta Description is deactivated from %s SEO Configuration > Metas %s."
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "<< Leave it automatically"
+#~ msgid "Description is generated automatically."
+#~ msgstr "<< Lass es automatisch"
+
+#, fuzzy, php-format
+#~| msgid "Optimize for Keyword"
+#~ msgid "Meta Canonical is deactivated from %s SEO Configuration > Metas %s."
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "OG title not empty"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Tips: Length 10-70 chars"
+#~ msgid "OG title up to %s chars"
+#~ msgstr "Tipp: Länge 10-70 Charaktere"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "OG description not empty"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Description:"
+#~ msgid "OG description up to %s chars"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "OG Image"
+#~ msgstr "Bilder"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "<< Leave it automatically"
+#~ msgid "Open Graph is deactivated."
+#~ msgstr "<< Lass es automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "<< Leave it automatically"
+#~ msgid "Open Graph is generated automatically."
+#~ msgstr "<< Lass es automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "<< Leave it automatically"
+#~ msgid "Open Graph is customized and set correctly."
+#~ msgstr "<< Lass es automatisch"
+
+#, fuzzy, php-format
+#~| msgid "Optimize for Keyword"
+#~ msgid ""
+#~ "Open Graph is deactivated from %s SEO Configuration > Social Media %s."
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "TC title not empty"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Tips: Length 10-70 chars"
+#~ msgid "TC title up to %s chars"
+#~ msgstr "Tipp: Länge 10-70 Charaktere"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "TC Description not empty"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Description:"
+#~ msgid "TC description up to %s chars"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "TC Image"
+#~ msgstr "Bilder"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Twitter Card is deactivated."
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "<< Leave it automatically"
+#~ msgid "Twitter Card is generated automatically."
+#~ msgstr "<< Lass es automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "<< Leave it automatically"
+#~ msgid "Twitter Card is customized and set correctly."
+#~ msgstr "<< Lass es automatisch"
+
+#, fuzzy, php-format
+#~| msgid "Optimize for Keyword"
+#~ msgid ""
+#~ "Twitter Card for this post type is deactivated from %s Automation > "
+#~ "Configuration %s."
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy, php-format
+#~| msgid "Optimize for Keyword"
+#~ msgid ""
+#~ "Twitter Card is deactivated from %s SEO Configuration > Social Media %s."
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Enter your email"
+#~ msgid "Add page in sitemap"
+#~ msgstr "In Artikel einfügen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Current Redirect"
+#~ msgstr "Beschreibung:"
+
+#, fuzzy, php-format
+#~| msgid "Optimize for Keyword"
+#~ msgid "Robots Meta is deactivated from %s SEO Configuration > SEO Metas %s."
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy, php-format
+#~| msgid "Optimize for Keyword"
+#~ msgid "SEO Metas is deactivated from %s SEO Configuration > SEO Metas %s."
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "Page"
+#~ msgstr "Bilder"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Connect Google Search"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Squirrly settings"
+#~ msgid "Audit score is over %s"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "No duplicate titles"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "No duplicate description"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "No empty titles"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "No empty descriptions"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "SEO speed"
+#~ msgstr "Bilder"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "automatically"
+#~ msgid "Go to Audit"
+#~ msgstr "automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Note! The audit is not ready yet"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Squirrly settings"
+#~ msgid "Authority over %s"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Tool for Search Engines"
+#~ msgid "Clicks from Search Engine in the last 3 months"
+#~ msgstr "Tool für Suchmaschinen"
+
+# @ squirrly-seo
+#~ msgid "Do a research"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "No Keyword found in Squirrly Live Assistant"
+#~ msgstr "Einstellungen speichern"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimize for a keyword"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Connect to Google Search Console."
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+#, fuzzy, php-format
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimize to %s"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Snippet is green"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimize for this"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Keyword in filename"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "No results found!"
+#~ msgid "No image found"
+#~ msgstr "Keine Ergebnisse gefunden!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Tool for Search Engines"
+#~ msgid "Search Results Impressions in the last 3 months"
+#~ msgstr "Tool für Suchmaschinen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "no restrictions"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Enter your email"
+#~ msgid "Present in sitemap"
+#~ msgstr "In Artikel einfügen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "adds <strong>canonical</strong> link in home page"
+#~ msgid "Canonical link"
+#~ msgstr "fügt den richtigen <strong>canonical</strong> in die Startseite ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Canonical"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "No Canonical"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Post URL"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Blogs"
+#~ msgid "Build with Blogging Assistant"
+#~ msgstr "Blogs"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Competition:"
+#~ msgid "Keyword Competition"
+#~ msgstr "Wettbewerb:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Enter a keyword"
+#~ msgid "Find Better Keywords"
+#~ msgstr "Ein Schlüsselwort eingeben"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "No Keyword Found"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Write %s words"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "words"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Edit Page"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Connect to Google Analytics first."
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Connect Google Analytics first."
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Enter your email"
+#~ msgid "Enhance your sitemap"
+#~ msgstr "In Artikel einfügen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "automatically"
+#~ msgid "SEO Automation activated"
+#~ msgstr "automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Go to SEO Configuration"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Description"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Competition:"
+#~ msgid "Keyword %s must be present in Description"
+#~ msgstr "Wettbewerb:"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Open Graph - full definition"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Twitter Cards - full definition"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "JSON-LD definition"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Customized"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "Image"
+#~ msgstr "Bilder"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Go to Social Media Settings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "Add keyword to Briefcase"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "Great! The keyword exists in Briefcase"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "The keyword does not exist in Briefcase"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "SEO Software"
+#~ msgid "Add SEO Context"
+#~ msgstr "SEO Software"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Google Analytics is incorrect."
+#~ msgid "Just one Google Analytics tracking code"
+#~ msgstr "Der Code für Google Analytics ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Connect Google Analytics first"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Squirrly SEO Robots"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "No Squirrly SEO Robots found."
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Optimize with Squirrly Live Assistant"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Add New"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Live Assistant Settings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Options"
+#~ msgid "Squirrly Tooltips"
+#~ msgstr "Squirrly Optionen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Download Remote Images"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Show only Copyright Free images"
+#~ msgid "Show Copyright Free Images"
+#~ msgstr "Nur urheberrechtfreie Bilder zeigen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Activate Live Assistant in Frontend"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Live Assistant Type"
+#~ msgstr "Einstellungen speichern"
+
+#, fuzzy
+#~| msgid "Recent discussions:"
+#~ msgid "Exclusions"
+#~ msgstr "Bisherige Diskussionen:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Save Settings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "Search Post"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Show All"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Send Question"
+#~ msgid "See Audits"
+#~ msgstr "Senden Sie Ihre Frage"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Next"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Your E-mail:"
+#~ msgid "Audit - Details"
+#~ msgstr "Ihre E-Mail Adresse:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Audit Pages"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Show only Copyright Free images"
+#~ msgid "Show Only Completed Tasks"
+#~ msgstr "Nur urheberrechtfreie Bilder zeigen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Show only Copyright Free images"
+#~ msgid "Show Only Incompleted Tasks"
+#~ msgstr "Nur urheberrechtfreie Bilder zeigen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Could not create the audit for this URL"
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Inspect URL"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Do you want to delete the Audit Page?"
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Audited pages"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Welcome to SEO Audits"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Audit Score"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Your audit score is"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Your E-mail:"
+#~ msgid "Audit Date"
+#~ msgstr "Ihre E-Mail Adresse:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "In progress"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Audit in progress"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Audit not ready yet"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "On-Page"
+#~ msgstr "Bilder"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "Off-Page"
+#~ msgstr "Bilder"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "No results found!"
+#~ msgid "No progress found yet"
+#~ msgstr "Keine Ergebnisse gefunden!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Audit History"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Send Question"
+#~ msgid "Compare Audits"
+#~ msgstr "Senden Sie Ihre Frage"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "Page(s)"
+#~ msgstr "Bilder"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "pages"
+#~ msgstr "Bilder"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "automatically"
+#~ msgid "Show Audit"
+#~ msgstr "automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "SEO Audits"
+#~ msgstr "Bilder"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Squirrly Inspect URL"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Audit - Compare"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Audit Settings"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Your E-mail:"
+#~ msgid "Audit Email"
+#~ msgstr "Ihre E-Mail Adresse:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "automatically"
+#~ msgid "Automation - Configurations"
+#~ msgstr "automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Tips: Length 10-70 chars"
+#~ msgid "Recommended Length: 10-75 chars"
+#~ msgstr "Tipp: Länge 10-70 Charaktere"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Tips: Length 10-70 chars"
+#~ msgid "Recommended Length: 70-320 chars"
+#~ msgstr "Tipp: Länge 10-70 Charaktere"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Default Redirect URL"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Load Squirrly SEO METAs"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Load Squirrly Patterns"
+#~ msgstr "Squirrly Einstellungen"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "JSON-LD Type"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Load Squirrly Open Graph"
+#~ msgstr "Squirrly Einstellungen"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Open Graph Type"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Google Analytics is incorrect."
+#~ msgid "Select which Open Graph type to load for this post type."
+#~ msgstr "Der Code für Google Analytics ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Load Squirrly Twitter Card"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Google Analytics is incorrect."
+#~ msgid "Let Squirrly SEO load the Twitter Card for this post type."
+#~ msgstr "Der Code für Google Analytics ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Google Analytics is incorrect."
+#~ msgid "Load Google Analytics Tracking Script"
+#~ msgstr "Der Code für Google Analytics ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Google Analytics is incorrect."
+#~ msgid "Let Google Analytics Tracking to load for this post type."
+#~ msgstr "Der Code für Google Analytics ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Load Facebook Pixel Tracking Script"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Google Analytics is incorrect."
+#~ msgid "Let Facebook Pixel Tracking to load for this post type."
+#~ msgstr "Der Code für Google Analytics ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Squirrly Patterns"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "META Lengths"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Title Length"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Description Length"
+#~ msgstr "Beschreibung:"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Open Graph Title Length"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Open Graph Description Length"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Twitter"
+#~ msgid "Twitter Card Title Length"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Twitter Card Description Length"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "JSON-LD Title Length"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "JSON-LD Description Length"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "automatically"
+#~ msgid "All the post types are sent for Automation"
+#~ msgstr "automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "automatically"
+#~ msgid "Start Automation Setup"
+#~ msgstr "automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Keywords Lookups"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Focus Pages Lookup"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Audit Pages Lookup"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly.co Login"
+#~ msgid "Upgrade your account"
+#~ msgstr "Squirrly.co Login"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Plugin Support"
+#~ msgid "Billing info"
+#~ msgstr "Plugin Support"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Account settings"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Squirrly Cloud"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#~ msgid "Support"
+#~ msgstr "Support"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Keyword Research Mastery Tasks"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Live Assistant Mastery Tasks"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "automatically"
+#~ msgid "Automation Mastery Tasks"
+#~ msgstr "automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Audit Mastery Tasks"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Squirrly SEO Main Features"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Do you want to search in the 650 features list?"
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Do you want to see all 650 features list?"
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Search Feature"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Go to Profile"
+#~ msgid "see feature"
+#~ msgstr "Zum Profil"
+
+#, fuzzy
+#~| msgid "This email connects you to Squirrly.co"
+#~ msgid "connect to cloud"
+#~ msgstr "This email connects you to Squirrly.co"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "already active"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Change the Website Icon"
+#~ msgid "activate feature"
+#~ msgstr "Ändern Sie das Website-Symbol"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Add a page in Focus Pages"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Click to Close Squirrly Live Assistant"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Squirrly Briefcase"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Loading"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Loading the keyword"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "Add a keyword from Briefcase"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "SLA Score"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "date"
+#~ msgid "Update"
+#~ msgstr "Datum"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Search in Briefcase ..."
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "SEO Software"
+#~ msgid "Continue"
+#~ msgstr "SEO Software"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Blogs"
+#~ msgid "Squirrly Blogging Assistant"
+#~ msgstr "Blogs"
+
+# @ squirrly-seo
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#~ msgid "Wiki"
+#~ msgstr "Wiki"
+
+# @ squirrly-seo
+#~ msgid "Blogs"
+#~ msgstr "Blogs"
+
+# @ squirrly-seo
+#~ msgid "My articles"
+#~ msgstr "Meine Artikel"
+
+# @ squirrly-seo
+#~ msgid "Show only Copyright Free images"
+#~ msgstr "Nur urheberrechtfreie Bilder zeigen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Squirrly Focus Pages"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Set Focus Pages"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Email:"
+#~ msgid "Email"
+#~ msgstr "Ihre E-Mail Adresse:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Password:"
+#~ msgid "Password"
+#~ msgstr "Passwort:"
+
+# @ squirrly-seo
+#~ msgid "Register to Squirrly.co"
+#~ msgstr "Bei Squirrly.co registrieren"
+
+# @ squirrly-seo
+#~ msgid "Lost password?"
+#~ msgstr "Passwort vergessen?"
+
+# @ squirrly-seo
+#~ msgid "Lost password"
+#~ msgstr "Passwort vergessen"
+
+# @ squirrly-seo
+#~ msgid "Login"
+#~ msgstr "Login"
+
+#~ msgid "Sign Up"
+#~ msgstr "Anmelden"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Activate Metas"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Refresh"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Save"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Activate Title"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Tips: Length 10-70 chars"
+#~ msgid "Tips: Length %s-%s chars"
+#~ msgstr "Tipp: Länge 10-70 Charaktere"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Default Title"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Activate Description"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Meta Description"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Default Description"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Activate Keywords"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Meta Keywords"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#~ msgid "+ Add keyword"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Activate Canonical"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Default Link"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Activate Squirrly Snippet for this page"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Twitter"
+#~ msgid "Post Type"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Active"
+#~ msgstr "Schlüsselwörter:"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "JSON-LD Code"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "date"
+#~ msgid "Validate JSON-LD"
+#~ msgstr "Datum"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Edit Open Graph"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "Media Image"
+#~ msgstr "Bilder"
+
+# @ squirrly-seo
+#~ msgid "Upload"
+#~ msgstr "Hochladen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Twitter"
+#~ msgid "Edit Twitter Card"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Activate Robots Meta"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Activate Sitemap"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Activate Redirects"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Loading Squirrly Snippet ..."
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Enable Squirrly SEO to load Squirrly Snippet"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "SEO Expert"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Deactivate"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "This email connects you to Squirrly.co"
+#~ msgid "Disconnect from Squirrly Cloud"
+#~ msgstr "This email connects you to Squirrly.co"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Search Keyword"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Your E-mail:"
+#~ msgid "3. Read Task Details"
+#~ msgstr "Ihre E-Mail Adresse:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Google Analytics"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Google Analytics is incorrect."
+#~ msgid "You are connected to Google Analytics"
+#~ msgstr "Der Code für Google Analytics ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Connecting ..."
+#~ msgid "Disconnect"
+#~ msgstr "Verbinden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Connect this site to Google Analytics"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+#, fuzzy
+#~| msgid "Sign Up"
+#~ msgid "Sign in"
+#~ msgstr "Anmelden"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Connecting ..."
+#~ msgid "Check connection"
+#~ msgstr "Verbinden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Google Search Console"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "You are connected to Google Search Console"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Connect this site to Google Search Console"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+#, fuzzy
+#~| msgid "This email connects you to Squirrly.co"
+#~ msgid "Connect Your Site to Squirrly Cloud"
+#~ msgstr "This email connects you to Squirrly.co"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Set Focus Page"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Send Question"
+#~ msgid "See Tasks"
+#~ msgstr "Senden Sie Ihre Frage"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Your E-mail:"
+#~ msgid "Audited"
+#~ msgstr "Ihre E-Mail Adresse:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Your E-mail:"
+#~ msgid "Details"
+#~ msgstr "Ihre E-Mail Adresse:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Change it >>"
+#~ msgid "Chance to Rank"
+#~ msgstr "Ändern >>"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Do you want to delete the Focus Page?"
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Remove Focus Page"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Change it >>"
+#~ msgid "Chances of Ranking"
+#~ msgstr "Ändern >>"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Keyword Ranking"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Show All Focus Pages"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Refresh Filter"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Welcome to Focus Pages"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Focus Pages Details"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Focus Pages Settings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Change the Website Icon"
+#~ msgid "Website SEO Check"
+#~ msgstr "Ändern Sie das Website-Symbol"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Send Question"
+#~ msgid "See results"
+#~ msgstr "Senden Sie Ihre Frage"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Do you want to ignore this goal?"
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "What will be activated"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Squirrly Sitemap XML"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Sitemaps XML"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Home Page"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Google News"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "Pages"
+#~ msgstr "Bilder"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Custom Posts"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "SEO METAs"
+#~ msgstr "Bilder"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimize the Titles"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Optimize Descriptions"
+#~ msgstr "Beschreibung:"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimize Keywords"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "adds <strong>canonical</strong> link in home page"
+#~ msgid "Add Canonical Meta Link"
+#~ msgstr "fügt den richtigen <strong>canonical</strong> in die Startseite ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "adds <strong>canonical</strong> link in home page"
+#~ msgid "Add the Dublin Core meta in the page header."
+#~ msgstr "fügt den richtigen <strong>canonical</strong> in die Startseite ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "Share Large Images"
+#~ msgstr "Bilder"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "SEO Software"
+#~ msgid "Save & Continue"
+#~ msgstr "SEO Software"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "Page Selected"
+#~ msgstr "Bilder"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Twitter"
+#~ msgid "Twitter Profile URL"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Facebook Profile or Page URL"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Twitter"
+#~ msgid "LinkedIn Profile URL"
+#~ msgstr "Twitter"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "JSON-LD Schema"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "JSON-LD Type: "
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Images"
+#~ msgid "Select Image"
+#~ msgstr "Bilder"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Short Description"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Country"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Support"
+#~ msgid "Technical Support"
+#~ msgstr "Support"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Plugin Support"
+#~ msgid "Billing Support"
+#~ msgstr "Plugin Support"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Reservations"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Support"
+#~ msgid "Credit Card Support"
+#~ msgstr "Support"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Baggage Tracking"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Roadside Assistance"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Package Tracking"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Title:"
+#~ msgid "Job Title"
+#~ msgstr "Titel:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "GEO Settings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Accept Reservations"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "SEO Expert: Start Here"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Google Search Console Keywords Sync"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Average Position"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "AVG Position"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Already in Rank Checker"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Welcome to Google Search Console Keywords Sync"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Today Avg. Ranking"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Ar you sure you want to delete the keyword?"
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Delete"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Refresh Serp"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Rank"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Avg Rank"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Google Search Console has no data for this keyword"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Your E-mail:"
+#~ msgid "rank details"
+#~ msgstr "Ihre E-Mail Adresse:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Remove Keyword"
+#~ msgstr "Schlüsselwort:"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimized with SLA"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Facebook Shares"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "No results found!"
+#~ msgid "No ranking found."
+#~ msgstr "Keine Ergebnisse gefunden!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Welcome to Squirrly Rankings"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "Add keywords in Briefcase"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Rankings Settings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Google Country"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Google Language"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Send to Rankings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Assign Label"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Ar you sure you want to delete the keywords?"
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+#, fuzzy, php-format
+#~| msgid "Optimize for Keyword"
+#~ msgid "Select Labels for: %s"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "selected keywords"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Add new Label"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Save Labels"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "Search"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "Search Volume"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "Research"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Check Rankings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "keyword info"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "No research data"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Refresh Research"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Delete Keyword"
+#~ msgstr "Schlüsselwort:"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimized with"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "No results found!"
+#~ msgid "not found"
+#~ msgstr "Keine Ergebnisse gefunden!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Competition:"
+#~ msgid "Competition"
+#~ msgstr "Wettbewerb:"
+
+#, fuzzy
+#~| msgid "Recent discussions:"
+#~ msgid "Recent discussions"
+#~ msgstr "Bisherige Diskussionen:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Go to Profile"
+#~ msgid "Welcome to Briefcase"
+#~ msgstr "Zum Profil"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Go Find New Keywords"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do more research!"
+#~ msgid "Research History"
+#~ msgstr "Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "See the Keyword Researches you made in the last 30 days"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Show All Keywords"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Welcome to Keyword Research History"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+#, fuzzy
+#~| msgid "Recent discussions:"
+#~ msgid "Discussion"
+#~ msgstr "Bisherige Diskussionen:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Already in briefcase"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Add to briefcase"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Add New Label"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Add Label"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Your E-mail:"
+#~ msgid "Edit Label"
+#~ msgstr "Ihre E-Mail Adresse:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Save Label"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Ar you sure you want to delete the labels?"
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keyword:"
+#~ msgid "Delete Label"
+#~ msgstr "Schlüsselwort:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Go to Profile"
+#~ msgid "Welcome to Briefcase Labels"
+#~ msgstr "Zum Profil"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Add label to organize the keywords in Briefcase"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "You've reached your Keyword Research Limit"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly.co Login"
+#~ msgid "Check Your Account"
+#~ msgstr "Squirrly.co Login"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Select country"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "researches left"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Keyword Research Suggestions"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Keyword Research - Suggestions"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ default
+#, fuzzy
+#~| msgid "Squirrly could not find any results for: "
+#~ msgid "Select up to 3 similar keywords and start the research"
+#~ msgstr "Squirly hat keine Suchergebnisse gefunden für:"
+
+# @ default
+#, fuzzy, php-format
+#~| msgid "Squirrly could not find any results for: "
+#~ msgid "We could not find similar keywords. %sClick on 'Do research'"
+#~ msgstr "Squirly hat keine Suchergebnisse gefunden für:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "Do research"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "Do a deep research (up to 50 results)"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid ""
+#~ "You can do Deep Keyword Research and get up to 50 results on each "
+#~ "research."
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Keyword Research Results"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Send Question"
+#~ msgid "Preparing the results."
+#~ msgstr "Senden Sie Ihre Frage"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Keyword Research - Results"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ default
+#, fuzzy
+#~| msgid "Squirrly could not find any results for: "
+#~ msgid "Step 4/4: We could not find relevant keywords for you"
+#~ msgstr "Squirly hat keine Suchergebnisse gefunden für:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Use this keyword"
+#~ msgid "Suggested Keywords"
+#~ msgstr "Dieses Schlüsselwort verwenden"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Use this keyword"
+#~ msgid "Welcome to Suggested Keywords"
+#~ msgstr "Dieses Schlüsselwort verwenden"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "Until then, add keywords in Briefcase"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Import Settings From"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Import Settings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "for Squirrly Live SEO optimization"
+#~ msgid "Note! It will overwrite the settings you set in Squirrly SEO."
+#~ msgstr "Live-SEO-Optimierung für Squirrly"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Import SEO From"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Import SEO"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "for Squirrly Live SEO optimization"
+#~ msgid "Overwrite all existing SEO Snippets optimizations"
+#~ msgstr "Live-SEO-Optimierung für Squirrly"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Backup Settings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "for Squirrly Live SEO optimization"
+#~ msgid "Download all the settings from Squirrly SEO."
+#~ msgstr "Live-SEO-Optimierung für Squirrly"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Backup SEO"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "for Squirrly Live SEO optimization"
+#~ msgid "Download all the Squirrly SEO Snippet optimizations."
+#~ msgstr "Live-SEO-Optimierung für Squirrly"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Backup Briefcase"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Download all Briefcase Keywords."
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Restore Settings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Restore SEO"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "for Squirrly Live SEO optimization"
+#~ msgid ""
+#~ "Upload the SQL file with the saved Squirrly SEO snippet optimizations."
+#~ msgstr "Live-SEO-Optimierung für Squirrly"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Restore Keywords"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Install Squirrly SEO"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Activate SEO Snippet in Frontend"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Default Open Graph Image"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Facebook Share Language"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Facebook App ID"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Facebook Admin ID"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Add multiple Facebook Admin IDs"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Twitter"
+#~ msgid "Default Twitter Card Image"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Enter your email"
+#~ msgid "Tweaks And Sitemap"
+#~ msgstr "In Artikel einfügen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Blogs"
+#~ msgid "Blogging Frequency"
+#~ msgstr "Blogs"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Deactivated from SEO Automation."
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "SEO Links & Redirects"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Upload file:"
+#~ msgid "Upload file"
+#~ msgstr "Datei hochladen:"
+
+# @ squirrly-seo
+#~ msgid ""
+#~ "If you don't see the new icon in your browser, empty the browser cache "
+#~ "and refresh the page."
+#~ msgstr ""
+#~ "Wenn Sie das neue Icon nicht in Ihrem Browser sehen, leeren Sie den "
+#~ "Browser-Cache und aktualisieren Sie die Seite."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "File types: JPG, JPEG, GIF and PNG."
+#~ msgid "Accepted file types: JPG, JPEG, GIF and PNG."
+#~ msgstr "Dateitypen: JPG, JPEG, GIF und PNG."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Load Squirrly Frontend CSS"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Minify Squirrly SEO Metas"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Squirrly SEO Late Buffer"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Plugin Support"
+#~ msgid "Multilingual Support"
+#~ msgstr "Plugin Support"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Delete Squirrly SEO Table on Uninstall"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Connect to Google Analytics"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Connect to Google Search Console"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Google Analytics ID"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Google Analytics is incorrect."
+#~ msgid "Google Tracking Mode"
+#~ msgstr "Der Code für Google Analytics ist falsch."
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "%sNeed Help Connecting Google Analytics?%s"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Facebook Pixel"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Google META verification code for %sWebmaster Tool%s`:"
+#~ msgid ""
+#~ "Add the Google META verification code to connect to %sGoogle Search "
+#~ "Console%s"
+#~ msgstr "Google META Bestätigungs-Code für %sWebmaster Tool%s`:"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "%sNeed Help Connecting Google Search Console?%s"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Track IP addresses in Google Analytics"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Bing META code (for %sWebmaster Tool%s )`:"
+#~ msgid "Bing Webmaster Tools"
+#~ msgstr "Bing META Code (für %sWebmaster Tool%s )`:"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Google META verification code for %sWebmaster Tool%s`:"
+#~ msgid ""
+#~ "Add the Bing META verification code to connect to %sBing Webmaster Tool%s"
+#~ msgstr "Google META Bestätigungs-Code für %sWebmaster Tool%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Bing META code (for %sWebmaster Tool%s )`:"
+#~ msgid "Baidu Webmaster Tools"
+#~ msgstr "Bing META Code (für %sWebmaster Tool%s )`:"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Google META verification code for %sWebmaster Tool%s`:"
+#~ msgid ""
+#~ "Add the Baidu META verification code to connect to %sBaidu Webmaster "
+#~ "Tool%s"
+#~ msgstr "Google META Bestätigungs-Code für %sWebmaster Tool%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Change the Website Icon"
+#~ msgid "Yandex Webmaster Code"
+#~ msgstr "Ändern Sie das Website-Symbol"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Google META verification code for %sWebmaster Tool%s`:"
+#~ msgid ""
+#~ "Add the Yandex META verification code to connect to %sYandex Webmaster "
+#~ "Tool%s"
+#~ msgstr "Google META Bestätigungs-Code für %sWebmaster Tool%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Squirrly SEO (Peaks)"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Squirrly"
+#~ msgstr "Squirrly Einstellungen"
+
+#, fuzzy
+#~| msgid "This email connects you to Squirrly.co"
+#~ msgid "Connect Squirrly Cloud & Website API"
+#~ msgstr "This email connects you to Squirrly.co"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Connecting ..."
+#~ msgid "Connect"
+#~ msgstr "Verbinden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Connecting ..."
+#~ msgid "disconnect"
+#~ msgstr "Verbinden ..."
+
+# @ squirrly-seo
+#~ msgid "Use this keyword"
+#~ msgstr "Dieses Schlüsselwort verwenden"
+
+# @ squirrly-seo
+#~ msgid "Go to Profile"
+#~ msgstr "Zum Profil"
+
+# @ squirrly-seo
+#~ msgid "Profile"
+#~ msgstr "Profil"
+
+# @ squirrly-seo
+#~ msgid "Need Help with Squirrly SEO?"
+#~ msgstr "Brauchen Sie Hilfe mit Squirrly SEO?"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Description:"
+#~ msgid "Facebook %sMessenger%s."
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#~ msgid "How was your Squirrly experience today?"
+#~ msgstr "Wie war Ihre Squirrly Erfahrung heute?"
+
+# @ squirrly-seo
+#~ msgid "How was Squirrly today?"
+#~ msgstr "Wie war Squirrly heute?"
+
+# @ squirrly-seo
+#~ msgid "Send feedback"
+#~ msgstr "Feedback senden"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Thank you! You can send us a happy face tomorow too."
+#~ msgid "Thank you! You can send us a happy face tomorrow too."
+#~ msgstr "Danke! Sie können uns auch morgen ein fröhliches Gesicht senden."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Could not add the demo post."
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid ""
+#~| "Could not send your informations to squirrly. Please register "
+#~| "%smanually%s."
+#~ msgid "Could not send your information to Squirrly. Please try again."
+#~ msgstr ""
+#~ "Konnte Ihre Informationen nicht zu Squirrly senden. Bitte registrieren "
+#~ "%smanually%s."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Activate SEO Automation"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Bulk Seo"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "SEO Settings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Import & Export SEO"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Support"
+#~ msgid "Help & Support"
+#~ msgstr "Support"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "do a keyword research"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Use this keyword"
+#~ msgid "save the best Keywords"
+#~ msgstr "Dieses Schlüsselwort verwenden"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Tips: 2-4 keywords"
+#~ msgid "group keywords"
+#~ msgstr "Tipp: Länge 2-4 Schlüsselwörter"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Enter a keyword"
+#~ msgid "better keywords found"
+#~ msgstr "Ein Schlüsselwort eingeben"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do more research!"
+#~ msgid "keyword research history"
+#~ msgstr "Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "use the Live Assistant"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "live assistant setup"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "all my focus pages"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Go to Profile"
+#~ msgid "See all the SEO audits"
+#~ msgstr "Zum Profil"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Google Analytics is incorrect."
+#~ msgid "See Google ranking"
+#~ msgstr "Der Code für Google Analytics ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Add briefcase keywords"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Sync Keywords from GSC"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Ranking settings"
+#~ msgstr "Einstellungen speichern"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "optimize all pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "patterns & automation"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Change the Website Icon"
+#~ msgid "manage website links"
+#~ msgstr "Ändern Sie das Website-Symbol"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "google analytics, pixel, etc."
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Change the Website Icon"
+#~ msgid "connect to webmasters"
+#~ msgstr "Ändern Sie das Website-Symbol"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Enter your email"
+#~ msgid "setup the sitemap"
+#~ msgstr "In Artikel einfügen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Favicon"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Change the Website Icon"
+#~ msgid "add website icon"
+#~ msgstr "Ändern Sie das Website-Symbol"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Support"
+#~ msgid "Import/Export"
+#~ msgstr "Support"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "import & export SEO"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Advanced SEO Settings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Your E-mail:"
+#~ msgid "website details"
+#~ msgstr "Ihre E-Mail Adresse:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "automatically"
+#~ msgid "build SEO Automation"
+#~ msgstr "automatisch"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "import settings and SEO"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "Search volume"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Google Analytics is incorrect."
+#~ msgid "Google Trend"
+#~ msgstr "Der Code für Google Analytics ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "No results found!"
+#~ msgid "Practice/Test Round"
+#~ msgstr "Keine Ergebnisse gefunden!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Tips: How to use Squirrly Live Assistant?"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Show Advanced Options"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Hide Advanced Options"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Prev Page"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Next Page"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly.co Login"
+#~ msgid "Account Info Unavailable"
+#~ msgstr "Squirrly.co Login"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly.co Login"
+#~ msgid "Check Account Info"
+#~ msgstr "Squirrly.co Login"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Refresh the briefcase"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Close Briefcase"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Go to Profile"
+#~ msgid "Go to Briefcase"
+#~ msgstr "Zum Profil"
+
+# @ squirrly-seo
+#~ msgid "for Squirrly Live SEO optimization"
+#~ msgstr "Live-SEO-Optimierung für Squirrly"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Enter even more keywords."
+#~ msgid "Type in your keyword..."
+#~ msgstr "Geben Sie noch mehrere Schlüsselwörter ein."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do more research!"
+#~ msgid "Do keyword research!"
+#~ msgstr "Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Twitter"
+#~ msgid "Twitter Type"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Deactivate Squirrly SEO"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Support"
+#~ msgid "We Need Your Support"
+#~ msgstr "Support"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Rate us if you like Squirrly"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Show Advanced SEO"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Handled by Squirrly Genius."
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Squirrly Smart Strategy sets new goals."
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimize your Posts and Pages"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Welcome to Squirrly SEO 2021 (Smart Strategy)"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Blogs"
+#~ msgid "Blog/News"
+#~ msgstr "Blogs"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Twitter"
+#~ msgid "Activating %s SEO METAs %s"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Twitter"
+#~ msgid "Activating %s Open Graph %s"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Twitter"
+#~ msgid "Activating %s Twitter Cards %s"
+#~ msgstr "Twitter"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "Enter your email"
+#~ msgid "Creating your %s Sitemap XML %s"
+#~ msgstr "In Artikel einfügen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Save settings"
+#~ msgid "Import SEO & Settings"
+#~ msgstr "Einstellungen speichern"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "What's Included in Squirrly SEO Plugin"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Synchronize Keywords with Google Search Console"
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Trend:"
+#~ msgid "Trending"
+#~ msgstr "Trend:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Welcome to Squirrly Briefcase"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Tips: How to add Keywords in Briefcase?"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Backup/Restore Briefcase Keywords"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Import Keywords"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Restore Briefcase Keywords"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Trend:"
+#~ msgid "Trend"
+#~ msgstr "Trend:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "You need to enter a keyword first"
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "Global Search"
+#~ msgstr "Recherchieren"
+
+# @ default
+#, fuzzy
+#~| msgid "Squirrly could not find any results for: "
+#~ msgid "Step 3/4: Select similar keywords from below"
+#~ msgstr "Squirly hat keine Suchergebnisse gefunden für:"
+
+# @ default
+#, fuzzy
+#~| msgid "Squirrly could not find any results for: "
+#~ msgid "Step 4/4: We found some relevant keywords for you"
+#~ msgstr "Squirly hat keine Suchergebnisse gefunden für:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "+ Add keyword"
+#~ msgid "Already Have Keywords?"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "Import Keywords From CSV"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Activate Json-Ld"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Activate Social Media"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Reinstall Squirrly SEO"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Activate Favicon"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Title & Description Lengths"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Next Step"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Activate SEO Metas"
+#~ msgstr "Schlüsselwörter:"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimize with SEO Patterns"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimize all SEO Snippets"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "Activate Robots"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Squirrly SEO 2021 (Smart Strategy)"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Articles optimized so far"
+#~ msgstr "Schlüsselwort optimieren"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Average optimization"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "do research"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy, php-format
+#~| msgid "+ Add keyword"
+#~ msgid "add %s  more keyword(s)"
+#~ msgstr "Fügen Sie ein anderes Schlüsselwort ein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly settings"
+#~ msgid "Squirrly Onboarding"
+#~ msgstr "Squirrly Einstellungen"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly.co Login"
+#~ msgid "Squirrly Account Info"
+#~ msgstr "Squirrly.co Login"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Activate Facebook Pixel"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Bulk SEO & Snippets"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "JSON-LD Optimizaition"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "The code for Google Analytics is incorrect."
+#~ msgid "Google Analytics Tracking"
+#~ msgstr "Der Code für Google Analytics ist falsch."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Description:"
+#~ msgid "Facebook Pixel Tracking"
+#~ msgstr "Beschreibung:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Change the Website Icon"
+#~ msgid "Favicon Site Icon"
+#~ msgstr "Ändern Sie das Website-Symbol"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Profile"
+#~ msgid "Pro"
+#~ msgstr "Profil"
+
+#, fuzzy, php-format
+#~| msgid "This email connects you to Squirrly.co"
+#~ msgid "%sPlease connect to SquirrlyCloud first%s"
+#~ msgstr "This email connects you to Squirrly.co"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "First Page Optimization"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Google  %sAnalytics ID%s`:"
+#~ msgid "Not recommended if you added your sitemap in Google Search Console."
+#~ msgstr "Google  %sAnalytics ID%s`:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Could not save the data"
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#~ msgid "Plugin Feedback"
+#~ msgstr "Plugin Feedback"
+
+# @ squirrly-seo
+#~ msgid "GD error: The GD library must be installed on your server."
+#~ msgstr ""
+#~ "GD Fehler: Die GD-Bibliothek muss auf dem Server installiert werden."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid " Research"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Email:"
+#~ msgid "Email: "
+#~ msgstr "Ihre E-Mail Adresse:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Send Question"
+#~ msgid "See solution"
+#~ msgstr "Senden Sie Ihre Frage"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "No"
+#~ msgid "Now"
+#~ msgstr "Nein"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Do a research"
+#~ msgid "Do Research"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly LIVE SEO assistant"
+#~ msgid "Bulk SEO & SEO Snippet"
+#~ msgstr "Squirrly LIVE SEO-Assistent"
+
+#, fuzzy
+#~| msgid "Optimize for Keyword"
+#~ msgid "Optimize the page for a keyword"
+#~ msgstr "Schlüsselwort optimieren"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Squirrly Keyword Research"
+#~ msgid "All Keyword Researches performed"
+#~ msgstr "Squirrly Erweiterte Suche!"
+
+# @ squirrly-seo
+#~ msgid "Trend:"
+#~ msgstr "Trend:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Takes too long to check this keyword ..."
+#~ msgid "It's taking too long to check this keyword"
+#~ msgstr "Dauert zu lange, um dieses Schlüsselwort zu überprüfen ..."
+
+# @ squirrly-seo
+#~ msgid "Do a research!"
+#~ msgstr "Erweiterte Suche!"
+
+# @ squirrly-seo
+#~ msgid "Do more research!"
+#~ msgstr "Erweiterte Suche!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Could not send the email..."
+#~ msgid "Could not verify the frontend"
+#~ msgstr "Konnte E-Mail nicht senden ..."
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Keywords:"
+#~ msgid "keywords"
+#~ msgstr "Schlüsselwörter:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Turn off warnings!"
+#~ msgid "errors/warnings"
+#~ msgstr "Warnungen ausschalten!"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Competition:"
+#~ msgid "Competition is low"
+#~ msgstr "Wettbewerb:"
+
+# @ squirrly-seo
+#, fuzzy
+#~| msgid "Please tell us why?"
+#~ msgid "Please tell us why."
+#~ msgstr "Bitte sagen Sie uns, warum?"
+
+# @ squirrly-seo
+#~ msgid ""
+#~ "Function get_class does not exists! Is required for Squirrly to work "
+#~ "properly."
+#~ msgstr ""
+#~ "Funktion Get_class ist nicht vorhanden! Ist erforderlich für Squirrly um "
+#~ "richtig zu arbeiten."
+
+# @ squirrly-seo
+#~ msgid ""
+#~ "Function file_exists does not exists! Is required for Squirrly to work "
+#~ "properly."
+#~ msgstr ""
+#~ "Funktion File_exists ist nicht vorhanden! Ist erforderlich für Squirrly "
+#~ "um richtig zu arbeiten."
+
+# @ squirrly-seo
+#~ msgid "The home directory is not set!"
+#~ msgstr "Das Home-Verzeichnis wurde nicht gesetzt!"
+
+# @ squirrly-seo
+#~ msgid "The PHP version has to be greater then 4.0"
+#~ msgstr "Die PHP-Version muß größer als 4.0 sein"
+
+# @ squirrly-seo
+#~ msgid "Fix it for me!"
+#~ msgstr "Beheben Sie es für mich!"
+
+# @ squirrly-seo
+#~ msgid ""
+#~ "For Squirrly to work, the PHP version has to be equal or greater then 5.1"
+#~ msgstr ""
+#~ "Damit Squirrly funktioniert, muss die PHP-Version gleich oder größer als "
+#~ "5.1 sein"
+
+# @ squirrly-seo
+#~ msgid "What does Squirrly automatically do for SEO?"
+#~ msgstr "Was tut Squirrly automatisch für SEO?"
+
+# @ squirrly-seo
+#~ msgid "Register"
+#~ msgstr "Registrieren"
+
+# @ squirrly-seo
+#~ msgid "The email address is invalid!"
+#~ msgstr "Die E-Mail-Adresse ist ungültig!"
+
+# @ squirrly-seo
+#~ msgid "Click on Sign Up button and try again ..."
+#~ msgstr "Klicken Sie auf das Bild und versuchen Sie es erneut ..."
+
+# @ squirrly-seo
+#~ msgid "I have more then one keyword!"
+#~ msgstr "Ich habe mehr als ein Schlüsselwort!"
+
+# @ squirrly-seo
+#~ msgid ""
+#~ "For Squirrly to work properly you have to use a higher version of "
+#~ "Internet Explorer. <br /> We recommend you to use Chrome or Mozilla."
+#~ msgstr ""
+#~ "Damit Squirrly ordnungsgemäß funktioniert, müssen Sie eine höhere Version "
+#~ "von Internet Explorer verwenden. <br /> Wir empfehlen, Chrome oder "
+#~ "Mozilla."
+
+# @ squirrly-seo
+#~ msgid "Exact search:"
+#~ msgstr "Exakte Suche:"
+
+# @ squirrly-seo
+#~ msgid "For Squirrly to work, you have to have tinymce editor installed!"
+#~ msgstr "Damit Squirrly arbeitet, muss tinymce installiert sein!"
+
+# @ squirrly-seo
+#~ msgid ":( I lost my squirrel. Please reload the page."
+#~ msgstr ":( Ich verlor meine Eichhörnchen. Laden Sie die Seite erneut."
+
+# @ squirrly-seo
+#~ msgid "Switch to Visual editor!"
+#~ msgstr "Zum Visual Editor wechseln !"
+
+# @ squirrly-seo
+#~ msgid "Go to:"
+#~ msgstr "Gehe zu:"
+
+# @ squirrly-seo
+#~ msgid "support page"
+#~ msgstr "Support Page"
+
+# @ squirrly-seo
+#~ msgid "Clear"
+#~ msgstr "Löschen"
+
+# @ squirrly-seo
+#~ msgid "Do the research"
+#~ msgstr "Recherchieren"
+
+# @ squirrly-seo
+#~ msgid "Let some keywords for the next time as well!"
+#~ msgstr "Lassen Sie ein paar Schlüsselwörter auch für das nächste Mal!"
+
+# @ squirrly-seo
+#~ msgid "News"
+#~ msgstr "News"
+
+# @ squirrly-seo
+#~ msgid "Notice: "
+#~ msgstr "Hinweis: "
+
+# @ squirrly-seo
+#~ msgid "Note: "
+#~ msgstr "Notiz: "
+
+# @ squirrly-seo
+#~ msgid "Let Squirrly optimize your SEO automatically (recommended)"
+#~ msgstr "Lassen Sie Squirrly Ihr SEO automatisch optimieren (empfohlen)"
+
+# @ squirrly-seo
+#~ msgid ""
+#~ "It is highly recommended that you include the %postname% variable in the "
+#~ "permalink structure."
+#~ msgstr ""
+#~ "Es wird stark empfohlen, dass Sie die %postname% Variable in der "
+#~ "Permalink-Struktur einschließen."
+
+# @ squirrly-seo
+#~ msgid "For Squirrly to work, you have to have tinymce installed!"
+#~ msgstr "Damit Squirrly arbeiten kann, müssen Sie tinymce installiert haben!"
+
+# @ squirrly-seo
+#~ msgid "Message sent..."
+#~ msgstr "Nachricht gesendet ..."
+
+# @ squirrly-seo
+#~ msgid ""
+#~ "The system is acting Squirrly. I can not find the link to the server."
+#~ msgstr "Kann den Link auf den Server nicht finden."
+
+# @ squirrly-seo
+#~ msgid ""
+#~ "With Squirrly SEO, your Wordpress will get Perfect SEO on each article "
+#~ "you write."
+#~ msgstr ""
+#~ "Mit Squirrly SEO wird jeder Ihrer Wordpress Artikel eine perfekte "
+#~ "Suchmaschinenoptimierung erhalten. "
+
+# @ squirrly-seo
+#~ msgid ""
+#~ "delivered as a plugin for Wordpress. <br /><br />We connect your "
+#~ "wordpress with Squirrly, so that we can find the best SEO opportunities, "
+#~ "give you reports and analyse your competitors."
+#~ msgstr ""
+#~ "geliefert als Plugin für Wordpress. <br /> <br /> Wir verbinden Ihr "
+#~ "Wordpress mit Squirrly, so dass wir die besten SEO-Möglichkeiten finden, "
+#~ "erstatten Ihnen Bericht und analysieren Ihre Konkurrenz."
+
+# @ squirrly-seo
+#~ msgid "Write a new post with Squirrly"
+#~ msgstr "Schreiben Sie einen neuen Beitrag mit Squirrly"
+
+#~ msgid " API"
+#~ msgstr " API"
+
+# @ squirrly-seo
+#~ msgid "API Key:"
+#~ msgstr "API Key:"
+
+# @ squirrly-seo
+#~ msgid "Let Squirrly automatically optimize my blog"
+#~ msgstr "Lassen Sie Squirrly automatisch Ihren Blog optimieren"
+
+# @ squirrly-seo
+#~ msgid ""
+#~ "adds the correct <strong>description</strong> and <strong>keywords</"
+#~ "strong> in all pages"
+#~ msgstr ""
+#~ "fügt die richtige <strong>Beschreibung</strong> und "
+#~ "<strong>Schlüsselwörter</strong> auf allen Seiten ein"
+
+# @ squirrly-seo
+#~ msgid "adds the <strong>XML Sitemap</strong> for search engines"
+#~ msgstr "fügt die <strong>XML Sitemap</strong> für Suchmaschinen ein"
+
+# @ squirrly-seo
+#~ msgid ""
+#~ "adds the required METAs for home page (<strong>icon, author, language, dc "
+#~ "publisher</strong>, etc.)"
+#~ msgstr ""
+#~ "fügt die erforderlichen METAs für die Startseite (<strong> icon, Autor, "
+#~ "Sprache, dc Verlag </strong>, etc.) ein"
+
+# @ squirrly-seo
+#~ msgid ""
+#~ "adds the <strong>favicon</strong> and the <strong>icon for Apple devices</"
+#~ "strong>."
+#~ msgstr ""
+#~ "fügt das <strong>favicon</strong> und die <strong>icon für Apple-Geräte</"
+#~ "strong> ein."
+
+# @ squirrly-seo
+#~ msgid "Let Squirrly warn me if there are errors related to SEO settings"
+#~ msgstr ""
+#~ "Squirrly warnen lassen, wenn es Fehler im Zusammenhang mit den SEO-"
+#~ "Einstellungen gibt"
+
+# @ squirrly-seo
+#~ msgid ""
+#~ "Show <strong>\"Enter a keyword\"</strong> bubble when posting a new "
+#~ "article."
+#~ msgstr ""
+#~ "Zeige <strong>\"Enter a keyword\"</ strong> Bubble, bei einem neuen "
+#~ "Artikel."
+
+#~ msgid ""
+#~ "Always show <strong>Keyword Informations</strong> about the selected "
+#~ "keyword."
+#~ msgstr ""
+#~ "Always show <strong>Keyword Informations</strong> about the selected "
+#~ "keyword."
+
+# @ squirrly-seo
+#~ msgid "First page optimization (Title, Description, Keywords)"
+#~ msgstr ""
+#~ " Optimierung der ersten Seite (Titel, Beschreibung, Schlüsselwörter)"
+
+# @ squirrly-seo
+#~ msgid "Status:"
+#~ msgstr "Status:"
+
+# @ squirrly-seo
+#~ msgid "Google Plus URL:"
+#~ msgstr "Google Plus URL:"
+
+# @ squirrly-seo
+#~ msgid "Facebook META code (for %sInsights%s )`:"
+#~ msgstr "Facebook META Code (für %sInsights%s )`:"
