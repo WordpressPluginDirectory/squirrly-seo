@@ -80,7 +80,8 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController
         SQ_Classes_ObjController::getClass('SQ_Classes_DisplayController')->loadMedia('assistant');
         SQ_Classes_ObjController::getClass('SQ_Classes_DisplayController')->loadMedia('navbar');
         SQ_Classes_ObjController::getClass('SQ_Classes_DisplayController')->loadMedia('research');
-        SQ_Classes_ObjController::getClass('SQ_Classes_DisplayController')->loadMedia($tab);
+	    SQ_Classes_ObjController::getClass('SQ_Classes_DisplayController')->loadMedia('labels');
+	    SQ_Classes_ObjController::getClass('SQ_Classes_DisplayController')->loadMedia($tab);
         SQ_Classes_ObjController::getClass('SQ_Classes_DisplayController')->loadMedia('chart');
 
         if (method_exists($this, $tab)) {
@@ -99,17 +100,17 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController
 
         $this->show_view('Research/Research');
 
-
         //get the modal window for the assistant popup
         echo SQ_Classes_ObjController::getClass('SQ_Models_Assistant')->getModal();
     }
 
     public function research()
     {
-        $countries = SQ_Classes_RemoteController::getKrCountries();
+
+	    $countries = SQ_Classes_RemoteController::getKrCountries();
         $languages = SQ_Classes_RemoteController::getKrLanguages();
 
-        if (!is_wp_error($countries)) {
+	    if (!is_wp_error($countries)) {
             $this->countries = $countries;
         } else {
             $this->error = $countries->get_error_message();
@@ -250,6 +251,13 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController
 
 		//get results
 	    $this->suggested = $response;
+
+	    $labels = SQ_Classes_RemoteController::getBriefcaseLabels();
+
+	    //check for errors
+	    if(!is_wp_error($labels)){
+		    $this->labels = $labels;
+	    }
 
     }
 
@@ -517,15 +525,15 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController
 	                $args = array();
 
 	                $args['keyword'] = $keyword;
+
 	                $args['labels'] = '';
 	                if (is_array($labels) && !empty($labels)) {
 	                    $args['labels'] = join(',', $labels);
-	                    SQ_Classes_RemoteController::saveBriefcaseKeywordLabel($args);
-	                } else {
-	                    SQ_Classes_RemoteController::saveBriefcaseKeywordLabel($args);
-
 	                }
-	                echo wp_json_encode(array('saved' => esc_html__("Saved!", 'squirrly-seo')));
+
+		            SQ_Classes_RemoteController::saveBriefcaseKeywordLabel($args);
+
+		            echo wp_json_encode(array('saved' => esc_html__("Saved!", 'squirrly-seo')));
 	            } else {
 	                echo wp_json_encode(array('error' => esc_html__("Invalid Keyword!", 'squirrly-seo')));
 	            }
@@ -743,6 +751,13 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController
 	            $id = (int)SQ_Classes_Helpers_Tools::getValue('id', 0);
 	            $this->post_id = SQ_Classes_Helpers_Tools::getValue('post_id', false);
 
+		        $labels = SQ_Classes_RemoteController::getBriefcaseLabels();
+
+		        //check for errors
+		        if(!is_wp_error($labels)){
+			        $this->labels = $labels;
+		        }
+
 	            if ($id > 0) {
 	                $args = array();
 	                $args['id'] = $id;
@@ -817,6 +832,13 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController
 			        exit();
 		        }
 
+		        $labels = SQ_Classes_RemoteController::getBriefcaseLabels();
+
+		        //check for errors
+		        if(!is_wp_error($labels)){
+			        $this->labels = $labels;
+		        }
+
 				$id = (int)SQ_Classes_Helpers_Tools::getValue('id', 0);
 
 	            if ($id > 0) {
@@ -856,12 +878,10 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController
 	            $keywords = SQ_Classes_Helpers_Tools::getValue('inputs', array());
 
 	            if (!empty($keywords)) {
-	                foreach ($keywords as $keyword) {
-	                    //set ignore on API
-	                    $args = array();
-	                    $args['keyword'] = stripslashes($keyword);
-	                    SQ_Classes_RemoteController::removeBriefcaseKeyword($args);
-	                }
+		            //set ignore on API
+		            $args = array();
+		            $args['keywords'] = $keywords;
+		            SQ_Classes_RemoteController::removeBriefcaseKeywords($args);
 
 	                echo wp_json_encode(array('message' => esc_html__("Deleted!", 'squirrly-seo')));
 	            } else {
@@ -935,13 +955,9 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController
             $inputs = SQ_Classes_Helpers_Tools::getValue('inputs', array());
 
             if (!empty($inputs)) {
-                foreach ($inputs as $id) {
-                    if ($id > 0) {
-                        $args = array();
-                        $args['id'] = $id;
-                        SQ_Classes_RemoteController::removeBriefcaseLabel($args);
-                    }
-                }
+	            $args = array();
+	            $args['id'] = $inputs;
+	            SQ_Classes_RemoteController::removeBriefcaseLabel($args);
 
                 echo wp_json_encode(array('message' => esc_html__("Deleted!", 'squirrly-seo')));
             } else {

@@ -87,6 +87,51 @@ class SQ_Classes_Helpers_Sanitize
         return $description;
     }
 
+	/**
+	 * Clear the field string
+	 *
+	 * @param  $value
+	 * @return mixed|null|string|string[]
+	 */
+	public static function sanitizeField($value)
+	{
+
+		if(is_array($value)){
+			return array_map(array('SQ_Classes_Helpers_Sanitize', 'sanitizeField'), $value);
+		}
+
+		if (is_string($value) && $value <> '') {
+
+			$search = array(
+				"'<!--(.*?)-->'is",
+				"'<script[^>]*?>.*?<\/script>'si", // strip out javascript
+				"'<style[^>]*?>.*?<\/style>'si", // strip out styles
+				"'<form.*?<\/form>'si",
+				"'<iframe.*?<\/iframe>'si",
+				"'&lt;!--(.*?)--&gt;'is",
+				"'&lt;script&gt;.*?&lt;\/script&gt;'si", // strip out javascript
+				"'&lt;style&gt;.*?&lt;\/style&gt;'si", // strip out styles
+			);
+			$value = preg_replace($search, "", $value);
+
+			$search = array(
+				"/&nbsp;/si",
+				"/\s{2,}/",
+			);
+			$value = preg_replace($search, " ", $value);
+
+			//more sanitization
+			$value = wp_strip_all_tags($value);
+			$value = ent2ncr($value);
+			$value = trim($value);
+
+			$value = SQ_Classes_Helpers_Sanitize::i18n($value);
+
+		}
+
+		return $value;
+	}
+
     /**
      * Remove the Shortcode from a string
      *
@@ -239,7 +284,8 @@ class SQ_Classes_Helpers_Sanitize
     public static function checkTelephone($phone)
     {
         if ($phone <> '') {
-            $phone = '+' . ltrim($phone, '+');
+	        $phone = self::sanitizeField($phone);
+	        $phone = '+' . ltrim($phone, '+');
         }
 
         return $phone;
@@ -266,7 +312,8 @@ class SQ_Classes_Helpers_Sanitize
 
             if ($code == '') SQ_Classes_Error::setError(esc_html__("The code for Google Webmaster Tool is incorrect.", 'squirrly-seo'));
         }
-        return $code;
+
+	    return self::sanitizeField($code);
     }
 
     /**
@@ -295,7 +342,8 @@ class SQ_Classes_Helpers_Sanitize
                 SQ_Classes_Error::setError(esc_html__("The code for Google Analytics is incorrect.", 'squirrly-seo'));
             }
         }
-        return trim($code);
+
+	    return self::sanitizeField($code);
     }
 
     /**
@@ -327,7 +375,7 @@ class SQ_Classes_Helpers_Sanitize
                     return $response->code;
                 }
             } else {
-                return $code;
+	            return self::sanitizeField($code);
             }
 
             SQ_Classes_Error::setError(esc_html__("The code for Facebook is incorrect.", 'squirrly-seo'));
@@ -359,7 +407,8 @@ class SQ_Classes_Helpers_Sanitize
 
             if ($code == '') SQ_Classes_Error::setError(esc_html__("The code for Pinterest is incorrect.", 'squirrly-seo'));
         }
-        return $code;
+
+	    return self::sanitizeField($code);
     }
 
     /**
@@ -385,7 +434,8 @@ class SQ_Classes_Helpers_Sanitize
 
             if ($code == '') SQ_Classes_Error::setError(esc_html__("The code for Bing is incorrect.", 'squirrly-seo'));
         }
-        return $code;
+
+	    return self::sanitizeField($code);
     }
 
     /**
@@ -411,7 +461,8 @@ class SQ_Classes_Helpers_Sanitize
 
             if ($code == '') SQ_Classes_Error::setError(esc_html__("The code for Baidu is incorrect.", 'squirrly-seo'));
         }
-        return $code;
+
+	    return self::sanitizeField($code);
     }
 
     /**
@@ -437,7 +488,8 @@ class SQ_Classes_Helpers_Sanitize
 
             if ($code == '') SQ_Classes_Error::setError(esc_html__("The code for Yandex is incorrect.", 'squirrly-seo'));
         }
-        return $code;
+
+        return self::sanitizeField($code);
     }
 
     /**
@@ -452,7 +504,7 @@ class SQ_Classes_Helpers_Sanitize
             $account = 'https://twitter.com/' . $account;
         }
 
-        return $account;
+        return esc_url($account);
     }
 
     /**
@@ -473,7 +525,7 @@ class SQ_Classes_Helpers_Sanitize
             }
         }
 
-        return $account;
+	    return self::sanitizeField($account);
     }
 
     /**
@@ -487,7 +539,7 @@ class SQ_Classes_Helpers_Sanitize
         if ($account <> '' && strpos($account, '//') === false) {
             $account = 'https://plus.google.com/' . $account;
         }
-        return str_replace(" ", "+", $account);
+        return esc_url(str_replace(" ", "+", $account));
     }
 
     /**
@@ -501,7 +553,7 @@ class SQ_Classes_Helpers_Sanitize
         if ($account <> '' && strpos($account, '//') === false) {
             $account = 'https://www.linkedin.com/in/' . $account;
         }
-        return $account;
+        return esc_url($account);
     }
 
     /**
@@ -515,7 +567,7 @@ class SQ_Classes_Helpers_Sanitize
         if ($account <> '' && strpos($account, '//') === false) {
             $account = 'https://www.facebook.com/' . $account;
         }
-        return $account;
+        return esc_url($account);
     }
 
     /**
@@ -529,7 +581,7 @@ class SQ_Classes_Helpers_Sanitize
         if ($account <> '' && strpos($account, '//') === false) {
             $account = 'https://www.pinterest.com/' . $account;
         }
-        return $account;
+        return esc_url($account);
     }
 
     /**
@@ -543,7 +595,7 @@ class SQ_Classes_Helpers_Sanitize
         if ($account <> '' && strpos($account, '//') === false) {
             $account = 'https://www.instagram.com/' . $account;
         }
-        return $account;
+        return esc_url($account);
     }
 
     /**
@@ -559,7 +611,7 @@ class SQ_Classes_Helpers_Sanitize
                 $account = 'https://www.youtube.com/channel/' . $account;
             }
         }
-        return $account;
+        return esc_url($account);
     }
 
     /**
@@ -575,7 +627,7 @@ class SQ_Classes_Helpers_Sanitize
                 $code = '';
             }
         }
-        return $code;
+        return self::sanitizeField($code);
     }
 
     /**
@@ -591,7 +643,7 @@ class SQ_Classes_Helpers_Sanitize
                 $code = '';
             }
         }
-        return $code;
+        return self::sanitizeField($code);
     }
 
     /**

@@ -37,13 +37,13 @@ if(!isset($view)) return;
                     $view->kr->keyword = explode(',', $view->kr->keyword);
                     $view->kr->data = json_decode($view->kr->data);
                     if (!empty($view->kr->data))
-                    foreach ($view->kr->data as $nr => $row) {
+                    foreach ($view->kr->data as $key => $row) {
                         //Check if the keyword is already in briefcase
                         $in_briefcase = (isset($row->in_briefcase) ? $row->in_briefcase : false);
                         ?>
                             <tr class="<?php echo($in_briefcase ? 'bg-briefcase' : '') ?> " >
                                 <td nowrap="nowrap" style="width: 40%;white-space: nowrap;"><?php echo esc_html($row->keyword) ?></td>
-                            <?php if (!empty($row->stats)) { ?>
+                                <?php if (!empty($row->stats)) { ?>
                                     <td nowrap="nowrap" style="width: 25%;white-space: nowrap;">
                                         <span class="sq_top_keywords_rank" style="color:<?php echo(isset($row->stats->sc->color) ? esc_attr($row->stats->sc->color) : '#fff') ?>"><?php echo(isset($row->stats->sc->text) ? esc_html($view->getReasearchStatsText('sc', $row->stats->sc->value)) : '-') ?></span>
                                     </td>
@@ -53,11 +53,11 @@ if(!isset($view)) return;
                                     <td nowrap="nowrap" style="width: 17%;white-space: nowrap;">
                                         <span class="sq_top_keywords_rank"><?php echo(isset($row->stats->tw->text) ? esc_html($view->getReasearchStatsText('tw', $row->stats->tw->value)) : '-') ?></span>
                                     </td>
-                            <?php } else { ?>
+                                <?php } else { ?>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                            <?php } ?>
+                                <?php } ?>
                                 <td class="px-0 py-2" style="width: 20px">
                                     <div class="sq_sm_menu">
                                         <div class="sm_icon_button sm_icon_options">
@@ -72,24 +72,69 @@ if(!isset($view)) return;
                                                     <?php echo esc_html__("Optimize for this", 'squirrly-seo') ?>
                                                     </a>
                                                 </li>
-                                            <?php if ($in_briefcase) { ?>
+                                                <?php if ($in_briefcase) { ?>
                                                     <li class="bg-briefcase m-0 p-1 py-2 text-black-50">
                                                         <i class="sq_icons_small fa-solid fa-briefcase"></i>
                                                         <?php echo esc_html__("Already in briefcase", 'squirrly-seo'); ?>
                                                     </li>
-                                            <?php } else { ?>
+                                                <?php } else { ?>
                                                     <li class="sq_research_add_briefcase m-0 p-1 py-2" data-keyword="<?php echo esc_attr($row->keyword) ?>">
                                                         <i class="sq_icons_small fa-solid fa-briefcase"></i>
                                                         <?php echo esc_html__("Add to briefcase", 'squirrly-seo'); ?>
                                                     </li>
-                                            <?php } ?>
-
+                                                <?php } ?>
+                                                <li class="m-0 p-1 py-2">
+                                                    <i class="sq_icons_small fa-solid fa-tag"></i>
+                                                    <span onclick="jQuery('#sq_label_manage_popup<?php echo (int)$key ?>').modal('show')"><?php echo esc_html__("Assign Label", 'squirrly-seo'); ?></span>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
+                                    <div id="sq_label_manage_popup<?php echo (int)$key ?>" tabindex="-1" class="sq_label_manage_popup modal" role="dialog">
+                                        <div class="modal-dialog modal-lg" style="width: 600px;">
+                                            <div class="modal-content bg-white rounded-0">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title"><?php echo sprintf(esc_html__("Select Labels for: %s", 'squirrly-seo'), '<strong style="font-size: 115%">' . esc_html($row->keyword) . '</strong>'); ?></h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <div class="modal-body" style="min-height: 50px; display: table; margin: 10px;">
+					                                <?php if (isset($view->labels) && !empty($view->labels)) {
+
+						                                $keyword_labels = array();
+						                                if (!empty($row->labels)) {
+							                                foreach ($row->labels as $label) {
+								                                $keyword_labels[] = $label->lid;
+							                                }
+						                                }
+
+						                                foreach ($view->labels as $label) {
+							                                if((int)$label->id == 0) continue;
+
+							                                ?>
+                                                            <input type="checkbox" name="sq_labels" id="popup_checkbox_<?php echo (int)$key ?>_<?php echo (int)$label->id ?>" style="display: none;" value="<?php echo (int)$label->id ?>" <?php echo(in_array((int)$label->id, $keyword_labels) ? 'checked' : '') ?> />
+                                                            <label for="popup_checkbox_<?php echo (int)$key ?>_<?php echo (int)$label->id ?>" class="sq_checkbox_label fa-solid <?php echo(in_array((int)$label->id, $keyword_labels) ? 'sq_active' : '') ?>" style="background-color: <?php echo esc_attr($label->color) ?>" title="<?php echo esc_attr($label->name) ?>"><span><?php echo esc_html($label->name) ?></span></label>
+							                                <?php
+						                                }
+
+					                                } else { ?>
+
+                                                        <a class="btn btn-warning" href="<?php echo esc_url(SQ_Classes_Helpers_Tools::getAdminUrl('sq_research', 'labels')) ?>"><?php echo esc_html__("Add new Label", 'squirrly-seo'); ?></a>
+
+					                                <?php } ?>
+                                                </div>
+				                                <?php if (isset($view->labels) && !empty($view->labels)) { ?>
+                                                    <div class="modal-footer">
+                                                        <button data-keyword="<?php echo esc_attr($row->keyword) ?>" class="sq_save_keyword_labels btn btn-primary"><?php echo esc_html__("Save Labels", 'squirrly-seo'); ?></button>
+                                                    </div>
+				                                <?php } ?>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </td>
                             </tr>
-                            <?php
+                        <?php
                     }
                 }
                 ?>

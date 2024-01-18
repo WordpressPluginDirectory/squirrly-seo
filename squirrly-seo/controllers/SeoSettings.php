@@ -197,13 +197,9 @@ class SQ_Controllers_SeoSettings extends SQ_Classes_FrontController
                 SQ_Classes_Helpers_Tools::setHeader('text');
                 header("Content-Disposition: attachment; filename=squirrly-settings-" . gmdate('Y-m-d') . ".txt");
 
-                if (function_exists('base64_encode')) {
-                    echo base64_encode(wp_json_encode(SQ_Classes_Helpers_Tools::$options));
-                } else {
-                    echo wp_json_encode(SQ_Classes_Helpers_Tools::$options);
-                }
+	            echo wp_json_encode(SQ_Classes_Helpers_Tools::$options);
 
-                exit();
+	            exit();
             case 'sq_seosettings_restoresettings':
 
                 if (!SQ_Classes_Helpers_Tools::userCan('sq_manage_settings')) {
@@ -218,10 +214,11 @@ class SQ_Controllers_SeoSettings extends SQ_Classes_FrontController
                         $options .= $line;
                     }
                     try {
-                        if (function_exists('base64_encode') && base64_decode($options) <> '') {
+                        if (!json_decode($options, true) && function_exists('base64_encode')) {
                             $options = @base64_decode($options);
                         }
-                        $options = json_decode($options, true);
+
+	                    $options = json_decode($options, true);
                         if (is_array($options) && isset($options['sq_api'])) {
                             $options['sq_api'] = SQ_Classes_Helpers_Tools::getOption('sq_api');
                             $options['sq_seojourney'] = SQ_Classes_Helpers_Tools::getOption('sq_seojourney');
@@ -283,7 +280,7 @@ class SQ_Controllers_SeoSettings extends SQ_Classes_FrontController
                         $sql_file .= $line;
                     }
 
-                    if (function_exists('base64_encode')) {
+                    if (strpos($sql_file, 'INSERT INTO') === false && function_exists('base64_encode')) {
                         $sql_file = @base64_decode($sql_file);
                     }
 

@@ -709,6 +709,17 @@ class SQ_Classes_RemoteController
         return false;
     }
 
+	public static function removeBriefcaseKeywords($args = array())
+	{
+		self::$apimethod = 'post'; //call method
+
+		if ($json = json_decode(self::apiCall('api/briefcase/hide/keywords', $args))) {
+			return $json;
+		}
+
+		return false;
+	}
+
     public static function saveBriefcaseKeywordLabel($args = array())
     {
         self::$apimethod = 'post'; //call method

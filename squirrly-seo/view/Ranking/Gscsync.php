@@ -52,19 +52,8 @@ if(!isset($view)) return;
                                         <tbody>
                                         <?php
                                         foreach ($view->suggested as $key => $row) {
-                                            $in_ranking = false;
-                                            if (!empty($view->keywords))
-                                                foreach ($view->keywords as $krow) {
-                                                    if (trim(strtolower($krow->keyword)) == trim(strtolower($row->keywords))) {
-                                                        if($krow->do_serp) {
-                                                            $in_ranking = true;
-                                                        }
-                                                        break;
-                                                    }
-                                                }
-
                                             ?>
-                                            <tr class="<?php echo($in_ranking ? 'bg-briefcase' : '') ?>">
+                                            <tr class="<?php echo($row->do_serp ? 'bg-briefcase' : '') ?>">
                                                 <td style="width: 280px;">
                                                     <span style="display: block; clear: left; float: left;"><?php echo esc_html($row->keywords) ?></span>
                                                 </td>
@@ -87,7 +76,7 @@ if(!isset($view)) return;
                                                         </div>
                                                         <div class="sq_sm_dropdown">
                                                             <ul class="text-left p-2 m-0 ">
-                                                                <?php if ($in_ranking) { ?>
+                                                                <?php if ($row->do_serp) { ?>
                                                                     <li class="bg-briefcase m-0 p-1 py-2 text-black-50">
                                                                         <i class="sq_icons_small fa-solid fa-briefcase"></i>
                                                                         <?php echo esc_html__("Already in Rank Checker", "squirrly-seo"); ?>

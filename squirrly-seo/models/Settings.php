@@ -103,6 +103,10 @@ class SQ_Models_Settings
 			foreach ( $params as $key => $value ) {
 				if ( in_array( $key, array_keys( SQ_Classes_Helpers_Tools::$options ) ) ) {
 
+					//Sanitize each value from subarray
+					$value = SQ_Classes_Helpers_Tools::getValue( $key );
+					$value = SQ_Classes_Helpers_Sanitize::sanitizeField( $value );
+
 					//Initialize the array for some options
 					if ( in_array( $key, array( 'sq_sla_exclude_post_types' ) ) ) {
 						SQ_Classes_Helpers_Tools::$options[ $key ] = array();
@@ -110,13 +114,12 @@ class SQ_Models_Settings
 
 					if ( is_array( SQ_Classes_Helpers_Tools::$options[ $key ] ) ) {
 
-						//Sanitize each value from subarray
-						$array = SQ_Classes_Helpers_Tools::getValue( $key );
-
 						//Save the array values
-						if ( is_array( $array ) ) {
-							if ( ! empty( $array ) ) {
-								foreach ( $array as $subkey => $subvalue ) {
+						if ( is_array( $value ) ) {
+							if ( ! empty( $value ) ) {
+
+								foreach ( $value as $subkey => $subvalue ) {
+
 									switch ( $subkey ) {
 										case 'google_wt':
 											$subvalue = SQ_Classes_Helpers_Sanitize::checkGoogleWTCode( $value[ $subkey ] );
@@ -171,17 +174,18 @@ class SQ_Models_Settings
 											$subvalue = SQ_Classes_Helpers_Sanitize::checkFacebookApp( $value[ $subkey ] );
 											break;
 									}
+
 									SQ_Classes_Helpers_Tools::$options[ $key ][ $subkey ] = $subvalue;
 								}
 							}
 						}
 
-						//sanitize the value and save it
+						// save options in db
 						SQ_Classes_Helpers_Tools::saveOptions();
-					} else {
 
-						//sanitize the value and save it
-						SQ_Classes_Helpers_Tools::saveOptions( $key, SQ_Classes_Helpers_Tools::getValue( $key ) );
+					} else {
+						// save option in db
+						SQ_Classes_Helpers_Tools::saveOptions( $key, $value );
 					}
 				}
 			}

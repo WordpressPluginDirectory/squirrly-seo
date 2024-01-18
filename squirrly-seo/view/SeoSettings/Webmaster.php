@@ -71,11 +71,22 @@ if(!isset($view)) return;
                                         <div class="col-8 m-0 p-0">
                                             <?php
                                             $json = SQ_Classes_RemoteController::getGAProperties();
-                                            if(!is_wp_error($json) && !empty($json)) {
+                                            if(!is_wp_error($json) && isset($json->properties)) {
                                                 $properties = $json->properties;
                                                 $property_id = $json->property_id;
 
                                                 if (!$property_id) {
+	                                                $matched_properties = array();
+
+	                                                foreach ($properties as $property) {
+		                                                if (strpos($property->website_url, parse_url(home_url(), PHP_URL_HOST)) !== false){
+			                                                $matched_properties[] = $property;
+		                                                }
+	                                                }
+
+                                                    if(empty($matched_properties)){
+	                                                    $matched_properties = $properties;
+                                                    }
                                                     ?>
                                                     <form id="sq_ga_property_form" method="post" class="p-0 m-0">
                                                         <?php SQ_Classes_Helpers_Tools::setNonce('sq_seosettings_ga_save', 'sq_nonce'); ?>
@@ -83,7 +94,7 @@ if(!isset($view)) return;
                                                         <select name="property_id" class="d-inline-block m-0 p-1" style="width: 100%; max-width: 100%; overflow: hidden"
                                                                 onchange="if(confirm('Do you select this property?')){jQuery('form#sq_ga_property_form').submit();}">
                                                             <option value=""></option>
-                                                            <?php foreach ($properties as $property) { ?>
+                                                            <?php foreach ($matched_properties as $property) {?>
                                                                 <option value="<?php echo esc_attr($property->property_id) ?>"><?php echo esc_url($property->website_url); ?> (<?php echo esc_attr($property->ga_id) ?>)</option>
                                                             <?php } ?>
                                                         </select>

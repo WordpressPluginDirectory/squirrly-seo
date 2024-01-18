@@ -146,14 +146,6 @@ class SQ_Controllers_Ranking extends SQ_Classes_FrontController
             }
         }
 
-        //Get the briefcase keywords
-        if ($briefcase = SQ_Classes_RemoteController::getBriefcase()) {
-            if (!is_wp_error($briefcase)) {
-                if (isset($briefcase->keywords)) {
-                    $this->keywords = $briefcase->keywords;
-                }
-            }
-        }
     }
 
     /**

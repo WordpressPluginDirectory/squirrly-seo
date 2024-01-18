@@ -4,7 +4,7 @@ Donate link: https://plugin.squirrly.co/squirrly-seo-pricing/
 Tags: SEO, SEO Plugin, XML sitemap, WooCommerce SEO, Search Engine, Open Graph, Video Sitemap, Google News Sitemap, Rich Snippets, Robotx.txt, SEO Automation, Local SEO, SEO Content analysis, SEO Content, SEO Optimization, WordPress SEO, Yoast, Yoast Compatible, Yoast Import, SEO Redirection, Redirection, SEO Sitemap, SEO Caching, Meta Title, Meta Description, Performance, SEO Audit, SEO Keyword Research, SEO Rank Math import, Google Search Console, Schema
 Requires at least: 4.6
 Tested up to: 6.4
-Stable tag: 12.3.15
+Stable tag: 12.3.16
 Requires PHP: 7.0
 License: GPLv2 or later
 
@@ -675,6 +675,19 @@ Type a keyword to the right of the screen and start using Squirrly Seo. Enjoy!
 7. Squirrly SEO - SEO Briefcase
 
 == Changelog ==
+= 12.3.16  =
+Compatible with WP 6.42
+Update - Add the option to select the label for the Keyword Research
+Update - Add the option to select the label for the Research > History
+Update - Add the option to select the label for the Research > Suggestion
+Update - GA properties to show only the domain mathing domains
+Update - SLA for Divi not to take the header and footer in LP optimization
+Fixed - SLA loading issue for Oxygen Builder
+Fixed - Stop loading any resource from Squirrly when Page builder in preview
+Fixed - Keyword Sync on Rankings
+Fixed - Bulk keyword deletion in Briefcase
+Fixed - Bulk label deletion in Briefcase
+
 = 12.3.15  =
 Compatible with WP 6.4.1
 Update - Integrated the SEO Automation with Polylang and WPML for each Post Type
