@@ -130,7 +130,8 @@ class SQ_Models_Frontend
                     }
                     $buffer = preg_replace('/(<html(\s[^>]*|))/si', sprintf("$1%s", apply_filters('sq_html_prefix', false)), $buffer, 1);
 
-                    $header_str = str_replace('$', '\$', join("\n", $header));
+                    $header_str = implode("\n", $header);
+                    $header_str = str_replace('$', '\$', (string)$header_str);
 
                     if (!SQ_DEBUG && SQ_Classes_Helpers_Tools::getOption('sq_minify')) { //minify on cache
                         $header_str = str_replace("\n", "", $header_str);

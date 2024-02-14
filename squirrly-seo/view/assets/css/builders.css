@@ -6,7 +6,8 @@
 .thrv_wrapper mark.mark_counter,
 .znpb-element__wrapper mark.mark_counter,
 .wpb_wrapper mark.mark_counter,
-body.fl-builder #content mark.mark_counter
+body.fl-builder #content mark.mark_counter,
+.fusion-builder-container mark.mark_counter
 {
     background: #FDFFC7 !important;
     color: #383838 !important;
@@ -22,7 +23,8 @@ body.fl-builder #content mark.mark_counter
 .thrv_wrapper mark.mark_counter:after,
 .znpb-element__wrapper mark.mark_counter:after,
 .wpb_wrapper mark.mark_counter:after,
-body.fl-builder #content mark.mark_counter:after
+body.fl-builder #content mark.mark_counter:after,
+.fusion-builder-container mark.mark_counter:after
 {
     content: attr(data-cnt) !important;
     color: gray;
@@ -42,7 +44,8 @@ body.fl-builder #content mark.mark_counter:after
 .thrv_wrapper mark.mark_counter,
 .znpb-element__wrapper mark.mark_counter,
 .wpb_wrapper mark.mark_counter,
-body.fl-builder #content mark.mark_counter
+body.fl-builder #content mark.mark_counter,
+.fusion-builder-container mark.mark_counter
 {
     display: initial !important;
 }

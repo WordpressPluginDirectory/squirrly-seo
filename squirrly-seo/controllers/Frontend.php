@@ -30,6 +30,9 @@ class SQ_Controllers_Frontend extends SQ_Classes_FrontController
             SQ_Classes_ObjController::getClass('SQ_Controllers_Sitemaps');
         }
 
+        //Check cache plugin compatibility
+        SQ_Classes_ObjController::getClass('SQ_Models_Compatibility')->checkCompatibility();
+
         //Check if late loading is on
         if (apply_filters('sq_lateloading', SQ_Classes_Helpers_Tools::getOption('sq_laterload'))) {
             //Hook the buffer on both actions in case one fails

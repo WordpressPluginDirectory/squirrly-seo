@@ -68,7 +68,7 @@ if(!isset($view)) return;
 
                                 <div class="col-12 m-0 p-0 my-5">
 
-                                    <form id="sq_inport_form" name="import" action="" method="post" enctype="multipart/form-data">
+                                    <form name="import" action="" method="post" enctype="multipart/form-data">
                                         <div class="col-12 row m-0 p-0 my-5">
                                             <div class="col-5 m-0 p-0 pr-2 font-weight-bold">
                                                 <div class="font-weight-bold"><?php echo esc_html__("Import Settings From", 'squirrly-seo'); ?>:
@@ -100,7 +100,7 @@ if(!isset($view)) return;
                                         </div>
                                     </form>
 
-                                    <form id="sq_inport_form" name="import" action="" method="post" enctype="multipart/form-data">
+                                    <form name="import" action="" method="post" enctype="multipart/form-data">
 
                                         <div class="col-12 row m-0 p-0 my-5">
                                             <div class="col-5 m-0 p-0 pr-2 font-weight-bold">
@@ -160,7 +160,7 @@ if(!isset($view)) return;
                                 <div class="col-12 m-0 p-0 my-5">
 
                                     <div class="col-12 pt-0 pb-4 border-bottom">
-                                        <form id="sq_inport_form" name="import" action="" method="post" enctype="multipart/form-data">
+                                        <form name="import" action="" method="post" enctype="multipart/form-data">
                                             <div class="col-12 row m-0 p-0 my-5">
                                                 <div class="col-5 m-0 p-0 pr-2 font-weight-bold">
                                                     <div class="font-weight-bold"><?php echo esc_html__("Backup Settings", 'squirrly-seo'); ?>:</div>
@@ -174,19 +174,24 @@ if(!isset($view)) return;
                                             </div>
                                         </form>
 
-                                        <form id="sq_inport_form" name="import" action="" method="post" enctype="multipart/form-data">
                                             <div class="col-12 row m-0 p-0 my-5">
                                                 <div class="col-5 m-0 p-0 pr-2 font-weight-bold">
                                                     <div class="font-weight-bold"><?php echo esc_html__("Backup SEO", 'squirrly-seo'); ?>:</div>
                                                     <div class="small text-black-50 my-1 pr-3"><?php echo esc_html__("Download all the Squirrly SEO Snippet optimizations.", 'squirrly-seo'); ?></div>
                                                 </div>
                                                 <div class="col-7 p-0 input-group">
-                                                    <?php SQ_Classes_Helpers_Tools::setNonce('sq_seosettings_backupseo', 'sq_nonce'); ?>
-                                                    <input type="hidden" name="action" value="sq_seosettings_backupseo"/>
-                                                    <button type="submit" class="btn rounded-0 btn-primary px-2 m-0 noloading" style="min-width: 175px"><?php echo esc_html__("Download Backup", 'squirrly-seo'); ?></button>
+                                                    <form name="import" action="" method="post" enctype="multipart/form-data">
+                                                        <?php SQ_Classes_Helpers_Tools::setNonce('sq_seosettings_backupseo', 'sq_nonce'); ?>
+                                                        <input type="hidden" name="action" value="sq_seosettings_backupseo"/>
+                                                        <button type="submit" class="btn rounded-0 btn-primary px-2 m-0 mr-1 mb-1 noloading" style="min-width: 175px"><?php echo esc_html__("Download Backup", 'squirrly-seo'); ?></button>
+                                                    </form>
+                                                    <form name="export" action="" method="post" class="sq_advanced" enctype="multipart/form-data">
+	                                                    <?php SQ_Classes_Helpers_Tools::setNonce('sq_seosettings_exportseo', 'sq_nonce'); ?>
+                                                        <input type="hidden" name="action" value="sq_seosettings_exportseo"/>
+                                                        <button type="submit" class="btn rounded-0 btn-light px-2 m-0 noloading border" style="min-width: 175px"><?php echo esc_html__("Export as Json", 'squirrly-seo'); ?></button>
+                                                    </form>
                                                 </div>
                                             </div>
-                                        </form>
 
                                         <form action="" method="post" enctype="multipart/form-data">
                                             <div class="col-12 row m-0 p-0 my-5">
@@ -201,6 +206,8 @@ if(!isset($view)) return;
                                                 </div>
                                             </div>
                                         </form>
+
+
 
                                     </div>
                                 </div>
@@ -222,7 +229,7 @@ if(!isset($view)) return;
                                 <div class="col-12 m-0 p-0 my-5">
 
                                     <div class="col-12 pt-0 pb-4 border-bottom">
-                                        <form id="sq_inport_form" name="import" action="" method="post" enctype="multipart/form-data">
+                                        <form name="import" action="" method="post" enctype="multipart/form-data">
                                             <div class="col-12 row m-0 p-0 my-5">
                                                 <div class="col-5 m-0 p-0 pr-2 font-weight-bold">
                                                     <div class="font-weight-bold"><?php echo esc_html__("Restore Settings", 'squirrly-seo'); ?>:</div>
@@ -239,7 +246,7 @@ if(!isset($view)) return;
                                             </div>
                                         </form>
 
-                                        <form id="sq_inport_form" name="import" action="" method="post" enctype="multipart/form-data">
+                                        <form name="import" action="" method="post" enctype="multipart/form-data">
                                             <div class="col-12 row m-0 p-0 my-5">
                                                 <div class="col-5 m-0 p-0 pr-2 font-weight-bold">
                                                     <div class="font-weight-bold"><?php echo esc_html__("Restore SEO", 'squirrly-seo'); ?>:</div>
@@ -256,7 +263,7 @@ if(!isset($view)) return;
                                             </div>
                                         </form>
 
-                                        <form id="sq_inport_form" name="import" action="" method="post" enctype="multipart/form-data">
+                                        <form name="import" action="" method="post" enctype="multipart/form-data">
                                             <div class="col-12 row m-0 p-0 my-5">
                                                 <div class="col-5 m-0 p-0 pr-2 font-weight-bold">
                                                     <div class="font-weight-bold"><?php echo esc_html__("Restore Keywords", 'squirrly-seo'); ?>:</div>

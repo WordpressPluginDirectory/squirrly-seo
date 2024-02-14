@@ -119,7 +119,6 @@ class SQ_Controllers_SeoSettings extends SQ_Classes_FrontController
                 }
 
                 break;
-
             case 'sq_seosettings_ga_revoke':
 
                 if (!SQ_Classes_Helpers_Tools::userCan('sq_manage_settings')) {
@@ -301,6 +300,19 @@ class SQ_Controllers_SeoSettings extends SQ_Classes_FrontController
                     SQ_Classes_Error::setError(esc_html__("Error! You have to enter a previously saved backup file.", 'squirrly-seo') . " <br /> ");
                 }
                 break;
+	        case 'sq_seosettings_exportseo':
+
+		        if (!SQ_Classes_Helpers_Tools::userCan('sq_manage_settings')) {
+			        SQ_Classes_Error::setError(esc_html__("You do not have permission to perform this action", 'squirrly-seo'));
+			        return;
+		        }
+
+		        header('Content-Type: application/json');
+		        header("Content-Disposition: attachment; filename=squirrly-seo-" . gmdate('Y-m-d') . ".json");
+
+		        echo SQ_Classes_ObjController::getClass('SQ_Models_ImportExport')->exportTableData();
+
+		        exit();
             case 'sq_seosettings_importall':
 
 	            if (!SQ_Classes_Helpers_Tools::userCan('sq_manage_settings')) {

@@ -79,15 +79,15 @@ class SQ_Controllers_Patterns extends SQ_Classes_FrontController
                 if ($name <> '' && !is_array($value) && $value <> '') {
 
 	                if (strpos($value, '%%') !== false) { //in case there are still patterns from Yoast
-		                $value = preg_replace('/%%([^\%]+)%%/s', '{{$1}}', $value);
+		                $value = preg_replace('/%%([^\%\s]+)%%/s', '{{$1}}', $value);
 	                }
 
 	                if (strpos($value, '%') !== false) { //in case there are still patterns from Rank Math
-		                $value = preg_replace('/%([^\%]+)%/s', '{{$1}}', $value);
+		                $value = preg_replace('/%([^\%\s]+)%/s', '{{$1}}', $value);
 	                }
 
                     if(is_string($value) && $value <> '') {
-	                    $object->{$name} = preg_replace_callback('/\{\{([^\}]+)\}\}/s',array($this, 'processPattern'), $value);
+	                    $object->{$name} = preg_replace_callback('/\{\{([^\}\s]+)\}\}/s',array($this, 'processPattern'), $value);
                     }
 
                 }
@@ -222,13 +222,15 @@ class SQ_Controllers_Patterns extends SQ_Classes_FrontController
 								unset($post_meta_keys[$index]);
 
 								//ignore postmeta hidden fields
-								if(preg_match('/^_/', $post_meta_key) ||
-								   preg_match('/^classic-editor/', $post_meta_key) ||
-								   preg_match('/^aioseo/', $post_meta_key) ||
-								   preg_match('/^yoast/', $post_meta_key) ||
-								   preg_match('/^rank_math/', $post_meta_key) ||
-								   preg_match('/^sq_/', $post_meta_key)){
-									continue;
+								if(apply_filters('sq_show_hidden_patterns', false)){
+									if(preg_match('/^_/', $post_meta_key) ||
+									   preg_match('/^classic-editor/', $post_meta_key) ||
+									   preg_match('/^aioseo/', $post_meta_key) ||
+									   preg_match('/^yoast/', $post_meta_key) ||
+									   preg_match('/^rank_math/', $post_meta_key) ||
+									   preg_match('/^sq_/', $post_meta_key)){
+										continue;
+									}
 								}
 
 								//Check if multiple values

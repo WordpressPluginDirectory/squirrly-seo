@@ -270,7 +270,7 @@ class SQ_Models_Compatibility
         if (SQ_Classes_Helpers_Tools::getOption('sq_sla_frontend')) {
 
             //Load SLA in Elementor Backend
-            if (SQ_Classes_Helpers_Tools::getValue('action') == 'elementor' && is_admin()) {
+            if (SQ_Classes_Helpers_Tools::getValue('action') == 'elementor') {
                 //activate frontend SLA
                 add_filter('sq_load_frontend_sla', '__return_true');
 
@@ -322,6 +322,26 @@ class SQ_Models_Compatibility
 
 		//If SLA is active in fronend and is not ajax call
         if (SQ_Classes_Helpers_Tools::getOption('sq_sla_frontend') && !SQ_Classes_Helpers_Tools::isAjax()) {
+
+            //Load the SLA for Fusion Editor
+            if (SQ_Classes_Helpers_Tools::getValue('fb-edit') || SQ_Classes_Helpers_Tools::getValue('builder')) {
+                //activate frontend SLA
+                add_filter('sq_load_frontend_sla', '__return_true');
+
+                //activate SLA for beaver on frontend
+                if(SQ_Classes_Helpers_Tools::getValue('fb-edit')) {
+                    add_action('wp_enqueue_scripts', function () {
+                        SQ_Classes_ObjController::getClass('SQ_Models_LiveAssistant')->loadFrontent();
+                    }, PHP_INT_MAX);
+                }
+
+                //Load the style for builders
+                if(SQ_Classes_Helpers_Tools::getValue('builder')) {
+                    add_action('wp_enqueue_scripts', function () {
+                        SQ_Classes_ObjController::getClass('SQ_Classes_DisplayController')->loadMedia('builders');
+                    });
+                }
+            }
 
 	        //Load SLA in Beaver
 	        if (SQ_Classes_Helpers_Tools::getIsset('fl_builder')) {

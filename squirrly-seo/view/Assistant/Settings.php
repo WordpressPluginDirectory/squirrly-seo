@@ -66,6 +66,7 @@ if(!isset($view)) return;
                                                     <div class="small text-black-50 ml-5 mt-1"><?php echo sprintf(esc_html__("Supports %s WPBakery Page Builder %s plugin.", "squirrly-seo"),'<a href="https://wpbakery.com/" target="_blank" class="font-weight-bold">','</a>'); ?></div>
                                                     <div class="small text-black-50 ml-5 mt-1"><?php echo sprintf(esc_html__("Supports %s Zion Builder %s plugin.", "squirrly-seo"),'<a href="https://zionbuilder.io/" target="_blank" class="font-weight-bold">','</a>'); ?></div>
                                                     <div class="small text-black-50 ml-5 mt-1"><?php echo sprintf(esc_html__("Supports %s Beaver Builder %s plugin.", "squirrly-seo"),'<a href="https://www.wpbeaverbuilder.com/" target="_blank" class="font-weight-bold">','</a>'); ?></div>
+                                                    <div class="small text-black-50 ml-5 mt-1"><?php echo sprintf(esc_html__("Supports %s Fusion Builder %s plugin.", "squirrly-seo"),'<a href="https://avada.com/" target="_blank" class="font-weight-bold">','</a>'); ?> (BETA)</div>
                                                 </div>
                                             </div>
                                         </div>

@@ -206,6 +206,7 @@ class SQ_Classes_ActionController extends SQ_Classes_FrontController
                         'sq_seosettings_importsettings',
                         'sq_seosettings_importseo',
                         'sq_seosettings_importall',
+                        'sq_seosettings_exportseo',
                         'sq_seosettings_ga_revoke',
                         'sq_seosettings_gsc_revoke',
                         'sq_seosettings_gsc_check',

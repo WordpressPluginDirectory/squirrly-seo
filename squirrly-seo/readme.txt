@@ -4,10 +4,9 @@ Donate link: https://plugin.squirrly.co/squirrly-seo-pricing/
 Tags: SEO, SEO Plugin, XML sitemap, WooCommerce SEO, Search Engine, Open Graph, Video Sitemap, Google News Sitemap, Rich Snippets, Robotx.txt, SEO Automation, Local SEO, SEO Content analysis, SEO Content, SEO Optimization, WordPress SEO, Yoast, Yoast Compatible, Yoast Import, SEO Redirection, Redirection, SEO Sitemap, SEO Caching, Meta Title, Meta Description, Performance, SEO Audit, SEO Keyword Research, SEO Rank Math import, Google Search Console, Schema
 Requires at least: 4.6
 Tested up to: 6.4
-Stable tag: 12.3.16
+Stable tag: 12.3.17
 Requires PHP: 7.0
 License: GPLv2 or later
-
 
 The Number 1 Holistic SEO Software. AI Private Constultant with WordPress SEO Plugin + SEO SaaS. Optimize SEO traffic & Boost SEO rankings.
 
@@ -675,8 +674,22 @@ Type a keyword to the right of the screen and start using Squirrly Seo. Enjoy!
 7. Squirrly SEO - SEO Briefcase
 
 == Changelog ==
+= 12.3.17  =
+Compatible with WP 6.4.3
+Update - Sitemap compatibility for JetEngine
+Update - SLA compatibility with Avada, add support for Fusion Builder
+Update - Notification message in Focus Pages and Audits when a crawling error is received
+Update - Added the option to select multiple pages as inner link source
+Update - Inner linking order to show the recent added links
+Update - Show all WP hidden patterns in the list when "sq_show_hidden_patterns" is active
+Update - Innerlinks API query in posts to find relevant links
+Fixed - Sitemap Custom Posts loading issue
+Fixed - IndexNow submit from Bulk SEO
+Fixed - Inner link add button in popup when accessing multiple pages
+Fixed - Keywords import in Briefcase
+
 = 12.3.16  =
-Compatible with WP 6.42
+Compatible with WP 6.4.2
 Update - Add the option to select the label for the Keyword Research
 Update - Add the option to select the label for the Research > History
 Update - Add the option to select the label for the Research > Suggestion

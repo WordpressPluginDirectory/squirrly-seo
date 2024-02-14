@@ -27,7 +27,7 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController
 	    //set the limits
         $this->posts_limit = SQ_Classes_Helpers_Tools::getOption('sq_sitemap_perpage');
 
-		//load the sitemap if there are xml calls
+        //load the sitemap if there are xml calls
 	    add_action( 'init', array($this, 'initSitemap'));
 
 		//Check the trailing
@@ -64,10 +64,11 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController
 
 	        if (strpos($request_uri, 'locations.kml') !== false) {
 		        if (SQ_Classes_Helpers_Tools::getOption('sq_jsonld_type') == 'Organization') {
+
 			        $wp_query->is_404 = false;
 			        $wp_query->is_feed = true;
 
-			        //set current type
+			        //set a current type
 			        $this->model->setCurrentSitemap('locations');
 
 			        //show the sitemap
@@ -130,6 +131,8 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController
 
 			if($this->sitemap) {
 
+                ini_set('display_errors', 0);
+
 				//check sitemap cache
 				if(SQ_Classes_Helpers_Tools::getOption('sq_sitemap_do_cache')){
 					//Load cache
@@ -156,7 +159,7 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController
 						$sitemap = ob_get_clean();
 						$cache->saveSitemap($type, $this->page, $sitemap, true);
 
-						echo $sitemap;
+						echo trim($sitemap);
 						die();
 					});
 

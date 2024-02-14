@@ -276,12 +276,13 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController
 		        if($limit == 0) $limit = 1000;
 
 			    //prepare the url for query
-		        $url_backslash = str_replace('/','\/',$url);
-		        $url_encoded = urlencode($url);
+		        $url_backslash = str_replace('/','\/',str_replace(rtrim(home_url(),'/'),'',$url));
+		        $url_encoded = urlencode(str_replace(trim(home_url(),'/'),'',$url));
+		        $url_decoded = str_replace(trim(home_url(),'/'),'',urldecode($url));
 
 	            //get post inner links
 	            $select_table = $wpdb->prepare("SELECT ID, post_content FROM `$wpdb->posts` WHERE `post_status` = %s ORDER BY ID DESC LIMIT %d,%d", 'publish', $start, $limit);
-				$query = "SELECT `ID` FROM ($select_table) as p WHERE (p.post_content LIKE '%$url%' OR p.post_content LIKE '%$url_backslash%' OR p.post_content LIKE '%$url_encoded%')";
+				$query = "SELECT `ID` FROM ($select_table) as p WHERE (p.post_content LIKE '%$url%' OR p.post_content LIKE '%$url_backslash%' OR p.post_content LIKE '%$url_encoded%' OR p.post_content LIKE '%$url_decoded%')";
 
 				if(!$inner_links = wp_cache_get(md5($query))) {
 					//prepare the inner_links array

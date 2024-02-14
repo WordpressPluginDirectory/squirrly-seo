@@ -67,7 +67,7 @@ if ($view->focuspage->id <> '') {
             <?php if (SQ_Classes_Helpers_Tools::getValue('sid')) { ?>
                 <div class="sq_focus_visibility">
                     <?php if ($view->focuspage->indexed) { ?>
-                        <img src="<?php echo esc_url(_SQ_ASSETS_URL_ . 'img/seocheck/top10.png') ?>" class="sq_show_tooltip" alt="Top 10" data-original-title="<?php echo ((int)$rank ? sprintf(esc_html__("Congratulations! You ranked on %s on Google with the keyword: %s", 'squirrly-seo'), (int)$rank, esc_attr(SQ_Classes_Helpers_Sanitize::clearKeywords($keyword))) : '') ?>" />
+                        <img src="<?php echo esc_url(_SQ_ASSETS_URL_ . 'img/seocheck/top10.png') ?>" class="sq_show_tooltip" style="width: 80px !important;" alt="Top 10" data-original-title="<?php echo ((int)$rank ? sprintf(esc_html__("Congratulations! You ranked on %s on Google with the keyword: %s", 'squirrly-seo'), (int)$rank, esc_attr(SQ_Classes_Helpers_Sanitize::clearKeywords($keyword))) : '') ?>" />
                     <?php }elseif ((int)$view->focuspage->visibility > 0) { ?>
                     <input id="knob_<?php echo esc_attr($view->focuspage->id) ?>" type="text" value="<?php echo esc_attr($view->focuspage->visibility) ?>" class="sq_chances_ranking sq_show_tooltip" title="<?php echo sprintf(esc_html__("The Chances of Ranking is dynamically calculated by the Squirrly Machine Learning based on the main keyword you selected for this Focus Page. %sThe algorithm behind the Chances of Ranking is complex but the fastest way to increase your chances is to complete the main tasks like Visibility, Keyword Competition, Content Optimization, Content Length, Social Signals, Daily Traffic, Inner Links, and External Nofollow Links. %sIn time you need to complete all the Focus Pages tasks to rank higher and higher and to maintain your rank especially if your keyword is a competitive one.", 'squirrly-seo'), "<br /><br />", "<br /><br />")  ?>" />
                         <script>
@@ -139,16 +139,19 @@ if ($view->focuspage->id <> '') {
     <?php if ($view->focuspage->audit_error) {
         $audit_error = SQ_Classes_ObjController::getClass('SQ_Models_CheckSeo')->getErrorMessage($view->focuspage->audit_error);
         ?>
-        <td class="p-1 m-0" colspan="<?php echo(count((array)$categories) + 1) ?>">
-            <div class="text-danger my-2"><?php echo wp_kses_post($audit_error['warning'])?></div>
-            <div class="text-black-50 my-1" style="font-size: 12px"><?php echo wp_kses_post($audit_error['message']) ?></div>
-            <div class="text-black-50 my-1" style="font-size: 12px"><?php echo wp_kses_post($audit_error['solution']) ?></div>
-            <?php if($view->focuspage->audit_error == 'limit_exceeded') { ?>
-                <a href="<?php echo esc_url(SQ_Classes_RemoteController::getMySquirrlyLink('plans')) ?>" class="text-danger sq_previewurl font-weight-bold small" target="_blank"><?php echo esc_html__("Upgrade Plan", 'squirrly-seo'); ?></a>
-            <?php }else{?>
-                <button class="btn btn-sm btn-primary sq_previewurl font-weight-bold" style="cursor: pointer" onclick="jQuery('#sq_previewurl_modal').attr('data-post_id', '<?php echo (int)$view->focuspage->user_post_id ?>').sq_inspectURL()" data-dismiss="modal"><?php echo esc_html__("Inspect URL", 'squirrly-seo'); ?></button>
-            <?php }?>
+        <td class="p-1 m-0" colspan="6">
+            <div class="text-danger my-2"><?php echo wp_kses_post($audit_error['warning'])?>
+	            <?php if($view->focuspage->audit_error == 'limit_exceeded') { ?>
+                    <a href="<?php echo esc_url(SQ_Classes_RemoteController::getMySquirrlyLink('plans')) ?>" class="text-danger sq_previewurl font-weight-bold small px-3" target="_blank"><?php echo esc_html__("Upgrade Plan", 'squirrly-seo'); ?></a>
+	            <?php }else{?>
+                    <button class="btn btn-link text-primary sq_previewurl font-weight-bold py-0  px-3" style="cursor: pointer" onclick="jQuery('#sq_previewurl_modal').attr('data-post_id', '<?php echo (int)$view->focuspage->user_post_id ?>').sq_inspectURL()" data-dismiss="modal"><?php echo esc_html__("Inspect URL", 'squirrly-seo'); ?></button>
+	            <?php }?>
+            </div>
+            <div class="text-black-50 my-1"><?php echo wp_kses_post($audit_error['message']) ?></div>
+            <div class="text-black-50 my-1"><?php echo wp_kses_post($audit_error['solution']) ?></div>
+
         </td>
+        <td class="p-1 m-0" colspan="<?php echo(count((array)$categories) - 5) ?>"></td>
     <?php } elseif (!$edit_link) { ?>
         <td class="p-0 m-0 my-5" colspan="<?php echo(count((array)$categories) + 1) ?>">
             <div class="text-danger my-2"><?php echo esc_html__("Focus Page could not be found on your website. Delete the Focus Page and add it again.", 'squirrly-seo') ?></div>

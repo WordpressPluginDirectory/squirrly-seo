@@ -26,12 +26,13 @@ class SQ_Models_Ico
         $appleSizes = preg_split('/[,]+/', _SQ_MOBILE_ICON_SIZES);
         $file_name = explode('.', $file['name']);
         $file_type = strtolower($file_name[count((array)$file_name) - 1]);
+	    $file_name = preg_replace( '/[\r\n\t -]+/', '-', $file_name[0] );
 
         $out = array();
-        $out['tmp'] = _SQ_CACHE_DIR_ . strtolower(md5($file['name']) . '_tmp.' . $file_type);
-        $out['favicon'] = _SQ_CACHE_DIR_ . strtolower(md5($file['name']) . '.' . $file_type);
+        $out['tmp'] = _SQ_CACHE_DIR_ . strtolower($file_name . '_tmp.' . $file_type);
+        $out['favicon'] = _SQ_CACHE_DIR_ . strtolower($file_name . '.' . $file_type);
         foreach ($appleSizes as $size) {
-            $out['favicon' . $size] = _SQ_CACHE_DIR_ . strtolower(md5($file['name']) . '.' . $file_type . $size);
+            $out['favicon' . $size] = _SQ_CACHE_DIR_ . strtolower($file_name . '.' . $file_type . $size);
         }
 
         /* if the file has a name */
@@ -92,8 +93,8 @@ class SQ_Models_Ico
                     foreach ($appleSizes as $size) {
                         copy($out['tmp'], $out['favicon' . $size]);
                     }
-
                     unset($out['tmp']);
+
                     if (file_exists($path . "/" . 'favicon.ico')) {
                         $this->remove_ico($path . "/" . 'favicon.ico');
                     }
@@ -260,10 +261,9 @@ class SQ_Models_Ico
                 $alpha = ( 1 - ( $alpha / 127 ) ) * 255;
 
                 $color &= 0xFFFFFF;
-                $color |= 0xFF000000 & ( $alpha << 24 );
+                $color |= 0xFF000000 & ( (int) $alpha << 24 );
 
                 $pixel_data[] = $color;
-
 
                 $opacity = ( $alpha <= 127 ) ? 1 : 0;
 

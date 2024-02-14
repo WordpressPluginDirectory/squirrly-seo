@@ -75,7 +75,7 @@ class SQ_Models_Qss
 		$query_where[] = "seo LIKE '%\"innerlinks\"%'";
 		$query_where = apply_filters('sq_innerlinks_query_where', $query_where);
 
-		$rows = $wpdb->get_results( "SELECT * FROM `" . $wpdb->prefix . _SQ_DB_ . "` WHERE " . join(' AND ', $query_where) );
+		$rows = $wpdb->get_results( "SELECT * FROM `" . $wpdb->prefix . _SQ_DB_ . "` WHERE " . join(' AND ', $query_where) . " ORDER BY `date_time` DESC" );
 
 		if($rows){
 			foreach ($rows as $row){

@@ -628,7 +628,7 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController
 	                    }
 
 	                    if (!empty($keywords)) {
-	                        $keywords = array_chunk($keywords, 10);
+	                        $keywords = array_chunk($keywords, 20);
 
 	                        foreach ($keywords as $chunk) {
 	                            SQ_Classes_RemoteController::importBriefcaseKeywords(array('keywords' => json_encode($chunk)));

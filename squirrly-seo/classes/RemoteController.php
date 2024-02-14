@@ -4,7 +4,6 @@ defined('ABSPATH') || die('Cheatin\' uh?');
 class SQ_Classes_RemoteController
 {
 
-    public static $cache = array();
     public static $apimethod = 'get';
 
     /**
@@ -51,15 +50,11 @@ class SQ_Classes_RemoteController
             //call it with http to prevent curl issues with ssls
             $url = self::cleanUrl(_SQ_APIV2_URL_ . $module . $parameters);
 
-            if (!isset(self::$cache[md5($url)])) {
-                if ($options['method'] == 'post') {
-                    $options['body'] = $args;
-                }
-                self::$cache[md5($url)] = self::sq_wpcall($url, $options);
+            if ($options['method'] == 'post') {
+                $options['body'] = $args;
             }
 
-            return self::$cache[md5($url)];
-
+	        return self::sq_wpcall($url, $options);
 
         } catch (Exception $e) {
             return '';

@@ -85,8 +85,11 @@ class SQ_Controllers_Indexnow extends SQ_Classes_FrontController
                     return;
                 }
 
+				//The calls are with POST and GET
 	            if(isset($_POST['urls'])){
 		            $urls = $_POST['urls'];
+	            }elseif(isset($_GET['urls'])){
+		            $urls = $_GET['urls'];
 	            }
 
                 if ( empty( $urls ) ) {

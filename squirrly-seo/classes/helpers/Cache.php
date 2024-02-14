@@ -185,6 +185,8 @@ class SQ_Classes_Helpers_Cache
 			$filtered = $default;
 		}
 
+		$filtered = rtrim($filtered, '/') . '/sitemap';
+
 		return trailingslashit( $filtered );
 	}
 

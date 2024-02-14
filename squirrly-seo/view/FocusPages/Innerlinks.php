@@ -258,9 +258,8 @@ if(!isset($view)) return;
                             <input id="keyword" type="text" class="form-control" name="keyword" maxlength="255"  required="required"/>
                         </div>
                         <div class="form-group">
-                            <label for="from_post_id"><?php echo esc_html__("From Page", "squirrly-seo"); ?></label>
-                            <select id="from_post_id" name="from_post_id" class="sq_selectpicker form-control border"  data-live-search="true" required="required"></select>
-
+                            <label for="from_post_ids"><?php echo esc_html__("From Page", "squirrly-seo"); ?></label>
+                            <select id="from_post_ids" multiple name="from_post_ids[]" class="sq_selectpicker form-control border"  data-live-search="true" required="required"></select>
                         </div>
                         <div class="form-group">
                             <label for="to_post_id"><?php echo esc_html__("To Page", "squirrly-seo"); ?></label>

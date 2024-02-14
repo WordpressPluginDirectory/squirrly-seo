@@ -1380,6 +1380,33 @@ class SQ_Models_ImportExport
         return $metas;
     }
 
+	/**
+	 * Create a Squirrly SEO export jsonld
+	 *
+	 * @return string
+	 */
+	function exportTableData(){
+		global $wpdb;
+
+		$tables = $wpdb->get_col('SHOW TABLES');
+		$output = array();
+		$keys = array('title','description','keywords','canonical','tw_media','tw_title','tw_description','tw_type','og_title','og_description','og_author','og_type','og_media','optimizations','redirect');
+		foreach ($tables as $table) {
+			if ($table == $wpdb->prefix . _SQ_DB_) {
+				$results = $wpdb->get_results("SELECT post,seo FROM `$table`");
+				foreach ($results as $row){
+					$post = (array)unserialize($row->post);
+					$seo = (array)unserialize($row->seo);
+					$seo = array_intersect_key($seo, array_flip($keys));
+					$output[] = array_merge($post,$seo);
+				}
+				break;
+			}
+		}
+		$wpdb->flush();
+
+		return json_encode($output);
+	}
 
     /**
      * Create a Squirrly SEO Backup

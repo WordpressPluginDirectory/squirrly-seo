@@ -552,12 +552,70 @@ class SQ_Controllers_FocusPages extends SQ_Classes_FrontController
 
 		        $keyword = SQ_Classes_Helpers_Tools::getValue('keyword', '');
 		        $from_post_id = (int)SQ_Classes_Helpers_Tools::getValue('from_post_id', 0);
+		        $from_post_ids = SQ_Classes_Helpers_Tools::getValue('from_post_ids', array());
 		        $to_post_id = (int)SQ_Classes_Helpers_Tools::getValue('to_post_id', 0);
 		        $nofollow = (int)SQ_Classes_Helpers_Tools::getValue('nofollow');
 		        $blank = (int)SQ_Classes_Helpers_Tools::getValue('blank');
 		        $id = SQ_Classes_Helpers_Tools::getValue('id');
 
-		        if ($from_post_id && $to_post_id && $from_post_id <> $to_post_id && $post = SQ_Classes_ObjController::getClass('SQ_Models_Snippet')->getCurrentSnippet($from_post_id)) {
+				if(!empty($from_post_ids)){
+					foreach ($from_post_ids as $from_post_id){
+						if ($from_post_id && $to_post_id && $from_post_id <> $to_post_id && $post = SQ_Classes_ObjController::getClass('SQ_Models_Snippet')->getCurrentSnippet($from_post_id)) {
+
+							//Check if the keyword exists in the post content and is valid for inner link
+							$valid = SQ_Classes_ObjController::getClass('SQ_Models_Post')->checkInnerLink($post->post_content, $keyword, $to_post_id);
+
+							/** @var SQ_Models_Domain_Innerlink $innerlink */
+							$innerlink = SQ_Classes_ObjController::getDomain('SQ_Models_Domain_Innerlink', array(
+								'from_post_id' => $from_post_id,
+								'to_post_id' => $to_post_id,
+								'keyword' => $keyword,
+								'valid' => $valid,
+							))->toArray();
+
+							if($nofollow !== false){
+								$innerlink['nofollow'] = $nofollow;
+							}
+
+							if($blank !== false){
+								$innerlink['blank'] = $blank;
+							}
+
+							//check the optimizations and save them locally
+							add_filter('sq_seo_before_update', function ($sq) use ($innerlink, $id){
+								//Set the innerlink in post
+								if(!$id) $id = substr(md5(join("", (array)$innerlink)), 0, 10);
+								$innerlinks = $sq->innerlinks;
+								$innerlinks[$id] = $innerlink;
+								$sq->innerlinks = $innerlinks;
+
+								return $sq;
+							}, 11, 1);
+
+							SQ_Classes_ObjController::getClass('SQ_Models_Qss')->updateSqSeo($post);
+
+							//send the post to API
+							$args = array();
+							$args['from_post_id'] = $from_post_id;
+							$args['to_post_id'] = $to_post_id;
+							$args['keyword'] = $keyword;
+							$args['found'] = $valid;
+
+							SQ_Classes_RemoteController::setFocusPageInnerlink($args);
+
+						}
+
+					}
+
+					if(SQ_Classes_Helpers_Tools::isAjax()){
+						wp_send_json_success(esc_html__("Inner link is saved.", 'squirrly-seo'));
+					}else{
+						SQ_Classes_Error::setMessage(esc_html__("Inner link is saved.", 'squirrly-seo') . " <br /> ");
+					}
+
+					delete_transient('sq_innerlinks_suggestion');
+
+				}elseif ($from_post_id && $to_post_id && $from_post_id <> $to_post_id && $post = SQ_Classes_ObjController::getClass('SQ_Models_Snippet')->getCurrentSnippet($from_post_id)) {
 
 					//Check if the keyword exists in the post content and is valid for inner link
 			        $valid = SQ_Classes_ObjController::getClass('SQ_Models_Post')->checkInnerLink($post->post_content, $keyword, $to_post_id);
