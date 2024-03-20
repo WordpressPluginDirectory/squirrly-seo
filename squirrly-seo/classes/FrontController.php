@@ -145,6 +145,7 @@ class SQ_Classes_FrontController
      */
     public function runAdmin()
     {
+
         // load the remote controller in admin
         SQ_Classes_ObjController::getClass('SQ_Classes_RemoteController');
         SQ_Classes_ObjController::getClass('SQ_Models_Abstract_Assistant');

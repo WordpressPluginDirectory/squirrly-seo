@@ -152,6 +152,29 @@ class SQ_Models_Compatibility
 			    }
 		    },20);
 	    }
+
+        //For SEO Generator compatibility
+	    add_filter('sq_post', function ($post){
+		    if(function_exists('nsg_get_seo_pages_replace_search_terms_and_locations') &&
+               function_exists('nsg_get_search_terms_and_locations_lookup_table')) {
+
+			    $lookup_table = nsg_get_search_terms_and_locations_lookup_table($post->ID);
+			    $slug = get_query_var('nsg_seo_page');
+
+			    if ($lookup_table !== false && isset($lookup_table[$slug])) {
+				    $search_term        = $lookup_table[ $slug ][0];
+				    $location           = $lookup_table[ $slug ][1];
+
+				    $post->sq->title       = nsg_get_seo_pages_replace_search_terms_and_locations( $post->sq->title );
+				    $post->sq->description = nsg_get_seo_pages_replace_search_terms_and_locations( $post->sq->description );
+				    $post->sq->keywords = "$search_term, $location";
+				    $post->url .= $slug;
+			    }
+		    }
+
+		    return $post;
+	    }, 13, 1);
+
     }
 
 	/**
@@ -239,7 +262,7 @@ class SQ_Models_Compatibility
 		    'ct_inner', //Oxygen
 		    'tve', //Thrive
 		    'tb-preview', //Themify
-		    'preview', //Blockeditor & Gutenberg
+		    //'preview', //Blockeditor & Gutenberg
 		    'elementor-preview', //Elementor
 		    'uxb_iframe',
 		    'wyp_page_type', //Yellowpencil plugin

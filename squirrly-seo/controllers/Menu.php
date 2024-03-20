@@ -75,6 +75,7 @@ class SQ_Controllers_Menu extends SQ_Classes_FrontController
      */
     public function hookInit()
     {
+
         /* add the plugin menu in admin */
         if (SQ_Classes_Helpers_Tools::userCan('manage_options')) {
             try {

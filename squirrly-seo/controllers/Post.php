@@ -30,6 +30,15 @@ class SQ_Controllers_Post extends SQ_Classes_FrontController
     public function hookPost()
     {
 
+		//added compatibility with Woocommerce when handling multiple posts or variations
+	    $posts = SQ_Classes_Helpers_Tools::getValue('post');
+	    $action = SQ_Classes_Helpers_Tools::getValue('action');
+	    if(!empty($posts) && is_array($posts)){
+		    return;
+	    }elseif(!empty($action) && strpos($action, 'woocommerce_') !== false){
+		    return;
+	    }
+
         //Hook and save the Snippet and Keywords for Attachment Pages
         add_action('wp_insert_attachment_data', array($this, 'hookAttachmentSave'), 12, 2);
 
@@ -251,6 +260,7 @@ class SQ_Controllers_Post extends SQ_Classes_FrontController
      */
     public function hookSavePost($post_id, $post)
     {
+
         //make sure the post is loaded
         if($post_id && !isset($post->ID)){
             $post = get_post($post_id);

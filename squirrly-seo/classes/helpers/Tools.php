@@ -1271,6 +1271,12 @@ class SQ_Classes_Helpers_Tools
         set_transient('sq_activate', true);
         set_transient('sq_import', true);
 
+	    /** @var SQ_Models_Qss $qssModel Create Qss table if not exists */
+	    if($qssModel = SQ_Classes_ObjController::getClass('SQ_Models_Qss')){
+		    $qssModel->checkTableExists();
+		    $qssModel->alterTable();
+	    }
+
         //Install & Initialize
         self::install();
 

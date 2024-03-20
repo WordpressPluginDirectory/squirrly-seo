@@ -1463,8 +1463,6 @@ class SQ_Models_ImportExport
         global $wpdb;
 
         if (is_array($queries) && !empty($queries)) {
-            //create the table with the last updates
-            SQ_Classes_ObjController::getClass('SQ_Models_Qss')->checkTableExists();
 
             foreach ((array)$queries as $query) {
                 $query = trim($query, PHP_EOL);

@@ -14,7 +14,8 @@ class SQ_Models_Services_DublinCore extends SQ_Models_Abstract_Seo
                 return;
             }
 
-            add_filter('sq_dublin_core', array($this, 'generateMeta'));
+	        add_filter('sq_locale', array($this, 'setLocale'));
+	        add_filter('sq_dublin_core', array($this, 'generateMeta'));
             add_filter('sq_dublin_core', array($this, 'packMeta'), 99);
         } else {
             add_filter('sq_dublin_core', array($this, 'returnFalse'));
@@ -32,9 +33,10 @@ class SQ_Models_Services_DublinCore extends SQ_Models_Abstract_Seo
     {
         if(!$metas) $metas = array();
 
-        if (get_bloginfo('language') <> '') {
-            $metas['dc.language'] = get_bloginfo('language');
-            $metas['dc.language.iso'] = str_replace('-', '_', get_bloginfo('language'));
+		$locale = apply_filters('sq_locale', get_locale());
+        if ($locale <> '') {
+            $metas['dc.language'] = (strpos($locale, '_') !== false ? substr($locale, 0, strpos($locale, '_')) : $locale);
+            $metas['dc.language.iso'] = $locale;
         }
 
 	    if (SQ_Classes_Helpers_Tools::getOption('sq_jsonld_global_person')) {
@@ -87,5 +89,31 @@ class SQ_Models_Services_DublinCore extends SQ_Models_Abstract_Seo
 
         return false;
     }
+
+	/**
+	 * Set local meta for FB
+	 *
+	 * @param $locale
+	 * @return string
+	 */
+	public function setLocale($locale)
+	{
+		//if WPML is installed, get the local language
+		if (function_exists('wpml_get_language_information') && (int)$this->_post->ID > 0) {
+			if ($language = wpml_get_language_information((int)$this->_post->ID)) {
+				if (!is_wp_error($language) && isset($language['locale'])) {
+					if ($locale <> 'en') {
+						$locale = $language['locale'];
+					}
+				}
+			}
+		}
+
+		if(function_exists('weglot_get_current_language')){
+			$locale = weglot_get_current_language();
+		}
+
+		return $locale;
+	}
 
 }

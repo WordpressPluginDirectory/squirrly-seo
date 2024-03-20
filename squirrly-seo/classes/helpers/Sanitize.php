@@ -140,8 +140,11 @@ class SQ_Classes_Helpers_Sanitize
      */
     public static function removeShortcode($string)
     {
-        if ($string <> '') {
-            $string = preg_replace( "/\[[^\]]+\]/si", " ", $string);
+        if ($string <> '' && strpos($string, '[') !== false && strpos($string, ']') !== false) {
+			//compatibility with SEO Generator plugin
+			if(strpos($string, '[search_term]') == false && strpos($string, '[location]') == false){
+				$string = preg_replace( "/\[[^\]]+\]/si", " ", $string);
+			}
         }
 
         return $string;

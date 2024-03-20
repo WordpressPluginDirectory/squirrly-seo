@@ -329,12 +329,6 @@ class SQ_Controllers_SeoSettings extends SQ_Classes_FrontController
 
                         if (!empty($seo)) {
 
-                            //Check if the Squirrly Table Exists
-                            SQ_Classes_ObjController::getClass('SQ_Models_Qss')->checkTableExists();
-
-	                        //Make sure the database structure is updated
-	                        SQ_Classes_ObjController::getClass('SQ_Models_Qss')->alterTable();
-
                             foreach ($seo as $sq_hash => $metas) {
                                 SQ_Classes_ObjController::getClass('SQ_Models_Qss')->saveSqSEO(
                                     (isset($metas['url']) ? $metas['url'] : ''),
@@ -389,12 +383,6 @@ class SQ_Controllers_SeoSettings extends SQ_Classes_FrontController
                     $seo = SQ_Classes_ObjController::getClass('SQ_Models_ImportExport')->importDBSeo($platform);
 
                     if (!empty($seo)) {
-
-	                    //Check if the Squirrly Table Exists
-	                    SQ_Classes_ObjController::getClass('SQ_Models_Qss')->checkTableExists();
-
-	                    //Make sure the database structure is updated
-	                    SQ_Classes_ObjController::getClass('SQ_Models_Qss')->alterTable();
 
 	                    foreach ($seo as $sq_hash => $metas) {
                             $sq = SQ_Classes_ObjController::getClass('SQ_Models_Qss')->getSqSeo($sq_hash);

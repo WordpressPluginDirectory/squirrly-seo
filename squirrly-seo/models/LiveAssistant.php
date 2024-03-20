@@ -133,26 +133,41 @@ class SQ_Models_LiveAssistant
 		//Check the focus Keyword from other plugins
 		if ($other_keywords = get_post_meta( $this->post_id, 'sq_keyword', true ) ) { //squirrly
 			$keyword = $other_keywords;
+		}
 
-		}elseif ( $other_keywords = get_post_meta( $this->post_id, 'rank_math_focus_keyword', true ) ) { //rm
+		if (empty($keyword) && $other_keywords = get_post_meta( $this->post_id, '_sq_keywords', true ) ) { //squirrly
+			$keywords = explode(',', $other_keywords);
+			if(!empty($keywords)){
+				$keywords = array_unique($keywords);
+				$keyword = $keywords[0];
+			}
+		}
+
+		if ( empty($keyword) && $other_keywords = get_post_meta( $this->post_id, 'rank_math_focus_keyword', true ) ) { //rm
 			$other_keywords = explode( ',', $other_keywords );
 
 			if ( ! empty( $other_keywords ) ) {
 				$keyword = current( $other_keywords );
 			}
-		}elseif ( $other_keywords = get_post_meta( $this->post_id, '_yoast_wpseo_focuskw', true ) ) { //yoast
+		}
+
+		if ( empty($keyword) && $other_keywords = get_post_meta( $this->post_id, '_yoast_wpseo_focuskw', true ) ) { //yoast
 			$other_keywords = explode( ',', $other_keywords );
 
 			if ( ! empty( $other_keywords ) ) {
 				$keyword = current( $other_keywords );
 			}
-		}elseif ( $other_keywords = get_post_meta( $this->post_id, '_aioseo_keywords', true ) ) { //aioseo
+		}
+
+		if ( empty($keyword) && $other_keywords = get_post_meta( $this->post_id, '_aioseo_keywords', true ) ) { //aioseo
 			$other_keywords = explode( ',', $other_keywords );
 
 			if ( ! empty( $other_keywords ) ) {
 				$keyword = current( $other_keywords );
 			}
-		}elseif ( $other_keywords = get_post_meta( $this->post_id, '_seopress_analysis_target_kw', true ) ) { //seopress
+		}
+
+		if ( empty($keyword) && $other_keywords = get_post_meta( $this->post_id, '_seopress_analysis_target_kw', true ) ) { //seopress
 			$other_keywords = explode( ',', $other_keywords );
 
 			if ( ! empty( $other_keywords ) ) {

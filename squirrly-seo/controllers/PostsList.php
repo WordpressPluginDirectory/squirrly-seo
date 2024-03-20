@@ -40,6 +40,7 @@ class SQ_Controllers_PostsList extends SQ_Classes_FrontController
      */
     public function __construct()
     {
+
         parent::__construct();
 
         if (SQ_Classes_Helpers_Tools::getOption('sq_api') == '') {

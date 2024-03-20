@@ -43,10 +43,12 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo
     {
 		if(function_exists('pll_current_language')){
 			$this->language = apply_filters('sq_sitemap_language', pll_current_language());
+		}elseif(function_exists('weglot_get_current_language')){
+			$this->language = weglot_get_current_language();
 		}else{
 			$this->language = apply_filters('sq_sitemap_language', get_locale());
-
 		}
+
     }
 
 	/**

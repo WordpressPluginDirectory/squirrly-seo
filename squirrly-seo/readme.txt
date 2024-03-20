@@ -3,8 +3,8 @@ Contributors: cifi, calinvingan, florinmuresan, nagy.sorel
 Donate link: https://plugin.squirrly.co/squirrly-seo-pricing/
 Tags: SEO, SEO Plugin, XML sitemap, WooCommerce SEO, Search Engine, Open Graph, Video Sitemap, Google News Sitemap, Rich Snippets, Robotx.txt, SEO Automation, Local SEO, SEO Content analysis, SEO Content, SEO Optimization, WordPress SEO, Yoast, Yoast Compatible, Yoast Import, SEO Redirection, Redirection, SEO Sitemap, SEO Caching, Meta Title, Meta Description, Performance, SEO Audit, SEO Keyword Research, SEO Rank Math import, Google Search Console, Schema
 Requires at least: 4.6
-Tested up to: 6.4
-Stable tag: 12.3.17
+Tested up to: 6.5
+Stable tag: 12.3.18
 Requires PHP: 7.0
 License: GPLv2 or later
 
@@ -674,6 +674,17 @@ Type a keyword to the right of the screen and start using Squirrly Seo. Enjoy!
 7. Squirrly SEO - SEO Briefcase
 
 == Changelog ==
+= 12.3.18 =
+Update - Compatible with PHP 8.3 & WP 6.5
+Update - Search by URL in Focus Pages and Audit
+Update - Search term by URL in Focus Pages and Audit
+Update - Added more compatibility with WooCommerce variation products
+Update - Add specific notification in Ranking Sync page when GSC token expires
+Update - Language in Dublin Core for more compatibility with WeGlot plugin
+Update - Compatibility with SEO Generator plugin from AppSumo
+Update - Keyword load in SLA when added in wp_postmeta with meta_key sq_keywords
+Update - Advanced SEO Pack to work better with Polylang for WooCommerce when No Category path is activated
+
 = 12.3.17  =
 Compatible with WP 6.4.3
 Update - Sitemap compatibility for JetEngine
