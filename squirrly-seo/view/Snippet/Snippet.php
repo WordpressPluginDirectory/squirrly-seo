@@ -162,7 +162,3 @@ if (SQ_Classes_Helpers_Tools::getOption('sq_use')) {
     <?php
 }
 ?>
-<script>
-    var __sq_save_message = "<?php echo esc_html__("Saved!", "squirrly-seo") ?>";
-    var __sq_error_message = "<?php echo esc_html__("Error! Couldn't save your changes. Please inspect the server ajax response error using Inspect Element > Network.", "squirrly-seo") ?>";
-</script>

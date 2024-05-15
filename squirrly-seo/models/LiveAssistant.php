@@ -5,7 +5,7 @@ class SQ_Models_LiveAssistant
 {
 
 	/** @var integer The current post ID */
-	private $post_id;
+	private $post_id = 0;
 
 	/**
 	 * Set current post id for Live Assistant
@@ -26,15 +26,21 @@ class SQ_Models_LiveAssistant
      */
     public function loadMedia($args = array())
     {
-        global $post;
 
         $referer = '';
         $handles = array();
 
         $metas = json_decode(wp_json_encode(SQ_Classes_Helpers_Tools::getOption('sq_metas')));
-        $this->post_id = ((isset($post->ID) && $post->ID > 0) ? $post->ID : 0);
 
-		if($this->post_id > 0) {
+	    //Set the current post
+	    if(!$this->post_id){
+		    global $post;
+		    if(isset($post->ID) && $post->ID > 0){
+			    $this->post_id = $post->ID;
+		    }
+	    }
+
+		if($this->post_id) {
 
 			//Load Squirrly Live Assistant for Elementor builder
 			if (SQ_Classes_Helpers_Tools::getOption('sq_sla_frontend')) {
@@ -205,11 +211,20 @@ class SQ_Models_LiveAssistant
 
 	        $handles = array();
 
-            global $post;
+	        //Set the current post
+	        if(!$this->post_id){
+		        global $post;
+		        if(isset($post->ID) && $post->ID > 0){
+			        $this->post_id = $post->ID;
+		        }
+	        }
 
-            if (isset($post->ID) && isset($post->post_type)) {
+	        if ($this->post_id) {
 
-                if(SQ_Classes_ObjController::getClass('SQ_Models_Post')->isSLAEnable($post->post_type)) {
+				//get the post type of the current post
+				$post_type = get_post_type($this->post_id);
+
+                if(SQ_Classes_ObjController::getClass('SQ_Models_Post')->isSLAEnable($post_type)) {
 
                     //Load media in frontend
                     $args = array(

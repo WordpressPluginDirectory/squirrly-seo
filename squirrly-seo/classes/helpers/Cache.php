@@ -68,7 +68,7 @@ class SQ_Classes_Helpers_Cache
 		$test_file           = $folder_path . $this->getKey();
 
 		// If folder doesn't exist?
-		if ( ! file_exists( $folder_path ) ) {
+		if ( ! $this->filesystem->exists( $folder_path ) ) {
 			// Can we create the folder?
 			// returns true if yes and false if not.
 			$permissions = ( defined( 'FS_CHMOD_DIR' ) ) ? FS_CHMOD_DIR : 0755;
@@ -77,7 +77,7 @@ class SQ_Classes_Helpers_Cache
 
 		// Does the file exist?
 		// File exists. Is it writable?
-		if ( file_exists( $test_file ) && ! $this->filesystem->is_writable( $test_file ) ) {
+		if ( $this->filesystem->exists( $test_file ) && ! $this->filesystem->is_writable( $test_file ) ) {
 			// Nope, it's not writable.
 			return false;
 		}
@@ -160,9 +160,8 @@ class SQ_Classes_Helpers_Cache
 	private function getKey( $type = null, $page = 1, $html = false ) {
 		$type = is_null( $type ) ? '1' : $type;
 
-		$filename = self::CACHE_KEY_PREFIX . md5( "{$type}_{$page}_" . home_url() ) . '.' . ( $html ? 'html' : 'xml' );
+		return self::CACHE_KEY_PREFIX . md5( "{$type}_{$page}_" . home_url() ) . '.' . ( $html ? 'html' : 'xml' );
 
-		return $filename;
 	}
 
 	/**
@@ -171,8 +170,8 @@ class SQ_Classes_Helpers_Cache
 	 * @return string
 	 */
 	public function getCacheDirectory() {
-		$dir     = wp_upload_dir();
-		$default = $dir['basedir'] . '/' . self::CACHE_NAME;
+		//set default cache directory
+		$default = WP_CONTENT_DIR . '/cache/' . self::CACHE_NAME;
 
 		/**
 		 * Filter XML sitemap cache directory.
@@ -183,6 +182,10 @@ class SQ_Classes_Helpers_Cache
 
 		if ( ! is_string( $filtered ) || '' === $filtered ) {
 			$filtered = $default;
+		}
+
+		if (!$this->filesystem->is_dir($filtered)) {
+			@wp_mkdir_p($filtered);
 		}
 
 		$filtered = rtrim($filtered, '/') . '/sitemap';

@@ -24,6 +24,8 @@ class SQ_Models_PostsList
 	            /** @var SQ_Models_LiveAssistant $liveAssistantModel */
 	            $liveAssistantModel = SQ_Classes_ObjController::getClass('SQ_Models_LiveAssistant');
 	            $liveAssistantModel->setPostId($post_id);
+
+				//if it has keywords
 				if(empty($row->keyword)){
 					$row->keyword = $liveAssistantModel->loadOtherKeywords(false);
 				}

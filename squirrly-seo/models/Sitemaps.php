@@ -158,12 +158,12 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo
                                         if ($post->sq->nositemap || !$post->sq->do_sitemap) {
                                             continue;
                                         }
-                                        $posts[] = $this->_getXml($post);
-                                        array_push($post_ids, $post_id);
+                                        $posts[]    = $this->_getXml($post);
+                                        $post_ids[] = $post_id;
                                     }
                                 }
                                 //always add the current post ID as processed
-                                array_push($post_ids, $currentpost->ID);
+                                $post_ids[] = $currentpost->ID;
                             }
                         }
                     } else {
@@ -175,12 +175,12 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo
                                     }
                                     $posts[] = $this->_getXml($post);
 
-                                    array_push($post_ids, $post_id);
+                                    $post_ids[] = $post_id;
 
                                 }
                             }
                             //always add the current post ID as processed
-                            array_push($post_ids, $currentpost->ID);
+                            $post_ids[] = $currentpost->ID;
                         }
                     }
                 }
@@ -191,21 +191,26 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo
                     $current_lang = apply_filters('wpml_current_language', null);
 
                     if ($current_lang && $info = wpml_get_language_information($currentpost->ID)) {
-                        if(isset($info['language_code']) && $info['language_code'] == $current_lang)
 
-                            if (!in_array($currentpost->ID, $post_ids)) { //prevent from showing duplicates
-                                if ($post = SQ_Classes_ObjController::getClass('SQ_Models_Snippet')->setPostByID($currentpost->ID)) {
-                                    if ($post->sq->nositemap || !$post->sq->do_sitemap) {
-                                        continue;
-                                    }
-                                    if(SQ_Classes_Helpers_Tools::getOption('sq_sitemap_exclude_noindex') && $post->sq->noindex) {
-                                        continue;
-                                    }
-                                    $posts[] = $this->_getXml($post);
-                                }
-                            }
-                        //always add the current post ID as processed
-                        array_push($post_ids, $currentpost->ID);
+                        if(isset($info['language_code']) && $info['language_code'] == $current_lang){
+	                        if (!in_array($currentpost->ID, $post_ids)) { //prevent from showing duplicates
+
+		                        if ($post = SQ_Classes_ObjController::getClass('SQ_Models_Snippet')->setPostByID($currentpost->ID)) {
+			                        if ($post->sq->nositemap || !$post->sq->do_sitemap) {
+				                        continue;
+			                        }
+			                        if(SQ_Classes_Helpers_Tools::getOption('sq_sitemap_exclude_noindex') && $post->sq->noindex) {
+				                        continue;
+			                        }
+
+			                        $posts[] = $this->_getXml($post);
+		                        }
+	                        }
+
+	                        //always add the current post ID as processed
+	                        $post_ids[] = $currentpost->ID;
+                        }
+
                     }
                 }
 
@@ -217,8 +222,8 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo
                         if(SQ_Classes_Helpers_Tools::getOption('sq_sitemap_exclude_noindex') && $post->sq->noindex) {
                             continue;
                         }
-                        $posts[] = $this->_getXml($post);
-                        array_push($post_ids, $post->ID);
+                        $posts[]    = $this->_getXml($post);
+                        $post_ids[] = $post->ID;
                     }
                 }
             }
@@ -227,10 +232,10 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo
         if (!empty($posts)) {
             foreach ($posts as $post) {
                 if (array_key_exists('image:image', $post)) {
-                    array_push($posts['contains'], 'image');
+                    $posts['contains'][] = 'image';
                 }
                 if (array_key_exists('video:video', $post)) {
-                    array_push($posts['contains'], 'video');
+                    $posts['contains'][] = 'video';
                 }
             }
         }
@@ -271,8 +276,8 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo
                     if (strpos($xml['loc'], '?') !== false) {
                         $xml['loc'] = wp_get_attachment_url($post->ID);
                     }
-                    $posts[] = $xml;
-                    array_push($post_ids, $post->ID);
+                    $posts[]    = $xml;
+                    $post_ids[] = $post->ID;
                 }
 
 
@@ -281,10 +286,10 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo
 
         foreach ($posts as $post) {
             if (array_key_exists('image:image', $post)) {
-                array_push($posts['contains'], 'image');
+                $posts['contains'][] = 'image';
             }
             if (array_key_exists('video:video', $post)) {
-                array_push($posts['contains'], 'video');
+                $posts['contains'][] = 'video';
             }
         }
 
@@ -325,7 +330,7 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo
                     }
 
                     $this->setPost($post); //set current sitemap post
-                    array_push($post_ids, $post->ID);
+                    $post_ids[] = $post->ID;
 
                     $xml = array();
                     $xml['loc'] = esc_url($post->url);
@@ -353,8 +358,8 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo
                     if (SQ_Classes_Helpers_Tools::$options['sq_sitemap_show']['images'] == 1) {
                         $this->setPost($post); //set current sitemap post
                         if ($images = $this->getPostImages(true)) {
-                            array_push($posts['contains'], 'image');
-                            $xml['image:image'] = array();
+                            $posts['contains'][] = 'image';
+                            $xml['image:image']  = array();
                             foreach ($images as $image) {
                                 if (empty($image['src'])) {
                                     continue;
@@ -373,8 +378,8 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo
 
                         $this->setPost($post); //set current sitemap post
                         if ($videos = $this->getPostVideos(true)) {
-                            array_push($posts['contains'], 'video');
-                            $xml['video:video'] = array();
+                            $posts['contains'][] = 'video';
+                            $xml['video:video']  = array();
                             foreach ($videos as $index => $video) {
                                 if ($video['src'] <> '') {
                                     $xml['video:video'][$index] = array(
@@ -440,8 +445,8 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo
                         continue;
                     }
 
-                    $array[] = $this->_getXml($post);
-                    array_push($term_ids, $post->term_id);
+                    $array[]    = $this->_getXml($post);
+                    $term_ids[] = $post->term_id;
 
                 }
 

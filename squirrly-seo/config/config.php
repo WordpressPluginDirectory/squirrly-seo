@@ -12,7 +12,7 @@ if (!defined('_SQ_NONCE_ID_')) {
     }
 }
 
-define('_SQ_MOBILE_ICON_SIZES', '76,120,152');
+define('_SQ_MOBILE_ICON_SIZES', '76,120,152,180,192');
 
 define('SQ_ONBOARDING', '9.0.0');
 defined('SQ_DEBUG') || define('SQ_DEBUG', 0);

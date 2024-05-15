@@ -33,7 +33,6 @@ class SQ_Classes_Helpers_Tools
      */
     function hookInit()
     {
-
         //If the token si not yet set, run the instalation process
         //check the User Roles, DB and DevKit
         if(!self::getOption('sq_api')){
@@ -58,6 +57,24 @@ class SQ_Classes_Helpers_Tools
      * @return void
      */
     public static function install(){
+
+		//remove any sitemap cache from older versions of Squirrly
+	    $filesystem = self::initFilesystem();
+	    if ($filesystem->is_dir(_SQ_CACHE_DIR_)) {
+
+		    $files = $filesystem->dirlist(_SQ_CACHE_DIR_ ); // get all file names
+		    if(!empty($files)){
+			    foreach($files as $file => $data){ // iterate files
+				    if($filesystem->exists(_SQ_CACHE_DIR_ . $file) && strpos($file, '.html') !== false) {
+					    $filesystem->delete(_SQ_CACHE_DIR_ . $file); // delete file
+				    }
+			    }
+		    }
+
+		    if($filesystem->is_dir(_SQ_CACHE_DIR_ . 'sitemap')){
+			    $filesystem->rmdir(_SQ_CACHE_DIR_ . 'sitemap');
+		    }
+	    }
 
         //Add the Squirrly User Role
         SQ_Classes_ObjController::getClass('SQ_Models_RoleManager')->addSQRoles();
@@ -1536,6 +1553,11 @@ class SQ_Classes_Helpers_Tools
         return false;
     }
 
+	/**
+	 * Check if the current editor is a block editor
+	 *
+	 * @return bool|mixed|null
+	 */
     public static function isBlockEditor()
     {
         // Check WordPress version.

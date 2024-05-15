@@ -69,39 +69,43 @@ class SQ_Models_Ico
                     return false;
                 }
 
-                if ($file_type <> 'ico') {
-                    /* Save the file */
-                    if ($out['tmp']) {
-                        $this->set_image($out['tmp'], array(32, 32));
-                        if ($this->save_ico($out['favicon'])) {
-                            if (file_exists($path . "/" . 'favicon.ico')) {
-                                $this->remove_ico($path . "/" . 'favicon.ico');
-                            }
-                            if (!is_multisite()) {
-                                $this->save_ico($path . "/" . 'favicon.ico');
-                            }
-                        }
-                        foreach ($appleSizes as $size) {
-                            $this->set_image($out['tmp'], array($size, $size));
-                            $this->save_ico($out['favicon' . $size]);
-                        }
-                    } else {
-                        SQ_Classes_Error::setError(esc_html__("ICO Error: Could not create the ICO from file. Try with another file type.", 'squirrly-seo'));
-                    }
-                } else {
-                    copy($out['tmp'], $out['favicon']);
-                    foreach ($appleSizes as $size) {
-                        copy($out['tmp'], $out['favicon' . $size]);
-                    }
-                    unset($out['tmp']);
+	            if ($out['tmp']) {
 
-                    if (file_exists($path . "/" . 'favicon.ico')) {
-                        $this->remove_ico($path . "/" . 'favicon.ico');
-                    }
-                    if (!is_multisite()) {
-                        $this->save_ico($path . "/" . 'favicon.ico');
-                    }
-                }
+		            if (file_exists($path . "/" . 'favicon.ico')) {
+			            $this->remove_ico($path . "/" . 'favicon.ico');
+		            }
+
+	                if ($file_type <> 'ico') {
+	                    /* Save the file */
+                        $this->set_image($out['tmp'], array(32, 32));
+
+                        if ($this->save_ico($out['favicon'])) {
+                            if (!is_multisite()) {
+	                             $this->save_ico($path . "/" . 'favicon.ico');
+                            }
+                        }
+
+		                foreach ($appleSizes as $size) {
+	                         $this->set_image($out['tmp'], array($size, $size));
+	                         $this->save_ico($out['favicon' . $size]);
+		                }
+
+	                } else {
+
+	                    copy($out['tmp'], $out['favicon']);
+	                    foreach ($appleSizes as $size) {
+	                        copy($out['tmp'], $out['favicon' . $size]);
+	                    }
+
+	                    if (!is_multisite()) {
+		                    copy($out['tmp'], $path . "/" . 'favicon.ico');
+	                    }
+
+	                }
+	            } else {
+		            SQ_Classes_Error::setError(esc_html__("ICO Error: Could not create the ICO from file. Try with another file type.", 'squirrly-seo'));
+	            }
+
                 unset($out['tmp']);
                 SQ_Classes_Error::setMessage(esc_html__("The favicon has been updated.", 'squirrly-seo'));
 
@@ -182,6 +186,7 @@ class SQ_Models_Ico
      */
     function save_ico($file)
     {
+
         if (false === ( $data = $this->_get_ico_data() ))
             return false;
 

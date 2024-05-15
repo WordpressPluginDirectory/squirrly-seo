@@ -60,7 +60,9 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController
 		    $request_query = sanitize_text_field($_SERVER['QUERY_STRING']);
 	    }
 
-        if ($request_uri) {
+	    do_action('sq_sitemap_xml_before_init', $request_uri);
+
+	    if ($request_uri) {
 
 	        if (strpos($request_uri, 'locations.kml') !== false) {
 		        if (SQ_Classes_Helpers_Tools::getOption('sq_jsonld_type') == 'Organization') {
@@ -70,6 +72,7 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController
 
 			        //set a current type
 			        $this->model->setCurrentSitemap('locations');
+			        $this->sitemap  = 'locations';
 
 			        //show the sitemap
 			        $this->showSitemap();
@@ -103,7 +106,10 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController
                 $parseurl = parse_url($request_uri);
 	            $stemaplist = SQ_Classes_Helpers_Tools::getOption('sq_sitemap');
 
-                foreach ($stemaplist as $request => $sitemap) {
+				//first, validate the current path
+				if($this->validatePath($parseurl['path'])){
+
+                    foreach ($stemaplist as $request => $sitemap) {
                     if (isset($sitemap[0]) && $sitemap[1] && substr($parseurl['path'], (strrpos($parseurl['path'], '/') + 1)) == $sitemap[0]) {
 
 						//set current sitemap
@@ -127,6 +133,7 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController
 
                     }
                 }
+				}
             }
 
 			if($this->sitemap) {
@@ -196,6 +203,54 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController
         }
     }
 
+	/**
+	 * Validate sitemap path
+	 * Don't load sitemap on category sitemaps.
+	 *
+	 * @return void
+	 */
+	private function validatePath($path) {
+		$home_path = $this->getHomePath();
+
+		//exclude the website path
+		$path = trim(str_replace($home_path,'',$path), '/');
+
+		//check if there is a translation
+		$this->model->setCurrentLanguage();
+		$language = $this->model->getLanguage();
+		$language = substr($this->model->language, 0, strpos($this->model->language, '_'));
+
+		//if there is a translation
+		if($language){
+			//exclude the translation path
+			$path = trim(str_replace($language,'',$path), '/');
+		}
+
+		return apply_filters('sq_sitemap_path_validation', (strpos($path, '/') === false) );
+
+	}
+
+	/**
+	 * Gets the absolute filesystem path to the root of the WordPress installation.
+	 *
+	 * @return string Full filesystem path to the root of the WordPress installation.
+	 */
+	private function getHomePath() {
+		$home    = set_url_scheme( get_option( 'home' ), 'http' );
+		$siteurl = set_url_scheme( get_option( 'siteurl' ), 'http' );
+
+		if ( ! empty( $home ) && 0 !== strcasecmp( $home, $siteurl ) ) {
+			$wp_path_rel_to_home = str_ireplace( $home, '', $siteurl ); /* $siteurl - $home */
+			$pos                 = strripos( str_replace( '\\', '/', $_SERVER['SCRIPT_FILENAME'] ), trailingslashit( $wp_path_rel_to_home ) );
+			$home_path           = substr( $_SERVER['SCRIPT_FILENAME'], 0, $pos );
+			$home_path           = trailingslashit( $home_path );
+		} else {
+			$home_path = ABSPATH;
+		}
+
+		return str_replace( '\\', '/', $home_path );
+	}
+
     /**
      * Process the sitemap query
      *
@@ -257,8 +312,8 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController
 					if(!empty($patterns)){
 						foreach ($patterns as $pattern => $pattern_type) {
 							if(isset($pattern_type['google_news']) && $pattern_type['google_news'] == 1){
-								array_push($sq_query['post_type'],$pattern);
-								$sq_query['post_type'] = array_unique($sq_query['post_type']);
+								$sq_query['post_type'][] = $pattern;
+								$sq_query['post_type']   = array_unique($sq_query['post_type']);
 							}
 						}
 					}
@@ -319,7 +374,7 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController
                         }
 
                         if (empty($types)) {
-                            array_push($types, 'custom-post');
+                            $types[] = 'custom-post';
                         }
 
                         $sq_query['post_type'] = $types;
@@ -414,8 +469,8 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController
                 echo '>' . "\n";
                 break;
             case 'sitemap-news':
-                array_push($include, 'news');
-                $include = array_unique($include);
+                $include[] = 'news';
+                $include   = array_unique($include);
             default:
                 echo '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
                     . 'xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" '
@@ -582,7 +637,7 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController
                                 }
 
                                 if (empty($types)) {
-                                    array_push($types, 'custom-post');
+                                    $types[] = 'custom-post';
                                 }
 
                                 foreach ($types as $type) {
@@ -1009,7 +1064,7 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController
         }
 
         if (empty($types)) {
-            array_push($types, 'custom-post');
+            $types[] = 'custom-post';
         }
 
         $query->set('post_type', $types); // id of page or post

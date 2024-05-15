@@ -146,13 +146,8 @@ class SQ_Models_Focuspages_Audit extends SQ_Models_Abstract_Assistant
     public function getHeader()
     {
         $header = '<li class="completed">';
-        $header .= '<div class="font-weight-bold text-black-50 mb-1">' . esc_html__("Current URL", 'squirrly-seo') . ': </div>';
-        $header .= '<a href="' . $this->_post->url . '" target="_blank" style="word-break: break-word;">' . urldecode($this->_post->url) . '</a>';
-        $header .= '</li>';
-
-        $header .= '<li class="completed">';
         if ($this->_siteaudit && isset($this->_siteaudit->score)) {
-            $header .= '<a href="' . SQ_Classes_RemoteController::getMySquirrlyLink('audits') . '" target="_blank" class="btn btn-primary text-white col-10 offset-1 mt-3">' . esc_html__("Go to Audit", 'squirrly-seo') . '</a>';
+            $header .= '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl('sq_audits') . '" target="_blank" class="btn btn-primary text-white col-10 offset-1 mt-3">' . esc_html__("Go to Audit", 'squirrly-seo') . '</a>';
         } else {
             $header .= '<div class="font-weight-bold text-warning text-center">' . esc_html__("Note! The audit is not ready yet", 'squirrly-seo') . '</div>
                         <a href="' . SQ_Classes_Helpers_Tools::getAdminUrl('sq_audits') . '" target="_blank" class="btn btn-primary text-white col-10 offset-1 mt-3">' . esc_html__("Request a new audit", 'squirrly-seo') . '</a>';
@@ -235,14 +230,17 @@ class SQ_Models_Focuspages_Audit extends SQ_Models_Abstract_Assistant
      */
     public function checkTitle($task)
     {
-        if ($this->_empty_titles) {
-            if (isset($this->_empty_titles->urls) && !empty($this->_empty_titles->urls)) {
-                $task['value'] = '<br />';
+	    if ($this->_empty_titles) {
+		    $task['completed'] = true;
+
+			if (isset($this->_empty_titles->urls) && !empty($this->_empty_titles->urls)) {
                 foreach ($this->_empty_titles->urls as $url) {
-                    $task['value'] .= esc_html__("URL", 'squirrly-seo') . ': ' . $url . '<br />';
-                }
+	                if(rtrim($url, '/') == rtrim($this->_post->url, '/')){
+		                $task['value'] = $url ;
+		                $task['completed'] = false;
+	                }
+				}
             }
-            $task['completed'] = (bool)$this->_empty_titles->complete;
             return $task;
         }
 
@@ -259,14 +257,21 @@ class SQ_Models_Focuspages_Audit extends SQ_Models_Abstract_Assistant
     public function checkDescription($task)
     {
         if ($this->_empty_descriptions) {
-            if (isset($this->_empty_descriptions->urls) && !empty($this->_empty_descriptions->urls)) {
-                $task['value'] = '<br />';
+	        $task['completed'] = true;
+
+	        if (isset($this->_empty_descriptions->urls) && !empty($this->_empty_descriptions->urls)) {
                 foreach ($this->_empty_descriptions->urls as $url) {
-                    $task['value'] .= esc_html__("URL", 'squirrly-seo') . ': ' . $url . '<br />';
+					if(rtrim($url, '/') == rtrim($this->_post->url, '/')){
+						$task['value'] = $url ;
+						$task['completed'] = false;
+					}
                 }
-            }
-            $task['completed'] = (bool)$this->_empty_descriptions->complete;
-            return $task;
+
+		        return $task;
+	        }
+
+	        $task['error'] = true;
+	        return $task;
         }
 
 

@@ -20,38 +20,41 @@ class SQ_Models_Services_Favicon extends SQ_Models_Abstract_Seo
     {
         $rnd = '';
 	    $favicons = array();
+	    $path = parse_url(home_url(), PHP_URL_PATH);
 
-        if (SQ_Classes_Helpers_Tools::userCan('sq_manage_settings')) {
-            $rnd = '?' . md5(SQ_Classes_Helpers_Tools::getOption('favicon'));
+        if (SQ_Classes_Helpers_Tools::userCan('sq_manage_settings') && function_exists('is_user_logged_in') && is_user_logged_in()) {
+            $rnd = '?' . substr(md5(SQ_Classes_Helpers_Tools::getOption('favicon')), 0 , 5);
         }
 
         if (SQ_Classes_Helpers_Tools::getOption('favicon') <> '' && file_exists(_SQ_CACHE_DIR_ . SQ_Classes_Helpers_Tools::getOption('favicon'))) {
             if (!get_option('permalink_structure')) {
-                $favicon = home_url() . '/index.php?sq_get=favicon';
-                $touchicon = home_url() . '/index.php?sq_get=touchicon';
+                $favicon = $path . '/index.php?sq_get=favicon';
+                $touchicon = $path . '/index.php?sq_get=touchicon';
             } else {
-                $favicon = home_url() . '/favicon.icon' . $rnd;
-                $touchicon = home_url() . '/touch-icon.png' . $rnd;
+                $favicon = $path . '/favicon.ico' . $rnd;
+                $touchicon = $path . '/touch-icon.png' . $rnd;
             }
 
             $favicons['shortcut icon'] = $favicon;
 
             if(SQ_Classes_Helpers_Tools::getOption('sq_favicon_apple')) {
-                $favicons['apple-touch-icon']['32'] = $touchicon;
-
                 $appleSizes = preg_split('/[,]+/', _SQ_MOBILE_ICON_SIZES);
                 foreach ($appleSizes as $size) {
                     if (!get_option('permalink_structure')) {
-                        $favicon = home_url() . '/index.php?sq_get=touchicon&sq_size=' . $size;
+                        $favicon = $path . '/index.php?sq_get=touchicon&sq_size=' . $size;
                     } else {
-                        $favicon = home_url() . '/touch-icon' . $size . '.png' . $rnd;
+                        $favicon = $path . '/touch-icon' . $size . '.png' . $rnd;
                     }
-                    $favicons['apple-touch-icon'][$size] = $favicon;
+					if($size == end($appleSizes)){
+						$favicons['icon'][$size] = $favicon;
+					}
+	                $favicons['apple-touch-icon'][$size] = $favicon;
+
                 }
             }
         } else {
             if (file_exists(ABSPATH . 'favicon.ico')) {
-                $favicons['shortcut icon'] = home_url() . '/favicon.ico';
+                $favicons['icon'] = $path . '/favicon.ico';
             }
         }
 
@@ -63,11 +66,15 @@ class SQ_Models_Services_Favicon extends SQ_Models_Abstract_Seo
         $allfavicons = array();
         if (!empty($favicons)) {
             foreach ($favicons as $key => $favicon) {
-                if (!is_array($favicon)) {
-                    $allfavicons[] = sprintf('<link rel="%s" href="%s" />', $key, $favicon);
+	            if (!is_array($favicon)) {
+
+					$mime = 'image/x-icon';
+		            $allfavicons[] = sprintf( '<link href="%s" rel="%s" type="%s" />', $favicon, $key, $mime );
+
                 } elseif (!empty($favicon)) {
                     foreach ($favicon as $size => $value) {
-                        $allfavicons[] = sprintf('<link rel="%s" sizes="%s" href="%s" />', $key, $size . 'x' . $size, $value);
+	                    $mime = 'image/png';
+	                    $allfavicons[] = sprintf('<link href="%s" rel="%s" type="%s" sizes="%s" />', $value, $key, $mime, $size . 'x' . $size);
                     }
                 }
             }

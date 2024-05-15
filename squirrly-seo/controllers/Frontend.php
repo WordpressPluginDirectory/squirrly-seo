@@ -111,13 +111,18 @@ class SQ_Controllers_Frontend extends SQ_Classes_FrontController
 
             //Show the favicon icons
             if (SQ_Classes_Helpers_Tools::getOption('sq_auto_favicon') && SQ_Classes_Helpers_Tools::getOption('favicon') <> '') {
-                if ($basename == "favicon.icon") {
+                if ($basename == "favicon.ico") {
                     SQ_Classes_Helpers_Tools::setHeader('ico');
                     @readfile(_SQ_CACHE_DIR_ . SQ_Classes_Helpers_Tools::getOption('favicon'));
                     exit();
                 } elseif ($basename == "touch-icon.png") {
-                    SQ_Classes_Helpers_Tools::setHeader('png');
-                    @readfile(_SQ_CACHE_DIR_ . SQ_Classes_Helpers_Tools::getOption('favicon'));
+	                SQ_Classes_Helpers_Tools::setHeader('png');
+	                $appleSizes = preg_split('/[,]+/', _SQ_MOBILE_ICON_SIZES);
+	                if(file_exists(_SQ_CACHE_DIR_ . SQ_Classes_Helpers_Tools::getOption('favicon') . end($appleSizes))){
+						@readfile(_SQ_CACHE_DIR_ . SQ_Classes_Helpers_Tools::getOption('favicon') . end($appleSizes));
+					}else{
+						@readfile(_SQ_CACHE_DIR_ . SQ_Classes_Helpers_Tools::getOption('favicon'));
+					}
                     exit();
                 } else {
                     $appleSizes = preg_split('/[,]+/', _SQ_MOBILE_ICON_SIZES);

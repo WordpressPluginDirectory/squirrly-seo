@@ -18,14 +18,7 @@ class SQ_Controllers_Patterns extends SQ_Classes_FrontController
 	        $handles[] = SQ_Classes_ObjController::getClass('SQ_Classes_DisplayController')->loadMedia('sqbootstrap');
         }
 
-	    $handles[] = SQ_Classes_ObjController::getClass('SQ_Classes_DisplayController')->loadMedia('patterns');
-
-        echo '
-        <script>
-            jQuery.sq_patterns_list = jQuery.parseJSON("' . addslashes(SQ_ALL_PATTERNS) . '");
-            var __sq_save_message = "' . esc_html__("Saved!", 'squirrly-seo') . '";
-            var __sq_save_message_preview = "' . esc_html__("Saved! This is how the preview looks like", 'squirrly-seo') . '";
-        </script>';
+	    $handles[] = $patterns = SQ_Classes_ObjController::getClass('SQ_Classes_DisplayController')->loadMedia('patterns');
 
 	    wp_print_styles($handles);
 	    wp_print_scripts($handles);

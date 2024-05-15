@@ -59,11 +59,6 @@ class SQ_Models_Settings
         /* if there is an icon to upload */
         if(SQ_Classes_Helpers_Tools::getOption('sq_auto_favicon')) {
             if (!empty($_FILES['favicon'])) {
-                //If the favicon is turned off delete the favicon image created
-                if (SQ_Classes_Helpers_Tools::getOption('favicon') <> '' && file_exists(ABSPATH . "/" . 'favicon.ico')) {
-                    @rename(ABSPATH . "/" . 'favicon.ico', ABSPATH . "/" . 'favicon_ren' . time() . '.ico');
-                }
-
                 if ($return = SQ_Classes_ObjController::getClass('SQ_Models_Ico')->addFavicon($_FILES['favicon'])) {
                     if ($return['favicon'] <> '') {
                         SQ_Classes_Helpers_Tools::saveOptions('favicon', strtolower(basename($return['favicon'])));

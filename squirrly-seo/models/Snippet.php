@@ -67,7 +67,9 @@ class SQ_Models_Snippet
 
         $statuses = array('draft', 'publish', 'pending', 'future', 'private');
         //push the shop page into post types to pass the filter
-        if ($post_type == 'shop') array_push($types, 'shop');
+        if ($post_type == 'shop') {
+			$types[] = 'shop';
+        }
 
         if (!empty($types) && in_array($post_type, $types) || $search_all) {
 
@@ -764,7 +766,7 @@ class SQ_Models_Snippet
             if ($name == 'edit') {
                 $page = array('post.php', 'post-new.php');
             } else {
-                array_push($page, $name . '.php');
+                $page[] = $name . '.php';
             }
 
             return in_array($pagenow, $page);

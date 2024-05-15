@@ -139,7 +139,7 @@ if ($view->focuspage->id <> '') {
     <?php if ($view->focuspage->audit_error) {
         $audit_error = SQ_Classes_ObjController::getClass('SQ_Models_CheckSeo')->getErrorMessage($view->focuspage->audit_error);
         ?>
-        <td class="p-1 m-0" colspan="6">
+        <td class="p-1 m-0" colspan="<?php echo (count((array)$categories) + 1) ?>">
             <div class="text-danger my-2"><?php echo wp_kses_post($audit_error['warning'])?>
 	            <?php if($view->focuspage->audit_error == 'limit_exceeded') { ?>
                     <a href="<?php echo esc_url(SQ_Classes_RemoteController::getMySquirrlyLink('plans')) ?>" class="text-danger sq_previewurl font-weight-bold small px-3" target="_blank"><?php echo esc_html__("Upgrade Plan", 'squirrly-seo'); ?></a>
@@ -151,7 +151,6 @@ if ($view->focuspage->id <> '') {
             <div class="text-black-50 my-1"><?php echo wp_kses_post($audit_error['solution']) ?></div>
 
         </td>
-        <td class="p-1 m-0" colspan="<?php echo(count((array)$categories) - 5) ?>"></td>
     <?php } elseif (!$edit_link) { ?>
         <td class="p-0 m-0 my-5" colspan="<?php echo(count((array)$categories) + 1) ?>">
             <div class="text-danger my-2"><?php echo esc_html__("Focus Page could not be found on your website. Delete the Focus Page and add it again.", 'squirrly-seo') ?></div>

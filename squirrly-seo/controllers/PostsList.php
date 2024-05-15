@@ -130,7 +130,7 @@ class SQ_Controllers_PostsList extends SQ_Classes_FrontController
                 }
             } else {
                 if (get_post_status($post_id) == 'publish')
-                    array_push($this->posts, $post_id);
+                    $this->posts[] = $post_id;
             }
 
             echo '<div class="' . esc_attr($this->_slacolumn_id) . '_row" ref="' . esc_attr($post_id) . '">' . (($html) ? wp_kses_post($html) : 'loading ...') . '</div>';

@@ -297,6 +297,12 @@ class SQ_Models_Compatibility
                 //activate frontend SLA
                 add_filter('sq_load_frontend_sla', '__return_true');
 
+	            if((int)SQ_Classes_Helpers_Tools::getValue('post') > 0){
+		            /** @var SQ_Models_LiveAssistant $liveAssistantModel */
+		            $liveAssistantModel = SQ_Classes_ObjController::getClass('SQ_Models_LiveAssistant');
+		            $liveAssistantModel->setPostId((int)SQ_Classes_Helpers_Tools::getValue('post'));
+	            }
+
                 //activate SLA for elementor on frontend
                 add_action('elementor/editor/footer', array(SQ_Classes_ObjController::getClass('SQ_Models_LiveAssistant'), 'loadFrontent'), 99);
             }
