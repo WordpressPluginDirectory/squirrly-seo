@@ -381,7 +381,7 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo
                             $posts['contains'][] = 'video';
                             $xml['video:video']  = array();
                             foreach ($videos as $index => $video) {
-                                if ($video['src'] <> '') {
+                                if ($video['src'] <> '' && $video['thumbnail'] <> '') {
                                     $xml['video:video'][$index] = array(
                                         'video:player_loc' => $video['src'],
                                         'video:thumbnail_loc' => $video['thumbnail'],
@@ -621,7 +621,7 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo
                 $xml['video:video'] = array();
                 foreach ($videos as $index =>  $video) {
 
-                    if ($video['src'] <> '') {
+                    if ($video['src'] <> '' && $video['thumbnail'] <> '') {
                         $xml['video:video'][$index] = array(
                             'video:player_loc' => $video['src'],
                             'video:thumbnail_loc' => $video['thumbnail'],

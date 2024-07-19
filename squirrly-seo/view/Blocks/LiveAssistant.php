@@ -18,7 +18,7 @@ if(!isset($view)) return;
         <div id="sq_box_briefcase fa-solid fa-briefcase" title="<?php echo esc_attr__("Squirrly Briefcase", "squirrly-seo"); ?>"></div>
     </div>
     <div id="sq_errorloading" class="sq-p-2 sq-py-3 sq-bg-light sq-border-bottom" style="display: none">
-        <?php echo sprintf(esc_html__("Connection error with Squirrly Cloud. Please check the connection and %s refresh the page %s", "squirrly-seo"),'<a href="javascript:void(0);" onclick="jQuery.sq_initialized = false; jQuery.sq_initialize();">','</a>'); ?>
+        <?php echo sprintf(esc_html__("Is taking too long to load the live assistant. %s Try again %s", "squirrly-seo"),'<a href="javascript:void(0);" onclick="jQuery.sq_initialized = false; jQuery.sq_initialize();">','</a>'); ?>
     </div>
     <div id="sq_preloading" class="sq-p-2 sq-py-4 sq-bg-light sq-border-bottom">
         <?php echo esc_html__("Loading", "squirrly-seo"); ?> ...

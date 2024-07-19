@@ -264,7 +264,8 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController
         switch ($select) {
 	        case 'innerlinks':
 
-	            $url = esc_url_raw($request->get_param('url'));
+		        $inner_links = array();
+		        $url = esc_url_raw($request->get_param('url'));
 	            $start = (int)$request->get_param('start');
 	            $limit = (int)$request->get_param('limit');
 
@@ -281,26 +282,28 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController
 		        $url_decoded = str_replace(trim(home_url(),'/'),'',urldecode($url));
 
 	            //get post inner links
-	            $select_table = $wpdb->prepare("SELECT ID, post_content FROM `$wpdb->posts` WHERE `post_status` = %s ORDER BY ID DESC LIMIT %d,%d", 'publish', $start, $limit);
-				$query = "SELECT `ID` FROM ($select_table) as p WHERE (p.post_content LIKE '%$url%' OR p.post_content LIKE '%$url_backslash%' OR p.post_content LIKE '%$url_encoded%' OR p.post_content LIKE '%$url_decoded%')";
+	            $select_table = $wpdb->prepare("SELECT ID FROM `$wpdb->posts` WHERE `post_status` = %s ORDER BY ID DESC LIMIT %d,%d", 'publish', $start, $limit);
+		        if ( $ids = $wpdb->get_col( $select_table ) ) {
+		            $query = $wpdb->prepare("SELECT `ID` FROM `$wpdb->posts` as p WHERE ID in (".join(',', array_values($ids)).") AND (p.post_content LIKE %s OR p.post_content LIKE %s OR p.post_content LIKE %s OR p.post_content LIKE %s)", '%'.$url.'%', '%'.$url_backslash.'%', '%'.$url_encoded.'%', '%'.$url_decoded.'%');
 
-				if(!$inner_links = wp_cache_get(md5($query))) {
-					//prepare the inner_links array
-					$inner_links = array();
+			        if(!$inner_links = wp_cache_get(md5($query))) {
+				        //prepare the inner_links array
+				        $inner_links = array();
 
-					if ( $rows = $wpdb->get_results( $query ) ) {
-						if ( ! empty( $rows ) ) {
-							foreach ( $rows as $row ) {
-								if ( untrailingslashit( get_permalink( $row->ID ) ) <> $url ) {
-									$inner_links[] = get_permalink( $row->ID );
-								}
-							}
-						}
-					}
+				        if ( $rows = $wpdb->get_results( $query ) ) {
+					        if ( ! empty( $rows ) ) {
+						        foreach ( $rows as $row ) {
+							        if ( untrailingslashit( get_permalink( $row->ID ) ) <> $url ) {
+								        $inner_links[] = get_permalink( $row->ID );
+							        }
+						        }
+					        }
+				        }
 
+			        }
+
+			        wp_cache_set(md5($query), $inner_links, '', 3600);
 				}
-
-		        wp_cache_set(md5($query), $inner_links, '', 3600);
 
 		        $response = array('url' => $url, 'inner_links' => $inner_links);
 	            break;
@@ -318,11 +321,13 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController
 
 		        //define vars
 		        if($limit == 0) $limit = 1000;
-				$regex = "[[:<:]]" . $keyword . "[[:>:]]";
+				$regex = "\\b" . strtolower($keyword) . "\\b";
 
-		        //get post inner links
-		        $select_table = $wpdb->prepare("SELECT ID, post_content FROM `$wpdb->posts` WHERE `post_status` = %s ORDER BY ID DESC LIMIT %d,%d", 'publish', $start, $limit);
-		        $query = "SELECT `ID`, `post_content` as content FROM ($select_table) as p WHERE (p.post_content REGEXP '$regex')";
+		        //get post keywords found
+		        $select_table = $wpdb->prepare("SELECT ID FROM `$wpdb->posts` WHERE `post_status` = %s ORDER BY ID DESC LIMIT %d,%d", 'publish', $start, $limit);
+		        if ( $ids = $wpdb->get_col( $select_table ) ) {
+			        $query = $wpdb->prepare("SELECT `ID`, `post_content` FROM `$wpdb->posts` as p WHERE ID in (".join(',', array_values($ids)).") AND (LOWER(p.post_content) REGEXP %s)", $regex);
+		        }
 
 			    if(!$urls = wp_cache_get(md5($query))) {
 				    //prepare the url for query

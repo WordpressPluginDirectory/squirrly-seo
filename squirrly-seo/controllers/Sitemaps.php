@@ -38,6 +38,23 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController
 
         //Process the cron if created
         add_action('sq_processPing', array($this, 'processCron'));
+
+		//exclude external images as Google requests
+		add_action('sq_post_images', function ($images){
+
+			foreach ($images as $index => $image){
+				if(isset($image['src']) && parse_url($image['src'], PHP_URL_HOST)){
+					$img_host = parse_url($image['src'], PHP_URL_HOST);
+					$host = parse_url(home_url(), PHP_URL_HOST);
+
+					if($img_host <> $host){
+						unset($images[$index]);
+					}
+				}
+			}
+
+			return $images;
+		});
     }
 
 	/**
@@ -102,6 +119,11 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController
                 if(strpos($request_uri, '/sitemap_index.xml') !== false){
                     $request_uri = str_replace('sitemap_index.xml','sitemap.xml', $request_uri);
                 }
+
+				//Compatibility with WordPress sitemap
+	            if(strpos($request_uri, '/wp-sitemap.xml') !== false){
+		            $request_uri = str_replace('wp-sitemap.xml','sitemap.xml', $request_uri);
+	            }
 
                 $parseurl = parse_url($request_uri);
 	            $stemaplist = SQ_Classes_Helpers_Tools::getOption('sq_sitemap');

@@ -295,10 +295,12 @@ class SQ_Controllers_Indexnow extends SQ_Classes_FrontController
         }
 
         if ( ! $manual ) {
-            $logs = array_values( array_reverse( $this->model->getLog() ) );
-            if ( ! empty( $logs[0] ) && $logs[0]['url'] === $url && time() - $logs[0]['time'] < self::INDEX_TIMELAPS ) {
-                return false;
-            }
+			if(is_array($this->model->getLog())){
+				$logs = array_values( array_reverse( $this->model->getLog() ) );
+				if ( ! empty( $logs[0] ) && $logs[0]['url'] === $url && time() - $logs[0]['time'] < self::INDEX_TIMELAPS ) {
+					return false;
+				}
+			}
         }
 
         $submitted = $this->model->submitUrl( $url, $manual );

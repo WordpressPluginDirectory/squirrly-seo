@@ -3,8 +3,8 @@ Contributors: cifi, calinvingan, florinmuresan, nagy.sorel
 Donate link: https://plugin.squirrly.co/squirrly-seo-pricing/
 Tags: SEO, AI, XML sitemap, google search console, schema
 Requires at least: 4.6
-Tested up to: 6.5
-Stable tag: 12.3.19
+Tested up to: 6.6
+Stable tag: 12.3.20
 Requires PHP: 7.0
 License: GPLv2 or later
 
@@ -230,6 +230,13 @@ Type a keyword to the right of the screen and start using Squirrly Seo. Enjoy!
 7. Squirrly SEO - SEO Briefcase
 
 == Changelog ==
+= 12.3.20 =
+Update - Compatible with WP 6.6
+Fixed - API security on innerlinks check and keywords check
+Fixed - Sitemap compatibility with WordPress sitemap wp-sitemap.xml path
+Fixed - Live Assistant to reload resources when network connection is low
+Fixed - Sitemap to add only videos with thumbnails for google validation
+
 = 12.3.19 =
 Update - Compatible with WP 6.5.3
 Update - SLA compatibility for Chinese chars
