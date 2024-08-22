@@ -18,7 +18,7 @@ class SQ_Controllers_Patterns extends SQ_Classes_FrontController
 	        $handles[] = SQ_Classes_ObjController::getClass('SQ_Classes_DisplayController')->loadMedia('sqbootstrap');
         }
 
-	    $handles[] = $patterns = SQ_Classes_ObjController::getClass('SQ_Classes_DisplayController')->loadMedia('patterns');
+	    $handles[] = SQ_Classes_ObjController::getClass('SQ_Classes_DisplayController')->loadMedia('patterns');
 
 	    wp_print_styles($handles);
 	    wp_print_scripts($handles);
@@ -40,7 +40,7 @@ class SQ_Controllers_Patterns extends SQ_Classes_FrontController
             //set the current post for excerpt and description
             $this->patterns->currentpost = $post;
 
-            //Foreach SQ, if has patterns, replace them
+            //Foreach SQ, if it has patterns, replace them
             if ($sq_array = $post->sq->toArray()) {
 
                 //set the keywords from sq and not from post
@@ -71,16 +71,16 @@ class SQ_Controllers_Patterns extends SQ_Classes_FrontController
             foreach ($values as $name => $value) {
                 if ($name <> '' && !is_array($value) && $value <> '') {
 
-	                if (strpos($value, '%%') !== false) { //in case there are still patterns from Yoast
-		                $value = preg_replace('/%%([^\%\s]+)%%/s', '{{$1}}', $value);
+	                if ( strpos( $value, '%%' ) !== false ) { //in case there are still patterns from Yoast
+		                $value = preg_replace( '/%%([^\%\s]+)%%/', '{{$1}}', $value );
 	                }
 
-	                if (strpos($value, '%') !== false) { //in case there are still patterns from Rank Math
-		                $value = preg_replace('/%([^\%\s]+)%/s', '{{$1}}', $value);
+	                if ( strpos( $value, '%' ) !== false ) { //in case there are still patterns from Rank Math
+		                $value = preg_replace( '/%([^\%\s]+)%/', '{{$1}}', $value );
 	                }
 
                     if(is_string($value) && $value <> '') {
-	                    $object->{$name} = preg_replace_callback('/\{\{([^\}\s]+)\}\}/s',array($this, 'processPattern'), $value);
+	                    $object->{$name} = preg_replace_callback('/\{\{([^\}\s]+)\}\}/',array($this, 'processPattern'), $value);
                     }
 
                 }
@@ -142,7 +142,7 @@ class SQ_Controllers_Patterns extends SQ_Classes_FrontController
 		}elseif(strpos($found_pattern,'customfield') !== false){
 
 			//check custom field pattern
-			preg_match('/\(([^\)]+)\)/si', $found_pattern, $custom_match);
+			preg_match('/\(([^\)]+)\)/i', $found_pattern, $custom_match);
 			if(isset($custom_match[1]) && !empty($custom_match[1]) && $this->patterns->currentpost->ID){
 				//get the custom field from post meta is set
 				if($value = get_post_meta($this->patterns->currentpost->ID, $custom_match[1], true)){
@@ -259,7 +259,7 @@ class SQ_Controllers_Patterns extends SQ_Classes_FrontController
 		            $this->patterns = SQ_Classes_ObjController::getDomain('SQ_Models_Domain_Patterns', $post->toArray());
 
 	                foreach ($all_patterns as $pattern => $title) {
-		                $value = preg_replace_callback('/\{\{([^\}]+)\}\}/s',array($this, 'processPattern'), $pattern);
+		                $value = preg_replace_callback('/\{\{([^\}]+)\}\}/',array($this, 'processPattern'), $pattern);
 	                    $all_patterns[$pattern] = array('value' => $value, 'details' => $title);
 	                }
 

@@ -1,98 +1,98 @@
 <?php
-defined('ABSPATH') || die('Cheatin\' uh?');
+defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
 
-class SQ_Models_Settings
-{
+class SQ_Models_Settings {
 
 	/**
 	 * Save the settings in sq_options
+	 *
 	 * @return void
 	 */
-    public function saveSettings(){
+	public function saveSettings() {
 
-        //Save the settings
-	    $this->saveValues($_POST);
+		//Save the settings
+		$this->saveValues( $_POST );
 
-	    //Save custom links
-        if (SQ_Classes_Helpers_Tools::getIsset('links_permission')) {
-            $links = SQ_Classes_Helpers_Tools::getValue('links_permission', '', true);
-            $links = explode(PHP_EOL, $links);
-            $links = str_replace("\r", "", $links);
+		//Save custom links
+		if ( SQ_Classes_Helpers_Tools::getIsset( 'links_permission' ) ) {
+			$links = SQ_Classes_Helpers_Tools::getValue( 'links_permission', '', true );
+			$links = explode( PHP_EOL, $links );
+			$links = str_replace( "\r", "", $links );
 
-            if (!empty($links)) {
-                SQ_Classes_Helpers_Tools::$options['sq_external_exception'] = array_unique($links);
-            }
-        }
+			if ( ! empty( $links ) ) {
+				SQ_Classes_Helpers_Tools::$options['sq_external_exception'] = array_unique( $links );
+			}
+		}
 
-        //Make sure we get the Sitemap data from the form
-        if ($sitemap = SQ_Classes_Helpers_Tools::getValue('sitemap')) {
-            foreach (SQ_Classes_Helpers_Tools::$options['sq_sitemap'] as $key => $value) {
-                if (isset($sitemap[$key])) {
-                    SQ_Classes_Helpers_Tools::$options['sq_sitemap'][$key][1] = (int)$sitemap[$key];
-                } elseif ($key <> 'sitemap') {
-                    SQ_Classes_Helpers_Tools::$options['sq_sitemap'][$key][1] = 0;
-                }
-            }
-        }
+		//Make sure we get the Sitemap data from the form
+		if ( $sitemap = SQ_Classes_Helpers_Tools::getValue( 'sitemap' ) ) {
+			foreach ( SQ_Classes_Helpers_Tools::$options['sq_sitemap'] as $key => $value ) {
+				if ( isset( $sitemap[ $key ] ) ) {
+					SQ_Classes_Helpers_Tools::$options['sq_sitemap'][ $key ][1] = (int) $sitemap[ $key ];
+				} elseif ( $key <> 'sitemap' ) {
+					SQ_Classes_Helpers_Tools::$options['sq_sitemap'][ $key ][1] = 0;
+				}
+			}
+		}
 
-        //delete other sitemap xml files from root
-        if (SQ_Classes_Helpers_Tools::getOption('sq_auto_sitemap') && file_exists(ABSPATH . "/" . 'sitemap.xml')) {
-            @rename(ABSPATH . "/" . 'sitemap.xml', ABSPATH . "/" . 'sitemap_ren' . time() . '.xml');
-        }
+		//delete other sitemap xml files from root
+		if ( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_sitemap' ) && file_exists( ABSPATH . "/" . 'sitemap.xml' ) ) {
+			@rename( ABSPATH . "/" . 'sitemap.xml', ABSPATH . "/" . 'sitemap_ren' . time() . '.xml' );
+		}
 
-        //Save custom robots
-        if (SQ_Classes_Helpers_Tools::getIsset('robots_permission')) {
-            $robots = SQ_Classes_Helpers_Tools::getValue('robots_permission', '', true);
-            $robots = explode(PHP_EOL, $robots);
-            $robots = str_replace("\r", "", $robots);
+		//Save custom robots
+		if ( SQ_Classes_Helpers_Tools::getIsset( 'robots_permission' ) ) {
+			$robots = SQ_Classes_Helpers_Tools::getValue( 'robots_permission', '', true );
+			$robots = explode( PHP_EOL, $robots );
+			$robots = str_replace( "\r", "", $robots );
 
-            if (!empty($robots)) {
+			if ( ! empty( $robots ) ) {
 
-	            if (file_exists(ABSPATH . "/" . 'robots.txt')) {
-		            @rename(ABSPATH . "/" . 'robots.txt', ABSPATH . "/" . 'robots_ren' . time() . '.txt');
-	            }
+				if ( file_exists( ABSPATH . "/" . 'robots.txt' ) ) {
+					@rename( ABSPATH . "/" . 'robots.txt', ABSPATH . "/" . 'robots_ren' . time() . '.txt' );
+				}
 
-                SQ_Classes_Helpers_Tools::$options['sq_robots_permission'] = $robots;
-            }
-        }
+				SQ_Classes_Helpers_Tools::$options['sq_robots_permission'] = $robots;
+			}
+		}
 
-        /* if there is an icon to upload */
-        if(SQ_Classes_Helpers_Tools::getOption('sq_auto_favicon')) {
-            if (!empty($_FILES['favicon'])) {
-                if ($return = SQ_Classes_ObjController::getClass('SQ_Models_Ico')->addFavicon($_FILES['favicon'])) {
-                    if ($return['favicon'] <> '') {
-                        SQ_Classes_Helpers_Tools::saveOptions('favicon', strtolower(basename($return['favicon'])));
-                    }
-                }
-            }
-        }
+		/* if there is an icon to upload */
+		if ( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_favicon' ) ) {
+			if ( ! empty( $_FILES['favicon'] ) ) {
+				if ( $return = SQ_Classes_ObjController::getClass( 'SQ_Models_Ico' )->addFavicon( $_FILES['favicon'] ) ) {
+					if ( $return['favicon'] <> '' ) {
+						SQ_Classes_Helpers_Tools::saveOptions( 'favicon', strtolower( basename( $return['favicon'] ) ) );
+					}
+				}
+			}
+		}
 
-        SQ_Classes_Helpers_Tools::$options['sq_jsonld']['Person']['telephone'] = SQ_Classes_Helpers_Sanitize::checkTelephone(SQ_Classes_Helpers_Tools::$options['sq_jsonld']['Person']['telephone']);
-        SQ_Classes_Helpers_Tools::$options['sq_jsonld']['Organization']['contactPoint']['telephone'] = SQ_Classes_Helpers_Sanitize::checkTelephone(SQ_Classes_Helpers_Tools::$options['sq_jsonld']['Organization']['contactPoint']['telephone']);
+		SQ_Classes_Helpers_Tools::$options['sq_jsonld']['Person']['telephone']                       = SQ_Classes_Helpers_Sanitize::checkTelephone( SQ_Classes_Helpers_Tools::$options['sq_jsonld']['Person']['telephone'] );
+		SQ_Classes_Helpers_Tools::$options['sq_jsonld']['Organization']['contactPoint']['telephone'] = SQ_Classes_Helpers_Sanitize::checkTelephone( SQ_Classes_Helpers_Tools::$options['sq_jsonld']['Organization']['contactPoint']['telephone'] );
 
 
-        //save the options in database
-        SQ_Classes_Helpers_Tools::saveOptions();
+		//save the options in database
+		SQ_Classes_Helpers_Tools::saveOptions();
 
 		//empty the sitemap cache on settings save
-		if(SQ_Classes_Helpers_Tools::getOption('sq_sitemap_do_cache')) {
-		    SQ_Classes_Helpers_Tools::emptyLocalCache();
-	    }
+		if ( SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap_do_cache' ) ) {
+			SQ_Classes_Helpers_Tools::emptyLocalCache();
+		}
 
-        //reset the report time
-        SQ_Classes_Helpers_Tools::saveOptions('seoreport_time', false);
+		//reset the report time
+		SQ_Classes_Helpers_Tools::saveOptions( 'seoreport_time', false );
 
 		//trigger action after settings are saved
-	    do_action('sq_save_settings_after');
-    }
-    /**
-     * Save the form submit values in sq_option row in wp_options table
-     *
-     * @param $params
-     */
-    public function saveValues($params)
-    {
-		if(!empty($params)) {
+		do_action( 'sq_save_settings_after' );
+	}
+
+	/**
+	 * Save the form submit values in sq_option row in wp_options table
+	 *
+	 * @param $params
+	 */
+	public function saveValues( $params ) {
+		if ( ! empty( $params ) ) {
 
 			//Save the option values
 			foreach ( $params as $key => $value ) {
@@ -103,7 +103,7 @@ class SQ_Models_Settings
 					$value = SQ_Classes_Helpers_Sanitize::sanitizeField( $value );
 
 					//Initialize the array for some options
-					if ( in_array( $key, array( 'sq_sla_exclude_post_types' ) ) ) {
+					if ( $key == 'sq_sla_exclude_post_types' ) {
 						SQ_Classes_Helpers_Tools::$options[ $key ] = array();
 					}
 
@@ -185,8 +185,8 @@ class SQ_Models_Settings
 				}
 			}
 
-			do_action('sq_save_settings_after', $params);
+			do_action( 'sq_save_settings_after', $params );
 		}
-    }
+	}
 
 }

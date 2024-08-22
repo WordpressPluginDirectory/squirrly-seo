@@ -288,6 +288,13 @@ class SQ_Controllers_Indexnow extends SQ_Classes_FrontController
 
     }
 
+	/**
+	 * Submit an URL to IndexNow
+	 * @param string $url
+	 * @param bool $manual
+	 *
+	 * @return false
+	 */
     private function submitUrl( $url, $manual ) {
 
         if ( !$url = apply_filters( 'sq_submit_url', $url, $manual ) ) {

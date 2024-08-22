@@ -1,12 +1,11 @@
 <?php
-defined('ABSPATH') || die('Cheatin\' uh?');
+defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
 
-class SQ_Classes_Helpers_Cache
-{
+class SQ_Classes_Helpers_Cache {
 	/** @var string cache type */
 	private $mode = 'db';
 
-	/** @var WP_Filesystem_Base  */
+	/** @var WP_Filesystem_Base */
 	private $filesystem;
 
 	/** @var string Prefix of the filename for cache. */
@@ -17,13 +16,12 @@ class SQ_Classes_Helpers_Cache
 
 	public function __construct() {
 		//check if sitemap cache is activated
-		if(SQ_Classes_Helpers_Tools::getOption('sq_auto_sitemap') &&
-		   SQ_Classes_Helpers_Tools::getOption('sq_sitemap_do_cache')) {
+		if ( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_sitemap' ) && SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap_do_cache' ) ) {
 			//listen Squirrly
-			add_action( 'sq_save_settings_after', array( $this, 'invalidateCache' ));
+			add_action( 'sq_save_settings_after', array( $this, 'invalidateCache' ) );
 			//listen WP
-			add_action( 'save_post', array( $this, 'listenWPHooks' ) , 10, 1);
-			add_action( 'delete_post', array( $this, 'listenWPHooks' ) , 10, 1);
+			add_action( 'save_post', array( $this, 'listenWPHooks' ), 10, 1 );
+			add_action( 'delete_post', array( $this, 'listenWPHooks' ), 10, 1 );
 			add_action( 'created_term', array( $this, 'listenWPHooks' ), 10, 1 );
 			add_action( 'edited_terms', array( $this, 'listenWPHooks' ), 10, 1 );
 			add_action( 'delete_term', array( $this, 'listenWPHooks' ), 10, 1 );
@@ -31,22 +29,24 @@ class SQ_Classes_Helpers_Cache
 	}
 
 	/**
-     * Empty the cache on WordPress hooks
-	 * @param $param
+	 * Empty the cache on WordPress hooks
+	 *
+	 * @param string $param
 	 *
 	 * @return void
 	 */
-    public function listenWPHooks($param){
-	    $this->invalidateCache();
-    }
+	public function listenWPHooks( $param ) {
+		$this->invalidateCache();
+	}
 
 	/**
-     * Load cache mode and filesystem
+	 * Load cache mode and filesystem
+	 *
 	 * @return $this
 	 */
 	public function initCache() {
 		$this->filesystem = SQ_Classes_Helpers_Tools::initFilesystem();
-		$this->mode          = $this->isWritable() ? 'file' : 'db';
+		$this->mode       = $this->isWritable() ? 'file' : 'db';
 
 		//Change sitemap caching mode (can be "file" or "db").
 		$this->mode = apply_filters( 'sq_cache_mode', $this->mode );
@@ -64,14 +64,15 @@ class SQ_Classes_Helpers_Cache
 			return false;
 		}
 
-		$folder_path         = $this->getCacheDirectory();
-		$test_file           = $folder_path . $this->getKey();
+		$folder_path = $this->getCacheDirectory();
+		$test_file   = $folder_path . $this->getKey();
 
 		// If folder doesn't exist?
 		if ( ! $this->filesystem->exists( $folder_path ) ) {
 			// Can we create the folder?
 			// returns true if yes and false if not.
 			$permissions = ( defined( 'FS_CHMOD_DIR' ) ) ? FS_CHMOD_DIR : 0755;
+
 			return $this->filesystem->mkdir( $folder_path, $permissions );
 		}
 
@@ -89,9 +90,10 @@ class SQ_Classes_Helpers_Cache
 	/**
 	 * Get the cached sitemap.
 	 *
-	 * @param  string $type Sitemap type.
-	 * @param  int    $page Page number to retrieve.
-	 * @param  bool   $html Is HTML sitemap.
+	 * @param string $type Sitemap type.
+	 * @param int $page Page number to retrieve.
+	 * @param bool $html Is HTML sitemap.
+	 *
 	 * @return false|string false on no cache found otherwise sitemap file.
 	 */
 	public function getSitemap( $type, $page, $html = false ) {
@@ -106,23 +108,24 @@ class SQ_Classes_Helpers_Cache
 		}
 
 		$path = $this->getCacheDirectory() . $filename;
-		if ( 'file' === $this->mode
-		     && $this->filesystem->exists( $path ) ) {
+		if ( 'file' === $this->mode && $this->filesystem->exists( $path ) ) {
 			return $this->filesystem->get_contents( $path );
 		}
 
 		$filename = "sitemap_{$type}_$filename";
 		$sitemap  = get_transient( $filename );
+
 		return maybe_unserialize( $sitemap );
 	}
 
 	/**
 	 * save the sitemap to cache.
 	 *
-	 * @param  string $type    Sitemap type.
-	 * @param  int    $page    Page number to store.
-	 * @param  string $sitemap Sitemap body to store.
-	 * @param  bool   $html    Is HTML sitemap.
+	 * @param string $type Sitemap type.
+	 * @param int $page Page number to store.
+	 * @param string $sitemap Sitemap body to store.
+	 * @param bool $html Is HTML sitemap.
+	 *
 	 * @return boolean
 	 */
 	public function saveSitemap( $type, $page, $sitemap, $html = false ) {
@@ -142,19 +145,22 @@ class SQ_Classes_Helpers_Cache
 
 			if ( true === $stored ) {
 				$this->cachedFiles( $filename, $type );
+
 				return $stored;
 			}
 		}
 
 		$filename = "sitemap_{$type}_$filename";
+
 		return set_transient( $filename, maybe_serialize( $sitemap ), DAY_IN_SECONDS * 30 );
 	}
 
 	/**
 	 * Get filename for sitemap.
 	 *
-	 * @param  null|string $type The type to get the key for. Null or '1' for index cache.
-	 * @param  int         $page The page of cache to get the key for.
+	 * @param null|string $type The type to get the key for. Null or '1' for index cache.
+	 * @param int $page The page of cache to get the key for.
+	 *
 	 * @return boolean|string The key where the cache is stored on. False if the key could not be generated.
 	 */
 	private function getKey( $type = null, $page = 1, $html = false ) {
@@ -184,11 +190,11 @@ class SQ_Classes_Helpers_Cache
 			$filtered = $default;
 		}
 
-		if (!$this->filesystem->is_dir($filtered)) {
-			@wp_mkdir_p($filtered);
+		if ( ! $this->filesystem->is_dir( $filtered ) ) {
+			@wp_mkdir_p( $filtered );
 		}
 
-		$filtered = rtrim($filtered, '/') . '/sitemap';
+		$filtered = rtrim( $filtered, '/' ) . '/sitemap';
 
 		return trailingslashit( $filtered );
 	}
@@ -196,10 +202,11 @@ class SQ_Classes_Helpers_Cache
 	/**
 	 * Read/Write cached files.
 	 *
-	 * @param  mixed  $value Pass null to get option,
+	 * @param mixed $value Pass null to get option,
 	 *                       Pass false to delete option,
 	 *                       Pass value to update option.
-	 * @param  string $type  Sitemap type.
+	 * @param string $type Sitemap type.
+	 *
 	 * @return mixed
 	 */
 	public function cachedFiles( $value = null, $type = '' ) {
@@ -207,10 +214,10 @@ class SQ_Classes_Helpers_Cache
 		if ( $type <> '' && $value ) {
 			$options           = SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap_cache' );
 			$options[ $value ] = $type;
-			SQ_Classes_Helpers_Tools::saveOptions( 'sq_sitemap_cache', $options);
-		}elseif($value === false){
+			SQ_Classes_Helpers_Tools::saveOptions( 'sq_sitemap_cache', $options );
+		} elseif ( $value === false ) {
 			SQ_Classes_Helpers_Tools::saveOptions( 'sq_sitemap_cache', array() );
-		}elseif($value){
+		} elseif ( $value ) {
 			SQ_Classes_Helpers_Tools::saveOptions( 'sq_sitemap_cache', $value );
 		}
 
@@ -238,7 +245,7 @@ class SQ_Classes_Helpers_Cache
 
 		$directory = $this->getCacheDirectory();
 
-		if ( !$type ) {
+		if ( ! $type ) {
 
 			$this->filesystem->delete( $directory, true );
 			wp_mkdir_p( $directory );
@@ -247,6 +254,7 @@ class SQ_Classes_Helpers_Cache
 			$this->cachedFiles( false );
 
 			SQ_Classes_Helpers_Tools::emptyCache();
+
 			return;
 		}
 
@@ -277,7 +285,7 @@ class SQ_Classes_Helpers_Cache
 	private function clearTransients( $type = null ) {
 		global $wpdb;
 
-		if(is_string($type)) {
+		if ( is_string( $type ) ) {
 			$transient = esc_attr( '_transient_sitemap_' . ( is_null( $type ) ? '' : $type ) . '%' );
 			$sql       = "DELETE FROM $wpdb->options WHERE `option_name` LIKE '%s'";
 			$wpdb->query( $wpdb->prepare( $sql, $transient ) );

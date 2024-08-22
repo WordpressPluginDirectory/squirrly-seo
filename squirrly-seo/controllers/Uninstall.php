@@ -1,19 +1,16 @@
 <?php
-defined('ABSPATH') || die('Cheatin\' uh?');
+defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
 
 /**
  * Uninstall Options
  */
-class SQ_Controllers_Uninstall extends SQ_Classes_FrontController
-{
+class SQ_Controllers_Uninstall extends SQ_Classes_FrontController {
 
-    public function hookHead()
-    {
-        SQ_Classes_ObjController::getClass('SQ_Classes_DisplayController')->loadMedia('uninstall');
-    }
+	public function hookHead() {
+		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'uninstall' );
+	}
 
-    public function hookFooter()
-    {
-        $this->show_view('Blocks/Uninstall');
-    }
+	public function hookFooter() {
+		$this->show_view( 'Blocks/Uninstall' );
+	}
 }

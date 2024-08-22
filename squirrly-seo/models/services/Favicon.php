@@ -29,10 +29,10 @@ class SQ_Models_Services_Favicon extends SQ_Models_Abstract_Seo
         if (SQ_Classes_Helpers_Tools::getOption('favicon') <> '' && file_exists(_SQ_CACHE_DIR_ . SQ_Classes_Helpers_Tools::getOption('favicon'))) {
             if (!get_option('permalink_structure')) {
                 $favicon = $path . '/index.php?sq_get=favicon';
-                $touchicon = $path . '/index.php?sq_get=touchicon';
+                $path . '/index.php?sq_get=touchicon';
             } else {
                 $favicon = $path . '/favicon.ico' . $rnd;
-                $touchicon = $path . '/touch-icon.png' . $rnd;
+                $path . '/touch-icon.png' . $rnd;
             }
 
             $favicons['shortcut icon'] = $favicon;

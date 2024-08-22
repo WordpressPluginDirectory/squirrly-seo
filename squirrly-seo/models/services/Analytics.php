@@ -1,109 +1,104 @@
 <?php
-defined('ABSPATH') || die('Cheatin\' uh?');
+defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
 
-class SQ_Models_Services_Analytics extends SQ_Models_Abstract_Seo
-{
+class SQ_Models_Services_Analytics extends SQ_Models_Abstract_Seo {
 
 
-    public function __construct()
-    {
-        parent::__construct();
+	public function __construct() {
+		parent::__construct();
 
-        if (isset($this->_post->sq->doseo) && $this->_post->sq->doseo) {
+		if ( isset( $this->_post->sq->doseo ) && $this->_post->sq->doseo ) {
 
-            if (!$this->_post->sq->do_analytics) {
-                add_filter('sq_google_analytics', array($this, 'returnFalse'));
-                add_filter('sq_google_analytics_footer', array($this, 'returnFalse'));
-                return;
-            }
+			if ( ! $this->_post->sq->do_analytics ) {
+				add_filter( 'sq_google_analytics', array( $this, 'returnFalse' ) );
+				add_filter( 'sq_google_analytics_footer', array( $this, 'returnFalse' ) );
 
-            //Do not track the logged users
-            if (function_exists('is_user_logged_in') && is_user_logged_in() && !SQ_Classes_Helpers_Tools::getOption('sq_tracking_logged_users')) {
-                return;
-            }
+				return;
+			}
 
-            //Do not track Squirrly Crawler
-            if (isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] == 'https://www.squirrly.co') {
-                return;
-            }
+			//Do not track the logged users
+			if ( function_exists( 'is_user_logged_in' ) && is_user_logged_in() && ! SQ_Classes_Helpers_Tools::getOption( 'sq_tracking_logged_users' ) ) {
+				return;
+			}
 
-            if (SQ_Classes_Helpers_Tools::getOption('sq_auto_amp') && SQ_Classes_Helpers_Tools::isAMPEndpoint()) {
-                add_filter('sq_google_analytics', array($this, 'generateGoogleAnalyticsAMP'));
-                add_filter('sq_google_analytics_amp', array($this, 'packGoogleAnalyticsAMP'));
-            } elseif(!SQ_Classes_Helpers_Tools::isAMPEndpoint() ) {
-                add_filter('sq_google_analytics', array($this, 'generateGoogleAnalytics'));
-                add_filter('sq_google_analytics', array($this, 'packGoogleAnalytics'), 99);
-            }
+			//Do not track Squirrly Crawler
+			if ( isset( $_SERVER['HTTP_REFERER'] ) && $_SERVER['HTTP_REFERER'] == 'https://www.squirrly.co' ) {
+				return;
+			}
 
-        } else {
-            add_filter('sq_google_analytics', array($this, 'returnFalse'));
-            add_filter('sq_google_analytics_footer', array($this, 'returnFalse'));
-        }
-    }
+			if ( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_amp' ) && SQ_Classes_Helpers_Tools::isAMPEndpoint() ) {
+				add_filter( 'sq_google_analytics', array( $this, 'generateGoogleAnalyticsAMP' ) );
+				add_filter( 'sq_google_analytics_amp', array( $this, 'packGoogleAnalyticsAMP' ) );
+			} elseif ( ! SQ_Classes_Helpers_Tools::isAMPEndpoint() ) {
+				add_filter( 'sq_google_analytics', array( $this, 'generateGoogleAnalytics' ) );
+				add_filter( 'sq_google_analytics', array( $this, 'packGoogleAnalytics' ), 99 );
+			}
 
-    public function generateGoogleAnalytics($track = '')
-    {
-        $codes = json_decode(wp_json_encode(SQ_Classes_Helpers_Tools::getOption('codes')));
+		} else {
+			add_filter( 'sq_google_analytics', array( $this, 'returnFalse' ) );
+			add_filter( 'sq_google_analytics_footer', array( $this, 'returnFalse' ) );
+		}
+	}
 
-        if (isset($codes->google_analytics) && $codes->google_analytics <> '') {
-            $track = $codes->google_analytics;
-        }
+	public function generateGoogleAnalytics( $track = '' ) {
+		$codes = json_decode( wp_json_encode( SQ_Classes_Helpers_Tools::getOption( 'codes' ) ) );
 
-        return $track;
-    }
+		if ( isset( $codes->google_analytics ) && $codes->google_analytics <> '' ) {
+			$track = $codes->google_analytics;
+		}
 
-    public function packGoogleAnalytics($track = '')
-    {
-        if ($track <> '') {
-            switch (SQ_Classes_Helpers_Tools::getOption('sq_analytics_google_js')) {
-                case 'analytics':
-                    if(SQ_Classes_Helpers_Tools::getOption('sq_tracking_ip_users')) {
-                        return sprintf("<script async src='https://www.google-analytics.com/analytics.js'></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', '%s', 'auto');ga('send', 'pageview');</script>", $track);
-                    }else{
-                        return sprintf("<script async src='https://www.google-analytics.com/analytics.js'></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', '%s', 'auto');ga('send', 'pageview');ga('set', 'anonymizeIp', true);</script>", $track);
-                    }
+		return $track;
+	}
 
-                case 'gtag':
-                    if(SQ_Classes_Helpers_Tools::getOption('sq_tracking_ip_users')) {
-                        return sprintf("<script async src='https://www.googletagmanager.com/gtag/js?id=%s'></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '%s');</script>", $track, $track);
-                    }else {
-                        return sprintf("<script async src='https://www.googletagmanager.com/gtag/js?id=%s'></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '%s');gtag('config', '%s', { 'anonymize_ip': true });</script>", $track, $track, $track);
-                    }
-            }
-        }
+	public function packGoogleAnalytics( $track = '' ) {
+		if ( $track <> '' ) {
+			switch ( SQ_Classes_Helpers_Tools::getOption( 'sq_analytics_google_js' ) ) {
+				case 'analytics':
+					if ( SQ_Classes_Helpers_Tools::getOption( 'sq_tracking_ip_users' ) ) {
+						return sprintf( "<script async src='https://www.google-analytics.com/analytics.js'></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', '%s', 'auto');ga('send', 'pageview');</script>", $track );
+					} else {
+						return sprintf( "<script async src='https://www.google-analytics.com/analytics.js'></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', '%s', 'auto');ga('send', 'pageview');ga('set', 'anonymizeIp', true);</script>", $track );
+					}
 
-        return false;
-    }
+				case 'gtag':
+					if ( SQ_Classes_Helpers_Tools::getOption( 'sq_tracking_ip_users' ) ) {
+						return sprintf( "<script async src='https://www.googletagmanager.com/gtag/js?id=%s'></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '%s');</script>", $track, $track );
+					} else {
+						return sprintf( "<script async src='https://www.googletagmanager.com/gtag/js?id=%s'></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '%s');gtag('config', '%s', { 'anonymize_ip': true });</script>", $track, $track, $track );
+					}
+			}
+		}
 
-    /***************************
-     * 
-     * FOR AMP VERSION
-     **********************************/
+		return false;
+	}
 
-    public function generateGoogleAnalyticsAMP()
-    {
-        $codes = json_decode(wp_json_encode(SQ_Classes_Helpers_Tools::getOption('codes')));
+	/***************************
+	 *
+	 * FOR AMP VERSION
+	 **********************************/
 
-        if (isset($codes->google_analytics) && $codes->google_analytics <> '') {
-            return '<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>';
-        }
+	public function generateGoogleAnalyticsAMP() {
+		$codes = json_decode( wp_json_encode( SQ_Classes_Helpers_Tools::getOption( 'codes' ) ) );
 
-        return false;
-    }
+		if ( isset( $codes->google_analytics ) && $codes->google_analytics <> '' ) {
+			return '<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>';
+		}
 
-    /**
-     * Return the AMP Analytics
-     *
-     * @return string
-     */
-    public function packGoogleAnalyticsAMP()
-    {
-        $codes = json_decode(wp_json_encode(SQ_Classes_Helpers_Tools::getOption('codes')));
+		return false;
+	}
 
-        if (isset($codes->google_analytics) && $codes->google_analytics <> '') {
-            return sprintf('<amp-analytics type="googleanalytics"><script type="application/json">{"vars": {"account": "%s"},"triggers": {"trackPageview": {"on": "visible","request": "pageview"}}}</script></amp-analytics>', $codes->google_analytics);
-        }
+	/**
+	 * Return the AMP Analytics
+	 *
+	 * @return string
+	 */
+	public function packGoogleAnalyticsAMP() {
+		$codes = json_decode( wp_json_encode( SQ_Classes_Helpers_Tools::getOption( 'codes' ) ) );
 
-        return '';
-    }
+		if ( isset( $codes->google_analytics ) && $codes->google_analytics <> '' ) {
+			return sprintf( '<amp-analytics type="googleanalytics"><script type="application/json">{"vars": {"account": "%s"},"triggers": {"trackPageview": {"on": "visible","request": "pageview"}}}</script></amp-analytics>', $codes->google_analytics );
+		}
+
+		return '';
+	}
 }

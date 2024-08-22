@@ -1140,52 +1140,52 @@ class SQ_Classes_Helpers_Tools
         return $nonce_field;
     }
 
-    /**
-     * Get a value from $_POST / $_GET
-     * if unavailable, take a default value
-     *
-     * @param  string $key           Value key
-     * @param  mixed  $defaultValue  (optional)
-     * @param  bool   $htmlcode
-     * @param  bool   $keep_newlines
-     * @return mixed Value
-     */
-    public static function getValue($key, $defaultValue = false, $keep_newlines = false)
-    {
-        if (!isset($key) || (isset($key) && $key == '')) {
-            return $defaultValue;
-        }
+	/**
+	 * Get a value from $_POST / $_GET
+	 * if unavailable, take a default value
+	 *
+	 * @param string $key Value key
+	 * @param mixed $defaultValue (optional)
+	 * @param bool $htmlcode
+	 * @param bool $keep_newlines
+	 *
+	 * @return mixed Value
+	 */
+	public static function getValue( $key, $defaultValue = false, $keep_newlines = false ) {
+		if ( ! isset( $key ) || ( isset( $key ) && $key == '' ) ) {
+			return $defaultValue;
+		}
 
-        //Get the params from forms
-        if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
-            $ret = (isset($_POST[$key]) ? $_POST[$key] : (isset($_GET[$key]) ? $_GET[$key] : ''));
-        } else {
-            $ret = (isset($_GET[$key]) ? $_GET[$key] : '');
-        }
+		//Get the params from forms
+		if ( isset( $_SERVER['REQUEST_METHOD'] ) && $_SERVER['REQUEST_METHOD'] === 'POST' ) {
+			$ret = ( isset( $_POST[ $key ] ) ? $_POST[ $key ] : ( isset( $_GET[ $key ] ) ? $_GET[ $key ] : '' ) );
+		} else {
+			$ret = ( isset( $_GET[ $key ] ) ? $_GET[ $key ] : '' );
+		}
 
-        //Start sanitization of each param
-        //based on the type
-        if (is_array($ret)) { //if array, sanitize each value from the array
-            if (!empty($ret)) {
-                foreach ($ret as &$row) {
-                    if (!is_array($row)) {
-                        $row = sanitize_text_field($row); //sanitize
-                    }
-                }
-            }
-        } elseif (is_string($ret) && $ret <> '' && $keep_newlines && function_exists('sanitize_textarea_field')) {
-            $ret = sanitize_textarea_field($ret);
-        }  else{
-            $ret = sanitize_text_field($ret);
-        }
+		//Start sanitization of each param
+		//based on the type
+		if ( is_array( $ret ) ) { //if array, sanitize each value from the array
+			if ( ! empty( $ret ) ) {
+				foreach ( $ret as &$row ) {
+					if ( ! is_array( $row ) ) {
+						$row = sanitize_text_field( $row ); //sanitize
+					}
+				}
+			}
+		} elseif ( is_string( $ret ) && $ret <> '' && $keep_newlines && function_exists( 'sanitize_textarea_field' ) ) {
+			$ret = sanitize_textarea_field( $ret );
+		} else {
+			$ret = sanitize_text_field( $ret );
+		}
 
-        if (!$ret) {
-            return $defaultValue;
-        } else {
-            return wp_unslash($ret);
-        }
+		if ( ! $ret ) {
+			return $defaultValue;
+		} else {
+			return wp_unslash( $ret );
+		}
 
-    }
+	}
 
     /**
      * Check if the parameter is set

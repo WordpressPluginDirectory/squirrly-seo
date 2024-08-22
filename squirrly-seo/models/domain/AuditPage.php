@@ -1,85 +1,84 @@
 <?php
-defined('ABSPATH') || die('Cheatin\' uh?');
+defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
 
-class SQ_Models_Domain_AuditPage extends SQ_Models_Abstract_Domain
-{
+class SQ_Models_Domain_AuditPage extends SQ_Models_Abstract_Domain {
 
-    protected $_id;
-    protected $_user_post_id;
-    protected $_post_id;
-    protected $_hash;
-    protected $_permalink;
-    protected $_audit;
-    protected $_stats;
+	protected $_id;
+	protected $_user_post_id;
+	protected $_post_id;
+	protected $_hash;
+	protected $_permalink;
+	protected $_audit;
+	protected $_stats;
 
-    protected $_incomplete = 0;
-    protected $_score = 'N/A';
-    protected $_indexed;
-    //--
-    protected $_audit_datetime;
-    protected $_audit_error;
-    protected $_datetime;
+	protected $_incomplete = 0;
+	protected $_score = 'N/A';
+	protected $_indexed;
+	//--
+	protected $_audit_datetime;
+	protected $_audit_error;
+	protected $_datetime;
 
-    protected $_wppost;
+	protected $_wppost;
 
-    /**
-     * Get the Local Post ID
-     *
-     * @return bool
-     */
-    public function getId()
-    {
-        if (!isset($this->_id)) {
-            if ($post = $this->getWppost()) {
-                $this->_id = $post->hash;
-            }
-        }
-        return $this->_id;
-    }
+	/**
+	 * Get the Local Post ID
+	 *
+	 * @return bool
+	 */
+	public function getId() {
+		if ( ! isset( $this->_id ) ) {
+			if ( $post = $this->getWppost() ) {
+				$this->_id = $post->hash;
+			}
+		}
 
-    public function getAudit()
-    {
-        if (!isset($this->_audit)) {
-            $this->_audit = (object)array();
-        }
+		return $this->_id;
+	}
 
-        $this->_audit->permalink = $this->_permalink;
-        return $this->_audit;
-    }
+	public function getAudit() {
+		if ( ! isset( $this->_audit ) ) {
+			$this->_audit = (object) array();
+		}
 
-    /**
-     * Get the local post
-     *
-     * @param  $url
-     * @return SQ_Models_Domain_Post|false
-     */
-    public function getWppost()
-    {
+		$this->_audit->permalink = $this->_permalink;
 
-        if (!isset($this->_wppost->hash)) {
-            if (isset($this->hash) && $this->hash <> '') {
-                if ($this->_wppost = SQ_Classes_ObjController::getClass('SQ_Models_Snippet')->setPostByHash($this->hash)) {
-                    $this->_wppost->sq_adm; //call the sq to populate
-                }
-            }
+		return $this->_audit;
+	}
 
-            if (!isset($this->_wppost->ID)) {
-                if (isset($this->_permalink) && $this->_permalink <> '') {
-                    if ($this->_wppost = SQ_Classes_ObjController::getClass('SQ_Models_Snippet')->setPostByURL($this->_permalink)) {
-                        $this->_wppost->sq_adm; //call the sq to populate
-                    }
-                }
-            }
-        } elseif (rtrim($this->_permalink, '/') == rtrim(home_url(), '/')) {
-            if ($this->_wppost = SQ_Classes_ObjController::getClass('SQ_Models_Snippet')->setHomePage()) {
-                $this->_wppost->sq_adm; //call the sq to populate
-            }
-        }
+	/**
+	 * Get the local post
+	 *
+	 * @param  $url
+	 *
+	 * @return SQ_Models_Domain_Post|false
+	 */
+	public function getWppost() {
 
-        //In case the page was not found, don't show error
-        SQ_Classes_Error::clearErrors();
+		if ( ! isset( $this->_wppost->hash ) ) {
+			if ( isset( $this->hash ) && $this->hash <> '' ) {
+				if ( $this->_wppost = SQ_Classes_ObjController::getClass( 'SQ_Models_Snippet' )->setPostByHash( $this->hash ) ) {
+					$this->_wppost->sq_adm; //call sq object to populate
+				}
+			}
 
-        //All params for the hook $post_id, $term_id, $taxonomy, $post_type
-        return apply_filters('sq_wppost', $this->_wppost, $this->_post_id, 0, '', '');
-    }
+			if ( ! isset( $this->_wppost->ID ) ) {
+				if ( isset( $this->_permalink ) && $this->_permalink <> '' ) {
+					if ( $this->_wppost = SQ_Classes_ObjController::getClass( 'SQ_Models_Snippet' )->setPostByURL( $this->_permalink ) ) {
+						$this->_wppost->sq_adm; //call sq object to populate
+					}
+				}
+			}
+		} elseif ( rtrim( $this->_permalink, '/' ) == rtrim( home_url(), '/' ) ) {
+			if ( $this->_wppost = SQ_Classes_ObjController::getClass( 'SQ_Models_Snippet' )->setHomePage() ) {
+				$this->_wppost->sq_adm; //call sq object to populate
+			}
+		}
+
+		//In case the page was not found, don't show error
+		SQ_Classes_Error::clearErrors();
+
+		//All params for the hook $post_id, $term_id, $taxonomy, $post_type
+		return apply_filters( 'sq_wppost', $this->_wppost, $this->_post_id, 0, '', '' );
+	}
 }

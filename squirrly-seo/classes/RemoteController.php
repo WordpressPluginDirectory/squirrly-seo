@@ -34,7 +34,7 @@ class SQ_Classes_RemoteController
                 'headers' => array(
                     'USER-TOKEN' => SQ_Classes_Helpers_Tools::getOption('sq_api'),
                     'URL-TOKEN' => (SQ_Classes_Helpers_Tools::getOption('sq_cloud_connect') ? SQ_Classes_Helpers_Tools::getOption('sq_cloud_token') : false),
-                    'USER-URL' => apply_filters('sq_homeurl', get_bloginfo('url')),
+                    'USER-URL' => apply_filters('sq_homeurl', get_bloginfo( 'url' )),
                     'LANG' => apply_filters('sq_language', get_bloginfo('language')),
                     'VERSQ' => (int)str_replace('.', '', SQ_VERSION)
                 )
@@ -138,19 +138,19 @@ class SQ_Classes_RemoteController
             return false;
         }
 
-        $response = self::cleanResponce(wp_remote_retrieve_body($response)); //clear and get the body
+        $response = self::cleanResponse(wp_remote_retrieve_body($response)); //clear and get the body
 
         SQ_Debug::dump('wp_remote_get', $method, $url, $options, $response); //output debug
         return $response;
     }
 
     /**
-     * Get the Json from responce if any
+     * Get the Json from response if any
      *
      * @param  string $response
      * @return string
      */
-    private static function cleanResponce($response)
+    private static function cleanResponse($response)
     {
         return trim($response, '()');
     }

@@ -1,44 +1,41 @@
 <?php
-defined('ABSPATH') || die('Cheatin\' uh?');
+defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
 
-class SQ_Models_Services_Canonical extends SQ_Models_Abstract_Seo
-{
+class SQ_Models_Services_Canonical extends SQ_Models_Abstract_Seo {
 
 
-    public function __construct()
-    {
-        parent::__construct();
+	public function __construct() {
+		parent::__construct();
 
-        if (isset($this->_post->sq->doseo) && $this->_post->sq->doseo) {
-            if(!$this->_post->sq->do_metas) {
-                add_filter('sq_canonical', array($this, 'returnFalse'));
-                return;
-            }
+		if ( isset( $this->_post->sq->doseo ) && $this->_post->sq->doseo ) {
+			if ( ! $this->_post->sq->do_metas ) {
+				add_filter( 'sq_canonical', array( $this, 'returnFalse' ) );
 
-            add_filter('sq_canonical', array($this, 'generateCanonical'));
-            add_filter('sq_canonical', array($this, 'packCanonical'), 99);
-        } else {
-            add_filter('sq_canonical', array($this, 'returnFalse'));
-        }
-    }
+				return;
+			}
 
-    public function generateCanonical($canonical = '')
-    {
-        if (SQ_Classes_Helpers_Tools::getOption('sq_auto_canonical') && isset($this->_post->sq->canonical) && $this->_post->sq->canonical <> '') {
-            $canonical = esc_url($this->_post->sq->canonical);
-        }elseif(isset($this->_post->url) && $this->_post->url <> ''){
-            $canonical = urldecode(esc_url($this->_post->url));
-        }
+			add_filter( 'sq_canonical', array( $this, 'generateCanonical' ) );
+			add_filter( 'sq_canonical', array( $this, 'packCanonical' ), 99 );
+		} else {
+			add_filter( 'sq_canonical', array( $this, 'returnFalse' ) );
+		}
+	}
 
-        return apply_filters('sq_canonical_url', $canonical);
-    }
+	public function generateCanonical( $canonical = '' ) {
+		if ( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_canonical' ) && isset( $this->_post->sq->canonical ) && $this->_post->sq->canonical <> '' ) {
+			$canonical = esc_url( $this->_post->sq->canonical );
+		} elseif ( isset( $this->_post->url ) && $this->_post->url <> '' ) {
+			$canonical = urldecode( esc_url( $this->_post->url ) );
+		}
 
-    public function packCanonical($canonical = '')
-    {
-        if ($canonical <> '') {
-            return sprintf("<link rel=\"canonical\" href=\"%s\" />", $canonical);
-        }
+		return apply_filters( 'sq_canonical_url', $canonical );
+	}
 
-        return false;
-    }
+	public function packCanonical( $canonical = '' ) {
+		if ( $canonical <> '' ) {
+			return sprintf( "<link rel=\"canonical\" href=\"%s\" />", $canonical );
+		}
+
+		return false;
+	}
 }

@@ -1,123 +1,120 @@
 <?php
-defined('ABSPATH') || die('Cheatin\' uh?');
+defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
 
-class SQ_Models_Focuspages_Authority extends SQ_Models_Abstract_Assistant
-{
+class SQ_Models_Focuspages_Authority extends SQ_Models_Abstract_Assistant {
 
-    protected $_category = 'authority';
+	protected $_category = 'authority';
 
-    protected $_moz_page_authority = false;
+	protected $_moz_page_authority = false;
 
-    const AUTHORITY_MINVAL = 35;
+	const AUTHORITY_MINVAL = 35;
 
-    public function init()
-    {
-        parent::init();
+	public function init() {
+		parent::init();
 
-        if (!isset($this->_audit->data)) {
-            $this->_error = true;
-            return;
-        }
+		if ( ! isset( $this->_audit->data ) ) {
+			$this->_error = true;
 
-        if (isset($this->_audit->data->sq_analytics_moz->page_authority)) {
-            $this->_moz_page_authority = $this->_audit->data->sq_analytics_moz->page_authority;
-        } else {
-            $this->_error = true;
-        }
+			return;
+		}
 
-    }
+		if ( isset( $this->_audit->data->sq_analytics_moz->page_authority ) ) {
+			$this->_moz_page_authority = $this->_audit->data->sq_analytics_moz->page_authority;
+		} else {
+			$this->_error = true;
+		}
 
-    /**
-     * Customize the tasks header
-     *
-     * @return string
-     */
-    public function getHeader()
-    {
-        $header = '<li class="completed">';
-        $header .= '<div class="font-weight-bold text-black-50 mb-1">' . esc_html__("Current URL", 'squirrly-seo') . ': </div>';
-        $header .= '<a href="' . $this->_post->url . '" target="_blank" style="word-break: break-word;">' . urldecode($this->_post->url) . '</a>';
-        $header .= '</li>';
+	}
 
-        return $header;
-    }
+	/**
+	 * Customize the tasks header
+	 *
+	 * @return string
+	 */
+	public function getHeader() {
+		$header = '<li class="completed">';
+		$header .= '<div class="font-weight-bold text-black-50 mb-1">' . esc_html__( "Current URL", 'squirrly-seo' ) . ': </div>';
+		$header .= '<a href="' . $this->_post->url . '" target="_blank" style="word-break: break-word;">' . urldecode( $this->_post->url ) . '</a>';
+		$header .= '</li>';
 
-    /**
-     * Customize the Color for this tasks
-     *
-     * @param  $completed
-     * @return string
-     */
-    public function getColor($completed)
-    {
-        if(!$completed) {
-            return self::TASK_INCOMPLETE;
-        }
+		return $header;
+	}
 
-        return parent::getColor($completed);
-    }
+	/**
+	 * Customize the Color for this tasks
+	 *
+	 * @param  $completed
+	 *
+	 * @return string
+	 */
+	public function getColor( $completed ) {
+		if ( ! $completed ) {
+			return self::TASK_INCOMPLETE;
+		}
 
-    public function setTasks($tasks)
-    {
-        parent::setTasks($tasks);
+		return parent::getColor( $completed );
+	}
 
-        $this->_tasks[$this->_category] = array(
-            'authority' => array(
-                'title' => sprintf(esc_html__("Authority over %s", 'squirrly-seo'), self::AUTHORITY_MINVAL),
-                'value' => (int)$this->_moz_page_authority . ' ' . esc_html__("Authority", 'squirrly-seo'),
-                'description' => sprintf(esc_html__("Your Page Authority Needs to be over %s to complete this task. %s To do that you'll need good metrics for all the tasks in the Traffic Health section of Focus Pages. %s You'll also need inner links, social media signals and backlinks from 3rd party sites.", 'squirrly-seo'), self::AUTHORITY_MINVAL, '<br /><br />', '<br /><br />'),
-            ),
-        );
-    }
+	public function setTasks( $tasks ) {
+		parent::setTasks( $tasks );
 
-    /*********************************************/
+		$this->_tasks[ $this->_category ] = array(
+			'authority' => array(
+				'title'       => sprintf( esc_html__( "Authority over %s", 'squirrly-seo' ), self::AUTHORITY_MINVAL ),
+				'value'       => (int) $this->_moz_page_authority . ' ' . esc_html__( "Authority", 'squirrly-seo' ),
+				'description' => sprintf( esc_html__( "Your Page Authority Needs to be over %s to complete this task. %s To do that you'll need good metrics for all the tasks in the Traffic Health section of Focus Pages. %s You'll also need inner links, social media signals and backlinks from 3rd party sites.", 'squirrly-seo' ), self::AUTHORITY_MINVAL, '<br /><br />', '<br /><br />' ),
+			),
+		);
+	}
 
-    /**
-     * Keyword optimization required
-     *
-     * @param  $title
-     * @return string
-     */
-    public function getTitle($title)
-    {
+	/*********************************************/
 
-        if (!$this->_completed && !$this->_indexed) {
-            foreach ($this->_tasks[$this->_category] as $task) {
-                if ($task['completed'] === false) {
-                    return '<img src="'.esc_url(_SQ_ASSETS_URL_ . 'img/assistant/tooltip.gif').'" width="100">';
-                }
-            }
-        }
+	/**
+	 * Keyword optimization required
+	 *
+	 * @param  $title
+	 *
+	 * @return string
+	 */
+	public function getTitle( $title ) {
 
-        return parent::getTitle($title);
-    }
+		if ( ! $this->_completed && ! $this->_indexed ) {
+			foreach ( $this->_tasks[ $this->_category ] as $task ) {
+				if ( $task['completed'] === false ) {
+					return '<img src="' . esc_url( _SQ_ASSETS_URL_ . 'img/assistant/tooltip.gif' ) . '" width="100">';
+				}
+			}
+		}
 
-    /**
-     * Show the page authority
-     */
-    public function getValue()
-    {
-        if ($this->_moz_page_authority !== false) {
-            return (int)$this->_moz_page_authority;
-        }
+		return parent::getTitle( $title );
+	}
 
-        return false;
-    }
+	/**
+	 * Show the page authority
+	 */
+	public function getValue() {
+		if ( $this->_moz_page_authority !== false ) {
+			return (int) $this->_moz_page_authority;
+		}
 
-    /**
-     * Check the page authority to be grater than AUTHORITY_MINVAL
-     *
-     * @return bool|WP_Error
-     */
-    public function checkAuthority($task)
-    {
-        if ($this->_moz_page_authority !== false) {
-            $task['completed'] = ($this->_moz_page_authority >= self::AUTHORITY_MINVAL);
-            return $task;
-        }
+		return false;
+	}
 
-        $task['error'] = true;
-        return $task;
-    }
+	/**
+	 * Check the page authority to be grater than AUTHORITY_MINVAL
+	 *
+	 * @return bool|WP_Error
+	 */
+	public function checkAuthority( $task ) {
+		if ( $this->_moz_page_authority !== false ) {
+			$task['completed'] = ( $this->_moz_page_authority >= self::AUTHORITY_MINVAL );
+
+			return $task;
+		}
+
+		$task['error'] = true;
+
+		return $task;
+	}
 
 }

@@ -1,6 +1,8 @@
 <?php
-defined('ABSPATH') || die('Cheatin\' uh?');
-if(!isset($view)) return;
+defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
+if ( ! isset( $view ) ) {
+	return;
+}
 
 /**
  * Rankings Settings view
@@ -9,28 +11,29 @@ if(!isset($view)) return;
  */
 ?>
 <div id="sq_wrap">
-    <?php $view->show_view('Blocks/Toolbar'); ?>
-    <?php do_action('sq_notices'); ?>
+	<?php $view->show_view( 'Blocks/Toolbar' ); ?>
+	<?php do_action( 'sq_notices' ); ?>
     <div id="sq_content" class="d-flex flex-row bg-white my-0 p-0 m-0">
-        <?php
-        if (!SQ_Classes_Helpers_Tools::userCan('sq_manage_focuspages')) {
-            echo '<div class="col-12 alert alert-success text-center m-0 p-3">'. esc_html__("You do not have permission to access this page. You need Squirrly SEO Admin role.", "squirrly-seo").'</div>';
-            return;
-        }
-        ?>
-        <?php $view->show_view('Blocks/Menu'); ?>
+		<?php
+		if ( ! SQ_Classes_Helpers_Tools::userCan( 'sq_manage_focuspages' ) ) {
+			echo '<div class="col-12 alert alert-success text-center m-0 p-3">' . esc_html__( "You do not have permission to access this page. You need Squirrly SEO Admin role.", "squirrly-seo" ) . '</div>';
+
+			return;
+		}
+		?>
+		<?php $view->show_view( 'Blocks/Menu' ); ?>
         <div class="d-flex flex-row flex-nowrap flex-grow-1 bg-light m-0 p-0">
             <div class="flex-grow-1 sq_flex m-0 py-0 px-4">
                 <form method="POST">
-                    <?php do_action('sq_form_notices'); ?>
-                    <?php SQ_Classes_Helpers_Tools::setNonce('sq_ranking_settings', 'sq_nonce'); ?>
+					<?php do_action( 'sq_form_notices' ); ?>
+					<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_ranking_settings', 'sq_nonce' ); ?>
                     <input type="hidden" name="action" value="sq_ranking_settings"/>
 
                     <div class="col-12 p-0 m-0">
 
-                        <div class="sq_breadcrumbs my-4"><?php SQ_Classes_ObjController::getClass('SQ_Models_Menu')->showBreadcrumbs(SQ_Classes_Helpers_Tools::getValue('page') . '/' . SQ_Classes_Helpers_Tools::getValue('tab')) ?></div>
+                        <div class="sq_breadcrumbs my-4"><?php SQ_Classes_ObjController::getClass( 'SQ_Models_Menu' )->showBreadcrumbs( SQ_Classes_Helpers_Tools::getValue( 'page' ) . '/' . SQ_Classes_Helpers_Tools::getValue( 'tab' ) ) ?></div>
                         <h3 class="mt-4">
-                            <?php echo esc_html__("Rankings Settings", "squirrly-seo"); ?>
+							<?php echo esc_html__( "Rankings Settings", "squirrly-seo" ); ?>
                             <div class="sq_help_question d-inline">
                                 <a href="https://howto12.squirrly.co/kb/ranking-serp-checker/#ranking_settings" target="_blank"><i class="fa-solid fa-question-circle m-0 p-0"></i></a>
                             </div>
@@ -40,13 +43,17 @@ if(!isset($view)) return;
                             <div class="col-12 m-0 p-0">
                                 <div class="col-12 row p-0 m-0 my-5">
                                     <div class="col-4 p-0 pr-3 font-weight-bold">
-                                        <div class="font-weight-bold"><?php echo esc_html__("Google Country", "squirrly-seo"); ?>:</div>
-                                        <div class="small text-black-50 my-1 pr-3"><?php echo esc_html__("Select the Country for which Squirrly will check the Google rank.", "squirrly-seo"); ?></div>
+                                        <div class="font-weight-bold"><?php echo esc_html__( "Google Country", "squirrly-seo" ); ?>
+                                            :
+                                        </div>
+                                        <div class="small text-black-50 my-1 pr-3"><?php echo esc_html__( "Select the Country for which Squirrly will check the Google rank.", "squirrly-seo" ); ?></div>
                                     </div>
                                     <div class="col-8 p-0 input-group">
                                         <label>
                                             <select name="sq_google_country" class="form-control bg-input mb-1">
-                                                <option value="com"><?php echo esc_html__("Default", "squirrly-seo"); ?> - Globally</option>
+                                                <option value="com"><?php echo esc_html__( "Default", "squirrly-seo" ); ?>
+                                                    - Globally
+                                                </option>
                                                 <option value="af"><?php echo "Afghanistan"; ?></option>
                                                 <option value="al"><?php echo "Albania"; ?></option>
                                                 <option value="dz"><?php echo "Algeria"; ?></option>
@@ -310,15 +317,20 @@ if(!isset($view)) return;
                                                 <option value="zw"><?php echo "Zimbabwe"; ?></option>
                                             </select>
                                         </label>
-                                        <script>jQuery('select[name=sq_google_country]').val('<?php echo esc_attr(str_replace(array('com.','co.'), '', SQ_Classes_Helpers_Tools::getOption('sq_google_country')))?>').attr('selected', true);</script>
+                                        <script>jQuery('select[name=sq_google_country]').val('<?php echo esc_attr( str_replace( array(
+												'com.',
+												'co.'
+											), '', SQ_Classes_Helpers_Tools::getOption( 'sq_google_country' ) ) )?>').attr('selected', true);</script>
 
                                     </div>
                                 </div>
 
                                 <div class="col-12 row p-0 m-0 my-5">
                                     <div class="col-4 p-0 pr-3 font-weight-bold">
-                                        <div class="font-weight-bold"><?php echo esc_html__("Google Language", "squirrly-seo"); ?>:</div>
-                                        <div class="small text-black-50 my-1 pr-3"><?php echo esc_html__("Select the Language for which Squirrly will check the Google rank.", "squirrly-seo"); ?></div>
+                                        <div class="font-weight-bold"><?php echo esc_html__( "Google Language", "squirrly-seo" ); ?>
+                                            :
+                                        </div>
+                                        <div class="small text-black-50 my-1 pr-3"><?php echo esc_html__( "Select the Language for which Squirrly will check the Google rank.", "squirrly-seo" ); ?></div>
                                     </div>
                                     <div class="col-8 p-0 input-group">
                                         <label>
@@ -377,7 +389,8 @@ if(!isset($view)) return;
                                                 <option value="de">German - Deutsch</option>
                                                 <option value="de_AT">German (Austria) - Deutsch (Österreich)</option>
                                                 <option value="de_DE">German (Germany) - Deutsch (Deutschland)</option>
-                                                <option value="de_LI">German (Liechtenstein) - Deutsch (Liechtenstein)</option>
+                                                <option value="de_LI">German (Liechtenstein) - Deutsch (Liechtenstein)
+                                                </option>
                                                 <option value="de_CH">German (Switzerland) - Deutsch (Schweiz)</option>
                                                 <option value="el">Greek - Ελληνικά</option>
                                                 <option value="gn">Guarani</option>
@@ -393,7 +406,8 @@ if(!isset($view)) return;
                                                 <option value="ga">Irish - Gaeilge</option>
                                                 <option value="it">Italian - italiano</option>
                                                 <option value="it_IT">Italian (Italy) - italiano (Italia)</option>
-                                                <option value="it_CH">Italian (Switzerland) - italiano (Svizzera)</option>
+                                                <option value="it_CH">Italian (Switzerland) - italiano (Svizzera)
+                                                </option>
                                                 <option value="ja">Japanese - 日本語</option>
                                                 <option value="jw">Javanese</option>
                                                 <option value="kn">Kannada - ಕನ್ನಡ</option>
@@ -436,7 +450,8 @@ if(!isset($view)) return;
                                                 <option value="pl">Polish - polski</option>
                                                 <option value="pt">Portuguese - português</option>
                                                 <option value="pt_BR">Portuguese (Brazil) - português (Brasil)</option>
-                                                <option value="pt_PT">Portuguese (Portugal) - português (Portugal)</option>
+                                                <option value="pt_PT">Portuguese (Portugal) - português (Portugal)
+                                                </option>
                                                 <option value="pa">Punjabi - ਪੰਜਾਬੀ</option>
                                                 <option value="qu">Quechua</option>
                                                 <option value="ro">Romanian - română</option>
@@ -458,10 +473,14 @@ if(!isset($view)) return;
                                                 <option value="st">Southern Sotho</option>
                                                 <option value="es">Spanish - español</option>
                                                 <option value="es_AR">Spanish (Argentina) - español (Argentina)</option>
-                                                <option value="es_419">Spanish (Latin America) - español (Latinoamérica)</option>
+                                                <option value="es_419">Spanish (Latin America) - español
+                                                    (Latinoamérica)
+                                                </option>
                                                 <option value="es_MX">Spanish (Mexico) - español (México)</option>
                                                 <option value="es_ES">Spanish (Spain) - español (España)</option>
-                                                <option value="es_US">Spanish (United States) - español (Estados Unidos)</option>
+                                                <option value="es_US">Spanish (United States) - español (Estados
+                                                    Unidos)
+                                                </option>
                                                 <option value="su">Sundanese</option>
                                                 <option value="sw">Swahili - Kiswahili</option>
                                                 <option value="sv">Swedish - svenska</option>
@@ -492,15 +511,17 @@ if(!isset($view)) return;
                                                 <option value="zu">Zulu - isiZulu</option>
                                             </select>
                                         </label>
-                                        <script>jQuery('select[name=sq_google_language]').val('<?php echo esc_attr(SQ_Classes_Helpers_Tools::getOption('sq_google_language'))?>').attr('selected', true);</script>
+                                        <script>jQuery('select[name=sq_google_language]').val('<?php echo esc_attr( SQ_Classes_Helpers_Tools::getOption( 'sq_google_language' ) )?>').attr('selected', true);</script>
 
                                     </div>
                                 </div>
 
                                 <div class="col-12 row p-0 m-0 my-5">
                                     <div class="col-4 p-0 pr-3 font-weight-bold">
-                                        <div class="font-weight-bold"><?php echo esc_html__("Device", "squirrly-seo"); ?>:</div>
-                                        <div class="small text-black-50 my-1 pr-3"><?php echo esc_html__("Select the Device for which Squirrly will check the Google rank.", "squirrly-seo"); ?></div>
+                                        <div class="font-weight-bold"><?php echo esc_html__( "Device", "squirrly-seo" ); ?>
+                                            :
+                                        </div>
+                                        <div class="small text-black-50 my-1 pr-3"><?php echo esc_html__( "Select the Device for which Squirrly will check the Google rank.", "squirrly-seo" ); ?></div>
                                     </div>
                                     <div class="col-8 p-0 input-group">
                                         <label>
@@ -510,7 +531,7 @@ if(!isset($view)) return;
                                                 <option value="mobile">Mobile</option>
                                             </select>
                                         </label>
-                                        <script>jQuery('select[name=sq_google_device]').val('<?php echo esc_attr(SQ_Classes_Helpers_Tools::getOption('sq_google_device'))?>').attr('selected', true);</script>
+                                        <script>jQuery('select[name=sq_google_device]').val('<?php echo esc_attr( SQ_Classes_Helpers_Tools::getOption( 'sq_google_device' ) )?>').attr('selected', true);</script>
 
                                     </div>
                                 </div>
@@ -520,29 +541,31 @@ if(!isset($view)) return;
 
                     </div>
 
-	                <?php do_action('sq_rankings_settings_after'); ?>
+					<?php do_action( 'sq_rankings_settings_after' ); ?>
 
                     <div class="col-12 m-0 p-0">
-                        <button type="submit" class="btn rounded-0 btn-primary btn-lg py-2 px-5"><?php echo esc_html__("Save Settings", "squirrly-seo"); ?></button>
+                        <button type="submit" class="btn rounded-0 btn-primary btn-lg py-2 px-5"><?php echo esc_html__( "Save Settings", "squirrly-seo" ); ?></button>
                     </div>
                 </form>
 
                 <div class="sq_tips col-12 m-0 p-0 my-5">
-                    <h5 class="text-left my-3 font-weight-bold"><i class="fa-solid fa-exclamation-circle" ></i> <?php echo esc_html__("Tips and Tricks", "squirrly-seo"); ?></h5>
+                    <h5 class="text-left my-3 font-weight-bold">
+                        <i class="fa-solid fa-exclamation-circle"></i> <?php echo esc_html__( "Tips and Tricks", "squirrly-seo" ); ?>
+                    </h5>
                     <ul class="mx-4 my-1">
-                        <li class="text-left small"><?php echo esc_html__("Complete the Mastery Tasks you see on the right side of your screen to make the most out of the Rankings section of Squirrly SEO.", "squirrly-seo"); ?></li>
-                        <li class="text-left small"><?php echo esc_html__("Follow the instructions to mark every task as Completed.", "squirrly-seo"); ?></li>
+                        <li class="text-left small"><?php echo esc_html__( "Complete the Mastery Tasks you see on the right side of your screen to make the most out of the Rankings section of Squirrly SEO.", "squirrly-seo" ); ?></li>
+                        <li class="text-left small"><?php echo esc_html__( "Follow the instructions to mark every task as Completed.", "squirrly-seo" ); ?></li>
                     </ul>
                 </div>
 
-                <?php SQ_Classes_ObjController::getClass('SQ_Core_BlockKnowledgeBase')->init(); ?>
+				<?php SQ_Classes_ObjController::getClass( 'SQ_Core_BlockKnowledgeBase' )->init(); ?>
 
             </div>
             <div class="sq_col_side bg-white">
                 <div class="col-12 m-0 p-0 sq_sticky">
-                    <?php SQ_Classes_ObjController::getClass('SQ_Core_BlockAssistant')->init(); ?>
+					<?php SQ_Classes_ObjController::getClass( 'SQ_Core_BlockAssistant' )->init(); ?>
 
-                    <?php do_action('sq_rankings_settings_side_after'); ?>
+					<?php do_action( 'sq_rankings_settings_side_after' ); ?>
 
                 </div>
             </div>

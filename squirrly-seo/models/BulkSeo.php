@@ -77,8 +77,8 @@ class SQ_Models_BulkSeo
 
         }
         //Set the total number of tasks
-        $this->_page->setTotalTasts($total_tasks);
-        $this->_page->setCompletedTasts($total_tasks_completed);
+        $this->_page->setTotalTasks($total_tasks);
+        $this->_page->setCompletedTasks($total_tasks_completed);
 
         //set the categories for this page
         add_filter('sq_assistant_categories_page', array($this, 'getAssistantCategories'));

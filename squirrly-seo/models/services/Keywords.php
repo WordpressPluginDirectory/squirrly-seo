@@ -1,67 +1,64 @@
 <?php
-defined('ABSPATH') || die('Cheatin\' uh?');
+defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
 
-class SQ_Models_Services_Keywords extends SQ_Models_Abstract_Seo
-{
+class SQ_Models_Services_Keywords extends SQ_Models_Abstract_Seo {
 
 
-    public function __construct()
-    {
-        parent::__construct();
+	public function __construct() {
+		parent::__construct();
 
-        if (isset($this->_post->sq->doseo) && $this->_post->sq->doseo) {
-            if(!$this->_post->sq->do_metas) {
-                add_filter('sq_description', array($this, 'returnFalse'));
-                return;
-            }
+		if ( isset( $this->_post->sq->doseo ) && $this->_post->sq->doseo ) {
+			if ( ! $this->_post->sq->do_metas ) {
+				add_filter( 'sq_description', array( $this, 'returnFalse' ) );
 
-            add_filter('sq_keywords', array($this, 'generateKeywords'));
-            add_filter('sq_keywords', array($this, 'generateTags'), 20);
-            add_filter('sq_keywords', array($this, 'clearKeywords'), 98);
-            add_filter('sq_keywords', array($this, 'packKeywords'), 99);
-        } else {
-            add_filter('sq_keywords', array($this, 'returnFalse'));
-        }
-    }
+				return;
+			}
 
-    public function generateKeywords($keywords = '')
-    {
-        if (($this->_post->sq->keywords <> -1) && $this->_post->sq->keywords <> '') {
-            $keywords = $this->_post->sq->keywords;
-        }
+			add_filter( 'sq_keywords', array( $this, 'generateKeywords' ) );
+			add_filter( 'sq_keywords', array( $this, 'generateTags' ), 20 );
+			add_filter( 'sq_keywords', array( $this, 'clearKeywords' ), 98 );
+			add_filter( 'sq_keywords', array( $this, 'packKeywords' ), 99 );
+		} else {
+			add_filter( 'sq_keywords', array( $this, 'returnFalse' ) );
+		}
+	}
 
-        return $keywords;
-    }
+	public function generateKeywords( $keywords = '' ) {
+		if ( ( $this->_post->sq->keywords <> - 1 ) && $this->_post->sq->keywords <> '' ) {
+			$keywords = $this->_post->sq->keywords;
+		}
 
-    public function generateTags($keywords = '')
-    {
+		return $keywords;
+	}
 
-        if (SQ_Classes_Helpers_Tools::getOption('sq_keywordtag')) {
+	public function generateTags( $keywords = '' ) {
 
-            $posttags = get_the_tags($this->_post->post_id);
-            if (!empty($posttags)) {
-                foreach ($posttags as $tag) {
-                    $tags[] = $tag->name;
-                }
-                $keywords .= ($keywords <> '' ? ',' : '') . join(',', $tags);
-            }
-        }
+		if ( SQ_Classes_Helpers_Tools::getOption( 'sq_keywordtag' ) ) {
 
-        return $keywords;
-    }
+			$posttags = get_the_tags( $this->_post->post_id );
+			if ( ! empty( $posttags ) ) {
+				foreach ( $posttags as $tag ) {
+					$tags[] = $tag->name;
+				}
+				$keywords .= ( $keywords <> '' ? ',' : '' ) . join( ',', $tags );
+			}
+		}
 
-    public function packKeywords($keywords = '')
-    {
-        if ($keywords <> '') {
+		return $keywords;
+	}
 
-            $array_keywords = preg_split('/,/', $keywords);
-            if (!empty($array_keywords)) {
-                $array_keywords = array_unique($array_keywords);
-                $keywords = join(',', $array_keywords);
-            }
+	public function packKeywords( $keywords = '' ) {
+		if ( $keywords <> '' ) {
 
-            return sprintf("<meta name=\"keywords\" content=\"%s\" />", $keywords);
-        }
-        return '';
-    }
+			$array_keywords = explode( ',', $keywords );
+			if ( ! empty( $array_keywords ) ) {
+				$array_keywords = array_unique( $array_keywords );
+				$keywords       = join( ',', $array_keywords );
+			}
+
+			return sprintf( "<meta name=\"keywords\" content=\"%s\" />", $keywords );
+		}
+
+		return '';
+	}
 }
