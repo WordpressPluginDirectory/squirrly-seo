@@ -49,6 +49,7 @@ if ( ! isset( $view ) ) {
 									<?php
 									$filter = array( 'public' => true, '_builtin' => false );
 									$types  = get_post_types( $filter );
+									$types['post'] = 'post'; //add post type post
 
 									$patterns = SQ_Classes_Helpers_Tools::getOption( 'patterns' );
 									$patterns = apply_filters( 'sq_automation_patterns', $patterns );

@@ -47,8 +47,9 @@ class SQ_Models_LiveAssistant {
 			}
 
 			//load keyword from other plugins if not set
-			add_filter( 'sq_keyword', array( $this, 'loadOtherKeywords' ) );
-
+			if ( SQ_Classes_Helpers_Tools::getOption( 'sq_sla_otherkeywords' ) ) {
+				add_filter( 'sq_keyword', array( $this, 'loadOtherKeywords' ) );
+			}
 		}
 
 		$sq_config = array(

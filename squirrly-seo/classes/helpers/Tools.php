@@ -44,6 +44,9 @@ class SQ_Classes_Helpers_Tools
 			$qssModel->checkTableExists();
 	    }
 
+	    //Check the updates
+	    self::checkUpdate();
+
         //add extra links to the plugin in the Plugins list
         add_filter("plugin_row_meta", array($this, 'hookExtraLinks'), 10, 4);
 
@@ -137,6 +140,7 @@ class SQ_Classes_Helpers_Tools
     {
         $default = array(
             //Global settings
+            'sq_version' => '',
             'sq_api' => '',
             'sq_installed' => gmdate('Y-m-d H:i:s'),
             //
@@ -180,6 +184,7 @@ class SQ_Classes_Helpers_Tools
             //Live Assistant
             'sq_sla' => 1,
             'sq_sla_frontend' => 0,
+            'sq_sla_otherkeywords' => 1,
             'sq_sla_type' => 'auto',
             'sq_sla_exclude_post_types' => array(),
             'sq_keyword_help' => 1,
@@ -846,9 +851,6 @@ class SQ_Classes_Helpers_Tools
         );
         $options = json_decode(get_option(SQ_OPTION), true);
 
-        //Check the updates from old versions of the plugin
-        $options = self::checkUpdates($options);
-
         //Replace the default options with the database data
         if (is_array($options)) {
             $options = array_replace_recursive($default, $options);
@@ -912,45 +914,67 @@ class SQ_Classes_Helpers_Tools
 
     /**
      * Check the updates
-     * @return array
+     * @return void
      */
-    public static function checkUpdates($options){
-        //Update the Json-LD for Organization Logo
-        if (isset($options['sq_jsonld']['Organization']['logo']) && !is_array($options['sq_jsonld']['Organization']['logo'])) {
-            $options['sq_jsonld']['Organization']['logo'] = array(
-                '@type' => 'ImageObject',
-                'url' => $options['sq_jsonld']['Organization']['logo'],
-            );
-        }
+    public static function checkUpdate(){
 
-        if (isset($options['sq_jsonld']['Organization']['telephone']) && isset($options['sq_jsonld']['Organization']['contactType'])) {
-            $options['sq_jsonld']['Organization']['contactPoint'] = array(
-                '@type' => 'ContactPoint',
-                'telephone' => $options['sq_jsonld']['Organization']['telephone'],
-                'contactType' => $options['sq_jsonld']['Organization']['contactType']
-            );
+	    $current_version = SQ_Classes_Helpers_Tools::getOption( 'sq_version' );
 
-            unset($options['sq_jsonld']['Organization']['telephone']);
-            unset($options['sq_jsonld']['Organization']['contactType']);
-        }
+		//do the upgrade
+	    if ( version_compare( $current_version, SQ_VERSION, '<' ) ) {
 
-		//repair patterns if error
-		if(isset($options['patterns']) && !$options['patterns']) {
-			unset($options['patterns']);
-		}
+		    //Update the Json-LD for Organization Logo
+		    if ( isset( self::$options['sq_jsonld']['Organization']['logo'] ) && ! is_array( self::$options['sq_jsonld']['Organization']['logo'] ) ) {
+			    self::$options['sq_jsonld']['Organization']['logo'] = array(
+				    '@type' => 'ImageObject',
+				    'url'   => self::$options['sq_jsonld']['Organization']['logo'],
+			    );
+		    }
 
-        //Update the Json-LD for Person Image
-        if (isset($options['sq_jsonld']['Person']['logo'])) {
-            $options['sq_jsonld']['Person']['image'] = array(
-                '@type' => 'ImageObject',
-                'url' => $options['sq_jsonld']['Person']['logo'],
-            );
+		    if ( isset( self::$options['sq_jsonld']['Organization']['telephone'] ) && isset( self::$options['sq_jsonld']['Organization']['contactType'] ) ) {
+			    self::$options['sq_jsonld']['Organization']['contactPoint'] = array(
+				    '@type'       => 'ContactPoint',
+				    'telephone'   => self::$options['sq_jsonld']['Organization']['telephone'],
+				    'contactType' => self::$options['sq_jsonld']['Organization']['contactType']
+			    );
 
-            unset($options['sq_jsonld']['Person']['logo']);
-        }
+			    unset( self::$options['sq_jsonld']['Organization']['telephone'] );
+			    unset( self::$options['sq_jsonld']['Organization']['contactType'] );
+		    }
+
+		    //repair patterns if error
+		    if ( isset( self::$options['patterns'] ) && ! self::$options['patterns'] ) {
+			    unset( self::$options['patterns'] );
+		    }
+
+		    //Update the Json-LD for Person Image
+		    if ( isset( self::$options['sq_jsonld']['Person']['logo'] ) ) {
+			    self::$options['sq_jsonld']['Person']['image'] = array(
+				    '@type' => 'ImageObject',
+				    'url'   => self::$options['sq_jsonld']['Person']['logo'],
+			    );
+
+			    unset( self::$options['sq_jsonld']['Person']['logo'] );
+		    }
+
+			//12.3.22
+		    if(SQ_VERSION == '12.3.22'){
+			    if ( isset( self::$options['patterns'] ) ) {
+				    self::$options['patterns']['post']['google_news'] = 1;
+				}
+		    }
+
+		    //update the version
+		    self::$options['sq_version'] = SQ_VERSION;
+
+			//update multilingual options
+		    do_action( 'sq_save_settings_after', self::$options);
+
+		    //update the version
+		    SQ_Classes_Helpers_Tools::saveOptions();
+	    }
 
 
-        return $options;
     }
 
     /**

@@ -178,18 +178,17 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController {
 				//exclude external images as Google requests
 				add_action( 'sq_post_images', function ( $images ) {
 
-					//let EWWW CDN images
-					if ( SQ_Classes_Helpers_Tools::isPluginInstalled( 'ewww-image-optimizer/ewww-image-optimizer.php' ) ) {
-						return $images;
-					}
-
-					foreach ( $images as $index => $image ) {
+					foreach ( $images as $index => &$image ) {
 						if ( isset( $image['src'] ) && parse_url( $image['src'], PHP_URL_HOST ) ) {
 							$img_host = parse_url( $image['src'], PHP_URL_HOST );
-							$host     = parse_url( home_url(), PHP_URL_HOST );
+							$host     = parse_url( get_option( 'home' ), PHP_URL_HOST );
 
 							if ( $img_host <> $host ) {
-								unset( $images[ $index ] );
+								if( strpos($img_host,'cdn.') !== false || strpos($img_host,'exactdn.') !== false  ){
+									$image['src'] = str_replace( $img_host, $host, $image['src'] );
+								}else{
+									unset( $images[ $index ] );
+								}
 							}
 						}
 					}
@@ -334,9 +333,15 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController {
 
 					if ( ! empty( $patterns ) ) {
 						foreach ( $patterns as $pattern => $pattern_type ) {
-							if ( isset( $pattern_type['google_news'] ) && $pattern_type['google_news'] == 1 ) {
-								$sq_query['post_type'][] = $pattern;
-								$sq_query['post_type']   = array_unique( $sq_query['post_type'] );
+							if ( isset( $pattern_type['google_news'] ) ) {
+								if( $pattern_type['google_news'] ){
+									$sq_query['post_type'][] = $pattern;
+									$sq_query['post_type']   = array_unique( $sq_query['post_type'] );
+								}elseif( false !== in_array($pattern, $sq_query['post_type'] ) ){
+									$index = array_search($pattern, $sq_query['post_type']);
+									unset( $sq_query['post_type'][$index] );
+								}
+
 							}
 						}
 					}

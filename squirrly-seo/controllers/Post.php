@@ -358,7 +358,8 @@ class SQ_Controllers_Post extends SQ_Classes_FrontController {
 		parent::action();
 
 		switch ( SQ_Classes_Helpers_Tools::getValue( 'action' ) ) {
-			/** AJAX CALLS ***/ case 'sq_ajax_save_post':
+			/** AJAX CALLS ***/
+			case 'sq_ajax_save_post':
 
 			SQ_Classes_Helpers_Tools::setHeader( 'json' );
 

@@ -101,7 +101,7 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo {
 			$this->language = apply_filters( 'sq_sitemap_language', pll_current_language() );
 		} elseif ( function_exists( 'weglot_get_current_language' ) ) {
 			$this->language = weglot_get_current_language();
-		} else {
+		}  else {
 			$this->language = apply_filters( 'sq_sitemap_language', get_locale() );
 		}
 
@@ -166,7 +166,7 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo {
 
 				$xml               = array();
 				$xml['loc']        = $post->url;
-				$xml['lastmod']    = trim( mysql2date( 'Y-m-d\TH:i:s+00:00', $this->lastModified( $post ), false ) );
+				$xml['lastmod']    = $this->lastModified( $post );
 				$xml['changefreq'] = $this->frequency[ SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap_frequency' ) ][ $this->sitemap ][1];
 				$xml['priority']   = $this->frequency[ SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap_frequency' ) ][ $this->sitemap ][0];
 			}
@@ -404,7 +404,7 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo {
 						)
 					);
 
-					$xml['news:news'][ $post->ID ]['news:publication_date'] = trim( mysql2date( 'Y-m-d\TH:i:s+00:00', $this->lastModified( $post ), false ) );
+					$xml['news:news'][ $post->ID ]['news:publication_date'] = $this->lastModified( $post );
 					$xml['news:news'][ $post->ID ]['news:title']            = SQ_Classes_Helpers_Sanitize::clearTitle( $post->sq->title );
 					$xml['news:news'][ $post->ID ]['news:keywords']         = SQ_Classes_Helpers_Sanitize::clearKeywords( $post->sq->keywords );
 
@@ -642,7 +642,7 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo {
 
 		//Prevent sitemap from braking due to & in URLs
 		$xml['loc']        = esc_url( $post->url );
-		$xml['lastmod']    = trim( mysql2date( 'Y-m-d\TH:i:s+00:00', $this->lastModified( $post ), false ) );
+		$xml['lastmod']    = $this->lastModified( $post );
 		$xml['changefreq'] = $this->frequency[ SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap_frequency' ) ][ $this->sitemap ][1];
 		$xml['priority']   = $this->frequency[ SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap_frequency' ) ][ $this->sitemap ][0];
 
@@ -704,10 +704,13 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo {
 	 * @global SQ_Models_Domain_Post $post
 	 */
 	public function lastModified( $post ) {
+
+		$datetime =  get_lastpostmodified( 'gmt' );
+
 		if ( $post instanceof SQ_Models_Domain_Post ) {
 			if ( isset( $post->ID ) && $post->ID > 0 ) {
 
-				return get_post_modified_time( 'Y-m-d H:i:s', true, $post->ID );
+				$datetime = get_post_modified_time( 'Y-m-d H:i:s', true, $post->ID );
 
 			} elseif ( isset( $post->term_id ) && $post->term_id > 0 && $post->taxonomy <> '' ) {
 
@@ -729,12 +732,15 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo {
 					) );
 
 				if ( isset( $posts[0]->post_date_gmt ) && $posts[0]->post_date_gmt <> '' ) {
-					return $posts[0]->post_date_gmt;
+					$datetime = $posts[0]->post_date_gmt;
 				}
 			}
 		}
 
-		return date( 'Y-m-d H:i:s', strtotime( get_lastpostmodified( 'gmt' ) ) );
+		$timezone = wp_timezone();
+		$datetime = date_create( $datetime, $timezone );
+
+		return trim( gmdate( 'Y-m-d\TH:i:s+00:00', ($datetime->getTimestamp() + $datetime->getOffset()) ) );
 	}
 
 

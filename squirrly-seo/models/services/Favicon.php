@@ -20,7 +20,7 @@ class SQ_Models_Services_Favicon extends SQ_Models_Abstract_Seo
     {
         $rnd = '';
 	    $favicons = array();
-	    $path = parse_url(home_url(), PHP_URL_PATH);
+	    $path = parse_url(get_option( 'home' ), PHP_URL_PATH);
 
         if (SQ_Classes_Helpers_Tools::userCan('sq_manage_settings') && function_exists('is_user_logged_in') && is_user_logged_in()) {
             $rnd = '?' . substr(md5(SQ_Classes_Helpers_Tools::getOption('favicon')), 0 , 5);

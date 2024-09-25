@@ -181,12 +181,22 @@ class SQ_Models_Compatibility {
 	public function checkMultilingual() {
 		if ( SQ_Classes_Helpers_Tools::isPluginInstalled( 'sitepress-multilingual-cms/sitepress.php' ) || SQ_Classes_Helpers_Tools::isPluginInstalled( 'polylang/polylang.php' ) || SQ_Classes_Helpers_Tools::isPluginInstalled( 'polylang-pro/polylang.php' ) ) {
 
+            //for WPML language to load in sitemap
+			add_filter( 'sq_lateloading_sitemap', '__return_true' );
+
 			add_filter( 'sq_option_patterns', function ( $patterns ) {
+
+                //get the patterns for multilingual
+
+				$language = strtolower( get_locale() );
 				$sq_ml_patterns = get_option( SQ_ML_PATTERNS );
+
 				if ( function_exists( 'pll_current_language' ) ) {
 					$language = strtolower( pll_current_language() );
-				} else {
-					$language = strtolower( get_locale() );
+				} elseif ( $wpml = apply_filters( 'wpml_current_language', NULL ) ) {
+                    if($wpml <> 'all'){
+	                    $language = strtolower( $wpml );
+                    }
 				}
 
 				if ( ! empty( $patterns ) && ! empty( $sq_ml_patterns ) ) {
@@ -201,13 +211,26 @@ class SQ_Models_Compatibility {
 			} );
 
 			add_action( 'sq_save_settings_after', function ( $params ) {
+
+                //Only save patterns in Automation
+                if(SQ_Classes_Helpers_Tools::getValue( 'action' ) <> 'sq_seosettings_automation'){
+                    return;
+                }
+
 				if ( isset( $params['patterns'] ) ) {
 
+					$language = strtolower( get_locale() );
 					$sq_ml_patterns = get_option( SQ_ML_PATTERNS );
+
 					if ( function_exists( 'pll_current_language' ) ) {
 						$language = strtolower( pll_current_language() );
-					} else {
-						$language = strtolower( get_locale() );
+					} elseif ( $wpml = apply_filters( 'wpml_current_language', NULL ) ) {
+						if($wpml == 'all'){
+							delete_option( SQ_ML_PATTERNS);
+                            return;
+						}else{
+							$language = strtolower($wpml);
+						}
 					}
 
 					foreach ( $params['patterns'] as $pattern => $values ) {
@@ -230,6 +253,7 @@ class SQ_Models_Compatibility {
 
 				return $url;
 			}, 11 );
+
 
 		}
 	}

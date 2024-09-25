@@ -361,9 +361,9 @@ class SQ_Models_Snippet {
 
 			$sq->doseo = SQ_Classes_Helpers_Tools::getValue( 'sq_doseo', 0 );
 
-			$sq->title       = SQ_Classes_Helpers_Tools::getValue( 'sq_title', '' );
-			$sq->description = SQ_Classes_Helpers_Tools::getValue( 'sq_description', '' );
-			$sq->keywords    = SQ_Classes_Helpers_Tools::getValue( 'sq_keywords', '' );
+			$sq->title       = SQ_Classes_Helpers_Sanitize::clearTitle(SQ_Classes_Helpers_Tools::getValue( 'sq_title', '' ));
+			$sq->description = SQ_Classes_Helpers_Sanitize::clearDescription(SQ_Classes_Helpers_Tools::getValue( 'sq_description', '' ));
+			$sq->keywords    = SQ_Classes_Helpers_Sanitize::clearKeywords(SQ_Classes_Helpers_Tools::getValue( 'sq_keywords', '' ));
 			$sq->canonical   = SQ_Classes_Helpers_Tools::getValue( 'sq_canonical', '' );
 			$sq->redirect    = SQ_Classes_Helpers_Tools::getValue( 'sq_redirect', '' );
 			if ( SQ_Classes_Helpers_Tools::getIsset( 'sq_noindex' ) ) {
@@ -376,14 +376,14 @@ class SQ_Models_Snippet {
 				$sq->nositemap = SQ_Classes_Helpers_Tools::getValue( 'sq_nositemap', 0 );
 			}
 
-			$sq->og_title       = SQ_Classes_Helpers_Tools::getValue( 'sq_og_title', '' );
-			$sq->og_description = SQ_Classes_Helpers_Tools::getValue( 'sq_og_description', '' );
+			$sq->og_title       = SQ_Classes_Helpers_Sanitize::clearTitle(SQ_Classes_Helpers_Tools::getValue( 'sq_og_title', '' ));
+			$sq->og_description = SQ_Classes_Helpers_Sanitize::clearDescription(SQ_Classes_Helpers_Tools::getValue( 'sq_og_description', '' ));
 			$sq->og_author      = SQ_Classes_Helpers_Tools::getValue( 'sq_og_author', '' );
 			$sq->og_type        = SQ_Classes_Helpers_Tools::getValue( 'sq_og_type', '' );
 			$sq->og_media       = SQ_Classes_Helpers_Tools::getValue( 'sq_og_media', '' );
 
-			$sq->tw_title       = SQ_Classes_Helpers_Tools::getValue( 'sq_tw_title', '' );
-			$sq->tw_description = SQ_Classes_Helpers_Tools::getValue( 'sq_tw_description', '' );
+			$sq->tw_title       = SQ_Classes_Helpers_Sanitize::clearTitle(SQ_Classes_Helpers_Tools::getValue( 'sq_tw_title', '' ));
+			$sq->tw_description = SQ_Classes_Helpers_Sanitize::clearDescription(SQ_Classes_Helpers_Tools::getValue( 'sq_tw_description', '' ));
 			$sq->tw_media       = SQ_Classes_Helpers_Tools::getValue( 'sq_tw_media', '' );
 			$sq->tw_type        = SQ_Classes_Helpers_Tools::getValue( 'sq_tw_type', '' );
 
