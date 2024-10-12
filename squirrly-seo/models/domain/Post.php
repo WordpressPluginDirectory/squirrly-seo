@@ -52,7 +52,7 @@ class SQ_Models_Domain_Post extends SQ_Models_Abstract_Domain {
 			$this->_url = str_replace( '/./', '/', $this->_url );
 		}
 
-		return $this->_url;
+		return apply_filters( 'sq_permalink', $this->_url );
 	}
 
 	public function getSocials() {

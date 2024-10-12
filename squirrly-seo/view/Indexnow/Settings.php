@@ -100,24 +100,68 @@ if ( ! isset( $view ) ) {
                                     <input type="hidden" name="action" value="sq_seosettings_indexnow"/>
 
                                     <div class="col-12 row m-0 p-0">
-                                        <div class="col-4 p-0 font-weight-bold">
-                                            <label for="indexnow_post_type"><?php echo esc_html__( "Automatically Submit Post Types", 'squirrly-seo' ); ?>
-                                                :</label>
-                                            <div class="small text-black-50 my-1"><?php echo esc_html__( "Select post types you want to send to IndexNow automatically.", 'squirrly-seo' ); ?></div>
+                                        <div class="col-12 row p-0 m-0 my-3">
+                                            <div class="col-4 p-0 font-weight-bold">
+                                                <label for="indexnow_post_type"><?php echo esc_html__( "Automatically Submit Post Types", 'squirrly-seo' ); ?>
+                                                    :</label>
+                                                <div class="small text-black-50 my-1"><?php echo esc_html__( "Select post types you want to send to IndexNow automatically.", 'squirrly-seo' ); ?></div>
+                                            </div>
+
+                                            <div class="col-8 p-0 m-0 form-group">
+                                                <select id="indexnow_post_type" multiple name="indexnow_post_type[]" class="selectpicker form-control bg-input mb-1" data-live-search="true">
+                                                    <?php
+                                                    $types = get_post_types( array( 'public' => true ) );
+
+                                                    if ( ! empty( $types ) ) {
+                                                        foreach ( $types as $type => $name ) {
+                                                            echo '<option value="' . esc_attr( $type ) . '" ' . ( in_array( $type, (array) SQ_Classes_Helpers_Tools::getOption( 'indexnow_post_type' ) ) ? 'selected="selected"' : '' ) . '>' . esc_html( ucfirst( $name ) ) . '</option>';
+                                                        }
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </div>
+
                                         </div>
+                                    </div>
 
-                                        <div class="col-8 p-0 m-0 form-group">
-                                            <select id="indexnow_post_type" multiple name="indexnow_post_type[]" class="selectpicker form-control bg-input mb-1" data-live-search="true">
-												<?php
-												$types = get_post_types( array( 'public' => true ) );
+                                    <div class="col-12 row m-0 p-0">
+                                        <div class="col-12 row p-0 m-0 my-3">
+                                            <div class="col-4 p-0 font-weight-bold">
+                                                <label for="indexnow_post_type"><?php echo esc_html__( "IndexNow Endpoints", 'squirrly-seo' ); ?>
+                                                    :</label>
+                                                <div class="small text-black-50 my-1"><?php echo esc_html__( "Select the IndexNow endpoints you want to submit the URLs to.", 'squirrly-seo' ); ?></div>
+                                            </div>
 
-												if ( ! empty( $types ) ) {
-													foreach ( $types as $type => $name ) {
-														echo '<option value="' . esc_attr( $type ) . '" ' . ( in_array( $type, (array) SQ_Classes_Helpers_Tools::getOption( 'indexnow_post_type' ) ) ? 'selected="selected"' : '' ) . '>' . esc_html( ucfirst( $name ) ) . '</option>';
-													}
-												}
-												?>
-                                            </select>
+                                            <div class="col-8 p-0 m-0 form-group">
+                                                <select id="indexnow_endpoints" multiple name="indexnow_endpoints[]" class="selectpicker form-control bg-input mb-1" data-live-search="true">
+                                                    <?php
+
+                                                    $dbendpoints = (array) SQ_Classes_Helpers_Tools::getOption( 'indexnow_endpoints' );
+
+                                                    if(empty( $dbendpoints )){
+	                                                    $dbendpoints = array(
+		                                                    'https://api.indexnow.org',
+		                                                    'https://www.bing.com/indexnow',
+	                                                    );
+                                                    }
+
+                                                    $endpoints = array(
+                                                        'https://api.indexnow.org',
+                                                        'https://www.bing.com/indexnow',
+                                                        'https://searchadvisor.naver.com/indexnow',
+                                                        'https://search.seznam.cz/indexnow',
+                                                        'https://yandex.com/indexnow',
+                                                        'https://indexnow.yep.com',
+                                                    );
+
+                                                    if ( ! empty( $endpoints ) ) {
+                                                        foreach ( $endpoints as $endpoint ) {
+                                                            echo '<option value="' . esc_attr( $endpoint ) . '" ' . ( in_array( $endpoint, $dbendpoints ) ? 'selected="selected"' : '' ) . '>' . parse_url($endpoint, PHP_URL_HOST) . '</option>';
+                                                        }
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </div>
                                         </div>
 
                                     </div>

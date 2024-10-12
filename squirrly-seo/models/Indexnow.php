@@ -8,16 +8,6 @@ defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
 class SQ_Models_Indexnow {
 
 	/**
-	 * IndexNow URL.
-	 *
-	 * @var string
-	 */
-	private $_apiUrls = [
-		'https://www.bing.com/indexnow',
-		'https://yandex.com/indexnow'
-	];
-
-	/**
 	 * IndexNow key.
 	 *
 	 * @var string
@@ -34,6 +24,16 @@ class SQ_Models_Indexnow {
 		//Requires GSC Connection
 		$args['urls'] = $urls;
 		SQ_Classes_RemoteController::sendGSCIndex( $args );
+
+		//get the urls from options
+		$this->_apiUrls = SQ_Classes_Helpers_Tools::getOption('indexnow_endpoints');
+
+		if(empty($this->_apiUrls)){
+			$this->_apiUrls = array(
+				'https://api.indexnow.org',
+				'https://www.bing.com/indexnow',
+			);
+		}
 
 		//Send to all Indexnow APIs
 		foreach ( $this->_apiUrls as $apiurl ) {

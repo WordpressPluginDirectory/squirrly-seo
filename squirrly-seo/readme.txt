@@ -4,7 +4,7 @@ Donate link: https://plugin.squirrly.co/squirrly-seo-pricing/
 Tags: SEO, AI, XML sitemap, google search console, schema
 Requires at least: 4.6
 Tested up to: 6.6
-Stable tag: 12.3.23
+Stable tag: 12.3.24
 Requires PHP: 7.0
 License: GPLv2 or later
 
@@ -230,6 +230,10 @@ Type a keyword to the right of the screen and start using Squirrly Seo. Enjoy!
 7. Squirrly SEO - SEO Briefcase
 
 == Changelog ==
+= 12.3.24 =
+Update - Add Squirrly permalink hook sq_permalink for dev use
+Update - Add the options to select the IndexNow Endpoints
+
 = 12.3.23 =
 Update - Compatible with WP 6.6.2
 Update - Add the option to remove Posts from Sitemap News in Google News

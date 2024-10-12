@@ -66,6 +66,7 @@ class SQ_Controllers_Indexnow extends SQ_Classes_FrontController
 
                 //reset the post types
                 SQ_Classes_Helpers_Tools::saveOptions('indexnow_post_type', array());
+                SQ_Classes_Helpers_Tools::saveOptions('indexnow_endpoints', array());
 
                 //Save the settings
 	            if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
