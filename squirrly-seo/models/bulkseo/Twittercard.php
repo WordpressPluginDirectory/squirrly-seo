@@ -78,7 +78,7 @@ class SQ_Models_Bulkseo_Twittercard extends SQ_Models_Abstract_Assistant {
 			'title_length'       => array(
 				'title'       => sprintf( esc_html__( "TC title up to %s chars", 'squirrly-seo' ), $this->_title_maxlength ),
 				'value'       => $this->_title_length . ' ' . esc_html__( "chars", 'squirrly-seo' ),
-				'description' => sprintf( esc_html__( "Title has to be longer than %s chars and up to %s chars. %s You can change the title max length from %s Automation > META Lengths %s.", 'squirrly-seo' ), self::TITLE_MINLENGTH, $this->_title_maxlength, '<br /><br />', '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_automation', 'settings' ) . '">', '</a>' ),
+				'description' => sprintf( esc_html__( "Title has to be longer than %s chars and up to %s chars. %s You can change the title max length from %s Automation > META Lengths %s.", 'squirrly-seo' ), self::TITLE_MINLENGTH, $this->_title_maxlength, '<br /><br />', '<a href="' . esc_url(SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_automation', 'settings' )) . '">', '</a>' ),
 			),
 			'description_empty'  => array(
 				'title'       => esc_html__( "TC Description not empty", 'squirrly-seo' ),
@@ -88,7 +88,7 @@ class SQ_Models_Bulkseo_Twittercard extends SQ_Models_Abstract_Assistant {
 			'description_length' => array(
 				'title'       => sprintf( esc_html__( "TC description up to %s chars", 'squirrly-seo' ), $this->_description_maxlength ),
 				'value'       => $this->_description_length . ' ' . esc_html__( "chars", 'squirrly-seo' ),
-				'description' => sprintf( esc_html__( "Description has to be longer than %s chars and up to %s chars. %s You can change the description max length from %s Automation > META Lengths %s.", 'squirrly-seo' ), self::DESCRIPTION_MINLENGTH, $this->_description_maxlength, '<br /><br />', '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_automation', 'settings' ) . '">', '</a>' ),
+				'description' => sprintf( esc_html__( "Description has to be longer than %s chars and up to %s chars. %s You can change the description max length from %s Automation > META Lengths %s.", 'squirrly-seo' ), self::DESCRIPTION_MINLENGTH, $this->_description_maxlength, '<br /><br />', '<a href="' . esc_url(SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_automation', 'settings' )) . '">', '</a>' ),
 			),
 			'image'              => array(
 				'title'       => esc_html__( "TC Image", 'squirrly-seo' ),
@@ -149,11 +149,11 @@ class SQ_Models_Bulkseo_Twittercard extends SQ_Models_Abstract_Assistant {
 		}
 
 		if ( ! $this->_post->sq->do_twc ) {
-			$errors[] = sprintf( esc_html__( "Twitter Card for this post type is deactivated from %s Automation > Configuration %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_automation', 'automation' ) . '#tab=sq_' . $this->_post->post_type . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Twitter Card for this post type is deactivated from %s Automation > Configuration %s.", 'squirrly-seo' ), '<a href="' . esc_url(SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_automation', 'automation' ) . '#tab=sq_' . $this->_post->post_type) . '" >', '</a>' );
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_twitter' ) ) {
-			$errors[] = sprintf( esc_html__( "Twitter Card is deactivated from %s SEO Configuration > Social Media %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'social' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Twitter Card is deactivated from %s Technical SEO > Social Media %s.", 'squirrly-seo' ), '<a href="' . esc_url(SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'social' )) . '" >', '</a>' );
 		}
 
 		if ( ! empty( $errors ) ) {
@@ -182,11 +182,11 @@ class SQ_Models_Bulkseo_Twittercard extends SQ_Models_Abstract_Assistant {
 		}
 
 		if ( ! $this->_post->sq->do_twc ) {
-			$errors[] = sprintf( esc_html__( "Twitter Card for this post type is deactivated from %s Automation > Configuration %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_automation', 'automation' ) . '#tab=sq_' . $this->_post->post_type . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Twitter Card for this post type is deactivated from %s Automation > Configuration %s.", 'squirrly-seo' ), '<a href="' . esc_url(SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_automation', 'automation' ) . '#tab=sq_' . $this->_post->post_type) . '" >', '</a>' );
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_twitter' ) ) {
-			$errors[] = sprintf( esc_html__( "Twitter Card is deactivated from %s SEO Configuration > Social Media %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'social' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Twitter Card is deactivated from %s Technical SEO > Social Media %s.", 'squirrly-seo' ), '<a href="' . esc_url(SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'social' )) . '" >', '</a>' );
 		}
 
 		if ( ! empty( $errors ) ) {
@@ -210,11 +210,11 @@ class SQ_Models_Bulkseo_Twittercard extends SQ_Models_Abstract_Assistant {
 		}
 
 		if ( ! $this->_post->sq->do_twc ) {
-			$errors[] = sprintf( esc_html__( "Twitter Card for this post type is deactivated from %s Automation > Configuration %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_automation', 'automation' ) . '#tab=sq_' . $this->_post->post_type . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Twitter Card for this post type is deactivated from %s Automation > Configuration %s.", 'squirrly-seo' ), '<a href="' . esc_url(SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_automation', 'automation' ) . '#tab=sq_' . $this->_post->post_type) . '" >', '</a>' );
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_twitter' ) ) {
-			$errors[] = sprintf( esc_html__( "Twitter Card is deactivated from %s SEO Configuration > Social Media %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'social' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Twitter Card is deactivated from %s Technical SEO > Social Media %s.", 'squirrly-seo' ), '<a href="' . esc_url(SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'social' )) . '" >', '</a>' );
 		}
 
 		if ( ! empty( $errors ) ) {
@@ -243,11 +243,11 @@ class SQ_Models_Bulkseo_Twittercard extends SQ_Models_Abstract_Assistant {
 		}
 
 		if ( ! $this->_post->sq->do_twc ) {
-			$errors[] = sprintf( esc_html__( "Twitter Card for this post type is deactivated from %s Automation > Configuration %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_automation', 'automation' ) . '#tab=sq_' . $this->_post->post_type . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Twitter Card for this post type is deactivated from %s Automation > Configuration %s.", 'squirrly-seo' ), '<a href="' . esc_url(SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_automation', 'automation' ) . '#tab=sq_' . $this->_post->post_type) . '" >', '</a>' );
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_twitter' ) ) {
-			$errors[] = sprintf( esc_html__( "Twitter Card is deactivated from %s SEO Configuration > Social Media %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'social' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Twitter Card is deactivated from %s Technical SEO > Social Media %s.", 'squirrly-seo' ), '<a href="' . esc_url(SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'social' )) . '" >', '</a>' );
 		}
 
 		if ( ! empty( $errors ) ) {
@@ -276,11 +276,11 @@ class SQ_Models_Bulkseo_Twittercard extends SQ_Models_Abstract_Assistant {
 		}
 
 		if ( ! $this->_post->sq->do_twc ) {
-			$errors[] = sprintf( esc_html__( "Twitter Card for this post type is deactivated from %s Automation > Configuration %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_automation', 'automation' ) . '#tab=sq_' . $this->_post->post_type . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Twitter Card for this post type is deactivated from %s Automation > Configuration %s.", 'squirrly-seo' ), '<a href="' . esc_url(SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_automation', 'automation' ) . '#tab=sq_' . $this->_post->post_type) . '" >', '</a>' );
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_twitter' ) ) {
-			$errors[] = sprintf( esc_html__( "Twitter Card is deactivated from %s SEO Configuration > Social Media %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'social' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Twitter Card is deactivated from %s Technical SEO > Social Media %s.", 'squirrly-seo' ), '<a href="' . esc_url(SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'social' )) . '" >', '</a>' );
 		}
 
 		if ( ! empty( $errors ) ) {

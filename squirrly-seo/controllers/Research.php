@@ -1,6 +1,13 @@
 <?php
 defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
 
+/**
+ * Class SQ_Controllers_Research
+ *
+ * This class manages the research-related functionalities of the Squirrly SEO plugin.
+ * It includes keyword research, displaying and updating labels, managing keyword suggestions, and interacting with external APIs for the generation of data.
+ * The class also handles various views and their respective data loading requirements.
+ */
 class SQ_Controllers_Research extends SQ_Classes_FrontController {
 
 	public $blogs;

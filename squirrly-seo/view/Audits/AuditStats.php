@@ -23,7 +23,7 @@ if ( ! isset( $view ) ) {
 
 		if ( isset( $view->audit->audit_datetime ) && $view->audit->audit_datetime ) {
 			$audit_timestamp = strtotime( $view->audit->audit_datetime ) + ( (int) get_option( 'gmt_offset' ) * 3600 );
-			$audit_datetime  = gmdate( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $audit_timestamp );
+			$audit_datetime  = wp_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $audit_timestamp );
 		}
 
 		$now_timestamp = time();

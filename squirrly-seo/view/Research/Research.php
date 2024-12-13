@@ -43,7 +43,7 @@ if ( ! isset( $view ) ) {
                 <div class="sq_step sq_step1 my-2">
                     <div class="sq_breadcrumbs my-4"><?php SQ_Classes_ObjController::getClass( 'SQ_Models_Menu' )->showBreadcrumbs( SQ_Classes_Helpers_Tools::getValue( 'page' ) . '/' . SQ_Classes_Helpers_Tools::getValue( 'tab' ) ) ?></div>
                     <h3 class="mt-4 card-title">
-						<?php echo esc_html__( "Keyword Research", 'squirrly-seo' ) . ' (' . esc_html__( "Squirrly AI", 'squirrly-seo' ) . ')' . ' 1/3'; ?>
+						<?php echo esc_html__( "Keyword Research", 'squirrly-seo' )  . ' 1/3'; ?>
                         <div class="sq_help_question d-inline">
                             <a href="https://howto12.squirrly.co/kb/keyword-research-and-seo-strategy/#keyword_research" target="_blank"><i class="fa-solid fa-question-circle"></i></a>
                         </div>
@@ -90,7 +90,7 @@ if ( ! isset( $view ) ) {
                         </div>
 
 						<?php if ( isset( $view->checkin->subscription_kr ) ) { ?>
-                            <div class="col-12 mt-3 text-right text-primary font-weight-bold"><?php echo esc_html( $view->checkin->subscription_kr ) ?><?php echo esc_html__( "researches left", 'squirrly-seo' ); ?><?php echo( ( isset( $view->checkin->subscription_limits_reset ) && $view->checkin->subscription_limits_reset <> '' ) ? esc_html__( "until", 'squirrly-seo' ) . ' ' . esc_attr( gmdate( get_option( 'date_format' ), strtotime( $view->checkin->subscription_limits_reset ) ) ) : '' ) ?></div>
+                            <div class="col-12 mt-3 text-right text-primary font-weight-bold"><?php echo esc_html( number_format($view->checkin->subscription_kr) ) ?> <?php echo esc_html__( "researches left", 'squirrly-seo' ); ?> <?php echo( ( isset( $view->checkin->subscription_limits_reset ) && $view->checkin->subscription_limits_reset <> '' ) ? esc_html__( "until", 'squirrly-seo' ) . ' ' . esc_attr( wp_date( get_option( 'date_format' ), strtotime( $view->checkin->subscription_limits_reset ) ) ) : '' ) ?></div>
 						<?php } ?>
                     </div>
 
@@ -110,7 +110,7 @@ if ( ! isset( $view ) ) {
 								<?php echo esc_html__( "Focus on Long- Tail keywords (3 to 5 words) as they tend to be more specific and have less competition.", 'squirrly-seo' ) ?>
                             </li>
                             <li class="text-left">
-								<?php echo sprintf( esc_html__( "Think of a keyword/ topic you want to rank for. Use the %s keyword research formula %s to generate more keyword ideas.", 'squirrly-seo' ), '<a href="https://www.squirrly.co/marketingtools/keyword-research-ninja-with-the-keyword-formula/" target="_blank">', '</a>' ) ?>
+								<?php echo sprintf( esc_html__( "Think of a keyword/ topic you want to rank for. Use the %s Keyword research formula %s to generate more keyword ideas.", 'squirrly-seo' ), '<a href="https://www.squirrly.co/marketingtools/keyword-research-ninja-with-the-keyword-formula/" target="_blank">', '</a>' ) ?>
                             </li>
                             <li class="text-left">
 								<?php echo esc_html__( "Did you know that you can use Squirrly SEO and perform keyword research in over 100 countries?", 'squirrly-seo' ) ?>

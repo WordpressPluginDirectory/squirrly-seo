@@ -520,31 +520,31 @@ class SQ_Models_Domain_Patterns extends SQ_Models_Abstract_Domain {
 	protected $_currenttime; //Replaced with the current time
 
 	public function getCurrenttime() {
-		return date( get_option( 'time_format' ) );
+		return wp_date( get_option( 'time_format' ) );
 	}
 
 	protected $_currentdate; //Replaced with the current date
 
 	public function getCurrentdate() {
-		return date( get_option( 'date_format' ) );
+		return wp_date( get_option( 'date_format' ) );
 	}
 
 	protected $_currentday; //Replaced with the current day
 
 	public function getCurrentday() {
-		return date( 'd' );
+		return wp_date( 'd' );
 	}
 
 	protected $_currentmonth; //Replaced with the current month
 
 	public function getCurrentmonth() {
-		return date( 'F' );
+		return wp_date( 'F' );
 	}
 
 	protected $_currentyear; //Replaced with the current year
 
 	public function getCurrentyear() {
-		return date( 'Y' );
+		return wp_date( 'Y' );
 	}
 
 	protected $_caption; //Attachment caption

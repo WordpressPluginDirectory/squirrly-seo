@@ -2,7 +2,7 @@
 defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
 
 /**
- * IndexNow class.
+ * Auto-Indexing class.
  *
  */
 class SQ_Models_Indexnow {
@@ -35,8 +35,13 @@ class SQ_Models_Indexnow {
 			);
 		}
 
-		//Send to all Indexnow APIs
+		//Send to all IndexNow APIs
 		foreach ( $this->_apiUrls as $apiurl ) {
+			//fix 404 error on IndexNow when the endpoint is not working
+			if($apiurl == 'https://indexnow.yep.com') {
+				continue;
+			}
+
 			$response = wp_remote_post( $apiurl, [
 					'body'    => $data,
 					'headers' => [
@@ -227,7 +232,7 @@ class SQ_Models_Indexnow {
 	}
 
 	/**
-	 * Get the Indexnow log.
+	 * Get the IndexNow log.
 	 *
 	 * @return array
 	 */
@@ -247,7 +252,7 @@ class SQ_Models_Indexnow {
 	}
 
 	/**
-	 * Delete the Indexnow log.
+	 * Delete the IndexNow log.
 	 */
 	public function deleteLog() {
 		delete_option( 'sq_indexnow_log' );

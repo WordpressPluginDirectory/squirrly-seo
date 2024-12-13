@@ -97,7 +97,7 @@ if ( ! isset( $view ) ) {
         <div id="sq_types">
             <ul>
                 <li id="sq_type_img" class="fa-solid fa-image sq_active" title="<?php echo esc_attr__( "Images", "squirrly-seo" ) ?>"></li>
-                <li id="sq_type_wiki" class="fa-brands fa-wikipedia-w" title="<?php echo esc_attr__( "Wiki", "squirrly-seo" ) ?>"></li>
+                <li id="sq_type_wiki" class="fasq-brands fa-wikipedia-w" title="<?php echo esc_attr__( "Wiki", "squirrly-seo" ) ?>"></li>
                 <li id="sq_type_blog" class="fa-solid fa-comment" title="<?php echo esc_attr__( "Blogs", "squirrly-seo" ) ?>"></li>
                 <li id="sq_type_local" class="fa-solid fa-sticky-note" title="<?php echo esc_attr__( "My articles", "squirrly-seo" ) ?>"></li>
             </ul>

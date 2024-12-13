@@ -68,7 +68,7 @@ class SQ_Models_PostsList {
 			$button .= '<progress class="sq_post_progress" max="10" value="1" title="' . esc_attr__( "Can't get snippet data", 'squirrly-seo' ) . '"></progress>';
 		}
 
-		$button .= '<a class="sq_column_button" href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo', array(
+		$button .= '<a class="sq_column_button" href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo', array(
 				'sid=' . $post_id,
 				'stype=' . $post_type
 			) ) . '"  target="_blank">' . esc_html__( "Edit Snippet", 'squirrly-seo' ) . '</a>';
@@ -97,13 +97,42 @@ class SQ_Models_PostsList {
 		} else {
 			$button .= '<progress class="sq_post_progress" max="10" value="1" title="' . esc_attr__( "Can't get snippet data", 'squirrly-seo' ) . '"></progress>';
 		}
-		$button .= '<a class="sq_column_button" href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo', array(
+		$button .= '<a class="sq_column_button" href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo', array(
 				'sid=' . $term_id,
 				'stype=' . $taxonomy
 			) ) . '"  target="_blank">' . esc_html__( "Edit Snippet", 'squirrly-seo' ) . '</a>';
 
 
 		return $button;
+	}
+
+	public function getPostSnippetInfo( $post_id, $term_id = 0, $taxonomy = '', $post_type = 'post' ) {
+
+		$str = '';
+		if ( $post = SQ_Classes_ObjController::getClass( 'SQ_Models_Snippet' )->getCurrentSnippet( $post_id, $term_id, $taxonomy, $post_type ) ) {
+			if( $post->sq->doseo ){
+				$str .= '<div>';
+				if( ! $post->sq->noindex ){
+					$str .= '<span style="color: green;">Index</span>';
+				}else{
+					$str .= '<span style="color: red;">NoIndex</span>';
+				}
+				$str .= '</div><div>';
+				if( ! $post->sq->nofollow ){
+					$str .= '<span style="color: green;">Follow</span>';
+				}else{
+					$str .= '<span style="color: red;">NoFollow</span>';
+				}
+
+				$str .= '<div>';
+			}else{
+				$str .= '<div><span style="color: gray;">N/A</span><div>';
+			}
+
+		}
+
+
+		return $str;
 	}
 
 	public function hookUpdateStatus( $post_id ) {

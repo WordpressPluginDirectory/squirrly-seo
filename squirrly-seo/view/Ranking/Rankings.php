@@ -460,7 +460,7 @@ $view->loadScripts();
                                                                     :
                                                                 </div>
                                                                 <div class="col-6">
-                                                                    <strong><?php echo date( get_option( 'date_format' ), strtotime( $row->datetime ) ) ?></strong>
+                                                                    <strong><?php echo wp_date( get_option( 'date_format' ), strtotime( $row->datetime ) ) ?></strong>
                                                                 </div>
                                                             </li>
 														<?php } ?>

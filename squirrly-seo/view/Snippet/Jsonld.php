@@ -74,7 +74,7 @@ if ( ! isset( $patterns[ $view->post->post_type ] ) && isset( $patterns['custom'
 
                         <form method="post" target="_blank" action="https://search.google.com/test/rich-results">
                             <button type="submit" class="sq-btn sq-btn-light sq-btn-sm sq-px-4 sq-mx-2  sq-float-right">
-                                <i class="fa-brands fa-google"></i> <?php echo esc_html__( "Validate JSON-LD", "squirrly-seo" ) ?>
+                                <i class="fasq-brands fa-google"></i> <?php echo esc_html__( "Validate JSON-LD", "squirrly-seo" ) ?>
                             </button>
                             <textarea name="code_snippet" class="code_snippet" style="display: none"><?php echo esc_textarea( $jsonld_data ); ?></textarea>
                         </form>

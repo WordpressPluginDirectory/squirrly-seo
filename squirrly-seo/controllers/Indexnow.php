@@ -19,7 +19,7 @@ class SQ_Controllers_Indexnow extends SQ_Classes_FrontController
             return;
         }
 
-        //indexNow
+        //Auto-Indexing
         $post_types = (array)SQ_Classes_Helpers_Tools::getOption('indexnow_post_type');
         if(!empty($post_types)) {
             foreach ($post_types as $post_type) {
@@ -165,7 +165,7 @@ class SQ_Controllers_Indexnow extends SQ_Classes_FrontController
 
 
     public function bulkOption($actions){
-        $actions['sq_indexnow'] = esc_html__( 'Submit to IndexNow', 'squirrly-seo' );
+        $actions['sq_indexnow'] = esc_html__( 'Submit to Auto-Indexing', 'squirrly-seo' );
         return $actions;
     }
 
@@ -220,7 +220,7 @@ class SQ_Controllers_Indexnow extends SQ_Classes_FrontController
             'sq_indexnow_post'
         );
 
-        $actions['indexnow_submit'] = '<a href="' . esc_url( $link ) . '">' . esc_html__( 'Submit to IndexNow', 'squirrly-seo' ) . '</a>';
+        $actions['indexnow_submit'] = '<a href="' . esc_url( $link ) . '">' . esc_html__( 'Submit to Auto-Indexing', 'squirrly-seo' ) . '</a>';
 
         return $actions;
     }
@@ -290,7 +290,7 @@ class SQ_Controllers_Indexnow extends SQ_Classes_FrontController
     }
 
 	/**
-	 * Submit an URL to IndexNow
+	 * Submit an URL to Auto-Indexing
 	 * @param string $url
 	 * @param bool $manual
 	 *
@@ -320,9 +320,9 @@ class SQ_Controllers_Indexnow extends SQ_Classes_FrontController
         $count = is_array( $url ) ? count( $url ) : 1;
 
         if ( $submitted ) {
-            SQ_Classes_Error::saveMessage(sprintf(_n( '%s page submitted to IndexNow.', '%s pages submitted to IndexNow.', $count, 'squirrly-seo' ), $count), 'notice notice-success');
+            SQ_Classes_Error::saveMessage(sprintf(_n( '%s page submitted to Auto-Indexing.', '%s pages submitted to Auto-Indexing.', $count, 'squirrly-seo' ), $count), 'notice notice-success');
         }else{
-            SQ_Classes_Error::saveMessage(esc_html__( 'Error submitting page to IndexNow.','squirrly-seo' ), 'notice notice-error');
+            SQ_Classes_Error::saveMessage(esc_html__( 'Error submitting page to Auto-Indexing.','squirrly-seo' ), 'notice notice-error');
         }
 
         return $submitted;

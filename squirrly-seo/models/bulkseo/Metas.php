@@ -158,11 +158,11 @@ class SQ_Models_Bulkseo_Metas extends SQ_Models_Abstract_Assistant {
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_title' ) ) {
-			$errors[] = sprintf( esc_html__( "Meta Title is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Meta Title is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_metas' ) ) {
-			$errors[] = sprintf( esc_html__( "SEO Metas is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "SEO Metas is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 		if ( ! empty( $errors ) ) {
@@ -195,11 +195,11 @@ class SQ_Models_Bulkseo_Metas extends SQ_Models_Abstract_Assistant {
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_title' ) ) {
-			$errors[] = sprintf( esc_html__( "Meta Title is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Meta Title is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_metas' ) ) {
-			$errors[] = sprintf( esc_html__( "SEO Metas is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "SEO Metas is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 		if ( ! empty( $errors ) ) {
@@ -228,15 +228,15 @@ class SQ_Models_Bulkseo_Metas extends SQ_Models_Abstract_Assistant {
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_title' ) ) {
-			$errors[] = sprintf( esc_html__( "Meta Title is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Meta Title is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_metas' ) ) {
-			$errors[] = sprintf( esc_html__( "SEO Metas is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "SEO Metas is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_keywords' ) ) {
-			$errors[] = sprintf( esc_html__( "Meta Keywords is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Meta Keywords is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 		if ( ! empty( $errors ) ) {
@@ -273,11 +273,11 @@ class SQ_Models_Bulkseo_Metas extends SQ_Models_Abstract_Assistant {
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_description' ) ) {
-			$errors[] = sprintf( esc_html__( "Meta Description is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Meta Description is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_metas' ) ) {
-			$errors[] = sprintf( esc_html__( "SEO Metas is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "SEO Metas is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 		if ( ! empty( $errors ) ) {
@@ -310,11 +310,11 @@ class SQ_Models_Bulkseo_Metas extends SQ_Models_Abstract_Assistant {
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_description' ) ) {
-			$errors[] = sprintf( esc_html__( "Meta Description is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Meta Description is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_metas' ) ) {
-			$errors[] = sprintf( esc_html__( "SEO Metas is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "SEO Metas is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 
@@ -343,15 +343,15 @@ class SQ_Models_Bulkseo_Metas extends SQ_Models_Abstract_Assistant {
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_description' ) ) {
-			$errors[] = sprintf( esc_html__( "Meta Description is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Meta Description is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_metas' ) ) {
-			$errors[] = sprintf( esc_html__( "SEO Metas is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "SEO Metas is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_keywords' ) ) {
-			$errors[] = sprintf( esc_html__( "Meta Keywords is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Meta Keywords is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 		if ( ! empty( $errors ) ) {
@@ -393,11 +393,11 @@ class SQ_Models_Bulkseo_Metas extends SQ_Models_Abstract_Assistant {
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_metas' ) ) {
-			$errors[] = sprintf( esc_html__( "SEO Metas is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "SEO Metas is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_keywords' ) ) {
-			$errors[] = sprintf( esc_html__( "Meta Keywords is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Meta Keywords is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 		if ( ! empty( $errors ) ) {
@@ -436,11 +436,11 @@ class SQ_Models_Bulkseo_Metas extends SQ_Models_Abstract_Assistant {
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_canonical' ) ) {
-			$errors[] = sprintf( esc_html__( "Meta Canonical is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "Meta Canonical is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 		if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_metas' ) ) {
-			$errors[] = sprintf( esc_html__( "SEO Metas is deactivated from %s SEO Configuration > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
+			$errors[] = sprintf( esc_html__( "SEO Metas is deactivated from %s Technical SEO > Metas %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' );
 		}
 
 		if ( ! empty( $errors ) ) {

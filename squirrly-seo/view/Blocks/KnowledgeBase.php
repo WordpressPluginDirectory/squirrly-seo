@@ -156,7 +156,7 @@ if ( ! isset( $view ) ) {
                     </div>
                 </div>
             </div>
-		<?php } elseif ( $page == 'sq_dashboard' ) { ?>
+		<?php } elseif ( $page == 'sq_dashboard' || $page == 'sq_checkseo' ) { ?>
             <div class="sq_breadcrumbs mt-5"><?php SQ_Classes_ObjController::getClass( 'SQ_Models_Menu' )->showBreadcrumbs( 'sq_dashboardhelp' ) ?></div>
 
             <div class="row row-cols-1 row-cols-md-3 px-0 mx-0">
@@ -600,19 +600,19 @@ if ( ! isset( $view ) ) {
                     <div class="sq_feature card h-100 p-0 shadow-0 rounded-0">
                         <div class="m-0 p-0">
                             <div class="m-0 p-0 text-center">
-                                <a href="https://howto12.squirrly.co/kb/squirrly-live-assistant/#elementor" class="text-dark" target="_blank"><img src="<?php echo esc_url( _SQ_ASSETS_URL_ . 'img/kb/elementor.jpg' ) ?>" alt="" style="width: 100%"></a>
+                                <a href="https://howto12.squirrly.co/knowledge-base/seo-automation/#automation_custom_lengths" class="text-dark" target="_blank"><img src="<?php echo esc_url( _SQ_ASSETS_URL_ . 'img/kb/customize-lenghts.jpg' ) ?>" alt="" style="width: 100%"></a>
                             </div>
                             <div class="mx-3 my-3 p-0 text-black" style="min-height: 60px; font-size: 1.1rem;">
                                 <div class="pt-3 pb-1" style="color: #696868">
-                                    <a href="https://howto12.squirrly.co/kb/squirrly-live-assistant/#elementor" class="text-dark" target="_blank">Elementor
-                                        Integration</a>
+                                    <a href="https://howto12.squirrly.co/knowledge-base/seo-automation/#automation_custom_lengths" class="text-dark" target="_blank">How
+                                        to Customize the Lengths for Each Meta</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-		<?php } elseif ( $page == 'sq_assistant' ) { ?>
+		<?php } elseif ( $page == 'sq_assistant' && $tab == 'assistant' ) { ?>
             <div class="sq_breadcrumbs mt-5"><?php SQ_Classes_ObjController::getClass( 'SQ_Models_Menu' )->showBreadcrumbs( 'sq_assistanthelp' ) ?></div>
 
             <div class="row row-cols-1 row-cols-md-3 px-0 mx-0">
@@ -1133,72 +1133,7 @@ if ( ! isset( $view ) ) {
                     </div>
                 </div>
             </div>
-		<?php } elseif ( $page == 'sq_automation' && $tab == 'automation' ) { ?>
-            <div class="sq_breadcrumbs mt-5"><?php SQ_Classes_ObjController::getClass( 'SQ_Models_Menu' )->showBreadcrumbs( 'sq_automationhelp' ) ?></div>
-
-            <div class="row row-cols-1 row-cols-md-3 px-0 mx-0">
-                <div class="col px-2 py-0 mb-5">
-                    <div class="sq_feature card h-100 p-0 shadow-0 rounded-0">
-                        <div class="m-0 p-0">
-                            <div class="m-0 p-0 text-center">
-                                <a href="https://howto12.squirrly.co/kb/seo-automation/" class="text-dark" target="_blank"><img src="<?php echo esc_url( _SQ_ASSETS_URL_ . 'img/kb/seo-in-2-minutes.jpg' ) ?>" alt="" style="width: 100%"></a>
-                            </div>
-                            <div class="mx-3 my-3 p-0 text-black" style="min-height: 60px; font-size: 1.1rem;">
-                                <div class="pt-3 pb-1" style="color: #696868">
-                                    <a href="https://howto12.squirrly.co/kb/seo-automation/" class="text-dark" target="_blank">Learn
-                                        to set up your SEO in just 2 minutes.</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col px-2 py-0 mb-5">
-                    <div class="sq_feature card h-100 p-0 shadow-0 rounded-0">
-                        <div class="m-0 p-0">
-                            <div class="m-0 p-0 text-center">
-                                <a href="https://howto12.squirrly.co/knowledge-base/seo-automation/#add_post_type" class="text-dark" target="_blank"><img src="<?php echo esc_url( _SQ_ASSETS_URL_ . 'img/kb/new-post-automation.jpg' ) ?>" alt="" style="width: 100%"></a>
-                            </div>
-                            <div class="mx-3 my-3 p-0 text-black" style="min-height: 60px; font-size: 1.1rem;">
-                                <div class="pt-3 pb-1" style="color: #696868">
-                                    <a href="https://howto12.squirrly.co/knowledge-base/seo-automation/#add_post_type" class="text-dark" target="_blank">How
-                                        to Add New Post Types for Automation</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col px-2 py-0 mb-5">
-                    <div class="sq_feature card h-100 p-0 shadow-0 rounded-0">
-                        <div class="m-0 p-0">
-                            <div class="m-0 p-0 text-center">
-                                <a href="https://howto12.squirrly.co/knowledge-base/seo-automation/#add_patterns" class="text-dark" target="_blank"><img src="<?php echo esc_url( _SQ_ASSETS_URL_ . 'img/kb/patterns.jpg' ) ?>" alt="" style="width: 100%"></a>
-                            </div>
-                            <div class="mx-3 my-3 p-0 text-black" style="min-height: 60px; font-size: 1.1rem;">
-                                <div class="pt-3 pb-1" style="color: #696868">
-                                    <a href="https://howto12.squirrly.co/knowledge-base/seo-automation/#add_patterns" class="text-dark" target="_blank">How
-                                        to Use Patterns</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col px-2 py-0 mb-5">
-                    <div class="sq_feature card h-100 p-0 shadow-0 rounded-0">
-                        <div class="m-0 p-0">
-                            <div class="m-0 p-0 text-center">
-                                <a href="https://howto12.squirrly.co/knowledge-base/seo-automation/#wocommerce" class="text-dark" target="_blank"><img src="<?php echo esc_url( _SQ_ASSETS_URL_ . 'img/kb/automation.jpg' ) ?>" alt="" style="width: 100%"></a>
-                            </div>
-                            <div class="mx-3 my-3 p-0 text-black" style="min-height: 60px; font-size: 1.1rem;">
-                                <div class="pt-3 pb-1" style="color: #696868">
-                                    <a href="https://howto12.squirrly.co/knowledge-base/seo-automation/#wocommerce" class="text-dark" target="_blank">WooCommerce
-                                        Automation</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-		<?php } elseif ( $page == 'sq_automation' ) { ?>
+		<?php } elseif ( $page == 'sq_assistant'  && $tab == 'automation') { ?>
             <div class="sq_breadcrumbs mt-5"><?php SQ_Classes_ObjController::getClass( 'SQ_Models_Menu' )->showBreadcrumbs( 'sq_automationhelp' ) ?></div>
 
             <div class="row row-cols-1 row-cols-md-3 px-0 mx-0">

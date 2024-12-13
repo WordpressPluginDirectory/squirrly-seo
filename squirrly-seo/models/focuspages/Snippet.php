@@ -122,7 +122,7 @@ class SQ_Models_Focuspages_Snippet extends SQ_Models_Abstract_Assistant {
 				'title'       => esc_html__( "Title", 'squirrly-seo' ),
 				'value'       => $this->_title,
 				'penalty'     => 5,
-				'description' => sprintf( esc_html__( "To complete this task, go and define a title for this page. You can easily do this by using the %sSnippet%s from Squirrly SEO. %s Make sure that you have a Title defined for your Focus Page. %s Not having a title defined is bad for both search engines and Humans. %s Why? %s It's weird for someone to try to figure out if they landed on your Pricing page, and not get a clear answer. If you have multiple pricing pages (in case your site displays multiple products) then your title should only contain the brand name of that product.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo', array(
+				'description' => sprintf( esc_html__( "To complete this task, go and define a title for this page. You can easily do this by using the %sSnippet%s from Squirrly SEO. %s Make sure that you have a Title defined for your Focus Page. %s Not having a title defined is bad for both search engines and Humans. %s Why? %s It's weird for someone to try to figure out if they landed on your Pricing page, and not get a clear answer. If you have multiple pricing pages (in case your site displays multiple products) then your title should only contain the brand name of that product.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo', array(
 						'sid=' . ( isset( $this->_post->ID ) ? $this->_post->ID : '' ),
 						'stype=' . ( isset( $this->_post->post_type ) ? $this->_post->post_type : '' )
 					) ) . '" target="_blank">', '</a>', '<br /><br />', '<br /><br />', '<br /><br />', '<br /><br />' ),
@@ -130,7 +130,7 @@ class SQ_Models_Focuspages_Snippet extends SQ_Models_Abstract_Assistant {
 			'description'        => array(
 				'title'       => esc_html__( "Description", 'squirrly-seo' ),
 				'value'       => $this->_description,
-				'description' => sprintf( esc_html__( "To complete this task, go and define a %sMeta description%s for this page. You can easily do this by using the Snippet from Squirrly SEO. %s Make sure that you have a META description set up for this Focus Page. %s The meta description is very important for showing others the value they can find by clicking to go to your page. %s Think of it as an awesome ad that gets people excited enough that they visit your page after reading it. %s Sometimes, Google displays the exact META description that you create inside the search result pages. Use great descriptions for pages on your site to boost CTR (click-through rates).", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo', array(
+				'description' => sprintf( esc_html__( "To complete this task, go and define a %sMeta description%s for this page. You can easily do this by using the Snippet from Squirrly SEO. %s Make sure that you have a META description set up for this Focus Page. %s The meta description is very important for showing others the value they can find by clicking to go to your page. %s Think of it as an awesome ad that gets people excited enough that they visit your page after reading it. %s Sometimes, Google displays the exact META description that you create inside the search result pages. Use great descriptions for pages on your site to boost CTR (click-through rates).", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo', array(
 						'sid=' . ( isset( $this->_post->ID ) ? $this->_post->ID : '' ),
 						'stype=' . ( isset( $this->_post->post_type ) ? $this->_post->post_type : '' )
 					) ) . '" target="_blank">', '</a>', '<br /><br />', '<br /><br />', '<br /><br />', '<br /><br />' ),
@@ -149,7 +149,7 @@ class SQ_Models_Focuspages_Snippet extends SQ_Models_Abstract_Assistant {
 			'ogdetails'          => array(
 				'title'       => esc_html__( "Open Graph - full definition", 'squirrly-seo' ),
 				'penalty'     => 1,
-				'description' => sprintf( esc_html__( "To complete this task, you can easily use the %sSnippet%s from Squirrly SEO to get all the definitions in place. %s With this task, we make sure that you have the full Open Graph definitions created for this Focus Page. %s There are many things which could interfere with the code, there are times when you could forget setting some of the elements up, so Squirrly SEO helps you make sure that ALL the og tags are present. %s And yes, this is relevant for your search engine position placements.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo', array(
+				'description' => sprintf( esc_html__( "To complete this task, you can easily use the %sSnippet%s from Squirrly SEO to get all the definitions in place. %s With this task, we make sure that you have the full Open Graph definitions created for this Focus Page. %s There are many things which could interfere with the code, there are times when you could forget setting some of the elements up, so Squirrly SEO helps you make sure that ALL the og tags are present. %s And yes, this is relevant for your search engine position placements.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo', array(
 						'sid=' . ( isset( $this->_post->ID ) ? $this->_post->ID : '' ),
 						'stype=' . ( isset( $this->_post->post_type ) ? $this->_post->post_type : '' )
 					) ) . '" target="_blank">', '</a>', '<br /><br />', '<br /><br />', '<br /><br />' ),
@@ -157,18 +157,18 @@ class SQ_Models_Focuspages_Snippet extends SQ_Models_Abstract_Assistant {
 			'tcdetails'          => array(
 				'title'       => esc_html__( "Twitter Cards - full definition", 'squirrly-seo' ),
 				'penalty'     => 1,
-				'description' => sprintf( esc_html__( "To complete this task, you can easily use the %sSnippet%s from Squirrly SEO to get all the definitions in place. %s Checking to make sure that your Twitter Cards definitions are made properly. %s Same as with the Open Graph task, Squirrly SEO makes sure to check for all the required definitions, so that you won't miss a beat.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo', array(
+				'description' => sprintf( esc_html__( "To complete this task, you can easily use the %sSnippet%s from Squirrly SEO to get all the definitions in place. %s Checking to make sure that your Twitter Cards definitions are made properly. %s Same as with the Open Graph task, Squirrly SEO makes sure to check for all the required definitions, so that you won't miss a beat.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo', array(
 						'sid=' . ( isset( $this->_post->ID ) ? $this->_post->ID : '' ),
 						'stype=' . ( isset( $this->_post->post_type ) ? $this->_post->post_type : '' )
 					) ) . '" target="_blank">', '</a>', '<br /><br />', '<br /><br />' ),
 			),
 			'jsondetails'        => array(
 				'title'       => esc_html__( "JSON-LD definition", 'squirrly-seo' ),
-				'description' => sprintf( esc_html__( "To complete this task, you can easily use the JSON-LD section inside %s Squirrly > SEO Configuration > Rich Snippets %s. %s Make sure that you complete all fields with the proper information. %s This gives important Semantic context to Google and it plays a role in determining how high your page should be placed in search rankings. %s You can validate your existing JSON-LD with: %shttps://search.google.com/test/rich-results%s", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'jsonld' ) . '" target="_blank">', '</a>', '<br /><br />', '<br /><br />', '<br /><br />', '<a href="https://search.google.com/structured-data/testing-tool" target="_blank">', '</a>' ),
+				'description' => sprintf( esc_html__( "To complete this task, you can easily use the JSON-LD section inside %s Squirrly > Technical SEO > Rich Snippets %s. %s Make sure that you complete all fields with the proper information. %s This gives important Semantic context to Google and it plays a role in determining how high your page should be placed in search rankings. %s You can validate your existing JSON-LD with: %shttps://search.google.com/test/rich-results%s", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'jsonld' ) . '" target="_blank">', '</a>', '<br /><br />', '<br /><br />', '<br /><br />', '<a href="https://search.google.com/structured-data/testing-tool" target="_blank">', '</a>' ),
 			),
 			'customization'      => array(
 				'title'       => esc_html__( "Customized", 'squirrly-seo' ),
-				'description' => sprintf( esc_html__( "The Snippets of your most important pages should be customized. %s Use the %sSnippet%s from Squirrly SEO to customize the meta settings, the open graph, etc. for this page. %s Since Focus Pages are the most important pages on your site, you'll want people to love the search engine listings that you build for this page. %s Therefore, you should define a custom SEO listing to improve the number of clicks you get when people DO find your page on search engines. %s NOTE: sometimes Google tries to create automated snippets and display those, but it's just an experiment they run. Most of the times, your own custom snippet will be the one that gets displayed.", 'squirrly-seo' ), '<br /><br />', '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo', array(
+				'description' => sprintf( esc_html__( "The Snippets of your most important pages should be customized. %s Use the %sSnippet%s from Squirrly SEO to customize the meta settings, the open graph, etc. for this page. %s Since Focus Pages are the most important pages on your site, you'll want people to love the search engine listings that you build for this page. %s Therefore, you should define a custom SEO listing to improve the number of clicks you get when people DO find your page on search engines. %s NOTE: sometimes Google tries to create automated snippets and display those, but it's just an experiment they run. Most of the times, your own custom snippet will be the one that gets displayed.", 'squirrly-seo' ), '<br /><br />', '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo', array(
 						'sid=' . ( isset( $this->_post->ID ) ? $this->_post->ID : '' ),
 						'stype=' . ( isset( $this->_post->post_type ) ? $this->_post->post_type : '' )
 					) ) . '" target="_blank">', '</a>', '<br /><br />', '<br /><br />', '<br /><br />' ),
@@ -187,7 +187,7 @@ class SQ_Models_Focuspages_Snippet extends SQ_Models_Abstract_Assistant {
 	public function getHeader() {
 		$edit_link = '';
 		if ( isset( $this->_post->ID ) ) {
-			$edit_link = SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo', array(
+			$edit_link = SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo', array(
 				'sid=' . $this->_post->ID,
 				'stype=' . $this->_post->post_type
 			) );

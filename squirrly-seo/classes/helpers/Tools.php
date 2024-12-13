@@ -177,7 +177,7 @@ class SQ_Classes_Helpers_Tools
             'sq_onboarding_data' => array(),
 
 	        // Redirects
-            'sq_redirects' => 1,
+            'sq_redirects' => 0,
 			// Reusable schemas
             'sq_jsonld_reusable_schemas' => 0,
 
@@ -300,7 +300,7 @@ class SQ_Classes_Helpers_Tools
                     'description' => ''
                 )),
 
-            //Indexnow api
+            //Auto-Indexing api
             'sq_auto_indexnow' => true,
             'indexnow_key' => false,
             'indexnow_post_type' => array('post'),
@@ -470,7 +470,7 @@ class SQ_Classes_Helpers_Tools
             ),
 
 			//Innerlinks
-	        'sq_auto_innelinks' => 1,
+	        'sq_auto_innelinks' => 0,
 	        'sq_innelinks_global' => 0,
 	        'sq_innelinks_links_per_keyword' => 1,
 	        'sq_innelinks_links_per_target' => 0,
@@ -1201,6 +1201,9 @@ class SQ_Classes_Helpers_Tools
 		} elseif ( is_string( $ret ) && $ret <> '' && $keep_newlines && function_exists( 'sanitize_textarea_field' ) ) {
 			$ret = sanitize_textarea_field( $ret );
 		} else {
+			if(in_array($key, array('stype', 'sstatus', 'squery', 'skeyword'))){
+				$ret = SQ_Classes_Helpers_Sanitize::sanitizeSearch( $ret );
+			}
 			$ret = sanitize_text_field( $ret );
 		}
 

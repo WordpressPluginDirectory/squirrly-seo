@@ -7,15 +7,7 @@ if ( ! isset( $view ) ) {
 /**
  * Goals view
  */
-?>
-<?php
-$refresh     = false;
-$report_time = SQ_Classes_Helpers_Tools::getOption( 'seoreport_time' );
-if ( ! $report_time || ( time() - (int) $report_time ) > ( 3600 * 12 ) ) {
-	$refresh = true;
-}
-
-$category_name = apply_filters( 'sq_page', SQ_Classes_Helpers_Tools::getValue( 'page', 'sq_dashboard' ) );
+$category_name = apply_filters( 'sq_page', 'sq_dashboard' );
 
 $ignored_count = $countdone = 0;
 foreach ( $view->report as $function => $row ) {
@@ -35,7 +27,7 @@ if ( $countdone == count( $view->report ) ) {
 ?>
 
 <div class="col-7 m-0 p-0 py-4">
-    <h3><?php echo esc_html__( "AI Consultant", "squirrly-seo" ) ?>
+    <h3><?php echo esc_html__( "AI SEO Consultant", "squirrly-seo" ) ?>
         <div class="sq_help_question d-inline">
             <a href="https://howto12.squirrly.co/kb/next-seo-goals/" target="_blank"><i class="fa-solid fa-question-circle"></i></a>
         </div>
@@ -52,8 +44,8 @@ if ( $countdone == count( $view->report ) ) {
                     <a href="<?php echo esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( SQ_Classes_Helpers_Tools::getValue( 'page', 'sq_features' ) ) ) ?>" class="sq_search_close">X</a>
 				<?php } ?>
 
-				<?php if ( ! empty( $view->report ) || $refresh ) { ?>
-                    <input type="button" class="btn btn-primary m-0 px-4 sq_seocheck_submit" onclick="jQuery('#sq_loading_modal').modal();" <?php echo( $refresh ? 'data-action="trigger"' : '' ) ?> value="<?php echo esc_attr__( "Run New SEO Test", "squirrly-seo" ) ?> >"/>
+				<?php if ( ! empty( $view->report ) ) { ?>
+                    <input type="button" class="btn btn-primary m-0 px-4 sq_seocheck_submit" onclick="jQuery('#sq_loading_modal').modal();" value="<?php echo esc_attr__( "Run New SEO Test", "squirrly-seo" ) ?> >"/>
 				<?php } else { ?>
                     <form method="post">
 						<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_moretasks', 'sq_nonce' ); ?>
@@ -195,6 +187,7 @@ if ( $countdone == count( $view->report ) ) {
 		<?php if ( $ignored_count > 0 ) { ?>
             <form method="post" class="p-0 m-0">
 				<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_resetignored', 'sq_nonce' ); ?>
+                <input type="hidden" name="category" value="<?php echo esc_attr($category_name) ?>"/>
                 <input type="hidden" name="action" value="sq_resetignored"/>
                 <button type="submit" class="btn btn-link text-black-50 small p-2 px-3 m-0">
 					<?php echo esc_html__( "Show hidden goals", "squirrly-seo" ) ?>
@@ -205,10 +198,10 @@ if ( $countdone == count( $view->report ) ) {
 
     </div>
 
-	<?php if ( empty( $view->report ) && ! $refresh ) { ?>
+	<?php if ( empty( $view->report ) ) { ?>
         <div class="col p-0 m-3 mx-0 text-right small">
 			<?php echo esc_html__( "Next goals on", "squirrly-seo" ) ?>:
-            <strong><?php echo esc_html( gmdate( get_option( 'date_format' ), strtotime( '+1 day' ) ) ) ?></strong>
+            <strong><?php echo esc_html( wp_date( get_option( 'date_format' ), strtotime( '+1 day' ) ) ) ?></strong>
         </div>
 	<?php } ?>
 
@@ -220,11 +213,8 @@ if ( $countdone == count( $view->report ) ) {
         <i class="fa-solid fa-exclamation-circle"></i> <?php echo esc_html__( "Tips and Tricks", "squirrly-seo" ); ?>
     </h5>
     <ul class="mx-4">
-		<?php if ( ! empty( $view->getCongratulations() ) ) { ?>
-            <li class="text-left mb-3"><?php echo sprintf( esc_html__( "Completing Goals from Squirrly's AI Consultant moves you to TOP 10 positions in Google Search, in the shortest possible amount of time. Keep completing goals and you'll see %s Progress and Achievements %s messages that appear below.", "squirrly-seo" ), '<a href="#sq_seocheck_success" >', '</a>' ); ?></li>
-		<?php } else { ?>
-            <li class="text-left mb-3"><?php echo sprintf( esc_html__( "Completing Goals from Squirrly's AI Consultant moves you to TOP 10 positions in Google Search, in the shortest possible amount of time. Keep completing goals and you'll see %s Progress and Achievements %s messages that appear below.", "squirrly-seo" ), '<strong>', '</strong>' ); ?></li>
-		<?php } ?>
+        <li class="text-left mb-3"><?php echo sprintf( esc_html__( "Completing Goals from Squirrly's AI Consultant moves you to TOP 10 positions in Google Search, in the shortest possible amount of time. Keep completing goals and you'll see %s Progress and Achievements %s messages that appear below.", "squirrly-seo" ), '<strong>', '</strong>' ); ?></li>
+
         <li class="text-left mb-3"><?php echo esc_html__( "Taking care of the goals and focusing on completing them will increase ranking positions, traffic to the website, social media sharing, time on page and a lot more.", "squirrly-seo" ); ?></li>
         <li class="text-left mb-3"><?php echo esc_html__( "This AI Consultant does exactly what a Human SEO Consultant with 10 years of experience would do: it looks at your site; identifies what needs to be fixed, based on knowledge gathered over the years; comes up with a great plan of what needs to be achieved in order to start being found everywhere on Google.", "squirrly-seo" ); ?></li>
         <li class="text-left mb-3"><?php echo sprintf( esc_html__( "%s Important: %s if a modification was made to a focus page, please request a new focus pages re-audit before asking the AI Consultant to run a new test and re-configure the goals.", "squirrly-seo" ), '<strong>', '</strong>' ); ?></li>

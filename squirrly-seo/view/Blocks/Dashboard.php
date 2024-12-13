@@ -11,7 +11,7 @@ if ( ! isset( $view ) ) {
  */
 ?>
 <?php
-$tasks_completed   = SQ_Classes_ObjController::getClass( 'SQ_Controllers_CheckSeo' )->getCongratulations();
+$tasks_completed   = SQ_Classes_ObjController::getClass( 'SQ_Controllers_Progress' )->getCongratulations();
 $tasks_incompleted = SQ_Classes_ObjController::getClass( 'SQ_Controllers_CheckSeo' )->getNotifications();
 ?>
 <div id="sq_dashboard_content" style="position: relative;">
@@ -75,8 +75,7 @@ $tasks_incompleted = SQ_Classes_ObjController::getClass( 'SQ_Controllers_CheckSe
                 </ul>
             </div>
             <div class="sq_dashboard_buttons">
-                <a class="sq_button" href="<?php echo esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_dashboard' ) ) ?>#tasks"><?php echo esc_html__( "See Today’s Goals", "squirrly-seo" ) ?>
-                    >></a>
+                <a class="sq_button" href="<?php echo esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_checkseo' ) ) ?>"><?php echo esc_html__( "See Today’s Goals", "squirrly-seo" ) ?> >></a>
             </div>
 		<?php } else { ?>
             <div class="sq_dashboard_nogoals">
@@ -85,7 +84,7 @@ $tasks_incompleted = SQ_Classes_ObjController::getClass( 'SQ_Controllers_CheckSe
                     <a class="wp_button" href="<?php echo esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_focuspages', 'pagelist' ) ) ?>" class="btn btn-sm btn-primary" style="font-size: 14px"><?php echo esc_html__( "Rank your best pages with Focus Pages", "squirrly-seo" ); ?></a>
                 </div>
                 <div>
-                    <a class="wp_button" href="<?php echo esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo' ) ) ?>" class="btn btn-sm btn-primary" style="font-size: 14px"><?php echo esc_html__( "Boost your SEO with Bulk SEO", "squirrly-seo" ); ?></a>
+                    <a class="wp_button" href="<?php echo esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo' ) ) ?>" class="btn btn-sm btn-primary" style="font-size: 14px"><?php echo esc_html__( "Boost your SEO with Bulk SEO", "squirrly-seo" ); ?></a>
                 </div>
             </div>
 		<?php } ?>

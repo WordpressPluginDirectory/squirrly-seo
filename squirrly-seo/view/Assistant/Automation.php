@@ -25,15 +25,128 @@ if ( ! isset( $view ) ) {
         <div class="d-flex flex-row flex-nowrap flex-grow-1 bg-light m-0 p-0">
             <div class="flex-grow-1 sq_flex m-0 py-0 px-4">
 				<?php do_action( 'sq_form_notices' ); ?>
+                <div class="col-12 p-0 m-0">
+                    <div class="sq_breadcrumbs my-4"><?php SQ_Classes_ObjController::getClass( 'SQ_Models_Menu' )->showBreadcrumbs( SQ_Classes_Helpers_Tools::getValue( 'page' ) . '/' . SQ_Classes_Helpers_Tools::getValue( 'tab' ) ) ?></div>
+                </div>
+
+	            <?php
+	            $filter = array( 'public' => true, '_builtin' => false );
+	            $types  = get_post_types( $filter );
+
+	            $new_types = array();
+	            if ( ! empty( $types ) ) {
+		            foreach ( $types as $pattern => $name ) {
+			            if ( apply_filters( 'sq_automation_validate_pattern', $pattern ) ) {
+				            $new_types[ $pattern ] = $name;
+			            }
+		            }
+	            }
+
+	            if ( ! empty( $types ) ) {
+		            foreach ( $types as $pattern => $name ) {
+			            if ( ! apply_filters( 'sq_automation_validate_pattern', $pattern ) ) {
+				            continue;
+			            }
+
+			            if ( $post_type_obj = get_post_type_object( $pattern ) ) {
+				            if ( ! $post_type_obj->has_archive ) {
+					            continue;
+				            }
+			            }
+
+			            if ( in_array( 'archive-' . $pattern, array_keys( SQ_Classes_Helpers_Tools::getOption( 'patterns' ) ) ) ) {
+				            continue;
+			            }
+
+			            $new_types[ 'archive-' . $pattern ] = $name;
+		            }
+	            }
+
+	            $filter = array( 'public' => true, );
+	            $taxonomies = get_taxonomies( $filter );
+	            if ( ! empty( $taxonomies ) ) {
+		            foreach ( $taxonomies as $pattern => $name ) {
+			            if ( in_array( $pattern, array(
+				            'post_tag',
+				            'post_format',
+				            'product_cat',
+				            'product_tag',
+				            'product_shipping_class'
+			            ) ) ) {
+				            continue;
+			            }
+
+			            if ( in_array( 'tax-' . $pattern, array_keys( SQ_Classes_Helpers_Tools::getOption( 'patterns' ) ) ) ) {
+				            continue;
+			            }
+			            $new_types[ 'tax-' . $pattern ] = $name;
+		            }
+	            }
+
+	            if ( ! empty( $new_types ) ) { ?>
+                    <div class="col-12 p-0 m-0">
+                        <form method="POST">
+                            <?php SQ_Classes_Helpers_Tools::setNonce( 'sq_automation_addpostype', 'sq_nonce' ); ?>
+                            <input type="hidden" name="action" value="sq_automation_addpostype"/>
+
+                            <div class="sq_breadcrumbs my-4"><?php SQ_Classes_ObjController::getClass( 'SQ_Models_Menu' )->getBreadcrumbs( SQ_Classes_Helpers_Tools::getValue( 'page' ) ) ?></div>
+                            <h3 class="mt-4 card-title">
+                                <?php echo esc_html__( "Automation", "squirrly-seo" ); ?>
+                                <div class="sq_help_question d-inline">
+                                    <a href="https://howto12.squirrly.co/kb/seo-automation/" target="_blank"><i class="fa-solid fa-question-circle" style="margin: 0;"></i></a>
+                                </div>
+                            </h3>
+                            <div class="col-7 small m-0 p-0">
+                                <?php echo esc_html__( "Add ALL Your Post Types to the Automation section and ensure all your site is covered with excellent SEO.", "squirrly-seo" ); ?>
+                            </div>
+
+                            <div class="col-12 p-0 m-0 my-5">
+
+
+                                    <div class="col-12 row m-0 p-0">
+                                        <div class="col-12 row py-2 mx-0 my-3">
+                                            <div class="col-4 p-1">
+                                                <div class="font-weight-bold">
+                                                    <?php echo esc_html__( "Add Post Type", "squirrly-seo" ); ?>
+                                                    :<a href="https://howto12.squirrly.co/kb/seo-automation/#add_post_type" target="_blank"><i class="fa-solid fa-question-circle m-0 px-2" style="display: inline;"></i></a>
+                                                </div>
+                                                <div class="small text-black-50"><?php echo esc_html__( "Add new post types in the list and customize the automation for it.", "squirrly-seo" ); ?></div>
+                                            </div>
+                                            <div class="col-8 m-0 p-0 input-group">
+                                                <label for="sq_select_post_types"></label><select id="sq_select_post_types" name="posttype" class="form-control bg-input m-0">
+                                                    <?php
+                                                    foreach ( $new_types as $pattern => $name ) {
+                                                        ?>
+                                                        <option value="<?php echo esc_attr( $pattern ) ?>"><?php echo esc_html( ucwords( str_replace( array(
+                                                                '-',
+                                                                '_'
+                                                            ), ' ', $pattern ) ) ); ?> (<?php echo esc_html( $pattern ) ?>)
+                                                        </option>
+                                                    <?php } ?>
+                                                </select>
+
+                                                <button type="submit" class="btn btn-primary rounded-0"><?php echo esc_html__( "Add Post Type", "squirrly-seo" ); ?></button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                <?php do_action( 'sq_automation_types_after' ); ?>
+
+                            </div>
+                        </form>
+                    </div>
+	            <?php } ?>
 
                 <div class="col-12 p-0 m-0">
                     <form method="POST" class="sq_save_ajax_form">
 						<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_seosettings_automation', 'sq_nonce' ); ?>
                         <input type="hidden" name="action" value="sq_seosettings_automation"/>
 
-                        <div class="sq_breadcrumbs my-4"><?php SQ_Classes_ObjController::getClass( 'SQ_Models_Menu' )->showBreadcrumbs( SQ_Classes_Helpers_Tools::getValue( 'page' ) . '/' . SQ_Classes_Helpers_Tools::getValue( 'tab' ) ) ?></div>
                         <h3 class="mt-4 card-title">
-							<?php echo esc_html__( "Automation - Configurations", "squirrly-seo" ); ?>
+		                    <?php echo esc_html__( "Automation - Configurations", "squirrly-seo" ); ?>
                             <div class="sq_help_question d-inline">
                                 <a href="https://howto12.squirrly.co/kb/seo-automation/" target="_blank"><i class="fa-solid fa-question-circle" style="margin: 0;"></i></a>
                             </div>
@@ -484,7 +597,7 @@ if ( ! isset( $view ) ) {
                                     <div class="m-3 px-5"><?php echo esc_html__( "Patterns change the codes like {{title}} with the actual value of the post Title.", "squirrly-seo" ); ?></div>
                                     <div class="m-3 px-5"><?php echo esc_html__( "In Squirrly, each post type in your site comes with a predefined posting pattern when displayed onto your website. However, based on your site's purpose and needs, you can also decide what information these patterns will include.", "squirrly-seo" ); ?></div>
                                     <div class="m-3 px-5"><?php echo esc_html__( "Once you set up a pattern for a particular post type, only the content required by your custom sequence will be displayed.", "squirrly-seo" ); ?></div>
-                                    <div class="m-3 px-5"><?php echo sprintf( esc_html__( "Squirrly lets you see how the customized patterns will apply when posts/pages are shared across social media or search engine feeds. You just need to go to %s Squirrly's Bulk SEO section %s and see the meta information for each post type.", "squirrly-seo" ), '<a href="' . esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo' ) ) . '" ><strong>', '</strong></a>' ); ?></div>
+                                    <div class="m-3 px-5"><?php echo sprintf( esc_html__( "Squirrly lets you see how the customized patterns will apply when posts/pages are shared across social media or search engine feeds. You just need to go to %s Squirrly's Bulk SEO section %s and see the meta information for each post type.", "squirrly-seo" ), '<a href="' . esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo' ) ) . '" ><strong>', '</strong></a>' ); ?></div>
                                 </div>
                             </div>
 

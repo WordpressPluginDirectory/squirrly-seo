@@ -119,7 +119,7 @@ class SQ_Models_Menu {
 	public function getMainMenu() {
 		$menu = array(
 			'sq_dashboard'   => array(
-				'title'      => ( ( SQ_Classes_Helpers_Tools::getOption( 'sq_api' ) == '' ) ? esc_html__( "First Step", 'squirrly-seo' ) : esc_html__( "Overview", 'squirrly-seo' ) ),
+				'title'      => ( ( SQ_Classes_Helpers_Tools::getOption( 'sq_api' ) == '' ) ? esc_html__( "First Step", 'squirrly-seo' ) : esc_html__( "Home", 'squirrly-seo' ) ),
 				'parent'     => 'sq_dashboard',
 				'capability' => 'edit_posts',
 				'function'   => array( SQ_Classes_ObjController::getClass( 'SQ_Controllers_Overview' ), 'init' ),
@@ -127,6 +127,17 @@ class SQ_Models_Menu {
 				'icon'       => 'fa-solid fa-house',
 				'topmenu'    => true,
 				'leftmenu'   => true,
+				'fullscreen' => false
+			),
+			'sq_checkseo'    => array(
+				'title'      => esc_html__( "AI Consultant", 'squirrly-seo' ),
+				'parent'     => 'sq_dashboard',
+				'capability' => 'edit_posts',
+				'function'   => array( SQ_Classes_ObjController::getClass( 'SQ_Controllers_CheckSeo' ), 'init' ),
+				'href'       => false,
+				'icon'       => false,
+				'topmenu'    => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_seogoals' ),
+				'leftmenu'   => false,
 				'fullscreen' => false
 			),
 			'sq_features'    => array(
@@ -140,6 +151,7 @@ class SQ_Models_Menu {
 				'leftmenu'   => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_features' ),
 				'fullscreen' => false
 			),
+
 			'sq_onpagesetup' => array(
 				'title'      => esc_html__( "One Page Setup", 'squirrly-seo' ),
 				'parent'     => 'sq_dashboard',
@@ -147,17 +159,17 @@ class SQ_Models_Menu {
 				'function'   => array( SQ_Classes_ObjController::getClass( 'SQ_Controllers_Onboarding' ), 'init' ),
 				'href'       => false,
 				'icon'       => 'fa-solid fa-list-check',
-				'topmenu'    => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_onpagesetup' ),
-				'leftmenu'   => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_onpagesetup' ),
+				'topmenu'    => false,
+				'leftmenu'   => false,
 				'fullscreen' => true
 			),
 			'sq_research'    => array(
-				'title'      => esc_html__( "Keyword Research", 'squirrly-seo' ),
+				'title'      => esc_html__( "AI Research", 'squirrly-seo' ),
 				'parent'     => 'sq_dashboard',
 				'capability' => 'edit_posts',
 				'function'   => array( SQ_Classes_ObjController::getClass( 'SQ_Controllers_Research' ), 'init' ),
 				'href'       => false,
-				'icon'       => 'fa-solid fa-key',
+				'icon'       => 'fa-solid fa-microchip-ai',
 				'topmenu'    => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_research' ),
 				'leftmenu'   => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_research' ),
 				'fullscreen' => true
@@ -170,16 +182,16 @@ class SQ_Models_Menu {
 				'href'       => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_research', 'briefcase' ),
 				'icon'       => 'fa-solid fa-briefcase',
 				'topmenu'    => false,
-				'leftmenu'   => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_research' ),
+				'leftmenu'   => false,
 				'fullscreen' => true
 			),
 			'sq_assistant'   => array(
-				'title'      => esc_html__( "Live Assistant", 'squirrly-seo' ),
+				'title'      => esc_html__( "Optimize", 'squirrly-seo' ),
 				'parent'     => 'sq_dashboard',
 				'capability' => 'edit_posts',
 				'function'   => array( SQ_Classes_ObjController::getClass( 'SQ_Controllers_Assistant' ), 'init' ),
 				'href'       => false,
-				'icon'       => 'fa-solid fa-message',
+				'icon'       => 'fa-solid fa-bolt',
 				'topmenu'    => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_assistant' ),
 				'leftmenu'   => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_assistant' ),
 				'fullscreen' => true
@@ -191,41 +203,19 @@ class SQ_Models_Menu {
 				'function'   => array( SQ_Classes_ObjController::getClass( 'SQ_Controllers_BulkSeo' ), 'init' ),
 				'href'       => false,
 				'icon'       => 'fa-solid fa-block-brick',
-				'topmenu'    => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_assistant' ),
-				'leftmenu'   => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_assistant' ),
+				'topmenu'    => false,
+				'leftmenu'   => false,
 				'fullscreen' => true
 			),
 			'sq_automation'  => array(
 				'title'      => esc_html__( "Automation", 'squirrly-seo' ),
 				'parent'     => 'sq_dashboard',
 				'capability' => 'edit_posts',
-				'function'   => array( SQ_Classes_ObjController::getClass( 'SQ_Controllers_Automation' ), 'init' ),
+				'function'   => array( SQ_Classes_ObjController::getClass( 'SQ_Controllers_Assistant' ), 'init' ),
 				'href'       => false,
 				'icon'       => 'fa-solid fa-bolt',
-				'topmenu'    => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_automation' ),
-				'leftmenu'   => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_automation' ),
-				'fullscreen' => true
-			),
-			'sq_indexnow'    => array(
-				'title'      => esc_html__( "IndexNow", 'squirrly-seo' ),
-				'parent'     => 'sq_dashboard',
-				'capability' => 'edit_posts',
-				'function'   => array( SQ_Classes_ObjController::getClass( 'SQ_Controllers_Indexnow' ), 'init' ),
-				'href'       => false,
-				'icon'       => 'fa-solid fa-upload',
-				'topmenu'    => ( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_indexnow' ) && SQ_Classes_Helpers_Tools::getMenuVisible( 'show_indexnow' ) ),
-				'leftmenu'   => ( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_indexnow' ) && SQ_Classes_Helpers_Tools::getMenuVisible( 'show_indexnow' ) ),
-				'fullscreen' => true
-			),
-			'sq_seosettings' => array(
-				'title'      => esc_html__( "SEO Configuration", 'squirrly-seo' ),
-				'parent'     => 'sq_dashboard',
-				'capability' => 'edit_posts',
-				'function'   => array( SQ_Classes_ObjController::getClass( 'SQ_Controllers_SeoSettings' ), 'init' ),
-				'href'       => false,
-				'icon'       => 'fa-solid fa-gears',
-				'topmenu'    => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_seo' ),
-				'leftmenu'   => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_seo' ),
+				'topmenu'    => false,
+				'leftmenu'   => false,
 				'fullscreen' => true
 			),
 			'sq_focuspages'  => array(
@@ -239,8 +229,31 @@ class SQ_Models_Menu {
 				'leftmenu'   => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_focuspages' ),
 				'fullscreen' => true
 			),
+			'sq_indexnow'    => array(
+				'title'      => esc_html__( "Auto-Indexing", 'squirrly-seo' ),
+				'parent'     => 'sq_dashboard',
+				'capability' => 'edit_posts',
+				'function'   => array( SQ_Classes_ObjController::getClass( 'SQ_Controllers_Indexnow' ), 'init' ),
+				'href'       => false,
+				'icon'       => 'fa-solid fa-upload',
+				'topmenu'    => ( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_indexnow' ) && SQ_Classes_Helpers_Tools::getMenuVisible( 'show_indexnow' ) ),
+				'leftmenu'   => ( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_indexnow' ) && SQ_Classes_Helpers_Tools::getMenuVisible( 'show_indexnow' ) ),
+				'fullscreen' => true
+			),
+			'sq_seosettings' => array(
+				'title'      => esc_html__( "Technical SEO", 'squirrly-seo' ),
+				'parent'     => 'sq_dashboard',
+				'capability' => 'edit_posts',
+				'function'   => array( SQ_Classes_ObjController::getClass( 'SQ_Controllers_SeoSettings' ), 'init' ),
+				'href'       => false,
+				'icon'       => 'fa-solid fa-gears',
+				'topmenu'    => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_seo' ),
+				'leftmenu'   => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_seo' ),
+				'fullscreen' => true
+			),
+
 			'sq_innerlinks'  => array(
-				'title'      => esc_html__( "Inner Links", 'squirrly-seo' ) . ' ' . apply_filters( 'sq_badge_new', false ),
+				'title'      => esc_html__( "Inner Links", 'squirrly-seo' ) ,
 				'parent'     => 'sq_dashboard',
 				'capability' => 'edit_posts',
 				'function'   => array( SQ_Classes_ObjController::getClass( 'SQ_Controllers_FocusPages' ), 'init' ),
@@ -303,7 +316,7 @@ class SQ_Models_Menu {
 				'href'       => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'backup' ),
 				'icon'       => 'fa-solid fa-arrow-up-from-bracket',
 				'topmenu'    => false,
-				'leftmenu'   => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_seo' ),
+				'leftmenu'   => false,
 				'fullscreen' => false
 			),
 			'sq_account' => array(
@@ -314,7 +327,7 @@ class SQ_Models_Menu {
 				'href'       => SQ_Classes_RemoteController::getMySquirrlyLink( 'account' ),
 				'icon'       => 'fa-solid fa-user',
 				'topmenu'    => false,
-				'leftmenu'   => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_account_info' ),
+				'leftmenu'   => false,
 				'fullscreen' => false
 			),
 			'sq_help'    => array(
@@ -340,6 +353,7 @@ class SQ_Models_Menu {
 				'fullscreen' => false
 			),
 
+
 		);
 
 		//for PHP 7.3.1 version
@@ -359,18 +373,12 @@ class SQ_Models_Menu {
 		$tabs = array();
 
 		$tabs['sq_dashboard']   = array(
-			'sq_dashboard/sq_checkseo'     => array(
-				'title'      => esc_html__( "AI Consultant", 'squirrly-seo' ),
-				'capability' => 'sq_manage_snippets',
-				'show'       => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_seogoals' ),
-				'function'   => array( SQ_Classes_ObjController::getClass( 'SQ_Controllers_CheckSeo' ), 'init' ),
-				'icon'       => ''
-			),
+
 			'sq_dashboard/sq_progress'     => array(
 				'title'      => esc_html__( "Progress & Achivements", 'squirrly-seo' ),
 				'capability' => 'sq_manage_snippet',
-				'show'       => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_seogoals' ),
-				'function'   => false,
+				'show'       => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_seogoals' ) && !empty(SQ_Classes_ObjController::getClass( 'SQ_Controllers_Progress' )->getCongratulations()),
+				'function'   => array( SQ_Classes_ObjController::getClass( 'SQ_Controllers_Progress' ), 'init' ),
 				'icon'       => ''
 			),
 			'sq_dashboard/sq_mainfeatures' => array(
@@ -484,7 +492,7 @@ class SQ_Models_Menu {
 		);
 		$tabs['sq_research']    = array(
 			'sq_research/research'  => array(
-				'title'      => esc_html__( "Find Keywords", 'squirrly-seo' ) . ' ' . apply_filters( 'sq_badge_new', false ),
+				'title'      => esc_html__( "Find Keywords", 'squirrly-seo' ) ,
 				'capability' => 'sq_manage_snippet',
 				'icon'       => 'dashicons-before dashicons-post-status',
 			),
@@ -499,7 +507,7 @@ class SQ_Models_Menu {
 				'icon'       => 'fa-solid fa-tag'
 			),
 			'sq_research/suggested' => array(
-				'title'      => esc_html__( "Suggested", 'squirrly-seo' ) . ' ' . apply_filters( 'sq_badge_new', false ),
+				'title'      => esc_html__( "Suggested", 'squirrly-seo' ) ,
 				'capability' => 'sq_manage_snippet',
 				'icon'       => 'dashicons-before dashicons-lightbulb'
 			),
@@ -514,7 +522,18 @@ class SQ_Models_Menu {
 			'sq_assistant/assistant' => array(
 				'title'      => esc_html__( "Optimize Posts", 'squirrly-seo' ),
 				'capability' => 'sq_manage_snippet',
-				'icon'       => 'dashicons-before dashicons-admin-comments',
+				'icon'       => 'dashicons-before dashicons-edit',
+			),
+			'sq_assistant/bulkseo' => array(
+				'title'      => esc_html__( "Bulk SEO", 'squirrly-seo' ),
+				'capability' => 'sq_manage_snippet',
+				'icon'       => 'fa-solid fa-block-brick',
+			),
+
+			'sq_assistant/automation' => array(
+				'title'      => esc_html__( "Automation", 'squirrly-seo' ),
+				'capability' => 'sq_manage_settings',
+				'icon'       => 'fa-solid fa-bolt',
 			),
 			'sq_assistant/settings'  => array(
 				'title'      => esc_html__( "Settings", 'squirrly-seo' ),
@@ -534,7 +553,7 @@ class SQ_Models_Menu {
 				'icon'       => 'dashicons-before dashicons-plus'
 			),
 			'sq_focuspages/innerlinks' => array(
-				'title'      => esc_html__( "Inner Links", 'squirrly-seo' ) . ' ' . apply_filters( 'sq_badge_new', false ),
+				'title'      => esc_html__( "Inner Links", 'squirrly-seo' ) ,
 				'capability' => 'sq_manage_snippet',
 				'icon'       => 'dashicons-before dashicons-admin-links',
 				'show'       => ( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_innelinks' ) && SQ_Classes_Helpers_Tools::getMenuVisible( 'show_innerlinks' ) )
@@ -586,7 +605,7 @@ class SQ_Models_Menu {
 
 		);
 		$tabs['sq_bulkseo']     = array(
-			'sq_bulkseo/bulkseo' => array(
+			'sq_assistant/bulkseo' => array(
 				'title'      => esc_html__( "Bulk SEO", 'squirrly-seo' ),
 				'capability' => 'sq_manage_snippet',
 				'icon'       => 'fa-solid fa-block-brick',
@@ -866,7 +885,7 @@ class SQ_Models_Menu {
 		if ( ! empty( $patterns ) ) {
 			foreach ( $patterns as $pattern => $type ) {
 
-				$tabs['sq_automation']['sq_automation/automation']['tabs'][] = array(
+				$tabs['sq_assistant']['sq_assistant/automation']['tabs'][] = array(
 					'title' => apply_filters( 'sq_pattern_item', $pattern ),
 					'tab'   => 'sq_' . $pattern,
 				);
@@ -898,8 +917,8 @@ class SQ_Models_Menu {
 			foreach ( $mainmenu as $menuid => $item ) {
 
 				if ( $menuid == $name ) {
-					$breadcrumbs .= '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_dashboard' ) . '">' . '<i class="fa-solid fa-house text-black-50"></i></a>' . $separator;
-					$breadcrumbs .= '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( $menuid ) . '">' . $item['title'] . '</a>';
+					$breadcrumbs .= '<a href="' . esc_url(SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_dashboard' )) . '">' . '<i class="fa-solid fa-house text-black-50"></i></a>' . $separator;
+					$breadcrumbs .= '<a href="' . esc_url(SQ_Classes_Helpers_Tools::getAdminUrl( $menuid )) . '">' . $item['title'] . '</a>';
 				} elseif ( strpos( $breadcrumbs, 'fa-house' ) === false ) {
 
 					$tabs = $this->getTabs( $menuid );

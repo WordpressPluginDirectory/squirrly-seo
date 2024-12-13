@@ -36,13 +36,13 @@ if ( ! isset( $view ) ) {
                         <input type="hidden" name="action" value="sq_seosettings_indexnow_submit"/>
 
                         <h3 class="mt-4 card-title">
-							<?php echo esc_html__( "Submit URLs to IndexNow", "squirrly-seo" ); ?>
+							<?php echo esc_html__( "Submit URLs for Auto-Indexing", "squirrly-seo" ); ?>
                             <div class="sq_help_question d-inline">
                                 <a href="https://howto12.squirrly.co/kb/indexnow/" target="_blank"><i class="fa-solid fa-question-circle"></i></a>
                             </div>
                         </h3>
                         <div class="col-7 small m-0 p-0">
-							<?php echo esc_html__( "Manually send URLs to the IndexNow API.", "squirrly-seo" ); ?>
+							<?php echo esc_html__( "Manually send URLs to the IndexNow API AND the Google Indexing API.", "squirrly-seo" ); ?>
                         </div>
 
                         <div class="col-12 p-0 m-0 my-5">
@@ -51,7 +51,7 @@ if ( ! isset( $view ) ) {
                                 <div class="col-4 m-0 p-0 font-weight-bold">
                                     <label for="indexnow_urls"><?php echo esc_html__( "URLs", "squirrly-seo" ); ?>
                                         :</label>
-                                    <div class="small text-black-50 my-1 pr-3"><?php echo esc_html__( "Insert the URLs you want to send to the IndexNow (one per line, up to 10,000)", "squirrly-seo" ); ?></div>
+                                    <div class="small text-black-50 my-1 pr-3"><?php echo esc_html__( "Insert the URLs you want to send to the Auto-Indexing (one per line, up to 10,000)", "squirrly-seo" ); ?></div>
                                 </div>
                                 <div class="col-8 p-0">
                                     <textarea id="indexnow_urls" class="form-control" name="urls" rows="5" placeholder="<?php echo esc_url( home_url() ) ?>"></textarea>
@@ -71,10 +71,10 @@ if ( ! isset( $view ) ) {
                 <div class="col-12 m-0 p-0">
                     <div class="col-12 m-0 p-0 my-5">
                         <h3 class="py-0 card-title">
-							<?php echo esc_html__( "IndexNow History", "squirrly-seo" ); ?>
+							<?php echo esc_html__( "Auto-Indexing History (sent to both Google Indexing API and IndexNow)", "squirrly-seo" ); ?>
                         </h3>
                         <div class="col-7 small m-0 p-0">
-							<?php echo esc_html__( "Check the log to see how your URLs were submited.", "squirrly-seo" ); ?>
+							<?php echo esc_html__( "Check the log to see how your URLs were submited. Make sure your Google Search Console is connected.", "squirrly-seo" ); ?>
                         </div>
 						<?php if ( ! empty( $log ) ) { ?>
                             <div class="col-12 text-right m-0 p-0 my-1">
@@ -106,7 +106,7 @@ if ( ! isset( $view ) ) {
                                         </td>
                                         <td><?php echo esc_html( $row['status'] ) ?>
                                             <em>(<?php echo esc_html( $row['message'] ) ?>)</em></td>
-                                        <td><?php echo esc_html( gmdate( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $timestamp ) ) ?></td>
+                                        <td><?php echo esc_html( wp_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $timestamp ) ) ?></td>
                                     </tr>
 									<?php
 								}

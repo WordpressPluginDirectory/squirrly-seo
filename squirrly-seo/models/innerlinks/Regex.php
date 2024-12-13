@@ -23,6 +23,7 @@ class SQ_Models_Innerlinks_Regex {
 			'/(?<parts><a>.*<\/a>)/sU',
 			'/(?<parts><script.*>.*<\/script>)/sU',
 			'/(?<parts><style.*>.*<\/style>)/sU',
+			'/(?<parts><figcaption.*>.*<\/figcaption>)/sU',
 		);
 
 		$tag_exclusions = SQ_Classes_Helpers_Tools::getOption( 'sq_innelinks_exclude_tags' );

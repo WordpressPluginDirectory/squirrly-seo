@@ -708,7 +708,7 @@ class SQ_Models_Frontend {
 		if ( $archive->path <> '' ) {
 			$post->post_type = 'archive';
 			$post->hash      = md5( 'archive' . $archive->path );
-			$post->post_date = gmdate( get_option( 'date_format' ), strtotime( $archive->path ) );
+			$post->post_date = wp_date( get_option( 'date_format' ), strtotime( $archive->path ) );
 		} else {
 			$post->post_type = 'archive' . '-' . $archive->post_type;
 			$post->hash      = md5( $post->post_type );

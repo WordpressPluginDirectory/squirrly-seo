@@ -30,7 +30,7 @@ if ( ! isset( $view ) ) {
                 <div class="sq_breadcrumbs my-4"><?php SQ_Classes_ObjController::getClass( 'SQ_Models_Menu' )->showBreadcrumbs( SQ_Classes_Helpers_Tools::getValue( 'page' ) . '/' . SQ_Classes_Helpers_Tools::getValue( 'tab', 'settings' ) ) ?></div>
 
                 <h3 class="mt-4 card-title">
-					<?php echo esc_html__( "IndexNow Settings", 'squirrly-seo' ); ?>
+					<?php echo esc_html__( "Auto-Indexing Settings", 'squirrly-seo' ); ?>
                     <div class="sq_help_question d-inline">
                         <a href="https://howto12.squirrly.co/kb/indexnow/#settings" target="_blank"><i class="fa-solid fa-question-circle"></i></a>
                     </div>
@@ -104,7 +104,7 @@ if ( ! isset( $view ) ) {
                                             <div class="col-4 p-0 font-weight-bold">
                                                 <label for="indexnow_post_type"><?php echo esc_html__( "Automatically Submit Post Types", 'squirrly-seo' ); ?>
                                                     :</label>
-                                                <div class="small text-black-50 my-1"><?php echo esc_html__( "Select post types you want to send to IndexNow automatically.", 'squirrly-seo' ); ?></div>
+                                                <div class="small text-black-50 my-1"><?php echo esc_html__( "Select post types you want to send for Auto-Indexing.", 'squirrly-seo' ); ?></div>
                                             </div>
 
                                             <div class="col-8 p-0 m-0 form-group">
@@ -151,7 +151,6 @@ if ( ! isset( $view ) ) {
                                                         'https://searchadvisor.naver.com/indexnow',
                                                         'https://search.seznam.cz/indexnow',
                                                         'https://yandex.com/indexnow',
-                                                        'https://indexnow.yep.com',
                                                     );
 
                                                     if ( ! empty( $endpoints ) ) {

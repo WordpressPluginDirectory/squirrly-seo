@@ -69,7 +69,7 @@ $deactivate_reasons = array(
 				<?php if ( SQ_Classes_Helpers_Tools::getOption( 'sq_complete_uninstall' ) ) { ?>
                     <div class="sq_uninstall_form_options_wrapper sq_uninstall_feedback_separator">
                         <div class="sq_uninstall_feedback_input_line" style="color:red; font-size: 14px;">
-							<?php echo sprintf( esc_html__( "You set to remove all Squirrly SEO data on uninstall. You can change this option from %s Squirrly > SEO Configuration > Advanced Settings %s", "squirrly-seo" ), '<a href="' . esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'tweaks#tab=advanced' ) ) . '">', '</a>' ); ?>
+							<?php echo sprintf( esc_html__( "You set to remove all Squirrly SEO data on uninstall. You can change this option from %s Squirrly > Technical SEO > Advanced Settings %s", "squirrly-seo" ), '<a href="' . esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'tweaks#tab=advanced' ) ) . '">', '</a>' ); ?>
                         </div>
                     </div>
 				<?php } else { ?>

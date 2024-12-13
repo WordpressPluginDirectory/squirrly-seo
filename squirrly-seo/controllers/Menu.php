@@ -98,7 +98,7 @@ class SQ_Controllers_Menu extends SQ_Classes_FrontController {
 		//Add Squirrly SEO in  Posts list
 		SQ_Classes_ObjController::getClass( 'SQ_Controllers_PostsList' );
 
-		//Load the Indexnow feature
+		//Load the Auto-Indexing feature
 		if ( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_indexnow' ) ) {
 			SQ_Classes_ObjController::getClass( 'SQ_Controllers_Indexnow' );
 		}
@@ -118,11 +118,11 @@ class SQ_Controllers_Menu extends SQ_Classes_FrontController {
 		add_filter( 'sq_badge_new', array( $this, 'getNewFeatureBadge' ) );
 		add_filter( 'sq_features', function ( $features ) {
 
-			foreach ( $features as &$feature ) {
+			/*foreach ( $features as &$feature ) {
 				if ( in_array( $feature['title'], array( 'Redirects', 'Keyword Research', 'Inner Links' ) ) ) {
 					$feature['title'] .= ' ' . apply_filters( 'sq_badge_new', false );
 				}
-			}
+			}*/
 
 			return $features;
 		}, 11 );
@@ -442,6 +442,7 @@ class SQ_Controllers_Menu extends SQ_Classes_FrontController {
 			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap-reboot' );
 
 			if ( is_rtl() ) {
+				SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'popper' );
 				SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap.rtl' );
 				SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'rtl' );
 			} else {

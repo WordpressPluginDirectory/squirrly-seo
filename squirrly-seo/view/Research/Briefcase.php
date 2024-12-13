@@ -318,16 +318,10 @@ if ( ! isset( $view ) ) {
                                             <div class="modal-body" style="min-height: 90px;">
                                                 <ul class="col-12" style="list-style: initial">
 													<?php
-													foreach ( $row->posts as $post_id => $permalink ) {
-														if ( get_edit_post_link( $post_id, false ) ) { ?>
-                                                            <li class="row py-2 border-bottom">
-                                                                <a href="<?php echo esc_url( get_edit_post_link( $post_id, false ) ); ?>" target="_blank"><?php echo esc_url( $permalink ) ?></a>
-                                                            </li>
-														<?php } else { ?>
-                                                            <li class="row py-2 border-bottom">
-																<?php echo esc_url( $permalink ) ?>
-                                                            </li>
-														<?php } ?>
+													foreach ( $row->posts as $post_id => $permalink ) { ?>
+                                                        <li class="row py-2 border-bottom">
+                                                            <a href="<?php echo esc_url( $permalink ) ?>" target="_blank"><?php echo esc_url( $permalink ) ?></a>
+                                                        </li>
 													<?php } ?>
                                                 </ul>
                                             </div>

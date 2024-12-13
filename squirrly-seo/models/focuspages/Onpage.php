@@ -53,7 +53,7 @@ class SQ_Models_Focuspages_Onpage extends SQ_Models_Abstract_Assistant {
 		$this->_tasks[ $this->_category ] = array(
 			'sitemap'  => array(
 				'title'       => esc_html__( "Enhance your sitemap", 'squirrly-seo' ),
-				'description' => sprintf( esc_html__( "Add images / videos to your sitemap. It's important to have images / videos enabled. %s Squirrly SEO makes it super easy for you to enhance your XML sitemap. %s Just use the settings from %s Squirrly > SEO Configuration > Tweaks And Sitemap %s. Find the XML sitemap section and use the settings from that panel. %s Note! If the image/video options are not visible, enable the SEO Expert mode from top-right corner.", 'squirrly-seo' ), '<br /><br />', '<br /><br />', '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'tweaks', array( '#tab=sitemap' ) ) . '" target="_blank" >', '</a>', '<br /><br />' ),
+				'description' => sprintf( esc_html__( "Add images / videos to your sitemap. It's important to have images / videos enabled. %s Squirrly SEO makes it super easy for you to enhance your XML sitemap. %s Just use the settings from %s Squirrly > Technical SEO > Tweaks And Sitemap %s. Find the XML sitemap section and use the settings from that panel. %s Note! If the image/video options are not visible, enable the SEO Expert mode from top-right corner.", 'squirrly-seo' ), '<br /><br />', '<br /><br />', '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'tweaks', array( '#tab=sitemap' ) ) . '" target="_blank" >', '</a>', '<br /><br />' ),
 			),
 			'posttype' => array(
 				'title'       => esc_html__( "Post Type settings activated", 'squirrly-seo' ),
@@ -85,7 +85,7 @@ class SQ_Models_Focuspages_Onpage extends SQ_Models_Abstract_Assistant {
 		$header .= '</li>';
 
 		$header .= '<li class="completed">
-                    <a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings' ) . '" target="_blank" class="btn btn-primary text-white col-10 offset-1 mt-3">' . esc_html__( "Go to SEO Configuration", 'squirrly-seo' ) . '</a>
+                    <a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings' ) . '" target="_blank" class="btn btn-primary text-white col-10 offset-1 mt-3">' . esc_html__( "Go to Technical SEO", 'squirrly-seo' ) . '</a>
                 </li>';
 
 		return $header;

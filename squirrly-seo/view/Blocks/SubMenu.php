@@ -7,12 +7,12 @@ if ( ! isset( $view ) ) {
 /**
  * Left Submenu Menu Block view
  *
- * Used in Automation & SEO Configuration
+ * Used in Automation & Technical SEO
  *
  */
 ?>
 <?php
-if ( SQ_Classes_Helpers_Tools::getValue( 'page' ) == 'sq_automation' ) { ?>
+if ( SQ_Classes_Helpers_Tools::getValue( 'page' ) == 'sq_assistant' ) { ?>
     <div class="sq_sub_nav d-flex flex-column bd-highlight m-0 p-0 border-right">
 		<?php
 		$page     = SQ_Classes_Helpers_Tools::getValue( 'page' );

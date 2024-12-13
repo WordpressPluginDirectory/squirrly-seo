@@ -38,26 +38,13 @@ class SQ_Controllers_BulkSeo extends SQ_Classes_FrontController {
 			wp_enqueue_media();
 		}
 
-		add_action( 'sq_bulkseo_after', function () {
-			//get the modal window for the assistant popup
-			echo SQ_Classes_ObjController::getClass( 'SQ_Models_Assistant' )->getModal();
-		} );
+		$this->show_view( 'Assistant/' . esc_attr( ucfirst( $tab ) ) );
 
-		$this->show_view( 'BulkSeo/' . esc_attr( ucfirst( $tab ) ) );
+		//get the modal window for the assistant popup
+		echo SQ_Classes_ObjController::getClass( 'SQ_Models_Assistant' )->getModal();
 	}
 
-	public function bulkseo() {
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bulkseo' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'labels' );
 
-		$search      = (string) SQ_Classes_Helpers_Tools::getValue( 'skeyword', '' );
-		$this->pages = SQ_Classes_ObjController::getClass( 'SQ_Models_Snippet' )->getPages( $search );
-
-		if ( ! empty( $labels ) || count( (array) $this->pages ) > 1 ) {
-			//Get the labels for view use
-			$this->labels = SQ_Classes_ObjController::getClass( 'SQ_Models_BulkSeo' )->getLabels();
-		}
-	}
 
 	/**
 	 * Called when action is triggered

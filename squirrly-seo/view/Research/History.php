@@ -75,7 +75,7 @@ if ( ! isset( $view ) ) {
                                     <td style="width:50%;" class="sq_kr_keyword" title="<?php echo esc_attr( $kr->keyword ) ?>"><?php echo esc_html( $kr->keyword ) ?></td>
                                     <td style="width:10%;"><?php echo esc_html( $kr->country ) ?></td>
                                     <td style="width:20%;">
-                                        <div data-datetime="<?php echo esc_attr( strtotime( $kr->datetime ) ) ?>"><?php echo esc_html( gmdate( get_option( 'date_format' ), strtotime( $kr->datetime ) ) ) ?></div>
+                                        <div data-datetime="<?php echo esc_attr( strtotime( $kr->datetime ) ) ?>"><?php echo esc_html( wp_date( get_option( 'date_format' ), strtotime( $kr->datetime ) ) ) ?></div>
                                     </td>
                                     <td style="width:20px;">
                                         <button type="button" data-id="<?php echo (int) $kr->id ?>" data-destination="#history<?php echo (int) $kr->id ?>" class="sq_history_details btn btn-link text-primary btn-sm px-5"><?php echo esc_html__( "Show All Keywords", 'squirrly-seo' ) ?></button>

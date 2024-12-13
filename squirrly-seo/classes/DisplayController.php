@@ -45,6 +45,7 @@ class SQ_Classes_DisplayController {
 			}
 			if ( file_exists( _SQ_ASSETS_DIR_ . 'js/' . strtolower( $filename ) . ( SQ_DEBUG ? '' : '.min' ) . '.js' ) ) {
 				$js_uri = _SQ_ASSETS_URL_ . 'js/' . strtolower( $filename ) . ( SQ_DEBUG ? '' : '.min' ) . '.js';
+
 			}
 
 		}

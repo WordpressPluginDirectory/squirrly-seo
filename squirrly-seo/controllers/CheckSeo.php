@@ -28,9 +28,18 @@ class SQ_Controllers_CheckSeo extends SQ_Classes_FrontController {
 	 */
 	public function init() {
 
-		if ( ! isset( $this->congratulations ) ) {
-			$this->congratulations = $this->getCongratulations();
+
+		if ( SQ_Classes_Helpers_Tools::getOption( 'sq_api' ) == '' ) {
+			$this->show_view( 'Errors/Connect' );
+
+			return;
 		}
+
+		//Checkin to API V2
+		$this->checkin = SQ_Classes_RemoteController::checkin();
+
+		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'assistant' );
+		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'typewriter' );
 
 		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'checkseo' );
 		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'knob' );
@@ -230,75 +239,6 @@ class SQ_Controllers_CheckSeo extends SQ_Classes_FrontController {
 	}
 
 	/**
-	 * Get the notifications from database
-	 *
-	 * @return mixed
-	 */
-	public function getCongratulations() {
-
-		$report = $this->model->getDbTasks();
-		$tasks  = $this->model->getTasks();
-
-		if ( ! empty( $report ) ) {
-			foreach ( $report as $function => &$row ) {
-
-				if ( is_array( $row ) && isset( $tasks[ $function ] ) ) {
-					if ( ! isset( $tasks[ $function ]['positive'] ) ) {
-						$tasks[ $function ]['positive'] = false;
-					}
-
-					$row           = array_merge( array(
-						'completed' => false,
-						'active'    => true,
-						'done'      => false,
-						'positive'  => false
-					), $row );
-					$row['status'] = $row['active'] ? ( ( $row['completed'] || $row['done'] ) ? 'completed' : '' ) : 'ignore';
-
-					if ( $tasks[ $function ]['positive'] && in_array( $row['status'], array(
-							'completed',
-							'ignore'
-						) ) ) {
-						$row = array_merge( $tasks[ $function ], $row );
-					} else {
-						unset( $report[ $function ] );
-					}
-
-				} else {
-					unset( $report[ $function ] );
-				}
-			}
-		}
-
-		//return the report
-		return $report;
-	}
-
-	/**
-	 * Return the number of SEO errors if exists
-	 *
-	 * @return bool|int
-	 */
-	public function getErrorsCount() {
-
-		$errors = 0;
-
-		if ( ! isset( $this->report ) ) {
-			$this->report = $this->getNotifications();
-		}
-
-		if ( ! empty( $this->report ) ) {
-			foreach ( $this->report as $row ) {
-				if ( $row['active'] && ! $row['positive'] && ! $row['completed'] && ! $row['done'] ) {
-					$errors ++;
-				}
-			}
-		}
-
-		return $errors;
-	}
-
-	/**
 	 * Check SEO Actions
 	 */
 	public function action() {
@@ -372,6 +312,12 @@ class SQ_Controllers_CheckSeo extends SQ_Classes_FrontController {
 
 				if ( ! SQ_Classes_Helpers_Tools::userCan( 'sq_manage_snippets' ) ) {
 					return;
+				}
+
+
+				//Set task category
+				if(SQ_Classes_Helpers_Tools::getValue( 'category' )){
+					$this->setCategory(SQ_Classes_Helpers_Tools::getValue( 'category' ) );
 				}
 
 				//Remove ignored tasks

@@ -197,9 +197,9 @@ $codes   = json_decode( wp_json_encode( SQ_Classes_Helpers_Tools::getOption( 'co
 
                             <div class="sq-col-12 sq-m-0 sq-px-0  sq-py-3">
 
-                                <form method="get" target="_blank" action="https://cards-dev.twitter.com/validator">
+                                <form style="z-index: 1" method="get" target="_blank" action="https://cards-dev.twitter.com/validator">
                                     <button type="submit" class="sq-btn sq-btn-light sq-btn-sm sq-px-4 sq-mx-2  sq-float-right">
-                                        <i class="fa-brands fa-x-twitter"></i> <?php echo esc_html__( "Validate Card", 'squirrly-seo-pack' ) ?>
+                                        <i class="fasq-brands fa-x-twitter"></i> <?php echo esc_html__( "Validate Card", 'squirrly-seo-pack' ) ?>
                                     </button>
                                 </form>
 

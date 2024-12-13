@@ -2,9 +2,9 @@
 Contributors: cifi, calinvingan, florinmuresan, nagy.sorel
 Donate link: https://plugin.squirrly.co/squirrly-seo-pricing/
 Tags: SEO, AI, XML sitemap, google search console, schema
-Requires at least: 4.6
-Tested up to: 6.6
-Stable tag: 12.3.24
+Requires at least: 5.3
+Tested up to: 6.7
+Stable tag: 12.4.02
 Requires PHP: 7.0
 License: GPLv2 or later
 
@@ -230,272 +230,288 @@ Type a keyword to the right of the screen and start using Squirrly Seo. Enjoy!
 7. Squirrly SEO - SEO Briefcase
 
 == Changelog ==
+= 12.4.02 =
+* Update - Add sanitization on Focus Page search params to increase security
+* Update - Show the date and month in local language
+* Fixed - Correct Next Goals notification counter
+* Fixed - Fontawesome on Post Editor and Squirrly Live Assistant
+* Fixed - On keywords import from postmeta, avoid error when stored as array and not string
+
+= 12.4.01 =
+* Update - Ensured compatibility with WordPress 6.7.
+* Update - Improved plugin layout and improves plugin security.
+* Update - Reorganized the menu for a more streamlined and user-friendly navigation experience.
+* Update - Grouped related sections like Automation and Bulk SEO under a new Optimize section for better organization.
+* Update - Renamed IndexNow to Auto-Indexing to clarify its functionality.
+* Update - Added a Visibility column to the Posts and Categories tables, highlighting all noindex and nofollow URLs.
+* Fix - Addressed minor bugs for smoother performance.
+
 = 12.3.24 =
-Update - Add Squirrly permalink hook sq_permalink for dev use
-Update - Add the options to select the IndexNow Endpoints
+* Update - Add Squirrly permalink hook sq_permalink for dev use
+* Update - Add the options to select the IndexNow Endpoints
 
 = 12.3.23 =
-Update - Compatible with WP 6.6.2
-Update - Add the option to remove Posts from Sitemap News in Google News
-Update - Add the option to set SEO Automation for each language with WPML plugin
-Fixed - Clear the optimized keyword when deleted from SLA
+* Update - Compatible with WP 6.6.2
+* Update - Add the option to remove Posts from Sitemap News in Google News
+* Update - Add the option to set SEO Automation for each language with WPML plugin
+* Fix - Clear the optimized keyword when deleted from SLA
 
 = 12.3.22 =
-Update - Sitemap Compatibility with WPML
-Update - Update plugin security on SEO Snippet
-Update - Add the option to remove Posts from Sitemap News in Google News
-Update - Add the option to set SEO Automation for each language with WPML plugin
+* Update - Sitemap Compatibility with WPML
+* Update - Update plugin security on SEO Snippet
+* Update - Add the option to remove Posts from Sitemap News in Google News
+* Update - Add the option to set SEO Automation for each language with WPML plugin
 
 = 12.3.21 =
-Update - Compatibility with EWWW Image Optimizer
-Update - Compatible with WP 6.6.1
-Fixed - Prevent loading the same optimized keyword on cloned posts/pages
+* Update - Compatibility with EWWW Image Optimizer
+* Update - Compatible with WP 6.6.1
+* Fix - Prevent loading the same optimized keyword on cloned posts/pages
 
 = 12.3.20 =
-Update - Compatible with WP 6.6
-Fixed - API security on innerlinks check and keywords check
-Fixed - Sitemap compatibility with WordPress sitemap wp-sitemap.xml path
-Fixed - Live Assistant to reload resources when network connection is low
-Fixed - Sitemap to add only videos with thumbnails for google validation
+* Update - Compatible with WP 6.6
+* Fix - API security on innerlinks check and keywords check
+* Fix - Sitemap compatibility with WordPress sitemap wp-sitemap.xml path
+* Fix - Live Assistant to reload resources when network connection is low
+* Fix - Sitemap to add only videos with thumbnails for google validation
 
 = 12.3.19 =
-Update - Compatible with WP 6.5.3
-Update - SLA compatibility for Chinese chars
-Update - SLA compatibility with last version of Elementor
-Update - Compatibility with WPML when post type is not translatable.
-Fixed - Focus Page > Platform Health tasks to not create confusion about the current URL
-Fixed - Location coordinates kml in sitemap
-Fixed - Prevent loading the sitemap.xml on subcategories
-Fixed - Adjust settings layout on scale resolution
-Fixed - Sitemap to use the /wp-content/cache as the default directory
-Fixed - Favicon size in config to load on all mobile devices
+* Update - Compatible with WP 6.5.3
+* Update - SLA compatibility for Chinese chars
+* Update - SLA compatibility with last version of Elementor
+* Update - Compatibility with WPML when post type is not translatable.
+* Fix - Focus Page > Platform Health tasks to not create confusion about the current URL
+* Fix - Location coordinates kml in sitemap
+* Fix - Prevent loading the sitemap.xml on subcategories
+* Fix - Adjust settings layout on scale resolution
+* Fix - Sitemap to use the /wp-content/cache as the default directory
+* Fix - Favicon size in config to load on all mobile devices
 
 = 12.3.18 =
-Update - Compatible with PHP 8.3 & WP 6.5
-Update - Search by URL in Focus Pages and Audit
-Update - Search term by URL in Focus Pages and Audit
-Update - Added more compatibility with WooCommerce variation products
-Update - Add specific notification in Ranking Sync page when GSC token expires
-Update - Language in Dublin Core for more compatibility with WeGlot plugin
-Update - Compatibility with SEO Generator plugin from AppSumo
-Update - Keyword load in SLA when added in wp_postmeta with meta_key sq_keywords
-Update - Advanced SEO Pack to work better with Polylang for WooCommerce when No Category path is activated
+* Update - Compatible with PHP 8.3 & WP 6.5
+* Update - Search by URL in Focus Pages and Audit
+* Update - Search term by URL in Focus Pages and Audit
+* Update - Added more compatibility with WooCommerce variation products
+* Update - Add specific notification in Ranking Sync page when GSC token expires
+* Update - Language in Dublin Core for more compatibility with WeGlot plugin
+* Update - Compatibility with SEO Generator plugin from AppSumo
+* Update - Keyword load in SLA when added in wp_postmeta with meta_key sq_keywords
+* Update - Advanced SEO Pack to work better with Polylang for WooCommerce when No Category path is activated
 
 = 12.3.17  =
-Compatible with WP 6.4.3
-Update - Sitemap compatibility for JetEngine
-Update - SLA compatibility with Avada, add support for Fusion Builder
-Update - Notification message in Focus Pages and Audits when a crawling error is received
-Update - Added the option to select multiple pages as inner link source
-Update - Inner linking order to show the recent added links
-Update - Show all WP hidden patterns in the list when "sq_show_hidden_patterns" is active
-Update - Innerlinks API query in posts to find relevant links
-Fixed - Sitemap Custom Posts loading issue
-Fixed - IndexNow submit from Bulk SEO
-Fixed - Inner link add button in popup when accessing multiple pages
-Fixed - Keywords import in Briefcase
+* Compatible with WP 6.4.3
+* Update - Sitemap compatibility for JetEngine
+* Update - SLA compatibility with Avada, add support for Fusion Builder
+* Update - Notification message in Focus Pages and Audits when a crawling error is received
+* Update - Added the option to select multiple pages as inner link source
+* Update - Inner linking order to show the recent added links
+* Update - Show all WP hidden patterns in the list when "sq_show_hidden_patterns" is active
+* Update - Innerlinks API query in posts to find relevant links
+* Fix - Sitemap Custom Posts loading issue
+* Fix - IndexNow submit from Bulk SEO
+* Fix - Inner link add button in popup when accessing multiple pages
+* Fix - Keywords import in Briefcase
 
 = 12.3.16  =
-Compatible with WP 6.4.2
-Update - Add the option to select the label for the Keyword Research
-Update - Add the option to select the label for the Research > History
-Update - Add the option to select the label for the Research > Suggestion
-Update - GA properties to show only the domain mathing domains
-Update - SLA for Divi not to take the header and footer in LP optimization
-Fixed - SLA loading issue for Oxygen Builder
-Fixed - Stop loading any resource from Squirrly when Page builder in preview
-Fixed - Keyword Sync on Rankings
-Fixed - Bulk keyword deletion in Briefcase
-Fixed - Bulk label deletion in Briefcase
+* Compatible with WP 6.4.2
+* Update - Add the option to select the label for the Keyword Research
+* Update - Add the option to select the label for the Research > History
+* Update - Add the option to select the label for the Research > Suggestion
+* Update - GA properties to show only the domain mathing domains
+* Update - SLA for Divi not to take the header and footer in LP optimization
+* Fix - SLA loading issue for Oxygen Builder
+* Fix - Stop loading any resource from Squirrly when Page builder in preview
+* Fix - Keyword Sync on Rankings
+* Fix - Bulk keyword deletion in Briefcase
+* Fix - Bulk label deletion in Briefcase
 
 = 12.3.15  =
-Compatible with WP 6.4.1
-Update - Integrated the SEO Automation with Polylang and WPML for each Post Type
-Fixed - Canonical link on Polylang and WPML for the Home Page
-Fixed - Post Title in Focus Pages and Audits when the Feature Image is set
+* Compatible with WP 6.4.1
+* Update - Integrated the SEO Automation with Polylang and WPML for each Post Type
+* Fix - Canonical link on Polylang and WPML for the Home Page
+* Fix - Post Title in Focus Pages and Audits when the Feature Image is set
 
 = 12.3.14  =
-Compatible with WP 6.4 & PHP 8.3
-Update - Language support on WPML when website language different from user language
-Fixed - Local posts/custom posts search on Inner Links
-Fixed - Compatibility with Frontend Builders when used in Third Party plugins/themes
-Fixed - Bulk action on Briefcase when adding labels to keywords
-Fixed - Bulk action on Briefcase when sending keywords to rankings
-Fixed - Patterns warning when postmeta value is not string
-Fixed - Compatibility with WPML when adding Rich Snippets for {search_term_string} param on WebPage Schema
+* Compatible with WP 6.4 & PHP 8.3
+* Update - Language support on WPML when website language different from user language
+* Fix - Local posts/custom posts search on Inner Links
+* Fix - Compatibility with Frontend Builders when used in Third Party plugins/themes
+* Fix - Bulk action on Briefcase when adding labels to keywords
+* Fix - Bulk action on Briefcase when sending keywords to rankings
+* Fix - Patterns warning when postmeta value is not string
+* Fix - Compatibility with WPML when adding Rich Snippets for {search_term_string} param on WebPage Schema
 
 = 12.3.13  =
-Fixed - Local posts/custom posts search and pagination in Squirrly Live Assistant
-Fixed - Silent installation of Advanced SEO Pack on websites with WPML
-Fixed - Show original posts title when searching in Focus Pages and Audits Pages
-Fixed - Language option in keyword research to find keywords in a specific language for a specific country
+* Fix - Local posts/custom posts search and pagination in Squirrly Live Assistant
+* Fix - Silent installation of Advanced SEO Pack on websites with WPML
+* Fix - Show original posts title when searching in Focus Pages and Audits Pages
+* Fix - Language option in keyword research to find keywords in a specific language for a specific country
 
 = 12.3.12  =
-Update - Added the language option in keyword research to find keywords in a specific language for a specific country
-Update - Added the option to add custom post meta title, description and keywords _sq_title, _sq_description, _sq_keywords
-Update - Search on SLA for extra posts
-Update - Jsonld compatibility with woocommerce products with variables
-Update - Added the custom fields pattern in Squirrly for sanitized fields in postmeta like {{customfield(field_name)}} & {{customfields(array_key|array_value)}}
-Update - Added the caching option in Sitemap XML for faster loading and saving server resources
-Update - Show keywords from other SEO plugins in SLA and Post List if there are none set in Squirrly SEO
-Fixed - Set NoWrap on table columns with numbers
+* Update - Added the language option in keyword research to find keywords in a specific language for a specific country
+* Update - Added the option to add custom post meta title, description and keywords _sq_title, _sq_description, _sq_keywords
+* Update - Search on SLA for extra posts
+* Update - Jsonld compatibility with woocommerce products with variables
+* Update - Added the custom fields pattern in Squirrly for sanitized fields in postmeta like {{customfield(field_name)}} & {{customfields(array_key|array_value)}}
+* Update - Added the caching option in Sitemap XML for faster loading and saving server resources
+* Update - Show keywords from other SEO plugins in SLA and Post List if there are none set in Squirrly SEO
+* Fix - Set NoWrap on table columns with numbers
 
 = 12.3.11  =
-Fixed - Show the custom JsonLd code if already set in Squirrly SEO Snippet
-Update - Add Patterns support for customfield data like {{customfield(field_name)}}
-Update - Automation to load the reusable schema from Advanced SEO Pack
-Update - Show connect tool on Connect Tools as it needs Google Auth
-Update - Add Company URL in Rich Snippets
-Update - Better URL detection on Archives, Custom Post Type taxonomy
-Fixed - Hide the Squirrly SEO Snippet close button on categories and tags to avoid folding the snippet
-Fixed - Plugin typos
-Fixed - Customer support phone details in Rich Snippets
-Fixed - Loading dependency with jQuery on resources
-Fixed - Change the twitter icon with X twitter
-Fixed - Pagination links on table pages for the first page and previous page
+* Fix - Show the custom JsonLd code if already set in Squirrly SEO Snippet
+* Update - Add Patterns support for customfield data like {{customfield(field_name)}}
+* Update - Automation to load the reusable schema from Advanced SEO Pack
+* Update - Show connect tool on Connect Tools as it needs Google Auth
+* Update - Add Company URL in Rich Snippets
+* Update - Better URL detection on Archives, Custom Post Type taxonomy
+* Fix - Hide the Squirrly SEO Snippet close button on categories and tags to avoid folding the snippet
+* Fix - Plugin typos
+* Fix - Customer support phone details in Rich Snippets
+* Fix - Loading dependency with jQuery on resources
+* Fix - Change the twitter icon with X twitter
+* Fix - Pagination links on table pages for the first page and previous page
 
 = 12.3.10  =
-Fixed - Security and Vulnerability issue on pagination in Focus Pages > Inner Links.
-Fixed - Squirrly SEO Snippet visibility error when post type was not added in Automation
-Fixed - Remove db table alter on plugin load
-Fixed - View layout and typos
-Fixed - Don't show image width and height on Advanced Rich Snippets when can't load them
-Fixed - Multiple URLs submit issue on IndexNow feature
-Update - The option to load add image width and height in Advanced Rich Snippets
+* Fix - Security and Vulnerability issue on pagination in Focus Pages > Inner Links.
+* Fix - Squirrly SEO Snippet visibility error when post type was not added in Automation
+* Fix - Remove db table alter on plugin load
+* Fix - View layout and typos
+* Fix - Don't show image width and height on Advanced Rich Snippets when can't load them
+* Fix - Multiple URLs submit issue on IndexNow feature
+* Update - The option to load add image width and height in Advanced Rich Snippets
 
 = 12.3.05  =
-Update - Metas, Open Graph, Twitter Card, Rich Snippets, layout in SEO Snippet section
-Update - Inner Links suggestions to load when suggestions are found on server
-Update - Added support for sq_question and sq_answer classes to automatically add them in FAQ Rich Snippet
-Fixed - Increased the loading speed on Briefcase, Suggestions, History, Labels, Rankings
-Fixed - Switch on/off SEO on Automation to work better
-Fixed - Compatibility with Schema & Structured Data for WP & AMP showing query error
+* Update - Metas, Open Graph, Twitter Card, Rich Snippets, layout in SEO Snippet section
+* Update - Inner Links suggestions to load when suggestions are found on server
+* Update - Added support for sq_question and sq_answer classes to automatically add them in FAQ Rich Snippet
+* Fix - Increased the loading speed on Briefcase, Suggestions, History, Labels, Rankings
+* Fix - Switch on/off SEO on Automation to work better
+* Fix - Compatibility with Schema & Structured Data for WP & AMP showing query error
 
 = 12.3.04  =
-Update - Add related questions to Research > Suggestions with the option to write focus page related articles
-Update - Add the option to add Inner Link directly from Research > Suggestions for the optimized articles
-Update - Add the suggested keywords found by the Cloud in Inner Links section
-Update - Security on Inner Links section
-Fixed - Bugs and Types
+* Update - Add related questions to Research > Suggestions with the option to write focus page related articles
+* Update - Add the option to add Inner Link directly from Research > Suggestions for the optimized articles
+* Update - Add the suggested keywords found by the Cloud in Inner Links section
+* Update - Security on Inner Links section
+* Fix - Bugs and Types
 
 = 12.3.03  =
-Update - More bugs fixed and competibility with Squirrly SEO - Advanced Pack
+* Update - More bugs fixed and competibility with Squirrly SEO - Advanced Pack
 
 = 12.3.02  =
-New - Inner Links feature available in Squirrly SEO > Focus Pages
-New - Redirects feature available in Squirrly SEO - Advanced Pack
-New - 404 Monitoring feature available in Squirrly SEO - Advanced Pack
-New - Custom Schemas feature available in Squirrly SEO - Advanced Pack
-New - Advanced Rich Snippets feature available in Squirrly SEO - Advanced Pack
-Update - Added the option to insert custom inner links based on keywords
-Update - Added the option Inner Links for custom nofollow & open in new tab
-Update - Added the option to create DevKit packages in Squirrly Cloud for DevKit accounts
-Update - Compatibility with Divi theme when header templates are created
-Update - Added the option to install Squirrly SEO - Advanced Pack plugin for Redirects, 404 Monitoring, Custom JsonLD Schemas, Rich Snippets
-Fixed - Small Bugs
+* New - Inner Links feature available in Squirrly SEO > Focus Pages
+* New - Redirects feature available in Squirrly SEO - Advanced Pack
+* New - 404 Monitoring feature available in Squirrly SEO - Advanced Pack
+* New - Custom Schemas feature available in Squirrly SEO - Advanced Pack
+* New - Advanced Rich Snippets feature available in Squirrly SEO - Advanced Pack
+* Update - Added the option to insert custom inner links based on keywords
+* Update - Added the option Inner Links for custom nofollow & open in new tab
+* Update - Added the option to create DevKit packages in Squirrly Cloud for DevKit accounts
+* Update - Compatibility with Divi theme when header templates are created
+* Update - Added the option to install Squirrly SEO - Advanced Pack plugin for Redirects, 404 Monitoring, Custom JsonLD Schemas, Rich Snippets
+* Fix - Small Bugs
 
 = 12.3.01 - 08/14/2023 =
-Update - Compatibility with WP 6.3
-Update - Added API calls for Innerlinks and Contextual Keywords with links
-Fix - Reset the SLA box position when is outside the window. Firefox compatibility.
+* Update - Compatibility with WP 6.3
+* Update - Added API calls for Innerlinks and Contextual Keywords with links
+* Fix - Reset the SLA box position when is outside the window. Firefox compatibility.
 
 = 12.2.04 - 08/07/2023 =
-Update - Remove twitter support from SLA for the moment
-Update - Automation types based on Ecommerce website
-Update - Frontend snippet for tags, categories and taxes
-Update - The onboarding video
-Update - Compatibility with Polylang and the tags
-Fix - Set the home URL when the URL is missing from post
-Fix - Loading of Squirrly SEO Live Assistant based of dependencies
-Fix - Api call on inner links to avoid long DB queries
-Fix - Handle the styles and scripts differently for more compatibility with other plugins
-Fix - Sitemap URL validation to not allow cloud URLs
-Fix - Woocommerce offer expire date in Schema
+* Update - Remove twitter support from SLA for the moment
+* Update - Automation types based on Ecommerce website
+* Update - Frontend snippet for tags, categories and taxes
+* Update - The onboarding video
+* Update - Compatibility with Polylang and the tags
+* Fix - Set the home URL when the URL is missing from post
+* Fix - Loading of Squirrly SEO Live Assistant based of dependencies
+* Fix - Api call on inner links to avoid long DB queries
+* Fix - Handle the styles and scripts differently for more compatibility with other plugins
+* Fix - Sitemap URL validation to not allow cloud URLs
+* Fix - Woocommerce offer expire date in Schema
 
 = 12.2.03 - 05/22/2023 =
-Update - Compatibility with WP 6.2.2
-Fixed - Frontend SLA for Divi & Zion Builder
+* Update - Compatibility with WP 6.2.2
+* Fix - Frontend SLA for Divi & Zion Builder
 
 = 12.2.02 - 05/17/2023 =
-Update - Compatibility with WP 6.2.1
-Update - New Snippet layout using hooks for each section
-Update - Loading CSS and JS function to load js dependencies in frontend
-Update - Compatibility with Beaver Builder
-Update - JsonLD schema autodetects video schema on post/page
-Update - Added more countries and languages on Google Ranking section
-Fixed - z-index style of Media Library for Frontend editor
-Fixed - Show notifications in Squirrly SEO when limits are reached
-Fixed - Country ranking check issue for countries with Google prefix "com." & "co."
+* Update - Compatibility with WP 6.2.1
+* Update - New Snippet layout using hooks for each section
+* Update - Loading CSS and JS function to load js dependencies in frontend
+* Update - Compatibility with Beaver Builder
+* Update - JsonLD schema autodetects video schema on post/page
+* Update - Added more countries and languages on Google Ranking section
+* Fix - z-index style of Media Library for Frontend editor
+* Fix - Show notifications in Squirrly SEO when limits are reached
+* Fix - Country ranking check issue for countries with Google prefix "com." & "co."
 
 = 12.2.01 - 04/24/2023 =
-Update - Compatibility with Polylang & TranslatePress plugins
-Update - Frontend SLA to work better with Media Library and detect the Title in Elementor when a text is changed in H1
-Update - Search post query in Squirrly SEO Focus Pages, Bulk SEO and SEO Audits to work with the Theme Incubator
-Fixed - Sitemap to load the archive on post type when the category archive is not added in the sitemap
-Fixed - Sitemap to not include data:image from post contents
-Fixed - Feedback & Cloud Disconnect option on uninstall
-Fixed - Frontend SLA for Thrive plugin javascript warning
-Fixed - Add language slug on home url for TranslatePress plugin
-Fixed - Prevent showing the white space at the beginning of the sitemap
-Fixed - Show Rich Snippets Profile info on Dublin Core and OG when it's selected as global showing in settings
-Fixed - Crawler server to load the website faster
-Fixed - UI small bugs
+* Update - Compatibility with Polylang & TranslatePress plugins
+* Update - Frontend SLA to work better with Media Library and detect the Title in Elementor when a text is changed in H1
+* Update - Search post query in Squirrly SEO Focus Pages, Bulk SEO and SEO Audits to work with the Theme Incubator
+* Fix - Sitemap to load the archive on post type when the category archive is not added in the sitemap
+* Fix - Sitemap to not include data:image from post contents
+* Fix - Feedback & Cloud Disconnect option on uninstall
+* Fix - Frontend SLA for Thrive plugin javascript warning
+* Fix - Add language slug on home url for TranslatePress plugin
+* Fix - Prevent showing the white space at the beginning of the sitemap
+* Fix - Show Rich Snippets Profile info on Dublin Core and OG when it's selected as global showing in settings
+* Fix - Crawler server to load the website faster
+* Fix - UI small bugs
 
 = 12.1.23 - 04/04/2023 =
-Update - Add SLA in Beaver Builder frontend
-Update - Add the AI Assistant info in Squirrly > Overview
-Update - Focus Page notification when a page does not exist
-Update - Fixed SEO import error from Yoast plugin
-Update - Fixed UI style
+* Update - Add SLA in Beaver Builder frontend
+* Update - Add the AI Assistant info in Squirrly > Home
+* Update - Focus Page notification when a page does not exist
+* Update - Fixed SEO import error from Yoast plugin
+* Update - Fixed UI style
 
 = 12.1.22 - 03/27/2023 =
-Update - Improve the daily SERP Checker service
-Update - Increased plugin security & compatibility with PHP 8.2
-Update - Add the filter in Briefcase to show the keywords without labels
-Update - Frontent buffer loading for compatibility with other SEO plugins
-Fixed - Briefcase keywords encoding in SLA for better identification
-Fixed - Remove the space in Squirrly Sitemap and increased compatibility with other plugins and themes
-Fixed - Update the plugin language based on WordPress user language
+* Update - Improve the daily SERP Checker service
+* Update - Increased plugin security & compatibility with PHP 8.2
+* Update - Add the filter in Briefcase to show the keywords without labels
+* Update - Frontent buffer loading for compatibility with other SEO plugins
+* Fix - Briefcase keywords encoding in SLA for better identification
+* Fix - Remove the space in Squirrly Sitemap and increased compatibility with other plugins and themes
+* Fix - Update the plugin language based on WordPress user language
 
 = 12.1.21 - 02/28/2023 =
-Update - Add disconnect option in Squirrly SEO plugin for logged accounts
-Update - Add the option to add No Follow and Sponsored to any link in the Classic and Block Editor
-Update - Add the option to add No Follow and Sponsored to any link in Elementor editor
-Update - Focus Pages to show the correct notification with the nofollow outbound links
-Update - Connect GSC and GA buttons in Focus Pages to go to the Connect Tools page and check the connections
-Update - Google News link with the updated Google News location
-Update - SLA for Thrive Architect
-Fixed - Sitemap to not show the error on news sitemap
-Fixed - Snippet redirect for deleted posts
-Fixed - Search page to prevent PHP error when the post is not detected
-Fixed - Remove duplicates from Sitemap Categories
-Fixed - Initiate the Title and Description in Frontend for all builders
-Fixed - Better custom post type detection in frontend
+* Update - Add disconnect option in Squirrly SEO plugin for logged accounts
+* Update - Add the option to add No Follow and Sponsored to any link in the Classic and Block Editor
+* Update - Add the option to add No Follow and Sponsored to any link in Elementor editor
+* Update - Focus Pages to show the correct notification with the nofollow outbound links
+* Update - Connect GSC and GA buttons in Focus Pages to go to the Connect Tools page and check the connections
+* Update - Google News link with the updated Google News location
+* Update - SLA for Thrive Architect
+* Fix - Sitemap to not show the error on news sitemap
+* Fix - Snippet redirect for deleted posts
+* Fix - Search page to prevent PHP error when the post is not detected
+* Fix - Remove duplicates from Sitemap Categories
+* Fix - Initiate the Title and Description in Frontend for all builders
+* Fix - Better custom post type detection in frontend
 
 = 12.1.20 - 02/09/2023 =
 * Update - API Call parameters when multiple URLs are sent with Indexnow
 * Update - add sitemap_index.xml in sitemap to match the other SEO plugins sitemaps
-* Fixed - Sanitization to exclude shortcodes from Title and Descritpion when the chars [ & ] are present
-* Fixed - SLA Frontend to better detect the Title and Description changes in builders
-* Fixed - Post update on Cloud when the post is saved on WordPress
+* Fix - Sanitization to exclude shortcodes from Title and Descritpion when the chars [ & ] are present
+* Fix - SLA Frontend to better detect the Title and Description changes in builders
+* Fix - Post update on Cloud when the post is saved on WordPress
 
 = 12.1.19 - 02/01/2023 =
 * Update - Add Google Indexing API (if GSC is connected) in IndexNow and submit the URL to Bing, Google and IndexNow
-* Fixed - Bulk SEO to show all Posts and Pages
-* Fixed - Load the Archive Sitemap based on Automation settings
-* Fixed - Sanitization to allow chars like [ & ] in the title and description
+* Fix - Bulk SEO to show all Posts and Pages
+* Fix - Load the Archive Sitemap based on Automation settings
+* Fix - Sanitization to allow chars like [ & ] in the title and description
 
 = 12.1.18 - 01/30/2023 =
 * Update - Compatibility with PHP 8.1,8.2
 * Update - Added the the IndexNow feature
-* Fixed - UI in Keyword Research
-* Fixed - Loading the homepage search in Bulk SEO
-* Fixed - Briefcase Keywords encoded non-breaking space
-* Fixed - Live Assistant more images loading issue
+* Fix - UI in Keyword Research
+* Fix - Loading the homepage search in Bulk SEO
+* Fix - Briefcase Keywords encoded non-breaking space
+* Fix - Live Assistant more images loading issue
 
 = 12.1.17 - 01/09/2023 =
 * Update - META tags for Open Graph
-* Fixed - Small compatibility bugs
+* Fix - Small compatibility bugs
 
 = 12.1.15 - 12/21/2022 =
 * Update - Change the plugin toolbar & notification bar to load the view correctly.
@@ -503,23 +519,23 @@ Fixed - Better custom post type detection in frontend
 * Update - The CSS and JS loading time to work well with builders
 * Update - Add the Video option in Squirrly Automation for Products
 * Update - Add the County field for UK and US in Rich Snippets
-* Fixed - Improve the cached pages when crawled by Squirrly SEO crawlers
-* Fixed - Ranking link in Briefcase
-* Fixed - Muiltilanguage WPML sitemap to avoid duplicate language URLs
+* Fix - Improve the cached pages when crawled by Squirrly SEO crawlers
+* Fix - Ranking link in Briefcase
+* Fix - Muiltilanguage WPML sitemap to avoid duplicate language URLs
 
 = 12.1.14 - 11/29/2022 =
-* Fixed - Audit compare tasks popups to show the exact data from each audit
-* Fixed - Removed Google Fonts and replace with the local Noto Sans fonts
-* Fixed - Squirrly logo to appear more clear in the settings and SLA
-* Fixed - URL search in Add New Audit Page and Add New Focus Page
-* Fixed - Search timeout in Add New Audit Page and Add New Focus Page
-* Fixed - Keyword Research timeout improve
+* Fix - Audit compare tasks popups to show the exact data from each audit
+* Fix - Removed Google Fonts and replace with the local Noto Sans fonts
+* Fix - Squirrly logo to appear more clear in the settings and SLA
+* Fix - URL search in Add New Audit Page and Add New Focus Page
+* Fix - Search timeout in Add New Audit Page and Add New Focus Page
+* Fix - Keyword Research timeout improve
 
 = 12.1.13 - 10/26/2022 =
 * Update - Added compatibility with WP 6.1
-* Fixed - Fixed the 404 redirect when no default URL is given
-* Fixed - Update the RoleManager.php to load only on plugin activation to allow the posibility to change the capabilities in user roles
-* Fixed - Correct the frontend buffer to work with other plugins better
+* Fix - Fixed the 404 redirect when no default URL is given
+* Fix - Update the RoleManager.php to load only on plugin activation to allow the posibility to change the capabilities in user roles
+* Fix - Correct the frontend buffer to work with other plugins better
 
 = 12.1.12 - 09/30/2022 =
 * Update - Added the option to send any post type from Automation to Google News sitemap
@@ -529,17 +545,17 @@ Fixed - Better custom post type detection in frontend
 * Update - SLA to check the reusable divs in the posts/pages
 * Update - Frontend SLA script for Bricks Builder
 * Update - Inner links counting in Focus Pages
-* Fixed - Wrong number of params when calling loadMedia function
-* Fixed - Broken help URL https://howto12.squirrly.co/wordpress-seo/
-* Fixed - Remove Alexa Code as the service is not available anymore
-* Fixed - Show the correct notification text when requesting a new SEO Audit after an hour
-* Fixed - Increase security and remove unused functions from older version of Squirrly SEO
-* Fixed - Don't show tasks in Assistant for inactive features
-* Fixed - Focus Pages > SEO image to check only the filename and not the image path
-* Fixed - UnitPriceSpecification in JsonLD for Woocommerce products
-* Fixed - Sitemap to not include relative redirected URLs that are not valid
-* Fixed - Ranking to not show duplicare URLs
-* Fixed - Update the Google News to take the last 2 days from each post type included in the feed as requested
+* Fix - Wrong number of params when calling loadMedia function
+* Fix - Broken help URL https://howto12.squirrly.co/wordpress-seo/
+* Fix - Remove Alexa Code as the service is not available anymore
+* Fix - Show the correct notification text when requesting a new SEO Audit after an hour
+* Fix - Increase security and remove unused functions from older version of Squirrly SEO
+* Fix - Don't show tasks in Assistant for inactive features
+* Fix - Focus Pages > SEO image to check only the filename and not the image path
+* Fix - UnitPriceSpecification in JsonLD for Woocommerce products
+* Fix - Sitemap to not include relative redirected URLs that are not valid
+* Fix - Ranking to not show duplicare URLs
+* Fix - Update the Google News to take the last 2 days from each post type included in the feed as requested
 
 = 12.1.11 - 08/12/2022 =
 Update - SLA compatibility with Zion Builder
@@ -598,11 +614,11 @@ Fix - Show error message on SLA when not connected to Cloud
 Update - The JSON-LD compatibility with Woocommerce on Products variant prices
 Update - Live Assistant layout for both floating and integrated version
 Update - Compatibility WP adminify plugin
-Fixed - SEO Links - External Nofollow Link Exception
-Fixed - SEO Automation - Add the post type in automation issue
-Fixed - PHP Warnings in Automation and JSON-LD when some features are not yet activated
-Fixed - Removed unused libraries from Live Assistant
-Fixed - Small Bugs
+Fix - SEO Links - External Nofollow Link Exception
+Fix - SEO Automation - Add the post type in automation issue
+Fix - PHP Warnings in Automation and JSON-LD when some features are not yet activated
+Fix - Removed unused libraries from Live Assistant
+Fix - Small Bugs
 
 = 12.1.03 - 05/19/2022 =
 Update - Live Assistant for integrated version & added the SLA integrate option in Live Assistant > Settings

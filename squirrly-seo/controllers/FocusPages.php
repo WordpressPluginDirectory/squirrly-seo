@@ -137,7 +137,7 @@ class SQ_Controllers_FocusPages extends SQ_Classes_FrontController {
 		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap-ajax-select' );
 		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'datatables' );
 
-		$page   = SQ_Classes_Helpers_Tools::getValue( 'spage', 1 );
+		$page   = (int)SQ_Classes_Helpers_Tools::getValue( 'spage', 1 );
 		$search = SQ_Classes_Helpers_Tools::getValue( 'squery' );
 		$type   = SQ_Classes_Helpers_Tools::getValue( 'stype' );
 		$num    = SQ_Classes_Helpers_Tools::getValue( 'snum', SQ_Classes_Helpers_Tools::getOption( 'sq_posts_per_page' ) );
@@ -707,6 +707,16 @@ class SQ_Controllers_FocusPages extends SQ_Classes_FrontController {
 							$innerlinks[ $id ]['valid'] = SQ_Classes_ObjController::getClass( 'SQ_Models_Post' )->checkInnerLink( $post->post_content, $innerlinks[ $id ]['keyword'], $innerlinks[ $id ]['to_post_id'] );
 
 							if ( $innerlinks[ $id ]['valid'] ) {
+
+								//send the post to API
+								$args                 = array();
+								$args['from_post_id'] = $innerlinks[ $id ]['from_post_id'];
+								$args['to_post_id']   = $innerlinks[ $id ]['to_post_id'];
+								$args['keyword']      = $innerlinks[ $id ]['keyword'];
+								$args['found']        = $innerlinks[ $id ]['valid'];
+
+								SQ_Classes_RemoteController::setFocusPageInnerlink( $args );
+
 								SQ_Classes_Error::setMessage( esc_html__( "Keyword found & Inner Link valid.", 'squirrly-seo' ) . " <br /> " );
 							} else {
 								SQ_Classes_Error::setError( esc_html__( "Keyword not found in content", 'squirrly-seo' ) . " <br /> " );

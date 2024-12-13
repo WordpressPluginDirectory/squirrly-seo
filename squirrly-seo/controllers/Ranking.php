@@ -140,7 +140,7 @@ class SQ_Controllers_Ranking extends SQ_Classes_FrontController {
 			if ( $this->suggested = SQ_Classes_RemoteController::syncGSC( $args ) ) {
 				if ( is_wp_error( $this->suggested ) ) {
 					if ( $this->suggested->get_error_code() == 'token_expired' ) {
-						SQ_Classes_Error::setError( esc_html__( "GSC Token Expired. Reconnect Google Search Console from 'SEO Configuration > Connect Tools'.", 'squirrly-seo' ) );
+						SQ_Classes_Error::setError( esc_html__( "GSC Token Expired. Reconnect Google Search Console from 'Technical SEO > Connect Tools'.", 'squirrly-seo' ) );
 					} else {
 						SQ_Classes_Error::setError( esc_html__( "Could not load data.", 'squirrly-seo' ) );
 					}

@@ -175,10 +175,106 @@ if ( ! isset( $view ) ) {
                         </div>
                     </div>
 
+
+                    <div class="col-12 p-0 m-0 my-5 border-top sq_advanced">
+                        <h3 class="mt-4 card-title">
+		                    <?php echo esc_html__( "META Lengths", "squirrly-seo" ); ?>
+                            <div class="sq_help_question d-inline">
+                                <a href="https://howto12.squirrly.co/kb/seo-automation/" target="_blank"><i class="fa-solid fa-question-circle" style="margin: 0;"></i></a>
+                            </div>
+                        </h3>
+                        <div class="col-7 small m-0 p-0">
+		                    <?php echo esc_html__( "Change the lengths for each META on automation", "squirrly-seo" ); ?>
+                        </div>
+
+	                    <?php $metas = json_decode( wp_json_encode( SQ_Classes_Helpers_Tools::getOption( 'sq_metas' ) ) ); ?>
+
+                        <div class="col-12 row m-0 p-0 my-5">
+                            <div class="col-4 m-0 p-0 font-weight-bold">
+                                <label for="title_maxlength"><?php echo esc_html__( "Title Length", "squirrly-seo" ); ?>
+                                    :
+                                    <a href="https://howto12.squirrly.co/kb/seo-automation/#automation_custom_lengths" target="_blank"><i class="fa-solid fa-question-circle m-0 px-2" style="display: inline;"></i></a></label>
+                            </div>
+                            <div class="col-6 p-0 input-group input-group-sm">
+                                <input id="title_maxlength" type="text" class="form-control bg-input" name="sq_metas[title_maxlength]" value="<?php echo (int) $metas->title_maxlength ?>"/>
+                            </div>
+                        </div>
+
+                        <div class="col-12 row m-0 p-0 my-5">
+                            <div class="col-4 m-0 p-0 font-weight-bold">
+                                <label for="description_maxlength"><?php echo esc_html__( "Description Length", "squirrly-seo" ); ?>
+                                    :
+                                    <a href="https://howto12.squirrly.co/kb/seo-automation/#automation_custom_lengths" target="_blank"><i class="fa-solid fa-question-circle m-0 px-2" style="display: inline;"></i></a></label>
+                            </div>
+                            <div class="col-6 p-0 input-group input-group-sm">
+                                <input id="description_maxlength" type="text" class="form-control bg-input" name="sq_metas[description_maxlength]" value="<?php echo (int) $metas->description_maxlength ?>"/>
+                            </div>
+                        </div>
+                        <div class="col-12 row m-0 p-0 my-5">
+                            <div class="col-4 m-0 p-0 font-weight-bold">
+                                <label for="og_title_maxlength"><?php echo esc_html__( "Open Graph Title Length", "squirrly-seo" ); ?>
+                                    :</label>
+                            </div>
+                            <div class="col-6 p-0 input-group input-group-sm">
+                                <input id="og_title_maxlength" type="text" class="form-control bg-input" name="sq_metas[og_title_maxlength]" value="<?php echo (int) $metas->og_title_maxlength ?>"/>
+                            </div>
+                        </div>
+                        <div class="col-12 row m-0 p-0 my-5">
+                            <div class="col-4 m-0 p-0 font-weight-bold">
+                                <label for="og_description_maxlength"><?php echo esc_html__( "Open Graph Description Length", "squirrly-seo" ); ?>
+                                    :</label>
+                            </div>
+                            <div class="col-6 p-0 input-group input-group-sm">
+                                <input id="og_description_maxlength" type="text" class="form-control bg-input" name="sq_metas[og_description_maxlength]" value="<?php echo (int) $metas->og_description_maxlength ?>"/>
+                            </div>
+                        </div>
+                        <div class="col-12 row m-0 p-0 my-5">
+                            <div class="col-4 m-0 p-0 font-weight-bold">
+                                <label for="tw_title_maxlength"><?php echo esc_html__( "Twitter Card Title Length", "squirrly-seo" ); ?>
+                                    :</label>
+                            </div>
+                            <div class="col-6 p-0 input-group input-group-sm">
+                                <input id="tw_title_maxlength" type="text" class="form-control bg-input" name="sq_metas[tw_title_maxlength]" value="<?php echo (int) $metas->tw_title_maxlength ?>"/>
+                            </div>
+                        </div>
+                        <div class="col-12 row m-0 p-0 my-5">
+                            <div class="col-4 m-0 p-0 font-weight-bold">
+                                <label for="tw_description_maxlength"><?php echo esc_html__( "Twitter Card Description Length", "squirrly-seo" ); ?>
+                                    :</label>
+                            </div>
+                            <div class="col-6 p-0 input-group input-group-sm">
+                                <input id="tw_description_maxlength" type="text" class="form-control bg-input" name="sq_metas[tw_description_maxlength]" value="<?php echo (int) $metas->tw_description_maxlength ?>"/>
+                            </div>
+                        </div>
+                        <div class="col-12 row m-0 p-0 my-5">
+                            <div class="col-4 m-0 p-0 font-weight-bold">
+                                <label for="jsonld_title_maxlength"><?php echo esc_html__( "JSON-LD Title Length", "squirrly-seo" ); ?>
+                                    :</label>
+                            </div>
+                            <div class="col-6 m-0 p-0 input-group input-group-sm">
+                                <input id="jsonld_title_maxlength" type="text" class="form-control bg-input" name="sq_metas[jsonld_title_maxlength]" value="<?php echo (int) $metas->jsonld_title_maxlength ?>"/>
+                            </div>
+                        </div>
+                        <div class="col-12 row m-0 p-0 my-5">
+                            <div class="col-4 m-0 p-0 font-weight-bold">
+                                <label for="jsonld_description_maxlength"><?php echo esc_html__( "JSON-LD Description Length", "squirrly-seo" ); ?>
+                                    :</label>
+                            </div>
+                            <div class="col-6 m-0 p-0 input-group input-group-sm">
+                                <input id="jsonld_description_maxlength" type="text" class="form-control bg-input" name="sq_metas[jsonld_description_maxlength]" value="<?php echo (int) $metas->jsonld_description_maxlength ?>"/>
+                            </div>
+                        </div>
+
+		                <?php do_action( 'sq_automation_settings_after' ); ?>
+
+                    </div>
+
                     <div class="col-12 my-3 p-0">
                         <button type="submit" class="btn rounded-0 btn-primary btn-lg m-0 px-5 "><?php echo esc_html__( "Save Settings", "squirrly-seo" ); ?></button>
                     </div>
                 </form>
+
+
 
                 <div class="sq_tips col-12 m-0 p-0 my-5">
                     <h5 class="text-left my-3 font-weight-bold">

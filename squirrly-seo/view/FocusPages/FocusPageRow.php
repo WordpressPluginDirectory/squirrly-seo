@@ -28,7 +28,7 @@ if ( isset( $view->post->ID ) ) {
 
 if ( $view->focuspage->audit_datetime <> '' && strtotime( $view->focuspage->audit_datetime ) ) {
 	$audit_timestamp = strtotime( $view->focuspage->audit_datetime ) + ( (int) get_option( 'gmt_offset' ) * 3600 );
-	$audit_timestamp = gmdate( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $audit_timestamp );
+	$audit_timestamp = wp_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $audit_timestamp );
 } else {
 	$audit_done      = false;
 	$audit_timestamp = $view->focuspage->audit_datetime;

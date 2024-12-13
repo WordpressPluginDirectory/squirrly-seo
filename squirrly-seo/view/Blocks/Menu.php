@@ -14,8 +14,6 @@ $menu_opened = ! isset( $_COOKIE['sq_menu'] ) || $_COOKIE['sq_menu'] == 'open';
 if ( SQ_Classes_Helpers_Tools::getValue( 'page' ) == 'sq_dashboard' ) { ?>
     <div class="sq_col_menu bg-primary <?php echo esc_attr( $menu_opened ? 'sq_col_menu_big' : '' ) ?>">
         <div class="sq_nav d-flex flex-column bd-highlight mb-3 sq_sticky">
-            <div class="m-0 p-3 font-dark sq_nav_item sq_nav_item_open">
-                <i class="dashicons-before dashicons-arrow-right-alt text-white"></i></div>
 			<?php
 			$mainmenu = SQ_Classes_ObjController::getClass( 'SQ_Models_Menu' )->getMainMenu();
 
@@ -37,11 +35,14 @@ if ( SQ_Classes_Helpers_Tools::getValue( 'page' ) == 'sq_dashboard' ) { ?>
 					}
 
 					?>
-                    <a href="<?php echo esc_url( $url ); ?>" class="m-0 p-3 font-dark align-middle <?php echo esc_attr( $bgclass ) ?> sq_nav_item" data-tab="level"><i class="<?php echo esc_attr( $item['icon'] ) ?> <?php echo esc_attr( $fontclass ) ?>"></i><span class="sq_nav_item_text <?php echo esc_attr( $bgclass ) ?> <?php echo esc_attr( $fontclass ) ?> ml-2"><?php echo wp_kses_post( $item['title'] ) ?></span></a>
+                    <a href="<?php echo esc_url( $url ); ?>" class="m-0 p-3 font-dark align-middle <?php echo esc_attr( $bgclass ) ?> sq_nav_item" data-tab="level"><i class="<?php echo esc_attr( $item['icon'] ) ?> <?php echo esc_attr( $fontclass ) ?> m-0 p-0 text-center"></i><span class="sq_nav_item_text <?php echo esc_attr( $bgclass ) ?> <?php echo esc_attr( $fontclass ) ?> ml-2"><?php echo wp_kses_post( $item['title'] ) ?></span></a>
 					<?php
 				}
 			}
 			?>
+            <div class="m-0 p-3 font-dark sq_nav_item bg-default sq_nav_item_open">
+                <i class="dashicons-before dashicons-arrow-right-alt text-white"></i>
+            </div>
             <div class="m-0 p-3 font-dark sq_nav_item sq_nav_item_collapse">
                 <i class="dashicons-before dashicons-arrow-left-alt text-white"></i><span class="sq_nav_item_text text-white ml-2"><?php echo esc_html__( 'Collapse', "squirrly-seo" ) ?></span>
             </div>
@@ -64,10 +65,8 @@ if ( SQ_Classes_Helpers_Tools::getValue( 'page' ) == 'sq_dashboard' ) { ?>
     <div class="sq_col_menu sq_sticky pt-3 <?php echo esc_attr( $menu_opened ? 'sq_col_menu_big' : '' ) ?>">
         <div class="sq_nav d-flex flex-column bd-highlight mb-3 sq_sticky">
             <div class="m-0 p-3 font-dark sq_nav_item bg-default sq_nav_item_home">
-                <a href="<?php echo esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_audits' ) ); ?>" class="text-dark"><i class="dashicons-before dashicons-chart-bar text-dark"></i><span class="sq_nav_item_text ml-2"><?php echo esc_html__( 'Back To Audit', "squirrly-seo" ) ?></span></a>
+                <a href="<?php echo esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_audits' ) ); ?>" class="text-dark"><i class="dashicons-before dashicons-chart-bar text-dark"></i><span class="sq_nav_item_text text-dark bg-white  ml-2"><?php echo esc_html__( 'Back To Audit', "squirrly-seo" ) ?></span></a>
             </div>
-            <div class="m-0 p-3 font-dark sq_nav_item bg-default sq_nav_item_open">
-                <i class="dashicons-before dashicons-arrow-right-alt text-dark"></i></div>
 			<?php
 			$tabs = SQ_Classes_ObjController::getClass( 'SQ_Models_Menu' )->getTabs( 'sq_audit' );
 
@@ -90,6 +89,9 @@ if ( SQ_Classes_Helpers_Tools::getValue( 'page' ) == 'sq_dashboard' ) { ?>
 				}
 			}
 			?>
+            <div class="m-0 p-3 font-dark sq_nav_item bg-default sq_nav_item_open">
+                <i class="dashicons-before dashicons-arrow-right-alt text-dark"></i>
+            </div>
             <div class="m-0 p-3 font-dark sq_nav_item sq_nav_item_collapse">
                 <i class="dashicons-before dashicons-arrow-left-alt text-dark"></i><span class="sq_nav_item_text text-dark ml-2"><?php echo esc_html__( 'Collapse', "squirrly-seo" ) ?></span>
             </div>
@@ -112,10 +114,8 @@ if ( SQ_Classes_Helpers_Tools::getValue( 'page' ) == 'sq_dashboard' ) { ?>
     <div class="sq_col_menu sq_sticky pt-3 <?php echo esc_attr( $menu_opened ? 'sq_col_menu_big' : '' ) ?>">
         <div class="sq_nav d-flex flex-column bd-highlight mb-3 sq_sticky">
             <div class="m-0 p-3 font-dark sq_nav_item bg-default sq_nav_item_home">
-                <a href="<?php echo esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_dashboard' ) ); ?>" class="text-dark"><i class="fa-solid fa-house text-dark"></i><span class="sq_nav_item_text ml-2"><?php echo esc_html__( 'Back To Home', "squirrly-seo" ) ?></span></a>
+                <a href="<?php echo esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_dashboard' ) ); ?>" class="text-dark"><i class="fa-solid fa-house text-dark"></i><span class="sq_nav_item_text text-dark bg-white ml-2"><?php echo esc_html__( 'Back To Home', "squirrly-seo" ) ?></span></a>
             </div>
-            <div class="m-0 p-3 font-dark sq_nav_item bg-default sq_nav_item_open">
-                <i class="dashicons-before dashicons-arrow-right-alt text-dark"></i></div>
 			<?php
 			$allcategories = SQ_Classes_ObjController::getClass( 'SQ_Core_BlockFeatures' )->getCategories();
 			$features      = SQ_Classes_ObjController::getClass( 'SQ_Core_BlockFeatures' )->getFeatures();
@@ -145,6 +145,9 @@ if ( SQ_Classes_Helpers_Tools::getValue( 'page' ) == 'sq_dashboard' ) { ?>
 				}
 			}
 			?>
+            <div class="m-0 p-3 font-dark sq_nav_item bg-default sq_nav_item_open">
+                <i class="dashicons-before dashicons-arrow-right-alt text-dark"></i>
+            </div>
             <div class="m-0 p-3 font-dark sq_nav_item sq_nav_item_collapse">
                 <i class="dashicons-before dashicons-arrow-left-alt text-dark"></i><span class="sq_nav_item_text text-dark ml-2"><?php echo esc_html__( 'Collapse', "squirrly-seo" ) ?></span>
             </div>
@@ -170,10 +173,8 @@ if ( SQ_Classes_Helpers_Tools::getValue( 'page' ) == 'sq_dashboard' ) { ?>
     <div class="sq_col_menu <?php echo esc_attr( $menu_opened ? 'sq_col_menu_big' : '' ) ?>">
         <div class="sq_nav d-flex flex-column bd-highlight mb-3 sq_sticky">
             <div class="m-0 p-3 font-dark sq_nav_item bg-default sq_nav_item_home">
-                <a href="<?php echo esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_dashboard' ) ); ?>" class="text-dark"><i class="fa-solid fa-house text-dark"></i><span class="sq_nav_item_text ml-2"><?php echo esc_html__( 'Back To Home', "squirrly-seo" ) ?></span></a>
+                <a href="<?php echo esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_dashboard' ) ); ?>" class="text-dark"><i class="fa-solid fa-house text-dark"></i><span class="sq_nav_item_text text-dark bg-white ml-2"><?php echo esc_html__( 'Back To Home', "squirrly-seo" ) ?></span></a>
             </div>
-            <div class="m-0 p-3 font-dark sq_nav_item bg-default sq_nav_item_open">
-                <i class="dashicons-before dashicons-arrow-right-alt text-dark"></i></div>
 			<?php
 			$tabs = SQ_Classes_ObjController::getClass( 'SQ_Models_Menu' )->getTabs( SQ_Classes_Helpers_Tools::getValue( 'page' ) );
 
@@ -206,6 +207,9 @@ if ( SQ_Classes_Helpers_Tools::getValue( 'page' ) == 'sq_dashboard' ) { ?>
 				}
 			}
 			?>
+            <div class="m-0 p-3 font-dark sq_nav_item bg-default sq_nav_item_open">
+                <i class="dashicons-before dashicons-arrow-right-alt text-dark"></i>
+            </div>
             <div class="m-0 p-3 font-dark sq_nav_item sq_nav_item_collapse">
                 <i class="dashicons-before dashicons-arrow-left-alt text-dark"></i><span class="sq_nav_item_text text-dark ml-2"><?php echo esc_html__( 'Collapse', "squirrly-seo" ) ?></span>
             </div>

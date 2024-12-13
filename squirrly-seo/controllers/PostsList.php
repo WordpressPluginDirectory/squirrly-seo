@@ -56,15 +56,17 @@ class SQ_Controllers_PostsList extends SQ_Classes_FrontController {
 		$this->_types[] = 'pages';
 		$this->_types[] = 'media';
 
+
 		foreach ( $this->_types as $type ) {
 			if ( SQ_Classes_ObjController::getClass( 'SQ_Models_Post' )->isSLAEnable( $type ) ) {
-				add_filter( 'manage_' . $type . '_columns', array( $this, 'add_post_column' ), 10, 1 );
-				add_action( 'manage_' . $type . '_custom_column', array( $this, 'add_post_row' ), 10, 2 );
+				add_filter( 'manage_' . $type . '_columns', array( $this, 'add_optimized_column' ), 10, 1 );
 			}
+			add_filter( 'manage_' . $type . '_columns', array( $this, 'add_visibility_column' ), 10, 1 );
+			add_action( 'manage_' . $type . '_custom_column', array( $this, 'add_post_row' ), 10, 2 );
 		}
 
 		foreach ( $this->_taxonomies as $taxonomy ) {
-			add_filter( 'manage_edit-' . $taxonomy . '_columns', array( $this, 'add_tax_column' ), 10, 1 );
+			add_filter( 'manage_edit-' . $taxonomy . '_columns', array( $this, 'add_tax_visibility_column' ), 10, 1 );
 			add_action( 'manage_' . $taxonomy . '_custom_column', array( $this, 'add_tax_row' ), 10, 3 );
 		}
 
@@ -81,16 +83,31 @@ class SQ_Controllers_PostsList extends SQ_Classes_FrontController {
 	}
 
 	/**
-	 * Add the Squirrly column in the Post List
+	 * Add the Squirrly Optimized column in the Post List
 	 *
 	 * @param array $columns
 	 *
 	 * @return array
 	 */
-	public function add_post_column( $columns ) {
+	public function add_optimized_column( $columns ) {
 		$this->loadHead(); //load the js only for post list
 
 		$columns = $this->insert( $columns, array( $this->_slacolumn_id => esc_html__( "Optimized", 'squirrly-seo' ) ), $this->_pos );
+
+		return $columns;
+	}
+
+	/**
+	 * Add the Squirrly Visibility column in the Post List
+	 *
+	 * @param array $columns
+	 *
+	 * @return array
+	 */
+	public function add_visibility_column( $columns ) {
+		$this->loadHead(); //load the js only for post list
+
+		$columns = $this->insert( $columns, array( $this->_column_id => esc_html__( "Visibility", 'squirrly-seo' ) ), $this->_pos );
 
 		return $columns;
 	}
@@ -131,6 +148,10 @@ class SQ_Controllers_PostsList extends SQ_Classes_FrontController {
 			echo '<div class="' . esc_attr( $this->_slacolumn_id ) . '_row" ref="' . esc_attr( $post_id ) . '">' . ( ( $html ) ? wp_kses_post( $html ) : 'loading ...' ) . '</div>';
 		}
 
+		if ( $column == $this->_column_id ) {
+			echo '<div class="' . $this->_column_id . '_row" >' . $this->model->getPostSnippetInfo( $post_id, 0, '', $post_type ) . '</div>';
+		}
+
 	}
 
 	/**
@@ -140,10 +161,10 @@ class SQ_Controllers_PostsList extends SQ_Classes_FrontController {
 	 *
 	 * @return array
 	 */
-	public function add_tax_column( $columns ) {
+	public function add_tax_visibility_column( $columns ) {
 		$this->loadHead(); //load the js only for post list
 
-		$columns = $this->insert( $columns, array( $this->_column_id => esc_html__( "SQ Snippet", 'squirrly-seo' ) ), $this->_pos );
+		$columns = $this->insert( $columns, array( $this->_column_id => esc_html__( "Visibility", 'squirrly-seo' ) ), $this->_pos );
 
 		return $columns;
 	}
@@ -152,15 +173,15 @@ class SQ_Controllers_PostsList extends SQ_Classes_FrontController {
 	 * Add row in Categories and Tags
 	 *
 	 * @param string $html
-	 * @param object $column
+	 * @param string $column
 	 * @param integer $post_id
 	 */
-	public function add_tax_row( $html = '', $column = 0, $tax_id = 0 ) {
-		if ( (int) $tax_id > 0 && (int) $column > 0 ) {
+	public function add_tax_row( $html = '', $column = '', $tax_id = 0 ) {
+		if ( (int) $tax_id > 0 && $column <> '' ) {
 			$term = get_term( $tax_id );
 
 			if ( ! is_wp_error( $term ) && $column == $this->_column_id ) {
-				return '<div class="' . $this->_column_id . '_row">' . $this->model->getTaxButton( $term->term_id, 'tax-' . $term->taxonomy ) . '</div>';
+				echo '<div class="' . $this->_column_id . '_row">' . $this->model->getPostSnippetInfo( 0, $term->term_id, $term->taxonomy, '' ) . '</div>';
 			}
 		}
 

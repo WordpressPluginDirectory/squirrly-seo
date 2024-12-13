@@ -526,7 +526,7 @@ class SQ_Models_Snippet {
 
 						if ( ! empty( $dates ) && isset( $dates[1] ) && isset( $dates[2] ) ) {
 							$post->hash      = md5( $post_type . (int) $dates[1] . '-' . (int) $dates[2] );
-							$post->post_date = date( get_option( 'date_format' ), strtotime( $dates[1] . '-' . $dates[2] ) );
+							$post->post_date = wp_date( get_option( 'date_format' ), strtotime( $dates[1] . '-' . $dates[2] ) );
 						}
 					}
 

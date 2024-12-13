@@ -108,7 +108,7 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController {
 	}
 
 	/**
-	 * Indexnow the URLs
+	 * Auto-Indexing the URLs
 	 *
 	 * @param WP_REST_Request $request
 	 *
@@ -328,7 +328,7 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController {
 									$urls[] = array(
 										'post_id'   => $row->ID,
 										'permalink' => get_permalink( $row->ID ),
-										'innerlink' => strpos( $row->content, $url ) !== false
+										'innerlink' => strpos( $row->content, untrailingslashit($url) ) !== false
 									);
 								}
 							}

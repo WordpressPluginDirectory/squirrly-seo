@@ -630,7 +630,7 @@ if ( ! isset( $view ) ) {
                     <ul class="mx-4">
                         <li class="text-left"><?php echo esc_html__( "Want to optimize JSON-LD Schema (Rich Snippets) on all pages?", 'squirrly-seo' ); ?></li>
                         <li class="text-left"><?php echo sprintf( esc_html__( "Use the %s SEO Automation %s to setup the Json-LD type based on Post Types.", 'squirrly-seo' ), '<a href="' . esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_automation', 'automation' ) ) . '" target="_blank">', '</a>' ); ?></li>
-                        <li class="text-left"><?php echo sprintf( esc_html__( "Use %s Bulk SEO %s to optimize the JSON-LD in the SEO Snippet for each page on your website.", 'squirrly-seo' ), '<a href="' . esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo' ) ) . '" target="_blank">', '</a>' ); ?></li>
+                        <li class="text-left"><?php echo sprintf( esc_html__( "Use %s Bulk SEO %s to optimize the JSON-LD in the SEO Snippet for each page on your website.", 'squirrly-seo' ), '<a href="' . esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo' ) ) . '" target="_blank">', '</a>' ); ?></li>
                     </ul>
                 </div>
 

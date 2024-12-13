@@ -231,7 +231,7 @@ if ( ! isset( $view ) ) {
                     </h5>
                     <ul class="mx-4">
                         <li class="text-left"><?php echo sprintf( esc_html__( "Use the %s SEO Automation %s to setup SEO Patterns based on Post Types for global optimization.", 'squirrly-seo' ), '<a href="' . esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_automation', 'automation' ) ) . '">', '</a>' ); ?></li>
-                        <li class="text-left"><?php echo sprintf( esc_html__( "Use %s Bulk SEO %s to optimize the SEO Snippet for each page on your website.", 'squirrly-seo' ), '<a href="' . esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo' ) ) . '">', '</a>' ); ?></li>
+                        <li class="text-left"><?php echo sprintf( esc_html__( "Use %s Bulk SEO %s to optimize the SEO Snippet for each page on your website.", 'squirrly-seo' ), '<a href="' . esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo' ) ) . '">', '</a>' ); ?></li>
                     </ul>
                 </div>
 

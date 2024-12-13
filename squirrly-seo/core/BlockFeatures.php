@@ -66,7 +66,7 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 				'optional'    => false,
 				'connection'  => true,
 				'logo'        => 'fa-solid fa-forward-step',
-				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_dashboard', '', array( '#tasks' ) ),
+				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_checkseo' ),
 				'details'     => 'https://howto12.squirrly.co/kb/next-seo-goals/',
 				'show'        => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_seogoals' ),
 			),//Next SEO Goals
@@ -80,7 +80,7 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 				'optional'    => false,
 				'connection'  => true,
 				'logo'        => 'fa-solid fa-dumbbell',
-				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_dashboard', '', array( '#tasks' ) ),
+				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_dashboard', '', array( '#progress' ) ),
 				'details'     => 'https://howto12.squirrly.co/kb/next-seo-goals/',
 				'show'        => true,
 			),//Progress
@@ -150,7 +150,7 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 				'active'      => SQ_Classes_Helpers_Tools::getOption( 'sq_auto_facebook' ),
 				'optional'    => true,
 				'connection'  => false,
-				'logo'        => 'fa-brands fa-facebook-f',
+				'logo'        => 'fasq-brands fa-facebook-f',
 				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'social' ),
 				'details'     => 'https://howto12.squirrly.co/kb/social-media-settings/#opengraph',
 				'show'        => true,
@@ -164,7 +164,7 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 				'active'      => SQ_Classes_Helpers_Tools::getOption( 'sq_auto_twitter' ),
 				'optional'    => true,
 				'connection'  => false,
-				'logo'        => 'fa-brands fa-x-twitter',
+				'logo'        => 'fasq-brands fa-x-twitter',
 				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'social' ),
 				'details'     => 'https://howto12.squirrly.co/kb/social-media-settings/#twittercard',
 				'show'        => true,
@@ -178,7 +178,7 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 				'active'      => SQ_Classes_Helpers_Tools::getOption( 'sq_auto_pixels' ),
 				'optional'    => true,
 				'connection'  => false,
-				'logo'        => 'fa-brands fa-facebook-f',
+				'logo'        => 'fasq-brands fa-facebook-f',
 				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'webmaster#tab=trackers' ),
 				'details'     => 'https://howto12.squirrly.co/kb/google-analytics-tracking-tool/#facebook_pixel',
 				'show'        => true,
@@ -197,7 +197,7 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_research', 'research' ),
 				'details'     => 'https://howto12.squirrly.co/kb/keyword-research-and-seo-strategy/',
 				'show'        => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_research' ),
-			), //Keyword Research
+			), //AI Research
 			array(
 				'title'       => "Briefcase",
 				'description' => "Add keywords in your portfolio based on your current Campaigns, Trends, Performance <strong>for a successful SEO strategy</strong>.",
@@ -239,7 +239,7 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_research', 'research' ),
 				'details'     => 'https://howto12.squirrly.co/kb/keyword-research-and-seo-strategy/',
 				'show'        => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_research' ),
-			), //Keyword Research
+			), //AI Research
 			array(
 				'title'       => "Google Rankings with GSC",
 				'description' => "Get <strong>Google Search Console (GSC)</strong> average <strong>positions, clicks and impressions</strong> for organic keywords.",
@@ -448,7 +448,7 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 				'optional'    => false,
 				'connection'  => false,
 				'logo'        => 'fa-solid fa-block-brick',
-				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo' ),
+				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo' ),
 				'details'     => 'https://howto12.squirrly.co/kb/bulk-seo/',
 				'show'        => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_bulkseo' ),
 			),//Bulk SEO
@@ -552,8 +552,8 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 				'show'        => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_redirects' ),
 			), //404 Redirects
 			array(
-				'title'       => "IndexNow",
-				'description' => "Add the <strong>IndexNow</strong> option to automatically send links to search engines like Bing and Yandex.",
+				'title'       => "Auto-Indexing",
+				'description' => "Add the <strong>Auto-Indexing</strong> option to automatically send links to search engines like Bing and Yandex.",
 				'category'    => "Integration Features",
 				'mainfeature' => false,
 				'option'      => 'sq_auto_indexnow',
@@ -564,7 +564,7 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_indexnow', 'submit' ),
 				'details'     => '',
 				'show'        => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_indexnow' ),
-			), //IndexNow
+			), //Auto-Indexing
 			array(
 				'title'       => "Google Analytics Tracking",
 				'description' => "Add the <strong>Google Analytics</strong> and <strong>Google Tag Manager</strong> tracking on your website.",
@@ -588,7 +588,7 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 				'active'      => ( isset( $connect['google_search_console'] ) ? $connect['google_search_console'] : true ),
 				'optional'    => false,
 				'connection'  => true,
-				'logo'        => 'fa-brands fa-google',
+				'logo'        => 'fasq-brands fa-google',
 				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_rankings', 'settings' ),
 				'details'     => 'https://howto12.squirrly.co/kb/ranking-serp-checker/#google_search_console',
 				'show'        => SQ_Classes_Helpers_Tools::getMenuVisible( 'show_rankings' ),
@@ -673,7 +673,7 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 				'optional'    => false,
 				'connection'  => false,
 				'logo'        => 'fa-solid fa-puzzle-piece',
-				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo' ),
+				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo' ),
 				'details'     => 'https://howto12.squirrly.co/wordpress-seo/compatibility-with-polylang-plugin/',
 				'show'        => ( SQ_Classes_Helpers_Tools::isPluginInstalled( 'polylang/polylang.php' ) || SQ_Classes_Helpers_Tools::isPluginInstalled( 'polylang-pro/polylang.php' ) ),
 			), //
@@ -687,7 +687,7 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 				'optional'    => false,
 				'connection'  => false,
 				'logo'        => 'fa-solid fa-puzzle-piece',
-				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo', array( 'stype=product' ) ),
+				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo', array( 'stype=product' ) ),
 				'details'     => 'https://howto12.squirrly.co/kb/json-ld-structured-data/#woocommerce',
 				'show'        => SQ_Classes_Helpers_Tools::isEcommerce(),
 			), //
@@ -715,7 +715,7 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 				'active'      => ( $sitemap['sitemap-news'][1] == 1 ),
 				'optional'    => false,
 				'connection'  => false,
-				'logo'        => 'fa-brands fa-google',
+				'logo'        => 'fasq-brands fa-google',
 				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'tweaks' ),
 				'details'     => 'https://howto12.squirrly.co/kb/sitemap-xml-settings/#news_sitemap',
 				'show'        => true,
@@ -830,7 +830,7 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 				'active'      => SQ_Classes_Helpers_Tools::getOption( 'sq_auto_robots' ),
 				'optional'    => true,
 				'connection'  => false,
-				'logo'        => 'fa-brands fa-android',
+				'logo'        => 'fasq-brands fa-android',
 				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'tweaks#tab=robots' ),
 				'details'     => false,
 				'show'        => true,
@@ -873,7 +873,7 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 				'optional'    => true,
 				'connection'  => false,
 				'logo'        => 'fa-solid fa-bolt',
-				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_automation', 'automation' ),
+				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'automation' ),
 				'details'     => 'https://howto12.squirrly.co/kb/seo-automation/',
 				'show'        => true,
 				'keywords'    => 'pattern,patterns,automation,seo'

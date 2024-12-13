@@ -18,7 +18,7 @@ if ( ! isset( $view ) ) {
 <?php } elseif ( $page == 'sq_automation' ) { ?>
     <div class="card-title text-center text-black-50 mt-3"><?php echo esc_html__( 'Automation Mastery Tasks', "squirrly-seo" ) ?></div>
 <?php } elseif ( $page == 'sq_seosettings' ) { ?>
-    <div class="card-title text-center text-black-50 mt-3"><?php echo esc_html__( 'SEO Configuration Mastery Tasks', "squirrly-seo" ) ?></div>
+    <div class="card-title text-center text-black-50 mt-3"><?php echo esc_html__( 'Technical SEO Mastery Tasks', "squirrly-seo" ) ?></div>
 <?php } elseif ( $page == 'sq_audits' ) { ?>
     <div class="card-title text-center text-black-50 mt-3"><?php echo esc_html__( 'Audit Mastery Tasks', "squirrly-seo" ) ?></div>
 <?php } elseif ( $page == 'sq_rankings' ) { ?>

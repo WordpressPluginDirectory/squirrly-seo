@@ -15,7 +15,7 @@ if ( ! isset( $view ) ) {
         <div class="card col-12 bg-google px-0 py-0 mb-2 mx-0">
             <div class="card-heading my-2">
                 <h3 class="card-title text-white">
-                    <div class="google-icon fa-brands fa-google mx-2"></div><?php echo esc_html__( "Google Analytics", "squirrly-seo" ); ?>
+                    <div class="google-icon fasq-brands fa-google mx-2"></div><?php echo esc_html__( "Google Analytics", "squirrly-seo" ); ?>
                 </h3>
             </div>
             <div class="bg-light py-3">
@@ -89,7 +89,7 @@ if ( ! isset( $view ) ) {
             </div>
             <div class="sq_step1 mt-1">
                 <a href="<?php echo SQ_Classes_RemoteController::getApiLink( 'gaoauth' ); ?>" onclick="jQuery('.sq_step1').hide();jQuery('.sq_step2').show();jQuery(this).sq_clearCache();" target="_blank" type="button" class="btn btn-block btn-social btn-google text-primary connect-button connect btn-lg">
-                    <span class="fa-brands fa-google"></span> <?php echo esc_html__( "Sign in", "squirrly-seo" ); ?>
+                    <span class="fasq-brands fa-google"></span> <?php echo esc_html__( "Sign in", "squirrly-seo" ); ?>
                 </a>
             </div>
             <div class="sq_step2 mt-1" style="display: none">
@@ -97,7 +97,7 @@ if ( ! isset( $view ) ) {
 					<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_seosettings_ga_check', 'sq_nonce' ); ?>
                     <input type="hidden" name="action" value="sq_seosettings_ga_check"/>
                     <button type="submit" class="btn btn-block btn-social btn-warning btn-lg">
-                        <span class="fa-brands fa-google"></span> <?php echo esc_html__( "Check connection", "squirrly-seo" ); ?>
+                        <span class="fasq-brands fa-google"></span> <?php echo esc_html__( "Check connection", "squirrly-seo" ); ?>
                     </button>
                 </form>
             </div>

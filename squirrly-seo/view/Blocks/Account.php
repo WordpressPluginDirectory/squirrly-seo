@@ -119,7 +119,7 @@ if ( isset( $view->checkin->subscription_status ) && isset( $view->checkin->prod
 					<?php if ( isset( $view->checkin->subscription_limits_reset ) && $view->checkin->subscription_limits_reset <> '' && strtotime( $view->checkin->subscription_limits_reset ) > time() ) { ?>
                         <li class="m-0 p-0 py-2 text-center">
 							<?php echo esc_html__( "Reset day", "squirrly-seo" ) ?>:
-                            <span class="col text-left p-0 font-weight-bold"><?php echo esc_html( gmdate( get_option( 'date_format' ), strtotime( $view->checkin->subscription_limits_reset ) ) ) ?></span>
+                            <span class="col text-left p-0 font-weight-bold"><?php echo esc_html( wp_date( get_option( 'date_format' ), strtotime( $view->checkin->subscription_limits_reset ) ) ) ?></span>
                         </li>
 					<?php } ?>
                 </ul>

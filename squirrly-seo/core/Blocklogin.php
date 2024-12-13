@@ -64,7 +64,7 @@ class SQ_Core_Blocklogin extends SQ_Classes_BlockController {
 			if ( is_wp_error( $response ) ) {
 				switch ( $response->get_error_message() ) {
 					case 'alreadyregistered':
-						SQ_Classes_Error::setError( sprintf( esc_html__( "We found your email, so it means you already have a Squirrly.co account. %sClick %sI already have an account%s and login. If you forgot your password, click %shere%s", 'squirrly-seo' ), '<br />', '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_dashboard', 'login' ) . '" style="color:yellow">', '</a>', '<a href="' . _SQ_DASH_URL_ . '/login?action=lostpassword" target="_blank" style="color:yellow">', '</a>' ) );
+						SQ_Classes_Error::setError( sprintf( esc_html__( "We found your email, so it means you already have a Squirrly.co account. %sClick %sI already have an account%s and login. If you forgot your password, click %shere%s", 'squirrly-seo' ), '<br />', '<a href="' . esc_url(SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_dashboard', 'login' )) . '" style="color:yellow">', '</a>', '<a href="' . _SQ_DASH_URL_ . '/login?action=lostpassword" target="_blank" style="color:yellow">', '</a>' ) );
 						break;
 					case 'invalidemail':
 						SQ_Classes_Error::setError( esc_html__( "Your email is not valid. Please enter a valid email.", 'squirrly-seo' ) );

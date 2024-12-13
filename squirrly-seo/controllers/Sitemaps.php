@@ -241,12 +241,12 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController {
 		//check if there is a translation
 		$this->model->setCurrentLanguage();
 		$language = $this->model->getLanguage();
-		$language = substr( $this->model->language, 0, strpos( $this->model->language, '_' ) );
+		$language = substr( $language, 0, strpos($language, '_' ) );
 
 		//if there is a translation
 		if ( $language ) {
 			//exclude the translation path
-			$path = trim( str_replace( $language, '', $path ), '/' );
+			$path = trim( str_replace( array('zh-hans', 'zh-hant', 'lat-am', $language), '', $path ), '/' );
 		}
 
 		return apply_filters( 'sq_sitemap_path_validation', ( strpos( $path, '/' ) === false ) );

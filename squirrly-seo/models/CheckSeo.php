@@ -56,7 +56,7 @@ class SQ_Models_CheckSeo {
 				'completed' => false,
 				'warning'   => esc_html__( "Get the meta title tag in the front-end", 'squirrly-seo' ),
 				'message'   => esc_html__( "Without the title tag in the front-end, search engines will 'think' that your website is broken. Currently the title tag is missing in front-end.", 'squirrly-seo' ),
-				'solution'  => sprintf( esc_html__( "Go to %s Squirrly > SEO Configuration > SEO Metas %s and switch on 'Optimize the Titles'. If it's already switched on, check if another plugin is stopping Squirrly from showing the Title.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' ),
+				'solution'  => sprintf( esc_html__( "Go to %s Squirrly > Technical SEO > SEO Metas %s and switch on 'Optimize the Titles'. If it's already switched on, check if another plugin is stopping Squirrly from showing the Title.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' ),
 				'goal'      => esc_html__( "You have to make the Title tag of the page visible in the front-end of the website. As soon as possible. Otherwise, you will have difficulty ranking.", 'squirrly-seo' ),
 				'link'      => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ),
 				'color'     => 'red',
@@ -70,7 +70,7 @@ class SQ_Models_CheckSeo {
 				'completed' => false,
 				'warning'   => esc_html__( "Turn Squirrly's AMP Support to ON", 'squirrly-seo' ),
 				'message'   => esc_html__( "AMP site detected and Squirrly's AMP Support is OFF - If this website is an AMP website you need to make sure that you activate Squirrly AMP Tracking for it. Squirrly will load Google Analytics and Facebook Pixel for AMP and avoid AMP script errors.", 'squirrly-seo' ),
-				'solution'  => sprintf( esc_html__( "Activate AMP tracking in %s Squirrly > SEO Configuration > Connect Tools > AMP %s ", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'webmaster#tab=amp' ) . '" >', '</a>' ),
+				'solution'  => sprintf( esc_html__( "Activate AMP tracking in %s Squirrly > Technical SEO > Connect Tools > AMP %s ", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'webmaster#tab=amp' ) . '" >', '</a>' ),
 				'goal'      => esc_html__( "You must activate the AMP settings for Squirrly SEO, right now. Otherwise, the AMP version of the site will have missing pieces.", 'squirrly-seo' ),
 				'link'      => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'webmaster#tab=trackers' ),
 				'color'     => 'red',
@@ -84,7 +84,7 @@ class SQ_Models_CheckSeo {
 				'completed' => false,
 				'warning'   => esc_html__( "Activate Squirrly SEO Title Now", 'squirrly-seo' ),
 				'message'   => esc_html__( "Squirrly SEO title is NOT active for your website. If you DON'T use other SEO plugins, you should activate this option, and Squirrly SEO will add the Title tag on each page of your website and remove any duplicates. Your title tag determines your display title in SERPs, and it’s meant to help Google and human readers understand what your pages are all about", 'squirrly-seo' ),
-				'solution'  => sprintf( esc_html__( "Go to %s  Squirrly > SEO Configuration > SEO Metas%s and switch on: 'Optimize the Titles'", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' ),
+				'solution'  => sprintf( esc_html__( "Go to %s  Squirrly > Technical SEO > SEO Metas%s and switch on: 'Optimize the Titles'", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' ),
 				'goal'      => esc_html__( "You should activate the Squirrly SEO title to help Search Engines understand what your pages are about and ensure all of your pages have titles.", 'squirrly-seo' ),
 				'link'      => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ),
 				'color'     => 'red',
@@ -111,7 +111,7 @@ class SQ_Models_CheckSeo {
 				'completed' => false,
 				'warning'   => esc_html__( "Activate the Sitemap from Squirrly", 'squirrly-seo' ),
 				'message'   => esc_html__( "XML sitemaps help search engines and spiders discover new pages on your website. It also helps them better understand the structure of your website. Activate your Sitemap XML setting. Squirrly SEO will then generate your sitemap, according to different items you can set up.", 'squirrly-seo' ),
-				'solution'  => sprintf( esc_html__( "Go to %s Squirrly > SEO Configuration > Tweaks And Sitemap %s to setup the sitemap. Choose for which types of URLs you'll want to have sitemaps. It depends on your strategy. Leave the defaults if you're uncertain.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'tweaks', array( '#tab=sitemap' ) ) . '" >', '</a>' ),
+				'solution'  => sprintf( esc_html__( "Go to %s Squirrly > Technical SEO > Tweaks And Sitemap %s to setup the sitemap. Choose for which types of URLs you'll want to have sitemaps. It depends on your strategy. Leave the defaults if you're uncertain.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'tweaks', array( '#tab=sitemap' ) ) . '" >', '</a>' ),
 				'goal'      => esc_html__( "Lead Search Engines to your most important pages using XML sitemaps. Do this and you can rank better. ", 'squirrly-seo' ),
 				'link'      => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'tweaks' ),
 				'color'     => 'red',
@@ -125,7 +125,7 @@ class SQ_Models_CheckSeo {
 				'completed' => false,
 				'warning'   => esc_html__( "Get a robots txt file", 'squirrly-seo' ),
 				'message'   => esc_html__( "Robots.txt is a text file webmasters create to instruct how to crawl & index pages on their website. You can use this file to tell search engine robots what to crawl and what not to crawl on your site. Search bots usually look for this file in a website as soon as they enter one. Therefore, it's very important to have a robots.txt file in the first place.", 'squirrly-seo' ),
-				'solution'  => sprintf( esc_html__( "Go to %s Squirrly > SEO Configuration > Tweaks And Sitemap > Robots File %s and switch on Activate Robots. If it's already switched on, check if another plugin is stopping Squirrly from adding the Robots.txt URL.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'tweaks#tab=robots' ) . '" >', '</a>' ),
+				'solution'  => sprintf( esc_html__( "Go to %s Squirrly > Technical SEO > Tweaks And Sitemap > Robots File %s and switch on Activate Robots. If it's already switched on, check if another plugin is stopping Squirrly from adding the Robots.txt URL.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'tweaks#tab=robots' ) . '" >', '</a>' ),
 				'goal'      => esc_html__( "You should help Search Engine bots find what they need. Create a Robots.txt file as soon as possible if you want your site to be seen in Search Results.", 'squirrly-seo' ),
 				'link'      => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'tweaks#tab=robots' ),
 				'color'     => 'red',
@@ -181,7 +181,7 @@ class SQ_Models_CheckSeo {
 				'completed' => false,
 				'warning'   => esc_html__( "Remove all no-index tags from all Focus Pages", 'squirrly-seo' ),
 				'message'   => esc_html__( "No-index tags suggest to search engines (most notably Google) NOT to index a specific webpage. By using these tags for your Focus Pages, you're preventing them from appearing in Google Search. This is bad, because it means Search Engines won't show your most important pages (which should be your Focus Pages). Removing all no-index tags for your Focus Pages will fix it.", 'squirrly-seo' ),
-				'solution'  => sprintf( esc_html__( "Look at all the places where you could have added instructions for Google not to index this page from your site. Make sure that there is no such instruction added to %sWordPress > Settings%s, or in a theme, or in a plugin, or in %sSquirrly SEO's Snippet%s for this page. Also, make sure you don't block this page in your %sRobots.txt%s file.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'options-reading.php' ) . '" >', '</a>', '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo' ) . '" >', '</a>', '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'tweaks#tab=robots' ) . '" >', '</a>' ),
+				'solution'  => sprintf( esc_html__( "Look at all the places where you could have added instructions for Google not to index this page from your site. Make sure that there is no such instruction added to %sWordPress > Settings%s, or in a theme, or in a plugin, or in %sSquirrly SEO's Snippet%s for this page. Also, make sure you don't block this page in your %sRobots.txt%s file.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'options-reading.php' ) . '" >', '</a>', '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo' ) . '" >', '</a>', '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'tweaks#tab=robots' ) . '" >', '</a>' ),
 				'goal'      => esc_html__( "You must remove all no-index tags for your Focus Pages so that they will appear in Google Search.", 'squirrly-seo' ),
 				'link'      => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_focuspages', 'pagelist', array( 'slabel=indexability' ) ),
 				'color'     => 'red',
@@ -253,7 +253,7 @@ class SQ_Models_CheckSeo {
 				'completed' => false,
 				'warning'   => esc_html__( "Use Squirrly's Expert-Grade Research Tool and Add Keywords to Briefcase", 'squirrly-seo' ),
 				'message'   => esc_html__( "With a few clicks, you'll do the work that SEO experts charge thousands of dollars for (because they do this manually and it takes too much time that way).", 'squirrly-seo' ),
-				'solution'  => sprintf( esc_html__( "Go to %sSquirrly > Keyword Research%s. Complete all steps until you get to the final table with all of the data for each keyword. Add at least one keyword to Briefcase from that interface.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_research', 'research' ) . '" >', '</a>' ),
+				'solution'  => sprintf( esc_html__( "Go to %sSquirrly > AI Research%s. Complete all steps until you get to the final table with all of the data for each keyword. Add at least one keyword to Briefcase from that interface.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_research', 'research' ) . '" >', '</a>' ),
 				'goal'      => esc_html__( "You should perform a keyword research using Squirrly's Expert-Grade tool and store at least one of the results in Briefcase.", 'squirrly-seo' ),
 				'link'      => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_research', 'research' ),
 				'color'     => '#4f1440',
@@ -261,7 +261,7 @@ class SQ_Models_CheckSeo {
 				'priority'  => 5,
 				'ignorable' => false,
 				'tools'     => array(
-					esc_html__( 'Keyword Research', 'squirrly-seo' ),
+					esc_html__( 'AI Research', 'squirrly-seo' ),
 					esc_html__( 'Briefcase', 'squirrly-seo' )
 				),
 				'time'      => 600
@@ -296,7 +296,7 @@ class SQ_Models_CheckSeo {
 				'ignorable' => false,
 				'tools'     => array(
 					esc_html__( 'Focus Pages', 'squirrly-seo' ),
-					esc_html__( 'Keyword Research', 'squirrly-seo' ),
+					esc_html__( 'AI Research', 'squirrly-seo' ),
 					esc_html__( 'Live Assistant', 'squirrly-seo' )
 				),
 				'time'      => 1200
@@ -314,7 +314,7 @@ class SQ_Models_CheckSeo {
 				'ignorable' => false,
 				'tools'     => array(
 					esc_html__( 'Focus Pages', 'squirrly-seo' ),
-					esc_html__( 'Keyword Research', 'squirrly-seo' ),
+					esc_html__( 'AI Research', 'squirrly-seo' ),
 					esc_html__( 'Live Assistant', 'squirrly-seo' )
 				),
 				'time'      => 600
@@ -331,7 +331,7 @@ class SQ_Models_CheckSeo {
 				'ignorable' => true,
 				'tools'     => array(
 					esc_html__( 'Focus Pages', 'squirrly-seo' ),
-					esc_html__( 'Keyword Research', 'squirrly-seo' ),
+					esc_html__( 'AI Research', 'squirrly-seo' ),
 					esc_html__( 'Live Assistant', 'squirrly-seo' )
 				),
 				'time'      => 600
@@ -399,7 +399,7 @@ class SQ_Models_CheckSeo {
 				'ignorable' => false,
 				'tools'     => array(
 					esc_html__( 'Focus Pages', 'squirrly-seo' ),
-					esc_html__( 'Keyword Research', 'squirrly-seo' ),
+					esc_html__( 'AI Research', 'squirrly-seo' ),
 					esc_html__( 'Live Assistant', 'squirrly-seo' )
 				),
 				'time'      => 300
@@ -417,7 +417,7 @@ class SQ_Models_CheckSeo {
 				'ignorable' => false,
 				'tools'     => array(
 					esc_html__( 'Focus Pages', 'squirrly-seo' ),
-					esc_html__( 'Keyword Research', 'squirrly-seo' ),
+					esc_html__( 'AI Research', 'squirrly-seo' ),
 					esc_html__( 'Live Assistant', 'squirrly-seo' )
 				),
 				'time'      => 1200
@@ -426,7 +426,7 @@ class SQ_Models_CheckSeo {
 				'completed' => false,
 				'warning'   => esc_html__( "Stop losing SEO Authority", 'squirrly-seo' ),
 				'message'   => esc_html__( "You need to place rel='nofollow' to all Outbound links. Outbound links are URLs from 3rd party sites to which you are linking to. If you send links to Wikipedia, Facebook, Jamie Oliver, etc. without mentioning 'nofollow', then you are also sending them the authority you are trying to build up for your own site. That's really bad, and makes your pages unable to rank high enough. Because some links are hard for Non-SEO Experts to turn to 'nofollow' we recommend a plugin that does this for you. You can find it on [link]https://squirrly.co/seo/kit[/link]", 'squirrly-seo' ),
-				'solution'  => sprintf( esc_html__( "Place rel='nofollow' on outbound links yourself, use the plugin recommended by Squirrly that does this for you, or use %s Squirrly's SEO Links & Redirects option %s (%s SEO Configuration > Tweaks & Sitemaps > SEO Links & Redirects > Add Nofollow to External Links %s)", 'squirrly-seo' ), '<a href="https://howto12.squirrly.co/kb/seo-links/#nofollow_external" target="_blank">', '</a>', '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'tweaks#tab=links' ) . '" >', '</a>' ),
+				'solution'  => sprintf( esc_html__( "Place rel='nofollow' on outbound links yourself, use the plugin recommended by Squirrly that does this for you, or use %s Squirrly's SEO Links & Redirects option %s (%s Technical SEO > Tweaks & Sitemaps > SEO Links & Redirects > Add Nofollow to External Links %s)", 'squirrly-seo' ), '<a href="https://howto12.squirrly.co/kb/seo-links/#nofollow_external" target="_blank">', '</a>', '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'tweaks#tab=links' ) . '" >', '</a>' ),
 				'goal'      => esc_html__( "Fix your outbound links. Otherwise, you will lose SEO authority.", 'squirrly-seo' ),
 				'link'      => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_focuspages', 'pagelist', array( 'slabel=nofollow' ) ),
 				'color'     => '#4f1440',
@@ -556,7 +556,7 @@ class SQ_Models_CheckSeo {
 				'priority'  => 17,
 				'ignorable' => false,
 				'tools'     => array(
-					esc_html__( 'Keyword Research', 'squirrly-seo' ),
+					esc_html__( 'AI Research', 'squirrly-seo' ),
 					esc_html__( 'Briefcase', 'squirrly-seo' )
 				),
 				'time'      => 600
@@ -599,7 +599,7 @@ class SQ_Models_CheckSeo {
 				'completed' => false,
 				'warning'   => esc_html__( "Define Title and Description for your Focus Pages", 'squirrly-seo' ),
 				'message'   => esc_html__( "Titles and descriptions provide necessary information about the content of the page, and help indicate the value a Google user will get by clicking on that page. Not having these elements defined for your pages will make you lose precious points with both Search Engines and Humans. 36% of SEO experts think the headline/title tag is the most important SEO element. Each one of your Focus Pages should have a defined title and meta description.", 'squirrly-seo' ),
-				'solution'  => sprintf( esc_html__( "Easily define titles and meta descriptions using the %s Snippet editor from Squirrly SEO %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo' ) . '" >', '</a>' ),
+				'solution'  => sprintf( esc_html__( "Easily define titles and meta descriptions using the %s Snippet editor from Squirrly SEO %s.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo' ) . '" >', '</a>' ),
 				'goal'      => esc_html__( "Customize Title and Description for your Focus Pages to get more people to click on your pages in SERPs.", 'squirrly-seo' ),
 				'link'      => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_focuspages', 'pagelist', array( 'slabel=snippet' ) ),
 				'color'     => '#4f1440',
@@ -616,7 +616,7 @@ class SQ_Models_CheckSeo {
 				'completed' => false,
 				'warning'   => esc_html__( "Optimize Twitter Cards for your Focus Pages", 'squirrly-seo' ),
 				'message'   => esc_html__( "Twitter Cards are a great partner to your SEO strategy, as it helps you stand out to Twitter users and thus increase engagement and CTR. Grab that opportunity by making sure that all the Twitter tags are in place for your Focus Pages.", 'squirrly-seo' ),
-				'solution'  => sprintf( esc_html__( "Use the %s Snippet editor from Squirrly SEO %s to get all the Twitter Card definition elements in place.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo' ) . '" >', '</a>' ),
+				'solution'  => sprintf( esc_html__( "Use the %s Snippet editor from Squirrly SEO %s to get all the Twitter Card definition elements in place.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo' ) . '" >', '</a>' ),
 				'goal'      => esc_html__( "Optimize Twitter Cards for your Focus Pages to boost engagement and traffic.", 'squirrly-seo' ),
 				'link'      => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_focuspages', 'pagelist', array( 'slabel=snippet' ) ),
 				'color'     => '#4f1440',
@@ -633,7 +633,7 @@ class SQ_Models_CheckSeo {
 				'completed' => false,
 				'warning'   => esc_html__( "Optimize Open Graph for your Focus Pages", 'squirrly-seo' ),
 				'message'   => esc_html__( "Open Graph lets you control what content is displayed when your pages are linked on social media, thus influencing your link's performance. If you lack these tags, then you're risking that an unrelated image or inaccurate description will be shown. On the flip side, having these tags helps you harness the power of social media and boost your social media CTR. Using your keywords inside the OG definitions has been proven to also boost SEO.", 'squirrly-seo' ),
-				'solution'  => sprintf( esc_html__( "Use the %s Snippet editor from Squirrly SEO %s to get all the Open Graph definition elements in place for your Focus Pages.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo' ) . '" >', '</a>' ),
+				'solution'  => sprintf( esc_html__( "Use the %s Snippet editor from Squirrly SEO %s to get all the Open Graph definition elements in place for your Focus Pages.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo' ) . '" >', '</a>' ),
 				'goal'      => esc_html__( "Optimize Open Graph. Unless you do so, you're leaving how your Focus Pages are shown on Facebook up to chance. (it's also bad for SEO)", 'squirrly-seo' ),
 				'link'      => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_focuspages', 'pagelist', array( 'slabel=snippet' ) ),
 				'color'     => '#4f1440',
@@ -649,8 +649,8 @@ class SQ_Models_CheckSeo {
 			'FocusPagesSnippet'               => array(
 				'completed' => false,
 				'warning'   => esc_html__( "Optimize Rich Snippets for your Focus Pages", 'squirrly-seo' ),
-				'message'   => esc_html__( "JSON-LD, Rich Snippets, Schema implementation: this thing goes by many different names, because nothing has been standardized. However, as an SEO Star, you need to make sure your site has this JSON-LD properly defined. You can let Squirrly SEO Automatically handle JSON-LD definitions, or you can switch to Custom and use the tool that we link to in order to create your very own definition. Once you're done there, you can come back and paste the code into the custom section of your page's snippet for JSON-LD. For most pages, you should let this setting to Auto, though. Also, make sure you've completed everything about your organization or personal brand in Squirrly > SEO Configuration > Rich Snippets.", 'squirrly-seo' ),
-				'solution'  => sprintf( esc_html__( "Use the %s Snippet Editor from Squirrly SEO %s to get this done.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo' ) . '" >', '</a>' ),
+				'message'   => esc_html__( "JSON-LD, Rich Snippets, Schema implementation: this thing goes by many different names, because nothing has been standardized. However, as an SEO Star, you need to make sure your site has this JSON-LD properly defined. You can let Squirrly SEO Automatically handle JSON-LD definitions, or you can switch to Custom and use the tool that we link to in order to create your very own definition. Once you're done there, you can come back and paste the code into the custom section of your page's snippet for JSON-LD. For most pages, you should let this setting to Auto, though. Also, make sure you've completed everything about your organization or personal brand in Squirrly > Technical SEO > Rich Snippets.", 'squirrly-seo' ),
+				'solution'  => sprintf( esc_html__( "Use the %s Snippet Editor from Squirrly SEO %s to get this done.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo' ) . '" >', '</a>' ),
 				'goal'      => esc_html__( "You need to have good definitions for JSON-LD.", 'squirrly-seo' ),
 				'link'      => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_focuspages', 'pagelist', array( 'slabel=snippet' ) ),
 				'color'     => '#4f1440',
@@ -701,8 +701,8 @@ class SQ_Models_CheckSeo {
 				'completed' => false,
 				'warning'   => esc_html__( "Complete all marketing settings tasks", 'squirrly-seo' ),
 				'message'   => esc_html__( "If you want to unleash the full marketing power of your WordPress site, then you need to activate all the important marketing settings there are. This is vital to marketing mastery and to maximizing your site's marketing opportunities.", 'squirrly-seo' ),
-				'solution'  => esc_html__( "Go to the SEO Configuration section of Squirrly SEO. Click on the METAs section. You'll see tasks appearing at the right of the screen. Look to the right of the screen and complete all the tasks that appear there. Click on each element and you'll find out what you need to do to complete the task. Completed tasks are the ones that have a check mark.", 'squirrly-seo' ),
-				'goal'      => esc_html__( "Complete all sidebar (right sidebar) tasks for all SEO Configuration Sections.", 'squirrly-seo' ),
+				'solution'  => esc_html__( "Go to the Technical SEO section of Squirrly SEO. Click on the METAs section. You'll see tasks appearing at the right of the screen. Look to the right of the screen and complete all the tasks that appear there. Click on each element and you'll find out what you need to do to complete the task. Completed tasks are the ones that have a check mark.", 'squirrly-seo' ),
+				'goal'      => esc_html__( "Complete all sidebar (right sidebar) tasks for all Technical SEO Sections.", 'squirrly-seo' ),
 				'link'      => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ),
 				'color'     => '#4f1440',
 				'bullet'    => false,
@@ -812,7 +812,7 @@ class SQ_Models_CheckSeo {
 				'completed' => false,
 				'warning'   => esc_html__( "No Empty Titles", 'squirrly-seo' ),
 				'message'   => esc_html__( "Google doesn't want to place sites with coding problems up in the first positions. Sure, the search engine is smart enough to generate the title on its own, based on the content inside the URL, but it's still a bad practice.", 'squirrly-seo' ),
-				'solution'  => sprintf( esc_html__( "Fix this using Squirrly SEO. Find more help in the %s Squirrly > SEO Configuration %s section.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' ),
+				'solution'  => sprintf( esc_html__( "Fix this using Squirrly SEO. Find more help in the %s Squirrly > Technical SEO %s section.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' ),
 				'goal'      => esc_html__( "Make sure you avoid having pages with Empty Titles and Empty Descriptions. Otherwise, your rankings will suffer.", 'squirrly-seo' ),
 				'link'      => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ),
 				'color'     => '#4f1440',
@@ -826,7 +826,7 @@ class SQ_Models_CheckSeo {
 				'completed' => false,
 				'warning'   => esc_html__( "No Empty Descriptions", 'squirrly-seo' ),
 				'message'   => esc_html__( "Google doesn't want to place sites with coding problems up in the first positions. Sure, the search engine is smart enough to generate the description on its own, based on the content inside the URL, but it's still a bad practice.", 'squirrly-seo' ),
-				'solution'  => sprintf( esc_html__( "Fix this using Squirrly SEO. Find more help in the %s Squirrly > SEO Configuration %s section.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' ),
+				'solution'  => sprintf( esc_html__( "Fix this using Squirrly SEO. Find more help in the %s Squirrly > Technical SEO %s section.", 'squirrly-seo' ), '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ) . '" >', '</a>' ),
 				'goal'      => esc_html__( "Make sure you avoid having pages with Empty Titles and Empty Descriptions. Otherwise, your rankings will suffer.", 'squirrly-seo' ),
 				'link'      => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'metas' ),
 				'color'     => '#4f1440',

@@ -98,7 +98,7 @@ class SQ_Controllers_Frontend extends SQ_Classes_FrontController {
 				}
 			}
 
-			//Show the code for indexnow
+			//Show the code for Auto-Indexing
 			if ( SQ_Classes_Helpers_Tools::getOption( 'indexnow_key' ) <> '' ) {
 				if ( $basename == SQ_Classes_Helpers_Tools::getOption( 'indexnow_key' ) . ".txt" ) {
 					echo SQ_Classes_Helpers_Tools::getOption( 'indexnow_key' );

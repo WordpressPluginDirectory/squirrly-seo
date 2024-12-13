@@ -142,41 +142,50 @@ class SQ_Models_LiveAssistant {
 		}
 
 		if ( empty( $keyword ) && $other_keywords = get_post_meta( $this->post_id, '_sq_keywords', true ) ) { //squirrly
-			$keywords = explode( ',', $other_keywords );
-			if ( ! empty( $keywords ) ) {
+			if ( is_string( $other_keywords ) ){
+				$keywords = explode( ',', $other_keywords );
+			}
+			if ( is_array($keywords) && ! empty( $keywords ) ) {
 				$keywords = array_unique( $keywords );
 				$keyword  = $keywords[0];
 			}
 		}
 
 		if ( empty( $keyword ) && $other_keywords = get_post_meta( $this->post_id, 'rank_math_focus_keyword', true ) ) { //rm
-			$other_keywords = explode( ',', $other_keywords );
+			if(is_string( $other_keywords )){
+				$other_keywords = explode( ',', $other_keywords );
+			}
 
-			if ( ! empty( $other_keywords ) ) {
+			if ( is_array($other_keywords) && ! empty( $other_keywords ) ) {
 				$keyword = current( $other_keywords );
 			}
 		}
 
 		if ( empty( $keyword ) && $other_keywords = get_post_meta( $this->post_id, '_yoast_wpseo_focuskw', true ) ) { //yoast
-			$other_keywords = explode( ',', $other_keywords );
+			if(is_string( $other_keywords )){
+				$other_keywords = explode( ',', $other_keywords );
+			}
 
-			if ( ! empty( $other_keywords ) ) {
+			if ( is_array($other_keywords) && ! empty( $other_keywords ) ) {
 				$keyword = current( $other_keywords );
 			}
 		}
 
 		if ( empty( $keyword ) && $other_keywords = get_post_meta( $this->post_id, '_aioseo_keywords', true ) ) { //aioseo
-			$other_keywords = explode( ',', $other_keywords );
+			if(is_string( $other_keywords )){
+				$other_keywords = explode( ',', $other_keywords );
+			}
 
-			if ( ! empty( $other_keywords ) ) {
+			if ( is_array($other_keywords) && ! empty( $other_keywords ) ) {
 				$keyword = current( $other_keywords );
 			}
 		}
 
 		if ( empty( $keyword ) && $other_keywords = get_post_meta( $this->post_id, '_seopress_analysis_target_kw', true ) ) { //seopress
-			$other_keywords = explode( ',', $other_keywords );
-
-			if ( ! empty( $other_keywords ) ) {
+			if(is_string( $other_keywords )){
+				$other_keywords = explode( ',', $other_keywords );
+			}
+			if ( is_array($other_keywords) && ! empty( $other_keywords ) ) {
 				$keyword = current( $other_keywords );
 			}
 		}

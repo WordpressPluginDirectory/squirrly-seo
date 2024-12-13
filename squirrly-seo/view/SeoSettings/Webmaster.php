@@ -137,7 +137,7 @@ if ( ! isset( $view ) ) {
 
                                                 <div class="sq_analytics_step1 mt-1">
                                                     <a href="<?php echo esc_url( SQ_Classes_RemoteController::getApiLink( 'gaoauth' ) ); ?>" onclick="jQuery('.sq_analytics_step1').hide();jQuery('.sq_analytics_step2').show();jQuery(this).sq_clearCache();" target="_blank" type="button" class="btn btn-primary w-100 text-white connect-button connect btn-lg">
-                                                        <span class="fa-brands fa-google"></span> <?php echo esc_html__( "Sign in", 'squirrly-seo' ); ?>
+                                                        <span class="fasq-brands fa-google"></span> <?php echo esc_html__( "Sign in", 'squirrly-seo' ); ?>
                                                     </a>
                                                 </div>
                                                 <div class="sq_analytics_step2 mt-1" style="display: none">
@@ -145,7 +145,7 @@ if ( ! isset( $view ) ) {
 														<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_seosettings_ga_check', 'sq_nonce' ); ?>
                                                         <input type="hidden" name="action" value="sq_seosettings_ga_check"/>
                                                         <button type="submit" class="btn btn-warning w-100 text-white btn-lg">
-                                                            <span class="fa-brands fa-google"></span> <?php echo esc_html__( "Check connection", 'squirrly-seo' ); ?>
+                                                            <span class="fasq-brands fa-google"></span> <?php echo esc_html__( "Check connection", 'squirrly-seo' ); ?>
                                                         </button>
                                                     </form>
                                                 </div>
@@ -184,7 +184,7 @@ if ( ! isset( $view ) ) {
                                             <div class="col-8 m-0 p-0">
                                                 <div class="sq_gsc_step1 mt-1">
                                                     <a href="<?php echo esc_url( SQ_Classes_RemoteController::getApiLink( 'gscoauth' ) ); ?>" onclick="jQuery('.sq_gsc_step1').hide();jQuery('.sq_gsc_step2').show();jQuery(this).sq_clearCache();" target="_blank" type="button" class="btn btn-primary w-100 text-white connect-button connect btn-lg">
-                                                        <span class="fa-brands fa-google"></span> <?php echo esc_html__( "Sign in", 'squirrly-seo' ); ?>
+                                                        <span class="fasq-brands fa-google"></span> <?php echo esc_html__( "Sign in", 'squirrly-seo' ); ?>
                                                     </a>
                                                 </div>
                                                 <div class="sq_gsc_step2 mt-1" style="display: none">
@@ -192,7 +192,7 @@ if ( ! isset( $view ) ) {
 														<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_seosettings_gsc_check', 'sq_nonce' ); ?>
                                                         <input type="hidden" name="action" value="sq_seosettings_gsc_check"/>
                                                         <button type="submit" class="btn btn-warning w-100 text-white btn-lg">
-                                                            <span class="fa-brands fa-google"></span> <?php echo esc_html__( "Check connection", 'squirrly-seo' ); ?>
+                                                            <span class="fasq-brands fa-google"></span> <?php echo esc_html__( "Check connection", 'squirrly-seo' ); ?>
                                                         </button>
                                                     </form>
                                                 </div>

@@ -110,7 +110,7 @@ class SQ_Models_Focuspages_Audit extends SQ_Models_Abstract_Assistant {
 			),
 			'duplicatedescription' => array(
 				'title'       => esc_html__( "No duplicate description", 'squirrly-seo' ),
-				'description' => sprintf( esc_html__( "Make sure that your pages do not have duplicate descriptions. %s This is super easy to fix if you're using the SEO Automation feature from Squirrly SEO, because it will generate your META description automatically from the content of your page (in case you didn't already place a custom description). %s If you want to fix this problem by giving the problematic pages their own custom descriptions: go to the %sSquirrly SEO > Bulk SEO%s and see which pages have this problem.", 'squirrly-seo' ), '<br /><br />', '<br /><br />', '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo' ) . '" target="_blank">', '</a>' ),
+				'description' => sprintf( esc_html__( "Make sure that your pages do not have duplicate descriptions. %s This is super easy to fix if you're using the SEO Automation feature from Squirrly SEO, because it will generate your META description automatically from the content of your page (in case you didn't already place a custom description). %s If you want to fix this problem by giving the problematic pages their own custom descriptions: go to the %sSquirrly SEO > Bulk SEO%s and see which pages have this problem.", 'squirrly-seo' ), '<br /><br />', '<br /><br />', '<a href="' . SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo' ) . '" target="_blank">', '</a>' ),
 			),
 			'title'                => array(
 				'title'       => esc_html__( "No empty titles", 'squirrly-seo' ),

@@ -189,6 +189,19 @@ class SQ_Classes_Helpers_Sanitize {
 	}
 
 	/**
+	 * Sanitize the search
+	 * @param $string
+	 *
+	 * @return array|string|string[]|null
+	 */
+	public static function sanitizeSearch( $string ) {
+		$string = preg_replace("/[\(\)\=\%]/","",$string);
+		$string = preg_replace("/\+/"," ",$string);
+
+		return $string;
+	}
+
+	/**
 	 * Truncate the text
 	 *
 	 * @param  $text

@@ -236,6 +236,9 @@ class SQ_Models_Domain_Sq extends SQ_Models_Abstract_Domain {
 				$this->_keywords = join( ',', $keywords );
 			} elseif ( ! empty( $this->post_id ) && (int) $this->post_id > 0 ) {
 				if ( $keywords = get_post_meta( $this->post_id, '_sq_keywords', true ) ) {
+					if(is_array($keywords)){
+						$keywords = join( ',', $keywords );
+					}
 					$this->_keywords = $keywords;
 				}
 			}

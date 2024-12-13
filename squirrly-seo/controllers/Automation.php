@@ -5,132 +5,6 @@ class SQ_Controllers_Automation extends SQ_Classes_FrontController {
 
 	public $pages = array();
 
-	function init() {
-		$tab = preg_replace( "/[^a-zA-Z0-9]/", "", SQ_Classes_Helpers_Tools::getValue( 'tab', 'types' ) );
-
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap-reboot' );
-		if ( is_rtl() ) {
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'popper' );
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap.rtl' );
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'rtl' );
-		} else {
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap' );
-		}
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap-select' );
-
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'switchery' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'fontawesome' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'global' );
-
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'assistant' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'navbar' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'seosettings' );
-
-		if ( method_exists( $this, $tab ) ) {
-			call_user_func( array( $this, $tab ) );
-		}
-
-		if ( function_exists( 'wp_enqueue_media' ) ) {
-			wp_enqueue_media();
-			wp_enqueue_style( 'media-views' );
-		}
-
-		$this->show_view( 'Automation/' . esc_attr( ucfirst( $tab ) ) );
-
-		//get the modal window for the assistant popup
-		echo SQ_Classes_ObjController::getClass( 'SQ_Models_Assistant' )->getModal();
-	}
-
-	public function types() {
-		add_filter( 'sq_automation_validate_pattern', function ( $pattern ) {
-
-			if ( in_array( $pattern, array(
-				'elementor_library',
-				'ct_template',
-				'oxy_user_library',
-				'fusion_template',
-				'shop_2'
-			) ) ) {
-				return false;
-			}
-
-			if ( in_array( $pattern, array_keys( SQ_Classes_Helpers_Tools::getOption( 'patterns' ) ) ) ) {
-				return false;
-			}
-
-			return true;
-
-		} );
-	}
-
-	public function automation() {
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'highlight' );
-		SQ_Classes_ObjController::getClass( 'SQ_Controllers_Patterns' )->init();
-
-		add_filter( 'sq_jsonld_types', function ( $jsonld_types, $post_type ) {
-			if ( in_array( $post_type, array(
-				'search',
-				'category',
-				'tag',
-				'archive',
-				'attachment',
-				'404',
-				'tax-post_tag',
-				'tax-post_cat',
-				'tax-product_tag',
-				'tax-product_cat'
-			) ) ) {
-				$jsonld_types = array( 'website' );
-			}
-			if ( in_array( $post_type, array( 'home', 'shop' ) ) ) {
-				$jsonld_types = array( 'website', 'local store', 'local restaurant' );
-			}
-			if ( $post_type == 'profile' ) {
-				$jsonld_types = array( 'profile' );
-			}
-			if ( $post_type == 'product' ) {
-				$jsonld_types = array( 'product', 'video' );
-			}
-
-			return $jsonld_types;
-		}, 11, 2 );
-
-		add_filter( 'sq_pattern_item', function ( $pattern ) {
-			$itemname = ucwords( str_replace( array( '-', '_' ), ' ', esc_attr( $pattern ) ) );
-			if ( $pattern == 'tax-product_cat' ) {
-				$itemname = "Product Category";
-			} elseif ( $pattern == 'tax-product_tag' ) {
-				$itemname = "Product Tag";
-			}
-
-			return $itemname;
-		} );
-
-		add_filter( 'sq_automation_patterns', function ( $patterns ) {
-
-			if ( ! empty( $patterns ) ) {
-				foreach ( $patterns as $pattern => $type ) {
-					if ( in_array( $pattern, array(
-						'product',
-						'shop',
-						'tax-product_cat',
-						'tax-product_tag',
-						'tax-product_shipping_class'
-					) ) ) {
-						if ( ! SQ_Classes_Helpers_Tools::isEcommerce() ) {
-							unset( $patterns[ $pattern ] );
-						}
-					}
-				}
-			}
-
-			return $patterns;
-
-		} );
-
-	}
-
-
 	/**
 	 * Called when action is triggered
 	 *
@@ -160,6 +34,9 @@ class SQ_Controllers_Automation extends SQ_Classes_FrontController {
 					SQ_Classes_Helpers_Tools::saveOptions( '404_url_redirect', SQ_Classes_Helpers_Tools::getValue( '404_url_redirect' ) );
 					SQ_Classes_Helpers_Tools::saveOptions( 'sq_attachment_redirect', SQ_Classes_Helpers_Tools::getValue( 'sq_attachment_redirect' ) );
 					SQ_Classes_Helpers_Tools::saveOptions( 'patterns', SQ_Classes_Helpers_Tools::getValue( 'patterns' ) );
+
+					//trigger action after settings are saved
+					do_action( 'sq_save_settings_after', $_POST );
 				}
 
 				if ( SQ_Classes_Helpers_Tools::isAjax() ) {

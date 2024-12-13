@@ -806,13 +806,13 @@ class SQ_Models_Compatibility {
 	}
 
 	/**
-	 * Prevent other plugins from loading styles in Squirrly SEO Configuration
+	 * Prevent other plugins from loading styles in Squirrly Technical SEO
 	 * > Only called on Squirrly Settings pages
 	 */
 	public function fixEnqueueErrors() {
 		global $sq_fullscreen, $wp_styles, $wp_scripts;
 
-		//deregister other plugins styles to prevent layout issues in Squirrly SEO Configuration pages
+		//deregister other plugins styles to prevent layout issues in Squirrly Technical SEO pages
 		if ( $sq_fullscreen ) {
 			if ( isset( $wp_styles->queue ) && ! empty( $wp_styles->queue ) ) {
 				foreach ( $wp_styles->queue as $name => $style ) {

@@ -844,7 +844,7 @@ class SQ_Classes_RemoteController
 
     /********************************
      * 
-     * KEYWORD RESEARCH 
+     * Keyword RESEARCH
      ****************/
 
     /**

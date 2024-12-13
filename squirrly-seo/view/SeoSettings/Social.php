@@ -505,7 +505,7 @@ if ( ! isset( $view ) ) {
                     </h5>
                     <ul class="mx-4">
                         <li class="text-left"><?php echo esc_html__( "Once the Squirrly SEO settings for social media are activated, the process is made automatically and all the website URLs will have the right look when shared on Social Media.", 'squirrly-seo' ); ?></li>
-                        <li class="text-left"><?php echo sprintf( esc_html__( "Use %s Bulk SEO %s to configure Open Graph Settings and Twitter Card Settings for each page on your website.", 'squirrly-seo' ), '<a href="' . esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_bulkseo', 'bulkseo' ) ) . '" target="_blank">', '</a>' ); ?></li>
+                        <li class="text-left"><?php echo sprintf( esc_html__( "Use %s Bulk SEO %s to configure Open Graph Settings and Twitter Card Settings for each page on your website.", 'squirrly-seo' ), '<a href="' . esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_assistant', 'bulkseo' ) ) . '" target="_blank">', '</a>' ); ?></li>
                     </ul>
                 </div>
 

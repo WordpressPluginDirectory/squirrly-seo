@@ -237,15 +237,15 @@ if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_pattern' ) || ! $view->post
 
                             <div class="sq-col-12 sq-m-0 sq-px-0 sq-py-3">
 
-                                <form method="get" target="_blank" action="https://developers.facebook.com/tools/debug/">
+                                <form class="sq-position-relative" style="z-index: 1" method="get" target="_blank" action="https://developers.facebook.com/tools/debug/" >
                                     <input type="hidden" name="q" value="<?php echo esc_attr( $view->post->url ) ?>">
                                     <button type="submit" class="sq-btn sq-btn-light sq-btn-sm sq-px-4 sq-mx-2  sq-float-right">
-                                        <i class="fa-brands fa-facebook-f"></i> <?php echo esc_html__( "Validate Snippet", 'squirrly-seo-pack' ) ?>
+                                        <i class="fasq-brands fa-facebook-f"></i> <?php echo esc_html__( "Validate Snippet", 'squirrly-seo-pack' ) ?>
                                     </button>
                                 </form>
 
-                                <div class="sq_message"><?php echo esc_html__( "How this page appears on Social Media", 'squirrly-seo' ) ?>
-                                    :
+                                <div class="sq_message">
+                                    <?php echo esc_html__( "How this page appears on Social Media", 'squirrly-seo' ) ?>:
                                 </div>
 
                             </div>
