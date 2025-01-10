@@ -35,12 +35,27 @@ class SQ_Models_Services_Robots extends SQ_Models_Abstract_Seo {
 		}
 		$robots .= "\n\n";
 
-		$robots_permission = SQ_Classes_Helpers_Tools::getOption( 'sq_robots_permission' );
-		if ( ! empty( $robots_permission ) ) {
-			foreach ( (array) $robots_permission as $robot_txt ) {
-				$robots .= $robot_txt . "\n";
-			}
+		$robots_permission = (array) SQ_Classes_Helpers_Tools::getOption( 'sq_robots_permission' );
+		$robots_permission = array_filter( $robots_permission );
+
+		if(empty($robots_permission)){
+			// If no custom robots permissions are set, use the default rules
+			$robots_permission = array(
+				'User-agent: *',
+				'Disallow: */trackback/',
+				'Disallow: */xmlrpc.php',
+				'Disallow: /wp-*.php',
+				'Disallow: /cgi-bin/',
+				'Disallow: /wp-admin/',
+				'Allow: */wp-content/uploads/',);
 		}
+
+		$robots_permission = array_unique( $robots_permission );
+
+		foreach (  $robots_permission as $robot_txt ) {
+			$robots .= $robot_txt . "\n";
+		}
+
 		$robots .= "\n\n";
 
 		return apply_filters( 'sq_custom_robots', $robots );

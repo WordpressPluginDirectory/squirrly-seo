@@ -18,7 +18,7 @@ class SQ_Classes_Helpers_Cache {
 		//check if sitemap cache is activated
 		if ( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_sitemap' ) && SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap_do_cache' ) ) {
 			//listen Squirrly
-			add_action( 'sq_save_settings_after', array( $this, 'invalidateCache' ) );
+			add_action( 'sq_save_settings_after', array( $this, 'listenSQHooks' ) );
 			//listen WP
 			add_action( 'save_post', array( $this, 'listenWPHooks' ), 10, 1 );
 			add_action( 'delete_post', array( $this, 'listenWPHooks' ), 10, 1 );
@@ -26,6 +26,17 @@ class SQ_Classes_Helpers_Cache {
 			add_action( 'edited_terms', array( $this, 'listenWPHooks' ), 10, 1 );
 			add_action( 'delete_term', array( $this, 'listenWPHooks' ), 10, 1 );
 		}
+	}
+
+	/**
+	 * Empty the cache on Squirrly Settings Save
+	 *
+	 * @param array $params
+	 *
+	 * @return void
+	 */
+	public function listenSQHooks( $params ) {
+		$this->invalidateCache();
 	}
 
 	/**

@@ -508,14 +508,15 @@ if ( ! isset( $view ) ) {
                                         </div>
 
                                         <div class="col-8 p-0 m-0 form-group">
-                                            <textarea class="form-control" name="robots_permission" rows="10"><?php
+                                            <?php
 	                                            $robots            = '';
 	                                            $robots_permission = SQ_Classes_Helpers_Tools::getOption( 'sq_robots_permission' );
-	                                            if ( ! empty( $robots_permission ) ) {
-		                                            echo implode( PHP_EOL, (array) SQ_Classes_Helpers_Tools::getOption( 'sq_robots_permission' ) );
-	                                            }
 
-	                                            ?></textarea>
+                                                if ( ! empty( $robots_permission ) ) {
+	                                                $robots_permission = implode( PHP_EOL, (array) $robots_permission );
+                                                }
+                                            ?>
+                                            <textarea class="form-control" name="robots_permission" rows="10"><?php echo $robots_permission ?></textarea>
 
                                             <div class="col-12 py-3 px-0 text-danger">
 												<?php echo esc_html__( "Edit the Robots.txt only if you know what you're doing. Adding wrong rules in Robots can lead to SEO ranking errors or block your posts in Google.", 'squirrly-seo' ); ?>

@@ -215,13 +215,11 @@ class SQ_Controllers_Patterns extends SQ_Classes_FrontController
 								unset($post_meta_keys[$index]);
 
 								//ignore postmeta hidden fields
-								if(apply_filters('sq_show_hidden_patterns', false)){
+								if(!apply_filters('sq_show_hidden_patterns', false)){
 									if(preg_match('/^_/', $post_meta_key) ||
 									   preg_match('/^classic-editor/', $post_meta_key) ||
-									   preg_match('/^aioseo/', $post_meta_key) ||
-									   preg_match('/^yoast/', $post_meta_key) ||
-									   preg_match('/^rank_math/', $post_meta_key) ||
-									   preg_match('/^sq_/', $post_meta_key)){
+									   preg_match('/^_edit_/', $post_meta_key) ||
+									   preg_match('/^_wp_/', $post_meta_key)){
 										continue;
 									}
 								}

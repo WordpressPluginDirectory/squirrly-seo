@@ -18,6 +18,7 @@ class SQ_Classes_Helpers_Tools
 
     public function __construct()
     {
+		// Load the options from DB
         self::$options = $this->getOptions();
 
 	    //Load the languages pack
@@ -337,14 +338,7 @@ class SQ_Classes_Helpers_Tools
 
             //Robots
             'sq_auto_robots' => 0,
-            'sq_robots_permission' => array(
-                'User-agent: *',
-                'Disallow: */trackback/',
-                'Disallow: */xmlrpc.php',
-                'Disallow: /wp-*.php',
-                'Disallow: /cgi-bin/',
-                'Disallow: /wp-admin/',
-                'Allow: */wp-content/uploads/',),
+            'sq_robots_permission' => array(),
 
             //Metas
             'sq_use' => 1,

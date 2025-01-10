@@ -35,12 +35,12 @@ class SQ_Models_Services_Noindex extends SQ_Models_Abstract_Seo {
 			$robots[] = 'noindex';
 		} else {
 			$robots[] = 'index';
+		}
 
-			if ( (int) $this->_post->sq->nofollow == 1 ) {
-				$robots[] = 'nofollow';
-			} elseif ( ! empty( $robots ) ) {
-				$robots[] = 'follow';
-			}
+		if ( (int) $this->_post->sq->nofollow == 1 ) {
+			$robots[] = 'nofollow';
+		} elseif ( ! empty( $robots ) ) {
+			$robots[] = 'follow';
 		}
 
 		return $robots;

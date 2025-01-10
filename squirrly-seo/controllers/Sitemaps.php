@@ -236,7 +236,10 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController {
 		$home_path = $this->getHomePath();
 
 		//exclude the website path
-		$path = trim( str_replace( $home_path, '', $path ), '/' );
+		if($home_path && $home_path <> '/'){
+			$path = trim( str_replace( $home_path, '', $path ), '/' );
+		}
+
 
 		//check if there is a translation
 		$this->model->setCurrentLanguage();
@@ -259,16 +262,15 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController {
 	 * @return string Full filesystem path to the root of the WordPress installation.
 	 */
 	private function getHomePath() {
-		$home    = set_url_scheme( get_option( 'home' ), 'http' );
-		$siteurl = set_url_scheme( get_option( 'siteurl' ), 'http' );
-
-		if ( ! empty( $home ) && 0 !== strcasecmp( $home, $siteurl ) ) {
-			$wp_path_rel_to_home = str_ireplace( $home, '', $siteurl ); /* $siteurl - $home */
-			$pos                 = strripos( str_replace( '\\', '/', $_SERVER['SCRIPT_FILENAME'] ), trailingslashit( $wp_path_rel_to_home ) );
-			$home_path           = substr( $_SERVER['SCRIPT_FILENAME'], 0, $pos );
-			$home_path           = trailingslashit( $home_path );
+		$home_path = '/';
+		if ( is_multisite() && defined( 'PATH_CURRENT_SITE' ) ) {
+			$path = PATH_CURRENT_SITE;
 		} else {
-			$home_path = ABSPATH;
+			$path = wp_parse_url( site_url(), PHP_URL_PATH );
+		}
+
+		if ( $path ) {
+			$home_path = trailingslashit( $path );
 		}
 
 		return str_replace( '\\', '/', $home_path );
@@ -572,6 +574,9 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController {
 								if ( isset( $patterns[ $pname ]['do_sitemap'] ) && ! $patterns[ $pname ]['do_sitemap'] ) {
 									continue;
 								} elseif ( isset( $patterns[ $pname ]['doseo'] ) && ! $patterns[ $pname ]['doseo'] ) {
+									continue;
+								} elseif ( SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap_exclude_noindex' ) &&
+								           isset( $patterns[ $pname ]['noindex'] ) && $patterns[ $pname ]['noindex'] ) {
 									continue;
 								}
 

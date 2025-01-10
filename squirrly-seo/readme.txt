@@ -4,7 +4,7 @@ Donate link: https://plugin.squirrly.co/squirrly-seo-pricing/
 Tags: SEO, AI, XML sitemap, google search console, schema
 Requires at least: 5.3
 Tested up to: 6.7
-Stable tag: 12.4.02
+Stable tag: 12.4.03
 Requires PHP: 7.0
 License: GPLv2 or later
 
@@ -230,12 +230,22 @@ Type a keyword to the right of the screen and start using Squirrly Seo. Enjoy!
 7. Squirrly SEO - SEO Briefcase
 
 == Changelog ==
+= 12.4.03 =
+Update - Add the option to add noindex with dofollow in metas for search engines to follow all the links on the page
+Update - Display publish date and modify date on translation language
+Fix - Focus Pages notification on limit reached per website and per entire account.
+Fix - Invalidate Sitemap cache on Automation settings update
+Fix - Hide post type sitemap when the post type is set as noindex in Automation
+Fix - Robots.txt customization issue
+Fix - Sitemap load issue on websites with paths
+Fix - Bulk SEO title and description fields sanitization error
+
 = 12.4.02 =
 * Update - Add sanitization on Focus Page search params to increase security
 * Update - Show the date and month in local language
-* Fixed - Correct Next Goals notification counter
-* Fixed - Fontawesome on Post Editor and Squirrly Live Assistant
-* Fixed - On keywords import from postmeta, avoid error when stored as array and not string
+* Fix - Correct Next Goals notification counter
+* Fix - Fontawesome on Post Editor and Squirrly Live Assistant
+* Fix - On keywords import from postmeta, avoid error when stored as array and not string
 
 = 12.4.01 =
 * Update - Ensured compatibility with WordPress 6.7.

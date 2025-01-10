@@ -20,6 +20,14 @@ class SQ_Models_Domain_Patterns extends SQ_Models_Abstract_Domain {
 		$this->_date = $value;
 	}
 
+	public function getDate() {
+		if($this->_date){
+			return wp_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), strtotime($this->_date) );
+		}
+
+		return $this->_date;
+	}
+
 	protected $_post_day; //Replaced with the date of the post/page
 
 	public function getPost_day() {
@@ -486,6 +494,14 @@ class SQ_Models_Domain_Patterns extends SQ_Models_Abstract_Domain {
 		if ( $value <> '' ) {
 			$this->_modified = $value;
 		}
+	}
+
+	public function getModified() {
+		if($this->_modified){
+			return wp_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), strtotime($this->_modified) );
+		}
+
+		return $this->_modified;
 	}
 
 

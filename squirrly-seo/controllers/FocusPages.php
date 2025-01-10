@@ -873,7 +873,12 @@ class SQ_Controllers_FocusPages extends SQ_Classes_FrontController {
 										SQ_Classes_Helpers_Tools::saveOptions( 'seoreport_time', false );
 									}
 								} elseif ( $focuspage->get_error_message() == 'limit_exceed' ) {
-									SQ_Classes_Error::setError( esc_html__( "You reached the maximum number of focus pages for all your websites.", 'squirrly-seo' ) . " <br /> " );
+									$this->checkin = SQ_Classes_RemoteController::checkin();
+									if(isset($this->checkin->subscription_focus_pages) && !$this->checkin->subscription_focus_pages){
+										SQ_Classes_Error::setError( sprintf(esc_html__( "You have reached the maximum number of focus pages for this website (max: %d).", 'squirrly-seo' ) . " <br /> ", (int)$this->checkin->subscription_max_focus_pages ) );
+									}else{
+										SQ_Classes_Error::setError( sprintf(esc_html__( "You have reached the maximum number of focus pages per your account (max: %d).", 'squirrly-seo' ) . " <br /> " , (int)$this->checkin->subscription_max_focus_pages_all) );
+									}
 								}
 							} else {
 								SQ_Classes_Error::setError( esc_html__( "Error! Could not add the focus page.", 'squirrly-seo' ) . " <br /> " );

@@ -1,7 +1,7 @@
 <?php defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' ); ?>
 <?php
 /*
- * Copyright (c) 2012-2024, Squirrly.
+ * Copyright (c) 2012-2025, Squirrly.
  * The copyrights to the software code in this file are licensed under the (revised) BSD open source license.
 
  * Plugin Name: Squirrly SEO (Newton)
@@ -9,7 +9,7 @@
  * Description: AI Private SEO Consultant that Brings You the Full Force of SEO: All Schema Rich Results, Inner Links, Redirects, AI Research, Real-Time SEO Content, Traffic and SEO Audits, SERP Checker.
  * Author: Squirrly
  * Author URI: https://plugin.squirrly.co
- * Version: 12.4.02
+ * Version: 12.4.03
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * Text Domain: squirrly-seo
@@ -18,9 +18,9 @@
 
 if ( ! defined( 'SQ_VERSION' ) ) {
 	/* SET THE CURRENT VERSION ABOVE AND BELOW */
-	define( 'SQ_VERSION', '12.4.02' );
+	define( 'SQ_VERSION', '12.4.03' );
 	//The last stable version
-	define( 'SQ_STABLE_VERSION', '12.4.01' );
+	define( 'SQ_STABLE_VERSION', '12.4.02' );
 	// Call config files
 	try {
 		include_once dirname( __FILE__ ) . '/config/config.php';

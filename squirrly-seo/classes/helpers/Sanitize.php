@@ -159,10 +159,18 @@ class SQ_Classes_Helpers_Sanitize {
 	}
 
 	/**
-	 * Decode the entity UTF8 base
+	 * Decode an HTML entity and return its length or an empty string
+	 *
+	 * @param string $str The string to decode and calculate length from
+	 *
+	 * @return string Returns the length of the decoded string if input is valid, otherwise returns an empty string
 	 */
 	public static function decodeEntity( $str ) {
-		return mb_strlen( html_entity_decode( $str, ENT_QUOTES ) );
+		if( is_string($str) ){
+			return mb_strlen( html_entity_decode( $str, ENT_QUOTES ) );
+		}
+
+		return '';
 	}
 
 	/**

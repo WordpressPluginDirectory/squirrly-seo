@@ -256,7 +256,7 @@ if ( ! isset( $view ) ) {
 
 
 															<?php if ( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_noindex' ) ) { ?>
-                                                                <div class="col-12 row m-0 p-0 my-5 sq_patterns_<?php echo esc_attr( $pattern ) ?>_noindex">
+                                                                <div class="col-12 row m-0 p-0 my-5">
                                                                     <div class="checker col-12 row m-0 p-0">
                                                                         <div class="col-12 p-0 sq-switch sq-switch-sm <?php echo( ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_metas' ) || ! SQ_Classes_Helpers_Tools::getOption( 'sq_auto_noindex' ) ) ? 'sq_deactivated' : '' ); ?>">
                                                                             <input type="hidden" name="patterns[<?php echo esc_attr( $pattern ) ?>][nofollow]" value="1"/>
@@ -289,7 +289,7 @@ if ( ! isset( $view ) ) {
 															<?php
 															$sitemap = SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap' );
 															if ( isset( $sitemap['sitemap-news'][1] ) && $sitemap['sitemap-news'][1] && in_array( $pattern, array_keys( $types ) ) ) { ?>
-                                                                <div class="col-12 row m-0 p-0 my-5">
+                                                                <div class="col-12 row m-0 p-0 my-5  sq_patterns_<?php echo esc_attr( $pattern ) ?>_noindex">
                                                                     <div class="checker col-12 row m-0 p-0">
                                                                         <div class="col-12 p-0 sq-switch sq-switch-sm">
                                                                             <input type="hidden" name="patterns[<?php echo esc_attr( $pattern ) ?>][google_news]" value="0"/>

@@ -148,7 +148,7 @@ class SQ_Classes_FrontController {
 		// show the admin menu and post actions
 		SQ_Classes_ObjController::getClass( 'SQ_Controllers_Menu' );
 
-		//Check cache plugin compatibility
+		//Check plugin compatibility
 		SQ_Classes_ObjController::getClass( 'SQ_Models_Compatibility' )->hookBuildersBackend();
 		SQ_Classes_ObjController::getClass( 'SQ_Models_Compatibility' )->checkMultilingual();
 	}
@@ -175,7 +175,7 @@ class SQ_Classes_FrontController {
 		/* call the API for save posts */
 		SQ_Classes_ObjController::getClass( 'SQ_Controllers_Api' );
 
-		//Check cache plugin compatibility
+		//Check plugin compatibility
 		SQ_Classes_ObjController::getClass( 'SQ_Models_Compatibility' )->checkMultilingual();
 	}
 

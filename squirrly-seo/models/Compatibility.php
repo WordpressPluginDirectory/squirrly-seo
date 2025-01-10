@@ -187,7 +187,6 @@ class SQ_Models_Compatibility {
 			add_filter( 'sq_option_patterns', function ( $patterns ) {
 
                 //get the patterns for multilingual
-
 				$language = strtolower( get_locale() );
 				$sq_ml_patterns = get_option( SQ_ML_PATTERNS );
 
@@ -213,7 +212,8 @@ class SQ_Models_Compatibility {
 			add_action( 'sq_save_settings_after', function ( $params ) {
 
                 //Only save patterns in Automation
-                if(SQ_Classes_Helpers_Tools::getValue( 'action' ) <> 'sq_seosettings_automation'){
+                if( SQ_Classes_Helpers_Tools::getValue( 'action' ) <> 'sq_seosettings_automation' ||
+                    ! SQ_Classes_Helpers_Tools::userCan( 'sq_manage_settings' ) ){
                     return;
                 }
 
@@ -238,7 +238,7 @@ class SQ_Models_Compatibility {
 					}
 					update_option( SQ_ML_PATTERNS, $sq_ml_patterns );
 				}
-			} );
+			});
 
 
 			//Check for multilingual plugins

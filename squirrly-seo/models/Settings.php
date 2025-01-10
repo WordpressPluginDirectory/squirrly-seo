@@ -20,7 +20,7 @@ class SQ_Models_Settings {
 			$links = str_replace( "\r", "", $links );
 
 			if ( ! empty( $links ) ) {
-				SQ_Classes_Helpers_Tools::$options['sq_external_exception'] = array_unique( $links );
+				SQ_Classes_Helpers_Tools::saveOptions('sq_external_exception', array_unique( $links ));
 			}
 		}
 
@@ -33,6 +33,7 @@ class SQ_Models_Settings {
 					SQ_Classes_Helpers_Tools::$options['sq_sitemap'][ $key ][1] = 0;
 				}
 			}
+
 		}
 
 		//delete other sitemap xml files from root
@@ -52,7 +53,7 @@ class SQ_Models_Settings {
 					@rename( ABSPATH . "/" . 'robots.txt', ABSPATH . "/" . 'robots_ren' . time() . '.txt' );
 				}
 
-				SQ_Classes_Helpers_Tools::$options['sq_robots_permission'] = $robots;
+				SQ_Classes_Helpers_Tools::saveOptions('sq_robots_permission', array_unique( $robots ));
 			}
 		}
 
