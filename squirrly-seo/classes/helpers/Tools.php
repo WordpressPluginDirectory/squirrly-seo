@@ -1138,7 +1138,7 @@ class SQ_Classes_Helpers_Tools
     /**
      * Set the Nonce action
      *
-     * @param  $action
+     * @param  string $action
      * @param  string $name
      * @param  bool   $referer
      * @param  bool   $echo
@@ -1224,13 +1224,21 @@ class SQ_Classes_Helpers_Tools
     /**
      * Find the string in the content
      *
-     * @param  string $content
-     * @param  string $string
+     * @param  array|string $content
+     * @param  array|string $string
      * @param  bool   $normalize
      * @return bool|false|int
      */
     public static function findStr($content, $string, $normalize = false)
     {
+		if ( is_array($content) ) {
+			$content = current($content);
+		}
+
+	    if ( is_array($string) ) {
+		    $string = current($string);
+	    }
+
         if ($normalize) {
             //Check if the search requires char normalization
             $content = SQ_Classes_Helpers_Sanitize::normalizeChars($content);

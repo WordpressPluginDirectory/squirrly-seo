@@ -233,18 +233,24 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController {
 	 * @return boolean
 	 */
 	private function validatePath( $path ) {
-		$home_path = $this->getHomePath();
 
-		//exclude the website path
-		if($home_path && $home_path <> '/'){
-			$path = trim( str_replace( $home_path, '', $path ), '/' );
+		// Trim slashes
+		$home_path = trim( $this->getHomePath(), '/' );
+		$path = trim( $path, '/' );
+
+		// Exclude the website path if exists
+		if( $home_path ){
+			$path = str_replace( $home_path, '', $path );
 		}
 
-
-		//check if there is a translation
+		// Check if there is a translation
 		$this->model->setCurrentLanguage();
 		$language = $this->model->getLanguage();
-		$language = substr( $language, 0, strpos($language, '_' ) );
+
+		// Get only the language without country
+		if( strpos($language, '_') !== false ){
+			$language = substr( $language, 0, strpos($language, '_' ) );
+		}
 
 		//if there is a translation
 		if ( $language ) {
@@ -252,6 +258,7 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController {
 			$path = trim( str_replace( array('zh-hans', 'zh-hant', 'lat-am', $language), '', $path ), '/' );
 		}
 
+		// Check if the path is a language or a term
 		return apply_filters( 'sq_sitemap_path_validation', ( strpos( $path, '/' ) === false ) );
 
 	}
@@ -263,11 +270,8 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController {
 	 */
 	private function getHomePath() {
 		$home_path = '/';
-		if ( is_multisite() && defined( 'PATH_CURRENT_SITE' ) ) {
-			$path = PATH_CURRENT_SITE;
-		} else {
-			$path = wp_parse_url( site_url(), PHP_URL_PATH );
-		}
+
+		$path = wp_parse_url( site_url(), PHP_URL_PATH );
 
 		if ( $path ) {
 			$home_path = trailingslashit( $path );
@@ -942,22 +946,34 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController {
 			}
 		}
 
-		if ( $this->model->language <> '' ) {
-			if ( function_exists( 'pll_home_url' ) ) {
-				return pll_home_url( $this->model->language ) . $sitemap;
-			} elseif ( isset( $_SERVER['REQUEST_URI'] ) && $_SERVER['REQUEST_URI'] <> '' ) {
-				if ( strpos( $this->model->language, '_' ) !== false ) {
-					$language = substr( $this->model->language, 0, strpos( $this->model->language, '_' ) );
-					if ( preg_match( "/\/$language\//", $_SERVER['REQUEST_URI'] ) && ! preg_match( "/\/$language\//", trailingslashit( home_url() ) ) ) {
-						return esc_url( trailingslashit( home_url() ) ) . $language . '/' . $sitemap;
-					}
+		if ( isset( $_SERVER['REQUEST_URI'] ) && $_SERVER['REQUEST_URI'] <> '' ) {
+			// Check if there is a translation
+			$this->model->setCurrentLanguage();
+			$language = $this->model->getLanguage();
+
+			// Get only the language without country
+			if ( strpos( $language, '_' ) !== false ) {
+				$language = substr( $language, 0, strpos( $language, '_' ) );
+			}
+
+			if ( $language ) {
+				if ( preg_match( "/\/$language\//", $_SERVER['REQUEST_URI'] ) && ! preg_match( "/\/$language\//", trailingslashit( home_url() ) ) ) {
+					return trailingslashit( home_url() ) . $language . '/' . $sitemap;
 				}
 			}
 		}
 
-		return esc_url( trailingslashit( home_url() ) ) . $sitemap;
+		return trailingslashit( home_url() )  . $sitemap;
 	}
 
+	/**
+	 * Get the KML URl
+	 *
+	 * @param $sitemap
+	 * @param $page
+	 *
+	 * @return string
+	 */
 	public function getKmlUrl( $sitemap, $page = null ) {
 		$sq_sitemap = SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap' );
 
@@ -973,7 +989,7 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController {
 			}
 		}
 
-		return esc_url( trailingslashit( home_url() ) ) . $sitemap;
+		return trailingslashit( home_url() ) . $sitemap;
 	}
 
 

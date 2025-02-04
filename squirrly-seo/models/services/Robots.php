@@ -50,8 +50,6 @@ class SQ_Models_Services_Robots extends SQ_Models_Abstract_Seo {
 				'Allow: */wp-content/uploads/',);
 		}
 
-		$robots_permission = array_unique( $robots_permission );
-
 		foreach (  $robots_permission as $robot_txt ) {
 			$robots .= $robot_txt . "\n";
 		}

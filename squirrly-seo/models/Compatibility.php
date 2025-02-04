@@ -105,6 +105,11 @@ class SQ_Models_Compatibility {
 				add_filter( 'sq_lateloading', '__return_true' );
 			}
 
+			//Compatibility with Polylang Plugin
+			if ( SQ_Classes_Helpers_Tools::isPluginInstalled( 'polylang/polylang.php' ) || SQ_Classes_Helpers_Tools::isPluginInstalled( 'polylang-pro/polylang.php' ) ) {
+				add_filter( 'sq_lateloading', '__return_true' );
+			}
+
 			//Compatibility with Swis Performance Plugin
 			if ( defined( 'SWIS_PLUGIN_VERSION' ) ) {
 				add_filter( 'sq_lateloading', '__return_true' );

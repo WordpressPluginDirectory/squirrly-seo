@@ -4,7 +4,7 @@ Donate link: https://plugin.squirrly.co/squirrly-seo-pricing/
 Tags: SEO, AI, XML sitemap, google search console, schema
 Requires at least: 5.3
 Tested up to: 6.7
-Stable tag: 12.4.03
+Stable tag: 12.4.04
 Requires PHP: 7.0
 License: GPLv2 or later
 
@@ -230,6 +230,13 @@ Type a keyword to the right of the screen and start using Squirrly Seo. Enjoy!
 7. Squirrly SEO - SEO Briefcase
 
 == Changelog ==
+= 12.4.04 =
+Fix - Sitemap path validation when multilingual plugins are activated
+Fix - Robots TXT files customization issue
+Fix - Sanitization warning on different type of search input
+Fix - Rest Api calls warnings when no keywords found in a post
+Fix - Javascript error on SEO Links when open in external tab
+
 = 12.4.03 =
 Update - Add the option to add noindex with dofollow in metas for search engines to follow all the links on the page
 Update - Display publish date and modify date on translation language

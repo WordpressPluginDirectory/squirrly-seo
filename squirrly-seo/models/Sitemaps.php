@@ -641,7 +641,7 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo {
 		}
 
 		//Prevent sitemap from braking due to & in URLs
-		$xml['loc']        = esc_url( apply_filters( 'sq_sitemap_permalink', $post->url ) );
+		$xml['loc']        = esc_url( apply_filters( 'sq_sitemap_permalink', $post->url, $post->ID, $this->language ) );
 		$xml['lastmod']    = $this->lastModified( $post );
 		$xml['changefreq'] = $this->frequency[ SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap_frequency' ) ][ $this->sitemap ][1];
 		$xml['priority']   = $this->frequency[ SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap_frequency' ) ][ $this->sitemap ][0];

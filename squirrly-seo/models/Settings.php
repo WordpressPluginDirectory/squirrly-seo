@@ -53,7 +53,7 @@ class SQ_Models_Settings {
 					@rename( ABSPATH . "/" . 'robots.txt', ABSPATH . "/" . 'robots_ren' . time() . '.txt' );
 				}
 
-				SQ_Classes_Helpers_Tools::saveOptions('sq_robots_permission', array_unique( $robots ));
+				SQ_Classes_Helpers_Tools::saveOptions('sq_robots_permission', $robots);
 			}
 		}
 

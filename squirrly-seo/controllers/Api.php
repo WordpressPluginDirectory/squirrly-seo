@@ -223,7 +223,7 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController {
 	/**
 	 * Get data for the Focus Page Audit
 	 *
-	 * @param \WP_REST_Request $request
+	 * @param WP_REST_Request $request
 	 */
 	public function getData( WP_REST_Request $request ) {
 
@@ -313,32 +313,36 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController {
 				$select_table = $wpdb->prepare( "SELECT ID FROM `$wpdb->posts` WHERE `post_status` = %s ORDER BY ID DESC LIMIT %d,%d", 'publish', $start, $limit );
 				if ( $ids = $wpdb->get_col( $select_table ) ) {
 					$query = $wpdb->prepare( "SELECT `ID`, `post_content` FROM `$wpdb->posts` as p WHERE ID in (" . join( ',', array_values( $ids ) ) . ") AND (LOWER(p.post_content) REGEXP %s)", $regex );
-				}
 
-				if ( ! $urls = wp_cache_get( md5( $query ) ) ) {
-					//prepare the url for query
-					$urls = array();
+					if ( ! $urls = wp_cache_get( md5( $query ) ) ) {
+						//prepare the url for query
+						$urls = array();
 
-					if ( $rows = $wpdb->get_results( $query ) ) {
-						if ( ! empty( $rows ) ) {
-							foreach ( $rows as $row ) {
-								if ( untrailingslashit( get_permalink( $row->ID ) ) <> $url ) {
-									$row->content = str_replace( '\/', '/', $row->content );
+						if ( $rows = $wpdb->get_results( $query ) ) {
+							if ( ! empty( $rows ) ) {
+								foreach ( $rows as $row ) {
+									if ( untrailingslashit( get_permalink( $row->ID ) ) <> $url ) {
+										$row->content = str_replace( '\/', '/', $row->content );
 
-									$urls[] = array(
-										'post_id'   => $row->ID,
-										'permalink' => get_permalink( $row->ID ),
-										'innerlink' => strpos( $row->content, untrailingslashit($url) ) !== false
-									);
+										$urls[] = array(
+											'post_id'   => $row->ID,
+											'permalink' => get_permalink( $row->ID ),
+											'innerlink' => strpos( $row->content, untrailingslashit($url) ) !== false
+										);
+									}
 								}
 							}
 						}
+
+						wp_cache_set( md5( $query ), $urls, '', 3600 );
 					}
+
+					$response = array( 'keyword' => $keyword, 'urls' => $urls );
+				}else{
+
+					$response = array( 'keyword' => '', 'urls' => array() );
 				}
 
-				wp_cache_set( md5( $query ), $urls, '', 3600 );
-
-				$response = array( 'keyword' => $keyword, 'urls' => $urls );
 				break;
 			case 'posts':
 				//get post inner links

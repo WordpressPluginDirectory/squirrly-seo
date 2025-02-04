@@ -1083,7 +1083,8 @@ class SQ_Models_Frontend {
 
 					if ( strpos( $newlink, 'target=' ) === false ) {
 						$newlink = str_replace( '<a', '<a target="_blank" ', $newlink );
-					} elseif ( strpos( $link, '_blank' ) === false ) {
+					} elseif ( strpos( $link, '_blank' ) === false &&
+					           (strpos( $link, '_self' ) !== false || strpos( $link, '_parent' ) !== false || strpos( $link, '_top' ) !== false ) ) {
 						$newlink = preg_replace( '/(target=[\'"])([^\'"]+)([\'"])/i', '$1_blank$3', $newlink );
 					}
 

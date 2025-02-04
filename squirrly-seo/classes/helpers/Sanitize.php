@@ -22,6 +22,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return mixed|null|string|string[]
 	 */
 	public static function clearTitle( $title ) {
+
+		if( ! is_string( $title ) ) {
+			return '';
+		}
+
 		if ( $title <> '' ) {
 
 			$seps  = json_decode( SQ_ALL_SEP, true );
@@ -52,6 +57,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return null|string|string[]
 	 */
 	public static function clearDescription( $description ) {
+
+		if( ! is_string( $description ) ) {
+			return '';
+		}
+
 		if ( $description <> '' ) {
 
 			$seps        = json_decode( SQ_ALL_SEP, true );
@@ -132,11 +142,16 @@ class SQ_Classes_Helpers_Sanitize {
 	/**
 	 * Remove the Shortcode from a string
 	 *
-	 * @param  $string
+	 * @param string $string
 	 *
 	 * @return mixed|null|string|string[]
 	 */
 	public static function removeShortcode( $string ) {
+
+		if( ! is_string( $string ) ) {
+			return $string;
+		}
+
 		if ( $string <> '' && strpos( $string, '[' ) !== false && strpos( $string, ']' ) !== false ) {
 			//compatibility with SEO Generator plugin
 			if ( strpos( $string, '[search_term]' ) == false && strpos( $string, '[location]' ) == false ) {
@@ -166,22 +181,29 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string Returns the length of the decoded string if input is valid, otherwise returns an empty string
 	 */
 	public static function decodeEntity( $str ) {
-		if( is_string($str) ){
-			return mb_strlen( html_entity_decode( $str, ENT_QUOTES ) );
+
+		if( ! is_string( $str ) ) {
+			return '';
 		}
 
-		return '';
+		return mb_strlen( html_entity_decode( $str, ENT_QUOTES ) );
+
 	}
 
 	/**
 	 * Escape the keyword for tags and urls
 	 *
-	 * @param  $keyword
+	 * @param string $keyword
 	 * @param string $for
 	 *
 	 * @return string|void
 	 */
 	public static function escapeKeyword( $keyword, $for = 'all' ) {
+
+		if( ! is_string( $keyword ) ) {
+			return '';
+		}
+
 		switch ( $for ) {
 			case 'url':
 				$keyword = urlencode( esc_attr( $keyword ) );
@@ -198,11 +220,16 @@ class SQ_Classes_Helpers_Sanitize {
 
 	/**
 	 * Sanitize the search
-	 * @param $string
+	 * @param string $string
 	 *
 	 * @return array|string|string[]|null
 	 */
 	public static function sanitizeSearch( $string ) {
+
+		if( ! is_string( $string ) ) {
+			return '';
+		}
+
 		$string = preg_replace("/[\(\)\=\%]/","",$string);
 		$string = preg_replace("/\+/"," ",$string);
 
@@ -212,13 +239,18 @@ class SQ_Classes_Helpers_Sanitize {
 	/**
 	 * Truncate the text
 	 *
-	 * @param  $text
+	 * @param string $text
 	 * @param int $min
 	 * @param int $max
 	 *
 	 * @return bool|mixed|null|string|string[]
 	 */
 	public static function truncate( $text, $min = 100, $max = 110 ) {
+
+		if( ! is_string( $text ) ) {
+			return '';
+		}
+
 		//make sure they are values
 		$max = (int) $max;
 		$min = (int) $min;
@@ -605,6 +637,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string
 	 */
 	public static function checkGoogleWTCode( $code ) {
+
+		if( ! is_string( $code ) ) {
+			return '';
+		}
+
 		if ( $code <> '' ) {
 			$code = stripslashes( $code );
 			if ( strpos( $code, 'content' ) !== false ) {
@@ -636,6 +673,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string
 	 */
 	public static function checkGoogleAnalyticsCode( $code ) {
+
+		if( ! is_string( $code ) ) {
+			return '';
+		}
+
 		if ( $code <> '' ) {
 			$code = stripslashes( $code );
 
@@ -670,6 +712,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string
 	 */
 	public static function checkFacebookAdminCode( $code ) {
+
+		if( ! is_string( $code ) ) {
+			return '';
+		}
+
 		if ( $code <> '' ) {
 			$code = trim( $code );
 
@@ -709,6 +756,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string
 	 */
 	public static function checkPinterestCode( $code ) {
+
+		if( ! is_string( $code ) ) {
+			return '';
+		}
+
 		if ( $code <> '' ) {
 			$code = stripslashes( $code );
 
@@ -740,6 +792,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string
 	 */
 	public static function checkBingWTCode( $code ) {
+
+		if( ! is_string( $code ) ) {
+			return '';
+		}
+
 		if ( $code <> '' ) {
 			$code = stripslashes( $code );
 
@@ -772,6 +829,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string
 	 */
 	public static function checkBaiduWTCode( $code ) {
+
+		if( ! is_string( $code ) ) {
+			return '';
+		}
+
 		if ( $code <> '' ) {
 			$code = stripslashes( $code );
 
@@ -804,6 +866,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string
 	 */
 	public static function checkYandexWTCode( $code ) {
+
+		if( ! is_string( $code ) ) {
+			return '';
+		}
+
 		if ( $code <> '' ) {
 			$code = stripslashes( $code );
 
@@ -838,6 +905,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string
 	 */
 	public static function checkTwitterAccount( $account ) {
+
+		if( ! is_string( $account ) ) {
+			return '';
+		}
+
 		if ( $account <> '' && strpos( $account, '//' ) === false ) {
 			$account = 'https://twitter.com/' . $account;
 		}
@@ -853,6 +925,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string
 	 */
 	public static function checkTwitterAccountName( $account ) {
+
+		if( ! is_string( $account ) ) {
+			return '';
+		}
+
 		if ( $account <> '' && strpos( $account, '//' ) !== false ) {
 			$account = parse_url( $account, PHP_URL_PATH );
 			if ( $account <> '' ) {
@@ -874,6 +951,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string
 	 */
 	public static function checkGoogleAccount( $account ) {
+
+		if( ! is_string( $account ) ) {
+			return '';
+		}
+
 		if ( $account <> '' && strpos( $account, '//' ) === false ) {
 			$account = 'https://plus.google.com/' . $account;
 		}
@@ -889,6 +971,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string
 	 */
 	public static function checkLinkeinAccount( $account ) {
+
+		if( ! is_string( $account ) ) {
+			return '';
+		}
+
 		if ( $account <> '' && strpos( $account, '//' ) === false ) {
 			$account = 'https://www.linkedin.com/in/' . $account;
 		}
@@ -904,6 +991,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string
 	 */
 	public static function checkFacebookAccount( $account ) {
+
+		if( ! is_string( $account ) ) {
+			return '';
+		}
+
 		if ( $account <> '' && strpos( $account, '//' ) === false ) {
 			$account = 'https://www.facebook.com/' . $account;
 		}
@@ -919,6 +1011,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string
 	 */
 	public static function checkPinterestAccount( $account ) {
+
+		if( ! is_string( $account ) ) {
+			return '';
+		}
+
 		if ( $account <> '' && strpos( $account, '//' ) === false ) {
 			$account = 'https://www.pinterest.com/' . $account;
 		}
@@ -934,6 +1031,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string
 	 */
 	public static function checkInstagramAccount( $account ) {
+
+		if( ! is_string( $account ) ) {
+			return '';
+		}
+
 		if ( $account <> '' && strpos( $account, '//' ) === false ) {
 			$account = 'https://www.instagram.com/' . $account;
 		}
@@ -949,6 +1051,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string
 	 */
 	public static function checkYoutubeAccount( $account ) {
+
+		if( ! is_string( $account ) ) {
+			return '';
+		}
+
 		if ( $account <> '' && strpos( $account, '//' ) === false ) {
 			if ( strpos( $account, 'user/' ) === false && strpos( $account, 'channel/' ) === false ) {
 				$account = 'https://www.youtube.com/channel/' . $account;
@@ -964,6 +1071,11 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string
 	 */
 	public static function checkFacebookPixel( $code ) {
+
+		if( ! is_string( $code ) ) {
+			return '';
+		}
+
 		if ( $code <> '' ) {
 			if ( (int) $code == 0 ) {
 				SQ_Classes_Error::setError( esc_html__( "The code for Facebook Pixel must only contain numbers.", 'squirrly-seo' ) );
@@ -980,6 +1092,7 @@ class SQ_Classes_Helpers_Sanitize {
 	 * @return string
 	 */
 	public static function checkFacebookApp( $code ) {
+
 		if ( $code <> '' ) {
 			if ( (int) $code == 0 ) {
 				SQ_Classes_Error::setError( esc_html__( "The code for Facebook App must only contain numbers.", 'squirrly-seo' ) );
