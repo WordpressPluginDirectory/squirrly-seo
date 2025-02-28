@@ -9,7 +9,7 @@
  * Description: AI Private SEO Consultant that Brings You the Full Force of SEO: All Schema Rich Results, Inner Links, Redirects, AI Research, Real-Time SEO Content, Traffic and SEO Audits, SERP Checker.
  * Author: Squirrly
  * Author URI: https://plugin.squirrly.co
- * Version: 12.4.04
+ * Version: 12.4.05
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * Text Domain: squirrly-seo
@@ -18,9 +18,9 @@
 
 if ( ! defined( 'SQ_VERSION' ) ) {
 	/* SET THE CURRENT VERSION ABOVE AND BELOW */
-	define( 'SQ_VERSION', '12.4.04' );
+	define( 'SQ_VERSION', '12.4.05' );
 	//The last stable version
-	define( 'SQ_STABLE_VERSION', '12.4.02' );
+	define( 'SQ_STABLE_VERSION', '12.4.04' );
 	// Call config files
 	try {
 		include_once dirname( __FILE__ ) . '/config/config.php';
