@@ -230,7 +230,7 @@ class SQ_Classes_Helpers_Sanitize {
 			return '';
 		}
 
-		$string = preg_replace("/[\(\)\=\%]/","",$string);
+		$string = preg_replace("/[\`\'\"\[\]\{\}\(\)\=\%]/","",$string);
 		$string = preg_replace("/\+/"," ",$string);
 
 		return $string;

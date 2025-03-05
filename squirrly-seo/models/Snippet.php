@@ -9,6 +9,9 @@ class SQ_Models_Snippet {
 		global $wp_query;
 		$pages = array();
 
+		// Sanitize the search
+		$search = SQ_Classes_Helpers_Sanitize::sanitizeSearch( $search );
+
 		//remove other plugins filters
 		wp_reset_query();
 		remove_all_filters( 'pre_get_posts' );
@@ -19,7 +22,6 @@ class SQ_Models_Snippet {
 		$post_type     = SQ_Classes_Helpers_Tools::getValue( 'stype', 'post' );
 		$post_per_page = SQ_Classes_Helpers_Tools::getValue( 'cnt', 10 );
 		$post_status   = SQ_Classes_Helpers_Tools::getValue( 'sstatus', 'all' );
-		$search_all    = false;
 
 		//Set publish post status for Focus Pages and Audit Pages
 		$page = apply_filters( 'sq_page', SQ_Classes_Helpers_Tools::getValue( 'page', false ) );
@@ -31,23 +33,16 @@ class SQ_Models_Snippet {
 			$post_status = '';
 		}
 
-		if ( $search <> '' ) {
-			if ( strpos( $search, '#all' ) !== false || strpos( $search, '/' ) !== false ) {
-				$search_all = true;
-				$search     = trim( str_replace( '#all', '', $search ) );
-			}
-		} else {
-			$patterns = SQ_Classes_Helpers_Tools::getOption( 'patterns' );
-			if ( ! isset( $patterns[ $post_type ] ) ) {
-				$patterns[ $post_type ] = $patterns['custom'];
-			}
+		$patterns = SQ_Classes_Helpers_Tools::getOption( 'patterns' );
+		if ( ! isset( $patterns[ $post_type ] ) ) {
+			$patterns[ $post_type ] = $patterns['custom'];
 		}
 
 		//Set the Labels and Categories
 		SQ_Classes_ObjController::getClass( 'SQ_Models_BulkSeo' )->init();
 
 		//If home then show the home url
-		if ( ( $post_type == 'home' || $search_all ) && ( $post_status == '' || $post_status == 'publish' ) ) {
+		if (  $post_type == 'home' && ( $post_status == '' || $post_status == 'publish' ) ) {
 			if ( $post = $this->setHomePage() ) {
 				$page = SQ_Classes_ObjController::getClass( 'SQ_Models_BulkSeo' )->parsePage( $post, $labels )->getPage();
 
@@ -67,13 +62,13 @@ class SQ_Models_Snippet {
 			$types[] = 'shop';
 		}
 
-		if ( ! empty( $types ) && in_array( $post_type, $types ) || $search_all ) {
+		if ( ! empty( $types ) && in_array( $post_type, $types ) ) {
 
 			//get all the post types from database
 			//filter by all in case of #all search
 			//filter by page in case of shop post type
 			$query = array(
-				'post_type'      => ( $search_all || $post_id ? array_keys( $types ) : ( $post_type <> 'shop' ? $post_type : 'page' ) ),
+				'post_type'      => ( $post_id ? array_keys( $types ) : ( $post_type <> 'shop' ? $post_type : 'page' ) ),
 				'post_status'    => $statuses,
 				'posts_per_page' => $post_per_page,
 				'paged'          => $paged,
@@ -82,7 +77,7 @@ class SQ_Models_Snippet {
 			);
 
 			//if there is a limit given
-			if ( $search_all || ( $search <> '' && strpos( $search, '/' ) === false ) ) {
+			if ( $search <> '' && strpos( $search, '/' ) === false ) {
 				$query['posts_per_page'] = 1000;
 			}
 
@@ -121,7 +116,7 @@ class SQ_Models_Snippet {
 					return $where;
 				}, 10, 1 );
 
-			} elseif ( ! $search_all && $search <> '' ) {
+			} elseif ( $search <> '' ) {
 				$query['s'] = $search;
 			}
 
@@ -158,7 +153,7 @@ class SQ_Models_Snippet {
 								}
 
 								//Don't let other post types to pass
-								if ( ! $search_all && ! $post_id && isset( $page->post_type ) && ! in_array( $page->post_type, (array) $query['post_type'] ) ) {
+								if ( ! $post_id && isset( $page->post_type ) && ! in_array( $page->post_type, (array) $query['post_type'] ) ) {
 									continue;
 								}
 
@@ -182,14 +177,13 @@ class SQ_Models_Snippet {
 			$post_type = str_replace( 'tax-', '', $post_type );
 		}
 
-		if ( in_array( $post_type, $taxonomies ) || $search_all ) {
-			if ( ! $search_all ) {
-				$pages = array();
-			}
+		if ( in_array( $post_type, $taxonomies ) ) {
+			$pages = array();
+
 
 			$query = array(
 				'public'     => true,
-				'taxonomy'   => ( $search_all ? $taxonomies : $post_type ),
+				'taxonomy'   => $post_type,
 				'hide_empty' => false,
 			);
 
@@ -268,7 +262,7 @@ class SQ_Models_Snippet {
 
 		//Get the user profile from database
 		//search in user profile
-		if ( $post_type == "profile" || $search_all ) {
+		if ( $post_type == "profile" ) {
 			$blog_id = get_current_blog_id();
 			$args    = array(
 				'blog_id'      => $blog_id,

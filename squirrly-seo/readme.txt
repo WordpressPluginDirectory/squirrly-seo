@@ -4,7 +4,7 @@ Donate link: https://plugin.squirrly.co/squirrly-seo-pricing/
 Tags: SEO, AI, XML sitemap, google search console, schema
 Requires at least: 5.3
 Tested up to: 6.7
-Stable tag: 12.4.05
+Stable tag: 12.4.06
 Requires PHP: 7.0
 License: GPLv2 or later
 
@@ -230,9 +230,10 @@ Type a keyword to the right of the screen and start using Squirrly Seo. Enjoy!
 7. Squirrly SEO - SEO Briefcase
 
 == Changelog ==
-= 12.4.05 =
+= 12.4.06 =
 Update - Squirrly Live Assistant to prevent too many ajax triggers on Gutenberg saving process
 Update - Compatibility with Polylang plugin
+Update - Security updates on search parameter in Focus Pages, Audits, Bulk SEO
 
 = 12.4.04 =
 Fix - Sitemap path validation when multilingual plugins are activated
