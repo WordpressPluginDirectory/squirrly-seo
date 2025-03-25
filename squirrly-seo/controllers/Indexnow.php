@@ -39,7 +39,9 @@ class SQ_Controllers_Indexnow extends SQ_Classes_FrontController
         $tab = preg_replace("/[^a-zA-Z0-9]/", "", SQ_Classes_Helpers_Tools::getValue('tab', 'submit'));
 
         if (method_exists($this, $tab)) {
-            call_user_func(array($this, $tab));
+	        if ( SQ_Classes_Helpers_Tools::userCan( 'sq_manage_snippet' ) ) {
+				call_user_func(array($this, $tab));
+	        }
         }
 
         $this->show_view('Indexnow/' . esc_attr(ucfirst($tab)));

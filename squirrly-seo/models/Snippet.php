@@ -180,7 +180,6 @@ class SQ_Models_Snippet {
 		if ( in_array( $post_type, $taxonomies ) ) {
 			$pages = array();
 
-
 			$query = array(
 				'public'     => true,
 				'taxonomy'   => $post_type,

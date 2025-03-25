@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
 class SQ_Controllers_Onboarding extends SQ_Classes_FrontController {
 
 	public $metas;
-	public $pages;
+	public $pages = false;
 	public $focuspages;
 	public $platforms;
 	public $active_plugins;
@@ -18,24 +18,12 @@ class SQ_Controllers_Onboarding extends SQ_Classes_FrontController {
 
 		$tab = preg_replace( "/[^a-zA-Z0-9]/", "", SQ_Classes_Helpers_Tools::getValue( 'tab', 'step1' ) );
 
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap-reboot' );
-		if ( is_rtl() ) {
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'popper' );
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap.rtl' );
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'rtl' );
-		} else {
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap' );
-		}
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'switchery' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'fontawesome' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'global' );
-
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'assistant' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'navbar' );
 		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'onboarding' );
 
 		if ( method_exists( $this, $tab ) ) {
-			call_user_func( array( $this, $tab ) );
+			if ( SQ_Classes_Helpers_Tools::userCan( 'sq_manage_snippets' ) ) {
+				call_user_func( array( $this, $tab ) );
+			}
 		}
 
 		//Load the Themes and Plugins
@@ -58,8 +46,10 @@ class SQ_Controllers_Onboarding extends SQ_Classes_FrontController {
 	}
 
 	public function step3() {
-		$search      = (string) SQ_Classes_Helpers_Tools::getValue( 'skeyword', '' );
-		$this->pages = SQ_Classes_ObjController::getClass( 'SQ_Models_Snippet' )->getPages( $search );
+
+		if ( $this->pages === false ) {
+			$this->pages = SQ_Classes_ObjController::getClass( 'SQ_Models_Snippet' )->getPages( '' );
+		}
 
 		//get also the focus pages
 		$this->focuspages = SQ_Classes_RemoteController::getFocusPages();
@@ -213,6 +203,17 @@ class SQ_Controllers_Onboarding extends SQ_Classes_FrontController {
 
 					SQ_Classes_Error::setMessage( esc_html__( "Saved", 'squirrly-seo' ) );
 				}
+
+				break;
+			case 'sq_onboarding_search':
+
+				if ( ! SQ_Classes_Helpers_Tools::userCan( 'sq_manage_settings' ) ) {
+					return;
+				}
+
+				//Save the settings
+				$search      = (string) SQ_Classes_Helpers_Tools::getValue( 'skeyword', '' );
+				$this->pages = SQ_Classes_ObjController::getClass( 'SQ_Models_Snippet' )->getPages( $search );
 
 				break;
 			case 'sq_onboarding_commitment':

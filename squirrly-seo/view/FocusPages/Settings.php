@@ -28,9 +28,10 @@ if ( ! isset( $view ) ) {
 
                 <div class="sq_breadcrumbs my-4"><?php SQ_Classes_ObjController::getClass( 'SQ_Models_Menu' )->showBreadcrumbs( SQ_Classes_Helpers_Tools::getValue( 'page' ) . '/' . SQ_Classes_Helpers_Tools::getValue( 'tab', 'settings' ) ) ?></div>
 
+	            <?php do_action( 'sq_form_notices' ); ?>
+
                 <form method="POST">
-					<?php do_action( 'sq_form_notices' ); ?>
-					<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_focus_pages_settings', 'sq_nonce' ); ?>
+					<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_focus_pages_settings' ); ?>
                     <input type="hidden" name="action" value="sq_focus_pages_settings"/>
 
                     <h3 class="mt-4 card-title">

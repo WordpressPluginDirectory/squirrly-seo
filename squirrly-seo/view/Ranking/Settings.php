@@ -26,7 +26,7 @@ if ( ! isset( $view ) ) {
             <div class="flex-grow-1 sq_flex m-0 py-0 px-4">
                 <form method="POST">
 					<?php do_action( 'sq_form_notices' ); ?>
-					<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_ranking_settings', 'sq_nonce' ); ?>
+					<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_ranking_settings' ); ?>
                     <input type="hidden" name="action" value="sq_ranking_settings"/>
 
                     <div class="col-12 p-0 m-0">

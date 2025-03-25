@@ -4,6 +4,7 @@ defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
 class SQ_Controllers_Ranking extends SQ_Classes_FrontController {
 
 	public $info;
+	public $args = array();
 	public $ranks;
 	//--
 	public $suggested;
@@ -46,24 +47,11 @@ class SQ_Controllers_Ranking extends SQ_Classes_FrontController {
 		$tab = preg_replace( "/[^a-zA-Z0-9]/", "", SQ_Classes_Helpers_Tools::getValue( 'tab', 'rankings' ) );
 
 		if ( method_exists( $this, $tab ) ) {
-			call_user_func( array( $this, $tab ) );
+			if ( SQ_Classes_Helpers_Tools::userCan( 'sq_manage_focuspages' ) ) {
+				call_user_func( array( $this, $tab ) );
+			}
 		}
 
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap-reboot' );
-		if ( is_rtl() ) {
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'popper' );
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap.rtl' );
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'rtl' );
-		} else {
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap' );
-		}
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'switchery' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'fontawesome' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'datatables' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'global' );
-
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'assistant' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'navbar' );
 		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'rankings' );
 
 		$this->show_view( 'Ranking/' . esc_attr( ucfirst( $tab ) ) );
@@ -77,39 +65,38 @@ class SQ_Controllers_Ranking extends SQ_Classes_FrontController {
 	 * Call the rankings
 	 */
 	public function rankings() {
-		$days_back = (int) SQ_Classes_Helpers_Tools::getValue( 'days_back', 30 );
-		$search    = (string) SQ_Classes_Helpers_Tools::getValue( 'skeyword', '' );
-		$strict    = (string) SQ_Classes_Helpers_Tools::getValue( 'strict', '' );
-		$sort      = SQ_Classes_Helpers_Tools::getValue( 'ssort', 'rank' );
-		$order     = SQ_Classes_Helpers_Tools::getValue( 'sorder', 'asc' );
-		$page      = SQ_Classes_Helpers_Tools::getValue( 'spage', 1 );
-		$num       = SQ_Classes_Helpers_Tools::getValue( 'snum', SQ_Classes_Helpers_Tools::getOption( 'sq_posts_per_page' ) );
-
-		if ( $search ) {
-			$search = sanitize_text_field( $search );
-		}
 
 		//prepare call
-		$args = array(
-			'start'      => ( $page - 1 ) * $num,
-			'limit'      => $num,
-			'sort'       => $sort,
-			'order'      => $order,
-			'keyword'    => $search,
-			'strict'     => $strict,
-			'days_back'  => $days_back,
-			'has_change' => (string) SQ_Classes_Helpers_Tools::getValue( 'schanges', '' ),
-			'has_ranks'  => (string) SQ_Classes_Helpers_Tools::getValue( 'ranked', '' ),
-		);
+		if ( empty( $this->args ) ) {
 
-		if ( $this->info = SQ_Classes_RemoteController::getRanksStats( $args ) ) {
+			$days_back = (int) SQ_Classes_Helpers_Tools::getValue( 'days_back', 30 );
+			$strict    = (int) SQ_Classes_Helpers_Tools::getValue( 'strict', '' );
+			$sort      = SQ_Classes_Helpers_Tools::getValue( 'ssort', 'rank' );
+			$order     = SQ_Classes_Helpers_Tools::getValue( 'sorder', 'asc' );
+			$page      = SQ_Classes_Helpers_Tools::getValue( 'spage', 1 );
+			$num       = SQ_Classes_Helpers_Tools::getValue( 'snum', SQ_Classes_Helpers_Tools::getOption( 'sq_posts_per_page' ) );
+
+			$this->args = array(
+				'start'      => ( $page - 1 ) * $num,
+				'limit'      => $num,
+				'sort'       => $sort,
+				'order'      => $order,
+				'keyword'    => '',
+				'strict'     => $strict,
+				'days_back'  => $days_back,
+				'has_change' => '',
+				'has_ranks'  => '',
+			);
+		}
+
+		if ( $this->info = SQ_Classes_RemoteController::getRanksStats( $this->args ) ) {
 			if ( is_wp_error( $this->info ) ) {
 				$this->info = array();
 			}
 		}
 
 		//get the API data
-		$response = SQ_Classes_RemoteController::getRanks( $args );
+		$response = SQ_Classes_RemoteController::getRanks( $this->args );
 
 		//check for errors
 		if ( is_wp_error( $response ) ) {
@@ -121,7 +108,7 @@ class SQ_Controllers_Ranking extends SQ_Classes_FrontController {
 
 			//prepare the pagination if there is a total number for array
 			if ( $this->total = apply_filters( 'sq_total_records', count( $response ) ) ) {
-				$this->max_num_pages = ceil( $this->total / $num );
+				$this->max_num_pages = ceil( $this->total / $this->args['limit'] );
 			}
 
 		}
@@ -181,6 +168,34 @@ class SQ_Controllers_Ranking extends SQ_Classes_FrontController {
 
 				//show the saved message
 				SQ_Classes_Error::setMessage( esc_html__( "Saved", 'squirrly-seo' ) );
+
+				break;
+			case 'sq_rankings_search':
+
+				if ( ! SQ_Classes_Helpers_Tools::userCan( 'sq_manage_focuspages' ) ) {
+					return;
+				}
+
+				$days_back = (int) SQ_Classes_Helpers_Tools::getValue( 'days_back', 30 );
+				$search    = (string) SQ_Classes_Helpers_Tools::getValue( 'skeyword', '' );
+				$strict    = (string) SQ_Classes_Helpers_Tools::getValue( 'strict', '' );
+				$sort      = SQ_Classes_Helpers_Tools::getValue( 'ssort', 'rank' );
+				$order     = SQ_Classes_Helpers_Tools::getValue( 'sorder', 'asc' );
+				$page      = SQ_Classes_Helpers_Tools::getValue( 'spage', 1 );
+				$num       = SQ_Classes_Helpers_Tools::getValue( 'snum', SQ_Classes_Helpers_Tools::getOption( 'sq_posts_per_page' ) );
+
+				//prepare call
+				$this->args = array(
+					'start'      => ( $page - 1 ) * $num,
+					'limit'      => $num,
+					'sort'       => $sort,
+					'order'      => $order,
+					'keyword'    => $search,
+					'strict'     => $strict,
+					'days_back'  => $days_back,
+					'has_change' => (string) SQ_Classes_Helpers_Tools::getValue( 'schanges', '' ),
+					'has_ranks'  => (string) SQ_Classes_Helpers_Tools::getValue( 'ranked', '' ),
+				);
 
 				break;
 			case 'sq_serp_refresh_post':

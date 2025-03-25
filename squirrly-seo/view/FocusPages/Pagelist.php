@@ -114,7 +114,7 @@ if ( ! isset( $view ) ) {
         <div class="modal-content bg-white rounded-0">
             <div class="modal-header">
                 <h4 class="modal-title"><?php echo esc_html__( "Squirrly Inspect URL", 'squirrly-seo' ); ?></h4>
-                <i class="fa-solid fa-refresh" style="font-family: FontAwesome, Arial, sans-serif;font-size: 20px !important;cursor: pointer;margin: 7px 10px !important;" onclick="jQuery('#sq_previewurl_modal').sq_inspectURL()"></i>
+                <i class="fa-solid fa-refresh" style="font-family: FontAwesomeSQ, Arial, sans-serif;font-size: 20px !important;cursor: pointer;margin: 7px 10px !important;" onclick="jQuery('#sq_previewurl_modal').sq_inspectURL()"></i>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body" style="min-height: 200px; height:calc(100vh - 120px); overflow-y: auto;">

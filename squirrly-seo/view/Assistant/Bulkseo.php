@@ -49,32 +49,39 @@ if ( ! isset( $view ) ) {
                         <div class="col-12 m-0 p-0 my-4">
 
                             <form id="sq_bulkseo_form" method="get" class="form-inline col-12 m-0 p-0 ignore">
+	                            <?php SQ_Classes_Helpers_Tools::setNonce( 'sq_bulkseo_search', 'sq_nonce', false ); ?>
+                                <input type="hidden" name="action" value="sq_bulkseo_search"/>
+
                                 <input type="hidden" name="page" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'page' ) ) ?>">
                                 <input type="hidden" name="tab" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'tab' ) ) ?>">
 
 								<?php if ( isset( $view->labels ) && ! empty( $view->labels ) ) { ?>
-                                    <div class="col-6 row p-0 m-0">
-                                        <label>
-                                            <select name="slabel[]" class="d-inline-block m-0 p-1" onchange="jQuery('form#sq_bulkseo_form').submit();">
-                                                <option value=""><?php echo esc_html__( "Filter by Red Element", "squirrly-seo" ) ?></option>
-												<?php
-												$keyword_labels = SQ_Classes_Helpers_Tools::getValue( 'slabel', array() );
-												foreach ( $view->labels as $category => $label ) {
-													if ( $label->show ) { ?>
-                                                        <option value="<?php echo esc_attr( $category ) ?>" <?php echo( in_array( (string) $category, (array) $keyword_labels ) ? 'selected="selected"' : '' ) ?> ><?php echo esc_html( $label->name ) ?></option>
-													<?php }
-												}
-												?>
-                                            </select>
-                                        </label>
+                                    <div class="col-12 row p-0 m-0">
+                                        <div class="col-5 row m-0 p-0">
+                                            <div class="col-6 p-0 m-0">
+                                                <label>
+                                                    <select name="slabel[]" class="w-100 m-0 p-1" onchange="jQuery('form#sq_bulkseo_form').submit();">
+                                                        <option value=""><?php echo esc_html__( "Filter by Red Element", "squirrly-seo" ) ?></option>
+                                                        <?php
+                                                        $keyword_labels = SQ_Classes_Helpers_Tools::getValue( 'slabel', array() );
+                                                        foreach ( $view->labels as $category => $label ) {
+                                                            if ( $label->show ) { ?>
+                                                                <option value="<?php echo esc_attr( $category ) ?>" <?php echo( in_array( (string) $category, (array) $keyword_labels ) ? 'selected="selected"' : '' ) ?> ><?php echo esc_html( $label->name ) ?></option>
+                                                            <?php }
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
 								<?php } ?>
 
                                 <div class="col-12 row p-0 m-0 my-2">
                                     <div class="col-5 row m-0 p-0">
-                                        <div class="col-6 row p-0 m-0">
+                                        <div class="col-6 p-0 m-0">
                                             <label>
-                                                <select name="stype" class="d-inline-block m-0 p-1" onchange="jQuery('form#sq_bulkseo_form').submit();">
+                                                <select name="stype" class="w-100 m-0 p-1" onchange="jQuery('form#sq_bulkseo_form').submit();">
 													<?php
 													if ( ! empty( $patterns ) ) {
 														foreach ( $patterns as $pattern => $type ) {
@@ -147,13 +154,14 @@ if ( ! isset( $view ) ) {
                                                 </select>
                                             </label>
                                         </div>
-                                        <div class="col-6 row p-0 m-0">
+                                        <div class="col-6 p-0 m-0">
 											<?php if ( ! SQ_Classes_Helpers_Tools::getValue( 'skeyword' ) && ! empty( $view->pages ) ) {
-												foreach ( $view->pages as $index => $post ) {
+
+                                                foreach ( $view->pages as $index => $post ) {
 													if ( isset( $post->ID ) ) {
 														?>
                                                         <label>
-                                                            <select name="sstatus" class="d-inline-block m-0 p-1" onchange="jQuery('form#sq_bulkseo_form').submit();">
+                                                            <select name="sstatus" class="w-100 m-0 p-1" onchange="jQuery('form#sq_bulkseo_form').submit();">
                                                                 <option <?php echo( ( ! SQ_Classes_Helpers_Tools::getIsset( 'sstatus' ) || SQ_Classes_Helpers_Tools::getValue( 'sstatus' ) == '' ) ? 'selected="selected"' : 'all' ) ?> value=""><?php echo esc_html__( "Any status", "squirrly-seo" ); ?></option>
 																<?php
 
@@ -177,7 +185,6 @@ if ( ! isset( $view ) ) {
 												}
 											} ?>
                                         </div>
-
                                     </div>
                                     <div class="col-7 row m-0 p-0">
                                         <div class="d-flex flex-row flex-grow-1 justify-content-end m-0 p-0">
@@ -234,7 +241,7 @@ if ( ! isset( $view ) ) {
                                                     <tr id="sq_row_<?php echo esc_attr( $post->hash ) ?>" class="<?php echo( (int) $index % 2 ? 'even' : 'odd' ) ?>">
 														<?php
 														$view->post = $post;
-														$view->show_view( 'BulkSeo/BulkseoRow' );
+														$view->show_view( 'Assistant/BulkseoRow' );
 														?>
                                                     </tr>
 

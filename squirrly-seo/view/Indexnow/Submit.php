@@ -32,7 +32,7 @@ if ( ! isset( $view ) ) {
                 <div class="col-12 p-0 m-0">
 					<?php $metas = json_decode( wp_json_encode( SQ_Classes_Helpers_Tools::getOption( 'sq_metas' ) ) ); ?>
                     <form method="POST">
-						<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_seosettings_indexnow_submit', 'sq_nonce' ); ?>
+						<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_seosettings_indexnow_submit' ); ?>
                         <input type="hidden" name="action" value="sq_seosettings_indexnow_submit"/>
 
                         <h3 class="mt-4 card-title">
@@ -79,7 +79,7 @@ if ( ! isset( $view ) ) {
 						<?php if ( ! empty( $log ) ) { ?>
                             <div class="col-12 text-right m-0 p-0 my-1">
                                 <form method="POST">
-									<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_seosettings_indexnow_clear', 'sq_nonce' ); ?>
+									<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_seosettings_indexnow_clear' ); ?>
                                     <input type="hidden" name="action" value="sq_seosettings_indexnow_clear"/>
                                     <button type="submit" class="btn btn-light btn-sm"><?php echo esc_html__( "Clear log", "squirrly-seo" ); ?></button>
                                 </form>

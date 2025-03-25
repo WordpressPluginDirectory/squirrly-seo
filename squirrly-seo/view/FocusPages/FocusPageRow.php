@@ -112,7 +112,7 @@ if ( $view->focuspage->id <> '' ) {
             <div class="sq_focuspages_lastaudited small text-dark my-1"><?php echo esc_html__( "Audited", 'squirrly-seo' ) ?>
                 : <span class="font-weight-bold"><?php echo esc_html( $audit_timestamp ) ?></span></div>
             <form method="post" class="sq_focuspages_request p-0 m-0">
-				<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_focuspages_update', 'sq_nonce' ); ?>
+				<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_focuspages_update' ); ?>
                 <input type="hidden" name="action" value="sq_focuspages_update"/>
 
                 <input type="hidden" name="post_id" value="<?php echo (int) $view->post->ID; ?>">
@@ -232,7 +232,7 @@ if ( $view->focuspage->id <> '' ) {
                 <ul class="p-2 m-0 text-left">
                     <li class="m-0 p-1 py-2">
                         <form method="post" class="p-0 m-0">
-							<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_focuspages_update', 'sq_nonce' ); ?>
+							<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_focuspages_update' ); ?>
                             <input type="hidden" name="action" value="sq_focuspages_update"/>
 
                             <input type="hidden" name="post_id" value="<?php echo (int) $view->post->ID; ?>">
@@ -253,7 +253,7 @@ if ( $view->focuspage->id <> '' ) {
                     </li>
                     <li class="m-0 p-1 py-2">
                         <form method="post" class="p-0 m-0" onSubmit="return confirm('<?php echo esc_html__( "Are you sure? You can always monitor it again in the future.", 'squirrly-seo' ) ?>') ">
-							<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_focuspages_delete', 'sq_nonce' ); ?>
+							<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_focuspages_delete' ); ?>
                             <input type="hidden" name="action" value="sq_focuspages_delete"/>
                             <input type="hidden" name="id" value="<?php echo (int) $view->focuspage->user_post_id ?>"/>
                             <i class="sq_icons_small fa-solid fa-trash" style="padding: 2px"></i>

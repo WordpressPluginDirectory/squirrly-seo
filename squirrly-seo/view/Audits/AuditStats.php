@@ -268,6 +268,8 @@ if ( ! isset( $view ) ) {
                     <h4 class="card-title"><?php echo esc_html__( "Audit History", "squirrly-seo" ) ?></h4>
                     <div class="mx-0 my-2 p-0">
                         <form class="sq_form_bulk_submit" method="get">
+	                        <?php SQ_Classes_Helpers_Tools::setNonce( 'sq_audits_compare' ); ?>
+                            <input type="hidden" name="action" value="sq_audits_compare"/>
                             <div class="col-5 p-0 m-0 my-2">
 
                                 <input type="hidden" name="page" value="sq_audits">

@@ -84,11 +84,15 @@ class SQ_Models_Qss {
 
 		if ( $rows ) {
 			foreach ( $rows as $row ) {
-				$metas = SQ_Classes_ObjController::getDomain( 'SQ_Models_Domain_Sq', maybe_unserialize( $row->seo ) );
-				if ( ! empty( $metas->innerlinks ) ) {
-					foreach ( $metas->innerlinks as $id => $innerlink ) {
-						$innerlink['id']   = $id;
-						$innerlinks[ $id ] = SQ_Classes_ObjController::getDomain( 'SQ_Models_Domain_Innerlink', $innerlink );
+				if ( $post = $this->getSqPost( $row->url_hash ) ) {
+					$metas = SQ_Classes_ObjController::getDomain( 'SQ_Models_Domain_Sq', maybe_unserialize( $row->seo ) );
+					if ( ! empty( $metas->innerlinks ) ) {
+						foreach ( $metas->innerlinks as $id => $innerlink ) {
+							if ( get_post($post->ID) && $post->ID == $innerlink['from_post_id'] ) {
+								$innerlink['id']   = $id;
+								$innerlinks[ $id ] = SQ_Classes_ObjController::getDomain( 'SQ_Models_Domain_Innerlink', $innerlink );
+							}
+						}
 					}
 				}
 			}

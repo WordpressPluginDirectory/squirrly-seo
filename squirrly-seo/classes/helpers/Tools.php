@@ -1144,19 +1144,9 @@ class SQ_Classes_Helpers_Tools
      * @param  bool   $echo
      * @return string
      */
-    public static function setNonce($action, $name = '_wpnonce', $referer = true, $echo = true)
+    public static function setNonce($action, $name = 'sq_nonce', $referer = true, $echo = true)
     {
-        $nonce_field = '<input type="hidden" name="' . esc_attr($name) . '" value="' . esc_attr(wp_create_nonce($action)) . '" />';
-
-        if ($referer) {
-            $nonce_field .= wp_referer_field(false);
-        }
-
-        if ($echo) {
-            echo $nonce_field;
-        }
-
-        return $nonce_field;
+	    return wp_nonce_field($action, $name, $referer, $echo);
     }
 
 	/**

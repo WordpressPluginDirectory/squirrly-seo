@@ -24,7 +24,7 @@ if ( ! isset( $view ) ) {
                     <div class="sq_breadcrumbs my-4"><?php SQ_Classes_ObjController::getClass( 'SQ_Models_Menu' )->showBreadcrumbs( 'sq_onpagesetup' ) ?></div>
 
                     <form id="sq_onboarding_form" method="post" action="<?php echo esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_onboarding', 'step2' ) ) ?>" class="p-0 m-0">
-						<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_onboarding_save', 'sq_nonce' ); ?>
+						<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_onboarding_save' ); ?>
                         <input type="hidden" name="action" value="sq_onboarding_save"/>
                         <input type="hidden" name="sq_mode" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getOption( 'sq_mode' ) ) ?>"/>
 

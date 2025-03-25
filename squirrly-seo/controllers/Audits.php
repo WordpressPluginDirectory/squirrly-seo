@@ -3,19 +3,21 @@ defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
 
 class SQ_Controllers_Audits extends SQ_Classes_FrontController {
 
-	/**
-	 *
-	 *
-	 * @var object Checkin process
-	 */
+	/** @var object Checkin process */
 	public $checkin;
 
 	public $blogs;
-	public $auditpage;
 	public $audit;
-	public $pages;
 	public $audits;
+
+	/** @var SQ_Models_Domain_AuditPage List (used in the view) */
+	public $auditpage;
+
+	/** @var SQ_Models_Domain_AuditPage[] List (used in the view) */
 	public $auditpages;
+
+	/** @var false|SQ_Models_Domain_Post[] All pages that are sent to the view */
+	public $pages = false;
 
 	/**
 	 *
@@ -50,26 +52,11 @@ class SQ_Controllers_Audits extends SQ_Classes_FrontController {
 		$tab = preg_replace( "/[^a-zA-Z0-9]/", "", SQ_Classes_Helpers_Tools::getValue( 'tab', 'audits' ) );
 
 		if ( method_exists( $this, $tab ) ) {
-			call_user_func( array( $this, $tab ) );
-		}
-		if ( method_exists( $this, $tab ) ) {
-			call_user_func( array( $this, $tab ) );
+			if ( SQ_Classes_Helpers_Tools::userCan( 'sq_manage_focuspages' ) ) {
+				call_user_func( array( $this, $tab ) );
+			}
 		}
 
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap-reboot' );
-		if ( is_rtl() ) {
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'popper' );
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap.rtl' );
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'rtl' );
-		} else {
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap' );
-		}
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'switchery' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'fontawesome' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'global' );
-
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'assistant' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'navbar' );
 		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'audits' );
 
 		$this->show_view( 'Audits/' . esc_attr( ucfirst( $tab ) ) );
@@ -82,10 +69,12 @@ class SQ_Controllers_Audits extends SQ_Classes_FrontController {
 	 * Load for Add Audit Page menu tab
 	 */
 	public function addpage() {
-		$search      = (string) SQ_Classes_Helpers_Tools::getValue( 'skeyword', '' );
-		$this->pages = SQ_Classes_ObjController::getClass( 'SQ_Models_Snippet' )->getPages( $search );
+		// Get the default pages
+		if( $this->pages === false ){
+			$this->pages = SQ_Classes_ObjController::getClass( 'SQ_Models_Snippet' )->getPages( '' );
+		}
 
-		//get also the audit  pages
+		// Get the audit  pages
 		$this->auditpage = SQ_Classes_RemoteController::getAuditPages();
 
 		if ( is_wp_error( $this->auditpage ) ) {
@@ -95,20 +84,6 @@ class SQ_Controllers_Audits extends SQ_Classes_FrontController {
 	}
 
 	public function compare() {
-		$sids         = SQ_Classes_Helpers_Tools::getValue( 'sid' );
-		$this->audits = array();
-		//get all the ids
-		if ( $sids && ! empty( $sids ) ) {
-			foreach ( $sids as $sid ) {
-				$audit = SQ_Classes_RemoteController::getAudit( array( 'id' => $sid ) );
-
-				//Don't add error audits
-				if ( ! is_wp_error( $audit ) ) {
-					$this->audits[] = $this->model->prepareAudit( $audit );
-				}
-			}
-
-		}
 
 		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'audits' );
 		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'knob' );
@@ -249,12 +224,41 @@ class SQ_Controllers_Audits extends SQ_Classes_FrontController {
 	public function action() {
 		parent::action();
 
-		switch ( SQ_Classes_Helpers_Tools::getValue( 'action' ) ) {
-			case 'sq_auditpages_getaudit':
+		if ( ! SQ_Classes_Helpers_Tools::userCan( 'sq_manage_focuspages' ) ) {
+			if ( SQ_Classes_Helpers_Tools::isAjax() ) {
+				wp_send_json_error( esc_html__( "You do not have permission to perform this action", 'squirrly-seo' ) );
+			} else {
+				SQ_Classes_Error::setError( esc_html__( "You do not have permission to perform this action", 'squirrly-seo' ) );
+			}
+		}
 
-				if ( ! SQ_Classes_Helpers_Tools::userCan( 'sq_manage_focuspages' ) ) {
+		switch ( SQ_Classes_Helpers_Tools::getValue( 'action' ) ) {
+			case 'sq_audits_settings':
+
+				if ( ! SQ_Classes_Helpers_Tools::userCan( 'sq_manage_settings' ) ) {
 					return;
 				}
+
+				$email = sanitize_email( SQ_Classes_Helpers_Tools::getValue( 'sq_audit_email' ) );
+				SQ_Classes_Helpers_Tools::saveOptions( 'sq_audit_email', $email );
+
+				if ( $email <> '' ) {
+
+					//Save the settings on API too
+					$args                = array();
+					$args['audit_email'] = $email;
+					SQ_Classes_RemoteController::saveSettings( $args );
+					///////////////////////////////
+
+					//show the saved message
+					SQ_Classes_Error::setMessage( esc_html__( "Saved", 'squirrly-seo' ) );
+				} else {
+					SQ_Classes_Error::setError( esc_html__( "Not a valid email address.", 'squirrly-seo' ) );
+
+				}
+
+				break;
+			case 'sq_auditpages_getaudit':
 
 				$json = array();
 
@@ -285,11 +289,31 @@ class SQ_Controllers_Audits extends SQ_Classes_FrontController {
 					exit();
 				}
 				break;
-			case 'sq_audits_addnew':
+			case 'sq_audits_search':
 
-				if ( ! SQ_Classes_Helpers_Tools::userCan( 'sq_manage_focuspages' ) ) {
-					return;
+				$search      = (string) SQ_Classes_Helpers_Tools::getValue( 'skeyword', '' );
+				$this->pages = SQ_Classes_ObjController::getClass( 'SQ_Models_Snippet' )->getPages( $search );
+
+				break;
+			case 'sq_audits_compare':
+				$sids         = SQ_Classes_Helpers_Tools::getValue( 'sid' );
+				$this->audits = array();
+
+				//get all the ids
+				if ( $sids && ! empty( $sids ) ) {
+					foreach ( $sids as $sid ) {
+						$audit = SQ_Classes_RemoteController::getAudit( array( 'id' => $sid ) );
+
+						//Don't add error audits
+						if ( ! is_wp_error( $audit ) ) {
+							$this->audits[] = $this->model->prepareAudit( $audit );
+						}
+					}
+
 				}
+
+				break;
+			case 'sq_audits_addnew':
 
 				$post_id   = (int) SQ_Classes_Helpers_Tools::getValue( 'post_id', 0 );
 				$term_id   = (int) SQ_Classes_Helpers_Tools::getValue( 'term_id', 0 );
@@ -322,10 +346,6 @@ class SQ_Controllers_Audits extends SQ_Classes_FrontController {
 				break;
 			case 'sq_audits_page_update':
 
-				if ( ! SQ_Classes_Helpers_Tools::userCan( 'sq_manage_focuspages' ) ) {
-					return;
-				}
-
 				$post_id = (int) SQ_Classes_Helpers_Tools::getValue( 'post_id', 0 );
 
 				if ( $post_id ) {
@@ -347,10 +367,6 @@ class SQ_Controllers_Audits extends SQ_Classes_FrontController {
 				break;
 			case 'sq_audits_update':
 
-				if ( ! SQ_Classes_Helpers_Tools::userCan( 'sq_manage_focuspages' ) ) {
-					return;
-				}
-
 				$auditpage = SQ_Classes_RemoteController::updateAudit();
 
 				if ( ! is_wp_error( $auditpage ) ) {
@@ -362,40 +378,11 @@ class SQ_Controllers_Audits extends SQ_Classes_FrontController {
 				break;
 			case 'sq_audits_delete':
 
-				if ( ! SQ_Classes_Helpers_Tools::userCan( 'sq_manage_focuspages' ) ) {
-					return;
-				}
-
 				if ( $post_id = SQ_Classes_Helpers_Tools::getValue( 'id', false ) ) {
 					SQ_Classes_RemoteController::deleteAuditPage( array( 'user_post_id' => $post_id ) );
 					SQ_Classes_Error::setError( esc_html__( "The page is removed from SEO Audit.", 'squirrly-seo' ) . " <br /> ", 'success' );
 				} else {
 					SQ_Classes_Error::setError( esc_html__( "Invalid params!", 'squirrly-seo' ) . " <br /> " );
-				}
-
-				break;
-			case 'sq_audits_settings':
-
-				if ( ! SQ_Classes_Helpers_Tools::userCan( 'sq_manage_settings' ) ) {
-					return;
-				}
-
-				$email = sanitize_email( SQ_Classes_Helpers_Tools::getValue( 'sq_audit_email' ) );
-				SQ_Classes_Helpers_Tools::saveOptions( 'sq_audit_email', $email );
-
-				if ( $email <> '' ) {
-
-					//Save the settings on API too
-					$args                = array();
-					$args['audit_email'] = $email;
-					SQ_Classes_RemoteController::saveSettings( $args );
-					///////////////////////////////
-
-					//show the saved message
-					SQ_Classes_Error::setMessage( esc_html__( "Saved", 'squirrly-seo' ) );
-				} else {
-					SQ_Classes_Error::setError( esc_html__( "Not a valid email address.", 'squirrly-seo' ) );
-
 				}
 
 				break;

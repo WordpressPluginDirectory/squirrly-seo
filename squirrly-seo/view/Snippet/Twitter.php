@@ -203,7 +203,7 @@ $codes   = json_decode( wp_json_encode( SQ_Classes_Helpers_Tools::getOption( 'co
                                     </button>
                                 </form>
 
-                                <div class="sq_message"><?php echo esc_html__( "How this page appears on Twitter", 'squirrly-seo' ) ?>
+                                <div class="sq_message"><?php echo esc_html__( "How this page appears on X.com", 'squirrly-seo' ) ?>
                                     :
                                 </div>
 

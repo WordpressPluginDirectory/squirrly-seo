@@ -215,6 +215,9 @@ $view->loadScripts();
                                     </div>
                                     <div class="col-6 p-0 m-0">
                                         <form method="get" class="d-flex flex-row justify-content-end p-0 m-0">
+	                                        <?php SQ_Classes_Helpers_Tools::setNonce( 'sq_rankings_search', 'sq_nonce', false ); ?>
+                                            <input type="hidden" name="action" value="sq_rankings_search"/>
+
                                             <input type="hidden" name="page" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'page' ) ) ?>">
                                             <input type="hidden" name="tab" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'tab' ) ) ?>">
                                             <input type="search" class="d-inline-block align-middle col-7 py-0 px-2 mr-0 rounded-0" id="post-search-input" name="skeyword" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'skeyword' ) ) ?>" placeholder="<?php echo esc_attr__( "Write the keyword you want to search for", 'squirrly-seo' ) ?>"/>
@@ -315,7 +318,7 @@ $view->loadScripts();
 															<?php if ( $view->checkin->subscription_serpcheck ) { ?>
                                                                 <li class="m-0 p-1 py-2">
                                                                     <form method="post" class="row p-0 m-0">
-																		<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_serp_refresh_post', 'sq_nonce' ); ?>
+																		<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_serp_refresh_post' ); ?>
                                                                         <input type="hidden" name="action" value="sq_serp_refresh_post"/>
                                                                         <input type="hidden" name="keyword" value="<?php echo SQ_Classes_Helpers_Sanitize::escapeKeyword( $row->keyword ) ?>"/>
                                                                         <i class="sq_icons_small fa-solid fa-refresh py-2"></i>
@@ -328,7 +331,7 @@ $view->loadScripts();
 
                                                             <li class="m-0 p-1 py-2">
                                                                 <form method="post" class="row p-0 m-0">
-																	<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_serp_delete_keyword', 'sq_nonce' ); ?>
+																	<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_serp_delete_keyword' ); ?>
                                                                     <input type="hidden" name="action" value="sq_serp_delete_keyword"/>
                                                                     <input type="hidden" name="keyword" value="<?php echo SQ_Classes_Helpers_Sanitize::escapeKeyword( $row->keyword ) ?>"/>
                                                                     <i class="sq_icons_small fa-solid fa-trash py-2"></i>
@@ -483,6 +486,9 @@ $view->loadScripts();
                                 <div class="col-5 row m-0 p-0"></div>
                                 <div class="col-7 p-0 m-0">
                                     <form method="get" class="d-flex flex-row justify-content-end p-0 m-0">
+	                                    <?php SQ_Classes_Helpers_Tools::setNonce( 'sq_rankings_search', 'sq_nonce', false ); ?>
+                                        <input type="hidden" name="action" value="sq_rankings_search"/>
+
                                         <input type="hidden" name="page" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'page' ) ) ?>">
                                         <input type="hidden" name="tab" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'tab' ) ) ?>">
                                         <input type="search" class="d-inline-block align-middle col-7 py-0 px-2 mr-0 rounded-0" id="post-search-input" name="skeyword" value="<?php echo SQ_Classes_Helpers_Sanitize::escapeKeyword( SQ_Classes_Helpers_Tools::getValue( 'skeyword' ) ) ?>" placeholder="<?php echo esc_html__( "Write the keyword you want to search for", 'squirrly-seo' ) ?>"/>

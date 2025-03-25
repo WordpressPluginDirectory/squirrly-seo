@@ -49,6 +49,9 @@ if ( ! isset( $view ) ) {
                                 <div class="col-5 p-0 m-0"></div>
                                 <div class="col-7 p-0 m-0">
                                     <form method="get" class="d-flex flex-row justify-content-end p-0 m-0">
+	                                    <?php SQ_Classes_Helpers_Tools::setNonce( 'sq_research_search', 'sq_nonce', false ); ?>
+                                        <input type="hidden" name="action" value="sq_research_search"/>
+
                                         <input type="hidden" name="page" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'page' ) ) ?>">
                                         <input type="hidden" name="tab" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'tab' ) ) ?>">
                                         <input type="search" class="d-inline-block align-middle col-7 py-0 px-2 mr-0 rounded-0" id="post-search-input" name="skeyword" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'skeyword' ) ) ?>" placeholder="<?php echo esc_attr__( "Write the keyword you want to search for", 'squirrly-seo' ) ?>"/>
@@ -396,6 +399,9 @@ if ( ! isset( $view ) ) {
                                 <div class="col-5 row m-0 p-0"></div>
                                 <div class="col-7 p-0 m-0">
                                     <form method="get" class="d-flex flex-row justify-content-end p-0 m-0">
+	                                    <?php SQ_Classes_Helpers_Tools::setNonce( 'sq_research_search', 'sq_nonce', false ); ?>
+                                        <input type="hidden" name="action" value="sq_research_search"/>
+
                                         <input type="hidden" name="page" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'page' ) ) ?>">
                                         <input type="hidden" name="tab" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'tab' ) ) ?>">
                                         <input type="search" class="d-inline-block align-middle col-7 py-0 px-2 mr-0 rounded-0" id="post-search-input" name="skeyword" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'skeyword' ) ) ?>" placeholder="<?php echo esc_attr__( "Write the keyword you want to search for", 'squirrly-seo' ) ?>"/>

@@ -243,7 +243,7 @@ if ( ! isset( $patterns[ $view->post->post_type ] ) && isset( $patterns['custom'
                                             </div>
                                             <div class="sq-col-8 sq-p-0 sq-input-group">
                                                 <form method="post" class="sq-col-12 sq-p-0 sq-m-0 sq-text-center">
-													<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_advanced_install', 'sq_nonce' ); ?>
+													<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_advanced_install' ); ?>
                                                     <input type="hidden" name="action" value="sq_advanced_install"/>
                                                     <button type="submit" class="sq-btn sq-btn-sm sq-btn-primary sq-p-3">
 														<?php echo esc_html__( "Install/Activate Squirrly SEO - Advanced Pack", 'squirrly-seo' ) ?>

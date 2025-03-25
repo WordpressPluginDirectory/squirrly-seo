@@ -89,11 +89,22 @@ class SQ_Classes_ActionController extends SQ_Classes_FrontController {
 				'active'      => '1',
 			),
 			array(
+				'name'    => 'SQ_Core_BlockFeatures',
+				'actions' => array(
+					'action' => array(
+						'sq_features_search',
+					),
+				),
+				'active'  => '1',
+			),
+			array(
 				'name'        => 'SQ_Controllers_FocusPages',
 				'description' => 'Focus Pages Controller',
 				'actions'     => array(
 					'action' => array(
 						'sq_focus_pages_settings',
+						'sq_focuspages_search',
+						'sq_innerlinks_search',
 						'sq_focuspages_getpage',
 						'sq_focuspages_addnew',
 						'sq_focuspages_update',
@@ -168,16 +179,6 @@ class SQ_Classes_ActionController extends SQ_Classes_FrontController {
 				'active'      => '1',
 			),
 			array(
-				'name'    => 'SQ_Controllers_BulkSeo',
-				'actions' => array(
-					'action' => array(
-						'sq_ajax_assistant_bulkseo',
-						'sq_ajax_search_pages',
-					),
-				),
-				'active'  => '1',
-			),
-			array(
 				'name'    => 'SQ_Controllers_Automation',
 				'actions' => array(
 					'action' => array(
@@ -225,6 +226,7 @@ class SQ_Classes_ActionController extends SQ_Classes_FrontController {
 				'name'    => 'SQ_Controllers_Research',
 				'actions' => array(
 					'action' => array(
+						'sq_research_search',
 						'sq_briefcase_addlabel',
 						'sq_briefcase_editlabel',
 						'sq_briefcase_keywordlabel',
@@ -254,6 +256,8 @@ class SQ_Classes_ActionController extends SQ_Classes_FrontController {
 				'actions' => array(
 					'action' => array(
 						'sq_audits_settings',
+						'sq_audits_search',
+						'sq_audits_compare',
 						'sq_auditpages_getaudit',
 						'sq_audits_getpage',
 						'sq_audits_addnew',
@@ -269,6 +273,7 @@ class SQ_Classes_ActionController extends SQ_Classes_FrontController {
 				'actions' => array(
 					'action' => array(
 						'sq_ranking_settings',
+						'sq_rankings_search',
 						'sq_serp_refresh_post',
 						'sq_serp_delete_keyword',
 						'sq_ajax_rank_bulk_delete',
@@ -282,8 +287,11 @@ class SQ_Classes_ActionController extends SQ_Classes_FrontController {
 				'actions' => array(
 					'action' => array(
 						'sq_settings_assistant',
+						'sq_bulkseo_search',
 						'sq_ajax_assistant',
-					),
+						'sq_ajax_assistant_bulkseo',
+						'sq_ajax_search_pages',
+						),
 				),
 				'active'  => '1',
 			),
@@ -306,6 +314,7 @@ class SQ_Classes_ActionController extends SQ_Classes_FrontController {
 				'name'    => 'SQ_Controllers_Onboarding',
 				'actions' => array(
 					'action' => array(
+						'sq_onboarding_search',
 						'sq_onboarding_commitment',
 						'sq_onboarding_save',
 					),

@@ -4,9 +4,7 @@ defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
 class SQ_Controllers_Api extends SQ_Classes_FrontController {
 
 	/**
-	 *
-	 *
-	 * @var string token local key
+	 * @var string token local URL token
 	 */
 	private $token;
 	/**
@@ -15,12 +13,6 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController {
 	 * @var string
 	 */
 	private $namespace = 'squirrly';
-
-	public function __construct() {
-		parent::__construct();
-
-
-	}
 
 	/**
 	 * Return Squirrly API URL
@@ -44,7 +36,7 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController {
 			return;
 		}
 
-		$this->token = SQ_Classes_Helpers_Tools::getOption( 'sq_cloud_token' );
+		$this->token = SQ_Classes_Helpers_Tools::getOption( 'sq_cloud_token' ) . SQ_Classes_Helpers_Tools::getOption( 'sq_api' ) ;
 
 		//Change the rest api if needed
 		add_action( 'rest_api_init', array( $this, 'sqApiInit' ) );
@@ -53,12 +45,6 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController {
 
 	function sqApiInit() {
 		if ( function_exists( 'register_rest_route' ) ) {
-
-			register_rest_route( $this->namespace, '/indexnow/', array(
-					'methods'             => WP_REST_Server::EDITABLE,
-					'callback'            => array( $this, 'indexUrl' ),
-					'permission_callback' => '__return_true'
-				) );
 
 			register_rest_route( $this->namespace, '/save/', array(
 					'methods'             => WP_REST_Server::EDITABLE,
@@ -108,40 +94,6 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController {
 	}
 
 	/**
-	 * Auto-Indexing the URLs
-	 *
-	 * @param WP_REST_Request $request
-	 *
-	 * @return WP_Error|WP_REST_Response
-	 */
-	public function indexUrl( WP_REST_Request $request ) {
-		$urls = $request->get_param( 'urls' );
-
-		if ( empty( $urls ) ) {
-			return new WP_Error( 'empty_urls', __( 'No URLs found. Please add URLs to index.', 'squirrly-seo' ) );
-		}
-
-		$urls = array_values( array_filter( array_map( 'trim', explode( "\n", $urls ) ) ) );
-		$urls = array_values( array_unique( array_filter( $urls, 'wp_http_validate_url' ) ) );
-
-		if ( ! $urls ) {
-			return new WP_Error( 'invalid_urls', __( 'Invalid URLs provided. Please add valid URLs.', 'squirrly-seo' ) );
-		}
-
-		$result = SQ_Classes_ObjController::getClass( 'SQ_Models_Indexnow' )->submitUrl( $urls );
-		if ( ! $result ) {
-			return new WP_Error( 'submit_failed', __( 'Failed to submit the URLs. Please try again.', 'squirrly-seo' ) );
-		}
-
-		$urls_number = count( $urls );
-
-		return new WP_REST_Response( [
-				'success' => true,
-				'message' => sprintf( _n( 'Successfully submitted %s URL.', 'Successfully submitted %s URLs.', $urls_number, 'squirrly-seo' ), $urls_number ),
-			] );
-	}
-
-	/**
 	 * Test the connection
 	 *
 	 * @param WP_REST_Request $request Full details about the request.
@@ -152,7 +104,7 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController {
 		//get the token from API
 		$token = $request->get_param( 'token' );
 		if ( $token <> '' ) {
-			$token = sanitize_text_field( $token );
+			$token =  preg_replace("/[^a-zA-Z0-9]/","",$token);
 		}
 
 		if ( ! $this->token || $this->token <> $token ) {
@@ -176,8 +128,9 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController {
 
 		//get the token from API
 		$token = $request->get_param( 'token' );
+
 		if ( $token <> '' ) {
-			$token = sanitize_text_field( $token );
+			$token =  preg_replace("/[^a-zA-Z0-9]/","",$token);
 		}
 
 		if ( ! $this->token || $this->token <> $token ) {
@@ -233,12 +186,13 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController {
 
 		//get the token from API
 		$token = $request->get_param( 'token' );
+
 		if ( $token <> '' ) {
-			$token = sanitize_text_field( $token );
+			$token =  preg_replace("/[^a-zA-Z0-9]/","",$token);
 		}
 
 		if ( ! $this->token || $this->token <> $token ) {
-			exit( wp_json_encode( array( 'error' => esc_html__( "Connection expired. Please try again.", 'squirrly-seo' ) ) ) );
+			exit( wp_json_encode( array( 'error' => esc_html__( "Connection expired. Please try again", 'squirrly-seo' ) ) ) );
 		}
 
 		$select = $request->get_param( 'select' );
@@ -291,7 +245,6 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController {
 
 				$response = array( 'url' => $url, 'inner_links' => $inner_links );
 				break;
-
 			case 'keyword':
 
 				$url     = esc_url_raw( $request->get_param( 'url' ) );
@@ -354,7 +307,6 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController {
 
 				$response = array( 'total_posts' => $total_posts );
 				break;
-
 			case 'post':
 
 				$id = (int) $request->get_param( 'id' );
@@ -369,7 +321,6 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController {
 				}
 
 				break;
-
 			case 'squirrly':
 
 				//Get Squirrly settings

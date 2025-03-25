@@ -4,7 +4,7 @@ Donate link: https://plugin.squirrly.co/squirrly-seo-pricing/
 Tags: SEO, AI, XML sitemap, google search console, schema
 Requires at least: 5.3
 Tested up to: 6.7
-Stable tag: 12.4.06
+Stable tag: 12.4.09
 Requires PHP: 7.0
 License: GPLv2 or later
 
@@ -230,6 +230,22 @@ Type a keyword to the right of the screen and start using Squirrly Seo. Enjoy!
 7. Squirrly SEO - SEO Briefcase
 
 == Changelog ==
+= 12.4.09 =
+Update - Correct the issue when multiple pages are selected in Innerlinks
+Update - The nonce referrer on search forms
+Fix - The strict parameter on rankings
+Fix - Add the Squirrly FontAwesome class in Audit and Focus Pages
+Fix - Pagination in Briefcase and Rankings
+
+= 12.4.08 =
+Update - Plugin security on api and searches
+
+= 12.4.07 =
+Update - Update the Bulk SEO Page to load only from Optimize > Bulk SEO
+Update - Add the Item ID in Review Schema to identify the reviewed item
+Fix - Keyword Research competition info on Briefcase
+Fix - Small layout bugs
+
 = 12.4.06 =
 Update - Squirrly Live Assistant to prevent too many ajax triggers on Gutenberg saving process
 Update - Compatibility with Polylang plugin

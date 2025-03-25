@@ -29,7 +29,7 @@ $jsonldtype = SQ_Classes_Helpers_Tools::getOption( 'sq_jsonld_type' );
 
                     <div id="sq_onboarding" class="col-8 row my-0 mx-auto p-0">
                         <form id="sq_onboarding_form" method="post" action="<?php echo esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_onboarding', 'step5' ) ) ?>" class="col-12 p-0 m-0">
-							<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_onboarding_save', 'sq_nonce' ); ?>
+							<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_onboarding_save' ); ?>
                             <input type="hidden" name="action" value="sq_onboarding_save"/>
 
                             <div class="col-12 row m-0 p-0">

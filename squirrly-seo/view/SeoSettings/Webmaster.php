@@ -204,8 +204,8 @@ if ( ! isset( $view ) ) {
 
                             </div>
 
-                            <form method="POST">
-								<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_seosettings_save', 'sq_nonce' ); ?>
+                            <form method="post">
+								<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_seosettings_save' ); ?>
                                 <input type="hidden" name="action" value="sq_seosettings_save"/>
 
                                 <div id="trackers" class="col-12 py-0 px-4 m-0 tab-panel">

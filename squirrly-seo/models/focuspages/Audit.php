@@ -265,13 +265,10 @@ class SQ_Models_Focuspages_Audit extends SQ_Models_Abstract_Assistant {
 						$task['completed'] = false;
 					}
 				}
-
-				return $task;
 			}
 
-			$task['error'] = true;
-
 			return $task;
+
 		}
 
 

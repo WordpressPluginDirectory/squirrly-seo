@@ -124,6 +124,7 @@ if ( ! isset( $view ) ) {
                                         <div class="col p-0 px-3 m-0">
                                             <div class="font-weight-bold">Premium Plan for Squirrly SEO</div>
 					                        <?php
+
 					                        if ( isset( $view->checkin->subscription_status ) && $view->checkin->subscription_status == 'active' ){ ?>
                                                 <div class="text-success"><?php echo esc_html__( "Active", "squirrly-seo" ) ?></div>
 					                        <?php }else{ ?>

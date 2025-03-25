@@ -3,7 +3,17 @@ defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
 
 class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 
+	/** @var false|array The feature list  */
+	public $features = false;
+
 	public function init() {
+
+		if ( SQ_Classes_Helpers_Tools::userCan( 'sq_manage_snippet' ) ) {
+			if ($this->features === false ) {
+				$this->features = SQ_Classes_ObjController::getClass( 'SQ_Core_BlockFeatures' )->getFeatures();
+			}
+		}
+
 		$this->show_view( 'Blocks/Features' );
 	}
 
@@ -892,5 +902,80 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 		} );
 
 		return $features;
+	}
+
+
+	/**
+	 * Called when action is triggered
+	 *
+	 * @return void
+	 */
+	public function action() {
+		parent::action();
+
+		if ( ! SQ_Classes_Helpers_Tools::userCan( 'sq_manage_snippet' ) ) {
+			if ( SQ_Classes_Helpers_Tools::isAjax() ) {
+				wp_send_json_error( esc_html__( "You do not have permission to perform this action", 'squirrly-seo' ) );
+			} else {
+				SQ_Classes_Error::setError( esc_html__( "You do not have permission to perform this action", 'squirrly-seo' ) );
+			}
+		}
+
+		switch ( SQ_Classes_Helpers_Tools::getValue( 'action' ) ) {
+			case 'sq_features_search':
+
+				$search      = (string) SQ_Classes_Helpers_Tools::getValue( 'sfeature', '' );
+				$this->features = SQ_Classes_ObjController::getClass( 'SQ_Core_BlockFeatures' )->getFeatures();
+
+				//Search in the features
+				if ( $search <> '' ) {
+					foreach ( $this->features as $index => $feature ) {
+
+						if ( isset( $feature['show'] ) && ! $feature['show'] ) {
+							unset( $this->features[ $index ] );
+							continue;
+						}
+
+						$this->features[ $index ]['relevant'] = 0;
+
+						$sfeatures = SQ_Classes_Helpers_Tools::getValue( 'sfeature' );
+						$sfeatures = explode( ' ', $sfeatures );
+						if ( ! empty( $sfeatures ) ) {
+							$found = 0;
+
+							foreach ( $sfeatures as $sfeature ) {
+								if ( $sfeature <> '' ) {
+									if ( stripos( $feature['title'], $sfeature ) !== false ) {
+										$found ++;
+									}
+									if ( stripos( $feature['description'], $sfeature ) !== false ) {
+										$found ++;
+									}
+									if ( isset( $feature['keywords'] ) && $feature['keywords'] <> '' ) {
+										if ( SQ_Classes_Helpers_Tools::findStr( $feature['keywords'], $sfeature ) !== false ) {
+											$found ++;
+										}
+									}
+								}
+							}
+
+							if ( ! $found ) {
+								$this->features[ $index ]['show'] = false;
+							} else {
+								$this->features[ $index ]['relevant'] = $found;
+							}
+
+						}
+					}
+
+					usort( $this->features, function ( $a, $b ) {
+						return ( $a['relevant'] > $b['relevant'] ) ? - 1 : 1;
+					} );
+
+				}
+
+				break;
+		}
+
 	}
 }

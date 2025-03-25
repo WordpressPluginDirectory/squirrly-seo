@@ -54,7 +54,7 @@ if ( strtotime( $view->auditpage->audit_datetime ) ) {
     <td>
         <div class="text-danger my-2"><?php echo esc_html__( "Could not create the audit for this URL", "squirrly-seo" ) . ' (' . esc_html__( "error code", "squirrly-seo" ) . ': ' . esc_html( $view->auditpage->audit_error ) . ')' ?></div>
         <div class="text-black-50">
-            <em><?php echo sprintf( esc_html__( "In case this is happening for ALL pages, please whitelist our crawler IPs from your hosting, even if they are not blocked. If you can't find where to whitelist the IPs, the easiest solution would be to contact your hosting and ask them to do it for you. %s 65.108.154.199 %s 5.161.83.61 %s In case this is NOT happening for all your pages, click on the 3 dots for those pages that get the error, stop monitoring, and add it again. %s After which, make another audit.", "squirrly-seo" ), '<br /><br />', '<br />', '<br /><br />', '<br /><br />' ) ?></em>
+            <em><?php echo sprintf( esc_html__( "In case this is happening for ALL pages, please whitelist our crawler IPs from your hosting, even if they are not blocked. If you can't find where to whitelist the IPs, the easiest solution would be to contact your hosting and ask them to do it for you. %s 5.161.83.61 %s In case this is NOT happening for all your pages, click on the 3 dots for those pages that get the error, stop monitoring, and add it again. %s After which, make another audit.", "squirrly-seo" ), '<br /><br />', '<br /><br />', '<br /><br />' ) ?></em>
         </div>
     </td>
 <?php } else { ?>

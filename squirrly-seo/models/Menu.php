@@ -200,7 +200,7 @@ class SQ_Models_Menu {
 				'title'      => esc_html__( "Bulk SEO", 'squirrly-seo' ),
 				'parent'     => 'sq_dashboard',
 				'capability' => 'edit_posts',
-				'function'   => array( SQ_Classes_ObjController::getClass( 'SQ_Controllers_BulkSeo' ), 'init' ),
+				'function'   => array( SQ_Classes_ObjController::getClass( 'SQ_Controllers_Assistant' ), 'init' ),
 				'href'       => false,
 				'icon'       => 'fa-solid fa-block-brick',
 				'topmenu'    => false,

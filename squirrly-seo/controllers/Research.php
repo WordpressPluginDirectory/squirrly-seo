@@ -10,6 +10,7 @@ defined( 'ABSPATH' ) || die( 'Cheatin\' uh?' );
  */
 class SQ_Controllers_Research extends SQ_Classes_FrontController {
 
+	public $args = array();
 	public $blogs;
 	public $kr;
 	//--
@@ -72,28 +73,16 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController {
 		wp_enqueue_style( 'wp-color-picker' );
 		wp_enqueue_script( 'wp-color-picker' );
 
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap-reboot' );
-		if ( is_rtl() ) {
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'popper' );
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap.rtl' );
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'rtl' );
-		} else {
-			SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'bootstrap' );
-		}
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'switchery' );
 		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'datatables' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'fontawesome' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'global' );
-
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'assistant' );
-		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'navbar' );
 		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'research' );
 		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'labels' );
 		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( $tab );
 		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'chart' );
 
 		if ( method_exists( $this, $tab ) ) {
-			call_user_func( array( $this, $tab ) );
+			if ( SQ_Classes_Helpers_Tools::userCan( 'sq_manage_snippet' ) ) {
+				call_user_func( array( $this, $tab ) );
+			}
 		}
 
 		$this->show_view( 'Research/' . esc_attr( ucfirst( $tab ) ) );
@@ -132,26 +121,23 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController {
 
 	public function briefcase() {
 		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'briefcase' );
-		$search = (string) SQ_Classes_Helpers_Tools::getValue( 'skeyword', '' );
-		$labels = SQ_Classes_Helpers_Tools::getValue( 'slabel' );
-		$sort   = SQ_Classes_Helpers_Tools::getValue( 'ssort', 'rank' );
-		$order  = SQ_Classes_Helpers_Tools::getValue( 'sorder', 'asc' );
-		$page   = SQ_Classes_Helpers_Tools::getValue( 'spage', 1 );
-		$num    = SQ_Classes_Helpers_Tools::getValue( 'snum', SQ_Classes_Helpers_Tools::getOption( 'sq_posts_per_page' ) );
 
-		$args = array(
-			'start'  => ( $page - 1 ) * $num,
-			'limit'  => $num,
-			'sort'   => $sort,
-			'order'  => $order,
-			'search' => $search,
-		);
+		if ( empty( $this->args ) ){
+			$sort   = SQ_Classes_Helpers_Tools::getValue( 'ssort', 'rank' );
+			$order  = SQ_Classes_Helpers_Tools::getValue( 'sorder', 'asc' );
+			$page   = SQ_Classes_Helpers_Tools::getValue( 'spage', 1 );
+			$num    = SQ_Classes_Helpers_Tools::getValue( 'snum', SQ_Classes_Helpers_Tools::getOption( 'sq_posts_per_page' ) );
 
-		if ( $labels && ! empty( $labels ) ) {
-			$args['label'] = join( ',', $labels );
+			$this->args = array(
+				'start'  => ( $page - 1 ) * $num,
+				'limit'  => $num,
+				'sort'   => $sort,
+				'order'  => $order,
+				'search' => '',
+			);
 		}
 
-		$response = SQ_Classes_RemoteController::getBriefcase( $args );
+		$response = SQ_Classes_RemoteController::getBriefcase( $this->args );
 
 		//check for errors
 		if ( is_wp_error( $response ) ) {
@@ -162,7 +148,7 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController {
 		} elseif ( ! empty( $response ) ) {
 
 			if ( $this->total = apply_filters( 'sq_total_records', ( isset( $response->keywords ) ? count( $response->keywords ) : 0 ) ) ) {
-				$this->max_num_pages = ceil( $this->total / $num );
+				$this->max_num_pages = ceil( $this->total / $this->args['limit'] );
 			}
 
 		}
@@ -182,22 +168,20 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController {
 	public function labels() {
 		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'briefcase' );
 
-		$search = (string) SQ_Classes_Helpers_Tools::getValue( 'skeyword', '' );
-		$page   = SQ_Classes_Helpers_Tools::getValue( 'spage', 1 );
-		$num    = SQ_Classes_Helpers_Tools::getValue( 'snum', SQ_Classes_Helpers_Tools::getOption( 'sq_posts_per_page' ) );
-
-		if ( $search ) {
-			$search = sanitize_text_field( $search );
-		}
 
 		//prepare call
-		$args = array(
-			'start'  => ( $page - 1 ) * $num,
-			'limit'  => $num,
-			'search' => $search,
-		);
+		if ( empty( $this->args ) ){
+			$page   = SQ_Classes_Helpers_Tools::getValue( 'spage', 1 );
+			$num    = SQ_Classes_Helpers_Tools::getValue( 'snum', SQ_Classes_Helpers_Tools::getOption( 'sq_posts_per_page' ) );
 
-		$response = SQ_Classes_RemoteController::getBriefcaseLabels( $args );
+			$this->args = array(
+				'start'  => ( $page - 1 ) * $num,
+				'limit'  => $num,
+				'search' => '',
+			);
+		}
+
+		$response = SQ_Classes_RemoteController::getBriefcaseLabels( $this->args );
 
 		//check for errors
 		if ( is_wp_error( $response ) ) {
@@ -209,7 +193,7 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController {
 
 			//prepare the pagination if there is a total number for array
 			if ( $this->total = apply_filters( 'sq_total_records', count( $response ) ) ) {
-				$this->max_num_pages = ceil( $this->total / $num );
+				$this->max_num_pages = ceil( $this->total / $this->args['limit'] );
 			}
 
 		}
@@ -221,22 +205,20 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController {
 	public function suggested() {
 		SQ_Classes_ObjController::getClass( 'SQ_Classes_DisplayController' )->loadMedia( 'briefcase' );
 
-		$search = (string) SQ_Classes_Helpers_Tools::getValue( 'skeyword', '' );
-		$page   = SQ_Classes_Helpers_Tools::getValue( 'spage', 1 );
-		$num    = SQ_Classes_Helpers_Tools::getValue( 'snum', SQ_Classes_Helpers_Tools::getOption( 'sq_posts_per_page' ) );
+		//prepare call
+		if ( empty( $this->args ) ){
+			$page   = SQ_Classes_Helpers_Tools::getValue( 'spage', 1 );
+			$num    = SQ_Classes_Helpers_Tools::getValue( 'snum', SQ_Classes_Helpers_Tools::getOption( 'sq_posts_per_page' ) );
 
-		if ( $search ) {
-			$search = sanitize_text_field( $search );
+			$this->args = array(
+				'start'  => ( $page - 1 ) * $num,
+				'limit'  => $num,
+				'search' => '',
+			);
 		}
 
-		//prepare call
-		$args = array(
-			'start'  => ( $page - 1 ) * $num,
-			'limit'  => $num,
-			'search' => $search,
-		);
 		//get the API data
-		$response = SQ_Classes_RemoteController::getKrFound( $args );
+		$response = SQ_Classes_RemoteController::getKrFound( $this->args );
 
 		//check for errors
 		if ( is_wp_error( $response ) ) {
@@ -248,7 +230,7 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController {
 
 			//prepare the pagination if there is a total number for array
 			if ( $this->total = apply_filters( 'sq_total_records', count( $response ) ) ) {
-				$this->max_num_pages = ceil( $this->total / $num );
+				$this->max_num_pages = ceil( $this->total / $this->args['limit'] );
 			}
 
 		}
@@ -267,22 +249,19 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController {
 
 	public function history() {
 
-		$search = (string) SQ_Classes_Helpers_Tools::getValue( 'skeyword', '' );
-		$page   = SQ_Classes_Helpers_Tools::getValue( 'spage', 1 );
-		$num    = SQ_Classes_Helpers_Tools::getValue( 'snum', SQ_Classes_Helpers_Tools::getOption( 'sq_posts_per_page' ) );
-
-		if ( $search ) {
-			$search = sanitize_text_field( $search );
-		}
-
 		//prepare call
-		$args = array(
-			'start'  => ( $page - 1 ) * $num,
-			'limit'  => $num,
-			'search' => $search,
-		);
+		if ( empty( $this->args ) ){
+			$page   = SQ_Classes_Helpers_Tools::getValue( 'spage', 1 );
+			$num    = SQ_Classes_Helpers_Tools::getValue( 'snum', SQ_Classes_Helpers_Tools::getOption( 'sq_posts_per_page' ) );
+
+			$this->args = array(
+				'start'  => ( $page - 1 ) * $num,
+				'limit'  => $num,
+				'search' => '',
+			);
+		}
 		//get the API data
-		$response = SQ_Classes_RemoteController::getKRHistory( $args );
+		$response = SQ_Classes_RemoteController::getKRHistory( $this->args );
 
 		//check for errors
 		if ( is_wp_error( $response ) ) {
@@ -294,7 +273,7 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController {
 
 			//prepare the pagination if there is a total number for array
 			if ( $this->total = apply_filters( 'sq_total_records', count( $response ) ) ) {
-				$this->max_num_pages = ceil( $this->total / $num );
+				$this->max_num_pages = ceil( $this->total / $this->args['limit'] );
 			}
 
 		}
@@ -357,6 +336,33 @@ class SQ_Controllers_Research extends SQ_Classes_FrontController {
 		parent::action();
 
 		switch ( SQ_Classes_Helpers_Tools::getValue( 'action' ) ) {
+			case 'sq_research_search':
+
+				if ( ! SQ_Classes_Helpers_Tools::userCan( 'sq_manage_snippet' ) ) {
+					return;
+				}
+
+				$search = (string) SQ_Classes_Helpers_Tools::getValue( 'skeyword', '' );
+				$labels = SQ_Classes_Helpers_Tools::getValue( 'slabel' );
+				$sort   = SQ_Classes_Helpers_Tools::getValue( 'ssort', 'rank' );
+				$order  = SQ_Classes_Helpers_Tools::getValue( 'sorder', 'asc' );
+				$page   = SQ_Classes_Helpers_Tools::getValue( 'spage', 1 );
+				$num    = SQ_Classes_Helpers_Tools::getValue( 'snum', SQ_Classes_Helpers_Tools::getOption( 'sq_posts_per_page' ) );
+
+				$this->args = array(
+					'start'  => ( $page - 1 ) * $num,
+					'limit'  => $num,
+					'sort'   => $sort,
+					'order'  => $order,
+					'search' => $search,
+				);
+
+				if ( $labels && ! empty( $labels ) ) {
+					$this->args['label'] = join( ',', $labels );
+				}
+
+				break;
+
 			case 'sq_briefcase_addkeyword':
 
 				if ( ! SQ_Classes_Helpers_Tools::userCan( 'sq_manage_snippet' ) ) {

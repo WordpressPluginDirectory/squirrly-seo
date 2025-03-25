@@ -35,6 +35,9 @@ if ( ! isset( $view ) ) {
 
 							<?php $patterns = SQ_Classes_Helpers_Tools::getOption( 'patterns' ); ?>
                             <form id="sq_auditpage_form" method="get" class="form-inline col-12 m-0 p-0 ignore">
+	                            <?php SQ_Classes_Helpers_Tools::setNonce( 'sq_onboarding_search', 'sq_nonce', false ); ?>
+                                <input type="hidden" name="action" value="sq_onboarding_search"/>
+
                                 <input type="hidden" name="page" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'page' ) ) ?>">
                                 <input type="hidden" name="tab" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'tab' ) ) ?>">
 

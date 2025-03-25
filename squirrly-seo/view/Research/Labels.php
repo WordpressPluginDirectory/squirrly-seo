@@ -42,7 +42,7 @@ if ( ! isset( $view ) ) {
 					<?php do_action( 'sq_subscription_notices' ); ?>
 
                     <div class="row col-12 p-0 m-0 my-3">
-                        <button class="btn btn-lg btn-primary text-white" onclick="jQuery('.sq_add_labels_dialog').modal('show')" data-dismiss="modal">
+                        <button class="btn btn-lg btn-primary text-white" onclick="jQuery('.sq_add_labels_dialog').modal('show');jQuery('.sq_add_labels_dialog').find('[autofocus]').focus();" data-dismiss="modal">
 							<?php echo esc_html__( "Add new Label", 'squirrly-seo' ); ?>
                             <i class="fa-solid fa-plus-square"></i>
                         </button>
@@ -60,6 +60,9 @@ if ( ! isset( $view ) ) {
 
                             <div class="col-6 p-0 m-0">
                                 <form method="get" class="d-flex flex-row justify-content-end p-0 m-0">
+	                                <?php SQ_Classes_Helpers_Tools::setNonce( 'sq_research_search', 'sq_nonce', false ); ?>
+                                    <input type="hidden" name="action" value="sq_research_search"/>
+
                                     <input type="hidden" name="page" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'page' ) ) ?>">
                                     <input type="hidden" name="tab" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'tab' ) ) ?>">
                                     <input type="search" class="d-inline-block align-middle col-7 py-0 px-2 mr-0 rounded-0" id="post-search-input" name="skeyword" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'skeyword' ) ) ?>" placeholder="<?php echo esc_attr__( "Write the keyword you want to search for", 'squirrly-seo' ) ?>"/>
@@ -165,6 +168,9 @@ if ( ! isset( $view ) ) {
                             <div class="col-5 row m-0 p-0"></div>
                             <div class="col-7 p-0 m-0">
                                 <form method="get" class="d-flex flex-row justify-content-end p-0 m-0">
+	                                <?php SQ_Classes_Helpers_Tools::setNonce( 'sq_research_search', 'sq_nonce', false ); ?>
+                                    <input type="hidden" name="action" value="sq_research_search"/>
+
                                     <input type="hidden" name="page" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'page' ) ) ?>">
                                     <input type="hidden" name="tab" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'tab' ) ) ?>">
                                     <input type="search" class="d-inline-block align-middle col-7 py-0 px-2 mr-0 rounded-0" id="post-search-input" name="skeyword" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'skeyword' ) ) ?>" placeholder="<?php echo esc_attr__( "Write the keyword you want to search for", 'squirrly-seo' ) ?>"/>
@@ -191,7 +197,7 @@ if ( ! isset( $view ) ) {
                         <div class="my-5">
                             <h4 class="text-center"><?php echo esc_html__( "Welcome to Briefcase Labels", 'squirrly-seo' ); ?></h4>
                             <div class="col-12 m-2 text-center">
-                                <button class="btn btn-lg btn-primary" onclick="jQuery('.sq_add_labels_dialog').modal('show')" data-dismiss="modal">
+                                <button class="btn btn-lg btn-primary" onclick="jQuery('.sq_add_labels_dialog').modal('show');jQuery('.sq_add_labels_dialog').find('[autofocus]').focus();" data-dismiss="modal">
                                     <i class="fa-solid fa-plus-square-o"></i> <?php echo esc_html__( "Add label to organize the keywords in Briefcase", 'squirrly-seo' ); ?>
                                 </button>
                             </div>
@@ -208,7 +214,7 @@ if ( ! isset( $view ) ) {
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="sq_labelname"><?php echo esc_html__( "Label Name", 'squirrly-seo' ); ?></label>
-                                        <input type="text" class="form-control" id="sq_labelname" maxlength="35"/>
+                                        <input type="text" class="form-control" id="sq_labelname" maxlength="35" autofocus/>
                                     </div>
                                     <div class="form-group">
                                         <div>

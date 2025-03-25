@@ -24,6 +24,9 @@ if ( ! empty( $view->focuspages ) ) { ?>
 
         <div class="col-12 row m-0 p-0 my-2">
             <form id="sq_focuspages_form" method="get" class="form-inline m-0 p-0 ignore">
+	            <?php SQ_Classes_Helpers_Tools::setNonce( 'sq_focuspages_search_label', 'sq_nonce', false ); ?>
+                <input type="hidden" name="action" value="sq_focuspages_search_label"/>
+
                 <input type="hidden" name="page" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'page' ) ) ?>">
                 <input type="hidden" name="tab" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'tab' ) ) ?>">
 

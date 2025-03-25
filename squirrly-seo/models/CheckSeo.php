@@ -2092,7 +2092,7 @@ class SQ_Models_CheckSeo {
 			case 400:
 				return array(
 					'warning'  => sprintf( esc_html__( "Focus Page was not found (error %s)", 'squirrly-seo' ), $error_code ),
-					'message'  => sprintf( esc_html__( "In case this is happening for ALL pages, please whitelist our crawler IPs from your hosting, even if they are not blocked. If you can't find where to whitelist the IPs, the easiest solution would be to contact your hosting and ask them to do it for you. %s 65.108.154.199 %s 5.161.83.61 %s In case this is NOT happening for all your pages, click on the 3 dots for those pages that get the error, stop monitoring, and add it again. %s After which, make another audit.", "squirrly-seo" ), '<br /><br />', '<br />', '<br /><br />', '<br /><br />' ),
+					'message'  => sprintf( esc_html__( "In case this is happening for ALL pages, please whitelist our crawler IPs from your hosting, even if they are not blocked. If you can't find where to whitelist the IPs, the easiest solution would be to contact your hosting and ask them to do it for you. %s 5.161.83.61 %s In case this is NOT happening for all your pages, click on the 3 dots for those pages that get the error, stop monitoring, and add it again. %s After which, make another audit.", "squirrly-seo" ), '<br /><br />', '<br /><br />', '<br /><br />' ),
 					'solution' => '',
 					'goal'     => esc_html__( "An error is preventing Squirrly from processing your Focus Page audits.", 'squirrly-seo' ),
 				);
@@ -2138,7 +2138,7 @@ class SQ_Models_CheckSeo {
 
 		return array(
 			'warning'  => sprintf( esc_html__( "Focus Page could not be verified (error: %s)", 'squirrly-seo' ), $error_code ),
-			'message'  => sprintf( esc_html__( "In case this is happening for ALL pages, please whitelist our crawler IPs from your hosting, even if they are not blocked. If you can't find where to whitelist the IPs, the easiest solution would be to contact your hosting and ask them to do it for you. %s 65.108.154.199 %s 5.161.83.61 %s In case this is NOT happening for all your pages, click on the 3 dots for those pages that get the error, stop monitoring, and add it again. %s After which, make another audit.", "squirrly-seo" ), '<br /><br />', '<br />', '<br /><br />', '<br /><br />' ),
+			'message'  => sprintf( esc_html__( "In case this is happening for ALL pages, please whitelist our crawler IPs from your hosting, even if they are not blocked. If you can't find where to whitelist the IPs, the easiest solution would be to contact your hosting and ask them to do it for you. %s 5.161.83.61 %s In case this is NOT happening for all your pages, click on the 3 dots for those pages that get the error, stop monitoring, and add it again. %s After which, make another audit.", "squirrly-seo" ), '<br /><br />', '<br /><br />', '<br /><br />' ),
 			'solution' => '',
 			'goal'     => esc_html__( "An error is preventing Squirrly from processing your Focus Page audits.", 'squirrly-seo' ),
 		);
