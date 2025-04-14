@@ -3,8 +3,8 @@ Contributors: cifi, calinvingan, florinmuresan, nagy.sorel
 Donate link: https://plugin.squirrly.co/squirrly-seo-pricing/
 Tags: SEO, AI, XML sitemap, google search console, schema
 Requires at least: 5.3
-Tested up to: 6.7
-Stable tag: 12.4.09
+Tested up to: 6.8
+Stable tag: 12.4.10
 Requires PHP: 7.0
 License: GPLv2 or later
 
@@ -230,6 +230,11 @@ Type a keyword to the right of the screen and start using Squirrly Seo. Enjoy!
 7. Squirrly SEO - SEO Briefcase
 
 == Changelog ==
+= 12.4.10 =
+Update - Compatibility with WP 6.8
+Fixed - Main Keyword change in SLA
+Fixed - Briefcase rows and pagination when searching for a keyword
+
 = 12.4.09 =
 Update - Correct the issue when multiple pages are selected in Innerlinks
 Update - The nonce referrer on search forms

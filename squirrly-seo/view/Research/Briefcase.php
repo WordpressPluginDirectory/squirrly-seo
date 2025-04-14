@@ -51,6 +51,8 @@ if ( ! isset( $view ) ) {
 
                                 <input type="hidden" name="page" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'page' ) ) ?>">
                                 <input type="hidden" name="tab" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'tab' ) ) ?>">
+                                <input type="hidden" name="ssort" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'ssort' ) ) ?>">
+                                <input type="hidden" name="sorder" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'sorder' ) ) ?>">
                                 <div class="col-12 m-0 p-0">
                                     <h3 class="card-title text-dark m-0 p-0"><?php echo esc_html__( "Labels", "squirrly-seo" ); ?></h3>
                                 </div>
@@ -126,6 +128,8 @@ if ( ! isset( $view ) ) {
 
                                     <input type="hidden" name="page" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'page' ) ) ?>">
                                     <input type="hidden" name="tab" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'tab' ) ) ?>">
+                                    <input type="hidden" name="ssort" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'ssort' ) ) ?>">
+                                    <input type="hidden" name="sorder" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'sorder' ) ) ?>">
                                     <input type="search" class="d-inline-block align-middle col-7 py-0 px-2 mr-0 rounded-0" id="post-search-input" name="skeyword" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'skeyword' ) ) ?>" placeholder="<?php echo esc_attr__( "Write the keyword you want to search for", "squirrly-seo" ) ?>"/>
                                     <input type="submit" class="btn btn-primary" value="<?php echo esc_attr__( "Search", "squirrly-seo" ) ?> >"/>
 									<?php if ( SQ_Classes_Helpers_Tools::getIsset( 'skeyword' ) || SQ_Classes_Helpers_Tools::getIsset( 'slabel' ) ) { ?>
@@ -470,6 +474,8 @@ if ( ! isset( $view ) ) {
 
                                     <input type="hidden" name="page" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'page' ) ) ?>">
                                     <input type="hidden" name="tab" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'tab' ) ) ?>">
+                                    <input type="hidden" name="ssort" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'ssort' ) ) ?>">
+                                    <input type="hidden" name="sorder" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'sorder' ) ) ?>">
                                     <input type="search" class="d-inline-block align-middle col-7 py-0 px-2 mr-0 rounded-0" id="post-search-input" name="skeyword" value="<?php echo esc_attr( SQ_Classes_Helpers_Tools::getValue( 'skeyword' ) ) ?>" placeholder="<?php echo esc_attr__( "Write the keyword you want to search for", 'squirrly-seo' ) ?>"/>
                                     <input type="submit" class="btn btn-primary" value="<?php echo esc_attr__( "Search", 'squirrly-seo' ) ?> >"/>
                                     <button type="button" class="btn btn-link text-primary ml-1" onclick="location.href = '<?php echo esc_url( SQ_Classes_Helpers_Tools::getAdminUrl( SQ_Classes_Helpers_Tools::getValue( 'page' ), SQ_Classes_Helpers_Tools::getValue( 'tab' ) ) ) ?>';" style="cursor: pointer"><?php echo esc_html__( "Show All", 'squirrly-seo' ) ?></button>
