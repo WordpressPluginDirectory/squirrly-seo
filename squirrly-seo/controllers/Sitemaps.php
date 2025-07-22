@@ -151,6 +151,20 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController {
 					//set the type key
 					$type = $this->sitemap . $this->type . $this->taxonomy;
 
+					// add the language to the cache directory
+					add_filter('sq_cache_directory', function ($dir) {
+						if ($language = $this->model->getLanguage()){
+							// Get only the language without country
+							if( strpos($language, '_') !== false ){
+								$language = substr( $language, 0, strpos($language, '_' ) );
+							}
+
+							return $dir . '/' . $language;
+						}
+						return $dir;
+					} );
+
+					// Check if the sitemap is cached
 					if ( $sitemap = $cache->getSitemap( $type, (int) $this->page, true ) ) {
 						header( 'Status: 200 OK', true, 200 );
 						header( 'Content-Type: text/xml; charset=' . get_bloginfo( 'charset' ), true );

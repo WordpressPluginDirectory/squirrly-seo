@@ -507,7 +507,9 @@ class SQ_Controllers_FocusPages extends SQ_Classes_FrontController {
 									foreach ( $this->innerlinks as $index => $innerlink ) {
 										$innerlink = SQ_Classes_ObjController::getDomain( 'SQ_Models_Domain_Innerlink', $innerlink );
 
-										if ( ! $from_post = SQ_Classes_ObjController::getClass( 'SQ_Models_Snippet' )->getCurrentSnippet( $innerlink->from_post_id ) ) {
+										if ( $innerlink->found ){
+											unset( $this->innerlinks[ $index ] );
+										}elseif ( ! $from_post = SQ_Classes_ObjController::getClass( 'SQ_Models_Snippet' )->getCurrentSnippet( $innerlink->from_post_id ) ) {
 											unset( $this->innerlinks[ $index ] );
 										} else {
 											$valid = SQ_Classes_ObjController::getClass( 'SQ_Models_Post' )->checkInnerLink( $from_post->post_content, $innerlink->keyword, $innerlink->from_post_id );
@@ -558,6 +560,8 @@ class SQ_Controllers_FocusPages extends SQ_Classes_FrontController {
 				$nofollow      = (int) SQ_Classes_Helpers_Tools::getValue( 'nofollow' );
 				$blank         = (int) SQ_Classes_Helpers_Tools::getValue( 'blank' );
 				$id            = SQ_Classes_Helpers_Tools::getValue( 'id' );
+
+				delete_transient( 'sq_innerlinks_suggestion' );
 
 				// Add inner Links
 				if ( ! $id && ! empty( $from_post_ids ) ) {
@@ -612,8 +616,6 @@ class SQ_Controllers_FocusPages extends SQ_Classes_FrontController {
 						SQ_Classes_Error::setMessage( esc_html__( "Inner link is saved.", 'squirrly-seo' ) . " <br /> " );
 					}
 
-					delete_transient( 'sq_innerlinks_suggestion' );
-
 				} elseif ( $id && $from_post_id && $to_post_id && $from_post_id <> $to_post_id && $post = SQ_Classes_ObjController::getClass( 'SQ_Models_Snippet' )->setPostByID( $from_post_id ) ) {
 
 					//Check if the keyword exists in the post content and is valid for inner link
@@ -656,8 +658,6 @@ class SQ_Controllers_FocusPages extends SQ_Classes_FrontController {
 						SQ_Classes_Error::setMessage( esc_html__( "Inner link is saved.", 'squirrly-seo' ) . " <br /> " );
 					}
 
-					delete_transient( 'sq_innerlinks_suggestion' );
-
 				} else {
 
 					if ( SQ_Classes_Helpers_Tools::isAjax() ) {
@@ -669,6 +669,8 @@ class SQ_Controllers_FocusPages extends SQ_Classes_FrontController {
 
 				break;
 			case 'sq_focuspages_checkinnerlink':
+
+				delete_transient( 'sq_innerlinks_suggestion' );
 
 				$from_post_id = (int) SQ_Classes_Helpers_Tools::getValue( 'from_post_id', 0 );
 				$id      = SQ_Classes_Helpers_Tools::getValue( 'id' );
@@ -711,6 +713,8 @@ class SQ_Controllers_FocusPages extends SQ_Classes_FrontController {
 				break;
 			case 'sq_focuspages_deleteinnerlink':
 
+				delete_transient( 'sq_innerlinks_suggestion' );
+
 				$from_post_id = (int) SQ_Classes_Helpers_Tools::getValue( 'from_post_id', 0 );
 				$id      = SQ_Classes_Helpers_Tools::getValue( 'id' );
 
@@ -736,7 +740,6 @@ class SQ_Controllers_FocusPages extends SQ_Classes_FrontController {
 					} else {
 						SQ_Classes_Error::setError( esc_html__( "Could not delete the innerlink", 'squirrly-seo' ) . " <br /> " );
 					}
-					delete_transient( 'sq_innerlinks_suggestion' );
 
 				}
 

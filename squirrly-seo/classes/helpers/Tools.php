@@ -22,7 +22,7 @@ class SQ_Classes_Helpers_Tools
         self::$options = $this->getOptions();
 
 	    //Load the languages pack
-	    add_action("init", array($this, 'loadMultilanguage'), PHP_INT_MAX);
+	    add_action( "init", array($this, 'loadMultilanguage'), PHP_INT_MAX);
 
 	    SQ_Classes_ObjController::getClass('SQ_Classes_HookController')->setHooks($this);
     }
@@ -597,7 +597,7 @@ class SQ_Classes_Helpers_Tools
                 'tax-product_cat' => array(
                     'protected' => 1,
                     'sep' => '|',
-                    'title' => '{{term_title}} ' . esc_html__("Category", 'squirrly-seo') . ' {{page}} {{sep}} {{sitename}}',
+                    'title' => '{{term_title}} ' . "Category" . ' {{page}} {{sep}} {{sitename}}',
                     'description' => '{{excerpt}}',
                     'noindex' => 0,
                     'nofollow' => 0,
@@ -616,7 +616,7 @@ class SQ_Classes_Helpers_Tools
                 'tax-product_tag' => array(
                     'protected' => 1,
                     'sep' => '|',
-                    'title' => '{{term_title}} ' . esc_html__("Tag", 'squirrly-seo') . ' {{page}} {{sep}} {{sitename}}',
+                    'title' => '{{term_title}} ' . "Tag" . ' {{page}} {{sep}} {{sitename}}',
                     'description' => '{{excerpt}}',
                     'noindex' => 0,
                     'nofollow' => 0,
@@ -635,7 +635,7 @@ class SQ_Classes_Helpers_Tools
                 'tax-post_format' => array(
                     'protected' => 1,
                     'sep' => '|',
-                    'title' => '{{term_title}} ' . esc_html__("Format", 'squirrly-seo') . ' {{page}} {{sep}} {{sitename}}',
+                    'title' => '{{term_title}} ' . "Format" . ' {{page}} {{sep}} {{sitename}}',
                     'description' => '{{excerpt}}',
                     'noindex' => 0,
                     'nofollow' => 0,
@@ -654,7 +654,7 @@ class SQ_Classes_Helpers_Tools
                 'tax-category' => array(
                     'protected' => 1,
                     'sep' => '|',
-                    'title' => '{{term_title}} ' . esc_html__("Category", 'squirrly-seo') . ' {{page}} {{sep}} {{sitename}}',
+                    'title' => '{{term_title}} ' . "Category" . ' {{page}} {{sep}} {{sitename}}',
                     'description' => '{{excerpt}}',
                     'noindex' => 0,
                     'nofollow' => 0,
@@ -673,7 +673,7 @@ class SQ_Classes_Helpers_Tools
                 'tax-post_tag' => array(
                     'protected' => 1,
                     'sep' => '|',
-                    'title' => '{{term_title}} ' . esc_html__("Tag", 'squirrly-seo') . ' {{page}} {{sep}} {{sitename}}',
+                    'title' => '{{term_title}} ' . "Tag" . ' {{page}} {{sep}} {{sitename}}',
                     'description' => '{{excerpt}}',
                     'noindex' => 0,
                     'nofollow' => 0,
@@ -692,7 +692,7 @@ class SQ_Classes_Helpers_Tools
                 'tax-product_shipping_class' => array(
                     'protected' => 1,
                     'sep' => '|',
-                    'title' => '{{term_title}} ' . esc_html__("Shipping Option", 'squirrly-seo') . ' {{page}} {{sep}} {{sitename}}',
+                    'title' => '{{term_title}} ' . "Shipping Option" . ' {{page}} {{sep}} {{sitename}}',
                     'description' => '{{excerpt}}',
                     'noindex' => 0,
                     'nofollow' => 0,
@@ -730,7 +730,7 @@ class SQ_Classes_Helpers_Tools
                 'profile' => array(
                     'protected' => 1,
                     'sep' => '|',
-                    'title' => '{{name}}, ' . esc_html__("Author at", 'squirrly-seo') . ' {{sitename}} {{page}}',
+                    'title' => '{{name}}, ' . "Author at" . ' {{sitename}} {{page}}',
                     'description' => '{{excerpt}}',
                     'noindex' => 0,
                     'nofollow' => 0,
@@ -768,8 +768,8 @@ class SQ_Classes_Helpers_Tools
                 'search' => array(
                     'protected' => 1,
                     'sep' => '|',
-                    'title' => esc_html__("Are you looking for", 'squirrly-seo') . ' {{searchphrase}}? {{page}} {{sep}} {{sitename}}',
-                    'description' => esc_html__("These are the results for", 'squirrly-seo') . ' {{searchphrase}} ' . esc_html__("that you can find on our website.", 'squirrly-seo') . ' {{excerpt}}',
+                    'title' => "Are you looking for" . ' {{searchphrase}}? {{page}} {{sep}} {{sitename}}',
+                    'description' => "These are the results for" . ' {{searchphrase}} ' . "that you can find on our website." . ' {{excerpt}}',
                     'noindex' => 1,
                     'nofollow' => 0,
                     'og_type' => 'website',
@@ -805,8 +805,8 @@ class SQ_Classes_Helpers_Tools
                 '404' => array(
                     'protected' => 1,
                     'sep' => '|',
-                    'title' => esc_html__("Page not found", 'squirrly-seo') . ' {{sep}} {{sitename}}',
-                    'description' => esc_html__("This page could not be found on our website.", 'squirrly-seo') . ' {{excerpt}}',
+                    'title' => "Page not found" . ' {{sep}} {{sitename}}',
+                    'description' => "This page could not be found on our website." . ' {{excerpt}}',
                     'noindex' => 1,
                     'nofollow' => 1,
                     'og_type' => 'website',
@@ -1275,6 +1275,10 @@ class SQ_Classes_Helpers_Tools
 
         $locale = get_user_locale();
         $locale = apply_filters( 'plugin_locale', $locale, _SQ_PLUGIN_NAME_ );
+
+		if( strpos( $locale , 'en_' ) !== false ) {
+			return;
+		}
 
         unload_textdomain( _SQ_PLUGIN_NAME_ );
 

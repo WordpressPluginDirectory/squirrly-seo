@@ -274,13 +274,14 @@ class SQ_Controllers_Api extends SQ_Classes_FrontController {
 						if ( $rows = $wpdb->get_results( $query ) ) {
 							if ( ! empty( $rows ) ) {
 								foreach ( $rows as $row ) {
+
 									if ( untrailingslashit( get_permalink( $row->ID ) ) <> $url ) {
-										$row->content = str_replace( '\/', '/', $row->content );
+										$row->post_content = str_replace( '\/', '/', $row->post_content );
 
 										$urls[] = array(
 											'post_id'   => $row->ID,
 											'permalink' => get_permalink( $row->ID ),
-											'innerlink' => strpos( $row->content, untrailingslashit($url) ) !== false
+											'innerlink' => strpos( $row->post_content, untrailingslashit($url) ) !== false
 										);
 									}
 								}

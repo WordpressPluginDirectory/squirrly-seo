@@ -315,20 +315,17 @@ $view->loadScripts();
                                                     </div>
                                                     <div class="sq_sm_dropdown">
                                                         <ul class="p-2 m-0 text-left">
-															<?php if ( $view->checkin->subscription_serpcheck ) { ?>
-                                                                <li class="m-0 p-1 py-2">
-                                                                    <form method="post" class="row p-0 m-0">
-																		<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_serp_refresh_post' ); ?>
-                                                                        <input type="hidden" name="action" value="sq_serp_refresh_post"/>
-                                                                        <input type="hidden" name="keyword" value="<?php echo SQ_Classes_Helpers_Sanitize::escapeKeyword( $row->keyword ) ?>"/>
-                                                                        <i class="sq_icons_small fa-solid fa-refresh py-2"></i>
-                                                                        <button type="submit" class="btn btn-sm bg-transparent p-0 m-0">
-																			<?php echo esc_html__( "Check Ranking again", 'squirrly-seo' ) ?>
-                                                                        </button>
-                                                                    </form>
-                                                                </li>
-															<?php } ?>
-
+                                                            <li class="m-0 p-1 py-2">
+                                                                <form method="post" class="row p-0 m-0">
+                                                                    <?php SQ_Classes_Helpers_Tools::setNonce( 'sq_serp_refresh_post' ); ?>
+                                                                    <input type="hidden" name="action" value="sq_serp_refresh_post"/>
+                                                                    <input type="hidden" name="keyword" value="<?php echo SQ_Classes_Helpers_Sanitize::escapeKeyword( $row->keyword ) ?>"/>
+                                                                    <i class="sq_icons_small fa-solid fa-refresh py-2"></i>
+                                                                    <button type="submit" class="btn btn-sm bg-transparent p-0 m-0">
+                                                                        <?php echo esc_html__( "Check Ranking again", 'squirrly-seo' ) ?>
+                                                                    </button>
+                                                                </form>
+                                                            </li>
                                                             <li class="m-0 p-1 py-2">
                                                                 <form method="post" class="row p-0 m-0">
 																	<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_serp_delete_keyword' ); ?>

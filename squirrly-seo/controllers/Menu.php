@@ -15,8 +15,7 @@ class SQ_Controllers_Menu extends SQ_Classes_FrontController {
 	/**
 	 * Menu Construct
 	 */
-	public function __construct() {
-		parent::__construct();
+	public function initMenu() {
 
 		global $sq_fullscreen, $sq_setting_page;
 
@@ -50,7 +49,7 @@ class SQ_Controllers_Menu extends SQ_Classes_FrontController {
 						$sq_fullscreen = true;
 					}
 
-					//dequeue other css when on Squirrly Settings page
+					//dequeue other CSS when on the Squirrly Settings page
 					add_action( 'admin_enqueue_scripts', array(
 						SQ_Classes_ObjController::getClass( 'SQ_Models_Compatibility' ),
 						'fixEnqueueErrors'
@@ -73,6 +72,9 @@ class SQ_Controllers_Menu extends SQ_Classes_FrontController {
 	 * Called from HookController on admin_init action
 	 */
 	public function hookInit() {
+
+		// Initialize the plugin menu
+		$this->initMenu();
 
 		/* add the plugin menu in admin */
 		if ( SQ_Classes_Helpers_Tools::userCan( 'manage_options' ) ) {

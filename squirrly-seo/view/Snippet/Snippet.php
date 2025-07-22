@@ -52,7 +52,7 @@ if ( SQ_Classes_Helpers_Tools::getOption( 'sq_use' ) ) {
 			}
 		}
 
-		if ( $view->post->ID > 0 && function_exists( 'get_sample_permalink' ) ) {
+		if ( (int) $view->post->ID > 0 && function_exists( 'get_sample_permalink' ) ) {
 			list( $permalink, $post_name ) = get_sample_permalink( $view->post->ID );
 			if ( strpos( $permalink, '%postname%' ) !== false || strpos( $permalink, '%pagename%' ) !== false ) {
 				$view->post->url = str_replace( array(

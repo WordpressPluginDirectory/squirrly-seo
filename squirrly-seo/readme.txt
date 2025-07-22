@@ -4,7 +4,7 @@ Donate link: https://plugin.squirrly.co/squirrly-seo-pricing/
 Tags: SEO, AI, XML sitemap, google search console, schema
 Requires at least: 5.3
 Tested up to: 6.8
-Stable tag: 12.4.10
+Stable tag: 12.4.12
 Requires PHP: 7.0
 License: GPLv2 or later
 
@@ -230,10 +230,30 @@ Type a keyword to the right of the screen and start using Squirrly Seo. Enjoy!
 7. Squirrly SEO - SEO Briefcase
 
 == Changelog ==
+= 12.4.12 =
+Update - Added the option to recheck a ranking keyword in Rankings
+Update - Compatibility issue when $post->id is false
+Update - Compatibility with TranslatePress URLs on Sitemap URLs
+Update - Canonical link identification in Focus Pages
+Update - Add language path support for sitemap cache directory
+Fix - Issue when adding suggested inner links
+Fix -Remove suggested inner links after added
+Fix - Warning in API calls on line 278 for grabbing post content
+Fix - WooCommerce error on Snippet product URL
+Fix - Popup layout and style in Squirrly > Overview
+
+= 12.4.11 =
+Update - The option to recheck the ranking keyword
+Update - Compatibility issue with other SEO plugins when $post->id is false
+Update - TranslatePress on Sitemap URLs
+Fix - WooCommerce error when calling get_sample_permalink in Squirrly Snippet
+Fix - Function _load_textdomain_just_in_time was called incorrectly error.
+
 = 12.4.10 =
 Update - Compatibility with WP 6.8
 Fixed - Main Keyword change in SLA
 Fixed - Briefcase rows and pagination when searching for a keyword
+Fix - Google Analytics 4 connection
 
 = 12.4.09 =
 Update - Correct the issue when multiple pages are selected in Innerlinks

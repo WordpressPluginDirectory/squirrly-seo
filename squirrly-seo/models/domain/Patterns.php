@@ -21,8 +21,8 @@ class SQ_Models_Domain_Patterns extends SQ_Models_Abstract_Domain {
 	}
 
 	public function getDate() {
-		if($this->_date){
-			return wp_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), strtotime($this->_date) );
+		if ( $this->_date ) {
+			return wp_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), strtotime( $this->_date ) );
 		}
 
 		return $this->_date;
@@ -497,8 +497,8 @@ class SQ_Models_Domain_Patterns extends SQ_Models_Abstract_Domain {
 	}
 
 	public function getModified() {
-		if($this->_modified){
-			return wp_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), strtotime($this->_modified) );
+		if ( $this->_modified ) {
+			return wp_date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), strtotime( $this->_modified ) );
 		}
 
 		return $this->_modified;
@@ -741,7 +741,7 @@ class SQ_Models_Domain_Patterns extends SQ_Models_Abstract_Domain {
 
 					if ( isset( $sq_woocommerce['brand'] ) && $sq_woocommerce['brand'] <> '' ) {
 						$this->_product_brand = $sq_woocommerce['brand'];
-					} elseif ( (int) $this->_post->sq->primary_category > 0 ) {
+					} elseif ( ! empty( $this->_post ) && (int) $this->_post->sq->primary_category > 0 ) {
 
 						//check if the primary category was selected by the client
 						$category = get_term( (int) $this->_post->sq->primary_category, $taxonomy );

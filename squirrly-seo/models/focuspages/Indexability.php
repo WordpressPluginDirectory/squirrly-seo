@@ -35,6 +35,8 @@ class SQ_Models_Focuspages_Indexability extends SQ_Models_Abstract_Assistant {
 		//get the canonical from audit
 		if ( isset( $this->_audit->data->sq_seo_meta->canonical ) && $this->_audit->data->sq_seo_meta->canonical <> '' ) {
 			$this->_canonical = $this->_audit->data->sq_seo_meta->canonical;
+		}else{
+			$this->_canonical = ( !empty($this->_post->sq->canonical) ? $this->_post->sq->canonical : $this->_post->url);
 		}
 
 		if ( isset( $this->_audit->data->serp_checker->position ) && $this->_audit->data->serp_checker->position ) {

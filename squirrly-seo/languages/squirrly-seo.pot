@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Squirrly SEO 2020 (Smart Strategy)\n"
-"POT-Creation-Date: 2024-07-23 08:58+0300\n"
+"POT-Creation-Date: 2025-04-22 09:44+0300\n"
 "PO-Revision-Date: 2020-10-13 10:56+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: squirrly.php\n"
@@ -32,281 +32,80 @@ msgid ""
 "in a minute."
 msgstr ""
 
-#: classes/helpers/Sanitize.php:603
+#: classes/helpers/Sanitize.php:661
 msgid "The code for Google Webmaster Tool is incorrect."
 msgstr ""
 
-#: classes/helpers/Sanitize.php:637
+#: classes/helpers/Sanitize.php:700
 msgid "The code for Google Analytics is incorrect."
 msgstr ""
 
-#: classes/helpers/Sanitize.php:676
+#: classes/helpers/Sanitize.php:744
 msgid "The code for Facebook is incorrect."
 msgstr ""
 
-#: classes/helpers/Sanitize.php:709
+#: classes/helpers/Sanitize.php:782
 msgid "The code for Pinterest is incorrect."
 msgstr ""
 
-#: classes/helpers/Sanitize.php:741
+#: classes/helpers/Sanitize.php:819
 msgid "The code for Bing is incorrect."
 msgstr ""
 
-#: classes/helpers/Sanitize.php:773
+#: classes/helpers/Sanitize.php:856
 msgid "The code for Baidu is incorrect."
 msgstr ""
 
-#: classes/helpers/Sanitize.php:805
+#: classes/helpers/Sanitize.php:893
 msgid "The code for Yandex is incorrect."
 msgstr ""
 
-#: classes/helpers/Sanitize.php:948
+#: classes/helpers/Sanitize.php:1081
 msgid "The code for Facebook Pixel must only contain numbers."
 msgstr ""
 
-#: classes/helpers/Sanitize.php:964
+#: classes/helpers/Sanitize.php:1098
 msgid "The code for Facebook App must only contain numbers."
 msgstr ""
 
-#: classes/helpers/Tools.php:98
+#: classes/helpers/Tools.php:102
 msgid "Getting started"
 msgstr ""
 
-#: classes/helpers/Tools.php:124
+#: classes/helpers/Tools.php:128
 msgid "Documentation"
 msgstr ""
 
-#: classes/helpers/Tools.php:125
+#: classes/helpers/Tools.php:129
 msgid "Leave a review"
 msgstr ""
 
-#: classes/helpers/Tools.php:600 classes/helpers/Tools.php:657
-msgid "Category"
-msgstr ""
-
-#: classes/helpers/Tools.php:619 classes/helpers/Tools.php:676
-msgid "Tag"
-msgstr ""
-
-#: classes/helpers/Tools.php:638
-msgid "Format"
-msgstr ""
-
-#: classes/helpers/Tools.php:695
-msgid "Shipping Option"
-msgstr ""
-
-#: classes/helpers/Tools.php:733
-msgid "Author at"
-msgstr ""
-
-#: classes/helpers/Tools.php:771
-msgid "Are you looking for"
-msgstr ""
-
-#: classes/helpers/Tools.php:772
-msgid "These are the results for"
-msgstr ""
-
-#: classes/helpers/Tools.php:772
-msgid "that you can find on our website."
-msgstr ""
-
-#: classes/helpers/Tools.php:808
-msgid "Page not found"
-msgstr ""
-
-#: classes/helpers/Tools.php:809
-msgid "This page could not be found on our website."
-msgstr ""
-
-#: classes/helpers/Tools.php:1225
+#: classes/helpers/Tools.php:1245
 msgid "For better text comparison you need to install PHP mbstring extension."
 msgstr ""
 
-#: config/config.php:31
-msgid "Places a separator between the elements of the post description"
-msgstr ""
-
-#: config/config.php:32
-msgid "Adds the title of the post/page/term once it’s published"
-msgstr ""
-
-#: config/config.php:33
-msgid ""
-"Will display an excerpt from the post/page/term (if not customized, the "
-"excerpt will be auto-generated)"
-msgstr ""
-
-#: config/config.php:34
-msgid "Will display an excerpt from the post/page (no auto-generation)"
-msgstr ""
-
-#: config/config.php:35
-msgid "Adds the post's keyword to the post description"
-msgstr ""
-
-#: config/config.php:36
-msgid "Displays current post/page/term URL"
-msgstr ""
-
-#: config/config.php:37
-msgid "Displays the number of the current page (i.e. 1 of 6)"
-msgstr ""
-
-#: config/config.php:38
-msgid "Adds the site's name to the post description"
-msgstr ""
-
-#: config/config.php:39
-msgid "Adds the tagline/description of your site"
-msgstr ""
-
-#: config/config.php:40
-msgid "Adds the post category (several categories will be comma-separated)"
-msgstr ""
-
-#: config/config.php:41
-msgid "Adds the primary category of the post/page"
-msgstr ""
-
-#: config/config.php:42
-msgid "Adds the category description to the post description"
-msgstr ""
-
-#: config/config.php:43
-msgid "Adds the current tag(s) (several tags will be comma-separated)"
-msgstr ""
-
-#: config/config.php:44
-msgid "Adds the tag description"
-msgstr ""
-
-#: config/config.php:45
-msgid "Adds the term name"
-msgstr ""
-
-#: config/config.php:46
-msgid "Adds the term description"
-msgstr ""
-
-#: config/config.php:47
-msgid "Displays the search phrase (if it appears in the post)"
-msgstr ""
-
-#: config/config.php:48
-msgid "Displays the date of the post/page once it's published"
-msgstr ""
-
-#: config/config.php:49
-msgid "Replaces the publication date of a post/page with the modified one"
-msgstr ""
-
-#: config/config.php:50
-msgid "Displays the author's nicename"
-msgstr ""
-
-#: config/config.php:51
-msgid "Displays the post type singular label"
-msgstr ""
-
-#: config/config.php:52
-msgid "Displays the post type plural label"
-msgstr ""
-
-#: config/config.php:53
-msgid "Adds the author's biographical info to the post description"
-msgstr ""
-
-#: config/config.php:54
-msgid "Displays the current date"
-msgstr ""
-
-#: config/config.php:55
-msgid "Adds the current day"
-msgstr ""
-
-#: config/config.php:56
-msgid "Adds the current month"
-msgstr ""
-
-#: config/config.php:57
-msgid "Adds the current year"
-msgstr ""
-
-#: config/config.php:58
-msgid "Your Organization name set in Rich Snippets."
-msgstr ""
-
-#: config/config.php:59
-msgid "Your Organization description set in Rich Snippets."
-msgstr ""
-
-#: config/config.php:60
-msgid "Your Organization logo set in Rich Snippets."
-msgstr ""
-
-#: config/config.php:61
-msgid "Your Organization URL set in Rich Snippets."
-msgstr ""
-
-#: config/config.php:62
-msgid "Your Organization telephone set in Rich Snippets."
-msgstr ""
-
-#: config/config.php:63
-msgid "Adds the title of a page's parent page"
-msgstr ""
-
-#: config/config.php:64
-msgid "Adds the product name from Woocommerce for the current product"
-msgstr ""
-
-#: config/config.php:65
-msgid "Adds the product excerpt from Woocommerce for the current product"
-msgstr ""
-
-#: config/config.php:66
-msgid "Adds the product price from Woocommerce for the current product"
-msgstr ""
-
-#: config/config.php:67
-msgid "Adds the product price with Tax from Woocommerce for the current product"
-msgstr ""
-
-#: config/config.php:68
-msgid "Adds the product sale price from Woocommerce for the current product"
-msgstr ""
-
-#: config/config.php:69
-msgid "Adds the product price currency from Woocommerce for the current product"
-msgstr ""
-
-#: config/config.php:70
-msgid "Adds the product brand from Woocommerce for the current product"
-msgstr ""
-
-#: controllers/Account.php:34 controllers/Assistant.php:61
-#: controllers/Automation.php:237 controllers/BulkSeo.php:78
-#: controllers/BulkSeo.php:115 controllers/CheckSeo.php:389
-#: controllers/CheckSeo.php:410 controllers/Dashboard.php:30
-#: controllers/FocusPages.php:391 controllers/FocusPages.php:393
-#: controllers/Patterns.php:191 controllers/Post.php:366 controllers/Post.php:403
-#: controllers/Post.php:430 controllers/Post.php:496 controllers/Post.php:514
-#: controllers/Post.php:536 controllers/Post.php:559 controllers/Post.php:577
-#: controllers/Post.php:602 controllers/Post.php:625 controllers/Post.php:647
-#: controllers/Post.php:670 controllers/PostsList.php:259
-#: controllers/Ranking.php:228 controllers/Ranking.php:254
-#: controllers/Research.php:356 controllers/Research.php:363
-#: controllers/Research.php:404 controllers/Research.php:427
-#: controllers/Research.php:450 controllers/Research.php:480
-#: controllers/Research.php:508 controllers/Research.php:532
-#: controllers/Research.php:562 controllers/Research.php:594
-#: controllers/Research.php:674 controllers/Research.php:700
-#: controllers/Research.php:728 controllers/Research.php:761
-#: controllers/Research.php:858 controllers/Research.php:901
-#: controllers/Research.php:924 controllers/Research.php:955
-#: controllers/Research.php:977 controllers/SeoSettings.php:102
+#: controllers/Account.php:34 controllers/Assistant.php:198
+#: controllers/Assistant.php:237 controllers/Assistant.php:296
+#: controllers/Audits.php:229 controllers/Audits.php:231
+#: controllers/Automation.php:114 controllers/CheckSeo.php:335
+#: controllers/CheckSeo.php:356 controllers/Dashboard.php:30
+#: controllers/FocusPages.php:377 controllers/FocusPages.php:379
+#: controllers/Patterns.php:191 controllers/Post.php:367 controllers/Post.php:404
+#: controllers/Post.php:431 controllers/Post.php:497 controllers/Post.php:515
+#: controllers/Post.php:537 controllers/Post.php:560 controllers/Post.php:578
+#: controllers/Post.php:603 controllers/Post.php:626 controllers/Post.php:648
+#: controllers/Post.php:675 controllers/PostsList.php:280
+#: controllers/Ranking.php:243 controllers/Ranking.php:269
+#: controllers/Research.php:369 controllers/Research.php:376
+#: controllers/Research.php:417 controllers/Research.php:440
+#: controllers/Research.php:463 controllers/Research.php:493
+#: controllers/Research.php:521 controllers/Research.php:545
+#: controllers/Research.php:575 controllers/Research.php:607
+#: controllers/Research.php:687 controllers/Research.php:713
+#: controllers/Research.php:741 controllers/Research.php:774
+#: controllers/Research.php:871 controllers/Research.php:914
+#: controllers/Research.php:937 controllers/Research.php:968
+#: controllers/Research.php:990 controllers/SeoSettings.php:102
 #: controllers/SeoSettings.php:123 controllers/SeoSettings.php:140
 #: controllers/SeoSettings.php:159 controllers/SeoSettings.php:172
 #: controllers/SeoSettings.php:192 controllers/SeoSettings.php:207
@@ -318,313 +117,321 @@ msgstr ""
 #: controllers/SeoSettings.php:521 controllers/SeoSettings.php:545
 #: controllers/SeoSettings.php:559 controllers/SeoSettings.php:581
 #: controllers/SeoSettings.php:602 controllers/Snippet.php:243
+#: core/BlockFeatures.php:918 core/BlockFeatures.php:920
 msgid "You do not have permission to perform this action"
 msgstr ""
 
-#: controllers/Api.php:121 controllers/Indexnow.php:96
+#: controllers/Api.php:113
+msgid "Invalid Token. Please try again"
+msgstr ""
+
+#: controllers/Api.php:137 controllers/Api.php:195
+msgid "Connection expired. Please try again"
+msgstr ""
+
+#: controllers/Api.php:150 controllers/Api.php:153 controllers/Api.php:156
+msgid "Author not found"
+msgstr ""
+
+#: controllers/Api.php:209 controllers/Api.php:256 controllers/Api.php:315
+msgid "Wrong Params"
+msgstr ""
+
+#: controllers/Assistant.php:179 controllers/Assistant.php:316
+#: controllers/Audits.php:254 controllers/Automation.php:50
+#: controllers/Automation.php:59 controllers/Automation.php:98
+#: controllers/Automation.php:133 controllers/FocusPages.php:405
+#: controllers/Indexnow.php:81 controllers/Onboarding.php:204
+#: controllers/Post.php:392 controllers/Ranking.php:170
+#: controllers/SeoSettings.php:114 controllers/SeoSettings.php:187
+#: controllers/SeoSettings.php:531
+msgid "Saved"
+msgstr ""
+
+#: controllers/Assistant.php:290 controllers/Snippet.php:300
+msgid "Not Page found!"
+msgstr ""
+
+#: controllers/Assistant.php:321
+msgid "Error: Could not save the data."
+msgstr ""
+
+#: controllers/Audits.php:130
+msgid "The audit was not found. Please load another audit."
+msgstr ""
+
+#: controllers/Audits.php:162
+msgid "Could not load the Audit Page."
+msgstr ""
+
+#: controllers/Audits.php:256
+msgid "Not a valid email address."
+msgstr ""
+
+#: controllers/Audits.php:334
+msgid "Audit page is added. The audit may take a while so please be patient."
+msgstr ""
+
+#: controllers/Audits.php:337
+msgid "You reached the maximum number of audit pages for your account."
+msgstr ""
+
+#: controllers/Audits.php:340
+msgid "Error! Could not add the audit page."
+msgstr ""
+
+#: controllers/Audits.php:344
+msgid "Error! Could not find the audit page in your website."
+msgstr ""
+
+#: controllers/Audits.php:357 controllers/Audits.php:373
+msgid "Audit page sent for recheck. It may take a while so please be patient."
+msgstr ""
+
+#: controllers/Audits.php:359
+msgid "You've made too many requests, you can request one page audit per hour."
+msgstr ""
+
+#: controllers/Audits.php:361 controllers/Audits.php:364
+msgid "The page could not be sent for reaudit."
+msgstr ""
+
+#: controllers/Audits.php:376
+msgid "The audit for all pages can be made once an hour."
+msgstr ""
+
+#: controllers/Audits.php:383
+msgid "The page is removed from SEO Audit."
+msgstr ""
+
+#: controllers/Audits.php:385 controllers/FocusPages.php:833
+#: controllers/FocusPages.php:873 controllers/FocusPages.php:908
+#: controllers/Ranking.php:235 controllers/Ranking.php:261
+#: controllers/Ranking.php:288 controllers/Research.php:405
+#: controllers/Research.php:408 controllers/Research.php:432
+#: controllers/Research.php:455 controllers/Research.php:513
+#: controllers/Research.php:537 controllers/Research.php:704
+#: controllers/Research.php:765 controllers/Research.php:862
+#: controllers/Research.php:905 controllers/Research.php:929
+#: controllers/Research.php:1005
+msgid "Invalid params!"
+msgstr ""
+
+#: controllers/Automation.php:105 controllers/Automation.php:141
+msgid "Could not add the post type."
+msgstr ""
+
+#: controllers/CheckSeo.php:254 controllers/CheckSeo.php:269
+msgid "Done!"
+msgstr ""
+
+#: controllers/CheckSeo.php:291
+msgid "Fixed!"
+msgstr ""
+
+#: controllers/CheckSeo.php:297
+msgid "Could not fix it. You need to change it manually."
+msgstr ""
+
+#: controllers/CheckSeo.php:309
+msgid "Saved! Task marked as done."
+msgstr ""
+
+#: controllers/CheckSeo.php:326 controllers/Research.php:479
+#: controllers/Research.php:511 controllers/Research.php:567
+#: controllers/Research.php:702 controllers/Research.php:957
+#: models/LiveAssistant.php:72
+msgid "Saved!"
+msgstr ""
+
+#: controllers/FocusPages.php:144 controllers/Ranking.php:104
+#: controllers/Research.php:145 controllers/Research.php:189
+#: controllers/Research.php:226 controllers/Research.php:269
+msgid "Can't load data!"
+msgstr ""
+
+#: controllers/FocusPages.php:246
+msgid "Focus Page does not exist or was deleted from your website."
+msgstr ""
+
+#: controllers/FocusPages.php:610 controllers/FocusPages.php:612
+#: controllers/FocusPages.php:654 controllers/FocusPages.php:656
+msgid "Inner link is saved."
+msgstr ""
+
+#: controllers/FocusPages.php:664 controllers/FocusPages.php:666
+msgid "Error! Could not add the innerlink."
+msgstr ""
+
+#: controllers/FocusPages.php:697
+msgid "Keyword found & Inner Link valid."
+msgstr ""
+
+#: controllers/FocusPages.php:699
+msgid "Keyword not found in content"
+msgstr ""
+
+#: controllers/FocusPages.php:735
+msgid "Inner Link Removed"
+msgstr ""
+
+#: controllers/FocusPages.php:737
+msgid "Could not delete the innerlink"
+msgstr ""
+
+#: controllers/FocusPages.php:764
+msgid "Focus page is added. The audit may take a while so please be patient."
+msgstr ""
+
+#: controllers/FocusPages.php:773
+#, php-format
+msgid ""
+"You have reached the maximum number of focus pages for this website (max: %d)."
+msgstr ""
+
+#: controllers/FocusPages.php:775
+#, php-format
+msgid ""
+"You have reached the maximum number of focus pages per your account (max: %d)."
+msgstr ""
+
+#: controllers/FocusPages.php:779
+msgid "Error! Could not add the focus page."
+msgstr ""
+
+#: controllers/FocusPages.php:782
+msgid "Error! This focus page is not public."
+msgstr ""
+
+#: controllers/FocusPages.php:786 controllers/FocusPages.php:823
+#, php-format
+msgid "Error! Could not find the focus page %d in your website."
+msgstr ""
+
+#: controllers/FocusPages.php:811
+msgid "Focus page sent for recheck. It may take a while so please be patient."
+msgstr ""
+
+#: controllers/FocusPages.php:814 controllers/FocusPages.php:818
+msgid "You've made too many requests, please wait a few minutes."
+msgstr ""
+
+#: controllers/FocusPages.php:831
+msgid "The focus page is removed from monitoring"
+msgstr ""
+
+#: controllers/FocusPages.php:871
+msgid "Check Finished!"
+msgstr ""
+
+#: controllers/FocusPages.php:904 controllers/Ranking.php:259
+#: controllers/Research.php:430 controllers/Research.php:453
+#: controllers/Research.php:535 controllers/Research.php:927
+#: controllers/Research.php:1003
+msgid "Deleted!"
+msgstr ""
+
+#: controllers/Indexnow.php:99
 msgid "No URLs found. Please add URLs to index."
 msgstr ""
 
-#: controllers/Api.php:128 controllers/Indexnow.php:110
+#: controllers/Indexnow.php:113
 msgid "Invalid URLs provided. Please add valid URLs."
 msgstr ""
 
-#: controllers/Api.php:133 controllers/Indexnow.php:115
+#: controllers/Indexnow.php:118
 msgid "Failed to submit the URLs. Please try again."
 msgstr ""
 
-#: controllers/Api.php:140 controllers/Indexnow.php:122
+#: controllers/Indexnow.php:125
 #, php-format
 msgid "Successfully submitted %s URL."
 msgid_plural "Successfully submitted %s URLs."
 msgstr[0] ""
 msgstr[1] ""
 
-#: controllers/Api.php:161
-msgid "Invalid Token. Please try again"
-msgstr ""
-
-#: controllers/Api.php:184
-msgid "Connection expired. Please try again"
-msgstr ""
-
-#: controllers/Api.php:197 controllers/Api.php:200 controllers/Api.php:203
-msgid "Author not found"
-msgstr ""
-
-#: controllers/Api.php:241
-msgid "Connection expired. Please try again."
-msgstr ""
-
-#: controllers/Api.php:255 controllers/Api.php:303 controllers/Api.php:359
-msgid "Wrong Params"
-msgstr ""
-
-#: controllers/Assistant.php:53 controllers/Assistant.php:81
-#: controllers/Audits.php:395 controllers/Automation.php:173
-#: controllers/Automation.php:182 controllers/Automation.php:221
-#: controllers/Automation.php:256 controllers/FocusPages.php:419
-#: controllers/Indexnow.php:78 controllers/Onboarding.php:214
-#: controllers/Post.php:391 controllers/Ranking.php:183
-#: controllers/SeoSettings.php:114 controllers/SeoSettings.php:187
-#: controllers/SeoSettings.php:531
-msgid "Saved"
-msgstr ""
-
-#: controllers/Assistant.php:86
-msgid "Error: Could not save the data."
-msgstr ""
-
-#: controllers/Audits.php:155
-msgid "The audit was not found. Please load another audit."
-msgstr ""
-
-#: controllers/Audits.php:187
-msgid "Could not load the Audit Page."
-msgstr ""
-
-#: controllers/Audits.php:310
-msgid "Audit page is added. The audit may take a while so please be patient."
-msgstr ""
-
-#: controllers/Audits.php:313
-msgid "You reached the maximum number of audit pages for your account."
-msgstr ""
-
-#: controllers/Audits.php:316
-msgid "Error! Could not add the audit page."
-msgstr ""
-
-#: controllers/Audits.php:320
-msgid "Error! Could not find the audit page in your website."
-msgstr ""
-
-#: controllers/Audits.php:337 controllers/Audits.php:357
-msgid "Audit page sent for recheck. It may take a while so please be patient."
-msgstr ""
-
-#: controllers/Audits.php:339
-msgid "You've made too many requests, you can request one page audit per hour."
-msgstr ""
-
-#: controllers/Audits.php:341 controllers/Audits.php:344
-msgid "The page could not be sent for reaudit."
-msgstr ""
-
-#: controllers/Audits.php:360
-msgid "The audit for all pages can be made once an hour."
-msgstr ""
-
-#: controllers/Audits.php:371
-msgid "The page is removed from SEO Audit."
-msgstr ""
-
-#: controllers/Audits.php:373 controllers/FocusPages.php:796
-#: controllers/FocusPages.php:835 controllers/FocusPages.php:923
-#: controllers/Ranking.php:220 controllers/Ranking.php:246
-#: controllers/Ranking.php:273 controllers/Research.php:392
-#: controllers/Research.php:395 controllers/Research.php:419
-#: controllers/Research.php:442 controllers/Research.php:500
-#: controllers/Research.php:524 controllers/Research.php:691
-#: controllers/Research.php:752 controllers/Research.php:849
-#: controllers/Research.php:892 controllers/Research.php:916
-#: controllers/Research.php:992
-msgid "Invalid params!"
-msgstr ""
-
-#: controllers/Audits.php:397
-msgid "Not a valid email address."
-msgstr ""
-
-#: controllers/Automation.php:228 controllers/Automation.php:264
-msgid "Could not add the post type."
-msgstr ""
-
-#: controllers/BulkSeo.php:168 controllers/Snippet.php:300
-msgid "Not Page found!"
-msgstr ""
-
-#: controllers/CheckSeo.php:314 controllers/CheckSeo.php:329
-msgid "Done!"
-msgstr ""
-
-#: controllers/CheckSeo.php:351
-msgid "Fixed!"
-msgstr ""
-
-#: controllers/CheckSeo.php:357
-msgid "Could not fix it. You need to change it manually."
-msgstr ""
-
-#: controllers/CheckSeo.php:369
-msgid "Saved! Task marked as done."
-msgstr ""
-
-#: controllers/CheckSeo.php:380 controllers/Research.php:466
-#: controllers/Research.php:498 controllers/Research.php:554
-#: controllers/Research.php:689 controllers/Research.php:944
-#: models/LiveAssistant.php:71
-msgid "Saved!"
-msgstr ""
-
-#: controllers/FocusPages.php:155 controllers/Ranking.php:117
-#: controllers/Research.php:152 controllers/Research.php:198
-#: controllers/Research.php:237 controllers/Research.php:283
-msgid "Can't load data!"
-msgstr ""
-
-#: controllers/FocusPages.php:260
-msgid "Focus Page does not exist or was deleted from your website."
-msgstr ""
-
-#: controllers/FocusPages.php:623 controllers/FocusPages.php:625
-#: controllers/FocusPages.php:676 controllers/FocusPages.php:678
-msgid "Inner link is saved."
-msgstr ""
-
-#: controllers/FocusPages.php:686 controllers/FocusPages.php:688
-msgid "Error! Could not add the innerlink."
-msgstr ""
-
-#: controllers/FocusPages.php:710
-msgid "Keyword found & Inner Link valid."
-msgstr ""
-
-#: controllers/FocusPages.php:712
-msgid "Keyword not found in content"
-msgstr ""
-
-#: controllers/FocusPages.php:755
-msgid "Inner Link Removed"
-msgstr ""
-
-#: controllers/FocusPages.php:794
-msgid "Check Finished!"
-msgstr ""
-
-#: controllers/FocusPages.php:831 controllers/Ranking.php:244
-#: controllers/Research.php:417 controllers/Research.php:440
-#: controllers/Research.php:522 controllers/Research.php:914
-#: controllers/Research.php:990
-msgid "Deleted!"
-msgstr ""
-
-#: controllers/FocusPages.php:859
-msgid "Focus page is added. The audit may take a while so please be patient."
-msgstr ""
-
-#: controllers/FocusPages.php:866
-msgid "You reached the maximum number of focus pages for all your websites."
-msgstr ""
-
-#: controllers/FocusPages.php:869
-msgid "Error! Could not add the focus page."
-msgstr ""
-
-#: controllers/FocusPages.php:872
-msgid "Error! This focus page is not public."
-msgstr ""
-
-#: controllers/FocusPages.php:876 controllers/FocusPages.php:913
-#, php-format
-msgid "Error! Could not find the focus page %d in your website."
-msgstr ""
-
-#: controllers/FocusPages.php:901
-msgid "Focus page sent for recheck. It may take a while so please be patient."
-msgstr ""
-
-#: controllers/FocusPages.php:904 controllers/FocusPages.php:908
-msgid "You've made too many requests, please wait a few minutes."
-msgstr ""
-
-#: controllers/FocusPages.php:921
-msgid "The focus page is removed from monitoring"
-msgstr ""
-
-#: controllers/Indexnow.php:143
+#: controllers/Indexnow.php:146
 msgid "Log cleared"
 msgstr ""
 
-#: controllers/Indexnow.php:157
+#: controllers/Indexnow.php:160
 msgid "Regenerated"
 msgstr ""
 
-#: controllers/Indexnow.php:167 controllers/Indexnow.php:222
-#: view/BulkSeo/BulkseoRow.php:40
-msgid "Submit to IndexNow"
+#: controllers/Indexnow.php:170 controllers/Indexnow.php:225
+msgid "Submit to Auto-Indexing"
 msgstr ""
 
-#: controllers/Indexnow.php:322
+#: controllers/Indexnow.php:325
 #, php-format
-msgid "%s page submitted to IndexNow."
-msgid_plural "%s pages submitted to IndexNow."
+msgid "%s page submitted to Auto-Indexing."
+msgid_plural "%s pages submitted to Auto-Indexing."
 msgstr[0] ""
 msgstr[1] ""
 
-#: controllers/Indexnow.php:324
-msgid "Error submitting page to IndexNow."
+#: controllers/Indexnow.php:327
+msgid "Error submitting page to Auto-Indexing."
 msgstr ""
 
-#: controllers/Menu.php:93
+#: controllers/Menu.php:95
 #, php-format
 msgid ""
 "An error occurred during activation. If this error persists, please contact us "
 "at: %s"
 msgstr ""
 
-#: controllers/Menu.php:147
+#: controllers/Menu.php:149
 msgid "Dashboard"
 msgstr ""
 
-#: controllers/Menu.php:261 models/CheckSeo.php:193 models/CheckSeo.php:611
+#: controllers/Menu.php:263 models/CheckSeo.php:193 models/CheckSeo.php:611
 #: models/CheckSeo.php:628 models/CheckSeo.php:645 models/CheckSeo.php:662
 #: models/CheckSeo.php:713
 msgid "SEO Snippet"
 msgstr ""
 
-#: controllers/Menu.php:271 controllers/Snippet.php:215
+#: controllers/Menu.php:273 controllers/Snippet.php:215
 msgid "Custom SEO"
 msgstr ""
 
-#: controllers/Menu.php:291
+#: controllers/Menu.php:293
 msgid "Squirrly SEO"
 msgstr ""
 
-#: controllers/Menu.php:401 view/Blocks/LiveAssistant.php:130
+#: controllers/Menu.php:403 view/Blocks/LiveAssistant.php:130
 msgid "Squirrly Live Assistant"
 msgstr ""
 
-#: controllers/Menu.php:498
+#: controllers/Menu.php:501
 msgid "NEW"
 msgstr ""
 
-#: controllers/Onboarding.php:95 view/Onboarding/Step1.php:35
+#: controllers/Onboarding.php:85 view/Onboarding/Step1.php:35
 msgid "SEO Expert Mode"
 msgstr ""
 
-#: controllers/Onboarding.php:98 models/CheckSeo.php:577
+#: controllers/Onboarding.php:88 models/CheckSeo.php:577
 #: view/Onboarding/Step2.php:385 view/Snippet/Jsonld.php:121
 msgid "SEO Automation"
 msgstr ""
 
-#: controllers/Onboarding.php:101
+#: controllers/Onboarding.php:91
 msgid "Add a Page"
 msgstr ""
 
-#: controllers/Onboarding.php:104
+#: controllers/Onboarding.php:94
 msgid "Complete SEO Info"
 msgstr ""
 
-#: controllers/Onboarding.php:107
+#: controllers/Onboarding.php:97
 msgid "Your Site’s Topic"
 msgstr ""
 
-#: controllers/Onboarding.php:110
+#: controllers/Onboarding.php:100
 msgid "Ready!"
 msgstr ""
 
-#: controllers/Overview.php:70
+#: controllers/Overview.php:55
 #, php-format
 msgid ""
 "%s, why don't you start a two weeks journey for better rankings? %sStart "
@@ -632,221 +439,222 @@ msgid ""
 "plan.%s"
 msgstr ""
 
-#: controllers/Patterns.php:250
+#: controllers/Patterns.php:248
 msgid "Custom field data based on the current post ID."
 msgstr ""
 
-#: controllers/Post.php:394 controllers/Post.php:417
+#: controllers/Post.php:395 controllers/Post.php:418
 msgid "Can't get the post URL"
 msgstr ""
 
-#: controllers/Post.php:421
+#: controllers/Post.php:422
 msgid "Invalid request"
 msgstr ""
 
-#: controllers/Post.php:772
+#: controllers/Post.php:777
 msgid "Insert/edit link"
 msgstr ""
 
-#: controllers/Post.php:773 view/Blocks/LiveAssistant.php:41
+#: controllers/Post.php:778 view/Blocks/LiveAssistant.php:41
 #: view/Blocks/LiveAssistant.php:143
 msgid "Update"
 msgstr ""
 
-#: controllers/Post.php:774
+#: controllers/Post.php:779
 msgid "Add Link"
 msgstr ""
 
-#: controllers/Post.php:775
+#: controllers/Post.php:780
 msgid "(no title)"
 msgstr ""
 
-#: controllers/Post.php:776
+#: controllers/Post.php:781
 msgid "No matches found."
 msgstr ""
 
-#: controllers/Post.php:777
+#: controllers/Post.php:782
 msgid "Link selected."
 msgstr ""
 
-#: controllers/Post.php:778
+#: controllers/Post.php:783
 msgid "Link inserted."
 msgstr ""
 
-#: controllers/Post.php:779
+#: controllers/Post.php:784
 msgid "Add <code>rel=\"nofollow\"</code>"
 msgstr ""
 
-#: controllers/Post.php:780
+#: controllers/Post.php:785
 msgid "Add <code>rel=\"sponsored\"</code>"
 msgstr ""
 
-#: controllers/Post.php:781
+#: controllers/Post.php:786
 msgid "Link Title"
 msgstr ""
 
-#: controllers/PostsList.php:93 models/PostsList.php:34
+#: controllers/PostsList.php:95 models/PostsList.php:34
 msgid "Optimized"
 msgstr ""
 
-#: controllers/PostsList.php:146
-msgid "SQ Snippet"
+#: controllers/PostsList.php:110 controllers/PostsList.php:167
+#: models/BulkSeo.php:22 models/FocusPages.php:25 view/Snippet/Snippet.php:98
+msgid "Visibility"
 msgstr ""
 
-#: controllers/PostsList.php:277
+#: controllers/PostsList.php:298
 msgid "Network Error. Please Refresh."
 msgstr ""
 
-#: controllers/PostsList.php:281
+#: controllers/PostsList.php:302
 #, php-format
 msgid "Maintenance. %sWe'll be back in a minute."
 msgstr ""
 
-#: controllers/PostsList.php:314
+#: controllers/PostsList.php:335
 msgid "Not Public"
 msgstr ""
 
-#: controllers/PostsList.php:315
+#: controllers/PostsList.php:336
 msgid "Could not process"
 msgstr ""
 
-#: controllers/PostsList.php:316
+#: controllers/PostsList.php:337
 msgid "The Squirrly subscription has expired!"
 msgstr ""
 
-#: controllers/Ranking.php:143
+#: controllers/Ranking.php:130
 msgid ""
-"GSC Token Expired. Reconnect Google Search Console from 'SEO Configuration > "
+"GSC Token Expired. Reconnect Google Search Console from 'Technical SEO > "
 "Connect Tools'."
 msgstr ""
 
-#: controllers/Ranking.php:145
+#: controllers/Ranking.php:132
 msgid "Could not load data."
 msgstr ""
 
-#: controllers/Ranking.php:197
+#: controllers/Ranking.php:212
 #, php-format
 msgid "Could not refresh the rank. Please check your SERP credits %s here %s"
 msgstr ""
 
-#: controllers/Ranking.php:199
+#: controllers/Ranking.php:214
 #, php-format
 msgid "%s is queued and the rank will be checked soon."
 msgstr ""
 
-#: controllers/Ranking.php:215
+#: controllers/Ranking.php:230
 msgid "The keyword is deleted."
 msgstr ""
 
-#: controllers/Ranking.php:217
+#: controllers/Ranking.php:232
 msgid "Could not delete the keyword!"
 msgstr ""
 
-#: controllers/Ranking.php:270
+#: controllers/Ranking.php:285
 msgid "Sent!"
 msgstr ""
 
-#: controllers/Research.php:166
+#: controllers/Research.php:159
 #, php-format
 msgid "No keyword found. %s Show all %s keywords from Briefcase."
 msgstr ""
 
-#: controllers/Research.php:310
+#: controllers/Research.php:296
 msgid "very few"
 msgstr ""
 
-#: controllers/Research.php:311 controllers/Research.php:312
-#: controllers/Research.php:313 controllers/Research.php:314
+#: controllers/Research.php:297 controllers/Research.php:298
+#: controllers/Research.php:299 controllers/Research.php:300
 msgid "few"
 msgstr ""
 
-#: controllers/Research.php:315 controllers/Research.php:316
-#: controllers/Research.php:317 controllers/Research.php:318
+#: controllers/Research.php:301 controllers/Research.php:302
+#: controllers/Research.php:303 controllers/Research.php:304
 msgid "some"
 msgstr ""
 
-#: controllers/Research.php:319 controllers/Research.php:320
+#: controllers/Research.php:305 controllers/Research.php:306
 msgid "many"
 msgstr ""
 
-#: controllers/Research.php:323 controllers/Research.php:324
+#: controllers/Research.php:309 controllers/Research.php:310
 msgid "very low ranking chance"
 msgstr ""
 
-#: controllers/Research.php:325 controllers/Research.php:326
+#: controllers/Research.php:311 controllers/Research.php:312
 msgid "low ranking chance"
 msgstr ""
 
-#: controllers/Research.php:327 controllers/Research.php:328
+#: controllers/Research.php:313 controllers/Research.php:314
 msgid "modest ranking chance"
 msgstr ""
 
-#: controllers/Research.php:329 controllers/Research.php:330
+#: controllers/Research.php:315 controllers/Research.php:316
 msgid "decent ranking chance"
 msgstr ""
 
-#: controllers/Research.php:331
+#: controllers/Research.php:317
 msgid "high ranking chance"
 msgstr ""
 
-#: controllers/Research.php:332 controllers/Research.php:333
+#: controllers/Research.php:318 controllers/Research.php:319
 msgid "very high ranking chance"
 msgstr ""
 
-#: controllers/Research.php:382
+#: controllers/Research.php:395
 msgid "Keyword Saved. The rank check will be ready in a minute."
 msgstr ""
 
-#: controllers/Research.php:384 controllers/Research.php:388
+#: controllers/Research.php:397 controllers/Research.php:401
 msgid "Keyword Saved!"
 msgstr ""
 
-#: controllers/Research.php:472
+#: controllers/Research.php:485
 msgid "Invalid Label or Color!"
 msgstr ""
 
-#: controllers/Research.php:556 controllers/Research.php:946
-#: controllers/Research.php:969
+#: controllers/Research.php:569 controllers/Research.php:959
+#: controllers/Research.php:982
 msgid "Invalid Keyword!"
 msgstr ""
 
-#: controllers/Research.php:585
+#: controllers/Research.php:598
 msgid "No keywords in Briefcase to backup"
 msgstr ""
 
-#: controllers/Research.php:624 controllers/Research.php:638
-#: controllers/Research.php:660 controllers/Research.php:663
+#: controllers/Research.php:637 controllers/Research.php:651
+#: controllers/Research.php:673 controllers/Research.php:676
 #: controllers/SeoSettings.php:245 controllers/SeoSettings.php:248
 #: controllers/SeoSettings.php:299 controllers/SeoSettings.php:302
 msgid "Error! The backup is not valid."
 msgstr ""
 
-#: controllers/Research.php:658 controllers/SeoSettings.php:243
+#: controllers/Research.php:671 controllers/SeoSettings.php:243
 msgid "Great! The backup is restored."
 msgstr ""
 
-#: controllers/Research.php:666 controllers/SeoSettings.php:251
+#: controllers/Research.php:679 controllers/SeoSettings.php:251
 #: controllers/SeoSettings.php:305
 msgid "Error! You have to enter a previously saved backup file."
 msgstr ""
 
-#: controllers/Research.php:712
+#: controllers/Research.php:725
 msgid "Could not add the keyword to SERP Check. Please try again."
 msgstr ""
 
-#: controllers/Research.php:714
+#: controllers/Research.php:727
 msgid "The keyword is added to SERP Check."
 msgstr ""
 
-#: controllers/Research.php:717
+#: controllers/Research.php:730
 msgid "Invalid parameters."
 msgstr ""
 
-#: controllers/Research.php:840
+#: controllers/Research.php:853
 msgid "Keyword Research limit exceeded"
 msgstr ""
 
-#: controllers/Research.php:967
+#: controllers/Research.php:980
 msgid "The keywords are added to SERP Check!"
 msgstr ""
 
@@ -1092,7 +900,7 @@ msgid ""
 "Google, since it's a DEMO. It's an easy way to learn your way around it."
 msgstr ""
 
-#: models/Assistant.php:204 view/Automation/Automation.php:81
+#: models/Assistant.php:204 view/Assistant/Automation.php:195
 msgid "Activate Patterns"
 msgstr ""
 
@@ -1225,7 +1033,7 @@ msgstr ""
 #: models/Assistant.php:259
 #, php-format
 msgid ""
-"Integrate %sGoogle Analytics%s with Squirrly SEO from %s SEO Configuration > "
+"Integrate %sGoogle Analytics%s with Squirrly SEO from %s Technical SEO > "
 "Connect Tools %s .%sFeatures like %sFocus Pages%s and the %sAudit%s need this "
 "integration, in order to work at full potential.%sGoogle Analytics is free and "
 "everyone uses it. The %sFocus Pages%s and the %sAudit%s will interpret the "
@@ -1241,7 +1049,7 @@ msgstr ""
 #, php-format
 msgid ""
 "Integrate your WordPress with %sGoogle Search Console%s with Squirrly SEO from "
-"%s SEO Configuration > Connect Tools %s .%sThis integration is more than just "
+"%s Technical SEO > Connect Tools %s .%sThis integration is more than just "
 "setting the META code for it. It will connect your WP to the API of Google's "
 "service and enable info such as Impressions, Clicks, Average Ranking Position "
 "to be collected.%sMore importantly, you'll be able to update all the info that "
@@ -1301,7 +1109,7 @@ msgstr ""
 #: models/Assistant.php:286
 #, php-format
 msgid ""
-"Connect Google Search Console. %s You can do that from %s SEO Configuration > "
+"Connect Google Search Console. %s You can do that from %s Technical SEO > "
 "Connect Tools %s. %s It will bring information regarding Impressions and "
 "Clicks. %s Note: if you're on the free plan or the PRO plan then the Ranking "
 "Position will be displayed according to data from Google Search Console, which "
@@ -1355,7 +1163,7 @@ msgid ""
 "can use, that are related to: 'jazz concert', 'john dane', 'jazz 2025' and "
 "'jazz in phoenix'. Find out what others search for. If you'll optimize the "
 "page for those keywords, you'll be certain that jazz fans will find it. The "
-"keyword research tool available in Squirrly SEO helps you figure out exactly "
+"Keyword Research tool available in Squirrly SEO helps you figure out exactly "
 "what keywords to use. %s Start optimizing your content.  Use the Live "
 "Assistant from Squirrly SEO to do this, as it guides you towards the best "
 "practices of optimizing a page for SEO and helps you avoid keyword stuffing.%s"
@@ -1457,7 +1265,7 @@ msgid ""
 "you their email address so you can communicate with them further on. An "
 "alternative to this is to make a Chatbot for Facebook Messenger and get them "
 "hooked to the bot. By doing any of these, you'll be able to bring those people "
-"back to your website. %sUse the Keyword Research tool included in Squirrly "
+"back to your website. %s Use the Keyword Research tool included in Squirrly "
 "SEO, to spot keywords that are easy to rank for: [link]https://plugin.squirrly."
 "co/best-keyword-research-tool-for-seo/[/link] %sRank for more keywords with "
 "low competition. This will start building up traffic for your site. %sTo "
@@ -2592,9 +2400,9 @@ msgstr ""
 msgid "No traffic data found"
 msgstr ""
 
-#: models/Audits.php:573 models/Audits.php:595 view/Ranking/Rankings.php:371
-#: view/Research/Briefcase.php:454 view/Research/History.php:105
-#: view/Research/Labels.php:154 view/Research/Suggested.php:385
+#: models/Audits.php:573 models/Audits.php:595 view/Ranking/Rankings.php:374
+#: view/Research/Briefcase.php:458 view/Research/History.php:108
+#: view/Research/Labels.php:157 view/Research/Suggested.php:388
 msgid "Total"
 msgstr ""
 
@@ -2646,10 +2454,6 @@ msgstr ""
 msgid "Twitter Card"
 msgstr ""
 
-#: models/BulkSeo.php:22 models/FocusPages.php:25 view/Snippet/Snippet.php:98
-msgid "Visibility"
-msgstr ""
-
 #: models/CheckSeo.php:43
 msgid "Make your site Visible asap"
 msgstr ""
@@ -2692,8 +2496,8 @@ msgstr ""
 #: models/CheckSeo.php:59
 #, php-format
 msgid ""
-"Go to %s Squirrly > SEO Configuration > SEO Metas %s and switch on 'Optimize "
-"the Titles'. If it's already switched on, check if another plugin is stopping "
+"Go to %s Squirrly > Technical SEO > SEO Metas %s and switch on 'Optimize the "
+"Titles'. If it's already switched on, check if another plugin is stopping "
 "Squirrly from showing the Title."
 msgstr ""
 
@@ -2726,8 +2530,7 @@ msgstr ""
 #: models/CheckSeo.php:73
 #, php-format
 msgid ""
-"Activate AMP tracking in %s Squirrly > SEO Configuration > Connect Tools > AMP "
-"%s "
+"Activate AMP tracking in %s Squirrly > Technical SEO > Connect Tools > AMP %s "
 msgstr ""
 
 #: models/CheckSeo.php:74
@@ -2752,8 +2555,8 @@ msgstr ""
 #: models/CheckSeo.php:87
 #, php-format
 msgid ""
-"Go to %s  Squirrly > SEO Configuration > SEO Metas%s and switch on: 'Optimize "
-"the Titles'"
+"Go to %s  Squirrly > Technical SEO > SEO Metas%s and switch on: 'Optimize the "
+"Titles'"
 msgstr ""
 
 #: models/CheckSeo.php:88
@@ -2802,7 +2605,7 @@ msgstr ""
 #: models/CheckSeo.php:114
 #, php-format
 msgid ""
-"Go to %s Squirrly > SEO Configuration > Tweaks And Sitemap %s to setup the "
+"Go to %s Squirrly > Technical SEO > Tweaks And Sitemap %s to setup the "
 "sitemap. Choose for which types of URLs you'll want to have sitemaps. It "
 "depends on your strategy. Leave the defaults if you're uncertain."
 msgstr ""
@@ -2829,8 +2632,8 @@ msgstr ""
 #: models/CheckSeo.php:128
 #, php-format
 msgid ""
-"Go to %s Squirrly > SEO Configuration > Tweaks And Sitemap > Robots File %s "
-"and switch on Activate Robots. If it's already switched on, check if another "
+"Go to %s Squirrly > Technical SEO > Tweaks And Sitemap > Robots File %s and "
+"switch on Activate Robots. If it's already switched on, check if another "
 "plugin is stopping Squirrly from adding the Robots.txt URL."
 msgstr ""
 
@@ -2882,7 +2685,7 @@ msgstr ""
 #: models/CheckSeo.php:1007 models/CheckSeo.php:1033 models/CheckSeo.php:1046
 #: models/CheckSeo.php:1059 models/CheckSeo.php:1072 models/CheckSeo.php:1085
 #: models/CheckSeo.php:1098 models/CheckSeo.php:1111 models/CheckSeo.php:1124
-#: models/Menu.php:232 models/Menu.php:527 view/Blocks/Account.php:62
+#: models/Menu.php:222 models/Menu.php:546 view/Blocks/Account.php:62
 #: view/FocusPages/Pagelist.php:37
 msgid "Focus Pages"
 msgstr ""
@@ -2938,9 +2741,9 @@ msgstr ""
 
 #: models/CheckSeo.php:172
 msgid ""
-"Optimize your tagline so that your site is NOT 'Just another WordPress "
-"site' (or: Optimize your tagline to put your site’s best foot forward and "
-"encourage visitors to stick around.)"
+"Optimize your tagline so that your site is NOT 'Just another WordPress site' "
+"(or: Optimize your tagline to put your site’s best foot forward and encourage "
+"visitors to stick around.)"
 msgstr ""
 
 #: models/CheckSeo.php:182
@@ -3083,7 +2886,7 @@ msgstr ""
 #: models/CheckSeo.php:256
 #, php-format
 msgid ""
-"Go to %sSquirrly > Keyword Research%s. Complete all steps until you get to the "
+"Go to %sSquirrly > AI Research%s. Complete all steps until you get to the "
 "final table with all of the data for each keyword. Add at least one keyword to "
 "Briefcase from that interface."
 msgstr ""
@@ -3096,14 +2899,13 @@ msgstr ""
 
 #: models/CheckSeo.php:264 models/CheckSeo.php:299 models/CheckSeo.php:317
 #: models/CheckSeo.php:334 models/CheckSeo.php:402 models/CheckSeo.php:420
-#: models/CheckSeo.php:559 models/Menu.php:155 view/Research/Research.php:32
-#: view/Research/Research.php:46
-msgid "Keyword Research"
+#: models/CheckSeo.php:559 models/Menu.php:167
+msgid "AI Research"
 msgstr ""
 
 #: models/CheckSeo.php:265 models/CheckSeo.php:383 models/CheckSeo.php:483
 #: models/CheckSeo.php:513 models/CheckSeo.php:542 models/CheckSeo.php:560
-#: models/Menu.php:166 models/Menu.php:492 view/Research/Briefcase.php:31
+#: models/Menu.php:178 models/Menu.php:500 view/Research/Briefcase.php:31
 msgid "Briefcase"
 msgstr ""
 
@@ -3139,7 +2941,7 @@ msgstr ""
 #: models/CheckSeo.php:282 models/CheckSeo.php:300 models/CheckSeo.php:318
 #: models/CheckSeo.php:335 models/CheckSeo.php:352 models/CheckSeo.php:403
 #: models/CheckSeo.php:421 models/CheckSeo.php:466 models/CheckSeo.php:594
-#: models/CheckSeo.php:679 models/CheckSeo.php:696 models/Menu.php:177
+#: models/CheckSeo.php:679 models/CheckSeo.php:696
 #: view/Blocks/LiveAssistant.php:16
 msgid "Live Assistant"
 msgstr ""
@@ -3304,7 +3106,7 @@ msgid ""
 msgstr ""
 
 #: models/CheckSeo.php:384 models/CheckSeo.php:484 models/CheckSeo.php:543
-#: models/Menu.php:567
+#: models/Menu.php:586
 msgid "Rankings"
 msgstr ""
 
@@ -3385,8 +3187,8 @@ msgstr ""
 msgid ""
 "Place rel='nofollow' on outbound links yourself, use the plugin recommended by "
 "Squirrly that does this for you, or use %s Squirrly's SEO Links & Redirects "
-"option %s (%s SEO Configuration > Tweaks & Sitemaps > SEO Links & Redirects > "
-"Add Nofollow to External Links %s)"
+"option %s (%s Technical SEO > Tweaks & Sitemaps > SEO Links & Redirects > Add "
+"Nofollow to External Links %s)"
 msgstr ""
 
 #: models/CheckSeo.php:430
@@ -3760,8 +3562,8 @@ msgid ""
 "own definition. Once you're done there, you can come back and paste the code "
 "into the custom section of your page's snippet for JSON-LD. For most pages, "
 "you should let this setting to Auto, though. Also, make sure you've completed "
-"everything about your organization or personal brand in Squirrly > SEO "
-"Configuration > Rich Snippets."
+"everything about your organization or personal brand in Squirrly > Technical "
+"SEO > Rich Snippets."
 msgstr ""
 
 #: models/CheckSeo.php:653
@@ -3846,16 +3648,16 @@ msgstr ""
 
 #: models/CheckSeo.php:704
 msgid ""
-"Go to the SEO Configuration section of Squirrly SEO. Click on the METAs "
-"section. You'll see tasks appearing at the right of the screen. Look to the "
-"right of the screen and complete all the tasks that appear there. Click on "
-"each element and you'll find out what you need to do to complete the task. "
-"Completed tasks are the ones that have a check mark."
+"Go to the Technical SEO section of Squirrly SEO. Click on the METAs section. "
+"You'll see tasks appearing at the right of the screen. Look to the right of "
+"the screen and complete all the tasks that appear there. Click on each element "
+"and you'll find out what you need to do to complete the task. Completed tasks "
+"are the ones that have a check mark."
 msgstr ""
 
 #: models/CheckSeo.php:705
 msgid ""
-"Complete all sidebar (right sidebar) tasks for all SEO Configuration Sections."
+"Complete all sidebar (right sidebar) tasks for all Technical SEO Sections."
 msgstr ""
 
 #: models/CheckSeo.php:719
@@ -4058,8 +3860,8 @@ msgstr ""
 #: models/CheckSeo.php:815 models/CheckSeo.php:829
 #, php-format
 msgid ""
-"Fix this using Squirrly SEO. Find more help in the %s Squirrly > SEO "
-"Configuration %s section."
+"Fix this using Squirrly SEO. Find more help in the %s Squirrly > Technical SEO "
+"%s section."
 msgstr ""
 
 #: models/CheckSeo.php:816 models/CheckSeo.php:830
@@ -4643,10 +4445,9 @@ msgid ""
 "In case this is happening for ALL pages, please whitelist our crawler IPs from "
 "your hosting, even if they are not blocked. If you can't find where to "
 "whitelist the IPs, the easiest solution would be to contact your hosting and "
-"ask them to do it for you. %s 65.108.154.199 %s 5.161.83.61 %s In case this is "
-"NOT happening for all your pages, click on the 3 dots for those pages that get "
-"the error, stop monitoring, and add it again. %s After which, make another "
-"audit."
+"ask them to do it for you. %s 5.161.83.61 %s In case this is NOT happening for "
+"all your pages, click on the 3 dots for those pages that get the error, stop "
+"monitoring, and add it again. %s After which, make another audit."
 msgstr ""
 
 #: models/CheckSeo.php:2097 models/CheckSeo.php:2143
@@ -4766,64 +4567,64 @@ msgstr ""
 msgid "Focus Page could not be verified (error: %s)"
 msgstr ""
 
-#: models/Compatibility.php:649
+#: models/Compatibility.php:678
 msgid "MPN"
 msgstr ""
 
-#: models/Compatibility.php:650
+#: models/Compatibility.php:679
 msgid "Add Manufacturer Part Number (MPN)"
 msgstr ""
 
-#: models/Compatibility.php:653
+#: models/Compatibility.php:682
 msgid "GTIN"
 msgstr ""
 
-#: models/Compatibility.php:654
+#: models/Compatibility.php:683
 msgid "Add Global Trade Item Number (GTIN)"
 msgstr ""
 
-#: models/Compatibility.php:657
+#: models/Compatibility.php:686
 msgid "EAN (GTIN-13)"
 msgstr ""
 
-#: models/Compatibility.php:658
+#: models/Compatibility.php:687
 msgid ""
 "Add Global Trade Item Number (GTIN) for the major GTIN used outside of North "
 "America"
 msgstr ""
 
-#: models/Compatibility.php:661
+#: models/Compatibility.php:690
 msgid "UPC (GTIN-12)"
 msgstr ""
 
-#: models/Compatibility.php:662
+#: models/Compatibility.php:691
 msgid "Add Global Trade Item Number (GTIN) for North America"
 msgstr ""
 
-#: models/Compatibility.php:665
+#: models/Compatibility.php:694
 msgid "ISBN"
 msgstr ""
 
-#: models/Compatibility.php:666
+#: models/Compatibility.php:695
 msgid "Add Global Trade Item Number (GTIN) for books"
 msgstr ""
 
-#: models/Compatibility.php:671
+#: models/Compatibility.php:700
 msgid "Brand Name"
 msgstr ""
 
-#: models/Compatibility.php:672
+#: models/Compatibility.php:701
 msgid "Add Product Brand Name"
 msgstr ""
 
 #: models/FocusPages.php:26 models/abstract/Assistant.php:107
-#: view/Blocks/Innerlinks.php:24 view/FocusPages/Innerlinks.php:103
-#: view/FocusPages/Innerlinks.php:266 view/FocusPages/Innerlinks.php:348
-#: view/Ranking/Gscsync.php:47 view/Ranking/Rankings.php:234
-#: view/Ranking/Rankings.php:392 view/Research/Briefcase.php:139
-#: view/Research/Briefcase.php:342 view/Research/History.php:64
+#: view/Blocks/Innerlinks.php:24 view/FocusPages/Innerlinks.php:109
+#: view/FocusPages/Innerlinks.php:272 view/FocusPages/Innerlinks.php:354
+#: view/Ranking/Gscsync.php:47 view/Ranking/Rankings.php:237
+#: view/Ranking/Rankings.php:395 view/Research/Briefcase.php:149
+#: view/Research/Briefcase.php:346 view/Research/History.php:67
 #: view/Research/HistoryDetails.php:19 view/Research/Research.php:255
-#: view/Research/Suggested.php:66
+#: view/Research/Suggested.php:69
 msgid "Keyword"
 msgstr ""
 
@@ -4867,7 +4668,7 @@ msgstr ""
 msgid "Backlinks"
 msgstr ""
 
-#: models/FocusPages.php:38 models/Menu.php:243 models/Menu.php:537
+#: models/FocusPages.php:38 models/Menu.php:256 models/Menu.php:556
 #: view/FocusPages/Innerlinks.php:31
 msgid "Inner Links"
 msgstr ""
@@ -4885,12 +4686,12 @@ msgid "CTR"
 msgstr ""
 
 #: models/FocusPages.php:42 view/Ranking/Gscsync.php:49
-#: view/Ranking/Rankings.php:408
+#: view/Ranking/Rankings.php:411
 msgid "Impressions"
 msgstr ""
 
 #: models/FocusPages.php:43 view/Ranking/Gscsync.php:48
-#: view/Ranking/Rankings.php:416
+#: view/Ranking/Rankings.php:419
 msgid "Clicks"
 msgstr ""
 
@@ -4919,142 +4720,142 @@ msgstr ""
 msgid "The favicon has been updated."
 msgstr ""
 
-#: models/Indexnow.php:138
+#: models/Indexnow.php:143
 msgid "Unknown error."
 msgstr ""
 
-#: models/Indexnow.php:140
+#: models/Indexnow.php:145
 msgid "Invalid request."
 msgstr ""
 
-#: models/Indexnow.php:141
+#: models/Indexnow.php:146
 msgid "Invalid API key."
 msgstr ""
 
-#: models/Indexnow.php:142
+#: models/Indexnow.php:147
 msgid "Invalid URL."
 msgstr ""
 
-#: models/Indexnow.php:143
+#: models/Indexnow.php:148
 msgid "Too many requests."
 msgstr ""
 
-#: models/Indexnow.php:144
+#: models/Indexnow.php:149
 msgid "Internal server error."
 msgstr ""
 
-#: models/LiveAssistant.php:69
+#: models/LiveAssistant.php:70
 msgid "date"
 msgstr ""
 
-#: models/LiveAssistant.php:70
+#: models/LiveAssistant.php:71
 msgid ""
 "To load the Live Assistant and optimize this page, click to connect to "
 "Squirrly Cloud."
 msgstr ""
 
-#: models/LiveAssistant.php:72
+#: models/LiveAssistant.php:73
 msgid "Read it!"
 msgstr ""
 
-#: models/LiveAssistant.php:73
+#: models/LiveAssistant.php:74
 msgid "Insert it!"
 msgstr ""
 
-#: models/LiveAssistant.php:74
+#: models/LiveAssistant.php:75
 msgid "Reference"
 msgstr ""
 
-#: models/LiveAssistant.php:75
+#: models/LiveAssistant.php:76
 msgid "Insert as box"
 msgstr ""
 
-#: models/LiveAssistant.php:76
+#: models/LiveAssistant.php:77
 msgid "Insert Link"
 msgstr ""
 
-#: models/LiveAssistant.php:77
+#: models/LiveAssistant.php:78
 msgid "Not relevant?"
 msgstr ""
 
-#: models/LiveAssistant.php:78
+#: models/LiveAssistant.php:79
 msgid ":( An error occurred while processing your request. Please try again"
 msgstr ""
 
-#: models/LiveAssistant.php:79
+#: models/LiveAssistant.php:80
 msgid "Searching ... "
 msgstr ""
 
-#: models/LiveAssistant.php:80
+#: models/LiveAssistant.php:81
 msgid "No results found!"
 msgstr ""
 
-#: models/LiveAssistant.php:81
+#: models/LiveAssistant.php:82
 #, php-format
 msgid "[ ATTRIBUTE: Please check: %s to find out how to attribute this image ]"
 msgstr ""
 
-#: models/LiveAssistant.php:82
+#: models/LiveAssistant.php:83
 msgid "Has creative commons attributes"
 msgstr ""
 
-#: models/LiveAssistant.php:83
+#: models/LiveAssistant.php:84
 msgid "No known copyright restrictions"
 msgstr ""
 
-#: models/LiveAssistant.php:84
+#: models/LiveAssistant.php:85
 msgid "Your Subscription has Expired"
 msgstr ""
 
-#: models/LiveAssistant.php:85
+#: models/LiveAssistant.php:86
 msgid "There are no keywords saved in briefcase yet"
 msgstr ""
 
-#: models/LiveAssistant.php:86
+#: models/LiveAssistant.php:87
 #, no-php-format
 msgid "Congratulations! Your article is 100% optimized!"
 msgstr ""
 
-#: models/LiveAssistant.php:87
+#: models/LiveAssistant.php:88
 #, php-format
 msgid "appears too many times. Try to remove %s of them"
 msgstr ""
 
-#: models/LiveAssistant.php:88
+#: models/LiveAssistant.php:89
 #, php-format
 msgid "write %s more words"
 msgstr ""
 
-#: models/LiveAssistant.php:89
+#: models/LiveAssistant.php:90
 #, php-format
 msgid "Write more words after the %s keyword"
 msgstr ""
 
-#: models/LiveAssistant.php:90
-msgid "or use synonyms"
-msgstr ""
-
 #: models/LiveAssistant.php:91
-#, php-format
-msgid "add %s more word(s)"
+msgid "or use synonyms"
 msgstr ""
 
 #: models/LiveAssistant.php:92
 #, php-format
-msgid "or remove %s word(s)"
+msgid "add %s more word(s)"
 msgstr ""
 
 #: models/LiveAssistant.php:93
 #, php-format
-msgid "add the selected keyword %s more time(s) "
+msgid "or remove %s word(s)"
 msgstr ""
 
 #: models/LiveAssistant.php:94
 #, php-format
-msgid "write %s more words to start calculating"
+msgid "add the selected keyword %s more time(s) "
 msgstr ""
 
 #: models/LiveAssistant.php:95
+#, php-format
+msgid "write %s more words to start calculating"
+msgstr ""
+
+#: models/LiveAssistant.php:96
 msgid ""
 "Live Assistant was used to optimize this page with the Page Builder. Please go "
 "back and resume your optimization work there."
@@ -5064,322 +4865,332 @@ msgstr ""
 msgid "First Step"
 msgstr ""
 
-#: models/Menu.php:122 models/Menu.php:550
-msgid "Overview"
+#: models/Menu.php:122
+msgid "Home"
 msgstr ""
 
 #: models/Menu.php:133
-msgid "All Features"
-msgstr ""
-
-#: models/Menu.php:144
-msgid "One Page Setup"
-msgstr ""
-
-#: models/Menu.php:188 models/Menu.php:590 view/BulkSeo/Bulkseo.php:37
-msgid "Bulk SEO"
-msgstr ""
-
-#: models/Menu.php:199 models/Menu.php:597 view/Automation/Types.php:36
-msgid "Automation"
-msgstr ""
-
-#: models/Menu.php:210
-msgid "IndexNow"
-msgstr ""
-
-#: models/Menu.php:221
-msgid "SEO Configuration"
-msgstr ""
-
-#: models/Menu.php:254
-msgid "SEO Audit"
-msgstr ""
-
-#: models/Menu.php:265 view/Ranking/Rankings.php:45
-msgid "Google Rankings"
-msgstr ""
-
-#: models/Menu.php:276
-msgid "Redirects"
-msgstr ""
-
-#: models/Menu.php:287
-msgid "Onboarding"
-msgstr ""
-
-#: models/Menu.php:299 models/Menu.php:791 view/SeoSettings/Backup.php:35
-msgid "Import & Data"
-msgstr ""
-
-#: models/Menu.php:310
-msgid "Account Info"
-msgstr ""
-
-#: models/Menu.php:321
-msgid "How To & Support"
-msgstr ""
-
-#: models/Menu.php:332
-msgid "Audit"
-msgstr ""
-
-#: models/Menu.php:363 view/Goals/Goals.php:38
 msgid "AI Consultant"
 msgstr ""
 
-#: models/Menu.php:370
+#: models/Menu.php:144
+msgid "All Features"
+msgstr ""
+
+#: models/Menu.php:156
+msgid "One Page Setup"
+msgstr ""
+
+#: models/Menu.php:189
+msgid "Optimize"
+msgstr ""
+
+#: models/Menu.php:200 models/Menu.php:528 models/Menu.php:609
+#: view/Assistant/Bulkseo.php:37
+msgid "Bulk SEO"
+msgstr ""
+
+#: models/Menu.php:211 models/Menu.php:534 models/Menu.php:616
+#: view/Assistant/Automation.php:94 view/Assistant/Types.php:36
+msgid "Automation"
+msgstr ""
+
+#: models/Menu.php:233
+msgid "Auto-Indexing"
+msgstr ""
+
+#: models/Menu.php:244
+msgid "Technical SEO"
+msgstr ""
+
+#: models/Menu.php:267
+msgid "SEO Audit"
+msgstr ""
+
+#: models/Menu.php:278 view/Ranking/Rankings.php:45
+msgid "Google Rankings"
+msgstr ""
+
+#: models/Menu.php:289
+msgid "Redirects"
+msgstr ""
+
+#: models/Menu.php:300
+msgid "Onboarding"
+msgstr ""
+
+#: models/Menu.php:312 models/Menu.php:810 view/SeoSettings/Backup.php:35
+msgid "Import & Data"
+msgstr ""
+
+#: models/Menu.php:323
+msgid "Account Info"
+msgstr ""
+
+#: models/Menu.php:334
+msgid "How To & Support"
+msgstr ""
+
+#: models/Menu.php:345
+msgid "Audit"
+msgstr ""
+
+#: models/Menu.php:378
 msgid "Progress & Achivements"
 msgstr ""
 
-#: models/Menu.php:377
+#: models/Menu.php:385
 msgid "Main Features"
 msgstr ""
 
-#: models/Menu.php:384 view/Blocks/Jorney.php:18
+#: models/Menu.php:392 view/Blocks/Jorney.php:18
 msgid "14 Days Journey"
 msgstr ""
 
-#: models/Menu.php:394 models/Menu.php:401 models/Menu.php:408
-#: models/Menu.php:415 models/Menu.php:422 models/Menu.php:429
-#: models/Menu.php:436 models/Menu.php:443 models/Menu.php:450
-#: models/Menu.php:457 models/Menu.php:464 models/Menu.php:471
-#: models/Menu.php:478
+#: models/Menu.php:402 models/Menu.php:409 models/Menu.php:416
+#: models/Menu.php:423 models/Menu.php:430 models/Menu.php:437
+#: models/Menu.php:444 models/Menu.php:451 models/Menu.php:458
+#: models/Menu.php:465 models/Menu.php:472 models/Menu.php:479
+#: models/Menu.php:486
 msgid "Free Learning Materials"
 msgstr ""
 
-#: models/Menu.php:487
+#: models/Menu.php:495
 msgid "Find Keywords"
 msgstr ""
 
-#: models/Menu.php:497 view/Research/Briefcase.php:52
+#: models/Menu.php:505 view/Research/Briefcase.php:57
 msgid "Labels"
 msgstr ""
 
-#: models/Menu.php:502
+#: models/Menu.php:510
 msgid "Suggested"
 msgstr ""
 
-#: models/Menu.php:507
+#: models/Menu.php:515
 msgid "History"
 msgstr ""
 
-#: models/Menu.php:515
+#: models/Menu.php:523
 msgid "Optimize Posts"
 msgstr ""
 
-#: models/Menu.php:520 models/Menu.php:543 models/Menu.php:560
-#: models/Menu.php:582 models/Menu.php:620
+#: models/Menu.php:539 models/Menu.php:562 models/Menu.php:579
+#: models/Menu.php:601 models/Menu.php:639
 msgid "Settings"
 msgstr ""
 
-#: models/Menu.php:532 models/Menu.php:555
+#: models/Menu.php:551 models/Menu.php:574
 msgid "Add New Page"
 msgstr ""
 
-#: models/Menu.php:572
+#: models/Menu.php:569
+msgid "Overview"
+msgstr ""
+
+#: models/Menu.php:591
 msgid "Add Keywords"
 msgstr ""
 
-#: models/Menu.php:577 view/Ranking/Rankings.php:278
+#: models/Menu.php:596 view/Ranking/Rankings.php:281
 msgid "Sync Keywords"
 msgstr ""
 
-#: models/Menu.php:602
+#: models/Menu.php:621
 msgid "Configuration"
 msgstr ""
 
-#: models/Menu.php:607 models/Menu.php:701 models/Menu.php:752
+#: models/Menu.php:626 models/Menu.php:720 models/Menu.php:771
 msgid "Advanced"
 msgstr ""
 
-#: models/Menu.php:615 view/Indexnow/Submit.php:62
+#: models/Menu.php:634 view/Indexnow/Submit.php:62
 msgid "Submit URLs"
 msgstr ""
 
-#: models/Menu.php:627
+#: models/Menu.php:646
 msgid "Tweaks & Sitemaps"
 msgstr ""
 
-#: models/Menu.php:633
+#: models/Menu.php:652
 msgid "Sitemap XML"
 msgstr ""
 
-#: models/Menu.php:638
+#: models/Menu.php:657
 msgid "SEO Links and Redirects"
 msgstr ""
 
-#: models/Menu.php:643 models/focuspages/Onpage.php:67
+#: models/Menu.php:662 models/focuspages/Onpage.php:67
 #: view/SeoSettings/Tweaks.php:495
 msgid "Robots File"
 msgstr ""
 
-#: models/Menu.php:648 view/SeoSettings/Tweaks.php:536
+#: models/Menu.php:667 view/SeoSettings/Tweaks.php:537
 msgid "Website Icon"
 msgstr ""
 
-#: models/Menu.php:653 models/Menu.php:674 view/SeoSettings/Jsonld.php:586
+#: models/Menu.php:672 models/Menu.php:693 view/SeoSettings/Jsonld.php:586
 #: view/SeoSettings/Metas.php:185 view/SeoSettings/Social.php:439
-#: view/SeoSettings/Tweaks.php:595
+#: view/SeoSettings/Tweaks.php:596
 msgid "Advanced Settings"
 msgstr ""
 
-#: models/Menu.php:660
+#: models/Menu.php:679
 msgid "SEO Metas"
 msgstr ""
 
-#: models/Menu.php:666 view/SeoSettings/Metas.php:56
+#: models/Menu.php:685 view/SeoSettings/Metas.php:56
 msgid "Manage On-Page SEO Metas"
 msgstr ""
 
-#: models/Menu.php:670 view/SeoSettings/Metas.php:145
+#: models/Menu.php:689 view/SeoSettings/Metas.php:145
 msgid "More SEO Settings"
 msgstr ""
 
-#: models/Menu.php:681 view/Onboarding/Step2.php:312 view/Onboarding/Step4.php:51
+#: models/Menu.php:700 view/Onboarding/Step2.php:312 view/Onboarding/Step4.php:51
 #: view/SeoSettings/Social.php:38
 msgid "Social Media"
 msgstr ""
 
-#: models/Menu.php:687 view/SeoSettings/Social.php:60
+#: models/Menu.php:706 view/SeoSettings/Social.php:60
 msgid "Open Graph Settings"
 msgstr ""
 
-#: models/Menu.php:692 view/SeoSettings/Social.php:311
+#: models/Menu.php:711 view/SeoSettings/Social.php:311
 msgid "Twitter Card Settings"
 msgstr ""
 
-#: models/Menu.php:697 view/SeoSettings/Social.php:360
+#: models/Menu.php:716 view/SeoSettings/Social.php:360
 msgid "Social Media Accounts"
 msgstr ""
 
-#: models/Menu.php:708 view/Onboarding/Step2.php:356
+#: models/Menu.php:727 view/Onboarding/Step2.php:356
 #: view/Onboarding/Step4.php:119 view/SeoSettings/Jsonld.php:37
 #: view/Snippet/Snippet.php:89
 msgid "Rich Snippets"
 msgstr ""
 
-#: models/Menu.php:714 view/SeoSettings/Jsonld.php:62
+#: models/Menu.php:733 view/SeoSettings/Jsonld.php:62
 msgid "Company"
 msgstr ""
 
-#: models/Menu.php:718 view/SeoSettings/Jsonld.php:126
+#: models/Menu.php:737 view/SeoSettings/Jsonld.php:126
 msgid "Personal Brand / Author"
 msgstr ""
 
-#: models/Menu.php:723 view/SeoSettings/Jsonld.php:213
+#: models/Menu.php:742 view/SeoSettings/Jsonld.php:213
 msgid "WooCommerce"
 msgstr ""
 
-#: models/Menu.php:728 view/Onboarding/Step2.php:404
+#: models/Menu.php:747 view/Onboarding/Step2.php:404
 #: view/SeoSettings/Jsonld.php:273
 msgid "Local SEO"
 msgstr ""
 
-#: models/Menu.php:733 view/Onboarding/Step4.php:314
+#: models/Menu.php:752 view/Onboarding/Step4.php:314
 #: view/SeoSettings/Jsonld.php:375
 msgid "GEO Location"
 msgstr ""
 
-#: models/Menu.php:738
+#: models/Menu.php:757
 msgid "Opening Hours "
 msgstr ""
 
-#: models/Menu.php:743 view/Onboarding/Step4.php:384
+#: models/Menu.php:762 view/Onboarding/Step4.php:384
 #: view/SeoSettings/Jsonld.php:471
 msgid "Local Restaurant"
 msgstr ""
 
-#: models/Menu.php:748 view/SeoSettings/Jsonld.php:544
+#: models/Menu.php:767 view/SeoSettings/Jsonld.php:544
 msgid "More Json-LD Settings"
 msgstr ""
 
-#: models/Menu.php:759 models/Menu.php:765 view/SeoSettings/Webmaster.php:35
+#: models/Menu.php:778 models/Menu.php:784 view/SeoSettings/Webmaster.php:35
 #: view/SeoSettings/Webmaster.php:61
 msgid "Connect Tools"
 msgstr ""
 
-#: models/Menu.php:769 view/SeoSettings/Webmaster.php:214
+#: models/Menu.php:788 view/SeoSettings/Webmaster.php:214
 msgid "Place Trackers"
 msgstr ""
 
-#: models/Menu.php:774 view/SeoSettings/Webmaster.php:337
+#: models/Menu.php:793 view/SeoSettings/Webmaster.php:337
 msgid "AMP"
 msgstr ""
 
-#: models/Menu.php:778 view/SeoSettings/Webmaster.php:365
+#: models/Menu.php:797 view/SeoSettings/Webmaster.php:365
 msgid "Webmaster Extras"
 msgstr ""
 
-#: models/Menu.php:785
+#: models/Menu.php:804
 msgid "No Categories"
 msgstr ""
 
-#: models/Menu.php:797 view/SeoSettings/Backup.php:60
+#: models/Menu.php:816 view/SeoSettings/Backup.php:60
 msgid "Import Settings & SEO"
 msgstr ""
 
-#: models/Menu.php:801 view/SeoSettings/Backup.php:157
+#: models/Menu.php:820 view/SeoSettings/Backup.php:157
 msgid "Backup Settings & SEO"
 msgstr ""
 
-#: models/Menu.php:805 view/SeoSettings/Backup.php:231
+#: models/Menu.php:824 view/SeoSettings/Backup.php:231
 msgid "Restore Settings & SEO"
 msgstr ""
 
-#: models/Menu.php:809 view/SeoSettings/Backup.php:307
+#: models/Menu.php:828 view/SeoSettings/Backup.php:307
 msgid "Rollback Plugin"
 msgstr ""
 
-#: models/Menu.php:818
+#: models/Menu.php:837
 msgid "Blogging"
 msgstr ""
 
-#: models/Menu.php:819
+#: models/Menu.php:838
 msgid "Blogging overwiew"
 msgstr ""
 
-#: models/Menu.php:824
+#: models/Menu.php:843
 msgid "Traffic"
 msgstr ""
 
-#: models/Menu.php:825
+#: models/Menu.php:844
 msgid "Weekly website traffic"
 msgstr ""
 
-#: models/Menu.php:830
+#: models/Menu.php:849
 msgid "SEO"
 msgstr ""
 
-#: models/Menu.php:831
+#: models/Menu.php:850
 msgid "On-Page optimization"
 msgstr ""
 
-#: models/Menu.php:836
+#: models/Menu.php:855
 msgid "Social"
 msgstr ""
 
-#: models/Menu.php:837
+#: models/Menu.php:856
 msgid "Social signals and shares"
 msgstr ""
 
-#: models/Menu.php:842
+#: models/Menu.php:861
 msgid "Links"
 msgstr ""
 
-#: models/Menu.php:843
+#: models/Menu.php:862
 msgid "Backlinks and Innerlinks"
 msgstr ""
 
-#: models/Menu.php:848 models/focuspages/Authority.php:64
+#: models/Menu.php:867 models/focuspages/Authority.php:64
 msgid "Authority"
 msgstr ""
 
-#: models/Menu.php:849
+#: models/Menu.php:868
 msgid "Website Off-Page score"
 msgstr ""
 
-#: models/Menu.php:856
+#: models/Menu.php:875
 msgid "Rules"
 msgstr ""
 
@@ -5460,9 +5271,9 @@ msgstr ""
 
 #: models/Post.php:292 models/focuspages/Snippet.php:122
 #: models/focuspages/Snippet.php:279 models/focuspages/Snippet.php:297
-#: view/Audits/Addpage.php:189 view/Automation/Automation.php:89
-#: view/Blocks/Innerlinks.php:89 view/BulkSeo/Bulkseo.php:206
-#: view/FocusPages/Addpage.php:192 view/Onboarding/Step3.php:167
+#: view/Assistant/Automation.php:203 view/Assistant/Bulkseo.php:213
+#: view/Audits/Addpage.php:192 view/Blocks/Innerlinks.php:89
+#: view/FocusPages/Addpage.php:195 view/Onboarding/Step3.php:170
 #: view/Snippet/Facebook.php:84 view/Snippet/Metas.php:75
 #: view/Snippet/Twitter.php:87
 msgid "Title"
@@ -5582,23 +5393,23 @@ msgstr ""
 msgid "Squirrly SEO Admin"
 msgstr ""
 
-#: models/Snippet.php:352
+#: models/Snippet.php:345
 msgid "You don't have enough pemission to edit this article"
 msgstr ""
 
-#: models/Snippet.php:462
+#: models/Snippet.php:455
 msgid "Error! Could not save the data."
 msgstr ""
 
-#: models/Snippet.php:467
+#: models/Snippet.php:460
 msgid "Error! Invalid request."
 msgstr ""
 
-#: models/Snippet.php:541
+#: models/Snippet.php:534
 msgid "Couldn't find the page"
 msgstr ""
 
-#: models/Snippet.php:557 models/Snippet.php:569
+#: models/Snippet.php:550 models/Snippet.php:562
 msgid "No Polylang translation for this post."
 msgstr ""
 
@@ -5829,7 +5640,7 @@ msgstr ""
 #: models/bulkseo/Metas.php:161 models/bulkseo/Metas.php:198
 #: models/bulkseo/Metas.php:231
 #, php-format
-msgid "Meta Title is deactivated from %s SEO Configuration > Metas %s."
+msgid "Meta Title is deactivated from %s Technical SEO > Metas %s."
 msgstr ""
 
 #: models/bulkseo/Metas.php:165 models/bulkseo/Metas.php:202
@@ -5837,7 +5648,7 @@ msgstr ""
 #: models/bulkseo/Metas.php:317 models/bulkseo/Metas.php:350
 #: models/bulkseo/Metas.php:396 models/bulkseo/Metas.php:443
 #, php-format
-msgid "SEO Metas is deactivated from %s SEO Configuration > Metas %s."
+msgid "SEO Metas is deactivated from %s Technical SEO > Metas %s."
 msgstr ""
 
 #: models/bulkseo/Metas.php:174 models/bulkseo/Metas.php:211
@@ -5859,13 +5670,13 @@ msgstr ""
 #: models/bulkseo/Metas.php:239 models/bulkseo/Metas.php:354
 #: models/bulkseo/Metas.php:400
 #, php-format
-msgid "Meta Keywords is deactivated from %s SEO Configuration > Metas %s."
+msgid "Meta Keywords is deactivated from %s Technical SEO > Metas %s."
 msgstr ""
 
 #: models/bulkseo/Metas.php:276 models/bulkseo/Metas.php:313
 #: models/bulkseo/Metas.php:346
 #, php-format
-msgid "Meta Description is deactivated from %s SEO Configuration > Metas %s."
+msgid "Meta Description is deactivated from %s Technical SEO > Metas %s."
 msgstr ""
 
 #: models/bulkseo/Metas.php:289 models/bulkseo/Metas.php:327
@@ -5876,7 +5687,7 @@ msgstr ""
 
 #: models/bulkseo/Metas.php:439
 #, php-format
-msgid "Meta Canonical is deactivated from %s SEO Configuration > Metas %s."
+msgid "Meta Canonical is deactivated from %s Technical SEO > Metas %s."
 msgstr ""
 
 #: models/bulkseo/Opengraph.php:77
@@ -5954,7 +5765,7 @@ msgstr ""
 #: models/bulkseo/Opengraph.php:220 models/bulkseo/Opengraph.php:253
 #: models/bulkseo/Opengraph.php:286
 #, php-format
-msgid "Open Graph is deactivated from %s SEO Configuration > Social Media %s."
+msgid "Open Graph is deactivated from %s Technical SEO > Social Media %s."
 msgstr ""
 
 #: models/bulkseo/Twittercard.php:74
@@ -6029,7 +5840,7 @@ msgstr ""
 #: models/bulkseo/Twittercard.php:217 models/bulkseo/Twittercard.php:250
 #: models/bulkseo/Twittercard.php:283
 #, php-format
-msgid "Twitter Card is deactivated from %s SEO Configuration > Social Media %s."
+msgid "Twitter Card is deactivated from %s Technical SEO > Social Media %s."
 msgstr ""
 
 #: models/bulkseo/Visibility.php:28
@@ -6112,12 +5923,12 @@ msgstr ""
 
 #: models/bulkseo/Visibility.php:99 models/bulkseo/Visibility.php:140
 #, php-format
-msgid "Robots Meta is deactivated from %s SEO Configuration > SEO Metas %s."
+msgid "Robots Meta is deactivated from %s Technical SEO > SEO Metas %s."
 msgstr ""
 
 #: models/bulkseo/Visibility.php:103 models/bulkseo/Visibility.php:144
 #, php-format
-msgid "SEO Metas is deactivated from %s SEO Configuration > SEO Metas %s."
+msgid "SEO Metas is deactivated from %s Technical SEO > SEO Metas %s."
 msgstr ""
 
 #: models/bulkseo/Visibility.php:112
@@ -6142,22 +5953,22 @@ msgstr ""
 #: models/bulkseo/Visibility.php:173
 #, php-format
 msgid ""
-"Sitemap XML is deactivated from %s SEO Configuration > Tweaks And Sitemap > "
+"Sitemap XML is deactivated from %s Technical SEO > Tweaks And Sitemap > "
 "Sitemap XML %s."
 msgstr ""
 
 #: models/bulkseo/Visibility.php:193
 #, php-format
 msgid ""
-"Redirect is deactivated from %s SEO Configuration > Tweaks And Sitemap > SEO "
-"Links %s."
+"Redirect is deactivated from %s Technical SEO > Tweaks And Sitemap > SEO Links "
+"%s."
 msgstr ""
 
-#: models/domain/Patterns.php:389
+#: models/domain/Patterns.php:397
 msgid "Page"
 msgstr ""
 
-#: models/domain/Patterns.php:389
+#: models/domain/Patterns.php:397
 msgid "of"
 msgstr ""
 
@@ -6397,7 +6208,7 @@ msgstr ""
 #: models/focuspages/Ctr.php:76 models/focuspages/Image.php:112
 #: models/focuspages/Impressions.php:67 models/focuspages/Impressions.php:76
 #: models/focuspages/Keyword.php:107 models/focuspages/Keyword.php:116
-#: models/focuspages/Strategy.php:118 view/Research/Briefcase.php:277
+#: models/focuspages/Strategy.php:118 view/Research/Briefcase.php:287
 msgid "Do a research"
 msgstr ""
 
@@ -6480,9 +6291,9 @@ msgid ""
 msgstr ""
 
 #: models/focuspages/Content.php:91 models/focuspages/Image.php:108
-#: models/focuspages/Keyword.php:110 view/Research/Briefcase.php:260
+#: models/focuspages/Keyword.php:110 view/Research/Briefcase.php:270
 #: view/Research/HistoryDetails.php:74 view/Research/ResearchDetails.php:53
-#: view/Research/Suggested.php:124 view/Research/Suggested.php:262
+#: view/Research/Suggested.php:127 view/Research/Suggested.php:265
 msgid "Optimize for this"
 msgstr ""
 
@@ -6586,10 +6397,10 @@ msgstr ""
 #, php-format
 msgid ""
 "Checks whether or not your page is available in your %sXML Sitemap%s. %s Use "
-"the Sitemap from %s Squirrly > SEO Configuration > Tweaks and Sitemap %s. %s "
-"Make sure this Focus Page is included in the sitemap generated by Squirrly "
-"SEO. %s In the best practices section you can find ideas for why it can make "
-"sense to remove pages from your sitemap."
+"the Sitemap from %s Squirrly > Technical SEO > Tweaks and Sitemap %s. %s Make "
+"sure this Focus Page is included in the sitemap generated by Squirrly SEO. %s "
+"In the best practices section you can find ideas for why it can make sense to "
+"remove pages from your sitemap."
 msgstr ""
 
 #: models/focuspages/Indexability.php:73
@@ -6680,7 +6491,7 @@ msgid ""
 "links present in the content of each post of your website."
 msgstr ""
 
-#: models/focuspages/Innerlinks.php:73 view/Research/Suggested.php:227
+#: models/focuspages/Innerlinks.php:73 view/Research/Suggested.php:230
 msgid "Inner Links Assistant"
 msgstr ""
 
@@ -6805,10 +6616,10 @@ msgstr ""
 msgid ""
 "Add images / videos to your sitemap. It's important to have images / videos "
 "enabled. %s Squirrly SEO makes it super easy for you to enhance your XML "
-"sitemap. %s Just use the settings from %s Squirrly > SEO Configuration > "
-"Tweaks And Sitemap %s. Find the XML sitemap section and use the settings from "
-"that panel. %s Note! If the image/video options are not visible, enable the "
-"SEO Expert mode from top-right corner."
+"sitemap. %s Just use the settings from %s Squirrly > Technical SEO > Tweaks "
+"And Sitemap %s. Find the XML sitemap section and use the settings from that "
+"panel. %s Note! If the image/video options are not visible, enable the SEO "
+"Expert mode from top-right corner."
 msgstr ""
 
 #: models/focuspages/Onpage.php:59
@@ -6858,7 +6669,7 @@ msgid ""
 msgstr ""
 
 #: models/focuspages/Onpage.php:88
-msgid "Go to SEO Configuration"
+msgid "Go to Technical SEO"
 msgstr ""
 
 #: models/focuspages/Ranking.php:25
@@ -6878,7 +6689,7 @@ msgid ""
 msgstr ""
 
 #: models/focuspages/Snippet.php:131 models/focuspages/Snippet.php:279
-#: models/focuspages/Snippet.php:297 view/Automation/Automation.php:100
+#: models/focuspages/Snippet.php:297 view/Assistant/Automation.php:214
 #: view/Snippet/Facebook.php:127 view/Snippet/Twitter.php:130
 msgid "Description"
 msgstr ""
@@ -6957,11 +6768,11 @@ msgstr ""
 #, php-format
 msgid ""
 "To complete this task, you can easily use the JSON-LD section inside %s "
-"Squirrly > SEO Configuration > Rich Snippets %s. %s Make sure that you "
-"complete all fields with the proper information. %s This gives important "
-"Semantic context to Google and it plays a role in determining how high your "
-"page should be placed in search rankings. %s You can validate your existing "
-"JSON-LD with: %shttps://search.google.com/test/rich-results%s"
+"Squirrly > Technical SEO > Rich Snippets %s. %s Make sure that you complete "
+"all fields with the proper information. %s This gives important Semantic "
+"context to Google and it plays a role in determining how high your page should "
+"be placed in search rankings. %s You can validate your existing JSON-LD with: "
+"%shttps://search.google.com/test/rich-results%s"
 msgstr ""
 
 #: models/focuspages/Snippet.php:170
@@ -7033,8 +6844,8 @@ msgid ""
 "always have quick access to them. You'll always know what your SEO Strategy is "
 "all about. %s Plus, adding keywords to Briefcase will make it very easy for "
 "you to collaborate with other people from your team, freelancers, agencies or "
-"partners. %s Never lose the amazing keywords you find through the %sSquirrly "
-"SEO Keyword Research tool%s."
+"partners. %s Never lose the amazing keywords you find through the %s Squirrly "
+"Keyword Research tool %s."
 msgstr ""
 
 #: models/focuspages/Strategy.php:80
@@ -7200,7 +7011,7 @@ msgstr ""
 msgid "No Squirrly SEO Robots found."
 msgstr ""
 
-#: view/Assistant/Assistant.php:18 view/BulkSeo/Bulkseo.php:23
+#: view/Assistant/Assistant.php:18 view/Assistant/Bulkseo.php:23
 #: view/FocusPages/Innerlinks.php:18 view/Onboarding/Journey.php:13
 #: view/Research/Briefcase.php:19 view/Research/History.php:20
 #: view/Research/Labels.php:20 view/Research/Research.php:19
@@ -7224,21 +7035,20 @@ msgstr ""
 msgid "Add New"
 msgstr ""
 
-#: view/Assistant/Assistant.php:68 view/Assistant/Settings.php:185
-#: view/Audits/Addpage.php:283 view/Audits/Audit.php:156
-#: view/Audits/Audits.php:70 view/Automation/Automation.php:497
-#: view/Automation/Settings.php:136 view/Automation/Types.php:147
-#: view/BulkSeo/Bulkseo.php:332 view/FocusPages/Addpage.php:287
-#: view/FocusPages/Pagelist.php:77 view/FocusPages/Pagelist.php:89
-#: view/Goals/Goals.php:220 view/Ranking/Gscsync.php:121
-#: view/Ranking/Rankings.php:546 view/Ranking/Settings.php:553
-#: view/Research/Briefcase.php:507 view/Research/History.php:155
-#: view/Research/Labels.php:260 view/Research/Research.php:106
-#: view/Research/Research.php:206 view/Research/Research.php:289
-#: view/Research/Suggested.php:443 view/SeoSettings/Backup.php:361
-#: view/SeoSettings/Jsonld.php:628 view/SeoSettings/Metas.php:230
-#: view/SeoSettings/Social.php:504 view/SeoSettings/Tweaks.php:723
-#: view/SeoSettings/Webmaster.php:445
+#: view/Assistant/Assistant.php:68 view/Assistant/Automation.php:611
+#: view/Assistant/Bulkseo.php:339 view/Assistant/Settings.php:281
+#: view/Assistant/Types.php:147 view/Audits/Addpage.php:291
+#: view/Audits/Audit.php:156 view/Audits/Audits.php:70
+#: view/FocusPages/Addpage.php:290 view/FocusPages/Pagelist.php:77
+#: view/FocusPages/Pagelist.php:89 view/Goals/Goals.php:213
+#: view/Ranking/Gscsync.php:121 view/Ranking/Rankings.php:552
+#: view/Ranking/Settings.php:553 view/Research/Briefcase.php:516
+#: view/Research/History.php:161 view/Research/Labels.php:266
+#: view/Research/Research.php:106 view/Research/Research.php:206
+#: view/Research/Research.php:289 view/Research/Suggested.php:449
+#: view/SeoSettings/Backup.php:361 view/SeoSettings/Jsonld.php:628
+#: view/SeoSettings/Metas.php:230 view/SeoSettings/Social.php:504
+#: view/SeoSettings/Tweaks.php:724 view/SeoSettings/Webmaster.php:445
 msgid "Tips and Tricks"
 msgstr ""
 
@@ -7260,19 +7070,388 @@ msgid ""
 "them as Focus Pages for deeper analysis of your content."
 msgstr ""
 
-#: view/Assistant/Settings.php:18 view/Audits/Addpage.php:20
+#: view/Assistant/Automation.php:19 view/Assistant/Settings.php:18
+#: view/Assistant/Types.php:19 view/Audits/Addpage.php:20
 #: view/Audits/Audit.php:20 view/Audits/Audits.php:22 view/Audits/Compare.php:20
-#: view/Audits/Settings.php:20 view/Automation/Automation.php:19
-#: view/Automation/Settings.php:19 view/Automation/Types.php:19
-#: view/Errors/Advanced.php:25 view/FocusPages/Addpage.php:21
-#: view/FocusPages/Pagelist.php:21 view/FocusPages/Settings.php:20
-#: view/Indexnow/Settings.php:20 view/Indexnow/Submit.php:20
-#: view/Ranking/Rankings.php:31 view/Ranking/Settings.php:19
-#: view/SeoSettings/Metas.php:20 view/SeoSettings/Social.php:20
-#: view/SeoSettings/Tweaks.php:20 view/SeoSettings/Webmaster.php:19
+#: view/Audits/Settings.php:20 view/Errors/Advanced.php:25
+#: view/FocusPages/Addpage.php:21 view/FocusPages/Pagelist.php:21
+#: view/FocusPages/Settings.php:20 view/Indexnow/Settings.php:20
+#: view/Indexnow/Submit.php:20 view/Ranking/Rankings.php:31
+#: view/Ranking/Settings.php:19 view/SeoSettings/Metas.php:20
+#: view/SeoSettings/Social.php:20 view/SeoSettings/Tweaks.php:20
+#: view/SeoSettings/Webmaster.php:19
 msgid ""
 "You do not have permission to access this page. You need Squirrly SEO Admin "
 "role."
+msgstr ""
+
+#: view/Assistant/Automation.php:100 view/Assistant/Types.php:42
+msgid ""
+"Add ALL Your Post Types to the Automation section and ensure all your site is "
+"covered with excellent SEO."
+msgstr ""
+
+#: view/Assistant/Automation.php:110 view/Assistant/Automation.php:128
+#: view/Assistant/Types.php:106 view/Assistant/Types.php:124
+msgid "Add Post Type"
+msgstr ""
+
+#: view/Assistant/Automation.php:113 view/Assistant/Types.php:109
+msgid "Add new post types in the list and customize the automation for it."
+msgstr ""
+
+#: view/Assistant/Automation.php:149
+msgid "Automation - Configurations"
+msgstr ""
+
+#: view/Assistant/Automation.php:186
+msgid "Squirrly SEO is not active on this post type."
+msgstr ""
+
+#: view/Assistant/Automation.php:206
+msgid "Recommended Length: 10-75 chars"
+msgstr ""
+
+#: view/Assistant/Automation.php:217
+msgid "Recommended Length: 70-320 chars"
+msgstr ""
+
+#: view/Assistant/Automation.php:225
+msgid "Separator"
+msgstr ""
+
+#: view/Assistant/Automation.php:228
+msgid ""
+"Use a separator to help users read the most relevant part of your title and "
+"increase Conversion Rate."
+msgstr ""
+
+#: view/Assistant/Automation.php:249
+msgid "Let Google Index it"
+msgstr ""
+
+#: view/Assistant/Automation.php:252
+msgid ""
+"If you switch off this option, Squirrly will add noindex meta for this post "
+"type."
+msgstr ""
+
+#: view/Assistant/Automation.php:264
+msgid "Send Authority to it"
+msgstr ""
+
+#: view/Assistant/Automation.php:267
+msgid ""
+"If you switch off this option, Squirrly will add 'nofollow' meta for this post "
+"type."
+msgstr ""
+
+#: view/Assistant/Automation.php:280
+msgid "Include In Sitemap"
+msgstr ""
+
+#: view/Assistant/Automation.php:283
+msgid "Let Squirrly SEO include this post type in Squirrly Sitemap XML."
+msgstr ""
+
+#: view/Assistant/Automation.php:284
+msgid ""
+"If you switch off this option, Squirrly will not load the Sitemap for this "
+"post type."
+msgstr ""
+
+#: view/Assistant/Automation.php:297
+msgid "Include In Google News Sitemap"
+msgstr ""
+
+#: view/Assistant/Automation.php:298
+msgid "Let Squirrly SEO include this post type in Google News Sitemap."
+msgstr ""
+
+#: view/Assistant/Automation.php:319 view/SeoSettings/Tweaks.php:472
+msgid "Redirect Broken URLs"
+msgstr ""
+
+#: view/Assistant/Automation.php:322
+msgid "Redirect the 404 URL in case it is changed with a new one in Post Editor."
+msgstr ""
+
+#: view/Assistant/Automation.php:331
+msgid "Default Redirect URL"
+msgstr ""
+
+#: view/Assistant/Automation.php:334
+msgid "Add the default URL for the Broken URLs when no permalink is found."
+msgstr ""
+
+#: view/Assistant/Automation.php:348 view/SeoSettings/Tweaks.php:420
+msgid "Redirect Attachments Page"
+msgstr ""
+
+#: view/Assistant/Automation.php:349 view/SeoSettings/Tweaks.php:423
+msgid "Redirect the attachment page to its image URL."
+msgstr ""
+
+#: view/Assistant/Automation.php:350 view/SeoSettings/Tweaks.php:424
+msgid "Recommended if your website is not a photography website."
+msgstr ""
+
+#: view/Assistant/Automation.php:362
+msgid "Load SEO Metas"
+msgstr ""
+
+#: view/Assistant/Automation.php:365
+msgid ""
+"Let Squirrly SEO load the Title, Description, Keyword METAs for this post type."
+msgstr ""
+
+#: view/Assistant/Automation.php:377
+msgid "Load Squirrly Patterns"
+msgstr ""
+
+#: view/Assistant/Automation.php:380
+msgid "Let Squirrly SEO load the Patterns for this post type."
+msgstr ""
+
+#: view/Assistant/Automation.php:392
+msgid "Load JSON-LD Structured Data"
+msgstr ""
+
+#: view/Assistant/Automation.php:395
+msgid "Let Squirrly SEO load the JSON-LD Schema for this post type."
+msgstr ""
+
+#: view/Assistant/Automation.php:401
+msgid "JSON-LD Type"
+msgstr ""
+
+#: view/Assistant/Automation.php:405 view/Snippet/Jsonld.php:94
+msgid "JSON-LD will load the Schema for the selected types."
+msgstr ""
+
+#: view/Assistant/Automation.php:446
+msgid "Load Squirrly Open Graph"
+msgstr ""
+
+#: view/Assistant/Automation.php:449
+msgid "Let Squirrly SEO load the Open Graph for this post type."
+msgstr ""
+
+#: view/Assistant/Automation.php:455
+msgid "Open Graph Type"
+msgstr ""
+
+#: view/Assistant/Automation.php:459
+msgid "Select which Open Graph type to load for this post type."
+msgstr ""
+
+#: view/Assistant/Automation.php:508
+msgid "Load Squirrly Twitter Card"
+msgstr ""
+
+#: view/Assistant/Automation.php:511
+msgid "Let Squirrly SEO load the Twitter Card for this post type."
+msgstr ""
+
+#: view/Assistant/Automation.php:523
+msgid "Load Google Analytics Tracking Script"
+msgstr ""
+
+#: view/Assistant/Automation.php:526
+msgid "Let Google Analytics Tracking to load for this post type."
+msgstr ""
+
+#: view/Assistant/Automation.php:540
+msgid "Load Facebook Pixel Tracking Script"
+msgstr ""
+
+#: view/Assistant/Automation.php:543
+msgid "Let Facebook Pixel Tracking to load for this post type."
+msgstr ""
+
+#: view/Assistant/Automation.php:553 view/Assistant/Settings.php:273
+#: view/Audits/Settings.php:62 view/FocusPages/Settings.php:160
+#: view/Indexnow/Settings.php:171 view/Ranking/Settings.php:547
+#: view/SeoSettings/Jsonld.php:117 view/SeoSettings/Jsonld.php:204
+#: view/SeoSettings/Jsonld.php:264 view/SeoSettings/Jsonld.php:365
+#: view/SeoSettings/Jsonld.php:408 view/SeoSettings/Jsonld.php:463
+#: view/SeoSettings/Jsonld.php:536 view/SeoSettings/Jsonld.php:578
+#: view/SeoSettings/Jsonld.php:614 view/SeoSettings/Metas.php:136
+#: view/SeoSettings/Metas.php:177 view/SeoSettings/Metas.php:215
+#: view/SeoSettings/Social.php:303 view/SeoSettings/Social.php:352
+#: view/SeoSettings/Social.php:431 view/SeoSettings/Social.php:489
+#: view/SeoSettings/Tweaks.php:398 view/SeoSettings/Tweaks.php:467
+#: view/SeoSettings/Tweaks.php:529 view/SeoSettings/Tweaks.php:589
+#: view/SeoSettings/Tweaks.php:711 view/SeoSettings/Webmaster.php:329
+#: view/SeoSettings/Webmaster.php:357 view/SeoSettings/Webmaster.php:429
+msgid "Save Settings"
+msgstr ""
+
+#: view/Assistant/Automation.php:562
+#, php-format
+msgid "Do you want to delete the automation for %s?"
+msgstr ""
+
+#: view/Assistant/Automation.php:565
+#, php-format
+msgid "Remove automation for %s"
+msgstr ""
+
+#: view/Assistant/Automation.php:589
+msgid "Squirrly Patterns"
+msgstr ""
+
+#: view/Assistant/Automation.php:593
+msgid ""
+"Use the Pattern system to prevent Title and Description duplicates between "
+"posts"
+msgstr ""
+
+#: view/Assistant/Automation.php:597
+msgid ""
+"Patterns change the codes like {{title}} with the actual value of the post "
+"Title."
+msgstr ""
+
+#: view/Assistant/Automation.php:598
+msgid ""
+"In Squirrly, each post type in your site comes with a predefined posting "
+"pattern when displayed onto your website. However, based on your site's "
+"purpose and needs, you can also decide what information these patterns will "
+"include."
+msgstr ""
+
+#: view/Assistant/Automation.php:599
+msgid ""
+"Once you set up a pattern for a particular post type, only the content "
+"required by your custom sequence will be displayed."
+msgstr ""
+
+#: view/Assistant/Automation.php:600
+#, php-format
+msgid ""
+"Squirrly lets you see how the customized patterns will apply when posts/pages "
+"are shared across social media or search engine feeds. You just need to go to "
+"%s Squirrly's Bulk SEO section %s and see the meta information for each post "
+"type."
+msgstr ""
+
+#: view/Assistant/Automation.php:614
+msgid ""
+"From this section, you can quickly work on your site globally and set up the "
+"SEO for it in just a few minutes."
+msgstr ""
+
+#: view/Assistant/Automation.php:615
+msgid ""
+"If you are an SEO beginner, it’s not necessary to make any major changes in "
+"the Automation section."
+msgstr ""
+
+#: view/Assistant/Automation.php:616
+msgid ""
+"If you are an SEO expert or an advanced user, you’ll be able to easily "
+"customize the Automation for every post type."
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:43
+msgid ""
+"Simplify the SEO process for all your post type and optimize them in just "
+"minutes."
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:64 view/FocusPages/FocusPages.php:35
+msgid "Filter by Red Element"
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:165 view/Audits/Addpage.php:146
+#: view/FocusPages/Addpage.php:148 view/Onboarding/Step3.php:123
+msgid "Any status"
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:191
+msgid "Write the post you want to search for"
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:192
+msgid "Search Keyword"
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:194 view/Audits/Addpage.php:176
+#: view/Audits/Audit.php:51 view/Audits/Compare.php:55
+#: view/FocusPages/Addpage.php:178 view/FocusPages/Innerlinks.php:98
+#: view/Onboarding/Step3.php:153 view/Ranking/Rankings.php:226
+#: view/Ranking/Rankings.php:496 view/Research/Briefcase.php:136
+#: view/Research/Briefcase.php:481 view/Research/History.php:58
+#: view/Research/History.php:129 view/Research/Labels.php:71
+#: view/Research/Labels.php:178 view/Research/Suggested.php:60
+#: view/Research/Suggested.php:409
+msgid "Show All"
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:259
+#, php-format
+msgid "No data for this filter. %sShow All%s records for this post type."
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:261
+msgid "No data found for this post type. Try other post types."
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:274 view/Audits/Addpage.php:259
+#: view/FocusPages/Addpage.php:258 view/Onboarding/Step3.php:233
+msgid "Previous"
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:275 view/Audits/Addpage.php:260
+#: view/FocusPages/Addpage.php:259 view/Onboarding/Step3.php:234
+#: view/Research/Research.php:87
+msgid "Next"
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:288
+msgid "Start Using This Section in 1,2,3"
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:299
+msgid "1. Click On A Section"
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:313
+msgid "2. Click On A Task"
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:327
+msgid "3. Read Task Details"
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:342
+msgid "Each Red, Gray, or Green dot from each section in BULK SEO is clickable."
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:343
+msgid ""
+"Correct the SEO for the entire website in just minutes. Simply turn Red "
+"Elements Green, and you’ll score massive SEO gains."
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:344
+msgid ""
+"Filter by Red Element to group pages together based on common issues they have "
+"to better organize and prioritize your work."
+msgstr ""
+
+#: view/Assistant/Bulkseo.php:355
+msgid "Bulk SEO Mastery Tasks"
+msgstr ""
+
+#: view/Assistant/BulkseoRow.php:40
+msgid "Submit to IndexNow"
+msgstr ""
+
+#: view/Assistant/BulkseoRow.php:43
+#, php-format
+msgid "View: %s"
 msgstr ""
 
 #: view/Assistant/Settings.php:35
@@ -7408,35 +7587,70 @@ msgid ""
 "types."
 msgstr ""
 
-#: view/Assistant/Settings.php:179 view/Audits/Settings.php:62
-#: view/Automation/Automation.php:439 view/Automation/Settings.php:127
-#: view/FocusPages/Settings.php:159 view/Indexnow/Settings.php:128
-#: view/Ranking/Settings.php:547 view/SeoSettings/Jsonld.php:117
-#: view/SeoSettings/Jsonld.php:204 view/SeoSettings/Jsonld.php:264
-#: view/SeoSettings/Jsonld.php:365 view/SeoSettings/Jsonld.php:408
-#: view/SeoSettings/Jsonld.php:463 view/SeoSettings/Jsonld.php:536
-#: view/SeoSettings/Jsonld.php:578 view/SeoSettings/Jsonld.php:614
-#: view/SeoSettings/Metas.php:136 view/SeoSettings/Metas.php:177
-#: view/SeoSettings/Metas.php:215 view/SeoSettings/Social.php:303
-#: view/SeoSettings/Social.php:352 view/SeoSettings/Social.php:431
-#: view/SeoSettings/Social.php:489 view/SeoSettings/Tweaks.php:398
-#: view/SeoSettings/Tweaks.php:467 view/SeoSettings/Tweaks.php:528
-#: view/SeoSettings/Tweaks.php:588 view/SeoSettings/Tweaks.php:710
-#: view/SeoSettings/Webmaster.php:329 view/SeoSettings/Webmaster.php:357
-#: view/SeoSettings/Webmaster.php:429
-msgid "Save Settings"
+#: view/Assistant/Settings.php:181
+msgid "META Lengths"
 msgstr ""
 
-#: view/Assistant/Settings.php:188
+#: view/Assistant/Settings.php:187
+msgid "Change the lengths for each META on automation"
+msgstr ""
+
+#: view/Assistant/Settings.php:194 view/SeoSettings/Metas.php:192
+msgid "Title Length"
+msgstr ""
+
+#: view/Assistant/Settings.php:205 view/SeoSettings/Metas.php:203
+msgid "Description Length"
+msgstr ""
+
+#: view/Assistant/Settings.php:215 view/SeoSettings/Social.php:448
+msgid "Open Graph Title Length"
+msgstr ""
+
+#: view/Assistant/Settings.php:224 view/SeoSettings/Social.php:457
+msgid "Open Graph Description Length"
+msgstr ""
+
+#: view/Assistant/Settings.php:233 view/SeoSettings/Social.php:468
+msgid "Twitter Card Title Length"
+msgstr ""
+
+#: view/Assistant/Settings.php:242 view/SeoSettings/Social.php:477
+msgid "Twitter Card Description Length"
+msgstr ""
+
+#: view/Assistant/Settings.php:251 view/SeoSettings/Jsonld.php:593
+msgid "JSON-LD Title Length"
+msgstr ""
+
+#: view/Assistant/Settings.php:260 view/SeoSettings/Jsonld.php:602
+msgid "JSON-LD Description Length"
+msgstr ""
+
+#: view/Assistant/Settings.php:284
 msgid ""
 "The Settings section allows you to set up your assistant just the way you like "
 "it."
 msgstr ""
 
-#: view/Assistant/Settings.php:189
+#: view/Assistant/Settings.php:285
 msgid ""
 "Quickly enable or disable the settings available here based on your needs and "
 "preferences."
+msgstr ""
+
+#: view/Assistant/Types.php:133
+msgid "All the post types are sent for Automation"
+msgstr ""
+
+#: view/Assistant/Types.php:134
+msgid "Start Automation Setup"
+msgstr ""
+
+#: view/Assistant/Types.php:150
+msgid ""
+"Add ALL Your Post Types to our Automation section, to ensure all your site is "
+"covered with excellent SEO."
 msgstr ""
 
 #: view/Audits/Addpage.php:34
@@ -7450,78 +7664,50 @@ msgid ""
 "performing in terms of Blogging, SEO, Social, Authority, Links, and Traffic"
 msgstr ""
 
-#: view/Audits/Addpage.php:143 view/BulkSeo/Bulkseo.php:157
-#: view/FocusPages/Addpage.php:145 view/Onboarding/Step3.php:120
-msgid "Any status"
-msgstr ""
-
-#: view/Audits/Addpage.php:170 view/FocusPages/Addpage.php:172
-#: view/Onboarding/Step3.php:147
+#: view/Audits/Addpage.php:173 view/FocusPages/Addpage.php:175
+#: view/Onboarding/Step3.php:150
 msgid "Write the page you want to search for"
 msgstr ""
 
-#: view/Audits/Addpage.php:171 view/FocusPages/Addpage.php:173
-#: view/Onboarding/Step3.php:148
+#: view/Audits/Addpage.php:174 view/FocusPages/Addpage.php:176
+#: view/Onboarding/Step3.php:151
 msgid "Search Post"
 msgstr ""
 
-#: view/Audits/Addpage.php:173 view/Audits/Audit.php:51
-#: view/Audits/Compare.php:55 view/BulkSeo/Bulkseo.php:187
-#: view/FocusPages/Addpage.php:175 view/FocusPages/Innerlinks.php:92
-#: view/Onboarding/Step3.php:150 view/Ranking/Rankings.php:223
-#: view/Ranking/Rankings.php:490 view/Research/Briefcase.php:126
-#: view/Research/Briefcase.php:472 view/Research/History.php:55
-#: view/Research/History.php:123 view/Research/Labels.php:68
-#: view/Research/Labels.php:172 view/Research/Suggested.php:57
-#: view/Research/Suggested.php:403
-msgid "Show All"
-msgstr ""
-
-#: view/Audits/Addpage.php:190 view/Blocks/Innerlinks.php:27
-#: view/Blocks/Innerlinks.php:91 view/FocusPages/Addpage.php:193
-#: view/Onboarding/Step3.php:168
+#: view/Audits/Addpage.php:193 view/Blocks/Innerlinks.php:27
+#: view/Blocks/Innerlinks.php:91 view/FocusPages/Addpage.php:196
+#: view/Onboarding/Step3.php:171
 msgid "Option"
 msgstr ""
 
-#: view/Audits/Addpage.php:233
+#: view/Audits/Addpage.php:241
 msgid "Add Page to Audit"
 msgstr ""
 
-#: view/Audits/Addpage.php:237
+#: view/Audits/Addpage.php:245
 msgid "See Audits"
 msgstr ""
 
-#: view/Audits/Addpage.php:251 view/BulkSeo/Bulkseo.php:267
-#: view/FocusPages/Addpage.php:255 view/Onboarding/Step3.php:230
-msgid "Previous"
-msgstr ""
-
-#: view/Audits/Addpage.php:252 view/BulkSeo/Bulkseo.php:268
-#: view/FocusPages/Addpage.php:256 view/Onboarding/Step3.php:231
-#: view/Research/Research.php:87
-msgid "Next"
-msgstr ""
-
-#: view/Audits/Addpage.php:268 view/FocusPages/Addpage.php:272
-#: view/Onboarding/Step3.php:252 view/Ranking/Rankings.php:503
-#: view/Research/Briefcase.php:485 view/Research/History.php:136
-#: view/Research/Labels.php:185 view/Research/Suggested.php:416
+#: view/Audits/Addpage.php:276 view/FocusPages/Addpage.php:275
+#: view/Onboarding/Step3.php:255 view/Ranking/Rankings.php:509
+#: view/Research/Briefcase.php:494 view/Research/History.php:142
+#: view/Research/Labels.php:191 view/Research/Suggested.php:422
 msgid "No records found"
 msgstr ""
 
-#: view/Audits/Addpage.php:286
+#: view/Audits/Addpage.php:294
 msgid ""
 "Use the Search Bar to find a page from your website you want to add to the "
 "Audit faster."
 msgstr ""
 
-#: view/Audits/Addpage.php:287
+#: view/Audits/Addpage.php:295
 msgid ""
 "YOU choose which pages get audited so that you’ll get relevant insights about "
 "the pages that you actually want to rank on Google."
 msgstr ""
 
-#: view/Audits/Addpage.php:288
+#: view/Audits/Addpage.php:296
 msgid ""
 "This also allows you to monitor the pages that are most important to you right "
 "now."
@@ -7584,11 +7770,11 @@ msgstr ""
 msgid "Audited pages"
 msgstr ""
 
-#: view/Audits/AuditPages.php:18 view/Audits/AuditStats.php:303
+#: view/Audits/AuditPages.php:18 view/Audits/AuditStats.php:305
 msgid "pages"
 msgstr ""
 
-#: view/Audits/AuditPages.php:24 view/FocusPages/FocusPages.php:69
+#: view/Audits/AuditPages.php:24 view/FocusPages/FocusPages.php:72
 msgid "Permalink"
 msgstr ""
 
@@ -7606,7 +7792,7 @@ msgid "Add a new page for Audit to get started"
 msgstr ""
 
 #: view/Audits/AuditPages.php:79 view/Errors/Error.php:32
-#: view/FocusPages/FocusPages.php:140 view/Ranking/Rankings.php:532
+#: view/FocusPages/FocusPages.php:143 view/Ranking/Rankings.php:538
 #, php-format
 msgid ""
 "There is a connection error with Squirrly Cloud. Please check the connection "
@@ -7626,7 +7812,7 @@ msgstr ""
 msgid "Your score is good. Keep it as high as possible for good results."
 msgstr ""
 
-#: view/Audits/AuditStats.php:57 view/Audits/AuditStats.php:283
+#: view/Audits/AuditStats.php:57 view/Audits/AuditStats.php:285
 #: view/Audits/Compare.php:84
 msgid "Audit Score"
 msgstr ""
@@ -7663,9 +7849,9 @@ msgstr ""
 msgid "Request Website Audit"
 msgstr ""
 
-#: view/Audits/AuditStats.php:166 view/Audits/AuditStats.php:285
+#: view/Audits/AuditStats.php:166 view/Audits/AuditStats.php:287
 #: view/Indexnow/Submit.php:92 view/Indexnow/Submit.php:123
-#: view/Ranking/Rankings.php:459 view/Research/History.php:66
+#: view/Ranking/Rankings.php:462 view/Research/History.php:69
 msgid "Date"
 msgstr ""
 
@@ -7714,19 +7900,19 @@ msgstr ""
 msgid "Audit History"
 msgstr ""
 
-#: view/Audits/AuditStats.php:275
+#: view/Audits/AuditStats.php:277
 msgid "Compare Audits"
 msgstr ""
 
-#: view/Audits/AuditStats.php:284
+#: view/Audits/AuditStats.php:286
 msgid "Page(s)"
 msgstr ""
 
-#: view/Audits/AuditStats.php:307
+#: view/Audits/AuditStats.php:309
 msgid "Show Latest Audit"
 msgstr ""
 
-#: view/Audits/AuditStats.php:307
+#: view/Audits/AuditStats.php:309
 msgid "Show Audit"
 msgstr ""
 
@@ -7770,325 +7956,6 @@ msgstr ""
 
 #: view/Audits/Settings.php:50
 msgid "Enter the email address on which you want to receive the weekly audits."
-msgstr ""
-
-#: view/Automation/Automation.php:36
-msgid "Automation - Configurations"
-msgstr ""
-
-#: view/Automation/Automation.php:72
-msgid "Squirrly SEO is not active on this post type."
-msgstr ""
-
-#: view/Automation/Automation.php:92
-msgid "Recommended Length: 10-75 chars"
-msgstr ""
-
-#: view/Automation/Automation.php:103
-msgid "Recommended Length: 70-320 chars"
-msgstr ""
-
-#: view/Automation/Automation.php:111
-msgid "Separator"
-msgstr ""
-
-#: view/Automation/Automation.php:114
-msgid ""
-"Use a separator to help users read the most relevant part of your title and "
-"increase Conversion Rate."
-msgstr ""
-
-#: view/Automation/Automation.php:135
-msgid "Let Google Index it"
-msgstr ""
-
-#: view/Automation/Automation.php:138
-msgid ""
-"If you switch off this option, Squirrly will add noindex meta for this post "
-"type."
-msgstr ""
-
-#: view/Automation/Automation.php:150
-msgid "Send Authority to it"
-msgstr ""
-
-#: view/Automation/Automation.php:153
-msgid ""
-"If you switch off this option, Squirrly will add 'nofollow' meta for this post "
-"type."
-msgstr ""
-
-#: view/Automation/Automation.php:166
-msgid "Include In Sitemap"
-msgstr ""
-
-#: view/Automation/Automation.php:169
-msgid "Let Squirrly SEO include this post type in Squirrly Sitemap XML."
-msgstr ""
-
-#: view/Automation/Automation.php:170
-msgid ""
-"If you switch off this option, Squirrly will not load the Sitemap for this "
-"post type."
-msgstr ""
-
-#: view/Automation/Automation.php:183
-msgid "Include In Google News Sitemap"
-msgstr ""
-
-#: view/Automation/Automation.php:184
-msgid "Let Squirrly SEO include this post type in Google News Sitemap."
-msgstr ""
-
-#: view/Automation/Automation.php:205 view/SeoSettings/Tweaks.php:472
-msgid "Redirect Broken URLs"
-msgstr ""
-
-#: view/Automation/Automation.php:208
-msgid "Redirect the 404 URL in case it is changed with a new one in Post Editor."
-msgstr ""
-
-#: view/Automation/Automation.php:217
-msgid "Default Redirect URL"
-msgstr ""
-
-#: view/Automation/Automation.php:220
-msgid "Add the default URL for the Broken URLs when no permalink is found."
-msgstr ""
-
-#: view/Automation/Automation.php:234 view/SeoSettings/Tweaks.php:420
-msgid "Redirect Attachments Page"
-msgstr ""
-
-#: view/Automation/Automation.php:235 view/SeoSettings/Tweaks.php:423
-msgid "Redirect the attachment page to its image URL."
-msgstr ""
-
-#: view/Automation/Automation.php:236 view/SeoSettings/Tweaks.php:424
-msgid "Recommended if your website is not a photography website."
-msgstr ""
-
-#: view/Automation/Automation.php:248
-msgid "Load SEO Metas"
-msgstr ""
-
-#: view/Automation/Automation.php:251
-msgid ""
-"Let Squirrly SEO load the Title, Description, Keyword METAs for this post type."
-msgstr ""
-
-#: view/Automation/Automation.php:263
-msgid "Load Squirrly Patterns"
-msgstr ""
-
-#: view/Automation/Automation.php:266
-msgid "Let Squirrly SEO load the Patterns for this post type."
-msgstr ""
-
-#: view/Automation/Automation.php:278
-msgid "Load JSON-LD Structured Data"
-msgstr ""
-
-#: view/Automation/Automation.php:281
-msgid "Let Squirrly SEO load the JSON-LD Schema for this post type."
-msgstr ""
-
-#: view/Automation/Automation.php:287
-msgid "JSON-LD Type"
-msgstr ""
-
-#: view/Automation/Automation.php:291 view/Snippet/Jsonld.php:94
-msgid "JSON-LD will load the Schema for the selected types."
-msgstr ""
-
-#: view/Automation/Automation.php:332
-msgid "Load Squirrly Open Graph"
-msgstr ""
-
-#: view/Automation/Automation.php:335
-msgid "Let Squirrly SEO load the Open Graph for this post type."
-msgstr ""
-
-#: view/Automation/Automation.php:341
-msgid "Open Graph Type"
-msgstr ""
-
-#: view/Automation/Automation.php:345
-msgid "Select which Open Graph type to load for this post type."
-msgstr ""
-
-#: view/Automation/Automation.php:394
-msgid "Load Squirrly Twitter Card"
-msgstr ""
-
-#: view/Automation/Automation.php:397
-msgid "Let Squirrly SEO load the Twitter Card for this post type."
-msgstr ""
-
-#: view/Automation/Automation.php:409
-msgid "Load Google Analytics Tracking Script"
-msgstr ""
-
-#: view/Automation/Automation.php:412
-msgid "Let Google Analytics Tracking to load for this post type."
-msgstr ""
-
-#: view/Automation/Automation.php:426
-msgid "Load Facebook Pixel Tracking Script"
-msgstr ""
-
-#: view/Automation/Automation.php:429
-msgid "Let Facebook Pixel Tracking to load for this post type."
-msgstr ""
-
-#: view/Automation/Automation.php:448
-#, php-format
-msgid "Do you want to delete the automation for %s?"
-msgstr ""
-
-#: view/Automation/Automation.php:451
-#, php-format
-msgid "Remove automation for %s"
-msgstr ""
-
-#: view/Automation/Automation.php:475
-msgid "Squirrly Patterns"
-msgstr ""
-
-#: view/Automation/Automation.php:479
-msgid ""
-"Use the Pattern system to prevent Title and Description duplicates between "
-"posts"
-msgstr ""
-
-#: view/Automation/Automation.php:483
-msgid ""
-"Patterns change the codes like {{title}} with the actual value of the post "
-"Title."
-msgstr ""
-
-#: view/Automation/Automation.php:484
-msgid ""
-"In Squirrly, each post type in your site comes with a predefined posting "
-"pattern when displayed onto your website. However, based on your site's "
-"purpose and needs, you can also decide what information these patterns will "
-"include."
-msgstr ""
-
-#: view/Automation/Automation.php:485
-msgid ""
-"Once you set up a pattern for a particular post type, only the content "
-"required by your custom sequence will be displayed."
-msgstr ""
-
-#: view/Automation/Automation.php:486
-#, php-format
-msgid ""
-"Squirrly lets you see how the customized patterns will apply when posts/pages "
-"are shared across social media or search engine feeds. You just need to go to "
-"%s Squirrly's Bulk SEO section %s and see the meta information for each post "
-"type."
-msgstr ""
-
-#: view/Automation/Automation.php:500
-msgid ""
-"From this section, you can quickly work on your site globally and set up the "
-"SEO for it in just a few minutes."
-msgstr ""
-
-#: view/Automation/Automation.php:501
-msgid ""
-"If you are an SEO beginner, it’s not necessary to make any major changes in "
-"the Automation section."
-msgstr ""
-
-#: view/Automation/Automation.php:502
-msgid ""
-"If you are an SEO expert or an advanced user, you’ll be able to easily "
-"customize the Automation for every post type."
-msgstr ""
-
-#: view/Automation/Settings.php:37
-msgid "META Lengths"
-msgstr ""
-
-#: view/Automation/Settings.php:43
-msgid "Change the lengths for each META on automation"
-msgstr ""
-
-#: view/Automation/Settings.php:50 view/SeoSettings/Metas.php:192
-msgid "Title Length"
-msgstr ""
-
-#: view/Automation/Settings.php:61 view/SeoSettings/Metas.php:203
-msgid "Description Length"
-msgstr ""
-
-#: view/Automation/Settings.php:71 view/SeoSettings/Social.php:448
-msgid "Open Graph Title Length"
-msgstr ""
-
-#: view/Automation/Settings.php:80 view/SeoSettings/Social.php:457
-msgid "Open Graph Description Length"
-msgstr ""
-
-#: view/Automation/Settings.php:89 view/SeoSettings/Social.php:468
-msgid "Twitter Card Title Length"
-msgstr ""
-
-#: view/Automation/Settings.php:98 view/SeoSettings/Social.php:477
-msgid "Twitter Card Description Length"
-msgstr ""
-
-#: view/Automation/Settings.php:107 view/SeoSettings/Jsonld.php:593
-msgid "JSON-LD Title Length"
-msgstr ""
-
-#: view/Automation/Settings.php:116 view/SeoSettings/Jsonld.php:602
-msgid "JSON-LD Description Length"
-msgstr ""
-
-#: view/Automation/Settings.php:139
-msgid ""
-"There have been several occasions in which platforms like Google and Twitter "
-"have increased their Description length limit and even the META Title length "
-"limit."
-msgstr ""
-
-#: view/Automation/Settings.php:140
-msgid ""
-"Squirrly SEO offers you full customization of the META lengths so that you "
-"don’t have to wait for plugin updates when these sort of things happen, and if "
-"Twitter, for example, decides to increase the number of characters it will "
-"display for a post’s description when shared on their platform."
-msgstr ""
-
-#: view/Automation/Types.php:42
-msgid ""
-"Add ALL Your Post Types to the Automation section and ensure all your site is "
-"covered with excellent SEO."
-msgstr ""
-
-#: view/Automation/Types.php:106 view/Automation/Types.php:124
-msgid "Add Post Type"
-msgstr ""
-
-#: view/Automation/Types.php:109
-msgid "Add new post types in the list and customize the automation for it."
-msgstr ""
-
-#: view/Automation/Types.php:133
-msgid "All the post types are sent for Automation"
-msgstr ""
-
-#: view/Automation/Types.php:134
-msgid "Start Automation Setup"
-msgstr ""
-
-#: view/Automation/Types.php:150
-msgid ""
-"Add ALL Your Post Types to our Automation section, to ensure all your site is "
-"covered with excellent SEO."
 msgstr ""
 
 #: view/Blocks/Account.php:39
@@ -8155,7 +8022,7 @@ msgid "Automation Mastery Tasks"
 msgstr ""
 
 #: view/Blocks/Assistant.php:21
-msgid "SEO Configuration Mastery Tasks"
+msgid "Technical SEO Mastery Tasks"
 msgstr ""
 
 #: view/Blocks/Assistant.php:23
@@ -8182,72 +8049,72 @@ msgstr ""
 msgid "See Today’s Goals"
 msgstr ""
 
-#: view/Blocks/Dashboard.php:83
+#: view/Blocks/Dashboard.php:82
 #, php-format
 msgid "No other goals for today. %sGood job!"
 msgstr ""
 
-#: view/Blocks/Dashboard.php:85
+#: view/Blocks/Dashboard.php:84
 msgid "Rank your best pages with Focus Pages"
 msgstr ""
 
-#: view/Blocks/Dashboard.php:88
+#: view/Blocks/Dashboard.php:87
 msgid "Boost your SEO with Bulk SEO"
 msgstr ""
 
-#: view/Blocks/Dashboard.php:115 view/Goals/CheckSeo.php:46
+#: view/Blocks/Dashboard.php:114 view/Goals/CheckSeo.php:59
 msgid "Checking the website ..."
 msgstr ""
 
-#: view/Blocks/Features.php:53
+#: view/Blocks/Features.php:52
 msgid "Squirrly SEO Main Features"
 msgstr ""
 
-#: view/Blocks/Features.php:54
+#: view/Blocks/Features.php:53
 msgid "Manage the features & access them directly from here."
 msgstr ""
 
-#: view/Blocks/Features.php:57 view/Blocks/Features.php:233
+#: view/Blocks/Features.php:56 view/Blocks/Features.php:189
 msgid "Do you want to search in the 650 features list?"
 msgstr ""
 
-#: view/Blocks/Features.php:59 view/Blocks/Features.php:235
+#: view/Blocks/Features.php:58 view/Blocks/Features.php:191
 msgid "Do you want to see all 650 features list?"
 msgstr ""
 
-#: view/Blocks/Features.php:68
+#: view/Blocks/Features.php:70
 msgid "Enter a feature you want to search for"
 msgstr ""
 
-#: view/Blocks/Features.php:72
+#: view/Blocks/Features.php:74
 msgid "Search Feature"
 msgstr ""
 
-#: view/Blocks/Features.php:177
+#: view/Blocks/Features.php:132
 msgid "start feature setup"
 msgstr ""
 
-#: view/Blocks/Features.php:182
+#: view/Blocks/Features.php:137
 msgid "see feature"
 msgstr ""
 
-#: view/Blocks/Features.php:198
+#: view/Blocks/Features.php:154
 msgid "click to deactivate"
 msgstr ""
 
-#: view/Blocks/Features.php:198
+#: view/Blocks/Features.php:154
 msgid "click to activate"
 msgstr ""
 
-#: view/Blocks/Features.php:204
+#: view/Blocks/Features.php:160
 msgid "connect to cloud"
 msgstr ""
 
-#: view/Blocks/Features.php:208
+#: view/Blocks/Features.php:164
 msgid "already active"
 msgstr ""
 
-#: view/Blocks/Features.php:212
+#: view/Blocks/Features.php:168
 msgid "activate feature"
 msgstr ""
 
@@ -8255,11 +8122,11 @@ msgstr ""
 msgid "The following pages have the Focus Pages keywords used in their content."
 msgstr ""
 
-#: view/Blocks/Innerlinks.php:25 view/FocusPages/Innerlinks.php:104
+#: view/Blocks/Innerlinks.php:25 view/FocusPages/Innerlinks.php:110
 msgid "From"
 msgstr ""
 
-#: view/Blocks/Innerlinks.php:26 view/FocusPages/Innerlinks.php:105
+#: view/Blocks/Innerlinks.php:26 view/FocusPages/Innerlinks.php:111
 msgid "To"
 msgstr ""
 
@@ -8518,24 +8385,29 @@ msgstr ""
 msgid "Sign Up"
 msgstr ""
 
-#: view/Blocks/Menu.php:46 view/Blocks/Menu.php:94 view/Blocks/Menu.php:149
-#: view/Blocks/Menu.php:210
+#: view/Blocks/Menu.php:47 view/Blocks/Menu.php:96 view/Blocks/Menu.php:152
+#: view/Blocks/Menu.php:214
 msgid "Collapse"
 msgstr ""
 
-#: view/Blocks/Menu.php:67
+#: view/Blocks/Menu.php:68
 msgid "Back To Audit"
 msgstr ""
 
-#: view/Blocks/Menu.php:115 view/Blocks/Menu.php:173
+#: view/Blocks/Menu.php:117 view/Blocks/Menu.php:176
 msgid "Back To Home"
 msgstr ""
 
-#: view/Blocks/Toolbar.php:26
+#: view/Blocks/Toolbar.php:20
+#, php-format
+msgid "Welcome to %s"
+msgstr ""
+
+#: view/Blocks/Toolbar.php:35
 msgid "SEO Beginner"
 msgstr ""
 
-#: view/Blocks/Toolbar.php:27
+#: view/Blocks/Toolbar.php:36
 msgid "SEO Expert"
 msgstr ""
 
@@ -8587,79 +8459,11 @@ msgstr ""
 #, php-format
 msgid ""
 "You set to remove all Squirrly SEO data on uninstall. You can change this "
-"option from %s Squirrly > SEO Configuration > Advanced Settings %s"
+"option from %s Squirrly > Technical SEO > Advanced Settings %s"
 msgstr ""
 
 #: view/Blocks/Uninstall.php:79
 msgid "Disconnect from Squirrly Cloud"
-msgstr ""
-
-#: view/BulkSeo/Bulkseo.php:43
-msgid ""
-"Simplify the SEO process for all your post type and optimize them in just "
-"minutes."
-msgstr ""
-
-#: view/BulkSeo/Bulkseo.php:59 view/FocusPages/FocusPages.php:32
-msgid "Filter by Red Element"
-msgstr ""
-
-#: view/BulkSeo/Bulkseo.php:184
-msgid "Write the post you want to search for"
-msgstr ""
-
-#: view/BulkSeo/Bulkseo.php:185
-msgid "Search Keyword"
-msgstr ""
-
-#: view/BulkSeo/Bulkseo.php:252
-#, php-format
-msgid "No data for this filter. %sShow All%s records for this post type."
-msgstr ""
-
-#: view/BulkSeo/Bulkseo.php:254
-msgid "No data found for this post type. Try other post types."
-msgstr ""
-
-#: view/BulkSeo/Bulkseo.php:281
-msgid "Start Using This Section in 1,2,3"
-msgstr ""
-
-#: view/BulkSeo/Bulkseo.php:292
-msgid "1. Click On A Section"
-msgstr ""
-
-#: view/BulkSeo/Bulkseo.php:306
-msgid "2. Click On A Task"
-msgstr ""
-
-#: view/BulkSeo/Bulkseo.php:320
-msgid "3. Read Task Details"
-msgstr ""
-
-#: view/BulkSeo/Bulkseo.php:335
-msgid "Each Red, Gray, or Green dot from each section in BULK SEO is clickable."
-msgstr ""
-
-#: view/BulkSeo/Bulkseo.php:336
-msgid ""
-"Correct the SEO for the entire website in just minutes. Simply turn Red "
-"Elements Green, and you’ll score massive SEO gains."
-msgstr ""
-
-#: view/BulkSeo/Bulkseo.php:337
-msgid ""
-"Filter by Red Element to group pages together based on common issues they have "
-"to better organize and prioritize your work."
-msgstr ""
-
-#: view/BulkSeo/Bulkseo.php:348
-msgid "Bulk SEO Mastery Tasks"
-msgstr ""
-
-#: view/BulkSeo/BulkseoRow.php:43
-#, php-format
-msgid "View: %s"
 msgstr ""
 
 #: view/Connect/GoogleAnalytics.php:18 view/SeoSettings/Webmaster.php:70
@@ -8769,27 +8573,27 @@ msgid ""
 "factors. Turn everything that you see here to Green and you will win."
 msgstr ""
 
-#: view/FocusPages/Addpage.php:234 view/Onboarding/Step3.php:209
+#: view/FocusPages/Addpage.php:237 view/Onboarding/Step3.php:212
 msgid "Set Focus Page"
 msgstr ""
 
-#: view/FocusPages/Addpage.php:238 view/Onboarding/Step3.php:213
+#: view/FocusPages/Addpage.php:241 view/Onboarding/Step3.php:216
 msgid "Only pages with IDs can be added as Focus Page"
 msgstr ""
 
-#: view/FocusPages/Addpage.php:238 view/Onboarding/Step3.php:213
+#: view/FocusPages/Addpage.php:241 view/Onboarding/Step3.php:216
 msgid "Can't be added"
 msgstr ""
 
-#: view/FocusPages/Addpage.php:241
+#: view/FocusPages/Addpage.php:244
 msgid "See Tasks"
 msgstr ""
 
-#: view/FocusPages/Addpage.php:290
+#: view/FocusPages/Addpage.php:293
 msgid "Select the page you want to add to focus pages and start working on it."
 msgstr ""
 
-#: view/FocusPages/Addpage.php:291
+#: view/FocusPages/Addpage.php:294
 msgid ""
 "The Focus Pages strategy can successfully be applied to any website, in any "
 "niche, big or small."
@@ -8821,8 +8625,8 @@ msgstr ""
 msgid "Audited"
 msgstr ""
 
-#: view/FocusPages/FocusPageRow.php:127 view/Ranking/Rankings.php:242
-#: view/Research/History.php:67
+#: view/FocusPages/FocusPageRow.php:127 view/Ranking/Rankings.php:245
+#: view/Research/History.php:70
 msgid "Details"
 msgstr ""
 
@@ -8846,7 +8650,7 @@ msgid "Currently processing data. Please refresh in a few minutes."
 msgstr ""
 
 #: view/FocusPages/FocusPageRow.php:173 view/FocusPages/FocusPageRow.php:199
-#: view/FocusPages/FocusPages.php:70
+#: view/FocusPages/FocusPages.php:73
 msgid "Chance to Rank"
 msgstr ""
 
@@ -8930,20 +8734,20 @@ msgstr ""
 msgid "Show All Focus Pages"
 msgstr ""
 
-#: view/FocusPages/FocusPages.php:48
+#: view/FocusPages/FocusPages.php:51
 msgid "Refresh Filter"
 msgstr ""
 
-#: view/FocusPages/FocusPages.php:123
+#: view/FocusPages/FocusPages.php:126
 #, php-format
 msgid "No data for this filter. %sShow All%s Focus Pages."
 msgstr ""
 
-#: view/FocusPages/FocusPages.php:127
+#: view/FocusPages/FocusPages.php:130
 msgid "Welcome to Focus Pages"
 msgstr ""
 
-#: view/FocusPages/FocusPages.php:129
+#: view/FocusPages/FocusPages.php:132
 msgid "Add a new page as Focus Page to get started"
 msgstr ""
 
@@ -8951,7 +8755,7 @@ msgstr ""
 msgid "The list of inner links set in Squirrly SEO."
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:46 view/FocusPages/Innerlinks.php:312
+#: view/FocusPages/Innerlinks.php:46 view/FocusPages/Innerlinks.php:318
 msgid "Add Inner Link"
 msgstr ""
 
@@ -8960,7 +8764,7 @@ msgid "Suggested Inner Links"
 msgstr ""
 
 #: view/FocusPages/Innerlinks.php:60 view/Ranking/Rankings.php:208
-#: view/Research/Briefcase.php:76 view/Research/Labels.php:55
+#: view/Research/Briefcase.php:81 view/Research/Labels.php:55
 msgid "Bulk Actions"
 msgstr ""
 
@@ -8973,115 +8777,115 @@ msgid "Are you sure you want to delete the inner link?"
 msgstr ""
 
 #: view/FocusPages/Innerlinks.php:62 view/Ranking/Rankings.php:209
-#: view/Research/Briefcase.php:79 view/Research/Labels.php:56
+#: view/Research/Briefcase.php:84 view/Research/Labels.php:56
 msgid "Delete"
 msgstr ""
 
 #: view/FocusPages/Innerlinks.php:65 view/Ranking/Rankings.php:214
-#: view/Research/Briefcase.php:81 view/Research/Labels.php:58
+#: view/Research/Briefcase.php:86 view/Research/Labels.php:58
 msgid "Apply"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:77
+#: view/FocusPages/Innerlinks.php:80
 msgid "All Inner links"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:78 view/FocusPages/Innerlinks.php:125
+#: view/FocusPages/Innerlinks.php:81 view/FocusPages/Innerlinks.php:131
 msgid "Nofollow"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:89 view/Ranking/Rankings.php:220
-#: view/Ranking/Rankings.php:488 view/Research/Briefcase.php:123
-#: view/Research/Briefcase.php:470 view/Research/History.php:52
-#: view/Research/History.php:121 view/Research/Labels.php:65
-#: view/Research/Labels.php:170 view/Research/Suggested.php:54
-#: view/Research/Suggested.php:401
+#: view/FocusPages/Innerlinks.php:95 view/Ranking/Rankings.php:223
+#: view/Ranking/Rankings.php:494 view/Research/Briefcase.php:133
+#: view/Research/Briefcase.php:479 view/Research/History.php:55
+#: view/Research/History.php:127 view/Research/Labels.php:68
+#: view/Research/Labels.php:176 view/Research/Suggested.php:57
+#: view/Research/Suggested.php:407
 msgid "Write the keyword you want to search for"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:90 view/Ranking/Rankings.php:221
-#: view/Ranking/Rankings.php:489 view/Research/Briefcase.php:124
-#: view/Research/Briefcase.php:471 view/Research/History.php:53
-#: view/Research/History.php:122 view/Research/Labels.php:66
-#: view/Research/Labels.php:171 view/Research/Research.php:263
-#: view/Research/Suggested.php:55 view/Research/Suggested.php:402
+#: view/FocusPages/Innerlinks.php:96 view/Ranking/Rankings.php:224
+#: view/Ranking/Rankings.php:495 view/Research/Briefcase.php:134
+#: view/Research/Briefcase.php:480 view/Research/History.php:56
+#: view/Research/History.php:128 view/Research/Labels.php:69
+#: view/Research/Labels.php:177 view/Research/Research.php:263
+#: view/Research/Suggested.php:58 view/Research/Suggested.php:408
 msgid "Search"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:106
+#: view/FocusPages/Innerlinks.php:112
 msgid "Status"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:128
+#: view/FocusPages/Innerlinks.php:134
 msgid "Open New Tab"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:155
+#: view/FocusPages/Innerlinks.php:161
 msgid "No keyword found on page"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:157
+#: view/FocusPages/Innerlinks.php:163
 msgid "valid keywords found"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:157
+#: view/FocusPages/Innerlinks.php:163
 msgid "found"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:171 view/FocusPages/Innerlinks.php:338
+#: view/FocusPages/Innerlinks.php:177 view/FocusPages/Innerlinks.php:344
 msgid "Edit Inner Link"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:181
+#: view/FocusPages/Innerlinks.php:188
 msgid "Check Inner Link"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:186
+#: view/FocusPages/Innerlinks.php:193
 msgid "Do you want to delete the Inner Link?"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:193
+#: view/FocusPages/Innerlinks.php:200
 msgid "Delete Inner Link"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:208
+#: view/FocusPages/Innerlinks.php:215
 msgid "No Inner Links found"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:225 view/Ranking/Rankings.php:366
-#: view/Ranking/Rankings.php:371 view/Research/Briefcase.php:448
-#: view/Research/Briefcase.php:454 view/Research/History.php:100
-#: view/Research/History.php:105 view/Research/Labels.php:149
-#: view/Research/Labels.php:154 view/Research/Suggested.php:380
-#: view/Research/Suggested.php:385
+#: view/FocusPages/Innerlinks.php:232 view/Ranking/Rankings.php:369
+#: view/Ranking/Rankings.php:374 view/Research/Briefcase.php:452
+#: view/Research/Briefcase.php:458 view/Research/History.php:103
+#: view/Research/History.php:108 view/Research/Labels.php:152
+#: view/Research/Labels.php:157 view/Research/Suggested.php:383
+#: view/Research/Suggested.php:388
 msgid "records"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:255
+#: view/FocusPages/Innerlinks.php:262
 msgid "Add New Inner Link"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:270 view/FocusPages/Innerlinks.php:352
+#: view/FocusPages/Innerlinks.php:276 view/FocusPages/Innerlinks.php:358
 msgid "From Page"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:274 view/FocusPages/Innerlinks.php:357
+#: view/FocusPages/Innerlinks.php:280 view/FocusPages/Innerlinks.php:363
 msgid "To Page"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:283 view/FocusPages/Innerlinks.php:367
+#: view/FocusPages/Innerlinks.php:289 view/FocusPages/Innerlinks.php:373
 msgid "More Options"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:295 view/FocusPages/Innerlinks.php:379
+#: view/FocusPages/Innerlinks.php:301 view/FocusPages/Innerlinks.php:385
 msgid "NoFollow Link"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:305 view/FocusPages/Innerlinks.php:389
+#: view/FocusPages/Innerlinks.php:311 view/FocusPages/Innerlinks.php:395
 msgid "Open in New Tab"
 msgstr ""
 
-#: view/FocusPages/Innerlinks.php:396
+#: view/FocusPages/Innerlinks.php:402
 msgid "Update Inner Link"
 msgstr ""
 
@@ -9095,7 +8899,7 @@ msgid ""
 "it easy to showcase the fruits of your labor."
 msgstr ""
 
-#: view/FocusPages/Pagelist.php:81 view/Ranking/Rankings.php:553
+#: view/FocusPages/Pagelist.php:81 view/Ranking/Rankings.php:559
 msgid ""
 "Take screenshots of the Progress and Achievements data or integrate them "
 "inside reports you create to show evidence of progress."
@@ -9125,132 +8929,136 @@ msgid ""
 "generate the new audit for a focus page. There is a lot of processing involved."
 msgstr ""
 
-#: view/FocusPages/Settings.php:37
+#: view/FocusPages/Settings.php:38
 msgid "Focus Pages Settings"
 msgstr ""
 
-#: view/FocusPages/Settings.php:52
+#: view/FocusPages/Settings.php:53
 msgid "Use Inner Links Assistant"
 msgstr ""
 
-#: view/FocusPages/Settings.php:55
+#: view/FocusPages/Settings.php:56
 msgid "Activate Inner Links to Focus Pages based on optimized keywords"
 msgstr ""
 
-#: view/FocusPages/Settings.php:62
+#: view/FocusPages/Settings.php:63
 msgid "Maximum Inner Links Per Keyword"
 msgstr ""
 
-#: view/FocusPages/Settings.php:65
+#: view/FocusPages/Settings.php:66
 msgid ""
 "The maximum number of keywords that will have links to a Focus Page once it is "
 "found."
 msgstr ""
 
-#: view/FocusPages/Settings.php:74
+#: view/FocusPages/Settings.php:75
 msgid "Maximum Inner Links Per Target"
 msgstr ""
 
-#: view/FocusPages/Settings.php:77
+#: view/FocusPages/Settings.php:78
 msgid ""
 "The maximum number of links that will point to a Focus Page once a keyword is "
 "found."
 msgstr ""
 
-#: view/FocusPages/Settings.php:89
+#: view/FocusPages/Settings.php:90
 msgid "Default NoFollow Inner Links"
 msgstr ""
 
-#: view/FocusPages/Settings.php:92
+#: view/FocusPages/Settings.php:93
 msgid "Add re=nofollow by default to all inner links."
 msgstr ""
 
-#: view/FocusPages/Settings.php:102
+#: view/FocusPages/Settings.php:103
 msgid "Default Open Inner Links in New Tab"
 msgstr ""
 
-#: view/FocusPages/Settings.php:105
+#: view/FocusPages/Settings.php:106
 msgid "Open all inner links in a new tab by default."
 msgstr ""
 
-#: view/FocusPages/Settings.php:112
+#: view/FocusPages/Settings.php:113
 msgid "Linking Template"
 msgstr ""
 
-#: view/FocusPages/Settings.php:117
+#: view/FocusPages/Settings.php:118
 msgid ""
 "Formatting for the output of generated internal links can be done using "
 "placeholders: {{url}} represents the target URL, and {{keyword}} represents "
 "the generated anchor text."
 msgstr ""
 
-#: view/FocusPages/Settings.php:123
+#: view/FocusPages/Settings.php:124
 msgid "Exclude Tags From Inner Linking"
 msgstr ""
 
-#: view/FocusPages/Settings.php:125
+#: view/FocusPages/Settings.php:126
 msgid "Select the HTML areas that will be excluded from innerlinking."
 msgstr ""
 
-#: view/FocusPages/Settings.php:134
+#: view/FocusPages/Settings.php:135
 msgid "Headlines"
 msgstr ""
 
-#: view/FocusPages/Settings.php:135
+#: view/FocusPages/Settings.php:136
 msgid "Strong text"
 msgstr ""
 
-#: view/FocusPages/Settings.php:136
+#: view/FocusPages/Settings.php:137
 msgid "Tables"
 msgstr ""
 
-#: view/FocusPages/Settings.php:137
+#: view/FocusPages/Settings.php:138
 msgid "Image captions"
 msgstr ""
 
-#: view/FocusPages/Settings.php:138
+#: view/FocusPages/Settings.php:139
 msgid "Ordered lists"
 msgstr ""
 
-#: view/FocusPages/Settings.php:139
+#: view/FocusPages/Settings.php:140
 msgid "Unordered lists"
 msgstr ""
 
-#: view/FocusPages/Settings.php:140
+#: view/FocusPages/Settings.php:141
 msgid "Blockquotes"
 msgstr ""
 
-#: view/FocusPages/Settings.php:141
+#: view/FocusPages/Settings.php:142
 msgid "Italic text"
 msgstr ""
 
-#: view/FocusPages/Settings.php:142
+#: view/FocusPages/Settings.php:143
 msgid "Inline quotes"
 msgstr ""
 
-#: view/FocusPages/Settings.php:143
+#: view/FocusPages/Settings.php:144
 msgid "Sourcecode"
 msgstr ""
 
-#: view/Goals/CheckSeo.php:33
+#: view/Goals/CheckSeo.php:46
 msgid "Website SEO Check"
 msgstr ""
 
-#: view/Goals/CheckSeo.php:43
+#: view/Goals/CheckSeo.php:56
 msgid ""
 "Remember that it may take up to 1 minute for a complete SEO check. There is a "
 "lot of processing involved."
 msgstr ""
 
-#: view/Goals/Congrats.php:37
+#: view/Goals/Congrats.php:40
 msgid "See results"
 msgstr ""
 
-#: view/Goals/Congrats.php:66
+#: view/Goals/Congrats.php:70
 msgid "Show hidden success"
 msgstr ""
 
-#: view/Goals/Goals.php:43
+#: view/Goals/Goals.php:30
+msgid "AI SEO Consultant"
+msgstr ""
+
+#: view/Goals/Goals.php:35
 #, no-php-format
 msgid ""
 "Your AI Private SEO Consultant Is Here: Complete the following goals which are "
@@ -9259,63 +9067,63 @@ msgid ""
 "Rankings."
 msgstr ""
 
-#: view/Goals/Goals.php:56
+#: view/Goals/Goals.php:48
 msgid "Run New SEO Test"
 msgstr ""
 
-#: view/Goals/Goals.php:62
+#: view/Goals/Goals.php:54
 msgid "Load more goals if exist"
 msgstr ""
 
-#: view/Goals/Goals.php:84
+#: view/Goals/Goals.php:76
 msgid "Goal completed. Good Job!"
 msgstr ""
 
-#: view/Goals/Goals.php:94
+#: view/Goals/Goals.php:86
 msgid "use"
 msgstr ""
 
-#: view/Goals/Goals.php:101
+#: view/Goals/Goals.php:93
 msgid "Time to complete this goal."
 msgstr ""
 
-#: view/Goals/Goals.php:101
+#: view/Goals/Goals.php:93
 msgid "up to"
 msgstr ""
 
-#: view/Goals/Goals.php:117
+#: view/Goals/Goals.php:109
 msgid "Show me how"
 msgstr ""
 
-#: view/Goals/Goals.php:121
+#: view/Goals/Goals.php:113
 msgid "Goal is not done!"
 msgstr ""
 
-#: view/Goals/Goals.php:136
+#: view/Goals/Goals.php:128
 msgid "SOLUTION"
 msgstr ""
 
-#: view/Goals/Goals.php:150 view/Overview.php:61
+#: view/Goals/Goals.php:142 view/Overview.php:210
 msgid "Let's do this"
 msgstr ""
 
-#: view/Goals/Goals.php:158
+#: view/Goals/Goals.php:150
 msgid "Mark As Done"
 msgstr ""
 
-#: view/Goals/Goals.php:175
+#: view/Goals/Goals.php:167
 msgid "Do you want to ignore this goal?"
 msgstr ""
 
-#: view/Goals/Goals.php:200
+#: view/Goals/Goals.php:193
 msgid "Show hidden goals"
 msgstr ""
 
-#: view/Goals/Goals.php:210
+#: view/Goals/Goals.php:203
 msgid "Next goals on"
 msgstr ""
 
-#: view/Goals/Goals.php:224 view/Goals/Goals.php:226
+#: view/Goals/Goals.php:216
 #, php-format
 msgid ""
 "Completing Goals from Squirrly's AI Consultant moves you to TOP 10 positions "
@@ -9324,14 +9132,14 @@ msgid ""
 "below."
 msgstr ""
 
-#: view/Goals/Goals.php:228
+#: view/Goals/Goals.php:218
 msgid ""
 "Taking care of the goals and focusing on completing them will increase ranking "
 "positions, traffic to the website, social media sharing, time on page and a "
 "lot more."
 msgstr ""
 
-#: view/Goals/Goals.php:229
+#: view/Goals/Goals.php:219
 msgid ""
 "This AI Consultant does exactly what a Human SEO Consultant with 10 years of "
 "experience would do: it looks at your site; identifies what needs to be fixed, "
@@ -9339,7 +9147,7 @@ msgid ""
 "needs to be achieved in order to start being found everywhere on Google."
 msgstr ""
 
-#: view/Goals/Goals.php:230
+#: view/Goals/Goals.php:220
 #, php-format
 msgid ""
 "%s Important: %s if a modification was made to a focus page, please request a "
@@ -9348,7 +9156,7 @@ msgid ""
 msgstr ""
 
 #: view/Indexnow/Settings.php:33
-msgid "IndexNow Settings"
+msgid "Auto-Indexing Settings"
 msgstr ""
 
 #: view/Indexnow/Settings.php:40
@@ -9383,20 +9191,28 @@ msgstr ""
 msgid "Check Key"
 msgstr ""
 
-#: view/Indexnow/Settings.php:104
+#: view/Indexnow/Settings.php:105
 msgid "Automatically Submit Post Types"
 msgstr ""
 
-#: view/Indexnow/Settings.php:106
-msgid "Select post types you want to send to IndexNow automatically."
+#: view/Indexnow/Settings.php:107
+msgid "Select post types you want to send for Auto-Indexing."
+msgstr ""
+
+#: view/Indexnow/Settings.php:130
+msgid "IndexNow Endpoints"
+msgstr ""
+
+#: view/Indexnow/Settings.php:132
+msgid "Select the IndexNow endpoints you want to submit the URLs to."
 msgstr ""
 
 #: view/Indexnow/Submit.php:39
-msgid "Submit URLs to IndexNow"
+msgid "Submit URLs for Auto-Indexing"
 msgstr ""
 
 #: view/Indexnow/Submit.php:45
-msgid "Manually send URLs to the IndexNow API."
+msgid "Manually send URLs to the IndexNow API AND the Google Indexing API."
 msgstr ""
 
 #: view/Indexnow/Submit.php:52
@@ -9405,15 +9221,18 @@ msgstr ""
 
 #: view/Indexnow/Submit.php:54
 msgid ""
-"Insert the URLs you want to send to the IndexNow (one per line, up to 10,000)"
+"Insert the URLs you want to send to the Auto-Indexing (one per line, up to "
+"10,000)"
 msgstr ""
 
 #: view/Indexnow/Submit.php:74
-msgid "IndexNow History"
+msgid "Auto-Indexing History (sent to both Google Indexing API and IndexNow)"
 msgstr ""
 
 #: view/Indexnow/Submit.php:77
-msgid "Check the log to see how your URLs were submited."
+msgid ""
+"Check the log to see how your URLs were submited. Make sure your Google Search "
+"Console is connected."
 msgstr ""
 
 #: view/Indexnow/Submit.php:84
@@ -9802,7 +9621,7 @@ msgstr ""
 msgid "Personal Brand Rich Snippets"
 msgstr ""
 
-#: view/Onboarding/Step2.php:429 view/Onboarding/Step3.php:236
+#: view/Onboarding/Step2.php:429 view/Onboarding/Step3.php:239
 #: view/Onboarding/Step4.php:442 view/Onboarding/Step5.php:49
 msgid "Save & Continue"
 msgstr ""
@@ -9811,7 +9630,7 @@ msgstr ""
 msgid "Add a page you want people to find on Google"
 msgstr ""
 
-#: view/Onboarding/Step3.php:216
+#: view/Onboarding/Step3.php:219
 msgid "Page Selected"
 msgstr ""
 
@@ -9917,9 +9736,9 @@ msgstr ""
 msgid "County"
 msgstr ""
 
-#: view/Onboarding/Step4.php:204 view/Ranking/Rankings.php:449
-#: view/Research/Briefcase.php:355 view/Research/History.php:65
-#: view/Research/Research.php:256 view/Research/Suggested.php:67
+#: view/Onboarding/Step4.php:204 view/Ranking/Rankings.php:452
+#: view/Research/Briefcase.php:359 view/Research/History.php:68
+#: view/Research/Research.php:256 view/Research/Suggested.php:70
 #: view/SeoSettings/Jsonld.php:310
 msgid "Country"
 msgstr ""
@@ -10097,7 +9916,69 @@ msgstr ""
 msgid "SEO Expert: Start Here"
 msgstr ""
 
-#: view/Overview.php:60
+#: view/Overview.php:57
+#, php-format
+msgid ""
+"The AI SEO Consultant has %s Action Items you should check to improve your "
+"rankings right away."
+msgstr ""
+
+#: view/Overview.php:79
+msgid "Configure your SEO"
+msgstr ""
+
+#: view/Overview.php:86
+msgid ""
+"Launch our installation wizard to quickly and easily configure the basic SEO "
+"Settings for your site."
+msgstr ""
+
+#: view/Overview.php:92
+msgid "Setup in 5 mins!"
+msgstr ""
+
+#: view/Overview.php:100
+msgid "Squirrly SEO Suite"
+msgstr ""
+
+#: view/Overview.php:103
+msgid ""
+"The Only Holistic SEO Plugin on the market covers and replaces many SEO "
+"software you would buy for your site"
+msgstr ""
+
+#: view/Overview.php:114 view/Overview.php:129 view/Overview.php:149
+#: view/Snippet/Jsonld.php:147 view/Snippet/Jsonld.php:195
+msgid "Active"
+msgstr ""
+
+#: view/Overview.php:132 view/Overview.php:154
+msgid "Inactive"
+msgstr ""
+
+#: view/Overview.php:133
+msgid "Upgrade"
+msgstr ""
+
+#: view/Overview.php:135
+msgid "(upgrade is made on the SaaS side. No plugin re-install required)"
+msgstr ""
+
+#: view/Overview.php:156
+msgid "Install now with one click. It's free."
+msgstr ""
+
+#: view/Overview.php:167
+msgid "Do you have SEO clients?"
+msgstr ""
+
+#: view/Overview.php:168
+msgid ""
+"learn how to configure different packages for them and customize their "
+"experience. Your clients will love your agency more!"
+msgstr ""
+
+#: view/Overview.php:209
 #, php-format
 msgid ""
 "First, you need to activate the %s recommended mode %s or the %s expert mode "
@@ -10229,105 +10110,105 @@ msgstr ""
 msgid "Refresh Serp"
 msgstr ""
 
-#: view/Ranking/Rankings.php:235
+#: view/Ranking/Rankings.php:238
 msgid "Path"
 msgstr ""
 
-#: view/Ranking/Rankings.php:237 view/Research/Briefcase.php:144
+#: view/Ranking/Rankings.php:240 view/Research/Briefcase.php:154
 msgid "Rank"
 msgstr ""
 
-#: view/Ranking/Rankings.php:238
+#: view/Ranking/Rankings.php:241
 msgid "Best"
 msgstr ""
 
-#: view/Ranking/Rankings.php:240 view/Research/Briefcase.php:146
+#: view/Ranking/Rankings.php:243 view/Research/Briefcase.php:156
 msgid "Avg Rank"
 msgstr ""
 
-#: view/Ranking/Rankings.php:273 view/Ranking/Rankings.php:299
+#: view/Ranking/Rankings.php:276 view/Ranking/Rankings.php:302
 msgid "Google Search Console has no data for this keyword"
 msgstr ""
 
-#: view/Ranking/Rankings.php:289 view/Research/Briefcase.php:196
+#: view/Ranking/Rankings.php:292 view/Research/Briefcase.php:206
 msgid "Not indexed"
 msgstr ""
 
-#: view/Ranking/Rankings.php:300 view/Research/Briefcase.php:201
+#: view/Ranking/Rankings.php:303 view/Research/Briefcase.php:211
 msgid "GSC"
 msgstr ""
 
-#: view/Ranking/Rankings.php:304
+#: view/Ranking/Rankings.php:307
 msgid "rank details"
 msgstr ""
 
-#: view/Ranking/Rankings.php:323
+#: view/Ranking/Rankings.php:326
 msgid "Check Ranking again"
 msgstr ""
 
-#: view/Ranking/Rankings.php:336
+#: view/Ranking/Rankings.php:339
 msgid "Remove Keyword"
 msgstr ""
 
-#: view/Ranking/Rankings.php:425
+#: view/Ranking/Rankings.php:428
 msgid "Optimized with SLA"
 msgstr ""
 
-#: view/Ranking/Rankings.php:435
+#: view/Ranking/Rankings.php:438
 msgid "Social Shares"
 msgstr ""
 
-#: view/Ranking/Rankings.php:440
+#: view/Ranking/Rankings.php:443
 msgid "Facebook Shares"
 msgstr ""
 
-#: view/Ranking/Rankings.php:441
+#: view/Ranking/Rankings.php:444
 msgid "Reddit Shares"
 msgstr ""
 
-#: view/Ranking/Rankings.php:442
+#: view/Ranking/Rankings.php:445
 msgid "Pinterest Pins"
 msgstr ""
 
-#: view/Ranking/Rankings.php:468
+#: view/Ranking/Rankings.php:471
 msgid ""
 "Note! The clicks and impressions data is taken from Google Search Console for "
 "the last 90 days for the current URL."
 msgstr ""
 
-#: view/Ranking/Rankings.php:510
+#: view/Ranking/Rankings.php:516
 msgid "Welcome to Squirrly Rankings"
 msgstr ""
 
-#: view/Ranking/Rankings.php:513
+#: view/Ranking/Rankings.php:519
 msgid "Add keywords in Briefcase"
 msgstr ""
 
-#: view/Ranking/Rankings.php:517
+#: view/Ranking/Rankings.php:523
 msgid "Tips: How to add Keywords in Rankings?"
 msgstr ""
 
-#: view/Ranking/Rankings.php:519
+#: view/Ranking/Rankings.php:525
 #, php-format
 msgid ""
 "From %sSquirrly Briefcase%s you can send keywords to Rank Checker to track the "
 "SERP evolution."
 msgstr ""
 
-#: view/Ranking/Rankings.php:520
+#: view/Ranking/Rankings.php:526
 #, php-format
 msgid ""
 "Connect with %sGoogle Search Console%s to synchronize the keywords for which "
 "your website is ranking."
 msgstr ""
 
-#: view/Ranking/Rankings.php:550
+#: view/Ranking/Rankings.php:556
 msgid ""
 "SERP Checker Business: We update the best ranks for each keyword, daily. 100% "
 "accurate and objective."
 msgstr ""
 
-#: view/Ranking/Rankings.php:552
+#: view/Ranking/Rankings.php:558
 msgid ""
 "Click on Rank Details to see key insights (such as: clicks, impressions,and "
 "social shares)."
@@ -10386,129 +10267,129 @@ msgstr ""
 msgid "See and add the exact keywords that drive people to your site."
 msgstr ""
 
-#: view/Research/Briefcase.php:77 view/Research/Briefcase.php:190
+#: view/Research/Briefcase.php:82 view/Research/Briefcase.php:200
 msgid "Send to Rankings"
 msgstr ""
 
-#: view/Research/Briefcase.php:78 view/Research/Briefcase.php:284
+#: view/Research/Briefcase.php:83 view/Research/Briefcase.php:294
 #: view/Research/HistoryDetails.php:90 view/Research/ResearchDetails.php:69
-#: view/Research/Suggested.php:165 view/Research/Suggested.php:299
+#: view/Research/Suggested.php:168 view/Research/Suggested.php:302
 msgid "Assign Label"
 msgstr ""
 
-#: view/Research/Briefcase.php:79
+#: view/Research/Briefcase.php:84
 msgid "Are you sure you want to delete the keywords?"
 msgstr ""
 
-#: view/Research/Briefcase.php:87 view/Research/Briefcase.php:394
+#: view/Research/Briefcase.php:92 view/Research/Briefcase.php:398
 #: view/Research/HistoryDetails.php:99 view/Research/ResearchDetails.php:78
-#: view/Research/Suggested.php:174 view/Research/Suggested.php:308
+#: view/Research/Suggested.php:177 view/Research/Suggested.php:311
 #, php-format
 msgid "Select Labels for: %s"
 msgstr ""
 
-#: view/Research/Briefcase.php:87
+#: view/Research/Briefcase.php:92
 msgid "selected keywords"
 msgstr ""
 
-#: view/Research/Briefcase.php:92
+#: view/Research/Briefcase.php:97
 msgid ""
 "By assigning these labels, you will reset the other labels you assigned for "
 "each keyword individually."
 msgstr ""
 
-#: view/Research/Briefcase.php:104 view/Research/Briefcase.php:420
+#: view/Research/Briefcase.php:109 view/Research/Briefcase.php:424
 #: view/Research/HistoryDetails.php:126 view/Research/Labels.php:46
-#: view/Research/ResearchDetails.php:104 view/Research/Suggested.php:202
-#: view/Research/Suggested.php:336
+#: view/Research/ResearchDetails.php:104 view/Research/Suggested.php:205
+#: view/Research/Suggested.php:339
 msgid "Add new Label"
 msgstr ""
 
-#: view/Research/Briefcase.php:109 view/Research/Briefcase.php:426
+#: view/Research/Briefcase.php:114 view/Research/Briefcase.php:430
 #: view/Research/HistoryDetails.php:132 view/Research/ResearchDetails.php:110
-#: view/Research/Suggested.php:208 view/Research/Suggested.php:342
+#: view/Research/Suggested.php:211 view/Research/Suggested.php:345
 msgid "Save Labels"
 msgstr ""
 
-#: view/Research/Briefcase.php:140
+#: view/Research/Briefcase.php:150
 msgid "Usage"
 msgstr ""
 
-#: view/Research/Briefcase.php:150 view/Research/Briefcase.php:370
+#: view/Research/Briefcase.php:160 view/Research/Briefcase.php:374
 msgid "Search Volume"
 msgstr ""
 
-#: view/Research/Briefcase.php:151 view/Research/HistoryDetails.php:26
-#: view/Research/Suggested.php:74
+#: view/Research/Briefcase.php:161 view/Research/HistoryDetails.php:26
+#: view/Research/Suggested.php:77
 msgid "SV"
 msgstr ""
 
-#: view/Research/Briefcase.php:153
+#: view/Research/Briefcase.php:163
 msgid "Research"
 msgstr ""
 
-#: view/Research/Briefcase.php:178 view/Research/Briefcase.php:180
+#: view/Research/Briefcase.php:188 view/Research/Briefcase.php:190
 #, php-format
 msgid "in %s posts"
 msgstr ""
 
-#: view/Research/Briefcase.php:186 view/Research/Briefcase.php:265
+#: view/Research/Briefcase.php:196 view/Research/Briefcase.php:275
 msgid "Check Rankings"
 msgstr ""
 
-#: view/Research/Briefcase.php:224
+#: view/Research/Briefcase.php:234
 msgid "keyword info"
 msgstr ""
 
-#: view/Research/Briefcase.php:245
+#: view/Research/Briefcase.php:255
 msgid "No research data"
 msgstr ""
 
-#: view/Research/Briefcase.php:270
+#: view/Research/Briefcase.php:280
 msgid "Send to Rank Checker"
 msgstr ""
 
-#: view/Research/Briefcase.php:279
+#: view/Research/Briefcase.php:289
 msgid "Refresh Research"
 msgstr ""
 
-#: view/Research/Briefcase.php:289 view/Research/Suggested.php:160
+#: view/Research/Briefcase.php:299 view/Research/Suggested.php:163
 msgid "Delete Keyword"
 msgstr ""
 
-#: view/Research/Briefcase.php:310
+#: view/Research/Briefcase.php:320
 msgid "Optimized with"
 msgstr ""
 
-#: view/Research/Briefcase.php:362 view/Research/HistoryDetails.php:20
+#: view/Research/Briefcase.php:366 view/Research/HistoryDetails.php:20
 #: view/Research/HistoryDetails.php:22 view/Research/Research.php:258
-#: view/Research/Research.php:259 view/Research/Suggested.php:69
-#: view/Research/Suggested.php:70
+#: view/Research/Research.php:259 view/Research/Suggested.php:72
+#: view/Research/Suggested.php:73
 msgid "Competition"
 msgstr ""
 
-#: view/Research/Briefcase.php:378 view/Research/HistoryDetails.php:28
-#: view/Research/Research.php:266 view/Research/Suggested.php:77
+#: view/Research/Briefcase.php:382 view/Research/HistoryDetails.php:28
+#: view/Research/Research.php:266 view/Research/Suggested.php:80
 msgid "Recent discussions"
 msgstr ""
 
-#: view/Research/Briefcase.php:492
+#: view/Research/Briefcase.php:501
 msgid "Welcome to Briefcase"
 msgstr ""
 
-#: view/Research/Briefcase.php:495 view/Research/History.php:147
-#: view/Research/Suggested.php:430
+#: view/Research/Briefcase.php:504 view/Research/History.php:153
+#: view/Research/Suggested.php:436
 msgid "Go Find New Keywords"
 msgstr ""
 
-#: view/Research/Briefcase.php:510
+#: view/Research/Briefcase.php:519
 #, php-format
 msgid ""
 "Add unlimited keywords in your Squirrly Briefcase to optimize your posts and "
 "pages. %s Learn More About Briefcase %s"
 msgstr ""
 
-#: view/Research/Briefcase.php:512
+#: view/Research/Briefcase.php:521
 msgid "Read more details about Briefcase Labels"
 msgstr ""
 
@@ -10520,35 +10401,35 @@ msgstr ""
 msgid "See the Keyword Researches you made in the last 30 days"
 msgstr ""
 
-#: view/Research/History.php:65 view/Research/Research.php:256
-#: view/Research/Suggested.php:67
+#: view/Research/History.php:68 view/Research/Research.php:256
+#: view/Research/Suggested.php:70
 msgid "Co"
 msgstr ""
 
-#: view/Research/History.php:81
+#: view/Research/History.php:84
 msgid "Show All Keywords"
 msgstr ""
 
-#: view/Research/History.php:142
+#: view/Research/History.php:148
 msgid "Welcome to Keyword Research History"
 msgstr ""
 
-#: view/Research/History.php:143
+#: view/Research/History.php:149
 msgid "See your research results and compare them over time"
 msgstr ""
 
-#: view/Research/History.php:158
+#: view/Research/History.php:164
 msgid ""
 "Re-discover keywords you may have forgotten to add to Briefcase when you did "
 "your keyword research."
 msgstr ""
 
-#: view/Research/History.php:159
+#: view/Research/History.php:165
 msgid ""
 "Squirrly keeps all of the data about the keywords you’ve already researched."
 msgstr ""
 
-#: view/Research/History.php:160
+#: view/Research/History.php:166
 msgid ""
 "Checking the Keyword Research evolution over time is very important. Keywords "
 "can trend differently from week to week and finding the right time to use them "
@@ -10556,22 +10437,22 @@ msgid ""
 msgstr ""
 
 #: view/Research/HistoryDetails.php:24 view/Research/Research.php:262
-#: view/Research/Suggested.php:73
+#: view/Research/Suggested.php:76
 msgid "SEO Search Volume"
 msgstr ""
 
 #: view/Research/HistoryDetails.php:30 view/Research/Research.php:267
-#: view/Research/Suggested.php:78
+#: view/Research/Suggested.php:81
 msgid "Discussion"
 msgstr ""
 
 #: view/Research/HistoryDetails.php:80 view/Research/ResearchDetails.php:59
-#: view/Research/Suggested.php:130 view/Research/Suggested.php:269
+#: view/Research/Suggested.php:133 view/Research/Suggested.php:272
 msgid "Already in briefcase"
 msgstr ""
 
 #: view/Research/HistoryDetails.php:85 view/Research/ResearchDetails.php:64
-#: view/Research/Suggested.php:135 view/Research/Suggested.php:274
+#: view/Research/Suggested.php:138 view/Research/Suggested.php:277
 msgid "Add to briefcase"
 msgstr ""
 
@@ -10590,64 +10471,68 @@ msgstr ""
 msgid "Are you sure you want to delete the labels?"
 msgstr ""
 
-#: view/Research/Labels.php:78
+#: view/Research/Labels.php:81
 msgid "Name"
 msgstr ""
 
-#: view/Research/Labels.php:79
+#: view/Research/Labels.php:82
 msgid "Color"
 msgstr ""
 
-#: view/Research/Labels.php:80
+#: view/Research/Labels.php:83
 msgid "Used"
 msgstr ""
 
-#: view/Research/Labels.php:117 view/Research/Labels.php:231
+#: view/Research/Labels.php:120 view/Research/Labels.php:237
 msgid "Edit Label"
 msgstr ""
 
-#: view/Research/Labels.php:122
+#: view/Research/Labels.php:125
 msgid "Delete Label"
 msgstr ""
 
-#: view/Research/Labels.php:192
+#: view/Research/Labels.php:198
 msgid "Welcome to Briefcase Labels"
 msgstr ""
 
-#: view/Research/Labels.php:195
+#: view/Research/Labels.php:201
 msgid "Add label to organize the keywords in Briefcase"
 msgstr ""
 
-#: view/Research/Labels.php:205
+#: view/Research/Labels.php:211
 msgid "Add New Label"
 msgstr ""
 
-#: view/Research/Labels.php:210 view/Research/Labels.php:236
+#: view/Research/Labels.php:216 view/Research/Labels.php:242
 msgid "Label Name"
 msgstr ""
 
-#: view/Research/Labels.php:215 view/Research/Labels.php:241
+#: view/Research/Labels.php:221 view/Research/Labels.php:247
 msgid "Label Color"
 msgstr ""
 
-#: view/Research/Labels.php:221
+#: view/Research/Labels.php:227
 msgid "Add Label"
 msgstr ""
 
-#: view/Research/Labels.php:248
+#: view/Research/Labels.php:254
 msgid "Save Label"
 msgstr ""
 
-#: view/Research/Labels.php:264
+#: view/Research/Labels.php:270
 msgid ""
 "To delete Labels in bulk: select the labels you want to delete, go to Bulk "
 "Actions, select Delete, and then click on Apply."
 msgstr ""
 
-#: view/Research/Labels.php:267
+#: view/Research/Labels.php:273
 msgid ""
 "NOTE! Deleting a Label will NOT delete the keywords assigned to it from "
 "Briefcase."
+msgstr ""
+
+#: view/Research/Research.php:32 view/Research/Research.php:46
+msgid "Keyword Research"
 msgstr ""
 
 #: view/Research/Research.php:36 view/Research/Research.php:173
@@ -10656,10 +10541,6 @@ msgstr ""
 
 #: view/Research/Research.php:37 view/Research/Research.php:174
 msgid "Check Your Account"
-msgstr ""
-
-#: view/Research/Research.php:46
-msgid "Squirrly AI"
 msgstr ""
 
 #: view/Research/Research.php:52
@@ -10698,7 +10579,7 @@ msgstr ""
 #: view/Research/Research.php:113
 #, php-format
 msgid ""
-"Think of a keyword/ topic you want to rank for. Use the %s keyword research "
+"Think of a keyword/ topic you want to rank for. Use the %s Keyword research "
 "formula %s to generate more keyword ideas."
 msgstr ""
 
@@ -10882,52 +10763,52 @@ msgstr ""
 msgid "Suggested Keywords"
 msgstr ""
 
-#: view/Research/Suggested.php:141 view/Research/Suggested.php:281
+#: view/Research/Suggested.php:144 view/Research/Suggested.php:284
 msgid "Already in innerlinks"
 msgstr ""
 
-#: view/Research/Suggested.php:153 view/Research/Suggested.php:293
+#: view/Research/Suggested.php:156 view/Research/Suggested.php:296
 msgid "Add to Inner Links"
 msgstr ""
 
-#: view/Research/Suggested.php:224
+#: view/Research/Suggested.php:227
 msgid ""
 "Questions for which you can create insightful articles, along with a link to "
 "the focus page:"
 msgstr ""
 
-#: view/Research/Suggested.php:230
+#: view/Research/Suggested.php:233
 msgid "See Focus Page Details"
 msgstr ""
 
-#: view/Research/Suggested.php:237
+#: view/Research/Suggested.php:240
 msgid "Related Questions Found"
 msgstr ""
 
-#: view/Research/Suggested.php:423
+#: view/Research/Suggested.php:429
 msgid "Welcome to Suggested Keywords"
 msgstr ""
 
-#: view/Research/Suggested.php:424
+#: view/Research/Suggested.php:430
 msgid "Once a week, Squirrly checks all the keywords from your briefcase."
 msgstr ""
 
-#: view/Research/Suggested.php:425
+#: view/Research/Suggested.php:431
 msgid "If it finds better keywords, they will be listed here"
 msgstr ""
 
-#: view/Research/Suggested.php:426
+#: view/Research/Suggested.php:432
 msgid "Until then, add keywords in Briefcase"
 msgstr ""
 
-#: view/Research/Suggested.php:446
+#: view/Research/Suggested.php:452
 msgid ""
 "The Keyword Research Assistant performs Keyword Researches on your behalf "
 "WITHOUT using any keyword research credits from your total of available "
 "keyword research credits."
 msgstr ""
 
-#: view/Research/Suggested.php:447
+#: view/Research/Suggested.php:453
 msgid ""
 "Consider using relevant keywords that have a high ranking chance and over "
 "1,000 monthly searches in your SEO strategy. Save them to your Briefcase."
@@ -11226,7 +11107,7 @@ msgstr ""
 msgid "Activate SEO Snippet in Frontend"
 msgstr ""
 
-#: view/SeoSettings/Metas.php:169 view/SeoSettings/Tweaks.php:610
+#: view/SeoSettings/Metas.php:169 view/SeoSettings/Tweaks.php:611
 msgid ""
 "Load Squirrly SEO Snippet in Frontend to customize the SEO directly from page "
 "preview."
@@ -11470,14 +11351,14 @@ msgstr ""
 msgid "Tips: How to redirect broken URLs?"
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:484 view/SeoSettings/Tweaks.php:727
+#: view/SeoSettings/Tweaks.php:484 view/SeoSettings/Tweaks.php:728
 #, php-format
 msgid ""
 "Use the %s SEO Automation %s to set up the broken URLs redirect if you change "
 "a post/page slug."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:485 view/SeoSettings/Tweaks.php:728
+#: view/SeoSettings/Tweaks.php:485 view/SeoSettings/Tweaks.php:729
 msgid ""
 "Squirrly SEO will add a 301 redirect to the new slug without losing any SEO "
 "authority."
@@ -11492,129 +11373,129 @@ msgid ""
 "Does not physically create the robots.txt file. The best option for Multisites."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:521
+#: view/SeoSettings/Tweaks.php:522
 msgid ""
 "Edit the Robots.txt only if you know what you're doing. Adding wrong rules in "
 "Robots can lead to SEO ranking errors or block your posts in Google."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:540
+#: view/SeoSettings/Tweaks.php:541
 msgid ""
 "Add your website icon in the browser tabs and on other devices like iPhone, "
 "iPad and Android phones."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:547
+#: view/SeoSettings/Tweaks.php:548
 msgid "Upload file"
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:551
+#: view/SeoSettings/Tweaks.php:552
 msgid "Upload a jpg, jpeg, png or ico file."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:562 view/Snippet/Facebook.php:65
+#: view/SeoSettings/Tweaks.php:563 view/Snippet/Facebook.php:65
 #: view/Snippet/Twitter.php:68
 msgid "Upload"
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:571
+#: view/SeoSettings/Tweaks.php:572
 msgid "Add Apple Touch Icons"
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:574
+#: view/SeoSettings/Tweaks.php:575
 msgid "Also load the favicon for Apple devices."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:580
+#: view/SeoSettings/Tweaks.php:581
 msgid ""
 "If you don't see the new icon in your browser, empty the browser cache and "
 "refresh the page."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:581
+#: view/SeoSettings/Tweaks.php:582
 msgid "Accepted file types: JPG, JPEG, GIF and PNG."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:582
+#: view/SeoSettings/Tweaks.php:583
 msgid ""
 "Does not physically create the favicon.ico file. The best option for "
 "Multisites."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:608
+#: view/SeoSettings/Tweaks.php:609
 msgid "Load SEO Snippet in Frontend"
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:620
+#: view/SeoSettings/Tweaks.php:621
 msgid "Load Squirrly Admin Bar in Backend"
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:621
+#: view/SeoSettings/Tweaks.php:622
 msgid ""
 "Load Squirrly SEO in the admin bar of the backend for convenient access to its "
 "features."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:631
+#: view/SeoSettings/Tweaks.php:632
 msgid "Load Squirrly Widget in Admin Dashboard"
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:632
+#: view/SeoSettings/Tweaks.php:633
 msgid ""
 "Embed the Squirrly SEO goals widget within the admin dashboard to provide a "
 "quick overview of daily SEO objectives."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:643
+#: view/SeoSettings/Tweaks.php:644
 msgid "Load Squirrly Frontend CSS"
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:646
+#: view/SeoSettings/Tweaks.php:647
 msgid ""
 "Load Squirrly SEO CSS for article inserted from Squirrly Blogging Assistant."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:656
+#: view/SeoSettings/Tweaks.php:657
 msgid "Minify Squirrly SEO Metas"
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:659
+#: view/SeoSettings/Tweaks.php:660
 msgid "Minify the METAs in source code to optimize the page load time."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:660
+#: view/SeoSettings/Tweaks.php:661
 msgid "Remove comments and newlines from Squirrly SEO Metas."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:670
+#: view/SeoSettings/Tweaks.php:671
 msgid "Load Squirrly SEO Late Buffer"
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:673
+#: view/SeoSettings/Tweaks.php:674
 msgid "Wait all plugins to load before loading Squirrly SEO frontend buffer."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:674
+#: view/SeoSettings/Tweaks.php:675
 msgid "For compatibility with some Cache and CDN plugins."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:685
+#: view/SeoSettings/Tweaks.php:686
 msgid "Multilingual Support"
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:688
+#: view/SeoSettings/Tweaks.php:689
 msgid "Convert the other encodings to UTF8 and avoid ajax errors."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:699
+#: view/SeoSettings/Tweaks.php:700
 msgid "Delete Squirrly SEO Table on Uninstall"
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:702
+#: view/SeoSettings/Tweaks.php:703
 msgid "Delete Squirrly SEO table and options on uninstall."
 msgstr ""
 
-#: view/SeoSettings/Tweaks.php:726
+#: view/SeoSettings/Tweaks.php:727
 msgid ""
 "You have the option to choose the post types for which you want Squirrly to "
 "build a sitemap. If you don’t use a post type, there’s NO reason why you "
@@ -11874,7 +11755,7 @@ msgstr ""
 msgid "Validate Snippet"
 msgstr ""
 
-#: view/Snippet/Facebook.php:247
+#: view/Snippet/Facebook.php:248
 msgid "How this page appears on Social Media"
 msgstr ""
 
@@ -11944,10 +11825,6 @@ msgstr ""
 #: view/Snippet/Jsonld.php:142
 #, php-format
 msgid "Manage BreadcrumbsList Schema from %s Rich Snippets Settings %s."
-msgstr ""
-
-#: view/Snippet/Jsonld.php:147 view/Snippet/Jsonld.php:195
-msgid "Active"
 msgstr ""
 
 #: view/Snippet/Jsonld.php:149 view/Snippet/Jsonld.php:197
@@ -12126,7 +12003,7 @@ msgid "Validate Card"
 msgstr ""
 
 #: view/Snippet/Twitter.php:206
-msgid "How this page appears on Twitter"
+msgid "How this page appears on X.com"
 msgstr ""
 
 #: view/Snippet/Visibility.php:28
@@ -12197,7 +12074,7 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "AI Private SEO Consultant that Brings You the Full Force of SEO: All Schema "
-"Rich Results, Inner Links, Redirects, Keyword Research, Real-Time SEO Content, "
+"Rich Results, Inner Links, Redirects, AI Research, Real-Time SEO Content, "
 "Traffic and SEO Audits, SERP Checker."
 msgstr ""
 

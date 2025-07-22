@@ -54,7 +54,7 @@ if ( ! isset( $view ) ) {
 												<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_focuspages_addinnerlink', 'sq_nonce' ); ?>
                                                 <input type="hidden" name="action" value="sq_focuspages_addinnerlink"/>
 
-                                                <input type="hidden" name="from_post_id" value="<?php echo (int) $innerlink->from_post_id; ?>">
+                                                <input type="hidden" name="from_post_ids[]" value="<?php echo (int) $innerlink->from_post_id; ?>">
                                                 <input type="hidden" name="to_post_id" value="<?php echo (int) $innerlink->to_post_id; ?>">
                                                 <input type="hidden" name="keyword" value="<?php echo esc_attr( $innerlink->keyword ); ?>">
 

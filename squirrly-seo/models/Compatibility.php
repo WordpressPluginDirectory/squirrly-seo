@@ -159,18 +159,20 @@ class SQ_Models_Compatibility {
 		add_filter( 'sq_post', function ( $post ) {
 			if ( function_exists( 'nsg_get_seo_pages_replace_search_terms_and_locations' ) && function_exists( 'nsg_get_search_terms_and_locations_lookup_table' ) ) {
 
-				$lookup_table = nsg_get_search_terms_and_locations_lookup_table( $post->ID );
-				$slug         = get_query_var( 'nsg_seo_page' );
+                if ( $post->ID && (int) $post->ID > 0 ) {
+	                $lookup_table = nsg_get_search_terms_and_locations_lookup_table( $post->ID );
+	                $slug         = get_query_var( 'nsg_seo_page' );
 
-				if ( $lookup_table !== false && isset( $lookup_table[ $slug ] ) ) {
-					$search_term = $lookup_table[ $slug ][0];
-					$location    = $lookup_table[ $slug ][1];
+	                if ( $lookup_table !== false && isset( $lookup_table[ $slug ] ) ) {
+		                $search_term = $lookup_table[ $slug ][0];
+		                $location    = $lookup_table[ $slug ][1];
 
-					$post->sq->title       = nsg_get_seo_pages_replace_search_terms_and_locations( $post->sq->title );
-					$post->sq->description = nsg_get_seo_pages_replace_search_terms_and_locations( $post->sq->description );
-					$post->sq->keywords    = "$search_term, $location";
-					$post->url             .= $slug;
-				}
+		                $post->sq->title       = nsg_get_seo_pages_replace_search_terms_and_locations( $post->sq->title );
+		                $post->sq->description = nsg_get_seo_pages_replace_search_terms_and_locations( $post->sq->description );
+		                $post->sq->keywords    = "$search_term, $location";
+		                $post->url             .= $slug;
+	                }
+                }
 			}
 
 			return $post;

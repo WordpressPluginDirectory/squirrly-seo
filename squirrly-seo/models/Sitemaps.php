@@ -272,13 +272,19 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo {
 
 				if ( ! in_array( $currentpost->ID, $post_ids ) ) { //prevent from showing duplicates
 					if ( $post = SQ_Classes_ObjController::getClass( 'SQ_Models_Snippet' )->setPostByID( $currentpost ) ) {
+
 						if ( $post->sq->nositemap || ! $post->sq->do_sitemap ) {
 							continue;
 						}
 						if ( SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap_exclude_noindex' ) && $post->sq->noindex ) {
 							continue;
 						}
+
+						// If there are plugins translating the URL
+						$post->url = $this->getTranslatedUrl($post->url, $this->getLanguage());
+
 						$posts[]    = $this->_getXml( $post );
+
 						$post_ids[] = $post->ID;
 					}
 				}
@@ -326,6 +332,9 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo {
 					if ( SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap_exclude_noindex' ) && $post->sq->noindex ) {
 						continue;
 					}
+
+					// If there are plugins translating the URL
+					$post->url = $this->getTranslatedUrl($post->url, $this->getLanguage());
 
 					$xml = $this->_getXml( $post );
 					if ( strpos( $xml['loc'], '?' ) !== false ) {
@@ -499,6 +508,9 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo {
 						continue;
 					}
 
+					// If there are plugins translating the URL
+					$post->url = $this->getTranslatedUrl($post->url, $this->getLanguage());
+
 					$array[]    = $this->_getXml( $post );
 					$term_ids[] = $post->term_id;
 
@@ -630,9 +642,18 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo {
 	 * @return array
 	 */
 	private function _getXml( $post ) {
+
 		$xml = array();
 
-		if ( ! isset( $post->url ) || ! $post->url || strpos( $post->url, home_url() ) === false ) {
+		if ( ! isset( $post->url ) || ! $post->url) {
+			return $xml;
+		}
+
+		// Let other plugins to change the sitemap URL
+		$post->url = apply_filters( 'sq_sitemap_permalink', $post->url, $post->ID, $this->language );
+
+		// Match the permalink with the current home page
+		if ( strpos( $post->url, home_url() ) === false ){
 			return $xml;
 		}
 
@@ -641,7 +662,7 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo {
 		}
 
 		//Prevent sitemap from braking due to & in URLs
-		$xml['loc']        = esc_url( apply_filters( 'sq_sitemap_permalink', $post->url, $post->ID, $this->language ) );
+		$xml['loc']        = esc_url( $post->url );
 		$xml['lastmod']    = $this->lastModified( $post );
 		$xml['changefreq'] = $this->frequency[ SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap_frequency' ) ][ $this->sitemap ][1];
 		$xml['priority']   = $this->frequency[ SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap_frequency' ) ][ $this->sitemap ][0];
@@ -665,7 +686,9 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo {
 				}
 			}
 		}
-		//Get Post Video
+
+
+		//Get Video
 		if ( (int) $post->ID > 0 && SQ_Classes_Helpers_Tools::$options['sq_sitemap_show']['videos'] == 1 ) {
 
 			$this->setPost( $post ); //set current sitemap post
@@ -716,20 +739,20 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo {
 
 				// get the latest post in this taxonomy item, to use its post_date as lastmod
 				$posts = get_posts( array(
-						'post_type'              => 'any',
-						'numberposts'            => 1,
-						'no_found_rows'          => true,
-						'update_post_meta_cache' => false,
-						'update_post_term_cache' => false,
-						'update_cache'           => false,
-						'tax_query'              => array(
-							array(
-								'taxonomy' => $post->taxonomy,
-								'field'    => 'term_id',
-								'terms'    => $post->term_id
-							)
+					'post_type'              => 'any',
+					'numberposts'            => 1,
+					'no_found_rows'          => true,
+					'update_post_meta_cache' => false,
+					'update_post_term_cache' => false,
+					'update_cache'           => false,
+					'tax_query'              => array(
+						array(
+							'taxonomy' => $post->taxonomy,
+							'field'    => 'term_id',
+							'terms'    => $post->term_id
 						)
-					) );
+					)
+				) );
 
 				if ( isset( $posts[0]->post_date_gmt ) && $posts[0]->post_date_gmt <> '' ) {
 					$datetime = $posts[0]->post_date_gmt;
@@ -743,5 +766,30 @@ class SQ_Models_Sitemaps extends SQ_Models_Abstract_Seo {
 		return trim( gmdate( 'Y-m-d\TH:i:s+00:00', ($datetime->getTimestamp() + $datetime->getOffset()) ) );
 	}
 
+	/**
+	 * Get the translated URL for the original URL
+	 * @param $url
+	 * @param $lang_code
+	 *
+	 * @return mixed
+	 */
+	private function getTranslatedUrl( $url, $lang_code ) {
+
+		if ( ! class_exists( 'TRP_Translate_Press' ) ) {
+			return $url; // fallback to original if TranslatePress not available
+		}
+
+		$trp           = TRP_Translate_Press::get_trp_instance();
+		$trp_settings  = $trp->get_component( 'settings' );
+		$settings      = $trp_settings->get_settings();
+		$url_converter = $trp->get_component( 'url_converter' );
+
+		// Don't change URL if it's already the default language
+		if ( $settings['default-language'] === $lang_code ) {
+			return $url;
+		}
+
+		return $url_converter->get_url_for_language( $lang_code, $url, '' );
+	}
 
 }
