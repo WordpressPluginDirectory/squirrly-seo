@@ -394,7 +394,16 @@ class SQ_Models_Domain_Patterns extends SQ_Models_Abstract_Domain {
 
 	public function getPage() {
 		if ( is_paged() ) {
-			return $this->sep . ' ' . esc_html__( "Page", 'squirrly-seo' ) . ' ' . (int) get_query_var( 'paged' ) . ' ' . esc_html__( "of", 'squirrly-seo' ) . ' ' . $this->pagetotal;
+			global $wp_query, $wp;
+
+			$page = (int) (
+				get_query_var('paged') ?:          // archives
+				get_query_var('page')  ?:          // static page pagination
+				($wp_query->query['paged'] ?? 0) ?: // Divi put it here
+				($wp->query_vars['paged'] ?? 0)
+			);
+
+			return $this->sep . ' ' . esc_html__( "Page", 'squirrly-seo' ) . ' ' . $page . ' ' . esc_html__( "of", 'squirrly-seo' ) . ' ' . $this->pagetotal;
 		}
 
 		return '';

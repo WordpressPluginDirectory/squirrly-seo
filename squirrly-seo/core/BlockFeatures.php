@@ -846,6 +846,20 @@ class SQ_Core_BlockFeatures extends SQ_Classes_BlockController {
 				'show'        => true,
 			), //Robots.txt File
 			array(
+				'title'       => "Llms.txt File",
+				'description' => "Control how AI search engines and language model crawlers can access and use your website’s content.",
+				'category'    => "Miscellaneous Features",
+				'mainfeature' => false,
+				'option'      => 'sq_auto_llms',
+				'active'      => SQ_Classes_Helpers_Tools::getOption( 'sq_auto_llms' ),
+				'optional'    => true,
+				'connection'  => false,
+				'logo'        => 'fasq-brands fa-android',
+				'link'        => SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_seosettings', 'tweaks#tab=llms' ),
+				'details'     => false,
+				'show'        => true,
+			), //Llms.txt File
+			array(
 				'title'       => "Favicon Site Icon",
 				'description' => "Add your <strong>website icon</strong> in the browser tabs and on other devices like <strong>iPhone, iPad and Android phones</strong>.",
 				'category'    => "Miscellaneous Features",

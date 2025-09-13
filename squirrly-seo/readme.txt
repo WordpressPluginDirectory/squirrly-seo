@@ -4,51 +4,111 @@ Donate link: https://plugin.squirrly.co/squirrly-seo-pricing/
 Tags: SEO, AI, XML sitemap, google search console, schema
 Requires at least: 5.3
 Tested up to: 6.8
-Stable tag: 12.4.12
+Stable tag: 12.4.14
 Requires PHP: 7.0
 License: GPLv2 or later
 
-The Number 1 AI Holistic SEO Software. Optimize SEO, Traffic, Social Media, Backlinks, InnerLinks, Content. AI to simplify your path to rankings.
+Rank without begging Google. AI-powered SEO that actually helps you win. Trusted by rebels, creators, and pros in 150+ countries.
 
 == Description ==
 
-### SEO Plugin by Squirrly SEO Newton: the #1 Holistic SEO Software + WordPress SEO Plugin, powered by AI.
+### SEO Plugin by Squirrly SEO Newton: the #1 Holistic SEO Software + WordPress SEO Plugin, powered by 3 different types of AI built by AISQ.
 
-Your **SEO challenges** - solved.
+Proprietary technology that does the hard work for you, so you can focus on your best wins yet.
 
-Introducing: the first AI-driven, holistic SEO assistant.
-
-Smart business owners prefer a single, integrated platform like Squirrly SEO: Newton. With it, businesses can streamline their SEO processes, ensuring that every aspect of SEO—from keyword research to performance tracking—is harmonized and easily manageable from one centralized location. This integration significantly reduces complexity, saves time, and improves the effectiveness of SEO initiatives.
-
-You can start implementing Holistic SEO, driven with the power of two different AIs we have in the free version of Squirrly SEO.
-
-This is the AI SEO Plugin you were looking for.
-
-In 2024, Google is analyzing more ranking factors than ever. We know that because our custom-built AI, called Ranking Vision AI, keeps learning and adapting the scores we reference inside our SaaS+plugin setup.
-
-If you only work on one aspect, for example: technical SEO, your SEO just won't work. - this was possible years ago, but no longer possible with today's Google algorithm updates.
-
-You need a Holistic approach to win, and you need to take good care of all your marketing aspects. Squirrly SEO is the only one to help you with that.
-
-With two powerful AIs inside, you'll always know what to do, what to target to attract more clients and how to focus on exactly the next steps that will improve rankings.
-
-One AI, is custom-built by our company, using years of study on hundreds of thousands of websites.  <a title="Mady by Squirrly" href="https://www.squirrly.co/marketingtools/ranking-vision-ai/">Ranking Vision AI</a>
-
-The other one is an AI we developed for Keyword Research and Keyword Analysis (based on GPT4). <a title="Innovating on GPT4" href="https://www.squirrly.co/marketingtools/keyword-research-tool-ai-update/">AI Keyword Research Tools</a>
-
-With these two AIs and Squirrly SEO's holistic approach to SEO, you will use the Full Force of SEO to outrank your competitors.
-
-Full Force of SEO. And Force is measure in Newton, for those of you who want to know why we chose the new name.
+Watch the video below. We could do the talking ourselves, but it's best to hear directly from our users why they love the Full Force of SEO, that only Squirrly SEO can offer you:
 
 **Full Force of SEO: All (all the types with the best support) Schema Rich Results, Automated and Manual Inner Links, Redirects, Keyword Research Tools, Keyword Portfolio Management and tracking, Real-Time Content Optimization Tools, SEO Audits, SERP Checker, Traffic Audits, Social Media Audits, Backlink Audits, Web Authority Analysis, Competitor Analysis (with the SaaS side. included in FREE), Local SEO support, Rank Tracking Tools, Technical SEO.**
 
-https://www.youtube.com/watch?v=3q2g4kx1jrA
+https://www.youtube.com/watch?v=vXfJdH41_uk
 
 <a title="Benefits of Using the Best WordPress SEO Plugin" href="https://plugin.squirrly.co/">BENEFITS</a> / <a title="Success with SEO Tools from Squirrly" href="https://www.squirrly.co/successful/">CUSTOMER SUCCESS</a> / <a title="Compare to WordPress SEO Plugins like Yoast RankMath SEOPress" href="https://seotools.completeseofunnel.com/">COMPARE</a> / <a title="SEO Plugin Features" href="https://www.squirrly.co/wordpress/plugins/seo/">ALL FEATURES</a> / <a title="Try a Demo without installing on your WordPress" href="https://demo.seoplugin.xyz/">DEMO</a>
 
 Read the success stories we link to on the line above.
 
 Without implementing Holistic SEO and being guided through the process by an AI, those results would have been impossible to achieve with plugins that don't offer real SEO tools, like the ones you expect from Ahrefs and SEMrush.
+
+**SEO Doesn’t Have to Be Boring. Or Blind. Or Broken.
+
+Squirrly SEO is not “just another SEO plugin.” It’s a full-blown AI SEO assistant that helps you win rankings — even in the age of AI, Google updates, and brutal competition.
+
+Uses 3 Kinds of AI, from the proprietary technologies of Squirrly Limited (AISQ.com): Ranking Vision AI, Keyword Research AI and ASK AI.
+
+**Who It’s For:
+Entrepreneurs, bloggers, eCommerce stores, and marketers who want to rank without selling their soul to algorithms.
+
+WordPress users tired of “improvements” and weird/niche SEO settings that do nothing for actual traffic.
+
+Agencies managing dozens (or hundreds) of sites who need scale, automation, and real results.
+
+**What Makes Squirrly SEO Different?
+AI-Powered SEO Goals
+Your SEO plan — done for you. Dynamic goals created by our Ranking Vision AI to match exactly what your site needs to rank. No guesswork.
+
+Focus Pages – Your Ranking War Room
+See exactly why a page isn’t ranking and how to fix it. Think of it as your personal SEO battleground — powered by data. From 600,000 websites that ranked higher based on different SEO tasks they were performing.
+
+Keyword Research That Works in 2025
+Find keywords you can actually rank for. We analyze competition, search intent, and opportunity — in real-time, not recycled data. And it's AI powered, so the keywords you find here will build topical authority to get you ranked higher on Google... and it will get you ranked higher on AI Overviews, Perplexity and ChatGPT.
+
+Live Assistant While You Write
+As you write in WordPress or popular builders (Elementor, Gutenberg, Divi), Squirrly guides you with real-time suggestions to stay 100% optimized.
+
+Automatic SEO Without the Anxiety
+Technical SEO, schema, social media tags, robots.txt, canonical links — all handled for you. Set it, forget it, rank anyway.
+
+14-Day SEO Bootcamp (Built-In)
+We don’t just give you tools — we give you a step-by-step SEO mission to rank a page in 2 weeks using your own site. Motivation meets execution.
+
+Next-Gen Compatibility
+Built for 2025. Fully compatible with:
+
+Gutenberg
+
+Elementor
+
+WooCommerce
+
+Multisite
+
+WPML
+
+PHP 8+
+
+AI-generated content from Next Level Marketing AI
+
+SEO in the age of SGE (Search Generative Experience)
+
+Why 25,000+ Paying Customers Chose Squirrly
+Trusted by teams at BBC, Microsoft, Top Gear, CreativeMarket, and 150+ countries.
+
+Endorsed by Neil Patel, Brian Dean, and BloggingWizard
+
+Featured in Mashable, Entrepreneur, PC Magazine, Yahoo News
+
+Consistently awarded on G2, AppSumo, Capterra
+
+Built for the Bold. Not for the Boring.
+While others teach you how to improve tiny settings, we give you the tools to win in a scientific way.
+
+Squirrly SEO doesn’t care about boring schema over-engineering.
+It cares about getting you on Page 1.
+
+Ready to join the rebellion?
+
+-Install now.
+-Start ranking faster than ever.
+
+
+One AI, is custom-built by our company, using years of study on hundreds of thousands of websites.  <a title="Mady by Squirrly" href="https://www.squirrly.co/marketingtools/ranking-vision-ai/">Ranking Vision AI</a>
+
+The other one is an AI we developed for Keyword Research and Keyword Analysis (based on GPT4). <a title="Innovating on GPT4" href="https://www.squirrly.co/marketingtools/keyword-research-tool-ai-update/">AI Keyword Research Tools</a>
+
+And the third one is Ask AI, which we've implemented on our homepage and knowledgebase at first, but then brought inside the plugin as well. <a title="Teaching users with AI" href="https://contentlook.ai/">With Ask AI, users learn everything about using our plugin</a>
+
+With these three AIs and Squirrly SEO's holistic approach to SEO, you will use the Full Force of SEO to outrank your competitors.
+
+Full Force of SEO. And Force is measure in Newton, for those of you who want to know why we chose the new name.
 
 <a title="Learn about the Full Force of SEO" href="https://seotools.completeseofunnel.com/">This is why you will rank high on Google using our SEO Plugin</a>
 
@@ -58,13 +118,13 @@ Nobody in the SEO field right now can offer a tool as advanced as the Focus Page
 
 We also offer training and coaching from FourHourSEO.com to all users who join our SaaS + Plugin. 139,000 students have learned from our lessons over the years.
 
-Our story started in 2012, and by 2024 we became the Two-Years-In-A-Row Most Awarded SEO Tool of the year. More info about this on our site. <a title="Benefits of Using Software from Squirrly" href="https://www.squirrly.co/more/">Squirrly Company Details</a>
+Our story started in 2012, and by 2025 we became the Two-Years-In-A-Row Most Awarded SEO Tool of the year. More info about this on our site. <a title="Benefits of Using Software from Squirrly" href="https://www.squirrly.co/more/">Squirrly Company Details</a>
 
 This AI SaaS + SEO Plugin package has received so many awards over the years. <a title="Awards for our Product" href="https://plugin.squirrly.co/squirrly-awards/">Awards</a>
 
 Many innovations in Marketing Technologies, that impressed Microsoft, BBC, CyberGhost, TopGear, CreativeMarket, ThemeIsle, ElegantThemes and other big clients. <a title="Innovations" href="https://www.squirrly.co/innovation/">See Innovations</a>
 
-Powered by a strong United Kingdom-based company that created, marketed and sold over 29 SaaS and plugins over 12 years.
+Powered by a strong United Kingdom-based company that created, marketed and sold over 29 SaaS and plugins over 13 years.
 
 Our innovations were covered by all the major Press publications. <a title="Press" href="https://www.squirrly.co/press/">Press</a>
 
@@ -76,9 +136,9 @@ What matters most to us, though is this:
 
 **Squirrly SEO is the Popular WordPress SEO plugin that NON-SEO Experts use to boost their search engine traffic.** Offers the same level of advice as a Human consultant would, yet with greater precision and customization.
 
-Reach SEO success by following the **Daily SEO Goals** and using Squirrly's built-in SEO tools to get higher Rankings with less effort.  
+Reach SEO success by following the **Daily SEO Goals** and using Squirrly's built-in SEO tools to get higher Rankings with less effort.
 
-Join a huge community of successful users who are ranking on the first page of Google Search with Squirrly SEO. 
+Join a huge community of successful users who are ranking on the first page of Google Search with Squirrly SEO.
 
 <a title="Success with SEO Tools from Squirrly" href="https://www.squirrly.co/successful/">See Success Stories from WordPress Users Who Followed Squirrly’s Advice here (click) </a>
 
@@ -97,7 +157,7 @@ https://www.youtube.com/watch?v=h1EwXjOHY0M
 
 **"I've used many other SEO plugins out there: Yoast, Rank Math, WP All in One SEO, but Squirrly has outclassed them all."**
 
-I'm a Search Engine Optimization professional with 4 years of experience and from now on this product will be my go-to when implementing SEO strategies for my clients. 
+I'm a Search Engine Optimization professional with 4 years of experience and from now on this product will be my go-to when implementing SEO strategies for my clients.
 
 It's extremely easy to use, self-explanatory, and will definitely work great for those who don't have much SEO experience.
 
@@ -107,49 +167,9 @@ It's extremely easy to use, self-explanatory, and will definitely work great for
 
 Squirrly SEO: Newton is the first "AI-driven, holistic SEO assistant" that simplifies complexity, making it the go-to solution for business owners and entrepreneurs.
 
-SEO is complex because Google wants it to be (and let's be honest for a moment: it needs it to be).
-
-Remember a few months ago when everyone tried to game the FAQ schemas? - they figured it out and removed them.
-
-In 2024, SEO is not a one trick pony anymore. SEO can be completely NOT overwhelming at all if:
-
-1. You don't (yes, do not) do SEO the right way and focus only on meta tags or getting rich snippets for the site. Or any of these: "I need to do only one thing approaches." - it won't be overwhelming, but it won't help you either. Good luck ranking like that.
-
-2. You use the Next SEO Goals feature from your Squirrly SEO, and only work on what's needed, when it's needed, using exactly the tools it tells you to use. - which is the smart way of working on your SEO, backed by real data, not guesswork and weird luck.
-
-The goals are tailored to each site and set of focus pages you choose (for real; many claim this, but they don't have any system in place).
-
-And then you get to be walked through all the complexities analyzed by Focus Pages (which take you from basic SEO to actual Holistic SEO, so you can use the full force to your advantage). However, with Next SEO Goals you'll be able to fully focus on the next step that drives bigger rankings.
-
-The people who were successful with Squirrly SEO have used the Next SEO Goals to work on what matters (because our systems analyze data from WP and also from many of our cloud services). Some of them have even gone through the 14 Days Journey to learn more about SEO.
-
-They have chosen option number 2.
-
-When you look at this table, where you see that your version of Squirrly SEO does a lot more than Ahrefs (for the usecases we target), SEMrush, Yoast, Rank Math, it may feel overwhelming.
-
-But it doesn't have to be if you start working with the AI Consultant we've built.
-
 You can use Squirrly SEO on easy mode or on hard mode. It's up to you and your skill level.
 
-But don't worry: using it on easy mode will get you plenty results. Once you learn more about SEO, you'll be able to use more of the tools inside and make more customizations.
-
-It's SaaS+plugin. Our plugin loads fast, and the real heavy lifting is done by our company's servers, not yours. Doesn't matter if you don't use one of the tools right now. It doesn't cost you "compute" - I hate that term, but it's so fresh.
-
-In the beginning: stick with the Next SEO Goals and if you're a bit more advanced work on your Holistic SEO with Focus Pages and focus on turning red elements to green.
-
-That's how you win. - Focus Pages is the way, once you get to know Squirrly SEO better. Ranking Vision AI powers its Chances of Ranking score, and I think it's the only AI of its kind.
-
-<h3>In fact, Squirrly covers everything you need to optimize and be successful with WordPress SEO.</h3>
-
-**Over 650 features pre-configured for you during install**, so that you don't have to work on configurations!
-
-Check out every single feature you can get inside: <a title="All Features" href="https://seotools.completeseofunnel.com/">Every single feature</a>
-
-Squirrly SEO has all important settings done for you right as you start and complete the setup wizard.
-
-No need to go back and forth between tabs to do keyword research, create SEO content, completely optimize your website and pages, and track their SEO performance. 
-
-SEO optimization has never been easier. 
+SEO optimization has never been easier.
 
 **Safely migrate your data** to Squirrly SEO from any of the following:
 
@@ -180,13 +200,13 @@ With Squirrly SEO: Newton, the entire SEO process becomes more manageable, effic
 
 If you like our WordPress SEO plugin, then consider checking out our other projects:
 
-* <a title="Squirrly Social" href="https://www.squirrly.co/social-media/tools-for-digital-marketing/">Squirrly Social</a> - One Year of Social Media Posts in a Flash.
-* <a title="Starbox PRO" href="https://starbox.squirrly.co/">Starbox PRO</a> - Your Authors Will Shine Like Stars.
-* <a title="Squirrly SPY" href="https://www.squirrly.co/seo/spy/">Squirrly SPY</a> - Your Competitor’s SEO Growth. In Your Hands..
+* <a title="Squirrly Social" href="https://squirrlysocial.com/">Squirrly Social</a> - One Year of Social Media Posts in a Flash.
+* <a title="Starbox PRO" href="https://starboxpro.com/">Starbox PRO</a> - Your Authors Will Shine Like Stars.
+* <a title="Squirrly SPY" href="https://squirrlyspy.com/">Squirrly SPY</a> - Your Competitor’s SEO Growth. In Your Hands..
 * <a title="Education Cloud PLUS" href="https://www.squirrly.co/learning/education-cloud/">Education Cloud PLUS</a> - It's like Netflix for Marketing Education.
 * <a title="RankJumps" href="https://www.squirrly.co/rankjumps/">RankJumps</a> - Managed SEO. Done-for-you by Experts from Squirrly.
 * <a title="Learning Solutions" href="https://www.squirrly.co/learning/solutions/">Learning Solutions by Squirrly</a> - Teach Online. Starting Tomorrow.
-* <a title="Hide My WP Ghost" href="https://www.squirrly.co/wordpress/plugins/hide-my-wp/">Hide My WP Ghost</a> - WordPress Security Layer and Security Enhancements.
+* <a title="Hide My WP Ghost" href="https://wpghost.org/">Hide My WP Ghost</a> - WordPress Security Layer and Security Enhancements.
 * <a title="For Developers who use this CMS" href="https://www.squirrly.co/wordpress/">WordPress Developers Page</a> - Innovations and Partnerships.
 * <a title="Plugins for WordPress" href="https://www.squirrly.co/wordpress/plugins/">Plugins</a> - Other Plugins created by Squirrly.
 
@@ -230,68 +250,74 @@ Type a keyword to the right of the screen and start using Squirrly Seo. Enjoy!
 7. Squirrly SEO - SEO Briefcase
 
 == Changelog ==
+= 12.4.14 =
+* Update - Add the Llms.txt feature to configure rules for AI crawlers
+* Fix - Sitemap cache directory creation issue on multilingual sites
+* Fix - Daily progress and optimization in Rankings
+* Fix - Compatibility with Divi pagination to show the correct canonical meta
+
 = 12.4.12 =
-Update - Added the option to recheck a ranking keyword in Rankings
-Update - Compatibility issue when $post->id is false
-Update - Compatibility with TranslatePress URLs on Sitemap URLs
-Update - Canonical link identification in Focus Pages
-Update - Add language path support for sitemap cache directory
-Fix - Issue when adding suggested inner links
-Fix -Remove suggested inner links after added
-Fix - Warning in API calls on line 278 for grabbing post content
-Fix - WooCommerce error on Snippet product URL
-Fix - Popup layout and style in Squirrly > Overview
+* Update - Added the option to recheck a ranking keyword in Rankings
+* Update - Compatibility issue when $post->id is false
+* Update - Compatibility with TranslatePress URLs on Sitemap URLs
+* Update - Canonical link identification in Focus Pages
+* Update - Add language path support for sitemap cache directory
+* Fix - Issue when adding suggested inner links
+* Fix -Remove suggested inner links after added
+* Fix - Warning in API calls on line 278 for grabbing post content
+* Fix - WooCommerce error on Snippet product URL
+* Fix - Popup layout and style in Squirrly > Overview
 
 = 12.4.11 =
-Update - The option to recheck the ranking keyword
-Update - Compatibility issue with other SEO plugins when $post->id is false
-Update - TranslatePress on Sitemap URLs
-Fix - WooCommerce error when calling get_sample_permalink in Squirrly Snippet
-Fix - Function _load_textdomain_just_in_time was called incorrectly error.
+* Update - The option to recheck the ranking keyword
+* Update - Compatibility issue with other SEO plugins when $post->id is false
+* Update - TranslatePress on Sitemap URLs
+* Fix - WooCommerce error when calling get_sample_permalink in Squirrly Snippet
+* Fix - Function _load_textdomain_just_in_time was called incorrectly error.
 
 = 12.4.10 =
-Update - Compatibility with WP 6.8
-Fixed - Main Keyword change in SLA
-Fixed - Briefcase rows and pagination when searching for a keyword
-Fix - Google Analytics 4 connection
+* Update - Compatibility with WP 6.8
+* Fixed - Main Keyword change in SLA
+* Fixed - Briefcase rows and pagination when searching for a keyword
+* Fix - Google Analytics 4 connection
 
 = 12.4.09 =
-Update - Correct the issue when multiple pages are selected in Innerlinks
-Update - The nonce referrer on search forms
-Fix - The strict parameter on rankings
-Fix - Add the Squirrly FontAwesome class in Audit and Focus Pages
-Fix - Pagination in Briefcase and Rankings
+* Update - Correct the issue when multiple pages are selected in Innerlinks
+* Update - The nonce referrer on search forms
+* Fix - The strict parameter on rankings
+* Fix - Add the Squirrly FontAwesome class in Audit and Focus Pages
+* Fix - Pagination in Briefcase and Rankings
 
 = 12.4.08 =
-Update - Plugin security on api and searches
+* Update - Plugin security on api and searches
 
 = 12.4.07 =
-Update - Update the Bulk SEO Page to load only from Optimize > Bulk SEO
-Update - Add the Item ID in Review Schema to identify the reviewed item
-Fix - Keyword Research competition info on Briefcase
-Fix - Small layout bugs
+* Update - Update the Bulk SEO Page to load only from Optimize > Bulk SEO
+* Update - Add the Item ID in Review Schema to identify the reviewed item
+* Fix - Keyword Research competition info on Briefcase
+* Fix - Small layout bugs
 
 = 12.4.06 =
-Update - Squirrly Live Assistant to prevent too many ajax triggers on Gutenberg saving process
-Update - Compatibility with Polylang plugin
-Update - Security updates on search parameter in Focus Pages, Audits, Bulk SEO
+* Update - Squirrly Live Assistant to prevent too many ajax triggers on Gutenberg saving process
+* Update - Compatibility with Polylang plugin
+* Update - Security updates on search parameter in Focus Pages, Audits, Bulk SEO
 
 = 12.4.04 =
-Fix - Sitemap path validation when multilingual plugins are activated
-Fix - Robots TXT files customization issue
-Fix - Sanitization warning on different type of search input
-Fix - Rest Api calls warnings when no keywords found in a post
-Fix - Javascript error on SEO Links when open in external tab
+* Fix - Sitemap path validation when multilingual plugins are activated
+* Fix - Robots TXT files customization issue
+* Fix - Sanitization warning on different type of search input
+* Fix - Rest Api calls warnings when no keywords found in a post
+* Fix - Javascript error on SEO Links when open in external tab
 
 = 12.4.03 =
-Update - Add the option to add noindex with dofollow in metas for search engines to follow all the links on the page
-Update - Display publish date and modify date on translation language
-Fix - Focus Pages notification on limit reached per website and per entire account.
-Fix - Invalidate Sitemap cache on Automation settings update
-Fix - Hide post type sitemap when the post type is set as noindex in Automation
-Fix - Robots.txt customization issue
-Fix - Sitemap load issue on websites with paths
-Fix - Bulk SEO title and description fields sanitization error
+* Update - Add the option to add noindex with dofollow in metas for search engines to follow all the links on the page
+* Update - Display publish date and modify date on translation language
+* Fix - Focus Pages notification on limit reached per website and per entire account.
+* Fix - Invalidate Sitemap cache on Automation settings update
+* Fix - Hide post type sitemap when the post type is set as noindex in Automation
+* Fix - Robots.txt customization issue
+* Fix - Sitemap load issue on websites with paths
+* Fix - Bulk SEO title and description fields sanitization error
 
 = 12.4.02 =
 * Update - Add sanitization on Focus Page search params to increase security
@@ -520,232 +546,6 @@ Fix - Bulk SEO title and description fields sanitization error
 * Fix - Crawler server to load the website faster
 * Fix - UI small bugs
 
-= 12.1.23 - 04/04/2023 =
-* Update - Add SLA in Beaver Builder frontend
-* Update - Add the AI Assistant info in Squirrly > Home
-* Update - Focus Page notification when a page does not exist
-* Update - Fixed SEO import error from Yoast plugin
-* Update - Fixed UI style
-
-= 12.1.22 - 03/27/2023 =
-* Update - Improve the daily SERP Checker service
-* Update - Increased plugin security & compatibility with PHP 8.2
-* Update - Add the filter in Briefcase to show the keywords without labels
-* Update - Frontent buffer loading for compatibility with other SEO plugins
-* Fix - Briefcase keywords encoding in SLA for better identification
-* Fix - Remove the space in Squirrly Sitemap and increased compatibility with other plugins and themes
-* Fix - Update the plugin language based on WordPress user language
-
-= 12.1.21 - 02/28/2023 =
-* Update - Add disconnect option in Squirrly SEO plugin for logged accounts
-* Update - Add the option to add No Follow and Sponsored to any link in the Classic and Block Editor
-* Update - Add the option to add No Follow and Sponsored to any link in Elementor editor
-* Update - Focus Pages to show the correct notification with the nofollow outbound links
-* Update - Connect GSC and GA buttons in Focus Pages to go to the Connect Tools page and check the connections
-* Update - Google News link with the updated Google News location
-* Update - SLA for Thrive Architect
-* Fix - Sitemap to not show the error on news sitemap
-* Fix - Snippet redirect for deleted posts
-* Fix - Search page to prevent PHP error when the post is not detected
-* Fix - Remove duplicates from Sitemap Categories
-* Fix - Initiate the Title and Description in Frontend for all builders
-* Fix - Better custom post type detection in frontend
-
-= 12.1.20 - 02/09/2023 =
-* Update - API Call parameters when multiple URLs are sent with Indexnow
-* Update - add sitemap_index.xml in sitemap to match the other SEO plugins sitemaps
-* Fix - Sanitization to exclude shortcodes from Title and Descritpion when the chars [ & ] are present
-* Fix - SLA Frontend to better detect the Title and Description changes in builders
-* Fix - Post update on Cloud when the post is saved on WordPress
-
-= 12.1.19 - 02/01/2023 =
-* Update - Add Google Indexing API (if GSC is connected) in IndexNow and submit the URL to Bing, Google and IndexNow
-* Fix - Bulk SEO to show all Posts and Pages
-* Fix - Load the Archive Sitemap based on Automation settings
-* Fix - Sanitization to allow chars like [ & ] in the title and description
-
-= 12.1.18 - 01/30/2023 =
-* Update - Compatibility with PHP 8.1,8.2
-* Update - Added the the IndexNow feature
-* Fix - UI in Keyword Research
-* Fix - Loading the homepage search in Bulk SEO
-* Fix - Briefcase Keywords encoded non-breaking space
-* Fix - Live Assistant more images loading issue
-
-= 12.1.17 - 01/09/2023 =
-* Update - META tags for Open Graph
-* Fix - Small compatibility bugs
-
-= 12.1.15 - 12/21/2022 =
-* Update - Change the plugin toolbar & notification bar to load the view correctly.
-* Update - The URL token to be assign on connection to Cloud.
-* Update - The CSS and JS loading time to work well with builders
-* Update - Add the Video option in Squirrly Automation for Products
-* Update - Add the County field for UK and US in Rich Snippets
-* Fix - Improve the cached pages when crawled by Squirrly SEO crawlers
-* Fix - Ranking link in Briefcase
-* Fix - Muiltilanguage WPML sitemap to avoid duplicate language URLs
-
-= 12.1.14 - 11/29/2022 =
-* Fix - Audit compare tasks popups to show the exact data from each audit
-* Fix - Removed Google Fonts and replace with the local Noto Sans fonts
-* Fix - Squirrly logo to appear more clear in the settings and SLA
-* Fix - URL search in Add New Audit Page and Add New Focus Page
-* Fix - Search timeout in Add New Audit Page and Add New Focus Page
-* Fix - Keyword Research timeout improve
-
-= 12.1.13 - 10/26/2022 =
-* Update - Added compatibility with WP 6.1
-* Fix - Fixed the 404 redirect when no default URL is given
-* Fix - Update the RoleManager.php to load only on plugin activation to allow the posibility to change the capabilities in user roles
-* Fix - Correct the frontend buffer to work with other plugins better
-
-= 12.1.12 - 09/30/2022 =
-* Update - Added the option to send any post type from Automation to Google News sitemap
-* Update - Added the Semrush Ranking score in SEO Audit
-* Update - Added new hook "sq_post_images" when receiving the images for social media snippet
-* Update - Added new hook "sq_post_videos" when receiving the videos for social media snippet
-* Update - SLA to check the reusable divs in the posts/pages
-* Update - Frontend SLA script for Bricks Builder
-* Update - Inner links counting in Focus Pages
-* Fix - Wrong number of params when calling loadMedia function
-* Fix - Broken help URL https://howto12.squirrly.co/wordpress-seo/
-* Fix - Remove Alexa Code as the service is not available anymore
-* Fix - Show the correct notification text when requesting a new SEO Audit after an hour
-* Fix - Increase security and remove unused functions from older version of Squirrly SEO
-* Fix - Don't show tasks in Assistant for inactive features
-* Fix - Focus Pages > SEO image to check only the filename and not the image path
-* Fix - UnitPriceSpecification in JsonLD for Woocommerce products
-* Fix - Sitemap to not include relative redirected URLs that are not valid
-* Fix - Ranking to not show duplicare URLs
-* Fix - Update the Google News to take the last 2 days from each post type included in the feed as requested
-
-= 12.1.11 - 08/12/2022 =
-Update - SLA compatibility with Zion Builder
-Update - SLA compatibility with WPBakery Page Builder
-Update - Style for the Sitemap News using sitemapnews.xsl
-Update - SEO Audits page to show the number of pages present in the audit
-Fix - load SEO metas late on AMP pages for compatibility with AMP plugins
-Fix - Don't load SEO Snippet on frontend when AMP is detected to avoid compatibility error with AMP plugin
-Fix - Make sure the keywords from briefcase are shown correctly in research, history and suggested page
-
-
-= 12.1.10 - 07/25/2022 =
-Update - SLA compatibility with Bricks Website Builder
-Update - SLA compatibility with Thrive Architect
-Fix - DevKit import to prevent deactivate it
-Fix - Small bugs in Sitemap XML and JSON-LD
-Fix - Load Squirrly METAs later when Late Load Buffer is on for compatibility with Header & Footer plugin and AMP plugin
-Fix - Added Kenya on the Ranking list
-Fix - Don't remove duplicate line in robots.txt custom records
-Fix - Don't encode the separator from title and description
-
-= 12.1.09 - 07/15/2022 =
-Update - SLA compatibility with Divi Builder
-Update - SLA compatibility with Thrive Architect
-Update - Focus Page SEO Image to detect keywords with special chars
-Fix - Warning: Undefined array key "media" in DisplayController.php on line 74
-Fix - Translation error on frech language on Focus Pages
-Fix - Importing emoticons from other SEO plugins on utf8 tabel encoding
-Fix - SEO Audit for detecting the twitter card and OG with more accuracy for non WordPress websites
-
-= 12.1.07 - 06/23/2022 =
-Update - Show Frontend SLA option in Squirrly > Live Assistant > Settings for SEO Experts when a builder is not installed
-Update - SLA with Divi Builder load sequence
-Update - SLA with Oxygen load sequence
-Update - SLA for the keyword percent div
-Fix - Showing different URL in Bulk SEO for OG & Twitter
-Fix - Blank screen error on Post Editor for some websites
-Fix typos in SLA
-
-= 12.1.06 - 06/16/2022 =
-Update - Add Live Assistant support for Oxygen Builder on frontend
-Update - Add Live Assistant support for Divi Builder on frontend
-Fix - Live Assistant on frontend to show the number of keywords when a keyword highlighted in SLA
-Fix - Live Assistant on frontend to load only after the builder preloading is closed
-Fix - Add the Live Assistant when no meta-box-order is present in the DB
-Fix - Fixed PHP warning when missing meta-box-order_ line from usermeta table
-Fix - Woocommerce Compatibility on Variable Products
-Fix - Show the Free account in Account Info
-Fix - Show the Account limits from full to empty
-Fix - Update the 'sq_menu' hoot to get the current menu name
-Fix - Live Assistant floating box to show correctly on WordPress 6.0
-Fix - Reduce the status update of the trashed posts to API
-Fix - Show error message on SLA when not connected to Cloud
-
-= 12.1.04 - 05/24/2022 =
-Update - The JSON-LD compatibility with Woocommerce on Products variant prices
-Update - Live Assistant layout for both floating and integrated version
-Update - Compatibility WP adminify plugin
-Fix - SEO Links - External Nofollow Link Exception
-Fix - SEO Automation - Add the post type in automation issue
-Fix - PHP Warnings in Automation and JSON-LD when some features are not yet activated
-Fix - Removed unused libraries from Live Assistant
-Fix - Small Bugs
-
-= 12.1.03 - 05/19/2022 =
-Update - Live Assistant for integrated version & added the SLA integrate option in Live Assistant > Settings
-Fix - RTL CSS for Live Assistant and SEO Configuration
-Fix - Update the compatibility with JetPack
-Fix - DevKit instalation to load the correct custom logo
-Fix - Prevent PHP Notifications in SEO Snippet
-Fix - Prevent double border when SEO Automation is activated
-Fix - Fixed the save process in SEO Automation to not show error message
-Fix - Add the comparison images when other SEO  plugins are activated
-Fix - Update the tasks from Next SEO Goals
-Fix - Update the Briefcase and Ranking Tables to select the number of rows to show
-
-= 12.1.01 - 05/17/2022 =
-Fix - Show Squirrly logo in Page Editor toolbar to open/close Squirrly Live Assistant
-Fix - Dev Kit install on plugin activation
-Fix - Small bugs
-
-= 12.1.00 - 05/16/2022 =
-Update - Compatibility with WordPress 6.0
-Update – New Animated Tooltip that teaches users how to use Red and Green elements inside the Focus Pages and the Bulk SEO sections of Squirrly
-Update – Optimized for mobile
-Update – DEMO Post has been removed. This was meant to help users learn how to use the SEO Live Assistant, but we chose to remove the demo post due to users publishing it by mistake.
-Update – New One Page Setup experience that helps users get pages, keywords and data inside many important sections of Squirrly SEO, so that everything becomes easier for the user.
-Update – New field completion sequences, to make sure that at the end of One Page Setup, a user has all the info placed in their site, according to the specifications they make.
-Update – New field selections in on-boarding according to USER LEVEL and the selected options.
-Update – Option to Delete Suggested Keywords from the Keyword Research Assistant
-Update – Keyword Research Results section changes to highlight the very easy to rank first
-Update – New and Better Filters for Red Elements Inside Focus Pages and Bulk SEO
-Update – Reset Day presented in the user profile info inside the plugin, for users to know when limit refresh happens
-Update – New graphics for In-plugin Custom Learning Materials Suggestions
-Update – New side navigation bar to make it easier and faster for users to move from one section/feature to another.
-Update – New SEO expert and SEO beginner modes allowing users to easily switch from beginner mode (designed for non-SEO Experts) to expert mode (best for experienced SEOs).
-Update – Changes to the lessons from the 14 Days Journey to Better Ranking
-Update – Changes to the tasks visible in the Next SEO Goals section
-Update – Changes to the tasks highlighted by the Settings Assistant (aka Squirrly Genius)
-Update – Changes to the grouping of SEO Settings, to make it easier to navigate and set up
-Update – New experience of using the SEO Live Assistant and the Blogging Assistant
-Update – Changes to keyword research steps
-Update – Changes to the experience of using the Keyword Research Tool
-Update – New navigational elements indicating the location of the user within the plugin
-Update – Clearer display of plan limits
-Update – Changes to All Features section
-Update – New in-plugin Custom Suggestions for Learning Materials (relevant for every section of the plugin)
-Update –  New custom tips and tricks panel for different sections of the plugin to help you make the most out of every feature from Squirrly SEO.
-Update – Re-written the Advanced Mode completely (now the Expert Mode)
-Update – Clearer NO Configurations zone and clearer ways to make Squirrly SEO go to compatibility mode
-Update – Re-written on-boarding system, based on user choices and more control to the users.
-Update – Changes to the Squirrly Genius digital assistant from Squirrly
-Update – Re-Written SEO Settings
-Update – Re-Written SEO Automations
-Update – Better Navigation Elements across all sections
-Update – New Navigation Menus in all the platform
-Update – New UX for Pop-UPS and Next SEO Goals tasks
-Update – Better Bulk Operation Features in Research, Rankings, Focus Pages, etc
-Update – Better UX for Blogging Assistant and all sub-tools of Blogging Assistant
-Update – Changing Settings Assistant by Squirrly to different Mastery Tasks handlers
-Update – Better Cloud Account UX and In-Plugin Account UX
-Update – Sitemap now gets created separately for each post type
-Update – Added Pagination to Custom Post Types (to Sitemaps that have Custom Post Types)
-Fix - Don't show the Manual GSC Indexability in Next SEO Goals if the Focus Page is already indexed
-Fix - Important security update
-Fix - getView error for the deprecated function
-Fix - Woocommerce compatibility & Rich Snippets
 
 divi seo
 thrive seo

@@ -272,7 +272,7 @@ if ( ! isset( $view ) ) {
 														<?php } ?>
 
 														<?php if ( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_sitemap' ) && $pattern <> 'profile' && $pattern <> 'search' && $pattern <> '404' ) { ?>
-                                                            <div class="col-12 row m-0 p-0 my-5 sq_patterns_<?php echo esc_attr( $pattern ) ?>_noindex">
+                                                            <div class="col-12 row m-0 p-0 my-5">
                                                                 <div class="checker col-12 row m-0 p-0">
                                                                     <div class="col-12 p-0 sq-switch sq-switch-sm">
                                                                         <input type="hidden" name="patterns[<?php echo esc_attr( $pattern ) ?>][do_sitemap]" value="0"/>

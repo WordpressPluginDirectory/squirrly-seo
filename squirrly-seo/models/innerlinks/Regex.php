@@ -16,6 +16,7 @@ class SQ_Models_Innerlinks_Regex {
 		$search_parts = array(
 			// exclude all sensible html parts:
 			'/(?<parts><head.*>.*<\/head>)/sU',
+			'/(?<parts><header.*>.*<\/header>)/sU',
 			'/(?<parts><footer.*>.*<\/footer>)/sU',
 			'/(?<parts><video.*>.*<\/video>)/sU',
 			'/(?<parts><iframe.*>.*<\/iframe>)/sU',

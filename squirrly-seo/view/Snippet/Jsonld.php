@@ -72,13 +72,33 @@ if ( ! isset( $patterns[ $view->post->post_type ] ) && isset( $patterns['custom'
 
                     <div class="sq-col-12 sq-p-0 sq-m-0 sq-small">
 
-                        <form method="post" target="_blank" action="https://search.google.com/test/rich-results">
-                            <button type="submit" class="sq-btn sq-btn-light sq-btn-sm sq-px-4 sq-mx-2  sq-float-right">
-                                <i class="fasq-brands fa-google"></i> <?php echo esc_html__( "Validate JSON-LD", "squirrly-seo" ) ?>
-                            </button>
-                            <textarea name="code_snippet" class="code_snippet" style="display: none"><?php echo esc_textarea( $jsonld_data ); ?></textarea>
-                        </form>
+                        <button type="button" id="validateRichResults"
+                                class="sq-btn sq-btn-light sq-btn-sm sq-px-4 sq-mx-2 sq-float-right">
+                            <i class="fasq-brands fa-google"></i>
+                            <?php echo esc_html__( "Validate JSON-LD", "squirrly-seo" ); ?>
+                        </button>
 
+                        <textarea class="code_snippet" style="display:none"><?php echo esc_textarea( $jsonld_data ); ?></textarea>
+
+                        <script>
+                            document.getElementById('validateRichResults').addEventListener('click', function() {
+                                const code = document.querySelector('.code_snippet').value;
+
+                                const form = document.createElement('form');
+                                form.method = 'post';
+                                form.action = 'https://search.google.com/test/rich-results';
+                                form.target = '_blank';
+
+                                const ta = document.createElement('textarea');
+                                ta.name = 'code_snippet';
+                                ta.value = code;
+
+                                form.appendChild(ta);
+                                document.body.appendChild(form);
+                                form.submit();
+                                form.remove();
+                            });
+                        </script>
 
                     </div>
 

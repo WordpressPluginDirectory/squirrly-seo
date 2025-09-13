@@ -223,6 +223,20 @@ if ( ! isset( $view ) ) {
                                 </span>
                             </h3>
 
+                            <h3 class="card-title mt-4">
+                                <span class="checker col-12 row m-0 p-0">
+                                    <span class="col-12 m-0 p-0 sq-switch sq-switch-sm">
+                                        <span class=""><?php echo esc_html__( "Llms.txt", 'squirrly-seo' ); ?></span>
+                                        <input type="hidden" name="sq_auto_llms" value="0"/>
+                                        <input type="checkbox" id="sq_auto_llms" name="sq_auto_llms" class="sq-switch" <?php echo( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_llms' ) ? 'checked="checked"' : '' ) ?> value="1"/>
+                                        <label for="sq_auto_llms" class="ml-2 mt-1"></label>
+                                    </span>
+                                    <span class="col-12 row m-0 p-0 sq_auto_llms">
+                                        <span class="small text-black-50"><?php echo esc_html__( "Control how AI search engines and language model crawlers can access and use your website’s content.", 'squirrly-seo' ); ?></span>
+                                    </span>
+                                </span>
+                            </h3>
+
 
                             <h3 class="card-title mt-4">
                                 <span class="checker col-12 row m-0 p-0">

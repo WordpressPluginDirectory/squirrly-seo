@@ -649,7 +649,17 @@ class SQ_Models_Frontend {
 	 */
 	public function addPaged( $post ) {
 		if ( ! is_admin() && is_paged() && isset( $post->url ) && $post->url <> '' ) {
-			$page = (int) get_query_var( 'paged' );
+			global $wp_query, $wp;
+
+			$page = (int) (
+				get_query_var('paged') ?:          // archives
+				get_query_var('page')  ?:          // static page pagination
+				($wp_query->query['paged'] ?? 0) ?: // Divi put it here
+				($wp->query_vars['paged'] ?? 0)
+			);
+
+			$page = max(1, $page);
+
 			if ( $page && $page > 1 ) {
 				$post->url = trailingslashit( $post->url ) . "page/" . "$page/";
 			}

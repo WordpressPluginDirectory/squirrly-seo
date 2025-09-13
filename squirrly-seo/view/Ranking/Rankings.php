@@ -101,25 +101,6 @@ $view->loadScripts();
                                                                     <h5>
                                                                         <a href="<?php echo esc_url( add_query_arg( array( 'schanges' => 1 ), SQ_Classes_Helpers_Tools::getAdminUrl( 'sq_rankings' ) ) ) ?>" data-toggle="tooltip" title="<?php echo esc_attr__( "Only show SERP changes", "squirrly-seo" ) ?>">
                                                                             <i class="fa-solid fa-arrows-v pull-left mt-1" aria-hidden="true"></i>
-																			<?php
-																			$changes = 0;
-																			$topten = 0;
-																			$positive_changes = 0;
-
-																			foreach ( $view->ranks as $key => $row ) {
-																				if ( $row->change <> 0 ) {
-																					$changes ++;
-																					if ( $row->change < 0 ) {
-																						$positive_changes ++;
-																					}
-																				}
-																				if ( (int) $row->rank > 0 && (int) $row->rank <= 10 ) {
-																					$topten ++;
-																				}
-																			}
-
-																			echo esc_attr( $changes );
-																			?>
                                                                         </a>
                                                                     </h5>
                                                                     <span class="small"><?php echo esc_html__( "Today SERP Changes", "squirrly-seo" ); ?></span>
@@ -155,14 +136,14 @@ $view->loadScripts();
 
 
                                                             <div class="media-right py-3 media-middle ">
-																<?php if ( $topten > 0 ) { ?>
+                                                                <?php if ( isset( $view->info->topten ) && (int) $view->info->topten > 0 ) { ?>
                                                                     <h6 class="col-12 px-0 text-success small">
-                                                                        <i class="fa-solid fa-arrow-up" style="font-size: 9px !important;margin: 0 5px;vertical-align: middle;"></i><?php echo sprintf( esc_html__( "%s keyword ranked in TOP 10", 'squirrly-seo' ), '<strong>' . esc_html( $topten ) . '</strong>' ); ?>
+                                                                        <i class="fa-solid fa-arrow-up" style="font-size: 9px !important;margin: 0 5px;vertical-align: middle;"></i><?php echo sprintf( esc_html__( "%s keyword ranked in TOP 10", 'squirrly-seo' ), '<strong>' . esc_html( $view->info->topten ) . '</strong>' ); ?>
                                                                     </h6>
 																<?php } ?>
-																<?php if ( $positive_changes > 0 ) { ?>
+																<?php if ( isset ( $view->info->positive_changes ) && (int) $view->info->positive_changes > 0 ) { ?>
                                                                     <h6 class="col-12 px-0 text-success small">
-                                                                        <i class="fa-solid fa-arrow-up" style="font-size: 9px !important;margin: 0 5px;vertical-align: middle;"></i><?php echo sprintf( esc_html__( "%s keyword ranked better today", 'squirrly-seo' ), '<strong>' . esc_html( $positive_changes ) . '</strong>' ); ?>
+                                                                        <i class="fa-solid fa-arrow-up" style="font-size: 9px !important;margin: 0 5px;vertical-align: middle;"></i><?php echo sprintf( esc_html__( "%s keyword ranked better today", 'squirrly-seo' ), '<strong>' . esc_html( $view->info->positive_changes ) . '</strong>' ); ?>
                                                                     </h6>
 																<?php } ?>
 																<?php
@@ -179,7 +160,7 @@ $view->loadScripts();
                                                                         </h6>
 																	<?php }
 																} ?>
-																<?php if ( $topten == 0 && $positive_changes == 0 && $average_changes == 0 ) { ?>
+																<?php if ( isset( $view->info->topten ) && (int) $view->info->topten == 0 &&  isset( $view->info->positive_changes ) && (int) $view->info->positive_changes == 0 && $average_changes == 0 ) { ?>
                                                                     <h4 class="col-12 px-0 text-primary"><?php echo esc_html__( "No progress found yet", 'squirrly-seo' ) ?></h4>
 																<?php } ?>
 

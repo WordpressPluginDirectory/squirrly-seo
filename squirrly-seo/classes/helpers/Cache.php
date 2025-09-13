@@ -36,6 +36,7 @@ class SQ_Classes_Helpers_Cache {
 	 * @return void
 	 */
 	public function listenSQHooks( $params ) {
+
 		$this->invalidateCache();
 	}
 
@@ -190,6 +191,12 @@ class SQ_Classes_Helpers_Cache {
 		//set default cache directory
 		$default = WP_CONTENT_DIR . '/cache/' . self::CACHE_NAME;
 
+		if ( ! $this->filesystem->is_dir( $default ) ) {
+			@wp_mkdir_p( $default );
+		}
+
+		$default = rtrim( $default, '/' ) . '/sitemap';
+
 		/**
 		 * Filter XML sitemap cache directory.
 		 *
@@ -200,12 +207,6 @@ class SQ_Classes_Helpers_Cache {
 		if ( ! is_string( $filtered ) || '' === $filtered ) {
 			$filtered = $default;
 		}
-
-		if ( ! $this->filesystem->is_dir( $filtered ) ) {
-			@wp_mkdir_p( $filtered );
-		}
-
-		$filtered = rtrim( $filtered, '/' ) . '/sitemap';
 
 		return trailingslashit( $filtered );
 	}

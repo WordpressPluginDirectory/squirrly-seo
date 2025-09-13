@@ -44,14 +44,13 @@ class SQ_Models_Services_JsonLD extends SQ_Models_Abstract_Seo {
 
 	}
 
-
 	/**
 	 * Sanitizes, encodes and outputs structured data.
 	 *
 	 * @return array|string
 	 */
 	public function generateJsonLd() {
-		return $this->clean( $this->getStructuredData( $this->getDataTypes() ) );
+		return $this->getStructuredData( $this->getDataTypes() ) ;
 	}
 
 	/**

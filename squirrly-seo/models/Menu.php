@@ -646,7 +646,7 @@ class SQ_Models_Menu {
 				'title'      => esc_html__( "Tweaks & Sitemaps", 'squirrly-seo' ),
 				'capability' => 'sq_manage_settings',
 				'icon'       => 'fa-solid fa-map',
-				'show'       => ( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_sitemap' ) || SQ_Classes_Helpers_Tools::getOption( 'sq_auto_links' ) || SQ_Classes_Helpers_Tools::getOption( 'sq_auto_robots' ) || SQ_Classes_Helpers_Tools::getOption( 'sq_auto_favicon' ) || SQ_Classes_Helpers_Tools::getOption( 'sq_seoexpert' ) ),
+				'show'       => ( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_sitemap' ) || SQ_Classes_Helpers_Tools::getOption( 'sq_auto_links' ) || SQ_Classes_Helpers_Tools::getOption( 'sq_auto_robots' ) || SQ_Classes_Helpers_Tools::getOption( 'sq_auto_llms' ) || SQ_Classes_Helpers_Tools::getOption( 'sq_auto_favicon' ) || SQ_Classes_Helpers_Tools::getOption( 'sq_seoexpert' ) ),
 				'tabs'       => array(
 					array(
 						'title' => esc_html__( "Sitemap XML", 'hide-my-wp' ),
@@ -662,6 +662,11 @@ class SQ_Models_Menu {
 						'title' => esc_html__( "Robots File", 'hide-my-wp' ),
 						'tab'   => 'robots',
 						'show'  => SQ_Classes_Helpers_Tools::getOption( 'sq_auto_robots' ),
+					),
+					array(
+						'title' => esc_html__( "LLMs File", 'hide-my-wp' ),
+						'tab'   => 'llms',
+						'show'  => SQ_Classes_Helpers_Tools::getOption( 'sq_auto_llms' ),
 					),
 					array(
 						'title' => esc_html__( "Website Icon", 'hide-my-wp' ),

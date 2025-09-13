@@ -57,6 +57,22 @@ class SQ_Models_Settings {
 			}
 		}
 
+		//Save custom llms
+		if ( SQ_Classes_Helpers_Tools::getIsset( 'llms_permission' ) ) {
+			$llms = SQ_Classes_Helpers_Tools::getValue( 'llms_permission', '', true );
+			$llms = explode( PHP_EOL, $llms );
+			$llms = str_replace( "\r", "", $llms );
+
+			if ( ! empty( $llms ) ) {
+
+				if ( file_exists( ABSPATH . "/" . 'llms.txt' ) ) {
+					@rename( ABSPATH . "/" . 'llms.txt', ABSPATH . "/" . 'llms_ren' . time() . '.txt' );
+				}
+
+				SQ_Classes_Helpers_Tools::saveOptions('sq_llms_permission', $llms);
+			}
+		}
+
 		/* if there is an icon to upload */
 		if ( SQ_Classes_Helpers_Tools::getOption( 'sq_auto_favicon' ) ) {
 			if ( ! empty( $_FILES['favicon'] ) ) {

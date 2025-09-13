@@ -498,22 +498,24 @@ if ( ! isset( $view ) ) {
                                         <div class="col-12 small m-0 p-0">
 											<?php echo esc_html__( "A robots.txt file tells search engine crawlers which pages or files the crawler can or can't request from your site.", 'squirrly-seo' ); ?>
                                         </div>
+                                        <div class="small text-black-50 my-1 pr-3"><?php echo '<a href="'.esc_url( home_url('robots.txt')).'" target="_blank">'.esc_url( home_url('robots.txt')).'</a>' ?></div>
                                     </div>
 
                                     <div class="col-12 row m-0 p-0 my-5">
                                         <div class="col-4 p-0 pr-3 font-weight-bold">
 											<?php echo esc_html__( "Edit the Robots.txt data", 'squirrly-seo' ); ?>:
                                             <a href="https://howto12.squirrly.co/kb/robots-txt-settings/#default_robots" target="_blank"><i class="fa-solid fa-question-circle m-0 px-2" style="display: inline;"></i></a>
-                                            <div class="small text-black-50 my-1 pr-3"><?php echo sprintf( esc_html__( "Does not physically create the robots.txt file. The best option for Multisites.", 'squirrly-seo' ), '<a href="https://developers.facebook.com/apps/" target="_blank"><strong>', '</strong></a>' ); ?></div>
+                                            <div class="small text-black-50 my-1 pr-3"><?php echo sprintf( esc_html__( "Does not physically create the robots.txt file. The best option for WP Multisite.", 'squirrly-seo' ), '<a href="https://developers.facebook.com/apps/" target="_blank"><strong>', '</strong></a>' ); ?></div>
                                         </div>
 
                                         <div class="col-8 p-0 m-0 form-group">
                                             <?php
-	                                            $robots            = '';
 	                                            $robots_permission = SQ_Classes_Helpers_Tools::getOption( 'sq_robots_permission' );
 
                                                 if ( ! empty( $robots_permission ) ) {
 	                                                $robots_permission = implode( PHP_EOL, (array) $robots_permission );
+                                                } else {
+                                                    $robots_permission = '';
                                                 }
                                             ?>
                                             <textarea class="form-control" name="robots_permission" rows="10"><?php echo $robots_permission ?></textarea>
@@ -524,6 +526,50 @@ if ( ! isset( $view ) ) {
                                         </div>
 
 										<?php do_action( 'sq_tweaks_robots_after' ); ?>
+
+                                        <div class="col-12 m-0 p-0 mt-5">
+                                            <button type="submit" class="btn btn-primary btn-lg m-0 p-0 py-2 px-4 rounded-0"><?php echo esc_html__( "Save Settings", 'squirrly-seo' ); ?></button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div id="llms" class="col-12 py-0 px-4 m-0 tab-panel">
+                                    <div class="col-12 m-0 p-0 my-2">
+                                        <h3 class="card-title"><?php echo esc_html__( "LLMs File", 'squirrly-seo' ); ?>
+                                            <a href="https://howto12.squirrly.co/kb/llms-txt-settings/" target="_blank"><i class="fa-solid fa-question-circle m-0 p-0"></i></a>
+                                        </h3>
+                                        <div class="col-12 small m-0 p-0">
+											<?php echo esc_html__( "Enable and configure rules for AI crawlers and language models, controlling how your site’s content can be accessed and used by AI search engines.", 'squirrly-seo' ); ?>
+                                        </div>
+                                        <div class="small text-black-50 my-1 pr-3"><?php echo '<a href="'.esc_url( home_url('llms.txt')).'" target="_blank">'.esc_url( home_url('llms.txt')).'</a>' ?></div>
+                                    </div>
+
+                                    <div class="col-12 row m-0 p-0 my-5">
+                                        <div class="col-4 p-0 pr-3 font-weight-bold">
+											<?php echo esc_html__( "Edit the Llms.txt data", 'squirrly-seo' ); ?>:
+                                            <a href="https://howto12.squirrly.co/kb/llms-txt-settings/#default" target="_blank"><i class="fa-solid fa-question-circle m-0 px-2" style="display: inline;"></i></a>
+                                            <div class="small text-black-50 my-1 pr-3"><?php echo sprintf( esc_html__( "Does not physically create the llms.txt file. The best option for WP Multisite.", 'squirrly-seo' ), '<a href="https://developers.facebook.com/apps/" target="_blank"><strong>', '</strong></a>' ); ?></div>
+                                        </div>
+
+                                        <div class="col-8 p-0 m-0 form-group">
+                                            <?php
+	                                            $llms_permission = SQ_Classes_Helpers_Tools::getOption( 'sq_llms_permission' );
+
+                                                if ( ! empty( $llms_permission ) ) {
+                                                    $llms_permission = implode( PHP_EOL, (array) $llms_permission );
+                                                } else{
+                                                    $llms_permission = '';
+                                                }
+                                            ?>
+                                            <textarea class="form-control" name="llms_permission" rows="10"><?php echo $llms_permission ?></textarea>
+
+                                            <div class="col-12 py-3 px-0 text-danger">
+												<?php echo esc_html__( "Edit the Llms.txt only if you know what you're doing. Adding wrong rules in LLMs can lead to SEO ranking errors or block AI indexing.", 'squirrly-seo' ); ?>
+                                            </div>
+                                        </div>
+
+										<?php do_action( 'sq_tweaks_llms_after' ); ?>
 
                                         <div class="col-12 m-0 p-0 mt-5">
                                             <button type="submit" class="btn btn-primary btn-lg m-0 p-0 py-2 px-4 rounded-0"><?php echo esc_html__( "Save Settings", 'squirrly-seo' ); ?></button>

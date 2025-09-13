@@ -317,7 +317,7 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController {
 		wp_reset_query();
 		remove_all_actions( 'pre_get_posts' );
 		remove_all_actions( 'parse_query' );
-		remove_all_actions( 'posts_where' );
+		//remove_all_actions( 'posts_where' );
 
 		//init the query
 		$sq_query = array(
@@ -328,7 +328,8 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController {
 			'paged'          => $this->page,
 			'orderby'        => 'date',
 			'order'          => 'DESC',
-		);
+			'ignore_sticky_posts' => true,
+			);
 
 		if ( $language <> '' ) {
 			if ( ! SQ_Classes_Helpers_Tools::getOption( 'sq_sitemap_combinelangs' ) ) {
@@ -367,8 +368,11 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController {
 					}
 
 					$sq_query['date_query'] = array(
-						'after'     => 'midnight 2 days ago',
-						'inclusive' => true,
+						array(
+							'column'    => 'post_date_gmt',                    // compare in GMT
+							'after'     => gmdate('Y-m-d H:i:s', strtotime('-48 hours')),
+							'inclusive' => true,
+						),
 					);
 				case 'sitemap-post':
 					$sq_query['posts_per_page'] = $this->posts_limit;
@@ -838,6 +842,21 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController {
 		$this->showSitemapHeader( $xml['contains'] );
 
 		unset( $xml['contains'] );
+
+		// Remove duplicate URLs
+		if (!empty($xml)){
+			$seen = [];
+			$xml = array_filter($xml, function ($row) use (&$seen) {
+				if(isset($row['loc'])){
+					if (in_array($row['loc'], $seen, true)) {
+						return false; // duplicate
+					}
+					$seen[] = $row['loc'];
+				}
+				return true; // keep
+			});
+		}
+
 		foreach ( $xml as $row ) {
 			echo "\t" . '<url>' . "\n";
 
@@ -846,7 +865,9 @@ class SQ_Controllers_Sitemaps extends SQ_Classes_FrontController {
 			}
 			echo "\t" . '</url>' . "\n";
 		}
+
 		$this->showSitemapFooter();
+
 		unset( $xml );
 	}
 

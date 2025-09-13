@@ -340,6 +340,10 @@ class SQ_Classes_Helpers_Tools
             'sq_auto_robots' => 0,
             'sq_robots_permission' => array(),
 
+	        //LLMS
+            'sq_auto_llms' => 0,
+            'sq_llms_permission' => array(),
+
             //Metas
             'sq_use' => 1,
             'sq_auto_metas' => 0,
@@ -860,6 +864,7 @@ class SQ_Classes_Helpers_Tools
                 $options['sq_auto_metas'] = 0;
                 $options['sq_auto_amp'] = 0;
                 $options['sq_auto_robots'] = 0;
+                $options['sq_auto_llms'] = 0;
                 $options['sq_auto_facebook'] = 0;
                 $options['sq_sla_social_fetch'] = 0;
                 $options['sq_auto_twitter'] = 0;
@@ -884,6 +889,7 @@ class SQ_Classes_Helpers_Tools
                 $options['sq_auto_metas'] = 1;
                 $options['sq_auto_amp'] = 1;
                 $options['sq_auto_robots'] = 1;
+                $options['sq_auto_llms'] = 1;
                 $options['sq_auto_facebook'] = 1;
                 $options['sq_sla_social_fetch'] = 1;
                 $options['sq_auto_twitter'] = 1;

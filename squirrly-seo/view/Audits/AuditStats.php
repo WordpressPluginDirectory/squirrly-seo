@@ -83,13 +83,9 @@ if ( ! isset( $view ) ) {
                             <form method="post" class="sq_auditpages_request p-0 m-0">
 								<?php SQ_Classes_Helpers_Tools::setNonce( 'sq_audits_update', 'sq_nonce' ); ?>
                                 <input type="hidden" name="action" value="sq_audits_update"/>
-								<?php if ( $audit_timestamp < ( $now_timestamp - 3600 ) && $call_timestamp > ( $now_timestamp - 3600 ) ) { ?>
-                                    <span class="small ml-2 text-black-50"><?php echo esc_html__( "In progress", "squirrly-seo" ) ?></span>
-								<?php } else { ?>
-                                    <button type="submit" class="btn btn-link text-primary font-weight-bold inline p-0 m-0">
-										<?php echo esc_html__( "Request New Audit", "squirrly-seo" ) ?>
-                                    </button>
-								<?php } ?>
+                                <button type="submit" class="btn btn-link text-primary font-weight-bold inline p-0 m-0">
+		                            <?php echo esc_html__( "Request New Audit", "squirrly-seo" ) ?>
+                                </button>
                             </form>
                         </div>
                     </div>

@@ -38,7 +38,7 @@ class SQ_Models_Services_Robots extends SQ_Models_Abstract_Seo {
 		$robots_permission = (array) SQ_Classes_Helpers_Tools::getOption( 'sq_robots_permission' );
 		$robots_permission = array_filter( $robots_permission );
 
-		if(empty($robots_permission)){
+		if( empty($robots_permission) ){
 			// If no custom robots permissions are set, use the default rules
 			$robots_permission = array(
 				'User-agent: *',
@@ -50,8 +50,11 @@ class SQ_Models_Services_Robots extends SQ_Models_Abstract_Seo {
 				'Allow: */wp-content/uploads/',);
 		}
 
+
 		foreach (  $robots_permission as $robot_txt ) {
-			$robots .= $robot_txt . "\n";
+			if (is_string($robot_txt)){
+				$robots .= $robot_txt . "\n";
+			}
 		}
 
 		$robots .= "\n\n";
